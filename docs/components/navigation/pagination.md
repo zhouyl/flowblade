@@ -4,10 +4,26 @@ Pagination component for navigating through pages with multiple variants.
 
 ## Basic Usage
 
+### With Laravel Paginator (Recommended)
+
+The easiest way to use the pagination component is to pass a Laravel Paginator instance directly:
+
 ```blade
-<x-pagination 
-    :current-page="1" 
-    :total-pages="10" 
+{{-- In your controller --}}
+$users = User::paginate(10);
+
+{{-- In your view --}}
+<x-pagination :paginator="$users" />
+```
+
+### With Manual Parameters
+
+You can also manually specify pagination parameters:
+
+```blade
+<x-pagination
+    :current-page="1"
+    :total-pages="10"
 />
 ```
 
@@ -15,16 +31,76 @@ Pagination component for navigating through pages with multiple variants.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
+| `paginator` | `LengthAwarePaginator\|Paginator` | `null` | Laravel paginator instance (auto-extracts all values) |
 | `variant` | `string` | `'default'` | Variant: `simple`, `default`, `verbose` |
 | `size` | `string` | `'md'` | Size: `xs`, `sm`, `md`, `lg`, `xl` |
-| `currentPage` | `int` | `1` | Current page number |
-| `totalPages` | `int` | `1` | Total number of pages |
-| `total` | `int` | `0` | Total number of items (for verbose variant) |
-| `perPage` | `int` | `10` | Items per page (for verbose variant) |
+| `currentPage` | `int` | `1` | Current page number (auto-set if paginator provided) |
+| `totalPages` | `int` | `1` | Total number of pages (auto-set if paginator provided) |
+| `total` | `int` | `0` | Total number of items (auto-set if paginator provided) |
+| `perPage` | `int` | `10` | Items per page (auto-set if paginator provided) |
 | `prevLabel` | `string` | `'Previous'` | Previous button label |
 | `nextLabel` | `string` | `'Next'` | Next button label |
 | `showEdges` | `bool` | `true` | Show first/last page buttons |
 | `siblingCount` | `int` | `1` | Number of sibling pages to show |
+
+## Laravel Paginator Integration
+
+### With LengthAwarePaginator (Standard Pagination)
+
+```php
+// Controller
+public function index()
+{
+    $users = User::paginate(15);
+    return view('users.index', compact('users'));
+}
+```
+
+```blade
+{{-- View - Simple variant --}}
+<x-pagination variant="simple" :paginator="$users" />
+
+{{-- View - Default variant --}}
+<x-pagination :paginator="$users" />
+
+{{-- View - Verbose variant with stats --}}
+<x-pagination variant="verbose" :paginator="$users" />
+```
+
+### With Simple Paginator
+
+```php
+// Controller
+public function index()
+{
+    $posts = Post::simplePaginate(10);
+    return view('posts.index', compact('posts'));
+}
+```
+
+```blade
+{{-- View - Works with simple paginator too --}}
+<x-pagination variant="simple" :paginator="$posts" />
+```
+
+### With Custom Query
+
+```php
+// Controller
+public function search(Request $request)
+{
+    $results = Product::query()
+        ->where('name', 'like', "%{$request->q}%")
+        ->paginate(20);
+
+    return view('search.results', compact('results'));
+}
+```
+
+```blade
+{{-- View --}}
+<x-pagination variant="verbose" :paginator="$results" />
+```
 
 ## Variants
 
@@ -33,10 +109,14 @@ Pagination component for navigating through pages with multiple variants.
 Only shows previous and next buttons.
 
 ```blade
-<x-pagination 
+{{-- With paginator --}}
+<x-pagination variant="simple" :paginator="$items" />
+
+{{-- With manual parameters --}}
+<x-pagination
     variant="simple"
-    :current-page="5" 
-    :total-pages="10" 
+    :current-page="5"
+    :total-pages="10"
 />
 ```
 
@@ -45,10 +125,14 @@ Only shows previous and next buttons.
 Shows page numbers with previous and next buttons.
 
 ```blade
-<x-pagination 
+{{-- With paginator --}}
+<x-pagination :paginator="$items" />
+
+{{-- With manual parameters --}}
+<x-pagination
     variant="default"
-    :current-page="5" 
-    :total-pages="10" 
+    :current-page="5"
+    :total-pages="10"
 />
 ```
 
@@ -57,9 +141,13 @@ Shows page numbers with previous and next buttons.
 Shows statistics, jump-to-page input, and pagination buttons.
 
 ```blade
-<x-pagination 
+{{-- With paginator (recommended) --}}
+<x-pagination variant="verbose" :paginator="$items" />
+
+{{-- With manual parameters --}}
+<x-pagination
     variant="verbose"
-    :current-page="5" 
+    :current-page="5"
     :total-pages="10"
     :total="100"
     :per-page="10"
@@ -112,6 +200,15 @@ Shows statistics, jump-to-page input, and pagination buttons.
 
 ### Table Pagination
 
+```php
+// Controller
+public function index()
+{
+    $users = User::paginate(15);
+    return view('users.index', compact('users'));
+}
+```
+
 ```blade
 <x-card>
     <x-card-body class="p-0">
@@ -123,7 +220,7 @@ Shows statistics, jump-to-page input, and pagination buttons.
                     <x-table-head>Role</x-table-head>
                 </x-table-row>
             </x-table-header>
-            
+
             <x-table-body>
                 @foreach($users as $user)
                 <x-table-row>
@@ -135,20 +232,23 @@ Shows statistics, jump-to-page input, and pagination buttons.
             </x-table-body>
         </x-table>
     </x-card-body>
-    
+
     <x-card-footer>
-        <x-pagination 
-            variant="verbose"
-            :current-page="$currentPage" 
-            :total-pages="$totalPages"
-            :total="$total"
-            :per-page="$perPage"
-        />
+        <x-pagination variant="verbose" :paginator="$users" />
     </x-card-footer>
 </x-card>
 ```
 
 ### Blog Posts Pagination
+
+```php
+// Controller
+public function index()
+{
+    $posts = Post::latest()->paginate(10);
+    return view('blog.index', compact('posts'));
+}
+```
 
 ```blade
 <div class="space-y-6">
@@ -160,27 +260,33 @@ Shows statistics, jump-to-page input, and pagination buttons.
         </x-card-body>
     </x-card>
     @endforeach
-    
+
     <div class="flex justify-center">
-        <x-pagination 
-            :current-page="$currentPage" 
-            :total-pages="$totalPages"
-        />
+        <x-pagination :paginator="$posts" />
     </div>
 </div>
 ```
 
 ### Search Results Pagination
 
+```php
+// Controller
+public function search(Request $request)
+{
+    $results = Article::search($request->q)->paginate(20);
+    return view('search.results', compact('results'));
+}
+```
+
 ```blade
 <x-card>
     <x-card-header>
         <div class="flex items-center justify-between">
             <x-heading size="lg">Search Results</x-heading>
-            <x-badge>{{ $total }} results</x-badge>
+            <x-badge>{{ $results->total() }} results</x-badge>
         </div>
     </x-card-header>
-    
+
     <x-card-body>
         <div class="space-y-4">
             @foreach($results as $result)
@@ -191,20 +297,23 @@ Shows statistics, jump-to-page input, and pagination buttons.
             @endforeach
         </div>
     </x-card-body>
-    
+
     <x-card-footer>
-        <x-pagination 
-            variant="verbose"
-            :current-page="$currentPage" 
-            :total-pages="$totalPages"
-            :total="$total"
-            :per-page="$perPage"
-        />
+        <x-pagination variant="verbose" :paginator="$results" />
     </x-card-footer>
 </x-card>
 ```
 
 ### Product Listing Pagination
+
+```php
+// Controller
+public function index()
+{
+    $products = Product::where('active', true)->paginate(12);
+    return view('products.index', compact('products'));
+}
+```
 
 ```blade
 <div>
@@ -221,12 +330,9 @@ Shows statistics, jump-to-page input, and pagination buttons.
         </x-card>
         @endforeach
     </div>
-    
+
     <div class="flex justify-center">
-        <x-pagination 
-            :current-page="$currentPage" 
-            :total-pages="$totalPages"
-        />
+        <x-pagination :paginator="$products" />
     </div>
 </div>
 ```
@@ -292,6 +398,15 @@ x-init="loadPage(1)">
 
 ### Admin Panel Pagination
 
+```php
+// Controller
+public function index()
+{
+    $users = User::with('roles')->paginate(25);
+    return view('admin.users.index', compact('users'));
+}
+```
+
 ```blade
 <x-card>
     <x-card-header>
@@ -300,7 +415,7 @@ x-init="loadPage(1)">
             <x-button>Add User</x-button>
         </div>
     </x-card-header>
-    
+
     <x-card-body class="p-0">
         <x-table variant="striped">
             <x-table-header>
@@ -312,7 +427,7 @@ x-init="loadPage(1)">
                     <x-table-head>Actions</x-table-head>
                 </x-table-row>
             </x-table-header>
-            
+
             <x-table-body>
                 @foreach($users as $user)
                 <x-table-row>
@@ -333,15 +448,9 @@ x-init="loadPage(1)">
             </x-table-body>
         </x-table>
     </x-card-body>
-    
+
     <x-card-footer>
-        <x-pagination 
-            variant="verbose"
-            :current-page="$users->currentPage()" 
-            :total-pages="$users->lastPage()"
-            :total="$users->total()"
-            :per-page="$users->perPage()"
-        />
+        <x-pagination variant="verbose" :paginator="$users" />
     </x-card-footer>
 </x-card>
 ```

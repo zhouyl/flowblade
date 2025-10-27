@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Mellivora\Flowblade\Components\Navigation;
 
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
 use Illuminate\View\Component;
 
 /**
@@ -16,18 +18,20 @@ class Pagination extends Component
     /**
      * Create a new component instance
      *
-     * @param string      $variant      Variant: simple, default, verbose
-     * @param string      $size         Size: xs, sm, md, lg, xl
-     * @param int         $currentPage  Current page number
-     * @param int         $totalPages   Total number of pages
-     * @param int         $total        Total number of items (for verbose variant)
-     * @param int         $perPage      Items per page (for verbose variant)
-     * @param null|string $prevLabel    Previous button label
-     * @param null|string $nextLabel    Next button label
-     * @param bool        $showEdges    Show first/last page buttons
-     * @param int         $siblingCount Number of sibling pages to show
+     * @param null|LengthAwarePaginator|PaginatorContract $paginator    Laravel paginator instance
+     * @param string                                      $variant      Variant: simple, default, verbose
+     * @param string                                      $size         Size: xs, sm, md, lg, xl
+     * @param int                                         $currentPage  Current page number
+     * @param int                                         $totalPages   Total number of pages
+     * @param int                                         $total        Total number of items (for verbose variant)
+     * @param int                                         $perPage      Items per page (for verbose variant)
+     * @param null|string                                 $prevLabel    Previous button label
+     * @param null|string                                 $nextLabel    Next button label
+     * @param bool                                        $showEdges    Show first/last page buttons
+     * @param int                                         $siblingCount Number of sibling pages to show
      */
     public function __construct(
+        LengthAwarePaginator|PaginatorContract|null $paginator = null,
         public string $variant = 'default',
         public string $size = 'md',
         public int $currentPage = 1,
@@ -39,6 +43,21 @@ class Pagination extends Component
         public bool $showEdges = true,
         public int $siblingCount = 1
     ) {
+        // If paginator is provided, extract values from it
+        if ($paginator !== null) {
+            $this->currentPage = $paginator->currentPage();
+            $this->perPage = $paginator->perPage();
+
+            // LengthAwarePaginator has total() and lastPage() methods
+            if ($paginator instanceof LengthAwarePaginator) {
+                $this->total = $paginator->total();
+                $this->totalPages = $paginator->lastPage();
+            } else {
+                // Simple Paginator doesn't know total, use hasMorePages()
+                $this->totalPages = $paginator->hasMorePages() ? $this->currentPage + 1 : $this->currentPage;
+                $this->total = 0;
+            }
+        }
     }
 
     /**
