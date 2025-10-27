@@ -119,6 +119,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'input-group' => Components\Forms\InputGroup::class,
             'input-addon' => Components\Forms\InputAddon::class,
             'input-element' => Components\Forms\InputElement::class,
+            'editable' => Components\Forms\Editable::class,
         ];
     }
 }
