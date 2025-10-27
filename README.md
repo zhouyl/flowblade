@@ -130,7 +130,7 @@ Edit `config/flowblade.php` to customize:
 ## 📚 Documentation
 
 - [Installation Guide](docs/installation.md)
-- [Component List](docs/components.md)
+- [Components Documentation](docs/components/README.md)
 - [Development Plan](docs/TODO.md)
 
 ## 📝 Available Components
