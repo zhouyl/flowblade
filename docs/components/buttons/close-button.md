@@ -1,8 +1,8 @@
 # CloseButton
 
-关闭按钮组件，用于对话框、模态框、通知等场景的关闭操作。
+关闭button组件，用于对话框、模态框、通知等场景的关闭操作。
 
-## 基本用法
+## Basic Usage
 
 ```blade
 <x-close-button />
@@ -10,13 +10,13 @@
 
 ## Props
 
-| 属性 | 类型 | 默认值 | 说明 |
+| Prop | Type | Default | Description |
 |------|------|--------|------|
-| `size` | `string` | `'md'` | 按钮尺寸：`xs`, `sm`, `md`, `lg`, `xl` |
-| `disabled` | `boolean` | `false` | 是否禁用 |
+| `size` | `string` | `'md'` | Button size：`xs`, `sm`, `md`, `lg`, `xl` |
+| `disabled` | `boolean` | `false` | Disabled state |
 | `ariaLabel` | `string` | `'Close'` | 无障碍标签 |
 
-## 尺寸变体
+## Sizes变体
 
 ```blade
 <x-close-button size="xs" />
@@ -26,16 +26,16 @@
 <x-close-button size="xl" />
 ```
 
-## 状态
+## States
 
 ```blade
 <!-- 禁用 -->
 <x-close-button disabled />
 ```
 
-## 常见用法
+## Common Patterns
 
-### 对话框关闭按钮
+### 对话框关闭button
 
 ```blade
 <div class="relative p-6 bg-white rounded-lg shadow-lg">
@@ -43,24 +43,24 @@
         class="absolute top-4 right-4"
         aria-label="关闭对话框"
     />
-    <h2>对话框标题</h2>
+    <h2>对话框heading</h2>
     <p>对话框内容...</p>
 </div>
 ```
 
-### 通知关闭按钮
+### 通知关闭button
 
 ```blade
 <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
     <div class="flex-1">
-        <h3 class="font-semibold">通知标题</h3>
+        <h3 class="font-semibold">通知heading</h3>
         <p class="text-sm">通知内容...</p>
     </div>
     <x-close-button size="sm" />
 </div>
 ```
 
-### Alert 关闭按钮
+### Alert 关闭button
 
 ```blade
 <div class="flex items-center justify-between p-4 bg-yellow-50 border border-yellow-200 rounded">

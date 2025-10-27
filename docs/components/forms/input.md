@@ -1,37 +1,37 @@
 # Input
 
-输入框组件，用于文本输入。
+Input component for text input.
 
-## 基本用法
+## Basic Usage
 
 ```blade
-<x-input placeholder="请输入内容" />
+<x-input placeholder="Enter text" />
 ```
 
 ## Props
 
-| 属性 | 类型 | 默认值 | 说明 |
+| Prop | Type | Default | Description |
 |------|------|--------|------|
-| `type` | `string` | `'text'` | 输入类型 |
-| `size` | `string` | `'md'` | 尺寸：`2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
-| `variant` | `string` | `'outline'` | 变体：`outline`, `filled`, `flushed` |
-| `disabled` | `boolean` | `false` | 是否禁用 |
-| `readonly` | `boolean` | `false` | 是否只读 |
-| `required` | `boolean` | `false` | 是否必填 |
-| `invalid` | `boolean` | `false` | 是否无效 |
-| `placeholder` | `string` | `null` | 占位文本 |
+| `type` | `string` | `'text'` | Input type |
+| `size` | `string` | `'md'` | Size: `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
+| `variant` | `string` | `'outline'` | Variant: `outline`, `filled`, `flushed` |
+| `disabled` | `boolean` | `false` | Disabled state |
+| `readonly` | `boolean` | `false` | Read-only |
+| `required` | `boolean` | `false` | Required |
+| `invalid` | `boolean` | `false` | Invalid state |
+| `placeholder` | `string` | `null` | 占位text |
 
-## 尺寸
+## Sizes
 
 ```blade
-<x-input size="xs" placeholder="超小尺寸" />
-<x-input size="sm" placeholder="小尺寸" />
-<x-input size="md" placeholder="中等尺寸" />
-<x-input size="lg" placeholder="大尺寸" />
-<x-input size="xl" placeholder="超大尺寸" />
+<x-input size="xs" placeholder="Extra small" />
+<x-input size="sm" placeholder="Small" />
+<x-input size="md" placeholder="Medium" />
+<x-input size="lg" placeholder="Large" />
+<x-input size="xl" placeholder="Extra large" />
 ```
 
-## 变体
+## Variants
 
 ```blade
 <!-- Outline -->
@@ -44,10 +44,10 @@
 <x-input variant="flushed" placeholder="底线样式" />
 ```
 
-## 输入类型
+## Input Types
 
 ```blade
-<x-input type="text" placeholder="文本" />
+<x-input type="text" placeholder="text" />
 <x-input type="email" placeholder="邮箱" />
 <x-input type="password" placeholder="密码" />
 <x-input type="number" placeholder="数字" />
@@ -56,23 +56,23 @@
 <x-input type="search" placeholder="搜索" />
 ```
 
-## 状态
+## States
 
 ```blade
-<!-- 禁用 -->
-<x-input disabled placeholder="禁用状态" />
+<!-- Disabled -->
+<x-input disabled placeholder="Disabled" />
 
 <!-- 只读 -->
 <x-input readonly value="只读内容" />
 
-<!-- 必填 -->
-<x-input required placeholder="必填项" />
+<!-- Required -->
+<x-input required placeholder="Required field" />
 
 <!-- 无效 -->
-<x-input invalid placeholder="无效输入" />
+<x-input invalid placeholder="Invalid input" />
 ```
 
-## 常见用法
+## Common Patterns
 
 ### 表单字段
 
@@ -80,12 +80,12 @@
 <div class="space-y-4">
     <div>
         <label class="block text-sm font-medium mb-1">用户名</label>
-        <x-input name="username" placeholder="请输入用户名" />
+        <x-input name="username" placeholder="Enter username" />
     </div>
     
     <div>
         <label class="block text-sm font-medium mb-1">邮箱</label>
-        <x-input type="email" name="email" placeholder="请输入邮箱" />
+        <x-input type="email" name="email" placeholder="Enter email" />
     </div>
 </div>
 ```
@@ -100,7 +100,7 @@
 />
 ```
 
-### 带验证的输入
+### Input with Validation
 
 ```blade
 <div>
@@ -108,7 +108,7 @@
         name="email"
         type="email"
         :invalid="$errors->has('email')"
-        placeholder="请输入邮箱"
+        placeholder="Enter email"
     />
     @error('email')
         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -138,7 +138,7 @@
 <div x-data="{ value: '' }">
     <x-input 
         x-model="value"
-        placeholder="输入内容"
+        placeholder="Enter content"
     />
     <p x-text="value"></p>
 </div>

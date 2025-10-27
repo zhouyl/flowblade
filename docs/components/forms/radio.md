@@ -1,8 +1,8 @@
 # Radio
 
-单选框组件。
+radio组件。
 
-## 基本用法
+## Basic Usage
 
 ```blade
 <x-radio name="option" />
@@ -10,15 +10,15 @@
 
 ## Props
 
-| 属性 | 类型 | 默认值 | 说明 |
+| Prop | Type | Default | Description |
 |------|------|--------|------|
 | `size` | `string` | `'md'` | 尺寸：`sm`, `md`, `lg` |
 | `color` | `string` | `'primary'` | 颜色：`primary`, `secondary`, `success`, `warning`, `danger`, `info` |
-| `disabled` | `boolean` | `false` | 是否禁用 |
-| `invalid` | `boolean` | `false` | 是否无效 |
+| `disabled` | `boolean` | `false` | Disabled state |
+| `invalid` | `boolean` | `false` | Invalid state |
 | `value` | `string` | `null` | 值 |
 
-## 尺寸
+## Sizes
 
 ```blade
 <x-radio size="sm" name="size" />
@@ -26,7 +26,7 @@
 <x-radio size="lg" name="size" />
 ```
 
-## 颜色
+## Colors
 
 ```blade
 <x-radio color="primary" name="color" checked />
@@ -35,7 +35,7 @@
 <x-radio color="danger" name="color" />
 ```
 
-## 状态
+## States
 
 ```blade
 <!-- 禁用 -->
@@ -45,9 +45,9 @@
 <x-radio invalid name="option" />
 ```
 
-## 常见用法
+## Common Patterns
 
-### 单选组
+### Radio Group
 
 ```blade
 <div class="space-y-2">
@@ -91,7 +91,7 @@
 
 ```blade
 <div>
-    <label class="block text-sm font-medium mb-2">选择支付方式</label>
+    <label class="block text-sm font-medium mb-2">Select payment method</label>
     <div class="space-y-2">
         <label class="flex items-center gap-2">
             <x-radio name="payment" value="credit_card" />
@@ -124,7 +124,7 @@
 </div>
 
 <p class="mt-4">
-    已选择: {{ $selectedPlan }}
+    Selected: {{ $selectedPlan }}
 </p>
 ```
 
@@ -142,7 +142,7 @@
             <span>选项 2</span>
         </label>
     </div>
-    <p class="mt-4" x-text="'已选择: ' + selected"></p>
+    <p class="mt-4" x-text="'Selected: ' + selected"></p>
 </div>
 ```
 

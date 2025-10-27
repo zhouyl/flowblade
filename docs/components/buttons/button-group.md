@@ -1,8 +1,8 @@
 # ButtonGroup
 
-按钮组组件，用于将多个按钮组合在一起显示。
+button组组件，用于将多个button组合在一起显示。
 
-## 基本用法
+## Basic Usage
 
 ```blade
 <x-button-group>
@@ -14,19 +14,19 @@
 
 ## Props
 
-| 属性 | 类型 | 默认值 | 说明 |
+| Prop | Type | Default | Description |
 |------|------|--------|------|
 | `orientation` | `string` | `'horizontal'` | 方向：`horizontal`, `vertical` |
-| `attached` | `boolean` | `true` | 是否连接按钮（无间隙） |
-| `spacing` | `string` | `null` | 间距（仅当 `attached=false` 时）：`xs`, `sm`, `md`, `lg` |
+| `attached` | `boolean` | `true` | 是否连接button（无间隙） |
+| `spacing` | `string` | `null` | Spacing（仅当 `attached=false` 时）：`xs`, `sm`, `md`, `lg` |
 
 ## 水平布局
 
 ```blade
 <x-button-group>
-    <x-button>按钮 1</x-button>
-    <x-button>按钮 2</x-button>
-    <x-button>按钮 3</x-button>
+    <x-button>button 1</x-button>
+    <x-button>button 2</x-button>
+    <x-button>button 3</x-button>
 </x-button-group>
 ```
 
@@ -34,9 +34,9 @@
 
 ```blade
 <x-button-group orientation="vertical">
-    <x-button>按钮 1</x-button>
-    <x-button>按钮 2</x-button>
-    <x-button>按钮 3</x-button>
+    <x-button>button 1</x-button>
+    <x-button>button 2</x-button>
+    <x-button>button 3</x-button>
 </x-button-group>
 ```
 
@@ -45,20 +45,20 @@
 ```blade
 <!-- 水平分离 -->
 <x-button-group :attached="false" spacing="sm">
-    <x-button>按钮 1</x-button>
-    <x-button>按钮 2</x-button>
-    <x-button>按钮 3</x-button>
+    <x-button>button 1</x-button>
+    <x-button>button 2</x-button>
+    <x-button>button 3</x-button>
 </x-button-group>
 
 <!-- 垂直分离 -->
 <x-button-group orientation="vertical" :attached="false" spacing="md">
-    <x-button>按钮 1</x-button>
-    <x-button>按钮 2</x-button>
-    <x-button>按钮 3</x-button>
+    <x-button>button 1</x-button>
+    <x-button>button 2</x-button>
+    <x-button>button 3</x-button>
 </x-button-group>
 ```
 
-## 常见用法
+## Common Patterns
 
 ### 工具栏
 
@@ -96,7 +96,7 @@
 </x-button-group>
 ```
 
-### 图标按钮组
+### Iconsbutton组
 
 ```blade
 <x-button-group>
@@ -108,14 +108,14 @@
 ## 与其他变体组合
 
 ```blade
-<!-- 不同颜色 -->
+<!-- Different colors -->
 <x-button-group>
     <x-button color="primary">主要</x-button>
     <x-button color="secondary">次要</x-button>
     <x-button color="success">成功</x-button>
 </x-button-group>
 
-<!-- 不同尺寸 -->
+<!-- Different sizes -->
 <x-button-group>
     <x-button size="sm">小</x-button>
     <x-button size="sm">中</x-button>

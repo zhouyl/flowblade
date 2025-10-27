@@ -1,18 +1,18 @@
 # Text
 
-文本组件，用于显示段落文本。
+text组件，用于显示段落text。
 
-## 基本用法
+## Basic Usage
 
 ```blade
-<x-text>这是一段文本</x-text>
+<x-text>这是一段text</x-text>
 ```
 
 ## Props
 
-| 属性 | 类型 | 默认值 | 说明 |
+| Prop | Type | Default | Description |
 |------|------|--------|------|
-| `as` | `string` | `'p'` | HTML 标签 |
+| `as` | `string` | `'p'` | HTML tag |
 | `size` | `string` | `null` | 文字尺寸：`2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
 | `weight` | `string` | `null` | 字重：`normal`, `medium`, `semibold`, `bold` |
 | `color` | `string` | `null` | 文字颜色 |
@@ -20,14 +20,14 @@
 | `truncate` | `boolean` | `false` | 是否截断 |
 | `lineClamp` | `string` | `null` | 行数限制：`1`, `2`, `3`, `4`, `5`, `6` |
 
-## 尺寸
+## Sizes
 
 ```blade
-<x-text size="xs">超小文本</x-text>
-<x-text size="sm">小文本</x-text>
-<x-text size="md">中等文本</x-text>
-<x-text size="lg">大文本</x-text>
-<x-text size="xl">超大文本</x-text>
+<x-text size="xs">超小text</x-text>
+<x-text size="sm">小text</x-text>
+<x-text size="md">中等text</x-text>
+<x-text size="lg">大text</x-text>
+<x-text size="xl">超大text</x-text>
 ```
 
 ## 字重
@@ -39,17 +39,17 @@
 <x-text weight="bold">粗体</x-text>
 ```
 
-## 颜色
+## Colors
 
 ```blade
-<x-text color="primary">主色文本</x-text>
-<x-text color="success">成功色文本</x-text>
-<x-text color="warning">警告色文本</x-text>
-<x-text color="danger">危险色文本</x-text>
-<x-text color="gray">灰色文本</x-text>
+<x-text color="primary">主色text</x-text>
+<x-text color="success">成功色text</x-text>
+<x-text color="warning">警告色text</x-text>
+<x-text color="danger">危险色text</x-text>
+<x-text color="gray">灰色text</x-text>
 ```
 
-## 对齐
+## Alignment
 
 ```blade
 <x-text align="left">左对齐</x-text>
@@ -63,19 +63,19 @@
 ```blade
 <!-- 单行截断 -->
 <x-text truncate class="w-64">
-    这是一段很长的文本，超出容器宽度时会被截断并显示省略号
+    这是一段很长的text，超出容器宽度时会被截断并显示省略号
 </x-text>
 
 <!-- 多行截断 -->
 <x-text line-clamp="2" class="w-64">
-    这是一段很长的文本，会在第二行末尾截断并显示省略号。
+    这是一段很长的text，会在第二行末尾截断并显示省略号。
     超出的内容将被隐藏。
 </x-text>
 ```
 
-## 常见用法
+## Common Patterns
 
-### 段落文本
+### 段落text
 
 ```blade
 <x-text class="mb-4">
@@ -84,7 +84,7 @@
 </x-text>
 ```
 
-### 描述文本
+### 描述text
 
 ```blade
 <x-text size="sm" color="gray">
@@ -92,7 +92,7 @@
 </x-text>
 ```
 
-### 引导文本
+### 引导text
 
 ```blade
 <x-text size="lg" class="mb-6">

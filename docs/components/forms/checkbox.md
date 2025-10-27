@@ -1,8 +1,8 @@
 # Checkbox
 
-复选框组件。
+checkbox组件。
 
-## 基本用法
+## Basic Usage
 
 ```blade
 <x-checkbox />
@@ -10,15 +10,15 @@
 
 ## Props
 
-| 属性 | 类型 | 默认值 | 说明 |
+| Prop | Type | Default | Description |
 |------|------|--------|------|
 | `size` | `string` | `'md'` | 尺寸：`sm`, `md`, `lg` |
 | `color` | `string` | `'primary'` | 颜色：`primary`, `secondary`, `success`, `warning`, `danger`, `info` |
-| `disabled` | `boolean` | `false` | 是否禁用 |
-| `invalid` | `boolean` | `false` | 是否无效 |
+| `disabled` | `boolean` | `false` | Disabled state |
+| `invalid` | `boolean` | `false` | Invalid state |
 | `value` | `string` | `null` | 值 |
 
-## 尺寸
+## Sizes
 
 ```blade
 <x-checkbox size="sm" />
@@ -26,7 +26,7 @@
 <x-checkbox size="lg" />
 ```
 
-## 颜色
+## Colors
 
 ```blade
 <x-checkbox color="primary" checked />
@@ -35,7 +35,7 @@
 <x-checkbox color="danger" checked />
 ```
 
-## 状态
+## States
 
 ```blade
 <!-- 禁用 -->
@@ -45,7 +45,7 @@
 <x-checkbox invalid />
 ```
 
-## 常见用法
+## Common Patterns
 
 ### 带标签
 
@@ -56,7 +56,7 @@
 </label>
 ```
 
-### 复选框组
+### checkbox组
 
 ```blade
 <div class="space-y-2">
@@ -79,7 +79,7 @@
 
 ```blade
 <div>
-    <label class="block text-sm font-medium mb-2">选择功能</label>
+    <label class="block text-sm font-medium mb-2">Select features</label>
     <div class="space-y-2">
         <label class="flex items-center gap-2">
             <x-checkbox name="features[]" value="feature1" />
