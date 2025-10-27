@@ -158,6 +158,17 @@ return [
             '3xl' => 'w-16 h-16',
             '4xl' => 'w-20 h-20',
         ],
+        'icon_button' => [
+            '2xs' => 'p-0.5 text-xs',
+            'xs' => 'p-1 text-xs',
+            'sm' => 'p-1.5 text-sm',
+            'md' => 'p-2 text-base',
+            'lg' => 'p-2.5 text-lg',
+            'xl' => 'p-3 text-xl',
+            '2xl' => 'p-3.5 text-2xl',
+            '3xl' => 'p-4 text-3xl',
+            '4xl' => 'p-5 text-4xl',
+        ],
         'spacing' => [
             '2xs' => '0.5',
             'xs' => '1',

@@ -82,6 +82,9 @@ class FlowbladeServiceProvider extends ServiceProvider
 
             // Button Components
             'button' => Components\Buttons\Button::class,
+            'icon-button' => Components\Buttons\IconButton::class,
+            'close-button' => Components\Buttons\CloseButton::class,
+            'button-group' => Components\Buttons\ButtonGroup::class,
 
             // Data Display Components
             'icon' => Components\DataDisplay\Icon::class,
