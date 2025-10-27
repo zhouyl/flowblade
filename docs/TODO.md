@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 66/60+ (110%)
+**组件进度**: 67/60+ (112%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -203,9 +203,9 @@
 - [x] Badge - 徽章
 - [x] Card - 卡片（含 CardHeader, CardBody, CardFooter）
 - [x] Icon - 图标
+- [x] Stat - 统计
 - [x] Tag - 标签
 - [ ] TagsInput - 标签输入
-- [ ] Stat - 统计
 - [ ] QrCode - 二维码
 - [ ] Rating - 评分
 - [ ] ColorSwatch - 色块
