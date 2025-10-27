@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 54/60+ (90%)
+**组件进度**: 56/60+ (93%)
 
 ### Phase 7: 集合组件 (4个) - 进行中
 
@@ -170,7 +170,7 @@
 
 - [ ] Table - 表格
 - [x] DataList - 数据列表
-- [ ] Timeline - 时间线
+- [x] Timeline - 时间线
 - [ ] TreeView - 树形视图
 
 ### Phase 8: 覆盖层组件 (7个)
