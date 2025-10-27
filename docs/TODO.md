@@ -149,7 +149,7 @@
 
 **开始时间**: 2025-10-27
 
-- [ ] Slider - 滑块
+- [x] Slider - 滑块
 - [ ] RangeSlider - 范围滑块
 - [x] Field - 表单字段
 - [x] Fieldset - 字段集
@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 50/60+ (83%)
+**组件进度**: 51/60+ (85%)
 
 ### Phase 7: 集合组件 (4个)
 
