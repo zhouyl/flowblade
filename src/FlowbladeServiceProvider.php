@@ -118,6 +118,9 @@ class FlowbladeServiceProvider extends ServiceProvider
             'accordion-item' => Components\Disclosure\AccordionItem::class,
             'collapsible' => Components\Disclosure\Collapsible::class,
 
+            // Feedback Components
+            'alert' => Components\Feedback\Alert::class,
+
             // Typography Components
             'heading' => Components\Typography\Heading::class,
             'text' => Components\Typography\Text::class,
