@@ -152,7 +152,7 @@
 - [ ] Slider - 滑块
 - [ ] RangeSlider - 范围滑块
 - [x] Field - 表单字段
-- [ ] Fieldset - 字段集
+- [x] Fieldset - 字段集
 - [x] InputGroup - 输入组
 - [x] InputAddon - 输入附加
 - [x] InputElement - 输入元素
@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 47/60+ (78%)
+**组件进度**: 48/60+ (80%)
 
 ### Phase 7: 集合组件 (4个)
 
