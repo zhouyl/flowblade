@@ -120,6 +120,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'input-addon' => Components\Forms\InputAddon::class,
             'input-element' => Components\Forms\InputElement::class,
             'editable' => Components\Forms\Editable::class,
+            'file-upload' => Components\Forms\FileUpload::class,
         ];
     }
 }

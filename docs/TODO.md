@@ -156,12 +156,12 @@
 - [x] InputGroup - 输入组
 - [x] InputAddon - 输入附加
 - [x] InputElement - 输入元素
-- [ ] FileUpload - 文件上传
+- [x] FileUpload - 文件上传
 - [x] Editable - 可编辑
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 49/60+ (81%)
+**组件进度**: 50/60+ (83%)
 
 ### Phase 7: 集合组件 (4个)
 
