@@ -5,8 +5,8 @@
 - **仓库**: https://github.com/zhouyl/flowblade
 - **Packagist**: mellivora/flowblade
 - **当前版本**: 0.1.0-dev
-- **Laravel**: ^11.0
-- **PHP**: ^8.3
+- **Laravel**: ^11.0|^12.0
+- **PHP**: ^8.3|^8.4
 
 ---
 

@@ -13,7 +13,9 @@ Layout components help you structure your page and organize content.
 - [Flex](layout/flex.md) - Flexible box layout with full control
 - [Grid](layout/grid.md) - CSS Grid layout component
 - [SimpleGrid](layout/simple-grid.md) - Simplified grid with responsive columns
-- [Stack / HStack / VStack](layout/stack.md) - Stack elements with consistent spacing
+- [Stack](layout/stack.md) - Stack elements with consistent spacing
+- [HStack](layout/hstack.md) - Horizontal stack layout
+- [VStack](layout/vstack.md) - Vertical stack layout
 - [Wrap](layout/wrap.md) - Flex layout that automatically wraps items
 - [Separator](layout/separator.md) - Visual divider/separator line
 - [Spacer](layout/spacer.md) - Flexible space filler in flex layouts
@@ -26,6 +28,35 @@ Layout components help you structure your page and organize content.
 Interactive button components with various styles and states.
 
 - [Button](buttons/button.md) - Versatile button with multiple variants
+- [IconButton](buttons/icon-button.md) - Icon-only button component
+- [CloseButton](buttons/close-button.md) - Close button for dialogs and notifications
+- [ButtonGroup](buttons/button-group.md) - Group buttons together
+
+## Typography Components
+
+Text and typography components for content display.
+
+- [Heading](typography/heading.md) - Heading component (h1-h6)
+- [Text](typography/text.md) - Text and paragraph component
+- Link - Link component with external support
+- Code - Inline code snippets
+- CodeBlock - Code blocks with syntax highlighting
+- Kbd - Keyboard key display
+- Mark - Highlighted text
+- Em - Italic/emphasis text
+- Strong - Bold text
+- Blockquote - Quote blocks
+- Highlight - Text highlighting with search
+- List - Styled lists (ul/ol)
+
+## Form Components
+
+Form input components with validation support.
+
+- [Input](forms/input.md) - Text input with variants
+- [Textarea](forms/textarea.md) - Multi-line text input
+- [Checkbox](forms/checkbox.md) - Checkbox component
+- [Radio](forms/radio.md) - Radio button component
 
 ## Data Display Components
 
