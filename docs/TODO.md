@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 70/60+ (117%)
+**组件进度**: 74/60+ (123%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -213,7 +213,7 @@
 **开始时间**: 2025-10-27
 
 - [ ] Accordion - 手风琴
-- [ ] Tabs - 标签页
+- [x] Tabs - 标签页（含 TabsList, TabsTrigger, TabsContent，支持 line/enclosed/pills 三种模式）
 - [x] Breadcrumb - 面包屑（含 BreadcrumbItem）
 - [x] Pagination - 分页（支持 simple/default/verbose 三种模式，支持 Laravel Paginator）
 - [ ] Steps - 步骤条

@@ -108,6 +108,10 @@ class FlowbladeServiceProvider extends ServiceProvider
             'breadcrumb' => Components\Navigation\Breadcrumb::class,
             'breadcrumb-item' => Components\Navigation\BreadcrumbItem::class,
             'pagination' => Components\Navigation\Pagination::class,
+            'tabs' => Components\Navigation\Tabs::class,
+            'tabs-list' => Components\Navigation\TabsList::class,
+            'tabs-trigger' => Components\Navigation\TabsTrigger::class,
+            'tabs-content' => Components\Navigation\TabsContent::class,
 
             // Typography Components
             'heading' => Components\Typography\Heading::class,
