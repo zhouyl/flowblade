@@ -63,28 +63,28 @@ class FlowbladeServiceProvider extends ServiceProvider
     {
         return [
             // Layout Components
-            'box' => \Flowblade\Components\Box::class,
-            'container' => \Flowblade\Components\Container::class,
-            'center' => \Flowblade\Components\Center::class,
-            'absolute-center' => \Flowblade\Components\AbsoluteCenter::class,
-            'flex' => \Flowblade\Components\Flex::class,
-            'grid' => \Flowblade\Components\Grid::class,
-            'simple-grid' => \Flowblade\Components\SimpleGrid::class,
-            'stack' => \Flowblade\Components\Stack::class,
-            'hstack' => \Flowblade\Components\HStack::class,
-            'vstack' => \Flowblade\Components\VStack::class,
-            'wrap' => \Flowblade\Components\Wrap::class,
-            'separator' => \Flowblade\Components\Separator::class,
-            'spacer' => \Flowblade\Components\Spacer::class,
-            'group' => \Flowblade\Components\Group::class,
-            'aspect-ratio' => \Flowblade\Components\AspectRatio::class,
-            'scroll-area' => \Flowblade\Components\ScrollArea::class,
+            'box' => \Flowblade\Components\Layout\Box::class,
+            'container' => \Flowblade\Components\Layout\Container::class,
+            'center' => \Flowblade\Components\Layout\Center::class,
+            'absolute-center' => \Flowblade\Components\Layout\AbsoluteCenter::class,
+            'flex' => \Flowblade\Components\Layout\Flex::class,
+            'grid' => \Flowblade\Components\Layout\Grid::class,
+            'simple-grid' => \Flowblade\Components\Layout\SimpleGrid::class,
+            'stack' => \Flowblade\Components\Layout\Stack::class,
+            'hstack' => \Flowblade\Components\Layout\HStack::class,
+            'vstack' => \Flowblade\Components\Layout\VStack::class,
+            'wrap' => \Flowblade\Components\Layout\Wrap::class,
+            'separator' => \Flowblade\Components\Layout\Separator::class,
+            'spacer' => \Flowblade\Components\Layout\Spacer::class,
+            'group' => \Flowblade\Components\Layout\Group::class,
+            'aspect-ratio' => \Flowblade\Components\Layout\AspectRatio::class,
+            'scroll-area' => \Flowblade\Components\Layout\ScrollArea::class,
 
             // Button Components
-            'button' => \Flowblade\Components\Button::class,
+            'button' => \Flowblade\Components\Buttons\Button::class,
 
             // Data Display Components
-            'icon' => \Flowblade\Components\Icon::class,
+            'icon' => \Flowblade\Components\DataDisplay\Icon::class,
         ];
     }
 }

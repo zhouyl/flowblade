@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -131,7 +131,7 @@ class Flex extends Component
      */
     public function render()
     {
-        return view('flowblade::components.flex');
+        return view('flowblade::components.layout.flex');
     }
 }
 

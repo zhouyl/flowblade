@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Buttons;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -68,7 +68,7 @@ class Button extends Component
      */
     public function render()
     {
-        return view('flowblade::components.button');
+        return view('flowblade::components.buttons.button');
     }
 }
 

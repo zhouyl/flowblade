@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -38,7 +38,7 @@ class AbsoluteCenter extends Component
 
     public function render()
     {
-        return view('flowblade::components.absolute-center');
+        return view('flowblade::components.layout.absolute-center');
     }
 }
 

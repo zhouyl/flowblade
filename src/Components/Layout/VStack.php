@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 /**
  * VStack Component

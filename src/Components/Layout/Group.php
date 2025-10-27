@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Illuminate\View\Component;
 
@@ -17,7 +17,7 @@ class Group extends Component
 
     public function render()
     {
-        return view('flowblade::components.group');
+        return view('flowblade::components.layout.group');
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -70,7 +70,7 @@ class AspectRatio extends Component
 
     public function render()
     {
-        return view('flowblade::components.aspect-ratio');
+        return view('flowblade::components.layout.aspect-ratio');
     }
 }
 

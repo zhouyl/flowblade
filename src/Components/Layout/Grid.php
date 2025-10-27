@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -135,7 +135,7 @@ class Grid extends Component
      */
     public function render()
     {
-        return view('flowblade::components.grid');
+        return view('flowblade::components.layout.grid');
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -74,7 +74,7 @@ class SimpleGrid extends Component
 
     public function render()
     {
-        return view('flowblade::components.simple-grid');
+        return view('flowblade::components.layout.simple-grid');
     }
 }
 

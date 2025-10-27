@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\DataDisplay;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -43,7 +43,7 @@ class Icon extends Component
      */
     public function render()
     {
-        return view('flowblade::components.icon');
+        return view('flowblade::components.data-display.icon');
     }
 }
 

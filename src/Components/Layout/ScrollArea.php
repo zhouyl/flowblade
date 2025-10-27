@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -55,7 +55,7 @@ class ScrollArea extends Component
 
     public function render()
     {
-        return view('flowblade::components.scroll-area');
+        return view('flowblade::components.layout.scroll-area');
     }
 }
 

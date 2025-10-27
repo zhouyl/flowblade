@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -81,7 +81,7 @@ class Separator extends Component
      */
     public function render()
     {
-        return view('flowblade::components.separator');
+        return view('flowblade::components.layout.separator');
     }
 }
 

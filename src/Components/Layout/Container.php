@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -85,7 +85,7 @@ class Container extends Component
      */
     public function render()
     {
-        return view('flowblade::components.container');
+        return view('flowblade::components.layout.container');
     }
 }
 

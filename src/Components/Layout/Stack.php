@@ -1,6 +1,6 @@
 <?php
 
-namespace Flowblade\Components;
+namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
@@ -114,7 +114,7 @@ class Stack extends Component
      */
     public function render()
     {
-        return view('flowblade::components.stack');
+        return view('flowblade::components.layout.stack');
     }
 }
 
