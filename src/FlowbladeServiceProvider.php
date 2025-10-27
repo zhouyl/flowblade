@@ -110,6 +110,8 @@ class FlowbladeServiceProvider extends ServiceProvider
             'radio' => Components\Forms\Radio::class,
             'switch' => Components\Forms\SwitchInput::class,
             'native-select' => Components\Forms\NativeSelect::class,
+            'pin-input' => Components\Forms\PinInput::class,
+            'number-input' => Components\Forms\NumberInput::class,
         ];
     }
 }
