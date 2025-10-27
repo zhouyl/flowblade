@@ -1,11 +1,11 @@
 # Heading
 
-heading组件，用于显示各级heading。
+Heading component for displaying headings at various levels.
 
 ## Basic Usage
 
 ```blade
-<x-heading>这是一个heading</x-heading>
+<x-heading>This is a heading</x-heading>
 ```
 
 ## Props
@@ -13,81 +13,81 @@ heading组件，用于显示各级heading。
 | Prop | Type | Default | Description |
 |------|------|--------|------|
 | `as` | `string` | `'h2'` | HTML tag：`h1`, `h2`, `h3`, `h4`, `h5`, `h6` |
-| `size` | `string` | `null` | 文字尺寸：`2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
-| `weight` | `string` | `null` | 字重：`normal`, `medium`, `semibold`, `bold`, `extrabold` |
-| `color` | `string` | `null` | 文字颜色 |
+| `size` | `string` | `null` | Text size: `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
+| `weight` | `string` | `null` | Font weight: `normal`, `medium`, `semibold`, `bold`, `extrabold` |
+| `color` | `string` | `null` | Text color |
 
 ## Heading level
 
 ```blade
-<x-heading as="h1">一级heading</x-heading>
-<x-heading as="h2">二级heading</x-heading>
-<x-heading as="h3">三级heading</x-heading>
-<x-heading as="h4">四级heading</x-heading>
-<x-heading as="h5">五级heading</x-heading>
-<x-heading as="h6">六级heading</x-heading>
+<x-heading as="h1">Heading Level 1</x-heading>
+<x-heading as="h2">Heading Level 2</x-heading>
+<x-heading as="h3">Heading Level 3</x-heading>
+<x-heading as="h4">Heading Level 4</x-heading>
+<x-heading as="h5">Heading Level 5</x-heading>
+<x-heading as="h6">Heading Level 6</x-heading>
 ```
 
-## 自定义尺寸
+## Custom Sizes
 
 ```blade
-<x-heading size="4xl">超大heading</x-heading>
-<x-heading size="3xl">特大heading</x-heading>
-<x-heading size="2xl">大heading</x-heading>
-<x-heading size="xl">较大heading</x-heading>
-<x-heading size="lg">中等heading</x-heading>
+<x-heading size="4xl">Extra large heading</x-heading>
+<x-heading size="3xl">Very large heading</x-heading>
+<x-heading size="2xl">Large heading</x-heading>
+<x-heading size="xl">Larger heading</x-heading>
+<x-heading size="lg">Medium heading</x-heading>
 ```
 
-## 字重
+## Font Weight
 
 ```blade
-<x-heading weight="normal">普通字重</x-heading>
-<x-heading weight="medium">中等字重</x-heading>
-<x-heading weight="semibold">半粗体</x-heading>
-<x-heading weight="bold">粗体</x-heading>
-<x-heading weight="extrabold">特粗体</x-heading>
+<x-heading weight="normal">Normal weight</x-heading>
+<x-heading weight="medium">Medium weight</x-heading>
+<x-heading weight="semibold">Semibold</x-heading>
+<x-heading weight="bold">Bold</x-heading>
+<x-heading weight="extrabold">Extra bold</x-heading>
 ```
 
 ## Colors
 
 ```blade
-<x-heading color="primary">主色heading</x-heading>
-<x-heading color="success">成功色heading</x-heading>
-<x-heading color="danger">危险色heading</x-heading>
+<x-heading color="primary">Primary heading</x-heading>
+<x-heading color="success">Success heading</x-heading>
+<x-heading color="danger">Danger heading</x-heading>
 ```
 
 ## Common Patterns
 
-### 页面heading
+### Page Heading
 
 ```blade
 <x-heading as="h1" size="4xl" class="mb-4">
-    欢迎使用 Flowblade
+    Welcome to Flowblade
 </x-heading>
 <x-text size="lg" color="gray">
-    基于 Tailwind CSS 的 Laravel Blade 组件库
+    Laravel Blade component library based on Tailwind CSS
 </x-text>
 ```
 
-### 章节heading
+### Section Heading
 
 ```blade
 <x-heading as="h2" size="2xl" class="mb-3">
-    功能特性
+    Features
 </x-heading>
 <x-text>
-    Flowblade 提供了丰富的组件...
+    Flowblade provides rich components...
 </x-text>
 ```
 
-### 卡片heading
+### Card Heading
 
 ```blade
 <div class="p-6 bg-white rounded-lg shadow">
     <x-heading as="h3" size="lg" class="mb-2">
-        卡片heading
+        Card Heading
     </x-heading>
-    <x-text>卡片内容...</x-text>
+    <x-text>Card content...</x-text>
 </div>
 ```
 

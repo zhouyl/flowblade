@@ -1,6 +1,6 @@
 # Radio
 
-radio组件。
+Radio button component.
 
 ## Basic Usage
 
@@ -12,11 +12,11 @@ radio组件。
 
 | Prop | Type | Default | Description |
 |------|------|--------|------|
-| `size` | `string` | `'md'` | 尺寸：`sm`, `md`, `lg` |
-| `color` | `string` | `'primary'` | 颜色：`primary`, `secondary`, `success`, `warning`, `danger`, `info` |
+| `size` | `string` | `'md'` | Size: `sm`, `md`, `lg` |
+| `color` | `string` | `'primary'` | Color: `primary`, `secondary`, `success`, `warning`, `danger`, `info` |
 | `disabled` | `boolean` | `false` | Disabled state |
 | `invalid` | `boolean` | `false` | Invalid state |
-| `value` | `string` | `null` | 值 |
+| `value` | `string` | `null` | Value |
 
 ## Sizes
 
@@ -38,10 +38,10 @@ radio组件。
 ## States
 
 ```blade
-<!-- 禁用 -->
+<!-- Disabled -->
 <x-radio disabled name="option" />
 
-<!-- 无效 -->
+<!-- Invalid -->
 <x-radio invalid name="option" />
 ```
 
@@ -53,41 +53,41 @@ radio组件。
 <div class="space-y-2">
     <label class="flex items-center gap-2">
         <x-radio name="plan" value="free" />
-        <span>免费版</span>
+        <span>Free</span>
     </label>
     <label class="flex items-center gap-2">
         <x-radio name="plan" value="pro" />
-        <span>专业版</span>
+        <span>Pro</span>
     </label>
     <label class="flex items-center gap-2">
         <x-radio name="plan" value="enterprise" />
-        <span>企业版</span>
+        <span>Enterprise</span>
     </label>
 </div>
 ```
 
-### 带描述
+### With Description
 
 ```blade
 <div class="space-y-3">
     <label class="flex items-start gap-3">
         <x-radio name="plan" value="basic" class="mt-1" />
         <div>
-            <div class="font-medium">基础版</div>
-            <div class="text-sm text-gray-500">适合个人使用</div>
+            <div class="font-medium">Basic</div>
+            <div class="text-sm text-gray-500">For personal use</div>
         </div>
     </label>
     <label class="flex items-start gap-3">
         <x-radio name="plan" value="pro" class="mt-1" />
         <div>
-            <div class="font-medium">专业版</div>
-            <div class="text-sm text-gray-500">适合团队使用</div>
+            <div class="font-medium">Pro</div>
+            <div class="text-sm text-gray-500">For team use</div>
         </div>
     </label>
 </div>
 ```
 
-### 表单字段
+### Form Field
 
 ```blade
 <div>
@@ -95,7 +95,7 @@ radio组件。
     <div class="space-y-2">
         <label class="flex items-center gap-2">
             <x-radio name="payment" value="credit_card" />
-            <span>信用卡</span>
+            <span>Credit Card</span>
         </label>
         <label class="flex items-center gap-2">
             <x-radio name="payment" value="paypal" />
@@ -103,23 +103,23 @@ radio组件。
         </label>
         <label class="flex items-center gap-2">
             <x-radio name="payment" value="alipay" />
-            <span>支付宝</span>
+            <span>Alipay</span>
         </label>
     </div>
 </div>
 ```
 
-## Livewire 集成
+## Livewire Integration
 
 ```blade
 <div class="space-y-2">
     <label class="flex items-center gap-2">
         <x-radio wire:model="selectedPlan" value="free" />
-        <span>免费版</span>
+        <span>Free</span>
     </label>
     <label class="flex items-center gap-2">
         <x-radio wire:model="selectedPlan" value="pro" />
-        <span>专业版</span>
+        <span>Pro</span>
     </label>
 </div>
 
@@ -128,18 +128,18 @@ radio组件。
 </p>
 ```
 
-## Alpine.js 集成
+## Alpine.js Integration
 
 ```blade
 <div x-data="{ selected: 'option1' }">
     <div class="space-y-2">
         <label class="flex items-center gap-2">
             <x-radio x-model="selected" value="option1" />
-            <span>选项 1</span>
+            <span>Option 1</span>
         </label>
         <label class="flex items-center gap-2">
             <x-radio x-model="selected" value="option2" />
-            <span>选项 2</span>
+            <span>Option 2</span>
         </label>
     </div>
     <p class="mt-4" x-text="'Selected: ' + selected"></p>

@@ -1,6 +1,6 @@
 # Checkbox
 
-checkbox组件。
+Checkbox component.
 
 ## Basic Usage
 
@@ -12,11 +12,11 @@ checkbox组件。
 
 | Prop | Type | Default | Description |
 |------|------|--------|------|
-| `size` | `string` | `'md'` | 尺寸：`sm`, `md`, `lg` |
-| `color` | `string` | `'primary'` | 颜色：`primary`, `secondary`, `success`, `warning`, `danger`, `info` |
+| `size` | `string` | `'md'` | Size: `sm`, `md`, `lg` |
+| `color` | `string` | `'primary'` | Color: `primary`, `secondary`, `success`, `warning`, `danger`, `info` |
 | `disabled` | `boolean` | `false` | Disabled state |
 | `invalid` | `boolean` | `false` | Invalid state |
-| `value` | `string` | `null` | 值 |
+| `value` | `string` | `null` | Value |
 
 ## Sizes
 
@@ -38,44 +38,44 @@ checkbox组件。
 ## States
 
 ```blade
-<!-- 禁用 -->
+<!-- Disabled -->
 <x-checkbox disabled />
 
-<!-- 无效 -->
+<!-- Invalid -->
 <x-checkbox invalid />
 ```
 
 ## Common Patterns
 
-### 带标签
+### With Label
 
 ```blade
 <label class="flex items-center gap-2">
     <x-checkbox name="agree" />
-    <span>我同意服务条款</span>
+    <span>I agree to the terms of service</span>
 </label>
 ```
 
-### checkbox组
+### Checkbox Group
 
 ```blade
 <div class="space-y-2">
     <label class="flex items-center gap-2">
         <x-checkbox name="interests[]" value="reading" />
-        <span>阅读</span>
+        <span>Reading</span>
     </label>
     <label class="flex items-center gap-2">
         <x-checkbox name="interests[]" value="music" />
-        <span>音乐</span>
+        <span>Music</span>
     </label>
     <label class="flex items-center gap-2">
         <x-checkbox name="interests[]" value="sports" />
-        <span>运动</span>
+        <span>Sports</span>
     </label>
 </div>
 ```
 
-### 表单字段
+### Form Field
 
 ```blade
 <div>
@@ -83,25 +83,25 @@ checkbox组件。
     <div class="space-y-2">
         <label class="flex items-center gap-2">
             <x-checkbox name="features[]" value="feature1" />
-            <span>功能 1</span>
+            <span>Feature 1</span>
         </label>
         <label class="flex items-center gap-2">
             <x-checkbox name="features[]" value="feature2" />
-            <span>功能 2</span>
+            <span>Feature 2</span>
         </label>
     </div>
 </div>
 ```
 
-## Livewire 集成
+## Livewire Integration
 
 ```blade
 <label class="flex items-center gap-2">
     <x-checkbox wire:model="agreed" />
-    <span>我同意条款</span>
+    <span>I agree to the terms</span>
 </label>
 
-<!-- 多选 -->
+<!-- Multiple selection -->
 <div class="space-y-2">
     @foreach($options as $option)
         <label class="flex items-center gap-2">
@@ -115,16 +115,16 @@ checkbox组件。
 </div>
 ```
 
-## Alpine.js 集成
+## Alpine.js Integration
 
 ```blade
 <div x-data="{ checked: false }">
     <label class="flex items-center gap-2">
         <x-checkbox x-model="checked" />
-        <span>选项</span>
+        <span>Option</span>
     </label>
     <p x-show="checked" class="mt-2 text-sm text-green-600">
-        已选中
+        Selected
     </p>
 </div>
 ```

@@ -1,14 +1,14 @@
 # ButtonGroup
 
-button组组件，用于将多个button组合在一起显示。
+Button group component for grouping multiple buttons together.
 
 ## Basic Usage
 
 ```blade
 <x-button-group>
-    <x-button>左</x-button>
-    <x-button>中</x-button>
-    <x-button>右</x-button>
+    <x-button>Left</x-button>
+    <x-button>Center</x-button>
+    <x-button>Right</x-button>
 </x-button-group>
 ```
 
@@ -16,11 +16,11 @@ button组组件，用于将多个button组合在一起显示。
 
 | Prop | Type | Default | Description |
 |------|------|--------|------|
-| `orientation` | `string` | `'horizontal'` | 方向：`horizontal`, `vertical` |
-| `attached` | `boolean` | `true` | 是否连接button（无间隙） |
-| `spacing` | `string` | `null` | Spacing（仅当 `attached=false` 时）：`xs`, `sm`, `md`, `lg` |
+| `orientation` | `string` | `'horizontal'` | Orientation: `horizontal`, `vertical` |
+| `attached` | `boolean` | `true` | Connect buttons (no gap) |
+| `spacing` | `string` | `null` | Spacing (only when `attached=false`)：`xs`, `sm`, `md`, `lg` |
 
-## 水平布局
+## Horizontal Layout
 
 ```blade
 <x-button-group>
@@ -30,7 +30,7 @@ button组组件，用于将多个button组合在一起显示。
 </x-button-group>
 ```
 
-## 垂直布局
+## Vertical Layout
 
 ```blade
 <x-button-group orientation="vertical">
@@ -40,17 +40,17 @@ button组组件，用于将多个button组合在一起显示。
 </x-button-group>
 ```
 
-## 分离模式
+## Separated Mode
 
 ```blade
-<!-- 水平分离 -->
+<!-- Horizontal separated -->
 <x-button-group :attached="false" spacing="sm">
     <x-button>button 1</x-button>
     <x-button>button 2</x-button>
     <x-button>button 3</x-button>
 </x-button-group>
 
-<!-- 垂直分离 -->
+<!-- Vertical separated -->
 <x-button-group orientation="vertical" :attached="false" spacing="md">
     <x-button>button 1</x-button>
     <x-button>button 2</x-button>
@@ -60,7 +60,7 @@ button组组件，用于将多个button组合在一起显示。
 
 ## Common Patterns
 
-### 工具栏
+### Toolbar
 
 ```blade
 <x-button-group>
@@ -76,27 +76,27 @@ button组组件，用于将多个button组合在一起显示。
 </x-button-group>
 ```
 
-### 分段控制
+### Segmented Control
 
 ```blade
 <x-button-group>
-    <x-button variant="outline">日</x-button>
-    <x-button variant="outline">周</x-button>
-    <x-button variant="solid">月</x-button>
-    <x-button variant="outline">年</x-button>
+    <x-button variant="outline">Day</x-button>
+    <x-button variant="outline">Week</x-button>
+    <x-button variant="solid">Month</x-button>
+    <x-button variant="outline">Year</x-button>
 </x-button-group>
 ```
 
-### 操作组
+### Action Group
 
 ```blade
 <x-button-group>
-    <x-button color="success">保存</x-button>
-    <x-button variant="outline">取消</x-button>
+    <x-button color="success">Save</x-button>
+    <x-button variant="outline">Cancel</x-button>
 </x-button-group>
 ```
 
-### Iconsbutton组
+### Icon Button Group
 
 ```blade
 <x-button-group>
@@ -105,25 +105,25 @@ button组组件，用于将多个button组合在一起显示。
 </x-button-group>
 ```
 
-## 与其他变体组合
+## Combined with Other Variants
 
 ```blade
 <!-- Different colors -->
 <x-button-group>
-    <x-button color="primary">主要</x-button>
-    <x-button color="secondary">次要</x-button>
-    <x-button color="success">成功</x-button>
+    <x-button color="primary">Primary</x-button>
+    <x-button color="secondary">Secondary</x-button>
+    <x-button color="success">Success</x-button>
 </x-button-group>
 
 <!-- Different sizes -->
 <x-button-group>
-    <x-button size="sm">小</x-button>
-    <x-button size="sm">中</x-button>
-    <x-button size="sm">大</x-button>
+    <x-button size="sm">Small</x-button>
+    <x-button size="sm">Center</x-button>
+    <x-button size="sm">Large</x-button>
 </x-button-group>
 ```
 
-## Alpine.js 集成
+## Alpine.js Integration
 
 ```blade
 <div x-data="{ active: 'tab1' }">
@@ -132,19 +132,19 @@ button组组件，用于将多个button组合在一起显示。
             @click="active = 'tab1'"
             :variant="active === 'tab1' ? 'solid' : 'outline'"
         >
-            标签 1
+            Tag 1
         </x-button>
         <x-button 
             @click="active = 'tab2'"
             :variant="active === 'tab2' ? 'solid' : 'outline'"
         >
-            标签 2
+            Tag 2
         </x-button>
         <x-button 
             @click="active = 'tab3'"
             :variant="active === 'tab3' ? 'solid' : 'outline'"
         >
-            标签 3
+            Tag 3
         </x-button>
     </x-button-group>
 </div>

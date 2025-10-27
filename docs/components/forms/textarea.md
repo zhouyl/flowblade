@@ -12,68 +12,68 @@ Multi-line text input component.
 
 | Prop | Type | Default | Description |
 |------|------|--------|------|
-| `size` | `string` | `'md'` | 尺寸：`xs`, `sm`, `md`, `lg`, `xl` |
-| `variant` | `string` | `'outline'` | 变体：`outline`, `filled`, `flushed` |
+| `size` | `string` | `'md'` | Size: `xs`, `sm`, `md`, `lg`, `xl` |
+| `variant` | `string` | `'outline'` | Variant: `outline`, `filled`, `flushed` |
 | `disabled` | `boolean` | `false` | Disabled state |
 | `readonly` | `boolean` | `false` | Read-only |
 | `required` | `boolean` | `false` | Required |
 | `invalid` | `boolean` | `false` | Invalid state |
-| `placeholder` | `string` | `null` | 占位text |
-| `rows` | `int` | `3` | 行数 |
-| `resize` | `boolean` | `true` | 是否允许调整大小 |
+| `placeholder` | `string` | `null` | Placeholder text |
+| `rows` | `int` | `3` | Number of rows |
+| `resize` | `boolean` | `true` | Allow resize |
 
 ## Sizes
 
 ```blade
-<x-textarea size="sm" placeholder="小尺寸" />
-<x-textarea size="md" placeholder="中等尺寸" />
-<x-textarea size="lg" placeholder="大尺寸" />
+<x-textarea size="sm" placeholder="Small size" />
+<x-textarea size="md" placeholder="Medium size" />
+<x-textarea size="lg" placeholder="Large size" />
 ```
 
 ## Variants
 
 ```blade
 <!-- Outline -->
-<x-textarea variant="outline" placeholder="边框样式" />
+<x-textarea variant="outline" placeholder="Outline style" />
 
 <!-- Filled -->
-<x-textarea variant="filled" placeholder="填充样式" />
+<x-textarea variant="filled" placeholder="Filled style" />
 
 <!-- Flushed -->
-<x-textarea variant="flushed" placeholder="底线样式" />
+<x-textarea variant="flushed" placeholder="Flushed style" />
 ```
 
-## 行数
+## Number of rows
 
 ```blade
-<x-textarea rows="3" placeholder="3 行" />
-<x-textarea rows="5" placeholder="5 行" />
-<x-textarea rows="10" placeholder="10 行" />
+<x-textarea rows="3" placeholder="3 rows" />
+<x-textarea rows="5" placeholder="5 rows" />
+<x-textarea rows="10" placeholder="10 rows" />
 ```
 
-## 调整大小
+## Resize
 
 ```blade
-<!-- 允许调整 -->
-<x-textarea resize placeholder="可调整大小" />
+<!-- Allow resize -->
+<x-textarea resize placeholder="Resizable" />
 
-<!-- 禁止调整 -->
-<x-textarea :resize="false" placeholder="固定大小" />
+<!-- Disable resize -->
+<x-textarea :resize="false" placeholder="Fixed size" />
 ```
 
 ## States
 
 ```blade
-<!-- 禁用 -->
-<x-textarea disabled placeholder="禁用状态" />
+<!-- Disabled -->
+<x-textarea disabled placeholder="Disabled state" />
 
-<!-- 只读 -->
-<x-textarea readonly>只读内容</x-textarea>
+<!-- Read-only -->
+<x-textarea readonly>Read-only content</x-textarea>
 
 <!-- Required -->
 <x-textarea required placeholder="Required field" />
 
-<!-- 无效 -->
+<!-- Invalid -->
 <x-textarea invalid placeholder="Invalid input" />
 ```
 
@@ -83,20 +83,20 @@ Multi-line text input component.
 
 ```blade
 <div>
-    <label class="block text-sm font-medium mb-1">评论</label>
+    <label class="block text-sm font-medium mb-1">Comment</label>
     <x-textarea 
         name="comment"
         rows="4"
-        placeholder="写下你的评论..."
+        placeholder="Write your comment..."
     />
 </div>
 ```
 
-### 描述字段
+### Description Field
 
 ```blade
 <div>
-    <label class="block text-sm font-medium mb-1">产品描述</label>
+    <label class="block text-sm font-medium mb-1">Product Description</label>
     <x-textarea 
         name="description"
         rows="6"
@@ -105,7 +105,7 @@ Multi-line text input component.
 </div>
 ```
 
-### 带验证
+### With Validation
 
 ```blade
 <div>
@@ -120,17 +120,17 @@ Multi-line text input component.
 </div>
 ```
 
-## Livewire 集成
+## Livewire Integration
 
 ```blade
 <x-textarea 
     wire:model="description"
     rows="5"
-    placeholder="产品描述"
+    placeholder="Product Description"
 />
 ```
 
-## Alpine.js 集成
+## Alpine.js Integration
 
 ```blade
 <div x-data="{ content: '' }">
@@ -140,7 +140,7 @@ Multi-line text input component.
         placeholder="Enter content"
     />
     <p class="mt-2 text-sm text-gray-500">
-        字数: <span x-text="content.length"></span>
+        Character count: <span x-text="content.length"></span>
     </p>
 </div>
 ```

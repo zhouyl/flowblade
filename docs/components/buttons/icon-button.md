@@ -1,6 +1,6 @@
 # IconButton
 
-iconbutton组件，用于显示仅包含icon的button。
+Icon button component for displaying icon-only buttons.
 
 ## Basic Usage
 
@@ -80,23 +80,23 @@ iconbutton组件，用于显示仅包含icon的button。
 ```blade
 <x-icon-button 
     icon="mdi:close" 
-    aria-label="关闭对话框"
+    aria-label="Close dialog"
 />
 ```
 
 ## Common Patterns
 
-### 工具栏button
+### Toolbar Buttons
 
 ```blade
 <div class="flex gap-2">
-    <x-icon-button icon="mdi:content-save" aria-label="保存" />
-    <x-icon-button icon="mdi:printer" aria-label="打印" />
-    <x-icon-button icon="mdi:share" aria-label="分享" />
+    <x-icon-button icon="mdi:content-save" aria-label="Save" />
+    <x-icon-button icon="mdi:printer" aria-label="Print" />
+    <x-icon-button icon="mdi:share" aria-label="Share" />
 </div>
 ```
 
-### 操作button
+### Action Buttons
 
 ```blade
 <div class="flex gap-1">
@@ -105,7 +105,7 @@ iconbutton组件，用于显示仅包含icon的button。
 </div>
 ```
 
-## Livewire 集成
+## Livewire Integration
 
 ```blade
 <x-icon-button 
