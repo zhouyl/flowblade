@@ -96,6 +96,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'card-footer' => Components\DataDisplay\CardFooter::class,
             'data-list' => Components\DataDisplay\DataList::class,
             'data-list-item' => Components\DataDisplay\DataListItem::class,
+            'tag' => Components\DataDisplay\Tag::class,
             'timeline' => Components\DataDisplay\Timeline::class,
             'timeline-item' => Components\DataDisplay\TimelineItem::class,
             'table' => Components\DataDisplay\Table::class,
