@@ -102,6 +102,12 @@ class FlowbladeServiceProvider extends ServiceProvider
             'blockquote' => Components\Typography\Blockquote::class,
             'highlight' => Components\Typography\Highlight::class,
             'list' => Components\Typography\ListComponent::class,
+
+            // Form Components
+            'input' => Components\Forms\Input::class,
+            'textarea' => Components\Forms\Textarea::class,
+            'checkbox' => Components\Forms\Checkbox::class,
+            'radio' => Components\Forms\Radio::class,
         ];
     }
 }

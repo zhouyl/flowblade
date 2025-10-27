@@ -118,17 +118,21 @@
 
 **组件进度**: 33/60+ (55%)
 
-### Phase 5: 表单组件 Part 1 (9个)
+### Phase 5: 表单组件 Part 1 (9个) - 进行中
 
-- [ ] Input - 输入框
-- [ ] Textarea - 多行文本
-- [ ] Checkbox - 复选框
-- [ ] Radio - 单选框
+**开始时间**: 2025-10-27
+
+- [x] Input - 输入框
+- [x] Textarea - 多行文本
+- [x] Checkbox - 复选框
+- [x] Radio - 单选框
 - [ ] Switch - 开关
 - [ ] Select - 下拉选择
 - [ ] NativeSelect - 原生选择
 - [ ] PinInput - PIN 输入
 - [ ] NumberInput - 数字输入
+
+**组件进度**: 37/60+ (61%)
 
 ### Phase 6: 表单组件 Part 2 (11个)
 
