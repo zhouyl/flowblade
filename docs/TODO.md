@@ -162,13 +162,13 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 56/60+ (93%)
+**组件进度**: 57/60+ (95%)
 
 ### Phase 7: 集合组件 (4个) - 进行中
 
 **开始时间**: 2025-10-27
 
-- [ ] Table - 表格
+- [x] Table - 表格
 - [x] DataList - 数据列表
 - [x] Timeline - 时间线
 - [ ] TreeView - 树形视图
