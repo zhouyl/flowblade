@@ -89,6 +89,10 @@ class FlowbladeServiceProvider extends ServiceProvider
             // Data Display Components
             'icon' => Components\DataDisplay\Icon::class,
             'badge' => Components\DataDisplay\Badge::class,
+            'card' => Components\DataDisplay\Card::class,
+            'card-header' => Components\DataDisplay\CardHeader::class,
+            'card-body' => Components\DataDisplay\CardBody::class,
+            'card-footer' => Components\DataDisplay\CardFooter::class,
             'data-list' => Components\DataDisplay\DataList::class,
             'data-list-item' => Components\DataDisplay\DataListItem::class,
             'timeline' => Components\DataDisplay\Timeline::class,
