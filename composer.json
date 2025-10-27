@@ -1,0 +1,52 @@
+{
+    "name": "mellivora/flowblade",
+    "description": "A Laravel Blade component library based on Flowbite + Tailwind CSS, inspired by Chakra UI",
+    "keywords": [
+        "laravel",
+        "blade",
+        "components",
+        "flowbite",
+        "tailwind",
+        "chakra-ui",
+        "ui-library"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/zhouyl/flowblade",
+    "support": {
+        "issues": "https://github.com/zhouyl/flowblade/issues",
+        "source": "https://github.com/zhouyl/flowblade"
+    },
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0",
+        "illuminate/view": "^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flowblade\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Flowblade\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Flowblade\\FlowbladeServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}
+
