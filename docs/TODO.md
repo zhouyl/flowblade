@@ -126,13 +126,15 @@
 - [x] Textarea - 多行文本
 - [x] Checkbox - 复选框
 - [x] Radio - 单选框
-- [ ] Switch - 开关
-- [ ] Select - 下拉选择
-- [ ] NativeSelect - 原生选择
+- [x] Switch - 开关
+- [ ] Select - 下拉选择（复杂组件，下阶段完成）
+- [x] NativeSelect - 原生选择
 - [ ] PinInput - PIN 输入
 - [ ] NumberInput - 数字输入
 
-**组件进度**: 37/60+ (61%)
+**组件进度**: 39/60+ (65%)
+
+**文档状态**: 已为所有新组件创建使用文档（27个文档）
 
 ### Phase 6: 表单组件 Part 2 (11个)
 

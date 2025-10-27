@@ -108,6 +108,8 @@ class FlowbladeServiceProvider extends ServiceProvider
             'textarea' => Components\Forms\Textarea::class,
             'checkbox' => Components\Forms\Checkbox::class,
             'radio' => Components\Forms\Radio::class,
+            'switch' => Components\Forms\SwitchInput::class,
+            'native-select' => Components\Forms\NativeSelect::class,
         ];
     }
 }
