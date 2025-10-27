@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **52+ Components** - Growing UI component library (86% complete)
+- 🎨 **54+ Components** - Growing UI component library (90% complete)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 52/60+ (86%)
+### Current Progress: 54/60+ (90%)
 
 #### Layout Components (16)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -161,6 +161,9 @@ Edit `config/flowblade.php` to customize:
 - ✅ InputGroup, InputAddon, InputElement
 - ✅ Editable, FileUpload
 - ✅ Slider, RangeSlider
+
+#### Data Display Components (3)
+- ✅ Icon, DataList, DataListItem
 
 #### Data Display Components (1)
 - ✅ Icon (100,000+ icons via Iconify)
