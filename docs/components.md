@@ -2,21 +2,21 @@
 
 ## Available Components
 
-### Layout Components (1/18)
+### Layout Components (10/18)
 
 - [x] **Box** - Flexible layout container
-- [ ] Container
-- [ ] Center
+- [x] **Container** - Responsive container
+- [x] **Center** - Centering component
 - [ ] AbsoluteCenter
-- [ ] Flex
-- [ ] Grid
+- [x] **Flex** - Flexible box layout
+- [x] **Grid** - CSS Grid layout
 - [ ] SimpleGrid
-- [ ] Stack
-- [ ] HStack
-- [ ] VStack
+- [x] **Stack** - Vertical/horizontal stack
+- [x] **HStack** - Horizontal stack
+- [x] **VStack** - Vertical stack
 - [ ] Wrap
-- [ ] Separator
-- [ ] Spacer
+- [x] **Separator** - Visual divider
+- [x] **Spacer** - Flexible space
 - [ ] Group
 - [ ] Bleed
 - [ ] Float
@@ -201,7 +201,146 @@ Flexible layout container component.
 </x-box>
 ```
 
+### Container
+
+Responsive container component that centers content and applies max-width constraints.
+
+**Props:**
+- `max-width`: sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, full
+- `center-content`: boolean (default: true)
+- `px`: horizontal padding (0-16)
+- `py`: vertical padding (0-16)
+
+**Example:**
+```blade
+<x-container max-width="7xl" px="4">
+    <h1>Page Content</h1>
+</x-container>
+```
+
+### Center
+
+Centers its child elements using flexbox.
+
+**Props:**
+- `as`: HTML element (default: div)
+- `inline`: boolean - use inline-flex
+
+**Example:**
+```blade
+<x-center class="h-screen">
+    <div>Centered Content</div>
+</x-center>
+```
+
+### Flex
+
+Flexible box layout component with full control over flex properties.
+
+**Props:**
+- `as`: HTML element (default: div)
+- `direction`: row, col, row-reverse, col-reverse
+- `align`: start, center, end, stretch, baseline
+- `justify`: start, center, end, between, around, evenly
+- `wrap`: wrap, nowrap, wrap-reverse
+- `gap`: gap between items (0-16)
+- `inline`: boolean - use inline-flex
+
+**Example:**
+```blade
+<x-flex direction="row" align="center" justify="between" gap="4">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+</x-flex>
+```
+
+### Grid
+
+CSS Grid layout component.
+
+**Props:**
+- `as`: HTML element (default: div)
+- `columns`: 1-12, none, subgrid
+- `rows`: 1-6, none, subgrid
+- `gap`: gap between items (0-16)
+- `gap-x`: horizontal gap (0-16)
+- `gap-y`: vertical gap (0-16)
+- `auto-flow`: row, col, dense, row-dense, col-dense
+
+**Example:**
+```blade
+<x-grid columns="3" gap="4">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+</x-grid>
+```
+
+### Stack / HStack / VStack
+
+Layout components that stack elements with consistent spacing.
+
+**Props:**
+- `as`: HTML element (default: div)
+- `direction`: vertical, horizontal (Stack only)
+- `spacing`: 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
+- `align`: start, center, end, stretch, baseline
+- `justify`: start, center, end, between, around, evenly
+- `divider`: boolean - show dividers between items
+
+**Example:**
+```blade
+{{-- Vertical Stack --}}
+<x-vstack spacing="md" align="start">
+    <div>Item 1</div>
+    <div>Item 2</div>
+</x-vstack>
+
+{{-- Horizontal Stack --}}
+<x-hstack spacing="lg" justify="between">
+    <button>Cancel</button>
+    <button>Save</button>
+</x-hstack>
+
+{{-- With Divider --}}
+<x-vstack :divider="true" spacing="sm">
+    <div>Section 1</div>
+    <div>Section 2</div>
+</x-vstack>
+```
+
+### Separator
+
+Visual separator / divider line.
+
+**Props:**
+- `orientation`: horizontal, vertical
+- `color`: primary, secondary, success, warning, danger, info, gray
+- `thickness`: 1, 2, 4, 8
+- `length`: length for vertical separators
+
+**Example:**
+```blade
+<x-separator />
+<x-separator orientation="vertical" length="12" />
+<x-separator color="primary" thickness="2" />
+```
+
+### Spacer
+
+Flexible space component that fills available space in flex layouts.
+
+**Example:**
+```blade
+<x-flex>
+    <div>Left</div>
+    <x-spacer />
+    <div>Right</div>
+</x-flex>
+```
+
 ---
 
-**Total Progress**: 3/60+ components (5%)
+**Total Progress**: 12/60+ components (20%)
 
