@@ -71,60 +71,14 @@ class FlowbladeServiceProvider extends ServiceProvider
             'stack' => \Flowblade\Components\Stack::class,
             'hstack' => \Flowblade\Components\HStack::class,
             'vstack' => \Flowblade\Components\VStack::class,
-            'wrap' => \Flowblade\Components\Wrap::class,
             'separator' => \Flowblade\Components\Separator::class,
             'spacer' => \Flowblade\Components\Spacer::class,
-            
-            // Typography Components
-            'heading' => \Flowblade\Components\Heading::class,
-            'text' => \Flowblade\Components\Text::class,
-            'link' => \Flowblade\Components\Link::class,
-            'code' => \Flowblade\Components\Code::class,
-            'kbd' => \Flowblade\Components\Kbd::class,
-            'mark' => \Flowblade\Components\Mark::class,
-            'em' => \Flowblade\Components\Em::class,
-            'strong' => \Flowblade\Components\Strong::class,
-            
+
             // Button Components
             'button' => \Flowblade\Components\Button::class,
-            'icon-button' => \Flowblade\Components\IconButton::class,
-            'close-button' => \Flowblade\Components\CloseButton::class,
-            
-            // Form Components
-            'input' => \Flowblade\Components\Input::class,
-            'textarea' => \Flowblade\Components\Textarea::class,
-            'checkbox' => \Flowblade\Components\Checkbox::class,
-            'radio' => \Flowblade\Components\Radio::class,
-            'switch' => \Flowblade\Components\SwitchComponent::class,
-            'select' => \Flowblade\Components\Select::class,
-            'field' => \Flowblade\Components\Field::class,
-            'fieldset' => \Flowblade\Components\Fieldset::class,
-            
-            // Overlay Components
-            'modal' => \Flowblade\Components\Modal::class,
-            'drawer' => \Flowblade\Components\Drawer::class,
-            'popover' => \Flowblade\Components\Popover::class,
-            'tooltip' => \Flowblade\Components\Tooltip::class,
-            'menu' => \Flowblade\Components\Menu::class,
-            
-            // Feedback Components
-            'alert' => \Flowblade\Components\Alert::class,
-            'toast' => \Flowblade\Components\Toast::class,
-            'progress' => \Flowblade\Components\Progress::class,
-            'spinner' => \Flowblade\Components\Spinner::class,
-            'skeleton' => \Flowblade\Components\Skeleton::class,
-            
+
             // Data Display Components
-            'avatar' => \Flowblade\Components\Avatar::class,
-            'badge' => \Flowblade\Components\Badge::class,
-            'card' => \Flowblade\Components\Card::class,
             'icon' => \Flowblade\Components\Icon::class,
-            'tag' => \Flowblade\Components\Tag::class,
-            
-            // Disclosure Components
-            'accordion' => \Flowblade\Components\Accordion::class,
-            'tabs' => \Flowblade\Components\Tabs::class,
-            'breadcrumb' => \Flowblade\Components\Breadcrumb::class,
         ];
     }
 }

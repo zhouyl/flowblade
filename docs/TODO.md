@@ -29,24 +29,40 @@
 
 **组件进度**: 3/60+ (5%)
 
+### ✅ Phase 2: 布局组件 Part 1 (已完成)
+
+**完成时间**: 2025-10-27
+
+- [x] Container - 容器
+- [x] Center - 居中容器
+- [x] Flex - 弹性布局
+- [x] Grid - 网格布局
+- [x] Stack - 堆叠布局
+- [x] HStack - 水平堆叠
+- [x] VStack - 垂直堆叠
+- [x] Separator - 分隔线
+- [x] Spacer - 空白占位
+
+**组件进度**: 12/60+ (20%)
+
 ---
 
 ## 待开发组件
 
-### Phase 2: 布局组件 (18个)
+### Phase 2: 布局组件 (18个) - 进行中
 
-- [ ] Container - 容器
-- [ ] Center - 居中容器
+- [x] Container - 容器
+- [x] Center - 居中容器
 - [ ] AbsoluteCenter - 绝对居中
-- [ ] Flex - 弹性布局
-- [ ] Grid - 网格布局
+- [x] Flex - 弹性布局
+- [x] Grid - 网格布局
 - [ ] SimpleGrid - 简单网格
-- [ ] Stack - 堆叠布局
-- [ ] HStack - 水平堆叠
-- [ ] VStack - 垂直堆叠
+- [x] Stack - 堆叠布局
+- [x] HStack - 水平堆叠
+- [x] VStack - 垂直堆叠
 - [ ] Wrap - 自动换行
-- [ ] Separator - 分隔线
-- [ ] Spacer - 空白占位
+- [x] Separator - 分隔线
+- [x] Spacer - 空白占位
 - [ ] Group - 分组
 - [ ] Bleed - 溢出布局
 - [ ] Float - 浮动
@@ -210,12 +226,28 @@
 ## 更新日志
 
 ### 2025-10-27
+
+**Phase 1 完成**:
 - ✅ 完成项目基础架构
 - ✅ 创建 Button, Icon, Box 组件
-- ✅ 扩展尺寸系统到 9 个级别
+- ✅ 扩展尺寸系统到 9 个级别 (2xs ~ 4xl)
 - ✅ 修改包名为 mellivora/flowblade
-- ✅ 重新组织文档结构
+- ✅ 重新组织文档结构到 docs/
 - ✅ 清理临时文件
+- ✅ 初始化 Git 仓库并推送到 GitHub
+
+**Phase 2 Part 1 完成**:
+- ✅ Container - 响应式容器组件
+- ✅ Center - 居中布局组件
+- ✅ Flex - 弹性布局组件
+- ✅ Grid - 网格布局组件
+- ✅ Stack - 堆叠布局组件
+- ✅ HStack - 水平堆叠快捷组件
+- ✅ VStack - 垂直堆叠快捷组件
+- ✅ Separator - 分隔线组件
+- ✅ Spacer - 弹性空白组件
+
+**当前进度**: 12/60+ 组件 (20%)
 
 ---
 
