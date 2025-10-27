@@ -8,7 +8,8 @@ class Group extends Component
 {
     public function __construct(
         public string $as = 'div',
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -20,4 +21,3 @@ class Group extends Component
         return view('flowblade::components.layout.group');
     }
 }
-

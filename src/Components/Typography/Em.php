@@ -16,4 +16,3 @@ class Em extends Component
         return view('flowblade::components.typography.em');
     }
 }
-

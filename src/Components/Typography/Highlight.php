@@ -10,7 +10,8 @@ class Highlight extends Component
     public function __construct(
         public ?string $query = null,
         public ?string $color = 'warning',
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -42,10 +43,10 @@ class Highlight extends Component
 
         $text = (string) $this->slot;
         $query = preg_quote($this->query, '/');
-        
+
         return preg_replace(
             "/($query)/i",
-            '<mark class="' . $this->classes() . '">$1</mark>',
+            '<mark class="'.$this->classes().'">$1</mark>',
             $text
         );
     }
@@ -55,4 +56,3 @@ class Highlight extends Component
         return view('flowblade::components.typography.highlight');
     }
 }
-

@@ -2,12 +2,11 @@
 
 namespace Flowblade\Components\Layout;
 
-use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
 /**
  * Spacer Component
- * 
+ *
  * A flexible space component that fills available space in flex layouts.
  */
 class Spacer extends Component
@@ -19,7 +18,7 @@ class Spacer extends Component
     {
         //
     }
-    
+
     /**
      * Get the component classes.
      */
@@ -27,7 +26,7 @@ class Spacer extends Component
     {
         return 'flex-1';
     }
-    
+
     /**
      * Get the view / contents that represent the component.
      */
@@ -36,4 +35,3 @@ class Spacer extends Component
         return view('flowblade::components.layout.spacer');
     }
 }
-

@@ -10,7 +10,8 @@ class AbsoluteCenter extends Component
     public function __construct(
         public string $as = 'div',
         public ?string $axis = null, // both, horizontal, vertical
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -41,4 +42,3 @@ class AbsoluteCenter extends Component
         return view('flowblade::components.layout.absolute-center');
     }
 }
-

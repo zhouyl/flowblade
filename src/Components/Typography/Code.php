@@ -10,7 +10,8 @@ class Code extends Component
     public function __construct(
         public ?string $color = 'primary',
         public ?string $size = null, // xs, sm, md, lg
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -62,4 +63,3 @@ class Code extends Component
         return view('flowblade::components.typography.code');
     }
 }
-

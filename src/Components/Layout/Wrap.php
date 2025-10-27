@@ -14,7 +14,8 @@ class Wrap extends Component
         public ?string $spacingY = null,
         public ?string $align = null, // start, center, end, stretch, baseline
         public ?string $justify = null, // start, center, end, between, around, evenly
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -56,15 +57,15 @@ class Wrap extends Component
 
         // Handle spacing
         $spacingMap = ComponentHelper::config('sizes.spacing', []);
-        
+
         if ($this->spacingX && isset($spacingMap[$this->spacingX])) {
             $classes[] = "gap-x-{$spacingMap[$this->spacingX]}";
         }
-        
+
         if ($this->spacingY && isset($spacingMap[$this->spacingY])) {
             $classes[] = "gap-y-{$spacingMap[$this->spacingY]}";
         }
-        
+
         if ($this->spacing && !$this->spacingX && !$this->spacingY && isset($spacingMap[$this->spacing])) {
             $classes[] = "gap-{$spacingMap[$this->spacing]}";
         }
@@ -77,4 +78,3 @@ class Wrap extends Component
         return view('flowblade::components.layout.wrap');
     }
 }
-

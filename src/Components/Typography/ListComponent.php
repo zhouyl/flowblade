@@ -11,7 +11,8 @@ class ListComponent extends Component
         public string $type = 'ul', // ul, ol
         public ?string $spacing = null, // xs, sm, md, lg
         public ?string $styleType = null, // disc, circle, square, decimal, etc.
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -64,4 +65,3 @@ class ListComponent extends Component
         return view('flowblade::components.typography.list');
     }
 }
-

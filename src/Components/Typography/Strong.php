@@ -16,4 +16,3 @@ class Strong extends Component
         return view('flowblade::components.typography.strong');
     }
 }
-

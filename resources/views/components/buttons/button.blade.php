@@ -11,13 +11,13 @@
     @endif
 
     @if($leftIcon && !$loading)
-        <x-icon :name="$leftIcon" />
+        <x-dynamic-component :component="config('flowblade.prefix') ? config('flowblade.prefix') . '-icon' : 'icon'" :name="$leftIcon" />
     @endif
 
     {{ $slot }}
 
     @if($rightIcon)
-        <x-icon :name="$rightIcon" />
+        <x-dynamic-component :component="config('flowblade.prefix') ? config('flowblade.prefix') . '-icon' : 'icon'" :name="$rightIcon" />
     @endif
 </button>
 

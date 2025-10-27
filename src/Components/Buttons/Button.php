@@ -8,13 +8,21 @@ use Illuminate\View\Component;
 class Button extends Component
 {
     public string $color;
+
     public string $size;
+
     public string $variant;
+
     public string $rounded;
+
     public bool $disabled;
+
     public bool $loading;
+
     public ?string $type;
+
     public ?string $leftIcon;
+
     public ?string $rightIcon;
 
     /**
@@ -51,7 +59,7 @@ class Button extends Component
         $variantClasses = ComponentHelper::getButtonVariantClasses($this->color, $this->variant);
         $sizeClasses = ComponentHelper::getSizeClasses('button', $this->size);
         $roundedClasses = ComponentHelper::getRoundedClass($this->rounded);
-        
+
         $disabledClasses = $this->disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer';
 
         return ComponentHelper::mergeClasses(
@@ -71,4 +79,3 @@ class Button extends Component
         return view('flowblade::components.buttons.button');
     }
 }
-

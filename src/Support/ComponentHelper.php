@@ -18,7 +18,7 @@ class ComponentHelper
     public static function getColorClasses(string $color, string $type = 'bg'): string
     {
         $colors = self::config('colors', []);
-        
+
         if (!isset($colors[$color])) {
             $color = self::config('default_color', 'primary');
         }
@@ -32,7 +32,7 @@ class ComponentHelper
     public static function getSizeClasses(string $component, string $size): string
     {
         $sizes = self::config("sizes.{$component}", []);
-        
+
         if (!isset($sizes[$size])) {
             $size = self::config('default_size', 'md');
         }
@@ -46,6 +46,7 @@ class ComponentHelper
     public static function getRoundedClass(string $rounded): string
     {
         $roundedOptions = self::config('rounded', []);
+
         return $roundedOptions[$rounded] ?? 'rounded-md';
     }
 
@@ -55,6 +56,7 @@ class ComponentHelper
     public static function getShadowClass(string $shadow): string
     {
         $shadowOptions = self::config('shadows', []);
+
         return $shadowOptions[$shadow] ?? '';
     }
 
@@ -64,15 +66,17 @@ class ComponentHelper
     public static function mergeClasses(string ...$classes): string
     {
         $merged = [];
-        
+
         foreach ($classes as $class) {
             if (empty($class)) {
                 continue;
             }
-            
+
             $parts = explode(' ', $class);
+
             foreach ($parts as $part) {
                 $part = trim($part);
+
                 if (!empty($part)) {
                     $merged[$part] = true;
                 }
@@ -112,6 +116,7 @@ class ComponentHelper
     public static function parseVariant(string $variant, string $default = 'solid'): string
     {
         $validVariants = ['solid', 'outline', 'ghost', 'link', 'subtle'];
+
         return in_array($variant, $validVariants) ? $variant : $default;
     }
 
@@ -120,7 +125,7 @@ class ComponentHelper
      */
     public static function generateId(string $prefix = 'fb'): string
     {
-        return $prefix . '-' . uniqid();
+        return $prefix.'-'.uniqid();
     }
 
     /**
@@ -129,7 +134,7 @@ class ComponentHelper
     public static function extractWireAttributes(object $attributes): array
     {
         $wireAttrs = [];
-        
+
         foreach ($attributes->getAttributes() as $key => $value) {
             if (str_starts_with($key, 'wire:')) {
                 $wireAttrs[$key] = $value;
@@ -145,7 +150,7 @@ class ComponentHelper
     public static function getButtonVariantClasses(string $color, string $variant): string
     {
         $baseClasses = 'font-medium focus:outline-none focus:ring-4 transition-colors duration-200';
-        
+
         return match ($variant) {
             'solid' => self::mergeClasses(
                 $baseClasses,
@@ -185,4 +190,3 @@ class ComponentHelper
         };
     }
 }
-

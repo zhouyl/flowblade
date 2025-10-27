@@ -8,7 +8,9 @@ use Illuminate\View\Component;
 class Icon extends Component
 {
     public string $name;
+
     public ?string $size;
+
     public ?string $color;
 
     /**
@@ -30,9 +32,9 @@ class Icon extends Component
     public function classes(): string
     {
         $classes = 'inline-block';
-        
+
         if ($this->color) {
-            $classes .= ' ' . ComponentHelper::getColorClasses($this->color, 'text');
+            $classes .= ' '.ComponentHelper::getColorClasses($this->color, 'text');
         }
 
         return $classes;
@@ -46,4 +48,3 @@ class Icon extends Component
         return view('flowblade::components.data-display.icon');
     }
 }
-

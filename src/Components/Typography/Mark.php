@@ -9,7 +9,8 @@ class Mark extends Component
 {
     public function __construct(
         public ?string $color = 'warning',
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -38,4 +39,3 @@ class Mark extends Component
         return view('flowblade::components.typography.mark');
     }
 }
-

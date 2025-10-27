@@ -7,19 +7,20 @@ use Illuminate\View\Component;
 
 /**
  * Center Component
- * 
+ *
  * Centers its child elements using flexbox.
  */
 class Center extends Component
 {
     public string $as;
+
     public bool $inline;
-    
+
     /**
      * Create a new component instance.
      *
-     * @param string $as HTML element to render
-     * @param bool $inline Whether to use inline-flex
+     * @param string $as     HTML element to render
+     * @param bool   $inline Whether to use inline-flex
      */
     public function __construct(
         string $as = 'div',
@@ -28,7 +29,7 @@ class Center extends Component
         $this->as = $as;
         $this->inline = $inline;
     }
-    
+
     /**
      * Get the component classes.
      */
@@ -39,10 +40,10 @@ class Center extends Component
             'items-center',
             'justify-center',
         ];
-        
+
         return ComponentHelper::mergeClasses(...$classes);
     }
-    
+
     /**
      * Get the view / contents that represent the component.
      */
@@ -51,4 +52,3 @@ class Center extends Component
         return view('flowblade::components.layout.center');
     }
 }
-

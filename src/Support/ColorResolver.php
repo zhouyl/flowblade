@@ -10,7 +10,7 @@ class ColorResolver
     public static function resolve(string $color, array $types = ['bg', 'hover', 'text']): array
     {
         $resolved = [];
-        
+
         foreach ($types as $type) {
             $resolved[$type] = ComponentHelper::getColorClasses($color, $type);
         }
@@ -24,6 +24,7 @@ class ColorResolver
     public static function resolveToString(string $color, array $types = ['bg', 'hover']): string
     {
         $classes = self::resolve($color, $types);
+
         return implode(' ', array_filter($classes));
     }
 
@@ -81,6 +82,7 @@ class ColorResolver
     public static function isValid(string $color): bool
     {
         $colors = ComponentHelper::config('colors', []);
+
         return isset($colors[$color]);
     }
 
@@ -100,4 +102,3 @@ class ColorResolver
         return array_keys(ComponentHelper::config('colors', []));
     }
 }
-

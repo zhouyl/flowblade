@@ -4,7 +4,7 @@ namespace Flowblade\Components\Layout;
 
 /**
  * VStack Component
- * 
+ *
  * Vertical stack - a shortcut for Stack with vertical direction.
  */
 class VStack extends Stack
@@ -28,7 +28,7 @@ class VStack extends Stack
             divider: $divider,
         );
     }
-    
+
     /**
      * Get the view / contents that represent the component.
      */
@@ -37,4 +37,3 @@ class VStack extends Stack
         return view('flowblade::components.vstack');
     }
 }
-

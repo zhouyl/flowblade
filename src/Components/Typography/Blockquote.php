@@ -9,7 +9,8 @@ class Blockquote extends Component
 {
     public function __construct(
         public ?string $color = 'gray',
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -43,4 +44,3 @@ class Blockquote extends Component
         return view('flowblade::components.typography.blockquote');
     }
 }
-

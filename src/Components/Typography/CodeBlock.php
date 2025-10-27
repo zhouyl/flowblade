@@ -11,7 +11,8 @@ class CodeBlock extends Component
         public ?string $language = null,
         public ?string $title = null,
         public bool $showLineNumbers = false,
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -33,4 +34,3 @@ class CodeBlock extends Component
         return view('flowblade::components.typography.code-block');
     }
 }
-

@@ -7,29 +7,35 @@ use Illuminate\View\Component;
 
 /**
  * Grid Component
- * 
+ *
  * A CSS Grid layout component.
  */
 class Grid extends Component
 {
     public string $as;
+
     public ?string $columns;
+
     public ?string $rows;
+
     public ?string $gap;
+
     public ?string $gapX;
+
     public ?string $gapY;
+
     public ?string $autoFlow;
-    
+
     /**
      * Create a new component instance.
      *
-     * @param string $as HTML element to render
-     * @param string|null $columns Number of columns (1-12 or none, subgrid)
-     * @param string|null $rows Number of rows (1-6 or none, subgrid)
-     * @param string|null $gap Gap between items (0-16)
-     * @param string|null $gapX Horizontal gap (0-16)
-     * @param string|null $gapY Vertical gap (0-16)
-     * @param string|null $autoFlow Grid auto flow (row, col, dense, row-dense, col-dense)
+     * @param string      $as       HTML element to render
+     * @param null|string $columns  Number of columns (1-12 or none, subgrid)
+     * @param null|string $rows     Number of rows (1-6 or none, subgrid)
+     * @param null|string $gap      Gap between items (0-16)
+     * @param null|string $gapX     Horizontal gap (0-16)
+     * @param null|string $gapY     Vertical gap (0-16)
+     * @param null|string $autoFlow Grid auto flow (row, col, dense, row-dense, col-dense)
      */
     public function __construct(
         string $as = 'div',
@@ -48,14 +54,14 @@ class Grid extends Component
         $this->gapY = $gapY;
         $this->autoFlow = $autoFlow;
     }
-    
+
     /**
      * Get the component classes.
      */
     public function classes(): string
     {
         $classes = ['grid'];
-        
+
         // Columns
         if ($this->columns) {
             $columnsMap = [
@@ -74,12 +80,12 @@ class Grid extends Component
                 'none' => 'grid-cols-none',
                 'subgrid' => 'grid-cols-subgrid',
             ];
-            
+
             if (isset($columnsMap[$this->columns])) {
                 $classes[] = $columnsMap[$this->columns];
             }
         }
-        
+
         // Rows
         if ($this->rows) {
             $rowsMap = [
@@ -92,25 +98,25 @@ class Grid extends Component
                 'none' => 'grid-rows-none',
                 'subgrid' => 'grid-rows-subgrid',
             ];
-            
+
             if (isset($rowsMap[$this->rows])) {
                 $classes[] = $rowsMap[$this->rows];
             }
         }
-        
+
         // Gap
         if ($this->gap) {
             $classes[] = "gap-{$this->gap}";
         }
-        
+
         if ($this->gapX) {
             $classes[] = "gap-x-{$this->gapX}";
         }
-        
+
         if ($this->gapY) {
             $classes[] = "gap-y-{$this->gapY}";
         }
-        
+
         // Auto flow
         if ($this->autoFlow) {
             $flowMap = [
@@ -121,15 +127,15 @@ class Grid extends Component
                 'row-dense' => 'grid-flow-row-dense',
                 'col-dense' => 'grid-flow-col-dense',
             ];
-            
+
             if (isset($flowMap[$this->autoFlow])) {
                 $classes[] = $flowMap[$this->autoFlow];
             }
         }
-        
+
         return ComponentHelper::mergeClasses(...$classes);
     }
-    
+
     /**
      * Get the view / contents that represent the component.
      */
@@ -138,4 +144,3 @@ class Grid extends Component
         return view('flowblade::components.layout.grid');
     }
 }
-

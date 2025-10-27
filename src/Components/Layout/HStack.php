@@ -4,7 +4,7 @@ namespace Flowblade\Components\Layout;
 
 /**
  * HStack Component
- * 
+ *
  * Horizontal stack - a shortcut for Stack with horizontal direction.
  */
 class HStack extends Stack
@@ -28,7 +28,7 @@ class HStack extends Stack
             divider: $divider,
         );
     }
-    
+
     /**
      * Get the view / contents that represent the component.
      */
@@ -37,4 +37,3 @@ class HStack extends Stack
         return view('flowblade::components.hstack');
     }
 }
-

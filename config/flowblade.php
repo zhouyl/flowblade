@@ -228,4 +228,3 @@ return [
         'cdn' => 'https://cdn.jsdelivr.net/npm/@iconify/iconify@latest/dist/iconify.min.js',
     ],
 ];
-

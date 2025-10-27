@@ -12,7 +12,8 @@ class Heading extends Component
         public ?string $size = null, // 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
         public ?string $weight = null, // normal, medium, semibold, bold, extrabold
         public ?string $color = null,
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -72,6 +73,7 @@ class Heading extends Component
         // Color
         if ($this->color) {
             $colorClasses = ComponentHelper::getColorClasses($this->color, 'text');
+
             if ($colorClasses) {
                 $classes[] = $colorClasses;
             }
@@ -85,4 +87,3 @@ class Heading extends Component
         return view('flowblade::components.typography.heading');
     }
 }
-

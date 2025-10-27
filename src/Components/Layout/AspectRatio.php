@@ -9,7 +9,8 @@ class AspectRatio extends Component
 {
     public function __construct(
         public string|float $ratio = '16/9', // e.g., '16/9', '4/3', '1/1', or numeric like 1.5
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -54,14 +55,16 @@ class AspectRatio extends Component
 
         // Calculate padding-bottom percentage for custom ratios
         if (is_numeric($this->ratio)) {
-            $percentage = (1 / floatval($this->ratio)) * 100;
+            $percentage = (1 / (float) ($this->ratio)) * 100;
+
             return "padding-bottom: {$percentage}%;";
         }
 
         // Handle ratio strings like "3/2"
         if (is_string($this->ratio) && str_contains($this->ratio, '/')) {
             [$width, $height] = explode('/', $this->ratio);
-            $percentage = (floatval($height) / floatval($width)) * 100;
+            $percentage = ((float) $height / (float) $width) * 100;
+
             return "padding-bottom: {$percentage}%;";
         }
 
@@ -73,4 +76,3 @@ class AspectRatio extends Component
         return view('flowblade::components.layout.aspect-ratio');
     }
 }
-

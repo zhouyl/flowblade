@@ -12,7 +12,8 @@ class ScrollArea extends Component
         public ?string $height = null, // e.g., '400px', '50vh'
         public ?string $maxHeight = null,
         public string $scrollbar = 'auto', // auto, always, hidden
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -50,7 +51,7 @@ class ScrollArea extends Component
             $styles[] = "max-height: {$this->maxHeight}";
         }
 
-        return !empty($styles) ? implode('; ', $styles) . ';' : null;
+        return !empty($styles) ? implode('; ', $styles).';' : null;
     }
 
     public function render()
@@ -58,4 +59,3 @@ class ScrollArea extends Component
         return view('flowblade::components.layout.scroll-area');
     }
 }
-

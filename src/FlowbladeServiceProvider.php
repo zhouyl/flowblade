@@ -13,7 +13,7 @@ class FlowbladeServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/flowblade.php',
+            __DIR__.'/../config/flowblade.php',
             'flowblade'
         );
     }
@@ -25,15 +25,15 @@ class FlowbladeServiceProvider extends ServiceProvider
     {
         // Publish configuration
         $this->publishes([
-            __DIR__ . '/../config/flowblade.php' => config_path('flowblade.php'),
+            __DIR__.'/../config/flowblade.php' => config_path('flowblade.php'),
         ], 'flowblade-config');
 
         // Load views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'flowblade');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'flowblade');
 
         // Publish views
         $this->publishes([
-            __DIR__ . '/../resources/views' => resource_path('views/vendor/flowblade'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/flowblade'),
         ], 'flowblade-views');
 
         // Register components
@@ -46,7 +46,7 @@ class FlowbladeServiceProvider extends ServiceProvider
     protected function registerComponents(): void
     {
         $prefix = config('flowblade.prefix', '');
-        
+
         // Get all component classes
         $components = $this->getComponentClasses();
 
@@ -63,43 +63,42 @@ class FlowbladeServiceProvider extends ServiceProvider
     {
         return [
             // Layout Components
-            'box' => \Flowblade\Components\Layout\Box::class,
-            'container' => \Flowblade\Components\Layout\Container::class,
-            'center' => \Flowblade\Components\Layout\Center::class,
-            'absolute-center' => \Flowblade\Components\Layout\AbsoluteCenter::class,
-            'flex' => \Flowblade\Components\Layout\Flex::class,
-            'grid' => \Flowblade\Components\Layout\Grid::class,
-            'simple-grid' => \Flowblade\Components\Layout\SimpleGrid::class,
-            'stack' => \Flowblade\Components\Layout\Stack::class,
-            'hstack' => \Flowblade\Components\Layout\HStack::class,
-            'vstack' => \Flowblade\Components\Layout\VStack::class,
-            'wrap' => \Flowblade\Components\Layout\Wrap::class,
-            'separator' => \Flowblade\Components\Layout\Separator::class,
-            'spacer' => \Flowblade\Components\Layout\Spacer::class,
-            'group' => \Flowblade\Components\Layout\Group::class,
-            'aspect-ratio' => \Flowblade\Components\Layout\AspectRatio::class,
-            'scroll-area' => \Flowblade\Components\Layout\ScrollArea::class,
+            'box' => Components\Layout\Box::class,
+            'container' => Components\Layout\Container::class,
+            'center' => Components\Layout\Center::class,
+            'absolute-center' => Components\Layout\AbsoluteCenter::class,
+            'flex' => Components\Layout\Flex::class,
+            'grid' => Components\Layout\Grid::class,
+            'simple-grid' => Components\Layout\SimpleGrid::class,
+            'stack' => Components\Layout\Stack::class,
+            'hstack' => Components\Layout\HStack::class,
+            'vstack' => Components\Layout\VStack::class,
+            'wrap' => Components\Layout\Wrap::class,
+            'separator' => Components\Layout\Separator::class,
+            'spacer' => Components\Layout\Spacer::class,
+            'group' => Components\Layout\Group::class,
+            'aspect-ratio' => Components\Layout\AspectRatio::class,
+            'scroll-area' => Components\Layout\ScrollArea::class,
 
             // Button Components
-            'button' => \Flowblade\Components\Buttons\Button::class,
+            'button' => Components\Buttons\Button::class,
 
             // Data Display Components
-            'icon' => \Flowblade\Components\DataDisplay\Icon::class,
+            'icon' => Components\DataDisplay\Icon::class,
 
             // Typography Components
-            'heading' => \Flowblade\Components\Typography\Heading::class,
-            'text' => \Flowblade\Components\Typography\Text::class,
-            'link' => \Flowblade\Components\Typography\Link::class,
-            'code' => \Flowblade\Components\Typography\Code::class,
-            'code-block' => \Flowblade\Components\Typography\CodeBlock::class,
-            'kbd' => \Flowblade\Components\Typography\Kbd::class,
-            'mark' => \Flowblade\Components\Typography\Mark::class,
-            'em' => \Flowblade\Components\Typography\Em::class,
-            'strong' => \Flowblade\Components\Typography\Strong::class,
-            'blockquote' => \Flowblade\Components\Typography\Blockquote::class,
-            'highlight' => \Flowblade\Components\Typography\Highlight::class,
-            'list' => \Flowblade\Components\Typography\ListComponent::class,
+            'heading' => Components\Typography\Heading::class,
+            'text' => Components\Typography\Text::class,
+            'link' => Components\Typography\Link::class,
+            'code' => Components\Typography\Code::class,
+            'code-block' => Components\Typography\CodeBlock::class,
+            'kbd' => Components\Typography\Kbd::class,
+            'mark' => Components\Typography\Mark::class,
+            'em' => Components\Typography\Em::class,
+            'strong' => Components\Typography\Strong::class,
+            'blockquote' => Components\Typography\Blockquote::class,
+            'highlight' => Components\Typography\Highlight::class,
+            'list' => Components\Typography\ListComponent::class,
         ];
     }
 }
-

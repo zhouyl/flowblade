@@ -15,7 +15,8 @@ class Text extends Component
         public ?string $align = null, // left, center, right, justify
         public bool $truncate = false,
         public ?string $lineClamp = null, // 1, 2, 3, 4, 5, 6
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -57,6 +58,7 @@ class Text extends Component
         // Color
         if ($this->color) {
             $colorClasses = ComponentHelper::getColorClasses($this->color, 'text');
+
             if ($colorClasses) {
                 $classes[] = $colorClasses;
             }
@@ -105,4 +107,3 @@ class Text extends Component
         return view('flowblade::components.typography.text');
     }
 }
-

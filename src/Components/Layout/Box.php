@@ -8,12 +8,19 @@ use Illuminate\View\Component;
 class Box extends Component
 {
     public ?string $as;
+
     public ?string $bg;
+
     public ?string $color;
+
     public ?string $p;
+
     public ?string $m;
+
     public ?string $rounded;
+
     public ?string $shadow;
+
     public ?string $border;
 
     /**
@@ -71,10 +78,18 @@ class Box extends Component
         }
 
         if ($this->border) {
-            $classes[] = 'border ' . ComponentHelper::getColorClasses($this->border, 'border');
+            $classes[] = 'border '.ComponentHelper::getColorClasses($this->border, 'border');
         }
 
         return ComponentHelper::mergeClasses(...$classes);
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render()
+    {
+        return view('flowblade::components.layout.box');
     }
 
     /**
@@ -85,13 +100,4 @@ class Box extends Component
         // Support Tailwind spacing scale: 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, etc.
         return "{$type}-{$value}";
     }
-
-    /**
-     * Get the view / contents that represent the component.
-     */
-    public function render()
-    {
-        return view('flowblade::components.layout.box');
-    }
 }
-

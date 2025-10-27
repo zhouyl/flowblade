@@ -14,7 +14,8 @@ class SimpleGrid extends Component
         public ?string $spacing = null, // 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
         public ?string $spacingX = null,
         public ?string $spacingY = null,
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -47,15 +48,15 @@ class SimpleGrid extends Component
 
         // Handle spacing
         $spacingMap = ComponentHelper::config('sizes.spacing', []);
-        
+
         if ($this->spacingX && isset($spacingMap[$this->spacingX])) {
             $classes[] = "gap-x-{$spacingMap[$this->spacingX]}";
         }
-        
+
         if ($this->spacingY && isset($spacingMap[$this->spacingY])) {
             $classes[] = "gap-y-{$spacingMap[$this->spacingY]}";
         }
-        
+
         if ($this->spacing && !$this->spacingX && !$this->spacingY && isset($spacingMap[$this->spacing])) {
             $classes[] = "gap-{$spacingMap[$this->spacing]}";
         }
@@ -77,4 +78,3 @@ class SimpleGrid extends Component
         return view('flowblade::components.layout.simple-grid');
     }
 }
-

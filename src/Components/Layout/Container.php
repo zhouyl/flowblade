@@ -7,23 +7,26 @@ use Illuminate\View\Component;
 
 /**
  * Container Component
- * 
+ *
  * A responsive container component that centers content and applies max-width constraints.
  */
 class Container extends Component
 {
     public string $maxWidth;
+
     public bool $centerContent;
+
     public ?string $px;
+
     public ?string $py;
-    
+
     /**
      * Create a new component instance.
      *
-     * @param string|null $maxWidth Maximum width (sm, md, lg, xl, 2xl, 3xl, 4xl, full)
-     * @param bool $centerContent Whether to center content
-     * @param string|null $px Horizontal padding
-     * @param string|null $py Vertical padding
+     * @param null|string $maxWidth      Maximum width (sm, md, lg, xl, 2xl, 3xl, 4xl, full)
+     * @param bool        $centerContent Whether to center content
+     * @param null|string $px            Horizontal padding
+     * @param null|string $py            Vertical padding
      */
     public function __construct(
         ?string $maxWidth = null,
@@ -36,19 +39,19 @@ class Container extends Component
         $this->px = $px ?? '4';
         $this->py = $py;
     }
-    
+
     /**
      * Get the component classes.
      */
     public function classes(): string
     {
         $classes = [];
-        
+
         // Container base
         if ($this->centerContent) {
             $classes[] = 'mx-auto';
         }
-        
+
         // Max width
         $maxWidthMap = [
             'sm' => 'max-w-screen-sm',
@@ -63,23 +66,23 @@ class Container extends Component
             '7xl' => 'max-w-7xl',
             'full' => 'max-w-full',
         ];
-        
+
         if (isset($maxWidthMap[$this->maxWidth])) {
             $classes[] = $maxWidthMap[$this->maxWidth];
         }
-        
+
         // Padding
         if ($this->px) {
             $classes[] = "px-{$this->px}";
         }
-        
+
         if ($this->py) {
             $classes[] = "py-{$this->py}";
         }
-        
+
         return ComponentHelper::mergeClasses(...$classes);
     }
-    
+
     /**
      * Get the view / contents that represent the component.
      */
@@ -88,4 +91,3 @@ class Container extends Component
         return view('flowblade::components.layout.container');
     }
 }
-

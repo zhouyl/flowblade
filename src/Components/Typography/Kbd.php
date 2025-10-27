@@ -9,7 +9,8 @@ class Kbd extends Component
 {
     public function __construct(
         public ?string $size = null, // xs, sm, md, lg
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -48,4 +49,3 @@ class Kbd extends Component
         return view('flowblade::components.typography.kbd');
     }
 }
-

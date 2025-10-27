@@ -12,7 +12,8 @@ class Link extends Component
         public ?string $color = 'primary',
         public bool $underline = true,
         public bool $external = false,
-    ) {}
+    ) {
+    }
 
     public function classes(): string
     {
@@ -21,6 +22,7 @@ class Link extends Component
         // Color
         if ($this->color) {
             $colorClasses = ComponentHelper::getColorClasses($this->color, 'text');
+
             if ($colorClasses) {
                 $classes[] = $colorClasses;
             }
@@ -59,4 +61,3 @@ class Link extends Component
         return view('flowblade::components.typography.link');
     }
 }
-
