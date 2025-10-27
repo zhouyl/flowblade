@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 74/60+ (123%)
+**组件进度**: 76/60+ (127%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -193,7 +193,7 @@
 - [ ] EmptyState - 空状态
 - [ ] Status - 状态指示
 
-### Phase 10: 数据展示组件 (10个) - 进行中
+### Phase 10: 数据展示组件 (9个) - 进行中
 
 **开始时间**: 2025-10-27
 
@@ -204,7 +204,6 @@
 - [x] Stat - 统计
 - [x] Tag - 标签
 - [ ] TagsInput - 标签输入
-- [ ] QrCode - 二维码
 - [ ] Rating - 评分
 - [ ] ColorSwatch - 色块
 
@@ -212,7 +211,7 @@
 
 **开始时间**: 2025-10-27
 
-- [ ] Accordion - 手风琴
+- [x] Accordion - 手风琴（含 AccordionItem，支持 default/separated/contained 三种模式）
 - [x] Tabs - 标签页（含 TabsList, TabsTrigger, TabsContent，支持 line/enclosed/pills 三种模式）
 - [x] Breadcrumb - 面包屑（含 BreadcrumbItem）
 - [x] Pagination - 分页（支持 simple/default/verbose 三种模式，支持 Laravel Paginator）

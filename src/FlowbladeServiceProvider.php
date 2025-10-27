@@ -113,6 +113,10 @@ class FlowbladeServiceProvider extends ServiceProvider
             'tabs-trigger' => Components\Navigation\TabsTrigger::class,
             'tabs-content' => Components\Navigation\TabsContent::class,
 
+            // Disclosure Components
+            'accordion' => Components\Disclosure\Accordion::class,
+            'accordion-item' => Components\Disclosure\AccordionItem::class,
+
             // Typography Components
             'heading' => Components\Typography\Heading::class,
             'text' => Components\Typography\Text::class,
