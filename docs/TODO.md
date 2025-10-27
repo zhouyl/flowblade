@@ -159,9 +159,9 @@
 - [ ] FileUpload - 文件上传
 - [ ] Editable - 可编辑
 - [x] PasswordInput - 密码输入
-- [ ] SearchInput - 搜索输入
+- [x] SearchInput - 搜索输入
 
-**组件进度**: 43/60+ (71%)
+**组件进度**: 44/60+ (73%)
 
 ### Phase 7: 集合组件 (4个)
 
