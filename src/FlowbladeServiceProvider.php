@@ -105,6 +105,8 @@ class FlowbladeServiceProvider extends ServiceProvider
             'tree-view-item' => Components\DataDisplay\TreeViewItem::class,
 
             // Navigation Components
+            'breadcrumb' => Components\Navigation\Breadcrumb::class,
+            'breadcrumb-item' => Components\Navigation\BreadcrumbItem::class,
             'pagination' => Components\Navigation\Pagination::class,
 
             // Typography Components

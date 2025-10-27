@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 68/60+ (113%)
+**组件进度**: 70/60+ (117%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -214,8 +214,8 @@
 
 - [ ] Accordion - 手风琴
 - [ ] Tabs - 标签页
-- [ ] Breadcrumb - 面包屑
-- [x] Pagination - 分页（支持 simple/default/verbose 三种模式）
+- [x] Breadcrumb - 面包屑（含 BreadcrumbItem）
+- [x] Pagination - 分页（支持 simple/default/verbose 三种模式，支持 Laravel Paginator）
 - [ ] Steps - 步骤条
 - [ ] Collapsible - 可折叠
 
