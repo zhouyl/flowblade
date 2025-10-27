@@ -112,6 +112,8 @@ class FlowbladeServiceProvider extends ServiceProvider
             'native-select' => Components\Forms\NativeSelect::class,
             'pin-input' => Components\Forms\PinInput::class,
             'number-input' => Components\Forms\NumberInput::class,
+            'field' => Components\Forms\Field::class,
+            'password-input' => Components\Forms\PasswordInput::class,
         ];
     }
 }

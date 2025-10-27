@@ -19,7 +19,7 @@ Input component for text input.
 | `readonly` | `boolean` | `false` | Read-only |
 | `required` | `boolean` | `false` | Required |
 | `invalid` | `boolean` | `false` | Invalid state |
-| `placeholder` | `string` | `null` | 占位text |
+| `placeholder` | `string` | `null` | Placeholder text |
 
 ## Sizes
 
@@ -35,25 +35,25 @@ Input component for text input.
 
 ```blade
 <!-- Outline -->
-<x-input variant="outline" placeholder="边框样式" />
+<x-input variant="outline" placeholder="Border style" />
 
 <!-- Filled -->
-<x-input variant="filled" placeholder="填充样式" />
+<x-input variant="filled" placeholder="Filled style" />
 
 <!-- Flushed -->
-<x-input variant="flushed" placeholder="底线样式" />
+<x-input variant="flushed" placeholder="Bottom line style" />
 ```
 
 ## Input Types
 
 ```blade
 <x-input type="text" placeholder="text" />
-<x-input type="email" placeholder="邮箱" />
-<x-input type="password" placeholder="密码" />
-<x-input type="number" placeholder="数字" />
-<x-input type="tel" placeholder="电话" />
-<x-input type="url" placeholder="网址" />
-<x-input type="search" placeholder="搜索" />
+<x-input type="email" placeholder="Email" />
+<x-input type="password" placeholder="Password" />
+<x-input type="number" placeholder="Number" />
+<x-input type="tel" placeholder="Phone" />
+<x-input type="url" placeholder="URL" />
+<x-input type="search" placeholder="Search" />
 ```
 
 ## States
@@ -62,40 +62,40 @@ Input component for text input.
 <!-- Disabled -->
 <x-input disabled placeholder="Disabled" />
 
-<!-- 只读 -->
-<x-input readonly value="只读内容" />
+<!-- Read-only -->
+<x-input readonly value="Read-only" />
 
 <!-- Required -->
 <x-input required placeholder="Required field" />
 
-<!-- 无效 -->
+<!-- Invalid -->
 <x-input invalid placeholder="Invalid input" />
 ```
 
 ## Common Patterns
 
-### 表单字段
+### Form Fields
 
 ```blade
 <div class="space-y-4">
     <div>
-        <label class="block text-sm font-medium mb-1">用户名</label>
+        <label class="block text-sm font-medium mb-1">Username</label>
         <x-input name="username" placeholder="Enter username" />
     </div>
     
     <div>
-        <label class="block text-sm font-medium mb-1">邮箱</label>
+        <label class="block text-sm font-medium mb-1">Email</label>
         <x-input type="email" name="email" placeholder="Enter email" />
     </div>
 </div>
 ```
 
-### 搜索框
+### Search Box
 
 ```blade
 <x-input 
     type="search" 
-    placeholder="搜索..." 
+    placeholder="Search..." 
     class="w-full"
 />
 ```
@@ -116,23 +116,23 @@ Input component for text input.
 </div>
 ```
 
-## Livewire 集成
+## Livewire Integration
 
 ```blade
 <x-input 
     wire:model="username"
-    placeholder="用户名"
+    placeholder="Username"
 />
 
-<!-- 实时验证 -->
+<!-- Real-time Validation -->
 <x-input 
     wire:model.live="email"
     :invalid="!empty($errors->get('email'))"
-    placeholder="邮箱"
+    placeholder="Email"
 />
 ```
 
-## Alpine.js 集成
+## Alpine.js Integration
 
 ```blade
 <div x-data="{ value: '' }">
