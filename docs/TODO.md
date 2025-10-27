@@ -55,26 +55,32 @@
 
 ## 待开发组件
 
-### Phase 2: 布局组件 (18个) - 进行中
+### ✅ Phase 2: 布局组件 (18个) - 已完成
+
+**完成时间**: 2025-10-27
 
 - [x] Container - 容器
 - [x] Center - 居中容器
-- [ ] AbsoluteCenter - 绝对居中
+- [x] AbsoluteCenter - 绝对居中
 - [x] Flex - 弹性布局
 - [x] Grid - 网格布局
-- [ ] SimpleGrid - 简单网格
+- [x] SimpleGrid - 简单网格
 - [x] Stack - 堆叠布局
 - [x] HStack - 水平堆叠
 - [x] VStack - 垂直堆叠
-- [ ] Wrap - 自动换行
+- [x] Wrap - 自动换行
 - [x] Separator - 分隔线
 - [x] Spacer - 空白占位
-- [ ] Group - 分组
-- [ ] Bleed - 溢出布局
-- [ ] Float - 浮动
-- [ ] AspectRatio - 宽高比
-- [ ] ScrollArea - 滚动区域
-- [ ] Portal - 传送门
+- [x] Group - 分组
+- [x] AspectRatio - 宽高比
+- [x] ScrollArea - 滚动区域
+
+**注**: Bleed, Float, Portal 组件暂不实现，因为它们在 Laravel Blade 环境中使用场景较少
+
+**文档**: 为所有布局组件创建了详细的使用文档
+- docs/components/layout/ - 15个布局组件文档
+
+**组件进度**: 18/60+ (30%)
 
 ### Phase 3: 排版组件 (12个)
 

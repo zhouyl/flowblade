@@ -9,11 +9,17 @@ Layout components help you structure your page and organize content.
 - [Box](layout/box.md) - Flexible layout container with styling options
 - [Container](layout/container.md) - Responsive container with max-width constraints
 - [Center](layout/center.md) - Centers child elements using flexbox
+- [AbsoluteCenter](layout/absolute-center.md) - Absolutely positions and centers content
 - [Flex](layout/flex.md) - Flexible box layout with full control
 - [Grid](layout/grid.md) - CSS Grid layout component
+- [SimpleGrid](layout/simple-grid.md) - Simplified grid with responsive columns
 - [Stack / HStack / VStack](layout/stack.md) - Stack elements with consistent spacing
+- [Wrap](layout/wrap.md) - Flex layout that automatically wraps items
 - [Separator](layout/separator.md) - Visual divider/separator line
 - [Spacer](layout/spacer.md) - Flexible space filler in flex layouts
+- [Group](layout/group.md) - Enables Tailwind group hover/focus states
+- [AspectRatio](layout/aspect-ratio.md) - Maintains consistent aspect ratio
+- [ScrollArea](layout/scroll-area.md) - Scrollable container with custom scrollbar
 
 ## Button Components
 
