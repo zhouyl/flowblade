@@ -82,20 +82,30 @@
 
 **组件进度**: 18/60+ (30%)
 
-### Phase 3: 排版组件 (12个)
+**代码重构**: 按分类组织组件文件结构
+- Layout: `Flowblade\Components\Layout\*`
+- Buttons: `Flowblade\Components\Buttons\*`
+- DataDisplay: `Flowblade\Components\DataDisplay\*`
+- 组件使用方式保持不变 (`<x-box>`, `<x-button>` 等)
 
-- [ ] Heading - 标题
-- [ ] Text - 文本
-- [ ] Link - 链接
-- [ ] Code - 代码
-- [ ] CodeBlock - 代码块
-- [ ] Kbd - 键盘按键
-- [ ] Mark - 标记
-- [ ] Em - 强调
-- [ ] Strong - 加粗
-- [ ] Blockquote - 引用
-- [ ] Highlight - 高亮
-- [ ] List - 列表
+### ✅ Phase 3: 排版组件 (12个) - 已完成
+
+**完成时间**: 2025-10-27
+
+- [x] Heading - 标题
+- [x] Text - 文本
+- [x] Link - 链接
+- [x] Code - 代码
+- [x] CodeBlock - 代码块
+- [x] Kbd - 键盘按键
+- [x] Mark - 标记
+- [x] Em - 强调
+- [x] Strong - 加粗
+- [x] Blockquote - 引用
+- [x] Highlight - 高亮
+- [x] List - 列表
+
+**组件进度**: 30/60+ (50%)
 
 ### Phase 4: 按钮组件 (4个)
 

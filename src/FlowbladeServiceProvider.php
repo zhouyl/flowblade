@@ -85,6 +85,20 @@ class FlowbladeServiceProvider extends ServiceProvider
 
             // Data Display Components
             'icon' => \Flowblade\Components\DataDisplay\Icon::class,
+
+            // Typography Components
+            'heading' => \Flowblade\Components\Typography\Heading::class,
+            'text' => \Flowblade\Components\Typography\Text::class,
+            'link' => \Flowblade\Components\Typography\Link::class,
+            'code' => \Flowblade\Components\Typography\Code::class,
+            'code-block' => \Flowblade\Components\Typography\CodeBlock::class,
+            'kbd' => \Flowblade\Components\Typography\Kbd::class,
+            'mark' => \Flowblade\Components\Typography\Mark::class,
+            'em' => \Flowblade\Components\Typography\Em::class,
+            'strong' => \Flowblade\Components\Typography\Strong::class,
+            'blockquote' => \Flowblade\Components\Typography\Blockquote::class,
+            'highlight' => \Flowblade\Components\Typography\Highlight::class,
+            'list' => \Flowblade\Components\Typography\ListComponent::class,
         ];
     }
 }
