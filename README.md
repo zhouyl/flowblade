@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **60+ Components** - Comprehensive UI component library
+- 🎨 **41+ Components** - Growing UI component library (68% complete)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,26 +135,45 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current (3/60+)
+### Current Progress: 41/60+ (68%)
 
-- ✅ Button
-- ✅ Icon
-- ✅ Box
+#### Layout Components (16)
+- ✅ Box, Container, Center, AbsoluteCenter
+- ✅ Flex, Grid, SimpleGrid
+- ✅ Stack, HStack, VStack
+- ✅ Wrap, Separator, Spacer
+- ✅ Group, AspectRatio, ScrollArea
+
+#### Button Components (4)
+- ✅ Button, IconButton, CloseButton, ButtonGroup
+
+#### Typography Components (12)
+- ✅ Heading, Text, Link
+- ✅ Code, CodeBlock, Kbd
+- ✅ Mark, Em, Strong
+- ✅ Blockquote, Highlight, List
+
+#### Form Components (8)
+- ✅ Input, Textarea
+- ✅ Checkbox, Radio, Switch
+- ✅ NativeSelect, PinInput, NumberInput
+
+#### Data Display Components (1)
+- ✅ Icon (100,000+ icons via Iconify)
 
 ### Coming Soon
 
-- Layout: Container, Flex, Grid, Stack, etc.
-- Typography: Heading, Text, Link, Code, etc.
-- Forms: Input, Textarea, Checkbox, Select, etc.
+- Forms: Select, Slider, FileUpload, etc.
 - Overlays: Modal, Drawer, Popover, Tooltip, etc.
 - Feedback: Alert, Toast, Progress, Spinner, etc.
+- Data Display: Badge, Card, Avatar, Tag, Table, etc.
 - And many more...
 
 See [docs/TODO.md](docs/TODO.md) for the complete development plan.
 
-## 🤝 Contributing
+## 🤝 Issues
 
-This is a personal project. If you find any issues, please open an issue on GitHub.
+If you find any issues, please open an issue on GitHub.
 
 ## 📄 License
 
