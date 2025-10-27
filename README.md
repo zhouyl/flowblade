@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **79+ Components** - Comprehensive UI component library (132% of initial goal!)
+- 🎨 **80+ Components** - Comprehensive UI component library (133% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 79/60+ (132% of Initial Goal! 🎉)
+### Current Progress: 80/60+ (133% of Initial Goal! 🎉)
 
 #### Layout Components (16)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -179,9 +179,10 @@ Edit `config/flowblade.php` to customize:
 - ✅ Accordion, AccordionItem (with default, separated, contained variants)
 - ✅ Collapsible (simple expand/collapse component)
 
-#### Feedback Components (2)
+#### Feedback Components (3)
 - ✅ Alert (with info, success, warning, danger status; solid, subtle, left-accent, top-accent variants)
 - ✅ Spinner (with spinner, dots, pulse, ring variants; 8 color options)
+- ✅ Progress (with default, striped, animated variants; indeterminate state)
 
 #### Data Display Components (1)
 - ✅ Icon (100,000+ icons via Iconify)
