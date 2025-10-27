@@ -93,6 +93,8 @@ class FlowbladeServiceProvider extends ServiceProvider
             'timeline' => Components\DataDisplay\Timeline::class,
             'timeline-item' => Components\DataDisplay\TimelineItem::class,
             'table' => Components\DataDisplay\Table::class,
+            'tree-view' => Components\DataDisplay\TreeView::class,
+            'tree-view-item' => Components\DataDisplay\TreeViewItem::class,
 
             // Typography Components
             'heading' => Components\Typography\Heading::class,

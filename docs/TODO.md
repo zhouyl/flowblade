@@ -162,20 +162,21 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 57/60+ (95%)
+**组件进度**: 59/60+ (98%)
 
-### Phase 7: 集合组件 (4个) - 进行中
+### Phase 7: 集合组件 (4个) - 已完成 ✅
 
 **开始时间**: 2025-10-27
+**完成时间**: 2025-10-27
 
 - [x] Table - 表格
 - [x] DataList - 数据列表
 - [x] Timeline - 时间线
-- [ ] TreeView - 树形视图
+- [x] TreeView - 树形视图
 
 ### Phase 8: 覆盖层组件 (7个)
 
-- [ ] Modal/Dialog - 模态框
+- [ ] Modal - 模态框(Dialog)
 - [ ] Drawer - 抽屉
 - [ ] Popover - 弹出框
 - [ ] Tooltip - 提示
