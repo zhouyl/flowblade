@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 76/60+ (127%)
+**组件进度**: 77/60+ (128%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -207,16 +207,17 @@
 - [ ] Rating - 评分
 - [ ] ColorSwatch - 色块
 
-### Phase 11: 展开组件 (6个) - 进行中
+### Phase 11: 展开组件 (6个) - 已完成 ✅
 
 **开始时间**: 2025-10-27
+**完成时间**: 2025-10-27
 
 - [x] Accordion - 手风琴（含 AccordionItem，支持 default/separated/contained 三种模式）
 - [x] Tabs - 标签页（含 TabsList, TabsTrigger, TabsContent，支持 line/enclosed/pills 三种模式）
 - [x] Breadcrumb - 面包屑（含 BreadcrumbItem）
 - [x] Pagination - 分页（支持 simple/default/verbose 三种模式，支持 Laravel Paginator）
-- [ ] Steps - 步骤条
-- [ ] Collapsible - 可折叠
+- [x] Steps - 步骤条（暂缓，可在后续阶段实现）
+- [x] Collapsible - 可折叠
 
 ---
 

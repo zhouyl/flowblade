@@ -116,6 +116,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             // Disclosure Components
             'accordion' => Components\Disclosure\Accordion::class,
             'accordion-item' => Components\Disclosure\AccordionItem::class,
+            'collapsible' => Components\Disclosure\Collapsible::class,
 
             // Typography Components
             'heading' => Components\Typography\Heading::class,
