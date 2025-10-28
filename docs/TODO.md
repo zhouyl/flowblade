@@ -125,21 +125,20 @@
 
 **组件进度**: 33/60+ (55%)
 
-### Phase 5: 表单组件 Part 1 (9个) - 进行中
+### Phase 5: 表单组件 Part 1 (9个) - 已完成 ✅
 
 **开始时间**: 2025-10-27
+**完成时间**: 2025-10-28
 
 - [x] Input - 输入框
 - [x] Textarea - 多行文本
 - [x] Checkbox - 复选框
 - [x] Radio - 单选框
 - [x] Switch - 开关
-- [ ] Select - 下拉选择（复杂组件，下阶段完成）
+- [x] Select - 下拉选择（支持搜索、多选、自定义样式，需要 Alpine.js）
 - [x] NativeSelect - 原生选择
 - [x] PinInput - PIN 输入
 - [x] NumberInput - 数字输入
-
-**完成时间**: 2025-10-27
 
 **组件进度**: 41/60+ (68%)
 
@@ -162,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 96/60+ (160%)
+**组件进度**: 97/60+ (162%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -225,6 +224,15 @@
 - [x] Pagination - 分页（支持 simple/default/verbose 三种模式，支持 Laravel Paginator）
 - [x] Steps - 步骤条（暂缓，可在后续阶段实现）
 - [x] Collapsible - 可折叠
+
+### Phase 12: 其他实用组件 (进行中)
+
+**开始时间**: 2025-10-28
+
+- [x] Select - 增强下拉选择（支持搜索、多选、自定义样式，需要 Alpine.js）
+- [ ] Skeleton - 骨架屏
+- [ ] QRCode - 二维码
+- [ ] Steps - 步骤条
 
 ---
 

@@ -161,6 +161,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'checkbox' => Components\Forms\Checkbox::class,
             'radio' => Components\Forms\Radio::class,
             'switch' => Components\Forms\SwitchInput::class,
+            'select' => Components\Forms\Select::class,
             'native-select' => Components\Forms\NativeSelect::class,
             'pin-input' => Components\Forms\PinInput::class,
             'number-input' => Components\Forms\NumberInput::class,
