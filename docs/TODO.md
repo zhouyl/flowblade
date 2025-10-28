@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 99/60+ (165%)
+**组件进度**: 101/60+ (168%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -225,14 +225,15 @@
 - [x] Steps - 步骤条（暂缓，可在后续阶段实现）
 - [x] Collapsible - 可折叠
 
-### Phase 12: 其他实用组件 (进行中)
+### Phase 12: 其他实用组件 (已完成 ✅)
 
 **开始时间**: 2025-10-28
+**完成时间**: 2025-10-28
 
 - [x] Select - 增强下拉选择（支持搜索、多选、自定义样式，需要 Alpine.js）
 - [x] Skeleton - 骨架屏（8 种预设类型：text/image/video/card/avatar/button/circle/rectangle，支持自定义尺寸和动画）
 - [x] QRCode - 二维码（支持 simple-qrcode 集成、自定义内容、6 种尺寸、4 种纠错级别、SVG/PNG 格式）
-- [ ] Steps - 步骤条
+- [x] Steps - 步骤条（包含 Steps 和 StepItem 两个组件，4 种变体：default/progress/detailed/breadcrumb，支持水平/垂直布局）
 
 ---
 
