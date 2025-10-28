@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 120/60+ (200%)
+**组件进度**: 122/60+ (203%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -290,18 +290,18 @@
 - Video 基于 HTML5 video 元素
 - DeviceMockup 纯 CSS 实现
 
-### Phase 17: 特殊用途组件 (计划中)
+### Phase 17: 特殊用途组件 (进行中)
 
-**预计开始时间**: 待定
+**开始时间**: 2025-10-28
 
 - [ ] Jumbotron - 巨幕（大型展示区域，适用于首页 Hero 区域，支持背景图、渐变、CTA 按钮）
-- [ ] ListGroup - 列表组（交互式列表，支持链接、按钮、徽章、图标，可选中状态）
+- [x] ListGroup - 列表组（交互式列表，支持链接、按钮、徽章、图标，可选中状态）
 - [ ] Indicators - 指示器（状态指示器，支持在线/离线、通知数量、活动状态）
 - [ ] ChatBubble - 聊天气泡（聊天界面消息气泡，支持左右对齐、头像、时间戳、已读状态）
 
 **说明**：
 - Jumbotron 适用于营销页面和首页
-- ListGroup 可用于侧边栏、设置面板等
+- ListGroup 已完成（包含 ListGroup、ListGroupItem 两个组件）
 - Indicators 与现有 Status 组件类似但更专注于特定场景
 - ChatBubble 适用于聊天应用和客服系统
 
@@ -315,8 +315,8 @@
 2. ~~**FloatingLabel**~~ - 已完成 ✅
 3. ~~**Datepicker**~~ - 已完成 ✅
 4. ~~**Timepicker**~~ - 已完成 ✅
-5. **Gallery** - 图片展示常用组件
-6. **ListGroup** - 通用列表组件，应用场景广
+5. ~~**ListGroup**~~ - 已完成 ✅
+6. **Gallery** - 图片展示常用组件
 
 ### 中优先级（可选实现）
 
