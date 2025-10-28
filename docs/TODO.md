@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 111/60+ (185%)
+**组件进度**: 112/60+ (187%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -235,14 +235,15 @@
 - [x] QRCode - 二维码（支持 simple-qrcode 集成、自定义内容、6 种尺寸、4 种纠错级别、SVG/PNG 格式）
 - [x] Steps - 步骤条（包含 Steps 和 StepItem 两个组件，4 种变体：default/progress/detailed/breadcrumb，支持水平/垂直布局）
 
-### Phase 13: 导航与布局组件 (进行中)
+### Phase 13: 导航与布局组件 (已完成 ✅)
 
 **开始时间**: 2025-10-28
+**完成时间**: 2025-10-28
 
 - [x] Navbar - 导航栏（包含 Navbar, NavbarBrand, NavbarToggle, NavbarCollapse, NavbarLink 五个组件，支持响应式移动菜单，Flowbite Collapse 集成）
 - [x] Sidebar - 侧边栏（包含 Sidebar, SidebarItem, SidebarGroup, SidebarToggle 四个组件，支持固定/抽屉模式、多级菜单、图标徽章，Flowbite Drawer 和 Collapse 集成）
 - [x] Footer - 页脚（支持默认/固定模式、版权声明、链接、Logo、社交媒体图标）
-- [ ] Banner - 横幅/公告栏
+- [x] Banner - 横幅/公告栏（支持顶部/底部定位、可关闭、营销/新闻订阅/信息横幅变体，Flowbite Dismiss 集成）
 
 ---
 

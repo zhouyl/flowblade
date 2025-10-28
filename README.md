@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **111+ Components** - Comprehensive UI component library (185% of initial goal!)
+- 🎨 **112+ Components** - Comprehensive UI component library (187% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 111/60+ (185% of Initial Goal! 🎉)
+### Current Progress: 112/60+ (187% of Initial Goal! 🎉)
 
 #### Layout Components (17)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -198,7 +198,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ MenuDivider (horizontal divider for menu sections)
 - ✅ MenuHeader (header for menu sections)
 
-#### Feedback Components (8) ✅
+#### Feedback Components (9) ✅
 - ✅ Alert (with info, success, warning, danger status; solid, subtle, left-accent, top-accent variants)
 - ✅ Spinner (with spinner, dots, pulse, ring variants; 8 color options)
 - ✅ Progress (with default, striped, animated variants; indeterminate state)
@@ -207,6 +207,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ EmptyState (with icon, title, description; action buttons; 3 sizes)
 - ✅ Toast (with auto-dismiss; 6 positions; Alpine.js integration; action buttons)
 - ✅ Skeleton (loading placeholder with 8 preset types: text, image, video, card, avatar, button, circle, rectangle)
+- ✅ Banner (sticky announcements with top/bottom positioning; dismissible; marketing/newsletter/informational variants; Flowbite Dismiss integration)
 
 #### Data Display Components (1)
 - ✅ Icon (100,000+ icons via Iconify)
