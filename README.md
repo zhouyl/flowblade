@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **85+ Components** - Comprehensive UI component library (142% of initial goal!)
+- 🎨 **86+ Components** - Comprehensive UI component library (143% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 85/60+ (142% of Initial Goal! 🎉)
+### Current Progress: 86/60+ (143% of Initial Goal! 🎉)
 
 #### Layout Components (16)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -162,7 +162,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ Editable, FileUpload
 - ✅ Slider, RangeSlider
 
-#### Data Display Components (17)
+#### Data Display Components (18)
 - ✅ Icon, Avatar, Badge, Tag, Stat
 - ✅ Card (with Header, Body, Footer)
 - ✅ DataList, DataListItem
@@ -170,6 +170,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ Table (with Header, Body, Row, Head, Cell)
 - ✅ TreeView, TreeViewItem
 - ✅ Rating (with readonly and interactive modes; half-star support; 8 colors)
+- ✅ ColorSwatch (with hex/rgb/hsl support; copyable; square/circle variants)
 
 #### Navigation Components (7)
 - ✅ Breadcrumb, BreadcrumbItem
