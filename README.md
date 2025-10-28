@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **131+ Components** - Comprehensive UI component library (218% of initial goal!)
+- 🎨 **130+ Components** - Comprehensive UI component library (217% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 131/60+ (218% of Initial Goal! 🎉)
+### Current Progress: 130/60+ (217% of Initial Goal! 🎉)
 
 #### Layout Components (18)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -219,14 +219,13 @@ Edit `config/flowblade.php` to customize:
 #### Data Display Components (1)
 - ✅ Icon (100,000+ icons via Iconify)
 
-#### Media Components (7) ✅
+#### Media Components (6) ✅
 - ✅ QRCode (with simple-qrcode integration; 6 sizes; 4 error correction levels; SVG/PNG format; label support)
 - ✅ Gallery (responsive image grid; 2-6 columns; customizable gaps; mobile-first design; lightbox integration ready)
 - ✅ GalleryItem (individual gallery item; supports custom content; lazy loading; image optimization)
 - ✅ Carousel (image/content slider; static/slide modes; navigation controls; Flowbite JS integration; responsive heights)
 - ✅ CarouselItem (individual carousel slide; customizable animation; active state; duration/easing control)
 - ✅ Video (HTML5 video player; autoplay/loop/muted; poster images; multiple sources; subtitles support; responsive)
-- ✅ DeviceMockup (device frames for app showcase; mobile/tablet/laptop/desktop; portrait/landscape; pure CSS)
 
 ### Coming Soon
 

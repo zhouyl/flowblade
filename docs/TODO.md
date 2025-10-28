@@ -12,12 +12,13 @@
 
 ## 开发进度
 
-**当前状态**: 131/60+ 组件 (218%)
+**当前状态**: 130/60+ 组件 (217%)
 
 **最近更新**: 2025-10-28
 - 完成 Phase 14 高级表单组件（8个）✅
-- 完成 Phase 16 媒体与展示组件（4个）✅
+- 完成 Phase 16 媒体与展示组件（3个）✅
 - 完成 Phase 17 特殊用途组件（4个）✅
+- 移除 DeviceMockup 和 BottomNavigation 组件
 
 ### ✅ Phase 1: 项目基础 (已完成)
 
@@ -267,13 +268,10 @@
 
 - [ ] SpeedDial - 快速拨号（浮动操作按钮组，支持 4 种位置，展开/收起动画，图标和文本支持）
 - [ ] MegaMenu - 超级菜单（大型下拉菜单，支持多列布局、图标、描述、分组，适用于复杂导航）
-- [ ] BottomNavigation - 底部导航（移动端底部导航栏，支持图标、文本、徽章，适用于移动应用）
 
 **说明**：
-- Clipboard 需要 Flowbite JS 的 CopyClipboard 组件
 - SpeedDial 适用于移动端和桌面端的快速操作
 - MegaMenu 适用于大型网站的复杂导航
-- BottomNavigation 专为移动端设计
 
 ### Phase 16: 媒体与展示组件 (已完成) ✅
 
@@ -283,13 +281,11 @@
 - [x] Gallery - 图片画廊（图片网格展示，支持响应式列数、自定义间距、Lightbox 集成）
 - [x] Carousel - 轮播图（图片/内容轮播，支持自动播放、指示器、导航按钮、Flowbite JS 集成）
 - [x] Video - 视频播放器（HTML5 视频播放器增强，支持自动播放、循环、静音、海报图、预加载、多源、字幕、响应式）
-- [x] DeviceMockup - 设备模型（展示应用界面的设备框架，支持 mobile/tablet/laptop/desktop，横竖屏切换，纯 CSS 实现）
 
 **说明**：
 - Gallery 已完成（包含 Gallery、GalleryItem 两个组件）
 - Carousel 已完成（包含 Carousel、CarouselItem 两个组件，需要 Flowbite JS）
 - Video 已完成（基于 HTML5 video 元素，支持多种视频格式、字幕、响应式设计）
-- DeviceMockup 已完成（纯 CSS 实现，支持 4 种设备类型，横竖屏切换，深色模式）
 
 ### Phase 17: 特殊用途组件 (已完成) ✅
 
@@ -321,10 +317,9 @@
 6. ~~**Gallery**~~ - 已完成 ✅
 7. ~~**Carousel**~~ - 已完成 ✅
 8. ~~**Video**~~ - 已完成 ✅
-9. ~~**DeviceMockup**~~ - 已完成 ✅
-10. ~~**Jumbotron**~~ - 已完成 ✅
-11. ~~**Indicator**~~ - 已完成 ✅
-12. ~~**ChatBubble**~~ - 已完成 ✅
+9. ~~**Jumbotron**~~ - 已完成 ✅
+10. ~~**Indicator**~~ - 已完成 ✅
+11. ~~**ChatBubble**~~ - 已完成 ✅
 
 ### 中优先级（可选实现）
 
@@ -336,11 +331,9 @@
 
 ### 低优先级（可暂缓）
 
-1. **BottomNavigation** - 专为移动端设计，桌面端用不到
-2. **DeviceMockup** - 展示用途，非功能性组件
-3. **Jumbotron** - 可用现有 Box/Container 组件组合实现
-4. **ChatBubble** - 特定场景（聊天应用）才需要
-5. **Indicators** - 与现有 Status/Badge 组件功能重叠
+1. **Jumbotron** - 可用现有 Box/Container 组件组合实现（已完成 ✅）
+2. **ChatBubble** - 特定场景（聊天应用）才需要（已完成 ✅）
+3. **Indicators** - 与现有 Status/Badge 组件功能重叠（已完成 ✅）
 
 ### 不建议实现的组件
 
