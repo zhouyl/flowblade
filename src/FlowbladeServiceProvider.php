@@ -194,6 +194,9 @@ class FlowbladeServiceProvider extends ServiceProvider
             'slider' => Components\Forms\Slider::class,
             'range-slider' => Components\Forms\RangeSlider::class,
             'clipboard' => Components\Forms\Clipboard::class,
+            'floating-label' => Components\Forms\FloatingLabel::class,
+            'floating-textarea' => Components\Forms\FloatingTextarea::class,
+            'floating-select' => Components\Forms\FloatingSelect::class,
         ];
     }
 }
