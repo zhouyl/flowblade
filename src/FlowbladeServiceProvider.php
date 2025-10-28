@@ -153,6 +153,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'empty-state' => Components\Feedback\EmptyState::class,
             'toast' => Components\Feedback\Toast::class,
             'skeleton' => Components\Feedback\Skeleton::class,
+            'banner' => Components\Feedback\Banner::class,
 
             // Media Components
             'qrcode' => Components\Media\QRCode::class,
