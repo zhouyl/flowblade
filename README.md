@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **130+ Components** - Comprehensive UI component library (217% of initial goal!)
+- 🎨 **135+ Components** - Comprehensive UI component library (225% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 130/60+ (217% of Initial Goal! 🎉)
+### Current Progress: 135/60+ (225% of Initial Goal! 🎉)
 
 #### Layout Components (18)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -182,13 +182,15 @@ Edit `config/flowblade.php` to customize:
 - ✅ ChatBubble (chat messages; left/right alignment; avatars; timestamps; read status; 8 colors; message tail)
 - ✅ TagsInput (with keyboard shortcuts; auto-split; max tags; prevent duplicates)
 
-#### Navigation Components (18)
+#### Navigation Components (23) ✅
 - ✅ Breadcrumb, BreadcrumbItem
 - ✅ Pagination (with simple, default, verbose variants, Laravel Paginator support)
 - ✅ Tabs, TabsList, TabsTrigger, TabsContent (with line, enclosed, pills variants)
 - ✅ Steps, StepItem (with 4 variants: default, progress, detailed, breadcrumb; horizontal/vertical layouts)
 - ✅ Navbar, NavbarBrand, NavbarToggle, NavbarCollapse, NavbarLink (responsive mobile menu; Flowbite Collapse integration)
 - ✅ Sidebar, SidebarItem, SidebarGroup, SidebarToggle (fixed/off-canvas modes; multi-level menus; Flowbite Drawer and Collapse integration)
+- ✅ SpeedDial, SpeedDialItem (floating action buttons; 4 positions; click/hover trigger; tooltip support; perfect for quick actions)
+- ✅ MegaMenu, MegaMenuColumn, MegaMenuItem (large dropdown menu; 1-4 column layout; icons and descriptions; perfect for complex navigation)
 
 #### Disclosure Components (3)
 - ✅ Accordion, AccordionItem (with default, separated, contained variants)
