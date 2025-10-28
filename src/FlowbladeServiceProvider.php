@@ -197,6 +197,9 @@ class FlowbladeServiceProvider extends ServiceProvider
             'floating-label' => Components\Forms\FloatingLabel::class,
             'floating-textarea' => Components\Forms\FloatingTextarea::class,
             'floating-select' => Components\Forms\FloatingSelect::class,
+            'datepicker' => Components\Forms\Datepicker::class,
+            'date-range-picker' => Components\Forms\DateRangePicker::class,
+            'inline-datepicker' => Components\Forms\InlineDatepicker::class,
         ];
     }
 }
