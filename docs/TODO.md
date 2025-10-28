@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 93/60+ (155%)
+**组件进度**: 94/60+ (157%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -183,7 +183,7 @@
 - [x] Popover - 弹出框（支持 top/right/bottom/left 位置，hover/click 触发，5种宽度，可选标题/箭头，支持富文本内容）
 - [x] Tooltip - 提示（支持 top/right/bottom/left 位置，hover/click 触发，dark/light 样式，可选箭头）
 - [x] Menu - 菜单（包含 Menu, MenuItem, MenuDivider, MenuHeader，支持 12 种位置，click/hover 触发，6 种宽度，图标支持，状态管理）
-- [ ] HoverCard - 悬停卡片
+- [x] HoverCard - 悬停卡片（专为 hover 交互设计，支持 4 种位置，5 种宽度，可配置延迟，支持富文本内容）
 
 ### Phase 9: 反馈组件 (7个) - 已完成 ✅
 
