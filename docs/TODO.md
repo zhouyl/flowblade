@@ -10,11 +10,11 @@
 ## 当前进度
 
 **总组件数**: 138 个
-**已 Review**: 111 个
-**待 Review**: 27 个
-**完成度**: 80.4%
+**已 Review**: 120 个
+**待 Review**: 18 个
+**完成度**: 87.0%
 
-**当前阶段**: Phase 8 - Disclosure Components Review (已完成 ✅)
+**当前阶段**: Phase 9 - Overlay Components Review (已完成 ✅)
 
 ## Review 目标
 
@@ -242,16 +242,17 @@
 ### Phase 9: Overlay Components Review (9 个组件)
 
 **预计时间**: 1-2 个会话
+**当前状态**: 已完成 ✅
 
-- [ ] Tooltip
-- [ ] Popover
-- [ ] HoverCard
-- [ ] Modal
-- [ ] Drawer
-- [ ] Menu
-- [ ] MenuItem
-- [ ] MenuDivider
-- [ ] MenuHeader
+- [x] Tooltip - 已完成（修复命名空间错误、改进文档）
+- [x] Popover - 已完成（修复命名空间错误、改进文档）
+- [x] HoverCard - 已完成（修复命名空间错误、改进文档）
+- [x] Modal - 已完成（修复命名空间错误、改进文档）
+- [x] Drawer - 已完成（修复命名空间错误、改进文档）
+- [x] Menu - 已完成（修复命名空间错误、改进文档）
+- [x] MenuItem - 已完成（修复命名空间错误、改进文档）
+- [x] MenuDivider - 已完成（修复命名空间错误、改进文档）
+- [x] MenuHeader - 已完成（修复命名空间错误、改进文档）
 
 ### Phase 10: Feedback Components Review (9 个组件)
 

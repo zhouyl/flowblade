@@ -2,28 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Overlay;
+namespace Flowblade\Components\Overlay;
 
 use Illuminate\View\Component;
 
 /**
  * Popover Component
  *
- * Popover component for displaying rich content in a popup box
+ * Popover overlay for displaying rich content in a popup box.
+ * Supports title, text content, or slot-based rich content with HTML.
  */
 class Popover extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $title     Popover title (optional)
-     * @param null|string $content   Popover content text (optional, use slot for rich content)
-     * @param string      $placement Placement: top, right, bottom, left
-     * @param string      $trigger   Trigger type: hover, click
-     * @param bool        $arrow     Whether to show arrow
-     * @param null|string $animation Animation duration: 100, 150, 200, 300, 500, 700, 1000
-     * @param null|int    $offset    Offset distance from trigger element
-     * @param null|string $width     Width class: sm (16rem), md (20rem), lg (24rem), xl (28rem), 2xl (32rem)
+     * @param null|string $title     Optional popover title
+     * @param null|string $content   Optional text content (use slot for rich HTML content)
+     * @param string      $placement Popover position: 'top', 'right', 'bottom', 'left'
+     * @param string      $trigger   Activation trigger: 'hover', 'click'
+     * @param bool        $arrow     Whether to display arrow pointer
+     * @param null|string $animation Animation duration in milliseconds: '100', '150', '200', '300', '500', '700', '1000'
+     * @param null|int    $offset    Offset distance in pixels from trigger element
+     * @param null|string $width     Popover width: 'sm' (16rem), 'md' (20rem), 'lg' (24rem), 'xl' (28rem), '2xl' (32rem)
      */
     public function __construct(
         public ?string $title = null,

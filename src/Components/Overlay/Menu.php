@@ -2,25 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Overlay;
+namespace Flowblade\Components\Overlay;
 
 use Illuminate\View\Component;
 
 /**
  * Menu Component
  *
- * Dropdown menu component for displaying a list of menu items
+ * Dropdown menu overlay for displaying a list of menu items.
+ * Contains MenuItem, MenuHeader, and MenuDivider components.
  */
 class Menu extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $placement Placement: top, right, bottom, left, top-start, top-end, right-start, right-end, bottom-start, bottom-end, left-start, left-end
-     * @param string      $trigger   Trigger type: click, hover
+     * @param string      $placement Menu position: 'top', 'right', 'bottom', 'left', 'top-start', 'top-end', 'right-start', 'right-end', 'bottom-start', 'bottom-end', 'left-start', 'left-end'
+     * @param string      $trigger   Activation trigger: 'click', 'hover'
      * @param null|int    $delay     Delay in milliseconds for hover trigger
-     * @param null|string $width     Width class: auto, xs (10rem), sm (11rem), md (14rem), lg (16rem), xl (20rem)
-     * @param bool        $divided   Whether to show dividers between groups
+     * @param null|string $width     Menu width: 'auto', 'xs' (10rem), 'sm' (11rem), 'md' (14rem), 'lg' (16rem), 'xl' (20rem)
+     * @param bool        $divided   Whether to display dividers between menu groups
      */
     public function __construct(
         public string $placement = 'bottom',

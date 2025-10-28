@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Overlay;
+namespace Flowblade\Components\Overlay;
 
 use Illuminate\View\Component;
 
 /**
  * MenuDivider Component
  *
- * Divider component for separating menu items
+ * Horizontal divider for separating groups of menu items within a Menu.
+ * Provides visual separation between related menu sections.
  */
 class MenuDivider extends Component
 {

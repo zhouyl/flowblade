@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Overlay;
+namespace Flowblade\Components\Overlay;
 
 use Illuminate\View\Component;
 
 /**
  * MenuHeader Component
  *
- * Header component for menu sections
+ * Header label for menu sections within a Menu.
+ * Provides category or group titles for organizing menu items.
  */
 class MenuHeader extends Component
 {
