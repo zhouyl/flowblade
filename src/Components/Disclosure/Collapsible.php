@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Disclosure;
+namespace Flowblade\Components\Disclosure;
 
 use Illuminate\View\Component;
 
 /**
  * Collapsible Component
  *
- * Collapsible component for toggling content visibility
+ * Standalone collapsible component for toggling content visibility.
+ * Similar to AccordionItem but used independently without Accordion container.
  */
 class Collapsible extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param bool        $open     Whether the collapsible is open by default
-     * @param null|string $title    Collapsible title
-     * @param null|string $icon     Icon name
-     * @param bool        $disabled Whether the collapsible is disabled
+     * @param bool        $open     Whether content is expanded by default
+     * @param null|string $title    Collapsible header title or label
+     * @param null|string $icon     Optional Iconify icon name
+     * @param bool        $disabled Whether collapsible is disabled and non-toggleable
      */
     public function __construct(
         public bool $open = false,

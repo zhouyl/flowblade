@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Disclosure;
+namespace Flowblade\Components\Disclosure;
 
 use Illuminate\View\Component;
 
 /**
  * AccordionItem Component
  *
- * Individual item in an accordion
+ * Individual collapsible section within an Accordion component.
+ * Contains a trigger button and expandable content panel.
  */
 class AccordionItem extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $value    Item value identifier
-     * @param null|string $title    Item title
-     * @param null|string $icon     Icon name
-     * @param bool        $disabled Whether the item is disabled
+     * @param string      $value    Unique item identifier matching Accordion defaultValue
+     * @param null|string $title    Item header title or label
+     * @param null|string $icon     Optional Iconify icon name
+     * @param bool        $disabled Whether item is disabled and non-expandable
      */
     public function __construct(
         public string $value,

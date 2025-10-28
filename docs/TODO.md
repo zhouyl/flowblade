@@ -10,11 +10,11 @@
 ## 当前进度
 
 **总组件数**: 138 个
-**已 Review**: 108 个
-**待 Review**: 30 个
-**完成度**: 78.3%
+**已 Review**: 111 个
+**待 Review**: 27 个
+**完成度**: 80.4%
 
-**当前阶段**: Phase 7 - Navigation Components Review (已完成 ✅)
+**当前阶段**: Phase 8 - Disclosure Components Review (已完成 ✅)
 
 ## Review 目标
 
@@ -233,10 +233,11 @@
 ### Phase 8: Disclosure Components Review (3 个组件)
 
 **预计时间**: 1 个会话
+**当前状态**: 已完成 ✅
 
-- [ ] Accordion
-- [ ] AccordionItem
-- [ ] Collapsible
+- [x] Accordion - 已完成（修复命名空间错误、改进文档）
+- [x] AccordionItem - 已完成（修复命名空间错误、改进文档）
+- [x] Collapsible - 已完成（修复命名空间错误、改进文档）
 
 ### Phase 9: Overlay Components Review (9 个组件)
 

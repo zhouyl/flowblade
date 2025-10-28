@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Disclosure;
+namespace Flowblade\Components\Disclosure;
 
 use Illuminate\View\Component;
 
 /**
  * Accordion Component
  *
- * Accordion component for collapsible content sections
+ * Accordion container for collapsible content sections.
+ * Contains AccordionItem components that can expand/collapse to show/hide content.
  */
 class Accordion extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $variant      Variant: default, separated, contained
-     * @param string      $size         Size: xs, sm, md, lg, xl
-     * @param bool        $multiple     Allow multiple items to be open
-     * @param null|string $defaultValue Default open item value
+     * @param string      $variant      Visual variant: 'default' (connected), 'separated' (spaced), 'contained' (bordered)
+     * @param string      $size         Accordion size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param bool        $multiple     Whether multiple items can be open simultaneously
+     * @param null|string $defaultValue Default open item identifier value
      */
     public function __construct(
         public string $variant = 'default',
