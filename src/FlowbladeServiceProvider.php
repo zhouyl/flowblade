@@ -140,6 +140,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'status' => Components\Feedback\Status::class,
             'empty-state' => Components\Feedback\EmptyState::class,
             'toast' => Components\Feedback\Toast::class,
+            'skeleton' => Components\Feedback\Skeleton::class,
 
             // Typography Components
             'heading' => Components\Typography\Heading::class,
