@@ -79,6 +79,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'group' => Components\Layout\Group::class,
             'aspect-ratio' => Components\Layout\AspectRatio::class,
             'scroll-area' => Components\Layout\ScrollArea::class,
+            'footer' => Components\Layout\Footer::class,
 
             // Button Components
             'button' => Components\Buttons\Button::class,
