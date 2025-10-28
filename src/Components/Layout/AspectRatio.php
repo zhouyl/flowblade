@@ -1,17 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * AspectRatio Component
+ *
+ * Container that maintains a specific aspect ratio for its content.
+ * Perfect for responsive images, videos, and embedded content.
+ */
 class AspectRatio extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param float|string $ratio Aspect ratio: '16/9', '4/3', '1/1', 'square', 'video', or numeric (e.g., 1.5)
+     */
     public function __construct(
-        public string|float $ratio = '16/9', // e.g., '16/9', '4/3', '1/1', or numeric like 1.5
+        public string|float $ratio = '16/9',
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = ['relative', 'w-full'];
@@ -35,6 +51,9 @@ class AspectRatio extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get inline styles for custom aspect ratios
+     */
     public function styles(): ?string
     {
         // If ratio is not a predefined Tailwind class, use custom padding-bottom
@@ -71,6 +90,9 @@ class AspectRatio extends Component
         return null;
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.layout.aspect-ratio');

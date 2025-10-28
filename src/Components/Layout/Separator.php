@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
@@ -8,36 +10,31 @@ use Illuminate\View\Component;
 /**
  * Separator Component
  *
- * A visual separator / divider line.
+ * Visual separator/divider line for organizing content sections.
+ * Supports both horizontal and vertical orientations with customizable styling.
  */
 class Separator extends Component
 {
-    public string $orientation;
+    public string $color;
 
-    public ?string $color;
-
-    public ?string $thickness;
-
-    public ?string $length;
+    public string $thickness;
 
     /**
-     * Create a new component instance.
+     * Create a new component instance
      *
-     * @param string      $orientation Orientation (horizontal, vertical)
-     * @param null|string $color       Border color
-     * @param null|string $thickness   Border thickness (1, 2, 4, 8)
-     * @param null|string $length      Length (for vertical separators)
+     * @param string      $orientation Orientation: 'horizontal', 'vertical'
+     * @param null|string $color       Border color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param null|string $thickness   Border thickness: '1', '2', '4', '8'
+     * @param null|string $length      Length for vertical separators (Tailwind height value)
      */
     public function __construct(
-        string $orientation = 'horizontal',
+        public string $orientation = 'horizontal',
         ?string $color = null,
         ?string $thickness = null,
-        ?string $length = null,
+        public ?string $length = null,
     ) {
-        $this->orientation = $orientation;
         $this->color = $color ?? 'gray';
         $this->thickness = $thickness ?? '1';
-        $this->length = $length;
     }
 
     /**

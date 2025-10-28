@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
@@ -8,46 +10,32 @@ use Illuminate\View\Component;
 /**
  * Stack Component
  *
- * A layout component that stacks elements with consistent spacing.
+ * Flexbox-based layout component that stacks elements vertically or horizontally
+ * with consistent spacing. Supports optional dividers between items.
  */
 class Stack extends Component
 {
-    public string $as;
-
-    public string $direction;
-
-    public ?string $spacing;
-
-    public ?string $align;
-
-    public ?string $justify;
-
-    public bool $divider;
+    public string $spacing;
 
     /**
-     * Create a new component instance.
+     * Create a new component instance
      *
-     * @param string      $as        HTML element to render
-     * @param string      $direction Stack direction (vertical, horizontal)
-     * @param null|string $spacing   Spacing between items (2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl)
-     * @param null|string $align     Align items (start, center, end, stretch, baseline)
-     * @param null|string $justify   Justify content (start, center, end, between, around, evenly)
+     * @param string      $as        HTML element to render (default: 'div')
+     * @param string      $direction Stack direction: 'vertical', 'horizontal'
+     * @param null|string $spacing   Spacing between items: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $align     Align items: 'start', 'center', 'end', 'stretch', 'baseline'
+     * @param null|string $justify   Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
      * @param bool        $divider   Whether to show dividers between items
      */
     public function __construct(
-        string $as = 'div',
-        string $direction = 'vertical',
+        public string $as = 'div',
+        public string $direction = 'vertical',
         ?string $spacing = null,
-        ?string $align = null,
-        ?string $justify = null,
-        bool $divider = false,
+        public ?string $align = null,
+        public ?string $justify = null,
+        public bool $divider = false,
     ) {
-        $this->as = $as;
-        $this->direction = $direction;
         $this->spacing = $spacing ?? 'md';
-        $this->align = $align;
-        $this->justify = $justify;
-        $this->divider = $divider;
     }
 
     /**

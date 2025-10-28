@@ -1,16 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 /**
  * HStack Component
  *
- * Horizontal stack - a shortcut for Stack with horizontal direction.
+ * Horizontal stack layout - a convenient shortcut for Stack with horizontal direction.
+ * Ideal for creating horizontal layouts like navigation bars, button groups, and toolbars.
  */
 class HStack extends Stack
 {
     /**
-     * Create a new component instance.
+     * Create a new component instance
+     *
+     * @param string      $as      HTML element to render (default: 'div')
+     * @param null|string $spacing Spacing between items: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $align   Align items: 'start', 'center', 'end', 'stretch', 'baseline'
+     * @param null|string $justify Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
+     * @param bool        $divider Whether to show vertical dividers between items
      */
     public function __construct(
         string $as = 'div',

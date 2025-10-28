@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Illuminate\View\Component;
@@ -7,12 +9,13 @@ use Illuminate\View\Component;
 /**
  * Spacer Component
  *
- * A flexible space component that fills available space in flex layouts.
+ * Flexible space component that automatically fills available space in flex layouts.
+ * Useful for pushing elements to opposite ends of a container.
  */
 class Spacer extends Component
 {
     /**
-     * Create a new component instance.
+     * Create a new component instance
      */
     public function __construct()
     {
@@ -20,7 +23,7 @@ class Spacer extends Component
     }
 
     /**
-     * Get the component classes.
+     * Get the component classes
      */
     public function classes(): string
     {
