@@ -96,11 +96,12 @@
 ### Phase 2: Button Components Review (4 个组件)
 
 **预计时间**: 1 个会话
+**当前状态**: 已完成 ✅
 
-- [ ] Button
-- [ ] IconButton
-- [ ] CloseButton
-- [ ] ButtonGroup
+- [x] Button - 已完成（添加 declare(strict_types)、改进类和参数注释）
+- [x] IconButton - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
+- [x] CloseButton - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
+- [x] ButtonGroup - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
 
 ### Phase 3: Typography Components Review (12 个组件)
 
@@ -264,11 +265,11 @@
 ## 当前进度
 
 **总组件数**: 138 个
-**已 Review**: 19 个
-**待 Review**: 119 个
-**完成度**: 13.8%
+**已 Review**: 23 个
+**待 Review**: 115 个
+**完成度**: 16.7%
 
-**当前阶段**: Phase 1 - Layout Components Review (19/19 完成 ✅)
+**当前阶段**: Phase 2 - Button Components Review (4/4 完成 ✅)
 
 ## 问题追踪
 

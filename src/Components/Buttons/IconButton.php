@@ -1,16 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Buttons;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * IconButton Component
+ *
+ * Compact button component designed specifically for icons.
+ * Perfect for toolbars, action menus, and space-constrained interfaces.
+ */
 class IconButton extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param string      $icon      Icon name in Iconify format (e.g., 'mdi:pencil')
+     * @param null|string $size      Button size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $variant   Button variant: 'solid', 'outline', 'ghost', 'link'
+     * @param null|string $color     Button color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info'
+     * @param bool        $rounded   Whether to use fully rounded (circular) shape
+     * @param bool        $disabled  Whether button is disabled
+     * @param bool        $loading   Whether button is in loading state
+     * @param string      $type      Button type attribute: 'button', 'submit', 'reset'
+     * @param null|string $ariaLabel Accessible label for screen readers
+     */
     public function __construct(
         public string $icon,
-        public ?string $size = 'md', // 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
-        public ?string $variant = 'solid', // solid, outline, ghost, link
+        public ?string $size = 'md',
+        public ?string $variant = 'solid',
         public ?string $color = 'primary',
         public bool $rounded = false,
         public bool $disabled = false,
@@ -20,6 +41,9 @@ class IconButton extends Component
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [
@@ -72,6 +96,9 @@ class IconButton extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.buttons.icon-button');

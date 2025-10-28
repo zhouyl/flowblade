@@ -1,10 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Buttons;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Button Component
+ *
+ * Versatile button component with multiple variants, sizes, and states.
+ * Supports icons, loading states, and follows Flowbite design patterns.
+ */
 class Button extends Component
 {
     public string $color;
@@ -13,41 +21,36 @@ class Button extends Component
 
     public string $variant;
 
-    public string $rounded;
-
     public bool $disabled;
 
-    public bool $loading;
-
-    public ?string $type;
-
-    public ?string $leftIcon;
-
-    public ?string $rightIcon;
-
     /**
-     * Create a new component instance.
+     * Create a new component instance
+     *
+     * @param null|string $color     button color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', etc
+     * @param null|string $size      Button size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'
+     * @param string      $variant   Button variant: 'solid', 'outline', 'ghost', 'link'
+     * @param string      $rounded   Border radius: 'none', 'sm', 'md', 'lg', 'xl', 'full'
+     * @param bool        $disabled  Whether button is disabled
+     * @param bool        $loading   Whether button is in loading state (also disables button)
+     * @param null|string $type      Button type attribute: 'button', 'submit', 'reset'
+     * @param null|string $leftIcon  Icon name for left side (Iconify format)
+     * @param null|string $rightIcon Icon name for right side (Iconify format)
      */
     public function __construct(
-        string $color = null,
-        string $size = null,
+        ?string $color = null,
+        ?string $size = null,
         string $variant = 'solid',
-        string $rounded = 'md',
+        public string $rounded = 'md',
         bool $disabled = false,
-        bool $loading = false,
-        ?string $type = 'button',
-        ?string $leftIcon = null,
-        ?string $rightIcon = null,
+        public bool $loading = false,
+        public ?string $type = 'button',
+        public ?string $leftIcon = null,
+        public ?string $rightIcon = null,
     ) {
         $this->color = $color ?? ComponentHelper::config('default_color', 'primary');
         $this->size = $size ?? ComponentHelper::config('default_size', 'md');
         $this->variant = ComponentHelper::parseVariant($variant);
-        $this->rounded = $rounded;
-        $this->disabled = $disabled || $loading;
-        $this->loading = $loading;
-        $this->type = $type;
-        $this->leftIcon = $leftIcon;
-        $this->rightIcon = $rightIcon;
+        $this->disabled = $disabled || $this->loading;
     }
 
     /**

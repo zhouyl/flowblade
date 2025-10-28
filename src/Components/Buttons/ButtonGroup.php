@@ -1,19 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Buttons;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * ButtonGroup Component
+ *
+ * Container component for grouping multiple buttons together.
+ * Supports both attached (seamless) and separated layouts in horizontal or vertical orientation.
+ */
 class ButtonGroup extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param string      $orientation Button layout direction: 'horizontal', 'vertical'
+     * @param bool        $attached    Whether buttons are attached (seamless) or separated
+     * @param null|string $spacing     Gap between buttons when not attached: 'xs', 'sm', 'md', 'lg'
+     */
     public function __construct(
-        public string $orientation = 'horizontal', // horizontal, vertical
+        public string $orientation = 'horizontal',
         public bool $attached = true,
-        public ?string $spacing = null, // xs, sm, md, lg (only when attached=false)
+        public ?string $spacing = null,
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [];
@@ -60,6 +78,9 @@ class ButtonGroup extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.buttons.button-group');

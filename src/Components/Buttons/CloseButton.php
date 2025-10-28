@@ -1,19 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Buttons;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * CloseButton Component
+ *
+ * Specialized button component for closing modals, dialogs, alerts, and other dismissible elements.
+ * Features a consistent X icon with accessible labeling.
+ */
 class CloseButton extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param null|string $size      Button size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param bool        $disabled  Whether button is disabled
+     * @param null|string $ariaLabel Accessible label for screen readers (default: 'Close')
+     */
     public function __construct(
-        public ?string $size = 'md', // xs, sm, md, lg, xl
+        public ?string $size = 'md',
         public bool $disabled = false,
         public ?string $ariaLabel = 'Close',
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [
@@ -52,6 +70,9 @@ class CloseButton extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the icon size classes based on button size
+     */
     public function iconSize(): string
     {
         $sizeMap = [
@@ -65,6 +86,9 @@ class CloseButton extends Component
         return $sizeMap[$this->size] ?? 'w-5 h-5';
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.buttons.close-button');
