@@ -7,7 +7,6 @@
         "components",
         "flowbite",
         "tailwind",
-        "chakra-ui",
         "ui-library"
     ],
     "type": "library",

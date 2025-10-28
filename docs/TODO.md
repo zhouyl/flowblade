@@ -12,12 +12,12 @@
 
 ## 开发进度
 
-**当前状态**: 41/60+ 组件 (68%)
+**当前状态**: 127/60+ 组件 (212%)
 
-**最近更新**: 2025-10-27
-- 完成 Phase 5 表单组件（8个）
-- 创建组件使用文档（11个）
-- 更新项目 README.md
+**最近更新**: 2025-10-28
+- 完成 Phase 14 高级表单组件（8个）
+- 完成 Phase 16 媒体与展示组件（3/4个）
+- 添加 Video 组件（HTML5 视频播放器）
 
 ### ✅ Phase 1: 项目基础 (已完成)
 
@@ -281,13 +281,13 @@
 
 - [x] Gallery - 图片画廊（图片网格展示，支持响应式列数、自定义间距、Lightbox 集成）
 - [x] Carousel - 轮播图（图片/内容轮播，支持自动播放、指示器、导航按钮、Flowbite JS 集成）
-- [ ] Video - 视频播放器（HTML5 视频播放器增强，支持自定义控制栏、字幕、响应式）
+- [x] Video - 视频播放器（HTML5 视频播放器增强，支持自动播放、循环、静音、海报图、预加载、多源、字幕、响应式）
 - [ ] DeviceMockup - 设备模型（展示应用界面的设备框架，支持 iPhone/iPad/Android/Desktop 等设备）
 
 **说明**：
 - Gallery 已完成（包含 Gallery、GalleryItem 两个组件）
 - Carousel 已完成（包含 Carousel、CarouselItem 两个组件，需要 Flowbite JS）
-- Video 基于 HTML5 video 元素
+- Video 已完成（基于 HTML5 video 元素，支持多种视频格式、字幕、响应式设计）
 - DeviceMockup 纯 CSS 实现
 
 ### Phase 17: 特殊用途组件 (进行中)
@@ -318,6 +318,7 @@
 5. ~~**ListGroup**~~ - 已完成 ✅
 6. ~~**Gallery**~~ - 已完成 ✅
 7. ~~**Carousel**~~ - 已完成 ✅
+8. ~~**Video**~~ - 已完成 ✅
 
 ### 中优先级（可选实现）
 
