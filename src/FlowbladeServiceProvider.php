@@ -209,6 +209,8 @@ class FlowbladeServiceProvider extends ServiceProvider
             // Media Components
             'gallery' => Components\Media\Gallery::class,
             'gallery-item' => Components\Media\GalleryItem::class,
+            'carousel' => Components\Media\Carousel::class,
+            'carousel-item' => Components\Media\CarouselItem::class,
         ];
     }
 }
