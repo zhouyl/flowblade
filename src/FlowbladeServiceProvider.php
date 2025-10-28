@@ -109,6 +109,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'tree-view' => Components\DataDisplay\TreeView::class,
             'tree-view-item' => Components\DataDisplay\TreeViewItem::class,
             'indicator' => Components\DataDisplay\Indicator::class,
+            'chat-bubble' => Components\DataDisplay\ChatBubble::class,
 
             // Navigation Components
             'breadcrumb' => Components\Navigation\Breadcrumb::class,
