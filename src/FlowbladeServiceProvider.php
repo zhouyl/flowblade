@@ -126,6 +126,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'popover' => Components\Overlay\Popover::class,
             'hover-card' => Components\Overlay\HoverCard::class,
             'modal' => Components\Overlay\Modal::class,
+            'drawer' => Components\Overlay\Drawer::class,
             'menu' => Components\Overlay\Menu::class,
             'menu-item' => Components\Overlay\MenuItem::class,
             'menu-divider' => Components\Overlay\MenuDivider::class,

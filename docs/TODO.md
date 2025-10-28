@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 95/60+ (158%)
+**组件进度**: 96/60+ (160%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -174,12 +174,13 @@
 - [x] Timeline - 时间线
 - [x] TreeView - 树形视图
 
-### Phase 8: 覆盖层组件 (6个) - 进行中
+### Phase 8: 覆盖层组件 (6个) - 已完成 ✅
 
 **开始时间**: 2025-10-28
+**完成时间**: 2025-10-28
 
 - [x] Modal - 模态框（支持 10 种尺寸，9 种位置，static/dynamic backdrop，可配置关闭行为，支持 header/body/footer 插槽）
-- [ ] Drawer - 抽屉
+- [x] Drawer - 抽屉（支持 4 种位置，7 种宽度/高度，backdrop 控制，body scrolling，edge 模式，支持 header/body/footer 插槽）
 - [x] Popover - 弹出框（支持 top/right/bottom/left 位置，hover/click 触发，5种宽度，可选标题/箭头，支持富文本内容）
 - [x] Tooltip - 提示（支持 top/right/bottom/left 位置，hover/click 触发，dark/light 样式，可选箭头）
 - [x] Menu - 菜单（包含 Menu, MenuItem, MenuDivider, MenuHeader，支持 12 种位置，click/hover 触发，6 种宽度，图标支持，状态管理）
