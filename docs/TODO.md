@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 112/60+ (187%)
+**组件进度**: 113/60+ (188%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -245,25 +245,24 @@
 - [x] Footer - 页脚（支持默认/固定模式、版权声明、链接、Logo、社交媒体图标）
 - [x] Banner - 横幅/公告栏（支持顶部/底部定位、可关闭、营销/新闻订阅/信息横幅变体，Flowbite Dismiss 集成）
 
-### Phase 14: 高级表单组件 (计划中)
+### Phase 14: 高级表单组件 (进行中)
 
-**预计开始时间**: 待定
+**开始时间**: 2025-10-28
 
+- [x] Clipboard - 剪贴板（复制到剪贴板功能，支持输入框、代码块、文本内容，Flowbite Clipboard 集成，支持成功反馈，多种尺寸和变体）
 - [ ] Datepicker - 日期选择器（Flowbite Datepicker 集成，支持单日期、日期范围、内联模式、自动隐藏、日期格式、最小/最大日期、方向、标题、国际化）
 - [ ] Timepicker - 时间选择器（原生 HTML5 time input 增强，支持最小/最大时间、步长、12/24小时格式）
 - [ ] FloatingLabel - 浮动标签（Material Design 风格的浮动标签输入框，支持 input/textarea/select）
-- [ ] PhoneInput - 电话号码输入（国际电话号码输入，支持国家代码选择、格式化、验证）
 
 **说明**：
+- Clipboard 已完成，需要 Flowbite JS 的 CopyClipboard 组件
 - Datepicker 和 Timepicker 需要 Flowbite JS 支持
 - FloatingLabel 提供更现代的表单体验
-- PhoneInput 需要额外的国际化支持
 
 ### Phase 15: 高级交互组件 (计划中)
 
 **预计开始时间**: 待定
 
-- [ ] Clipboard - 剪贴板（复制到剪贴板功能，支持输入框、代码块、文本内容，Flowbite Clipboard 集成，支持成功反馈）
 - [ ] SpeedDial - 快速拨号（浮动操作按钮组，支持 4 种位置，展开/收起动画，图标和文本支持）
 - [ ] MegaMenu - 超级菜单（大型下拉菜单，支持多列布局、图标、描述、分组，适用于复杂导航）
 - [ ] BottomNavigation - 底部导航（移动端底部导航栏，支持图标、文本、徽章，适用于移动应用）
@@ -310,7 +309,7 @@
 
 ### 高优先级（建议优先实现）
 
-1. **Clipboard** - 实用性强，文档和代码示例中常用
+1. ~~**Clipboard**~~ - 已完成 ✅
 2. **Datepicker** - 表单必备组件，使用频率高
 3. **FloatingLabel** - 提升表单用户体验
 4. **Gallery** - 图片展示常用组件
