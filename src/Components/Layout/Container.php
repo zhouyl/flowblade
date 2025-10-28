@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
@@ -8,7 +10,8 @@ use Illuminate\View\Component;
 /**
  * Container Component
  *
- * A responsive container component that centers content and applies max-width constraints.
+ * Responsive container that centers content and applies max-width constraints.
+ * Commonly used for page layouts and content sections in enterprise applications.
  */
 class Container extends Component
 {
@@ -21,12 +24,12 @@ class Container extends Component
     public ?string $py;
 
     /**
-     * Create a new component instance.
+     * Create a new component instance
      *
-     * @param null|string $maxWidth      Maximum width (sm, md, lg, xl, 2xl, 3xl, 4xl, full)
-     * @param bool        $centerContent Whether to center content
-     * @param null|string $px            Horizontal padding
-     * @param null|string $py            Vertical padding
+     * @param null|string $maxWidth      Maximum width (sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, full)
+     * @param bool        $centerContent Whether to center content horizontally with mx-auto
+     * @param null|string $px            Horizontal padding using Tailwind spacing scale (0-96)
+     * @param null|string $py            Vertical padding using Tailwind spacing scale (0-96)
      */
     public function __construct(
         ?string $maxWidth = null,

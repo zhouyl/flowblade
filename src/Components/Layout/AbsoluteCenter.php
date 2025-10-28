@@ -1,18 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * AbsoluteCenter Component
+ *
+ * Centers child elements using absolute positioning and CSS transforms.
+ * Requires parent element to have position: relative.
+ */
 class AbsoluteCenter extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param string      $as   HTML element to render (default: 'div')
+     * @param null|string $axis Centering axis: 'both', 'horizontal', 'vertical' (default: 'both')
+     */
     public function __construct(
         public string $as = 'div',
-        public ?string $axis = null, // both, horizontal, vertical
+        public ?string $axis = null,
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [
@@ -37,6 +54,9 @@ class AbsoluteCenter extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.layout.absolute-center');

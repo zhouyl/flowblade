@@ -74,9 +74,9 @@
 **当前状态**: 进行中 🔄
 
 - [x] Box - 已完成（添加完整注释、改进文档、新增 8 个实用示例）
-- [ ] Container
-- [ ] Center
-- [ ] AbsoluteCenter
+- [x] Container - 已完成（添加 declare(strict_types)、改进注释、新增 7 个企业级示例）
+- [x] Center - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
+- [x] AbsoluteCenter - 已完成（添加完整类和方法注释、添加 declare(strict_types)）
 - [ ] Flex
 - [ ] Grid
 - [ ] SimpleGrid
@@ -264,11 +264,11 @@
 ## 当前进度
 
 **总组件数**: 138 个
-**已 Review**: 1 个
-**待 Review**: 137 个
-**完成度**: 0.7%
+**已 Review**: 4 个
+**待 Review**: 134 个
+**完成度**: 2.9%
 
-**当前阶段**: Phase 1 - Layout Components Review (1/19 完成)
+**当前阶段**: Phase 1 - Layout Components Review (4/19 完成)
 
 ## 问题追踪
 

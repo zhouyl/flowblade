@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
@@ -8,26 +10,21 @@ use Illuminate\View\Component;
 /**
  * Center Component
  *
- * Centers its child elements using flexbox.
+ * Centers child elements both horizontally and vertically using flexbox.
+ * Useful for centering content within a container or creating centered layouts.
  */
 class Center extends Component
 {
-    public string $as;
-
-    public bool $inline;
-
     /**
-     * Create a new component instance.
+     * Create a new component instance
      *
-     * @param string $as     HTML element to render
-     * @param bool   $inline Whether to use inline-flex
+     * @param string $as     HTML element to render (default: 'div')
+     * @param bool   $inline Whether to use inline-flex instead of flex
      */
     public function __construct(
-        string $as = 'div',
-        bool $inline = false,
+        public string $as = 'div',
+        public bool $inline = false,
     ) {
-        $this->as = $as;
-        $this->inline = $inline;
     }
 
     /**
