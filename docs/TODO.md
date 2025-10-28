@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 94/60+ (157%)
+**组件进度**: 95/60+ (158%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -178,7 +178,7 @@
 
 **开始时间**: 2025-10-28
 
-- [ ] Modal - 模态框(Dialog)
+- [x] Modal - 模态框（支持 10 种尺寸，9 种位置，static/dynamic backdrop，可配置关闭行为，支持 header/body/footer 插槽）
 - [ ] Drawer - 抽屉
 - [x] Popover - 弹出框（支持 top/right/bottom/left 位置，hover/click 触发，5种宽度，可选标题/箭头，支持富文本内容）
 - [x] Tooltip - 提示（支持 top/right/bottom/left 位置，hover/click 触发，dark/light 样式，可选箭头）
