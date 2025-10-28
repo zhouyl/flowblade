@@ -142,6 +142,9 @@ class FlowbladeServiceProvider extends ServiceProvider
             'toast' => Components\Feedback\Toast::class,
             'skeleton' => Components\Feedback\Skeleton::class,
 
+            // Media Components
+            'qrcode' => Components\Media\QRCode::class,
+
             // Typography Components
             'heading' => Components\Typography\Heading::class,
             'text' => Components\Typography\Text::class,
