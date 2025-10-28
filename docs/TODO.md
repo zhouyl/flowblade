@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 101/60+ (168%)
+**组件进度**: 106/60+ (177%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -234,6 +234,15 @@
 - [x] Skeleton - 骨架屏（8 种预设类型：text/image/video/card/avatar/button/circle/rectangle，支持自定义尺寸和动画）
 - [x] QRCode - 二维码（支持 simple-qrcode 集成、自定义内容、6 种尺寸、4 种纠错级别、SVG/PNG 格式）
 - [x] Steps - 步骤条（包含 Steps 和 StepItem 两个组件，4 种变体：default/progress/detailed/breadcrumb，支持水平/垂直布局）
+
+### Phase 13: 导航与布局组件 (进行中)
+
+**开始时间**: 2025-10-28
+
+- [x] Navbar - 导航栏（包含 Navbar, NavbarBrand, NavbarToggle, NavbarCollapse, NavbarLink 五个组件，支持响应式移动菜单，Flowbite Collapse 集成）
+- [ ] Sidebar - 侧边栏
+- [ ] Footer - 页脚
+- [ ] Banner - 横幅/公告栏
 
 ---
 
