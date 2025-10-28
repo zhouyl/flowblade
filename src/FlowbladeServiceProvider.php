@@ -99,6 +99,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'stat' => Components\DataDisplay\Stat::class,
             'tag' => Components\DataDisplay\Tag::class,
             'rating' => Components\DataDisplay\Rating::class,
+            'color-swatch' => Components\DataDisplay\ColorSwatch::class,
             'timeline' => Components\DataDisplay\Timeline::class,
             'timeline-item' => Components\DataDisplay\TimelineItem::class,
             'table' => Components\DataDisplay\Table::class,
