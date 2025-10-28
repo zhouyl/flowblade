@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **106+ Components** - Comprehensive UI component library (177% of initial goal!)
+- 🎨 **110+ Components** - Comprehensive UI component library (183% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 106/60+ (177% of Initial Goal! 🎉)
+### Current Progress: 110/60+ (183% of Initial Goal! 🎉)
 
 #### Layout Components (16)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -174,12 +174,13 @@ Edit `config/flowblade.php` to customize:
 - ✅ ColorSwatch (with hex/rgb/hsl support; copyable; square/circle variants)
 - ✅ TagsInput (with keyboard shortcuts; auto-split; max tags; prevent duplicates)
 
-#### Navigation Components (14)
+#### Navigation Components (18)
 - ✅ Breadcrumb, BreadcrumbItem
 - ✅ Pagination (with simple, default, verbose variants, Laravel Paginator support)
 - ✅ Tabs, TabsList, TabsTrigger, TabsContent (with line, enclosed, pills variants)
 - ✅ Steps, StepItem (with 4 variants: default, progress, detailed, breadcrumb; horizontal/vertical layouts)
 - ✅ Navbar, NavbarBrand, NavbarToggle, NavbarCollapse, NavbarLink (responsive mobile menu; Flowbite Collapse integration)
+- ✅ Sidebar, SidebarItem, SidebarGroup, SidebarToggle (fixed/off-canvas modes; multi-level menus; Flowbite Drawer and Collapse integration)
 
 #### Disclosure Components (3)
 - ✅ Accordion, AccordionItem (with default, separated, contained variants)

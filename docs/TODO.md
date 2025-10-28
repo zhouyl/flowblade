@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 106/60+ (177%)
+**组件进度**: 110/60+ (183%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -240,7 +240,7 @@
 **开始时间**: 2025-10-28
 
 - [x] Navbar - 导航栏（包含 Navbar, NavbarBrand, NavbarToggle, NavbarCollapse, NavbarLink 五个组件，支持响应式移动菜单，Flowbite Collapse 集成）
-- [ ] Sidebar - 侧边栏
+- [x] Sidebar - 侧边栏（包含 Sidebar, SidebarItem, SidebarGroup, SidebarToggle 四个组件，支持固定/抽屉模式、多级菜单、图标徽章，Flowbite Drawer 和 Collapse 集成）
 - [ ] Footer - 页脚
 - [ ] Banner - 横幅/公告栏
 
