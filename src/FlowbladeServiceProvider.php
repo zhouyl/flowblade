@@ -108,6 +108,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'table' => Components\DataDisplay\Table::class,
             'tree-view' => Components\DataDisplay\TreeView::class,
             'tree-view-item' => Components\DataDisplay\TreeViewItem::class,
+            'indicator' => Components\DataDisplay\Indicator::class,
 
             // Navigation Components
             'breadcrumb' => Components\Navigation\Breadcrumb::class,
