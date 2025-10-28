@@ -1,20 +1,39 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Typography;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Heading Component
+ *
+ * Semantic heading component with automatic sizing based on heading level.
+ * Supports custom sizes, weights, and colors for flexible typography.
+ */
 class Heading extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param string      $as     HTML heading element: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
+     * @param null|string $size   Custom size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $weight Font weight: 'normal', 'medium', 'semibold', 'bold', 'extrabold'
+     * @param null|string $color  Text color
+     */
     public function __construct(
         public string $as = 'h2',
-        public ?string $size = null, // 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
-        public ?string $weight = null, // normal, medium, semibold, bold, extrabold
+        public ?string $size = null,
+        public ?string $weight = null,
         public ?string $color = null,
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [];
@@ -82,6 +101,9 @@ class Heading extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.typography.heading');

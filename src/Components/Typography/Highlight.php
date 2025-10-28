@@ -1,18 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Typography;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Highlight Component
+ *
+ * Text highlighting component with automatic query matching.
+ * Highlights matching text within content with colored background.
+ */
 class Highlight extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param null|string $query Search query to highlight within text
+     * @param null|string $color Highlight color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     */
     public function __construct(
         public ?string $query = null,
         public ?string $color = 'warning',
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = ['px-1', 'rounded'];
@@ -35,6 +52,9 @@ class Highlight extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the highlighted text with query matches wrapped in mark tags
+     */
     public function highlightedText(): string
     {
         if (!$this->query || !$this->slot) {
@@ -51,6 +71,9 @@ class Highlight extends Component
         );
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.typography.highlight');

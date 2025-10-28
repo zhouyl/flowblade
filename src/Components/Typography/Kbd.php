@@ -1,17 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Typography;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Kbd Component
+ *
+ * Keyboard key component for displaying keyboard shortcuts and key combinations.
+ * Styled to resemble physical keyboard keys with shadow and border.
+ */
 class Kbd extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param null|string $size Text size: 'xs', 'sm', 'md', 'lg'
+     */
     public function __construct(
-        public ?string $size = null, // xs, sm, md, lg
+        public ?string $size = null,
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [
@@ -44,6 +60,9 @@ class Kbd extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.typography.kbd');

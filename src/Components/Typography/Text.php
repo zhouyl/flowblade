@@ -1,23 +1,45 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Typography;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Text Component
+ *
+ * Versatile text component with support for sizing, alignment, truncation, and line clamping.
+ * Perfect for body text, descriptions, and content paragraphs.
+ */
 class Text extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param string      $as        HTML element: 'p', 'span', 'div', etc
+     * @param null|string $size      Text size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $weight    Font weight: 'normal', 'medium', 'semibold', 'bold'
+     * @param null|string $color     Text color
+     * @param null|string $align     Text alignment: 'left', 'center', 'right', 'justify'
+     * @param bool        $truncate  Whether to truncate text with ellipsis
+     * @param null|string $lineClamp Number of lines to clamp: '1', '2', '3', '4', '5', '6'
+     */
     public function __construct(
         public string $as = 'p',
-        public ?string $size = null, // 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
-        public ?string $weight = null, // normal, medium, semibold, bold
+        public ?string $size = null,
+        public ?string $weight = null,
         public ?string $color = null,
-        public ?string $align = null, // left, center, right, justify
+        public ?string $align = null,
         public bool $truncate = false,
-        public ?string $lineClamp = null, // 1, 2, 3, 4, 5, 6
+        public ?string $lineClamp = null,
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [];
@@ -102,6 +124,9 @@ class Text extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.typography.text');

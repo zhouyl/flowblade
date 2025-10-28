@@ -1,19 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Typography;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * List Component
+ *
+ * Flexible list component supporting both ordered and unordered lists.
+ * Features customizable spacing and list style types.
+ */
 class ListComponent extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param string      $type      List type: 'ul' (unordered), 'ol' (ordered)
+     * @param null|string $spacing   Spacing between items: 'xs', 'sm', 'md', 'lg'
+     * @param null|string $styleType List style: 'disc', 'circle', 'square', 'decimal', 'none'
+     */
     public function __construct(
-        public string $type = 'ul', // ul, ol
-        public ?string $spacing = null, // xs, sm, md, lg
-        public ?string $styleType = null, // disc, circle, square, decimal, etc.
+        public string $type = 'ul',
+        public ?string $spacing = null,
+        public ?string $styleType = null,
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [];
@@ -60,6 +78,9 @@ class ListComponent extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.typography.list');
