@@ -81,6 +81,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'scroll-area' => Components\Layout\ScrollArea::class,
             'footer' => Components\Layout\Footer::class,
             'jumbotron' => Components\Layout\Jumbotron::class,
+            'divider' => Components\Layout\Divider::class,
 
             // Button Components
             'button' => Components\Buttons\Button::class,
@@ -209,6 +210,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'date-range-picker' => Components\Forms\DateRangePicker::class,
             'inline-datepicker' => Components\Forms\InlineDatepicker::class,
             'timepicker' => Components\Forms\Timepicker::class,
+            'phone-input' => Components\Forms\PhoneInput::class,
 
             // Data Display Components
             'list-group' => Components\DataDisplay\ListGroup::class,
