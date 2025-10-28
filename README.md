@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **124+ Components** - Comprehensive UI component library (207% of initial goal!)
+- 🎨 **126+ Components** - Comprehensive UI component library (210% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -217,10 +217,12 @@ Edit `config/flowblade.php` to customize:
 #### Data Display Components (1)
 - ✅ Icon (100,000+ icons via Iconify)
 
-#### Media Components (3)
+#### Media Components (5)
 - ✅ QRCode (with simple-qrcode integration; 6 sizes; 4 error correction levels; SVG/PNG format; label support)
 - ✅ Gallery (responsive image grid; 2-6 columns; customizable gaps; mobile-first design; lightbox integration ready)
 - ✅ GalleryItem (individual gallery item; supports custom content; lazy loading; image optimization)
+- ✅ Carousel (image/content slider; static/slide modes; navigation controls; Flowbite JS integration; responsive heights)
+- ✅ CarouselItem (individual carousel slide; customizable animation; active state; duration/easing control)
 
 ### Coming Soon
 

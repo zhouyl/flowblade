@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 124/60+ (207%)
+**组件进度**: 126/60+ (210%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -280,13 +280,13 @@
 **开始时间**: 2025-10-28
 
 - [x] Gallery - 图片画廊（图片网格展示，支持响应式列数、自定义间距、Lightbox 集成）
-- [ ] Carousel - 轮播图（图片/内容轮播，支持自动播放、指示器、导航按钮、无限循环）
+- [x] Carousel - 轮播图（图片/内容轮播，支持自动播放、指示器、导航按钮、Flowbite JS 集成）
 - [ ] Video - 视频播放器（HTML5 视频播放器增强，支持自定义控制栏、字幕、响应式）
 - [ ] DeviceMockup - 设备模型（展示应用界面的设备框架，支持 iPhone/iPad/Android/Desktop 等设备）
 
 **说明**：
 - Gallery 已完成（包含 Gallery、GalleryItem 两个组件）
-- Carousel 需要 Flowbite JS 或 Swiper.js
+- Carousel 已完成（包含 Carousel、CarouselItem 两个组件，需要 Flowbite JS）
 - Video 基于 HTML5 video 元素
 - DeviceMockup 纯 CSS 实现
 
@@ -317,6 +317,7 @@
 4. ~~**Timepicker**~~ - 已完成 ✅
 5. ~~**ListGroup**~~ - 已完成 ✅
 6. ~~**Gallery**~~ - 已完成 ✅
+7. ~~**Carousel**~~ - 已完成 ✅
 
 ### 中优先级（可选实现）
 
