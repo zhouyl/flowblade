@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Feedback;
+namespace Flowblade\Components\Feedback;
 
 use Illuminate\View\Component;
 
 /**
  * Toast Component
  *
- * Toast notification component for displaying temporary messages
+ * Toast notification component for displaying temporary feedback messages.
+ * Auto-dismisses after duration with optional manual close button.
  */
 class Toast extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $status      Status type: success, error, warning, info
-     * @param null|string $title       Toast title
-     * @param null|string $description Toast description
-     * @param null|string $icon        Custom icon name
+     * @param string      $status      Toast status type: 'success', 'error', 'warning', 'info'
+     * @param null|string $title       Optional toast title
+     * @param null|string $description Optional toast description or message
+     * @param null|string $icon        Optional custom Iconify icon name (auto-selected based on status if null)
      * @param int         $duration    Auto-dismiss duration in milliseconds (0 = no auto-dismiss)
-     * @param bool        $closable    Whether the toast can be manually closed
-     * @param string      $position    Position: top-right, top-left, bottom-right, bottom-left, top-center, bottom-center
+     * @param bool        $closable    Whether toast can be manually closed with close button
+     * @param string      $position    Screen position: 'top-right', 'top-left', 'bottom-right', 'bottom-left', 'top-center', 'bottom-center'
      */
     public function __construct(
         public string $status = 'info',
@@ -37,6 +38,8 @@ class Toast extends Component
 
     /**
      * Get the default icon for the status
+     *
+     * @return string Iconify icon name matching the status type
      */
     public function getDefaultIcon(): string
     {

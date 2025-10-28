@@ -2,28 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Feedback;
+namespace Flowblade\Components\Feedback;
 
 use Illuminate\View\Component;
 
 /**
  * Progress Component
  *
- * Progress component for displaying progress indicators
+ * Linear progress bar component for displaying task completion progress.
+ * Supports determinate and indeterminate states with multiple visual variants.
  */
 class Progress extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param float|int   $value         Current progress value (0-100)
+     * @param float|int   $value         Current progress value (0-100 by default)
      * @param float|int   $max           Maximum value (default: 100)
-     * @param string      $size          Size: xs, sm, md, lg, xl
-     * @param string      $color         Color: primary, secondary, success, warning, danger, info, gray
-     * @param string      $variant       Variant: default, striped, animated
-     * @param bool        $showValue     Whether to show the value label
-     * @param null|string $label         Custom label text
-     * @param bool        $indeterminate Whether the progress is indeterminate
+     * @param string      $size          Progress bar height: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $color         Progress bar color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param string      $variant       Visual variant: 'default' (solid), 'striped' (diagonal stripes), 'animated' (moving stripes)
+     * @param bool        $showValue     Whether to display percentage value label
+     * @param null|string $label         Optional custom label text (overrides percentage)
+     * @param bool        $indeterminate Whether progress is indeterminate (unknown duration)
      */
     public function __construct(
         public int|float $value = 0,
@@ -39,6 +40,8 @@ class Progress extends Component
 
     /**
      * Get the percentage value
+     *
+     * @return float Percentage value clamped between 0 and 100
      */
     public function getPercentage(): float
     {

@@ -2,25 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Feedback;
+namespace Flowblade\Components\Feedback;
 
 use Illuminate\View\Component;
 
 /**
  * Skeleton Component
  *
- * Loading placeholder component that mimics content structure
+ * Loading placeholder component that mimics content structure during data loading.
+ * Provides visual feedback while content is being fetched or processed.
  */
 class Skeleton extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $type    Type: text, image, video, card, avatar, button, circle, rectangle
-     * @param null|string $width   Width class (e.g., 'w-48', 'w-full')
-     * @param null|string $height  Height class (e.g., 'h-4', 'h-48')
-     * @param null|int    $lines   Number of lines for text type
-     * @param bool        $animate Whether to animate with pulse effect
+     * @param null|string $type    Skeleton type: 'text', 'image', 'video', 'card', 'avatar', 'button', 'circle', 'rectangle'
+     * @param null|string $width   Width Tailwind class (e.g., 'w-48', 'w-full')
+     * @param null|string $height  Height Tailwind class (e.g., 'h-4', 'h-48')
+     * @param null|int    $lines   Number of text lines to display (only for 'text' type)
+     * @param bool        $animate Whether to display pulse animation effect
      * @param bool        $rounded Whether to use rounded corners
      */
     public function __construct(

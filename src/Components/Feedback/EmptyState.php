@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Feedback;
+namespace Flowblade\Components\Feedback;
 
 use Illuminate\View\Component;
 
 /**
  * EmptyState Component
  *
- * Empty state component for displaying empty or no-data states
+ * Empty state component for displaying no-data or empty collection states.
+ * Provides visual feedback with icon, title, description, and optional action buttons.
  */
 class EmptyState extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $icon        Icon name for the empty state
-     * @param null|string $title       Title text
-     * @param null|string $description Description text
-     * @param string      $size        Size: sm, md, lg
+     * @param null|string $icon        Optional Iconify icon name for visual representation
+     * @param null|string $title       Optional title text (e.g., "No items found")
+     * @param null|string $description Optional description text explaining the empty state
+     * @param string      $size        Empty state size: 'sm', 'md', 'lg'
      */
     public function __construct(
         public ?string $icon = null,

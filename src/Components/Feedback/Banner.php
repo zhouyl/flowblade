@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Feedback;
+namespace Flowblade\Components\Feedback;
 
 use Illuminate\View\Component;
 
 /**
  * Banner Component
  *
- * Sticky banner for announcements, marketing messages, and notifications
+ * Sticky banner component for announcements, marketing messages, and notifications.
+ * Persists across page navigation and can be dismissed by users.
  */
 class Banner extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $id          Unique identifier for the banner (required for dismissible banners)
-     * @param string $position    Position of the banner (top or bottom)
-     * @param bool   $dismissible Whether the banner can be dismissed
+     * @param string $id          Unique identifier for the banner (required for dismissible banners to remember dismissal state)
+     * @param string $position    Banner position: 'top' (top of page), 'bottom' (bottom of page)
+     * @param bool   $dismissible Whether banner can be dismissed with close button
      */
     public function __construct(
         public string $id = 'banner',
