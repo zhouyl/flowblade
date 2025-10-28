@@ -1,22 +1,43 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * SimpleGrid Component
+ *
+ * Simplified grid layout with responsive columns and automatic child sizing.
+ * Ideal for card grids, image galleries, and responsive layouts.
+ */
 class SimpleGrid extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param string      $as            HTML element to render (default: 'div')
+     * @param null|string $columns       Number of columns: '1'-'12'
+     * @param null|string $minChildWidth Minimum child width (e.g., '200px', '16rem') for auto-fit layout
+     * @param null|string $spacing       Gap between items: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $spacingX      Horizontal gap
+     * @param null|string $spacingY      Vertical gap
+     */
     public function __construct(
         public string $as = 'div',
-        public ?string $columns = null, // 1-12
-        public ?string $minChildWidth = null, // e.g., '200px', '16rem'
-        public ?string $spacing = null, // 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
+        public ?string $columns = null,
+        public ?string $minChildWidth = null,
+        public ?string $spacing = null,
         public ?string $spacingX = null,
         public ?string $spacingY = null,
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = ['grid'];
@@ -64,6 +85,9 @@ class SimpleGrid extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get inline styles for auto-fit layout
+     */
     public function styles(): ?string
     {
         if ($this->minChildWidth) {
@@ -73,6 +97,9 @@ class SimpleGrid extends Component
         return null;
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.layout.simple-grid');

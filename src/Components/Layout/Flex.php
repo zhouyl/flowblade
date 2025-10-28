@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
@@ -8,51 +10,31 @@ use Illuminate\View\Component;
 /**
  * Flex Component
  *
- * A flexible box layout component.
+ * Flexbox layout container with full control over flex properties.
+ * Ideal for creating flexible, responsive layouts in enterprise applications.
  */
 class Flex extends Component
 {
-    public string $as;
-
-    public ?string $direction;
-
-    public ?string $align;
-
-    public ?string $justify;
-
-    public ?string $wrap;
-
-    public ?string $gap;
-
-    public bool $inline;
-
     /**
-     * Create a new component instance.
+     * Create a new component instance
      *
-     * @param string      $as        HTML element to render
-     * @param null|string $direction Flex direction (row, col, row-reverse, col-reverse)
-     * @param null|string $align     Align items (start, center, end, stretch, baseline)
-     * @param null|string $justify   Justify content (start, center, end, between, around, evenly)
-     * @param null|string $wrap      Flex wrap (wrap, nowrap, wrap-reverse)
-     * @param null|string $gap       Gap between items (0-16)
-     * @param bool        $inline    Whether to use inline-flex
+     * @param string      $as        HTML element to render (default: 'div')
+     * @param null|string $direction Flex direction: 'row', 'col', 'row-reverse', 'col-reverse'
+     * @param null|string $align     Align items: 'start', 'center', 'end', 'stretch', 'baseline'
+     * @param null|string $justify   Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
+     * @param null|string $wrap      Flex wrap: 'wrap', 'nowrap', 'wrap-reverse'
+     * @param null|string $gap       Gap between items using Tailwind spacing scale (0-96)
+     * @param bool        $inline    Whether to use inline-flex instead of flex
      */
     public function __construct(
-        string $as = 'div',
-        ?string $direction = null,
-        ?string $align = null,
-        ?string $justify = null,
-        ?string $wrap = null,
-        ?string $gap = null,
-        bool $inline = false,
+        public string $as = 'div',
+        public ?string $direction = null,
+        public ?string $align = null,
+        public ?string $justify = null,
+        public ?string $wrap = null,
+        public ?string $gap = null,
+        public bool $inline = false,
     ) {
-        $this->as = $as;
-        $this->direction = $direction;
-        $this->align = $align;
-        $this->justify = $justify;
-        $this->wrap = $wrap;
-        $this->gap = $gap;
-        $this->inline = $inline;
     }
 
     /**

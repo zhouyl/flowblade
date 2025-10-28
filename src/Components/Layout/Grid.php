@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
@@ -8,51 +10,31 @@ use Illuminate\View\Component;
 /**
  * Grid Component
  *
- * A CSS Grid layout component.
+ * CSS Grid layout container with full control over grid properties.
+ * Perfect for complex, two-dimensional layouts in enterprise applications.
  */
 class Grid extends Component
 {
-    public string $as;
-
-    public ?string $columns;
-
-    public ?string $rows;
-
-    public ?string $gap;
-
-    public ?string $gapX;
-
-    public ?string $gapY;
-
-    public ?string $autoFlow;
-
     /**
-     * Create a new component instance.
+     * Create a new component instance
      *
-     * @param string      $as       HTML element to render
-     * @param null|string $columns  Number of columns (1-12 or none, subgrid)
-     * @param null|string $rows     Number of rows (1-6 or none, subgrid)
-     * @param null|string $gap      Gap between items (0-16)
-     * @param null|string $gapX     Horizontal gap (0-16)
-     * @param null|string $gapY     Vertical gap (0-16)
-     * @param null|string $autoFlow Grid auto flow (row, col, dense, row-dense, col-dense)
+     * @param string      $as       HTML element to render (default: 'div')
+     * @param null|string $columns  Number of columns: '1'-'12', 'none', 'subgrid'
+     * @param null|string $rows     Number of rows: '1'-'6', 'none', 'subgrid'
+     * @param null|string $gap      Gap between items using Tailwind spacing scale (0-96)
+     * @param null|string $gapX     Horizontal gap using Tailwind spacing scale (0-96)
+     * @param null|string $gapY     Vertical gap using Tailwind spacing scale (0-96)
+     * @param null|string $autoFlow Grid auto flow: 'row', 'col', 'dense', 'row-dense', 'col-dense'
      */
     public function __construct(
-        string $as = 'div',
-        ?string $columns = null,
-        ?string $rows = null,
-        ?string $gap = null,
-        ?string $gapX = null,
-        ?string $gapY = null,
-        ?string $autoFlow = null,
+        public string $as = 'div',
+        public ?string $columns = null,
+        public ?string $rows = null,
+        public ?string $gap = null,
+        public ?string $gapX = null,
+        public ?string $gapY = null,
+        public ?string $autoFlow = null,
     ) {
-        $this->as = $as;
-        $this->columns = $columns;
-        $this->rows = $rows;
-        $this->gap = $gap;
-        $this->gapX = $gapX;
-        $this->gapY = $gapY;
-        $this->autoFlow = $autoFlow;
     }
 
     /**

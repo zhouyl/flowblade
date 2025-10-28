@@ -77,9 +77,9 @@
 - [x] Container - 已完成（添加 declare(strict_types)、改进注释、新增 7 个企业级示例）
 - [x] Center - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
 - [x] AbsoluteCenter - 已完成（添加完整类和方法注释、添加 declare(strict_types)）
-- [ ] Flex
-- [ ] Grid
-- [ ] SimpleGrid
+- [x] Flex - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
+- [x] Grid - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
+- [x] SimpleGrid - 已完成（添加完整类和方法注释、添加 declare(strict_types)）
 - [ ] Stack
 - [ ] HStack
 - [ ] VStack
@@ -264,11 +264,11 @@
 ## 当前进度
 
 **总组件数**: 138 个
-**已 Review**: 4 个
-**待 Review**: 134 个
-**完成度**: 2.9%
+**已 Review**: 7 个
+**待 Review**: 131 个
+**完成度**: 5.1%
 
-**当前阶段**: Phase 1 - Layout Components Review (4/19 完成)
+**当前阶段**: Phase 1 - Layout Components Review (7/19 完成)
 
 ## 问题追踪
 
