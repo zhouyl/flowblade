@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 119/60+ (198%)
+**组件进度**: 120/60+ (200%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -245,20 +245,21 @@
 - [x] Footer - 页脚（支持默认/固定模式、版权声明、链接、Logo、社交媒体图标）
 - [x] Banner - 横幅/公告栏（支持顶部/底部定位、可关闭、营销/新闻订阅/信息横幅变体，Flowbite Dismiss 集成）
 
-### Phase 14: 高级表单组件 (进行中)
+### Phase 14: 高级表单组件 (已完成) ✅
 
 **开始时间**: 2025-10-28
+**完成时间**: 2025-10-28
 
 - [x] Clipboard - 剪贴板（复制到剪贴板功能，支持输入框、代码块、文本内容，Flowbite Clipboard 集成，支持成功反馈，多种尺寸和变体）
 - [x] FloatingLabel - 浮动标签（Material Design 风格的浮动标签输入框，支持 input/textarea/select，4 种变体，3 种尺寸，错误状态，辅助文本）
 - [x] Datepicker - 日期选择器（Flowbite Datepicker 集成，支持单日期、日期范围、内联模式、自动隐藏、日期格式、最小/最大日期、方向、标题）
-- [ ] Timepicker - 时间选择器（原生 HTML5 time input 增强，支持最小/最大时间、步长、12/24小时格式）
+- [x] Timepicker - 时间选择器（原生 HTML5 time input 增强，支持最小/最大时间、步长、时钟图标）
 
 **说明**：
 - Clipboard 已完成，需要 Flowbite JS 的 CopyClipboard 组件
 - FloatingLabel 已完成（包含 FloatingLabel、FloatingTextarea、FloatingSelect 三个组件）
 - Datepicker 已完成（包含 Datepicker、DateRangePicker、InlineDatepicker 三个组件）
-- Timepicker 需要 Flowbite JS 支持
+- Timepicker 已完成，基于原生 HTML5 time input
 
 ### Phase 15: 高级交互组件 (计划中)
 
@@ -313,8 +314,9 @@
 1. ~~**Clipboard**~~ - 已完成 ✅
 2. ~~**FloatingLabel**~~ - 已完成 ✅
 3. ~~**Datepicker**~~ - 已完成 ✅
-4. **Gallery** - 图片展示常用组件
-5. **ListGroup** - 通用列表组件，应用场景广
+4. ~~**Timepicker**~~ - 已完成 ✅
+5. **Gallery** - 图片展示常用组件
+6. **ListGroup** - 通用列表组件，应用场景广
 
 ### 中优先级（可选实现）
 
