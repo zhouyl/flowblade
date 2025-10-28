@@ -211,6 +211,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'gallery-item' => Components\Media\GalleryItem::class,
             'carousel' => Components\Media\Carousel::class,
             'carousel-item' => Components\Media\CarouselItem::class,
+            'video' => Components\Media\Video::class,
         ];
     }
 }
