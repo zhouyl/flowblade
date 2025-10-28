@@ -123,6 +123,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'spinner' => Components\Feedback\Spinner::class,
             'progress' => Components\Feedback\Progress::class,
             'progress-circle' => Components\Feedback\ProgressCircle::class,
+            'status' => Components\Feedback\Status::class,
 
             // Typography Components
             'heading' => Components\Typography\Heading::class,

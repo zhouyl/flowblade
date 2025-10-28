@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 81/60+ (135%)
+**组件进度**: 82/60+ (137%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -193,7 +193,7 @@
 - [x] ProgressCircle - 圆形进度（支持 SVG 圆形进度，indeterminate 状态，可自定义粗细）
 - [x] Spinner - 加载动画（支持 spinner/dots/pulse/ring 四种模式）
 - [ ] EmptyState - 空状态
-- [ ] Status - 状态指示
+- [x] Status - 状态指示（支持 dot/badge/pill 三种模式，8种状态类型，pulse 动画）
 
 ### Phase 10: 数据展示组件 (9个) - 进行中
 
