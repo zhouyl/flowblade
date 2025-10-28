@@ -124,6 +124,10 @@ class FlowbladeServiceProvider extends ServiceProvider
             // Overlay Components
             'tooltip' => Components\Overlay\Tooltip::class,
             'popover' => Components\Overlay\Popover::class,
+            'menu' => Components\Overlay\Menu::class,
+            'menu-item' => Components\Overlay\MenuItem::class,
+            'menu-divider' => Components\Overlay\MenuDivider::class,
+            'menu-header' => Components\Overlay\MenuHeader::class,
 
             // Feedback Components
             'alert' => Components\Feedback\Alert::class,
