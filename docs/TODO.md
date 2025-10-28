@@ -1,341 +1,282 @@
-# Flowblade 组件代码 Review 计划
+# Flowblade 项目工作计划
 
 ## 项目概述
 
 **项目名称**: Flowblade - Laravel Blade Component Library
-**当前状态**: 138 个组件已完成开发
-**当前任务**: 全面代码 Review 与质量提升
+**当前状态**: 137 个组件已完成代码 Review
+**当前任务**: 添加 Style Props 支持 & 文档规范化
 **开始时间**: 2025-10-28
 
 ## 当前进度
 
-**总组件数**: 137 个
-**已 Review**: 137 个
-**待 Review**: 0 个
-**完成度**: 100% 🎉
+**总任务数**: 2 个主要任务
+**已完成**: 0 个
+**待完成**: 2 个
+**完成度**: 0%
 
-**当前阶段**: 所有阶段已完成 ✅
+**当前阶段**: Phase 1 - Style Props 实现 (待开始)
 
-## Review 目标
+## 工作目标
 
-对所有 138 个组件进行全面的代码 review，确保：
+### 任务 1: 添加 Style Props 支持
 
-1. **代码质量**
-   - 组件类有完整、准确的注释（英文）
-   - 代码结构清晰、易于维护
-   - 遵循 PSR 标准和最佳实践
+参考 Chakra UI 的 style-props 系统，为 Flowblade 组件添加常用的通用样式属性支持。
 
-2. **Flowbite 标准**
-   - 优先使用 Flowbite 的样式与特性
-   - 确保与 Flowbite 设计系统一致
-   - 正确使用 Flowbite 的 JavaScript 功能
+#### 核心 Style Props 列表
 
-3. **企业级标准**
-   - 设计合理，满足企业级管理后台系统需求
-   - 功能完整，覆盖常见使用场景
-   - 性能优化，适合大规模应用
+**间距 (Spacing)**
+- `p` - padding (all sides)
+- `px` - padding left & right
+- `py` - padding top & bottom
+- `pt`, `pr`, `pb`, `pl` - padding individual sides
+- `m` - margin (all sides)
+- `mx` - margin left & right
+- `my` - margin top & bottom
+- `mt`, `mr`, `mb`, `ml` - margin individual sides
 
-4. **文档完备性**
-   - 组件文档完整、准确
-   - 示例代码充足、实用
-   - 使用说明清晰、易懂
+**尺寸 (Sizing)**
+- `w` - width
+- `h` - height
+- `minW` - min-width
+- `maxW` - max-width
+- `minH` - min-height
+- `maxH` - max-height
 
-## Review 检查清单
+**颜色 (Colors)**
+- `bg` - background color
+- `color` - text color
+- `borderColor` - border color
 
-每个组件需要检查以下方面：
+**边框 (Borders)**
+- `border` - border width
+- `borderTop`, `borderRight`, `borderBottom`, `borderLeft` - individual borders
+- `rounded` / `borderRadius` - border radius
+- `roundedTop`, `roundedRight`, `roundedBottom`, `roundedLeft` - individual corners
 
-### 1. 组件类检查 (Component Class)
-- [ ] 类注释完整（包含用途说明）
-- [ ] 构造函数参数有 PHPDoc 注释
-- [ ] 参数类型声明正确
-- [ ] 参数默认值合理
-- [ ] 方法注释完整
-- [ ] 代码逻辑清晰
+**布局 (Layout)**
+- `display` - display property
+- `position` - position property
+- `top`, `right`, `bottom`, `left` - positioning
 
-### 2. Blade 模板检查 (Blade Template)
-- [ ] 使用 Flowbite 官方样式类
-- [ ] 避免硬编码组件调用（使用 x-dynamic-component）
-- [ ] 响应式设计支持
-- [ ] Dark mode 支持
-- [ ] 无障碍支持（ARIA 属性）
-- [ ] 代码格式规范
+**阴影 (Shadow)**
+- `shadow` - box shadow
 
-### 3. 功能设计检查 (Functionality)
-- [ ] 功能完整，满足常见需求
-- [ ] 参数设计合理
-- [ ] 支持自定义扩展
-- [ ] 与其他组件配合良好
-- [ ] 适合企业级应用场景
+**文字 (Typography)**
+- `fontSize` - font size
+- `fontWeight` - font weight
+- `textAlign` - text alignment
+- `lineHeight` - line height
 
-### 4. 文档检查 (Documentation)
-- [ ] 文档存在且完整
-- [ ] Props 表格准确
-- [ ] 基础示例充足（至少 5 个）
-- [ ] 高级示例实用（至少 3 个）
-- [ ] 使用说明清晰
-- [ ] 相关组件链接正确
+#### 实现方案
 
-## Review 阶段划分
+1. **创建 StyleProps Trait**
+   - 位置: `src/Traits/HasStyleProps.php`
+   - 功能: 解析 style props 并转换为 Tailwind CSS 类
 
-### Phase 1: Layout Components Review (19 个组件)
+2. **更新核心组件**
+   - Box 组件 (已有部分支持，需扩展)
+   - Flex 组件
+   - Grid 组件
+   - Stack 组件
+   - Text 组件
+   - Heading 组件
+   - 其他布局组件
 
-**预计时间**: 1-2 个会话
-**当前状态**: 已完成 ✅
+3. **值映射规则**
+   - 数字值映射到 Tailwind spacing scale (0-16)
+   - 颜色值映射到主题颜色 (primary, secondary, success, warning, danger, info, gray)
+   - 尺寸值支持 Tailwind 预设 (xs, sm, md, lg, xl, 2xl, full)
 
-- [x] Box - 已完成（添加完整注释、改进文档、新增 8 个实用示例）
-- [x] Container - 已完成（添加 declare(strict_types)、改进注释、新增 7 个企业级示例）
-- [x] Center - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
-- [x] AbsoluteCenter - 已完成（添加完整类和方法注释、添加 declare(strict_types)）
-- [x] Flex - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
-- [x] Grid - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
-- [x] SimpleGrid - 已完成（添加完整类和方法注释、添加 declare(strict_types)）
-- [x] Stack - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
-- [x] HStack - 已完成（添加 declare(strict_types)、改进类和参数注释）
-- [x] VStack - 已完成（添加 declare(strict_types)、改进类和参数注释）
-- [x] Wrap - 已完成（添加 declare(strict_types)、改进类和参数注释）
-- [x] Separator - 已完成（添加 declare(strict_types)、使用 promoted properties、改进注释）
-- [x] Spacer - 已完成（添加 declare(strict_types)、改进类注释）
-- [x] Group - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] AspectRatio - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] ScrollArea - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Footer - 已完成（修复命名空间、改进类和参数注释）
-- [x] Jumbotron - 已完成（修复命名空间、改进类和参数注释）
-- [x] Divider - 已完成（修复命名空间、改进类和参数注释）
+#### 示例用法
 
-### Phase 2: Button Components Review (4 个组件)
+```blade
+{{-- 间距 --}}
+<x-box p="4" m="2">Content</x-box>
+<x-box px="6" py="4">Content</x-box>
 
-**预计时间**: 1 个会话
-**当前状态**: 已完成 ✅
+{{-- 颜色 --}}
+<x-box bg="primary" color="white">Content</x-box>
 
-- [x] Button - 已完成（添加 declare(strict_types)、改进类和参数注释）
-- [x] IconButton - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] CloseButton - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] ButtonGroup - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
+{{-- 边框 --}}
+<x-box border="2" borderColor="gray" rounded="md">Content</x-box>
 
-### Phase 3: Typography Components Review (12 个组件)
+{{-- 组合使用 --}}
+<x-box 
+    p="6" 
+    m="4" 
+    bg="blue.500" 
+    rounded="lg" 
+    shadow="md"
+>
+    Content
+</x-box>
+```
 
-**预计时间**: 1 个会话
-**当前状态**: 已完成 ✅
+### 任务 2: 文档规范化
 
-- [x] Heading - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Text - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Link - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Code - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] CodeBlock - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Kbd - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Mark - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Em - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Strong - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Blockquote - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Highlight - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] List - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
+修正所有组件文档中未使用 Flowblade 组件的示例，将 HTML 标签替换为对应的 Flowblade 组件。
 
-### Phase 4: Form Components Review Part 1 (15 个组件)
+#### 替换规则
 
-**预计时间**: 2 个会话
-**当前状态**: 已完成 ✅
+| HTML 标签 | Flowblade 组件 | 说明 |
+|-----------|---------------|------|
+| `<div>` | `<x-box>` | 通用容器 |
+| `<span>` | `<x-text as="span">` | 行内文本 |
+| `<p>` | `<x-text>` | 段落文本 |
+| `<h1>` - `<h6>` | `<x-heading>` | 标题 |
+| `<section>` | `<x-box as="section">` | 区块容器 |
+| `<article>` | `<x-box as="article">` | 文章容器 |
+| `<header>` | `<x-box as="header">` | 头部容器 |
+| `<footer>` | `<x-footer>` | 页脚容器 |
+| `<ul>`, `<ol>` | `<x-list-group>` | 列表 |
+| `<button>` | `<x-button>` | 按钮 |
+| `<a>` | `<x-button variant="link">` | 链接按钮 |
+| `<img>` | 保持 `<img>` | 图片标签保持原样 |
+| `<input>` | `<x-input>` | 输入框 |
+| `<textarea>` | `<x-textarea>` | 文本域 |
+| `<select>` | `<x-select>` | 选择框 |
 
-- [x] Input - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Textarea - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Checkbox - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Radio - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] SwitchInput - 已完成（修复命名空间错误、改进文档）
-- [x] Select - 已完成（修复命名空间错误）
-- [x] NativeSelect - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] PinInput - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] NumberInput - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Field - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] Fieldset - 已完成（修复命名空间错误）
-- [x] PasswordInput - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [x] SearchInput - 已完成（修复命名空间错误）
-- [x] FileUpload - 已完成（修复命名空间错误）
-- [x] InputGroup - 已完成（修复命名空间错误、改进文档）
-- [x] InputAddon - 已完成（修复命名空间错误、改进文档）
+#### 需要检查的文档
 
-### Phase 5: Form Components Review Part 2 (14 个组件)
+所有 `docs/components/` 目录下的 `.md` 文件，共约 80+ 个文档文件。
 
-**预计时间**: 2 个会话
-**当前状态**: 已完成 ✅
+#### 优先级
 
-- [x] InputElement - 已完成（修复命名空间错误、改进文档）
-- [x] Editable - 已完成（修复命名空间错误、改进文档）
-- [x] FileUpload - 已在 Phase 4 完成（修复命名空间错误）
-- [x] Slider - 已完成（修复命名空间错误、改进文档）
-- [x] RangeSlider - 已完成（修复命名空间错误、改进文档）
-- [x] Clipboard - 已完成（修复命名空间错误、改进文档）
-- [x] FloatingLabel - 已完成（修复命名空间错误、改进文档）
-- [x] FloatingTextarea - 已完成（修复命名空间错误、改进文档）
-- [x] FloatingSelect - 已完成（修复命名空间错误、改进文档）
-- [x] Datepicker - 已完成（修复命名空间错误、改进文档）
-- [x] DateRangePicker - 已完成（修复命名空间错误、改进文档）
-- [x] InlineDatepicker - 已完成（修复命名空间错误、改进文档）
-- [x] Timepicker - 已完成（修复命名空间错误、改进文档）
-- [x] PhoneInput - 已完成（修复命名空间错误、改进文档）
+1. **高优先级** (核心布局组件文档)
+   - Layout 组件文档 (19 个)
+   - Typography 组件文档 (2 个)
+   - Button 组件文档 (4 个)
 
-### Phase 6: Data Display Components Review (23 个组件)
+2. **中优先级** (常用组件文档)
+   - Forms 组件文档 (20+ 个)
+   - Data Display 组件文档 (10+ 个)
+   - Navigation 组件文档 (8 个)
 
-**预计时间**: 2-3 个会话
-**当前状态**: 已完成 ✅
+3. **低优先级** (其他组件文档)
+   - Overlay 组件文档 (6 个)
+   - Feedback 组件文档 (9 个)
+   - Media 组件文档 (4 个)
+   - Disclosure 组件文档 (2 个)
 
-- [x] Icon - 已完成（添加 declare(strict_types)、改进文档、添加完整注释）
-- [x] Avatar - 已完成（修复命名空间错误、改进文档）
-- [x] Badge - 已完成（修复命名空间错误、改进文档）
-- [x] Card - 已完成（修复命名空间错误、改进文档）
-- [x] CardHeader - 已完成（修复命名空间错误、改进文档）
-- [x] CardBody - 已完成（修复命名空间错误、改进文档）
-- [x] CardFooter - 已完成（修复命名空间错误、改进文档）
-- [x] DataList - 已完成（修复命名空间错误、改进文档）
-- [x] DataListItem - 已完成（修复命名空间错误、改进文档）
-- [x] Stat - 已完成（修复命名空间错误、改进文档）
-- [x] Tag - 已完成（修复命名空间错误、改进文档）
-- [x] Rating - 已完成（修复命名空间错误、改进文档）
-- [x] ColorSwatch - 已完成（修复命名空间错误、改进文档）
-- [x] TagsInput - 已完成（修复命名空间错误、改进文档）
-- [x] Timeline - 已完成（修复命名空间错误、改进文档）
-- [x] TimelineItem - 已完成（修复命名空间错误、改进文档）
-- [x] Table - 已完成（修复命名空间错误、改进文档）
-- [x] TreeView - 已完成（修复命名空间错误、改进文档）
-- [x] TreeViewItem - 已完成（修复命名空间错误、改进文档）
-- [x] Indicator - 已完成（修复命名空间错误、改进文档）
-- [x] ChatBubble - 已完成（修复命名空间错误、改进文档）
-- [x] ListGroup - 已完成（修复命名空间错误、改进文档）
-- [x] ListGroupItem - 已完成（修复命名空间错误、改进文档）
+## 工作阶段
 
-### Phase 7: Navigation Components Review (23 个组件)
+### Phase 1: Style Props 实现 (预计 2-3 个会话)
 
-**预计时间**: 2-3 个会话
-**当前状态**: 已完成 ✅
+**目标**: 实现核心 Style Props 功能
 
-- [x] Breadcrumb - 已完成（修复命名空间错误、改进文档）
-- [x] BreadcrumbItem - 已完成（修复命名空间错误、改进文档）
-- [x] Pagination - 已完成（修复命名空间错误、改进文档、添加方法返回类型注释）
-- [x] Tabs - 已完成（修复命名空间错误、改进文档）
-- [x] TabsList - 已完成（修复命名空间错误、改进文档）
-- [x] TabsTrigger - 已完成（修复命名空间错误、改进文档）
-- [x] TabsContent - 已完成（修复命名空间错误、改进文档）
-- [x] Steps - 已完成（修复命名空间错误、改进文档）
-- [x] StepItem - 已完成（修复命名空间错误、改进文档）
-- [x] Navbar - 已完成（修复命名空间错误、改进文档）
-- [x] NavbarBrand - 已完成（修复命名空间错误、改进文档）
-- [x] NavbarToggle - 已完成（修复命名空间错误、改进文档）
-- [x] NavbarCollapse - 已完成（修复命名空间错误、改进文档）
-- [x] NavbarLink - 已完成（修复命名空间错误、改进文档）
-- [x] Sidebar - 已完成（修复命名空间错误、改进文档）
-- [x] SidebarItem - 已完成（修复命名空间错误、改进文档）
-- [x] SidebarGroup - 已完成（修复命名空间错误、改进文档）
-- [x] SidebarToggle - 已完成（修复命名空间错误、改进文档）
-- [x] SpeedDial - 已完成（修复命名空间错误、改进文档）
-- [x] SpeedDialItem - 已完成（修复命名空间错误、改进文档）
-- [x] MegaMenu - 已完成（修复命名空间错误、改进文档）
-- [x] MegaMenuColumn - 已完成（修复命名空间错误、改进文档）
-- [x] MegaMenuItem - 已完成（修复命名空间错误、改进文档）
+- [ ] 1.1 创建 HasStyleProps Trait
+  - [ ] 定义 style props 属性列表
+  - [ ] 实现 props 到 Tailwind 类的转换逻辑
+  - [ ] 支持响应式值 (如: `p={{ base: '4', md: '6' }}`)
+  - [ ] 添加完整的英文注释
 
-### Phase 8: Disclosure Components Review (3 个组件)
+- [ ] 1.2 更新 Box 组件
+  - [ ] 集成 HasStyleProps Trait
+  - [ ] 扩展现有的 style props 支持
+  - [ ] 更新组件文档
+  - [ ] 添加使用示例
 
-**预计时间**: 1 个会话
-**当前状态**: 已完成 ✅
+- [ ] 1.3 更新其他布局组件
+  - [ ] Flex 组件
+  - [ ] Grid 组件
+  - [ ] Stack (HStack, VStack) 组件
+  - [ ] Container 组件
+  - [ ] Center 组件
 
-- [x] Accordion - 已完成（修复命名空间错误、改进文档）
-- [x] AccordionItem - 已完成（修复命名空间错误、改进文档）
-- [x] Collapsible - 已完成（修复命名空间错误、改进文档）
+- [ ] 1.4 更新文字组件
+  - [ ] Text 组件
+  - [ ] Heading 组件
 
-### Phase 9: Overlay Components Review (9 个组件)
+- [ ] 1.5 测试与优化
+  - [ ] 创建测试示例页面
+  - [ ] 验证所有 props 正常工作
+  - [ ] 性能优化
+  - [ ] 代码格式化 (php-cs-fixer)
 
-**预计时间**: 1-2 个会话
-**当前状态**: 已完成 ✅
+### Phase 2: 文档规范化 - 布局组件 (预计 1-2 个会话)
 
-- [x] Tooltip - 已完成（修复命名空间错误、改进文档）
-- [x] Popover - 已完成（修复命名空间错误、改进文档）
-- [x] HoverCard - 已完成（修复命名空间错误、改进文档）
-- [x] Modal - 已完成（修复命名空间错误、改进文档）
-- [x] Drawer - 已完成（修复命名空间错误、改进文档）
-- [x] Menu - 已完成（修复命名空间错误、改进文档）
-- [x] MenuItem - 已完成（修复命名空间错误、改进文档）
-- [x] MenuDivider - 已完成（修复命名空间错误、改进文档）
-- [x] MenuHeader - 已完成（修复命名空间错误、改进文档）
+**目标**: 修正所有布局组件文档
 
-### Phase 10: Feedback Components Review (9 个组件)
+- [ ] 2.1 Box 组件文档
+- [ ] 2.2 Container 组件文档
+- [ ] 2.3 Flex 组件文档
+- [ ] 2.4 Grid 组件文档
+- [ ] 2.5 Stack 组件文档
+- [ ] 2.6 HStack 组件文档
+- [ ] 2.7 VStack 组件文档
+- [ ] 2.8 Center 组件文档
+- [ ] 2.9 其他布局组件文档 (11 个)
 
-**预计时间**: 1-2 个会话
-**当前状态**: 已完成 ✅
+### Phase 3: 文档规范化 - 其他组件 (预计 2-3 个会话)
 
-- [x] Alert - 已完成（修复命名空间错误、改进文档）
-- [x] Spinner - 已完成（修复命名空间错误、改进文档）
-- [x] Progress - 已完成（修复命名空间错误、改进文档、添加方法返回类型注释）
-- [x] ProgressCircle - 已完成（修复命名空间错误、改进文档、添加方法返回类型注释）
-- [x] Status - 已完成（修复命名空间错误、改进文档）
-- [x] EmptyState - 已完成（修复命名空间错误、改进文档）
-- [x] Toast - 已完成（修复命名空间错误、改进文档、添加方法返回类型注释）
-- [x] Skeleton - 已完成（修复命名空间错误、改进文档）
-- [x] Banner - 已完成（修复命名空间错误、改进文档）
+**目标**: 修正所有其他组件文档
 
-### Phase 11: Media Components Review (6 个组件)
-
-**预计时间**: 1 个会话
-**当前状态**: 已完成 ✅
-
-- [x] QRCode - 已完成（修复命名空间错误、改进文档）
-- [x] Gallery - 已完成（修复命名空间错误、改进文档）
-- [x] GalleryItem - 已完成（修复命名空间错误、改进文档）
-- [x] Carousel - 已完成（修复命名空间错误、改进文档）
-- [x] CarouselItem - 已完成（修复命名空间错误、改进文档）
-- [x] Video - 已完成（修复命名空间错误、改进文档）
-
-## 最终进度
-
-**总组件数**: 137 个
-**已 Review**: 137 个
-**待 Review**: 0 个
-**完成度**: 100% 🎉
-
-**所有阶段已完成！**
-
-## 问题追踪
-
-发现的问题将记录在 `docs/ISSUE.md` 文件中，包括：
-- 无法解决的技术问题
-- 需要重大重构的组件
-- 设计缺陷或功能不足
-- 文档严重缺失或错误
+- [ ] 3.1 Typography 组件文档 (2 个)
+- [ ] 3.2 Button 组件文档 (4 个)
+- [ ] 3.3 Forms 组件文档 (20+ 个)
+- [ ] 3.4 Data Display 组件文档 (10+ 个)
+- [ ] 3.5 Navigation 组件文档 (8 个)
+- [ ] 3.6 Overlay 组件文档 (6 个)
+- [ ] 3.7 Feedback 组件文档 (9 个)
+- [ ] 3.8 Media 组件文档 (4 个)
+- [ ] 3.9 Disclosure 组件文档 (2 个)
 
 ## 工作原则
 
-1. **质量优先**: 宁愿进度慢，也要确保 review 质量
-2. **细致全面**: 每个组件都要仔细检查所有方面
-3. **及时修复**: 发现问题立即修复，无法修复的记录到 ISSUE.md
+1. **质量优先**: 宁愿进度慢，也要确保实现质量和文档准确性
+2. **细致全面**: 每个组件和文档都要仔细检查
+3. **及时测试**: 实现功能后立即测试验证
 4. **文档同步**: 修改代码后立即更新相关文档
 5. **提交规范**: 每完成一个阶段提交一次代码
+6. **英文注释**: 所有代码注释使用英文
+7. **中文计划**: 工作计划文档使用中文
 
-## 🎉 Review 工作已全部完成！
+## 技术要点
 
-所有 137 个组件的代码 Review 工作已完成，包括：
+### Style Props 实现参考
 
-### 已完成的阶段
+```php
+// HasStyleProps Trait 示例结构
+trait HasStyleProps
+{
+    protected function parseStyleProps(array $props): string
+    {
+        $classes = [];
+        
+        // Spacing
+        if (isset($props['p'])) {
+            $classes[] = "p-{$props['p']}";
+        }
+        
+        // Colors
+        if (isset($props['bg'])) {
+            $classes[] = $this->mapBackgroundColor($props['bg']);
+        }
+        
+        // ... more mappings
+        
+        return implode(' ', $classes);
+    }
+}
+```
 
-- ✅ Phase 1: Layout Components (19 个组件)
-- ✅ Phase 2: Button Components (4 个组件)
-- ✅ Phase 3: Typography Components (12 个组件)
-- ✅ Phase 4: Form Components Part 1 (15 个组件)
-- ✅ Phase 5: Form Components Part 2 (14 个组件)
-- ✅ Phase 6: Data Display Components (23 个组件)
-- ✅ Phase 7: Navigation Components (23 个组件)
-- ✅ Phase 8: Disclosure Components (3 个组件)
-- ✅ Phase 9: Overlay Components (9 个组件)
-- ✅ Phase 10: Feedback Components (9 个组件)
-- ✅ Phase 11: Media Components (6 个组件)
+### 文档替换示例
 
-### 主要改进内容
+```blade
+<!-- 修改前 -->
+<div class="flex items-center gap-4">
+    <div class="text-lg font-bold">Title</div>
+    <span class="text-gray-500">Subtitle</span>
+</div>
 
-1. **命名空间修复**: 所有组件从 `Mellivora\Flowblade` 修正为 `Flowblade`
-2. **类型安全**: 确保所有组件都有 `declare(strict_types=1)`
-3. **文档完善**: 所有组件都有完整的英文 PHPDoc 注释
-4. **参数说明**: 所有构造函数参数都有详细的类型和用途说明
-5. **方法注释**: 所有公共方法都有返回类型和用途说明
-6. **代码规范**: 所有代码都通过 php-cs-fixer 格式化
+<!-- 修改后 -->
+<x-flex align="center" gap="4">
+    <x-text fontSize="lg" fontWeight="bold">Title</x-text>
+    <x-text as="span" color="gray.500">Subtitle</x-text>
+</x-flex>
+```
 
-### 下一步建议
+## 下一步行动
 
-1. 继续完善组件的 Blade 模板
-2. 编写或更新组件使用文档
-3. 添加更多实用示例
-4. 进行功能测试和优化
+开始 Phase 1.1: 创建 HasStyleProps Trait
+
