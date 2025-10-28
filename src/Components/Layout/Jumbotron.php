@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Layout;
+namespace Flowblade\Components\Layout;
 
 use Illuminate\View\Component;
 
 /**
  * Jumbotron Component
  *
- * Large showcase section for hero areas and landing pages
+ * Large showcase section component for hero areas, landing pages, and featured content.
+ * Supports background images, gradients, and overlays for stunning visual presentations.
  */
 class Jumbotron extends Component
 {
@@ -18,9 +19,9 @@ class Jumbotron extends Component
      *
      * @param string $size       Size: 'sm', 'md', 'lg', 'xl'
      * @param string $align      Text alignment: 'left', 'center', 'right'
-     * @param bool   $fullWidth  Full width without container
+     * @param bool   $fullWidth  Whether to use full width without container padding
      * @param string $bgImage    Background image URL
-     * @param string $bgGradient Background gradient classes
+     * @param string $bgGradient Background gradient Tailwind classes
      * @param string $overlay    Overlay opacity: 'none', 'light', 'medium', 'dark'
      */
     public function __construct(

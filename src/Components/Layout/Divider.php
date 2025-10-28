@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Layout;
+namespace Flowblade\Components\Layout;
 
 use Illuminate\View\Component;
 
 /**
  * Divider Component
  *
- * Enhanced separator with text/icon support
+ * Enhanced separator component with support for text labels and icons.
+ * More feature-rich than Separator, ideal for section breaks with descriptive labels.
  */
 class Divider extends Component
 {
@@ -17,10 +18,10 @@ class Divider extends Component
      * Create a new component instance
      *
      * @param string $orientation Orientation: 'horizontal', 'vertical'
-     * @param string $variant     Variant: 'solid', 'dashed', 'dotted'
-     * @param string $align       Text alignment: 'left', 'center', 'right'
-     * @param string $icon        Icon name (Iconify format)
-     * @param string $text        Divider text
+     * @param string $variant     Border style: 'solid', 'dashed', 'dotted'
+     * @param string $align       Text/icon alignment: 'left', 'center', 'right'
+     * @param string $icon        Icon name in Iconify format (e.g., 'mdi:star')
+     * @param string $text        Divider label text
      */
     public function __construct(
         public string $orientation = 'horizontal',

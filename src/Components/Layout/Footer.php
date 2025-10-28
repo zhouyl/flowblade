@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Layout;
+namespace Flowblade\Components\Layout;
 
 use Illuminate\View\Component;
 
 /**
  * Footer Component
  *
- * Footer section for website pages
+ * Footer section component for website pages with optional sticky positioning.
+ * Ideal for site-wide footers with copyright, links, and contact information.
  */
 class Footer extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param bool $sticky Whether footer is sticky (fixed to bottom)
+     * @param bool $sticky Whether footer should be sticky (fixed to bottom of viewport)
      */
     public function __construct(
         public bool $sticky = false
