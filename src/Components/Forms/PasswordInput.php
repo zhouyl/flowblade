@@ -1,15 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Forms;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * PasswordInput Component
+ *
+ * Password input with optional show/hide toggle button.
+ * Supports multiple variants and validation states.
+ */
 class PasswordInput extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param null|string $size        Input size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $variant     Input variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled    Whether input is disabled
+     * @param bool        $required    Whether input is required
+     * @param bool        $invalid     Whether input has validation error
+     * @param bool        $readonly    Whether input is read-only
+     * @param null|string $placeholder Placeholder text
+     * @param bool        $showToggle  Whether to show visibility toggle button
+     */
     public function __construct(
-        public ?string $size = 'md', // xs, sm, md, lg, xl
-        public ?string $variant = 'outline', // outline, filled, flushed
+        public ?string $size = 'md',
+        public ?string $variant = 'outline',
         public bool $disabled = false,
         public bool $required = false,
         public bool $invalid = false,
@@ -19,6 +39,9 @@ class PasswordInput extends Component
     ) {
     }
 
+    /**
+     * Get the container classes
+     */
     public function containerClasses(): string
     {
         $classes = [
@@ -31,6 +54,9 @@ class PasswordInput extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the input field classes
+     */
     public function inputClasses(): string
     {
         $classes = [
@@ -94,6 +120,9 @@ class PasswordInput extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the toggle button classes
+     */
     public function toggleButtonClasses(): string
     {
         $classes = [
@@ -110,6 +139,9 @@ class PasswordInput extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.forms.password-input');

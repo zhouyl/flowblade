@@ -1,16 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Forms;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Input Component
+ *
+ * Versatile text input component with multiple variants and validation states.
+ * Supports various input types, sizes, and styling options following Flowbite patterns.
+ */
 class Input extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param string      $type        input type: 'text', 'email', 'password', 'number', 'tel', 'url', etc
+     * @param null|string $size        Input size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $variant     Input variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled    Whether input is disabled
+     * @param bool        $readonly    Whether input is read-only
+     * @param bool        $required    Whether input is required
+     * @param bool        $invalid     Whether input has validation error
+     * @param null|string $placeholder Placeholder text
+     */
     public function __construct(
         public string $type = 'text',
-        public ?string $size = 'md', // 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
-        public ?string $variant = 'outline', // outline, filled, flushed
+        public ?string $size = 'md',
+        public ?string $variant = 'outline',
         public bool $disabled = false,
         public bool $readonly = false,
         public bool $required = false,
@@ -19,6 +39,9 @@ class Input extends Component
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [
@@ -82,6 +105,9 @@ class Input extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.forms.input');

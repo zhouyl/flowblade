@@ -1,15 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Forms;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * NativeSelect Component
+ *
+ * Native HTML select dropdown with styled variants and validation support.
+ * Lightweight alternative to enhanced Select component.
+ */
 class NativeSelect extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param null|string $size        Select size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $variant     Select variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled    Whether select is disabled
+     * @param bool        $required    Whether select is required
+     * @param bool        $invalid     Whether select has validation error
+     * @param null|string $placeholder Placeholder option text
+     */
     public function __construct(
-        public ?string $size = 'md', // xs, sm, md, lg, xl
-        public ?string $variant = 'outline', // outline, filled, flushed
+        public ?string $size = 'md',
+        public ?string $variant = 'outline',
         public bool $disabled = false,
         public bool $required = false,
         public bool $invalid = false,
@@ -17,6 +35,9 @@ class NativeSelect extends Component
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [
@@ -77,6 +98,9 @@ class NativeSelect extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.forms.native-select');

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 

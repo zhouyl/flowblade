@@ -1,15 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Forms;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * NumberInput Component
+ *
+ * Number input with increment/decrement stepper buttons.
+ * Supports min/max constraints and custom step values.
+ */
 class NumberInput extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param null|string $size        Input size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $variant     Input variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled    Whether input is disabled
+     * @param bool        $required    Whether input is required
+     * @param bool        $invalid     Whether input has validation error
+     * @param bool        $readonly    Whether input is read-only
+     * @param null|int    $min         Minimum allowed value
+     * @param null|int    $max         Maximum allowed value
+     * @param null|int    $step        Step increment/decrement value
+     * @param null|string $placeholder Placeholder text
+     */
     public function __construct(
-        public ?string $size = 'md', // xs, sm, md, lg, xl
-        public ?string $variant = 'outline', // outline, filled, flushed
+        public ?string $size = 'md',
+        public ?string $variant = 'outline',
         public bool $disabled = false,
         public bool $required = false,
         public bool $invalid = false,
@@ -21,6 +43,9 @@ class NumberInput extends Component
     ) {
     }
 
+    /**
+     * Get the container classes
+     */
     public function containerClasses(): string
     {
         $classes = [
@@ -32,6 +57,9 @@ class NumberInput extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the input field classes
+     */
     public function inputClasses(): string
     {
         $classes = [
@@ -92,6 +120,9 @@ class NumberInput extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the button container classes
+     */
     public function buttonClasses(): string
     {
         $classes = [
@@ -105,6 +136,9 @@ class NumberInput extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the stepper button classes
+     */
     public function stepperClasses(): string
     {
         $classes = [
@@ -126,6 +160,9 @@ class NumberInput extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.forms.number-input');

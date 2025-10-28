@@ -1,14 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Forms;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Checkbox Component
+ *
+ * Styled checkbox input with customizable colors and sizes.
+ * Supports validation states and disabled state following Flowbite patterns.
+ */
 class Checkbox extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param null|string $size     Checkbox size: 'sm', 'md', 'lg'
+     * @param null|string $color    Checkbox color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info'
+     * @param bool        $disabled Whether checkbox is disabled
+     * @param bool        $invalid  Whether checkbox has validation error
+     * @param null|string $value    Checkbox value attribute
+     */
     public function __construct(
-        public ?string $size = 'md', // sm, md, lg
+        public ?string $size = 'md',
         public ?string $color = 'primary',
         public bool $disabled = false,
         public bool $invalid = false,
@@ -16,6 +33,9 @@ class Checkbox extends Component
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [
@@ -64,6 +84,9 @@ class Checkbox extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.forms.checkbox');

@@ -1,25 +1,49 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Forms;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Textarea Component
+ *
+ * Multi-line text input component with resizing and validation support.
+ * Supports multiple variants and sizes following Flowbite design patterns.
+ */
 class Textarea extends Component
 {
+    /**
+     * Create a new component instance
+     *
+     * @param null|string $size        Textarea size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $variant     Textarea variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled    Whether textarea is disabled
+     * @param bool        $readonly    Whether textarea is read-only
+     * @param bool        $required    Whether textarea is required
+     * @param bool        $invalid     Whether textarea has validation error
+     * @param null|string $placeholder Placeholder text
+     * @param null|int    $rows        Number of visible text rows
+     * @param bool        $resize      Whether to allow manual resizing
+     */
     public function __construct(
-        public ?string $size = 'md', // xs, sm, md, lg, xl
-        public ?string $variant = 'outline', // outline, filled, flushed
+        public ?string $size = 'md',
+        public ?string $variant = 'outline',
         public bool $disabled = false,
         public bool $readonly = false,
         public bool $required = false,
         public bool $invalid = false,
         public ?string $placeholder = null,
         public ?int $rows = 3,
-        public bool $resize = true, // Allow resize
+        public bool $resize = true,
     ) {
     }
 
+    /**
+     * Get the component classes
+     */
     public function classes(): string
     {
         $classes = [
@@ -84,6 +108,9 @@ class Textarea extends Component
         return ComponentHelper::mergeClasses(...$classes);
     }
 
+    /**
+     * Get the view / contents that represent the component
+     */
     public function render()
     {
         return view('flowblade::components.forms.textarea');

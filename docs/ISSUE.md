@@ -24,7 +24,28 @@
 
 ## 当前问题列表
 
-_暂无问题记录_
+### 🟡 重要问题 (Important)
+
+#### 1. Switch 组件文件缺失
+
+**组件**: Switch (Forms)
+**发现时间**: Phase 4 Review
+**问题描述**:
+- Switch 组件在 FlowbladeServiceProvider 中已注册
+- 但组件类文件 `src/Components/Forms/Switch.php` 不存在
+- 需要创建该组件以保持项目完整性
+
+**影响范围**:
+- 用户无法使用 `<x-switch>` 组件
+- 可能导致运行时错误
+
+**建议方案**:
+- 创建 Switch 组件类文件
+- 参考 Checkbox 和 Radio 组件的实现
+- 添加相应的 Blade 模板
+- 添加组件使用文档
+
+**优先级**: 中等
 
 ---
 
