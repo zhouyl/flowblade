@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 87/60+ (145%)
+**组件进度**: 88/60+ (147%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -174,12 +174,14 @@
 - [x] Timeline - 时间线
 - [x] TreeView - 树形视图
 
-### Phase 8: 覆盖层组件 (6个)
+### Phase 8: 覆盖层组件 (6个) - 进行中
+
+**开始时间**: 2025-10-28
 
 - [ ] Modal - 模态框(Dialog)
 - [ ] Drawer - 抽屉
 - [ ] Popover - 弹出框
-- [ ] Tooltip - 提示
+- [x] Tooltip - 提示（支持 top/right/bottom/left 位置，hover/click 触发，dark/light 样式，可选箭头）
 - [ ] Menu - 菜单
 - [ ] HoverCard - 悬停卡片
 

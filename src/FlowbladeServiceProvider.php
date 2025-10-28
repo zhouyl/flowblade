@@ -121,6 +121,9 @@ class FlowbladeServiceProvider extends ServiceProvider
             'accordion-item' => Components\Disclosure\AccordionItem::class,
             'collapsible' => Components\Disclosure\Collapsible::class,
 
+            // Overlay Components
+            'tooltip' => Components\Overlay\Tooltip::class,
+
             // Feedback Components
             'alert' => Components\Feedback\Alert::class,
             'spinner' => Components\Feedback\Spinner::class,
