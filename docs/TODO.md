@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 83/60+ (138%)
+**组件进度**: 84/60+ (140%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -183,12 +183,13 @@
 - [ ] Menu - 菜单
 - [ ] HoverCard - 悬停卡片
 
-### Phase 9: 反馈组件 (7个) - 进行中
+### Phase 9: 反馈组件 (7个) - 已完成 ✅
 
 **开始时间**: 2025-10-27
+**完成时间**: 2025-10-28
 
 - [x] Alert - 警告（支持 info/success/warning/danger 状态，solid/subtle/left-accent/top-accent 四种模式）
-- [ ] Toast - 提示消息
+- [x] Toast - 提示消息（支持自动消失、手动关闭、6种位置、Alpine.js 交互）
 - [x] Progress - 进度条（支持 default/striped/animated 三种模式，indeterminate 状态）
 - [x] ProgressCircle - 圆形进度（支持 SVG 圆形进度，indeterminate 状态，可自定义粗细）
 - [x] Spinner - 加载动画（支持 spinner/dots/pulse/ring 四种模式）
