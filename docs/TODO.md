@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 98/60+ (163%)
+**组件进度**: 99/60+ (165%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -231,7 +231,7 @@
 
 - [x] Select - 增强下拉选择（支持搜索、多选、自定义样式，需要 Alpine.js）
 - [x] Skeleton - 骨架屏（8 种预设类型：text/image/video/card/avatar/button/circle/rectangle，支持自定义尺寸和动画）
-- [ ] QRCode - 二维码
+- [x] QRCode - 二维码（支持 simple-qrcode 集成、自定义内容、6 种尺寸、4 种纠错级别、SVG/PNG 格式）
 - [ ] Steps - 步骤条
 
 ---
