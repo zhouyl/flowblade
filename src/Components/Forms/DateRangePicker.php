@@ -2,33 +2,34 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * DateRangePicker Component
  *
- * Date range picker component with Flowbite JS integration
+ * Date range picker with start and end date inputs powered by Flowbite JavaScript.
+ * Ideal for filtering data by date ranges or booking systems.
  */
 class DateRangePicker extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $id               Container ID
-     * @param string $startId          Start date input ID
-     * @param string $endId            End date input ID
-     * @param string $startName        Start date input name
-     * @param string $endName          End date input name
-     * @param string $startValue       Start date value
-     * @param string $endValue         End date value
-     * @param string $startPlaceholder Start date placeholder
-     * @param string $endPlaceholder   End date placeholder
-     * @param bool   $showIcon         Whether to show calendar icon
-     * @param bool   $required         Whether the inputs are required
-     * @param bool   $disabled         Whether the inputs are disabled
-     * @param bool   $readonly         Whether the inputs are readonly
+     * @param string $id               Container element ID (auto-generated if empty)
+     * @param string $startId          Start date input ID (auto-generated if empty)
+     * @param string $endId            End date input ID (auto-generated if empty)
+     * @param string $startName        Start date input name attribute
+     * @param string $endName          End date input name attribute
+     * @param string $startValue       Selected start date value
+     * @param string $endValue         Selected end date value
+     * @param string $startPlaceholder Placeholder for start date input
+     * @param string $endPlaceholder   Placeholder for end date input
+     * @param bool   $showIcon         Whether to display calendar icons
+     * @param bool   $required         Whether both dates are required
+     * @param bool   $disabled         Whether both inputs are disabled
+     * @param bool   $readonly         Whether both inputs are read-only
      */
     public function __construct(
         public string $id = '',

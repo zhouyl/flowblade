@@ -2,26 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * PhoneInput Component
  *
- * Phone number input with country code selector
+ * International phone number input with country code dropdown selector.
+ * Includes popular countries with dial codes and flag emojis.
  */
 class PhoneInput extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $size           Size: 'sm', 'md', 'lg'
-     * @param string $defaultCountry Default country code (e.g., 'US', 'GB', 'CN')
-     * @param bool   $disabled       Whether the input is disabled
-     * @param bool   $invalid        Whether the input is invalid
-     * @param string $placeholder    Placeholder text
-     * @param string $id             Input ID
+     * @param string $size           Input size: 'sm', 'md', 'lg'
+     * @param string $defaultCountry default country code (ISO 3166-1 alpha-2): 'US', 'GB', 'CN', etc
+     * @param bool   $disabled       Whether input is disabled
+     * @param bool   $invalid        Whether input has validation error
+     * @param string $placeholder    Placeholder text for phone number
+     * @param string $id             Input element ID (auto-generated if empty)
      */
     public function __construct(
         public string $size = 'md',
@@ -37,7 +38,9 @@ class PhoneInput extends Component
     }
 
     /**
-     * Get popular countries with their dial codes and flags
+     * Get popular countries with their dial codes and flag emojis
+     *
+     * @return array<string, array{name: string, code: string, flag: string}>
      */
     public function getCountries(): array
     {

@@ -2,31 +2,32 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * RangeSlider Component
  *
- * Range slider component for selecting a range of values
+ * Dual-handle range slider for selecting a numeric range (min-max values).
+ * Supports horizontal/vertical orientation and visual customization.
  */
 class RangeSlider extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param float|int   $minValue    Minimum selected value
-     * @param float|int   $maxValue    Maximum selected value
-     * @param float|int   $min         Minimum allowed value
-     * @param float|int   $max         Maximum allowed value
-     * @param float|int   $step        Step increment
-     * @param string      $size        Size: xs, sm, md, lg, xl
-     * @param string      $color       Color: primary, secondary, success, warning, danger, info, gray
-     * @param bool        $disabled    Disabled state
-     * @param bool        $showValues  Show current values
-     * @param bool        $showMarks   Show min/max marks
-     * @param null|string $orientation Orientation: horizontal, vertical
+     * @param float|int   $minValue    Current minimum selected value
+     * @param float|int   $maxValue    Current maximum selected value
+     * @param float|int   $min         Minimum allowed value for range
+     * @param float|int   $max         Maximum allowed value for range
+     * @param float|int   $step        Step increment for value changes
+     * @param string      $size        Slider size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $color       Slider color theme: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param bool        $disabled    Whether slider is disabled
+     * @param bool        $showValues  Whether to display current min/max values
+     * @param bool        $showMarks   Whether to show min/max value marks
+     * @param null|string $orientation Slider orientation: 'horizontal' or 'vertical'
      */
     public function __construct(
         public float|int $minValue = 0,

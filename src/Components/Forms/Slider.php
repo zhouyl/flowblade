@@ -2,30 +2,31 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * Slider Component
  *
- * Slider component for selecting a value from a range
+ * Range slider for selecting a single numeric value.
+ * Supports horizontal/vertical orientation and visual customization.
  */
 class Slider extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param float|int   $value       Current value
-     * @param float|int   $min         Minimum value
-     * @param float|int   $max         Maximum value
-     * @param float|int   $step        Step increment
-     * @param string      $size        Size: xs, sm, md, lg, xl
-     * @param string      $color       Color: primary, secondary, success, warning, danger, info, gray
-     * @param bool        $disabled    Disabled state
-     * @param bool        $showValue   Show current value
-     * @param bool        $showMarks   Show min/max marks
-     * @param null|string $orientation Orientation: horizontal, vertical
+     * @param float|int   $value       Current selected value
+     * @param float|int   $min         Minimum allowed value
+     * @param float|int   $max         Maximum allowed value
+     * @param float|int   $step        Step increment for value changes
+     * @param string      $size        Slider size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $color       Slider color theme: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param bool        $disabled    Whether slider is disabled
+     * @param bool        $showValue   Whether to display current value
+     * @param bool        $showMarks   Whether to show min/max value marks
+     * @param null|string $orientation Slider orientation: 'horizontal' or 'vertical'
      */
     public function __construct(
         public float|int $value = 0,

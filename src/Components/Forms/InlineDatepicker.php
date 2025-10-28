@@ -2,22 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * InlineDatepicker Component
  *
- * Inline date picker component with Flowbite JS integration
+ * Always-visible inline calendar picker powered by Flowbite JavaScript.
+ * Displays calendar directly in the page without popup.
  */
 class InlineDatepicker extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $id   Container ID
-     * @param string $date Default date value
+     * @param string $id   Container element ID (auto-generated if empty)
+     * @param string $date Default selected date value
      */
     public function __construct(
         public string $id = '',

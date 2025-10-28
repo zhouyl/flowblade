@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * Clipboard Component
  *
- * Copy to clipboard component with success feedback
+ * Copy-to-clipboard button with visual feedback and tooltip support.
+ * Integrates with Flowbite's clipboard functionality.
  */
 class Clipboard extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $target      Target element ID to copy from
-     * @param string $contentType Content type: input, innerHTML, textContent
-     * @param bool   $showIcon    Whether to show copy icon
-     * @param bool   $showTooltip Whether to show tooltip
-     * @param string $buttonText  Button text (if not using icon)
-     * @param string $size        Button size: xs, sm, md, lg, xl
-     * @param string $variant     Button variant: primary, secondary, outline
+     * @param string $target      Target element ID to copy content from
+     * @param string $contentType Content type to copy: 'input' (value), 'innerHTML', or 'textContent'
+     * @param bool   $showIcon    Whether to display copy icon
+     * @param bool   $showTooltip Whether to show success tooltip
+     * @param string $buttonText  Button text when not using icon
+     * @param string $size        Button size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string $variant     Button variant: 'primary', 'secondary', 'outline'
      */
     public function __construct(
         public string $target,

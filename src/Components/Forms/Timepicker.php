@@ -2,31 +2,32 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * Timepicker Component
  *
- * Time picker component based on HTML5 time input
+ * Time picker based on HTML5 time input with optional clock icon.
+ * Supports time constraints and step intervals.
  */
 class Timepicker extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $id          Input ID
-     * @param string $name        Input name
-     * @param string $value       Input value (HH:MM format)
-     * @param string $placeholder Placeholder text
-     * @param string $min         Minimum time (HH:MM format)
-     * @param string $max         Maximum time (HH:MM format)
-     * @param string $step        Step interval in seconds
-     * @param bool   $showIcon    Whether to show clock icon
-     * @param bool   $required    Whether the input is required
-     * @param bool   $disabled    Whether the input is disabled
-     * @param bool   $readonly    Whether the input is readonly
+     * @param string $id          Input element ID (auto-generated if empty)
+     * @param string $name        Input name attribute (defaults to ID if empty)
+     * @param string $value       Selected time value in HH:MM format (24-hour)
+     * @param string $placeholder Placeholder text when no time selected
+     * @param string $min         Minimum selectable time in HH:MM format
+     * @param string $max         Maximum selectable time in HH:MM format
+     * @param string $step        Step interval in seconds (e.g., '60' for 1-minute steps)
+     * @param bool   $showIcon    Whether to display clock icon
+     * @param bool   $required    Whether time selection is required
+     * @param bool   $disabled    Whether picker is disabled
+     * @param bool   $readonly    Whether input is read-only
      */
     public function __construct(
         public string $id = '',

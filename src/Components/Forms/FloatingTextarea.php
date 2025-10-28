@@ -2,32 +2,33 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * FloatingTextarea Component
  *
- * Material Design style floating label textarea component
+ * Material Design style floating label textarea following Flowbite patterns.
+ * Label animates up when textarea is focused or has value.
  */
 class FloatingTextarea extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $id          Textarea ID
-     * @param string $name        Textarea name
-     * @param string $label       Label text
+     * @param string $id          Textarea element ID (auto-generated if empty)
+     * @param string $name        Textarea name attribute (defaults to ID if empty)
+     * @param string $label       Floating label text
      * @param string $value       Textarea value
-     * @param string $placeholder Placeholder text
-     * @param int    $rows        Number of rows
-     * @param bool   $required    Whether the textarea is required
-     * @param bool   $disabled    Whether the textarea is disabled
-     * @param bool   $readonly    Whether the textarea is readonly
-     * @param string $variant     Variant: default, outlined, filled, standard
+     * @param string $placeholder Placeholder text (space by default for floating effect)
+     * @param int    $rows        Number of visible text rows
+     * @param bool   $required    Whether textarea is required
+     * @param bool   $disabled    Whether textarea is disabled
+     * @param bool   $readonly    Whether textarea is read-only
+     * @param string $variant     Textarea variant: 'default', 'outlined', 'filled', 'standard'
      * @param bool   $error       Whether to show error state
-     * @param string $helperText  Helper text below textarea
+     * @param string $helperText  Helper text displayed below textarea
      */
     public function __construct(
         public string $id = '',

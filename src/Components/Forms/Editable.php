@@ -2,29 +2,30 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * Editable Component
  *
- * Editable text component for inline editing
+ * Inline editable text component with click-to-edit functionality.
+ * Supports keyboard shortcuts and automatic submission behaviors.
  */
 class Editable extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $value            Default value
-     * @param null|string $placeholder      Placeholder text
-     * @param string      $size             Size: xs, sm, md, lg, xl
-     * @param bool        $disabled         Disabled state
-     * @param bool        $required         Required field
-     * @param bool        $selectAllOnFocus Select all text on focus
-     * @param bool        $submitOnBlur     Submit on blur
-     * @param bool        $submitOnEnter    Submit on Enter key
-     * @param bool        $cancelOnEscape   Cancel on Escape key
+     * @param null|string $value            Default text value
+     * @param null|string $placeholder      Placeholder text when empty
+     * @param string      $size             Text size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param bool        $disabled         Whether editing is disabled
+     * @param bool        $required         Whether value is required
+     * @param bool        $selectAllOnFocus Whether to select all text when focused
+     * @param bool        $submitOnBlur     Whether to submit changes on blur
+     * @param bool        $submitOnEnter    Whether to submit changes on Enter key
+     * @param bool        $cancelOnEscape   Whether to cancel changes on Escape key
      */
     public function __construct(
         public ?string $value = null,
