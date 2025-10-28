@@ -161,7 +161,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 122/60+ (203%)
+**组件进度**: 124/60+ (207%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -275,17 +275,17 @@
 - MegaMenu 适用于大型网站的复杂导航
 - BottomNavigation 专为移动端设计
 
-### Phase 16: 媒体与展示组件 (计划中)
+### Phase 16: 媒体与展示组件 (进行中)
 
-**预计开始时间**: 待定
+**开始时间**: 2025-10-28
 
-- [ ] Gallery - 图片画廊（图片网格展示，支持 Masonry 布局、Lightbox 集成、响应式列数）
+- [x] Gallery - 图片画廊（图片网格展示，支持响应式列数、自定义间距、Lightbox 集成）
 - [ ] Carousel - 轮播图（图片/内容轮播，支持自动播放、指示器、导航按钮、无限循环）
 - [ ] Video - 视频播放器（HTML5 视频播放器增强，支持自定义控制栏、字幕、响应式）
 - [ ] DeviceMockup - 设备模型（展示应用界面的设备框架，支持 iPhone/iPad/Android/Desktop 等设备）
 
 **说明**：
-- Gallery 可能需要第三方 Lightbox 库
+- Gallery 已完成（包含 Gallery、GalleryItem 两个组件）
 - Carousel 需要 Flowbite JS 或 Swiper.js
 - Video 基于 HTML5 video 元素
 - DeviceMockup 纯 CSS 实现
@@ -316,7 +316,7 @@
 3. ~~**Datepicker**~~ - 已完成 ✅
 4. ~~**Timepicker**~~ - 已完成 ✅
 5. ~~**ListGroup**~~ - 已完成 ✅
-6. **Gallery** - 图片展示常用组件
+6. ~~**Gallery**~~ - 已完成 ✅
 
 ### 中优先级（可选实现）
 
