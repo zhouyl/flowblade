@@ -245,6 +245,112 @@
 - [x] Footer - 页脚（支持默认/固定模式、版权声明、链接、Logo、社交媒体图标）
 - [x] Banner - 横幅/公告栏（支持顶部/底部定位、可关闭、营销/新闻订阅/信息横幅变体，Flowbite Dismiss 集成）
 
+### Phase 14: 高级表单组件 (计划中)
+
+**预计开始时间**: 待定
+
+- [ ] Datepicker - 日期选择器（Flowbite Datepicker 集成，支持单日期、日期范围、内联模式、自动隐藏、日期格式、最小/最大日期、方向、标题、国际化）
+- [ ] Timepicker - 时间选择器（原生 HTML5 time input 增强，支持最小/最大时间、步长、12/24小时格式）
+- [ ] FloatingLabel - 浮动标签（Material Design 风格的浮动标签输入框，支持 input/textarea/select）
+- [ ] PhoneInput - 电话号码输入（国际电话号码输入，支持国家代码选择、格式化、验证）
+
+**说明**：
+- Datepicker 和 Timepicker 需要 Flowbite JS 支持
+- FloatingLabel 提供更现代的表单体验
+- PhoneInput 需要额外的国际化支持
+
+### Phase 15: 高级交互组件 (计划中)
+
+**预计开始时间**: 待定
+
+- [ ] Clipboard - 剪贴板（复制到剪贴板功能，支持输入框、代码块、文本内容，Flowbite Clipboard 集成，支持成功反馈）
+- [ ] SpeedDial - 快速拨号（浮动操作按钮组，支持 4 种位置，展开/收起动画，图标和文本支持）
+- [ ] MegaMenu - 超级菜单（大型下拉菜单，支持多列布局、图标、描述、分组，适用于复杂导航）
+- [ ] BottomNavigation - 底部导航（移动端底部导航栏，支持图标、文本、徽章，适用于移动应用）
+
+**说明**：
+- Clipboard 需要 Flowbite JS 的 CopyClipboard 组件
+- SpeedDial 适用于移动端和桌面端的快速操作
+- MegaMenu 适用于大型网站的复杂导航
+- BottomNavigation 专为移动端设计
+
+### Phase 16: 媒体与展示组件 (计划中)
+
+**预计开始时间**: 待定
+
+- [ ] Gallery - 图片画廊（图片网格展示，支持 Masonry 布局、Lightbox 集成、响应式列数）
+- [ ] Carousel - 轮播图（图片/内容轮播，支持自动播放、指示器、导航按钮、无限循环）
+- [ ] Video - 视频播放器（HTML5 视频播放器增强，支持自定义控制栏、字幕、响应式）
+- [ ] DeviceMockup - 设备模型（展示应用界面的设备框架，支持 iPhone/iPad/Android/Desktop 等设备）
+
+**说明**：
+- Gallery 可能需要第三方 Lightbox 库
+- Carousel 需要 Flowbite JS 或 Swiper.js
+- Video 基于 HTML5 video 元素
+- DeviceMockup 纯 CSS 实现
+
+### Phase 17: 特殊用途组件 (计划中)
+
+**预计开始时间**: 待定
+
+- [ ] Jumbotron - 巨幕（大型展示区域，适用于首页 Hero 区域，支持背景图、渐变、CTA 按钮）
+- [ ] ListGroup - 列表组（交互式列表，支持链接、按钮、徽章、图标，可选中状态）
+- [ ] Indicators - 指示器（状态指示器，支持在线/离线、通知数量、活动状态）
+- [ ] ChatBubble - 聊天气泡（聊天界面消息气泡，支持左右对齐、头像、时间戳、已读状态）
+
+**说明**：
+- Jumbotron 适用于营销页面和首页
+- ListGroup 可用于侧边栏、设置面板等
+- Indicators 与现有 Status 组件类似但更专注于特定场景
+- ChatBubble 适用于聊天应用和客服系统
+
+---
+
+## 组件优先级分析
+
+### 高优先级（建议优先实现）
+
+1. **Clipboard** - 实用性强，文档和代码示例中常用
+2. **Datepicker** - 表单必备组件，使用频率高
+3. **FloatingLabel** - 提升表单用户体验
+4. **Gallery** - 图片展示常用组件
+5. **ListGroup** - 通用列表组件，应用场景广
+
+### 中优先级（可选实现）
+
+1. **Carousel** - 轮播图常用但可用第三方库替代
+2. **SpeedDial** - 移动端常用但非必需
+3. **MegaMenu** - 大型网站需要但小型项目用不到
+4. **Timepicker** - 可用原生 HTML5 time input
+5. **PhoneInput** - 特定场景需要
+
+### 低优先级（可暂缓）
+
+1. **BottomNavigation** - 专为移动端设计，桌面端用不到
+2. **DeviceMockup** - 展示用途，非功能性组件
+3. **Jumbotron** - 可用现有 Box/Container 组件组合实现
+4. **ChatBubble** - 特定场景（聊天应用）才需要
+5. **Indicators** - 与现有 Status/Badge 组件功能重叠
+
+### 不建议实现的组件
+
+以下 Flowbite 组件已在项目中实现或不适合：
+
+- **Drawer** - 已实现 ✅
+- **Dropdown** - 已实现为 Menu 组件 ✅
+- **Modal** - 已实现 ✅
+- **Navbar** - 已实现 ✅
+- **Popover** - 已实现 ✅
+- **Progress** - 已实现 ✅
+- **Sidebar** - 已实现 ✅
+- **Skeleton** - 已实现 ✅
+- **Stepper** - 已实现为 Steps 组件 ✅
+- **Tables** - 已实现为 Table 组件 ✅
+- **Tabs** - 已实现 ✅
+- **Toast** - 已实现 ✅
+- **Tooltips** - 已实现为 Tooltip 组件 ✅
+- **Forms** - 已实现多个表单组件 ✅
+
 ---
 
 ## 技术规范
