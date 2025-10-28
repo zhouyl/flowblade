@@ -4,118 +4,86 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
-use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Flex Component
  *
- * Flexbox layout container with full control over flex properties.
- * Ideal for creating flexible, responsive layouts in enterprise applications.
+ * Flexbox layout container with comprehensive style props support.
+ * Provides full control over flex properties and supports all common styling options.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Flex extends Component
 {
+    use HasStyleProps;
+
+    /**
+     * HTML element to render
+     *
+     * @var string
+     */
+    public string $as = 'div';
+
+    /**
+     * Whether to use inline-flex instead of flex
+     *
+     * @var bool
+     */
+    public bool $inline = false;
+
     /**
      * Create a new component instance
      *
-     * @param string      $as        HTML element to render (default: 'div')
-     * @param null|string $direction Flex direction: 'row', 'col', 'row-reverse', 'col-reverse'
-     * @param null|string $align     Align items: 'start', 'center', 'end', 'stretch', 'baseline'
-     * @param null|string $justify   Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
-     * @param null|string $wrap      Flex wrap: 'wrap', 'nowrap', 'wrap-reverse'
-     * @param null|string $gap       Gap between items using Tailwind spacing scale (0-96)
-     * @param bool        $inline    Whether to use inline-flex instead of flex
+     * All style props are dynamically handled by HasStyleProps trait.
+     *
+     * @param string      $as            HTML element to render (default: 'div')
+     * @param null|string $direction     Flex direction: 'row', 'col', 'row-reverse', 'col-reverse'
+     * @param null|string $align         Align items: 'start', 'center', 'end', 'stretch', 'baseline'
+     * @param null|string $justify       Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
+     * @param null|string $wrap          Flex wrap: 'wrap', 'nowrap', 'wrap-reverse'
+     * @param null|string $gap           Gap between items using Tailwind spacing scale (0-96)
+     * @param bool        $inline        Whether to use inline-flex instead of flex
+     * @param mixed       ...$styleProps Additional style props (p, m, bg, color, etc.)
      */
     public function __construct(
-        public string $as = 'div',
-        public ?string $direction = null,
-        public ?string $align = null,
-        public ?string $justify = null,
-        public ?string $wrap = null,
-        public ?string $gap = null,
-        public bool $inline = false,
+        string $as = 'div',
+        ?string $direction = null,
+        ?string $align = null,
+        ?string $justify = null,
+        ?string $wrap = null,
+        ?string $gap = null,
+        bool $inline = false,
+        ...$styleProps
     ) {
+        $this->as = $as;
+        $this->inline = $inline;
+
+        // Merge flex-specific props with style props
+        $allProps = array_merge(
+            compact('direction', 'align', 'justify', 'wrap', 'gap'),
+            $styleProps
+        );
+
+        $this->setStyleProps($allProps);
     }
 
     /**
-     * Get the component classes.
+     * Get the component classes
+     *
+     * @return string Generated CSS classes
      */
     public function classes(): string
     {
-        $classes = [
-            $this->inline ? 'inline-flex' : 'flex',
-        ];
+        $baseClass = $this->inline ? 'inline-flex' : 'flex';
+        $styleClasses = $this->parseStyleProps();
 
-        // Direction
-        if ($this->direction) {
-            $directionMap = [
-                'row' => 'flex-row',
-                'col' => 'flex-col',
-                'column' => 'flex-col',
-                'row-reverse' => 'flex-row-reverse',
-                'col-reverse' => 'flex-col-reverse',
-                'column-reverse' => 'flex-col-reverse',
-            ];
-
-            if (isset($directionMap[$this->direction])) {
-                $classes[] = $directionMap[$this->direction];
-            }
-        }
-
-        // Align items
-        if ($this->align) {
-            $alignMap = [
-                'start' => 'items-start',
-                'center' => 'items-center',
-                'end' => 'items-end',
-                'stretch' => 'items-stretch',
-                'baseline' => 'items-baseline',
-            ];
-
-            if (isset($alignMap[$this->align])) {
-                $classes[] = $alignMap[$this->align];
-            }
-        }
-
-        // Justify content
-        if ($this->justify) {
-            $justifyMap = [
-                'start' => 'justify-start',
-                'center' => 'justify-center',
-                'end' => 'justify-end',
-                'between' => 'justify-between',
-                'around' => 'justify-around',
-                'evenly' => 'justify-evenly',
-            ];
-
-            if (isset($justifyMap[$this->justify])) {
-                $classes[] = $justifyMap[$this->justify];
-            }
-        }
-
-        // Wrap
-        if ($this->wrap) {
-            $wrapMap = [
-                'wrap' => 'flex-wrap',
-                'nowrap' => 'flex-nowrap',
-                'wrap-reverse' => 'flex-wrap-reverse',
-            ];
-
-            if (isset($wrapMap[$this->wrap])) {
-                $classes[] = $wrapMap[$this->wrap];
-            }
-        }
-
-        // Gap
-        if ($this->gap) {
-            $classes[] = "gap-{$this->gap}";
-        }
-
-        return ComponentHelper::mergeClasses(...$classes);
+        return trim($baseClass.' '.$styleClasses);
     }
 
     /**
-     * Get the view / contents that represent the component.
+     * Get the view / contents that represent the component
      */
     public function render()
     {

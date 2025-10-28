@@ -85,6 +85,8 @@ namespace Flowblade\Traits;
  * @property-read null|string $flexShrink Flex shrink
  * @property-read null|string $shrink Flex shrink (alias)
  * @property-read null|string $gap Gap between items (0-96)
+ * @property-read null|string $gapX Gap between items horizontally (0-96)
+ * @property-read null|string $gapY Gap between items vertically (0-96)
  * @property-read null|string $gridTemplateColumns Grid template columns
  * @property-read null|string $templateColumns Grid template columns (alias)
  * @property-read null|string $gridTemplateRows Grid template rows
@@ -540,6 +542,14 @@ trait HasStyleProps
 
         if (isset($this->gap)) {
             $classes[] = "gap-{$this->gap}";
+        }
+
+        if (isset($this->gapX)) {
+            $classes[] = "gap-x-{$this->gapX}";
+        }
+
+        if (isset($this->gapY)) {
+            $classes[] = "gap-y-{$this->gapY}";
         }
 
         return implode(' ', $classes);

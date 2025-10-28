@@ -209,9 +209,9 @@
   - [ ] 更新组件文档 - 待完成
   - [ ] 添加使用示例 - 待完成
 
-- [ ] 1.3 更新其他布局组件
-  - [ ] Flex 组件
-  - [ ] Grid 组件
+- [ ] 1.3 更新其他布局组件 - 进行中
+  - [x] Flex 组件 - 已完成
+  - [x] Grid 组件 - 已完成（添加 gapX, gapY 支持）
   - [ ] Stack (HStack, VStack) 组件
   - [ ] Container 组件
   - [ ] Center 组件
