@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * NavbarBrand Component
  *
- * Logo and brand name for navbar
+ * Brand logo and name section within a Navbar.
+ * Typically positioned on the left side and links to homepage.
  */
 class NavbarBrand extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $href Link URL
+     * @param null|string $href Link URL (typically homepage)
      * @param null|string $logo Logo image URL
-     * @param null|string $name Brand name
+     * @param null|string $name Brand name text
      */
     public function __construct(
         public ?string $href = '#',

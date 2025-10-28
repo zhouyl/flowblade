@@ -2,22 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * Breadcrumb Component
  *
- * Breadcrumb navigation component for showing page hierarchy
+ * Breadcrumb navigation container for displaying page hierarchy and navigation path.
+ * Contains BreadcrumbItem components with customizable separators.
  */
 class Breadcrumb extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $size      Size: xs, sm, md, lg, xl
-     * @param null|string $separator Separator character or icon
+     * @param string      $size      Breadcrumb size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $separator Custom separator character or Iconify icon name (null for default '/')
      */
     public function __construct(
         public string $size = 'md',

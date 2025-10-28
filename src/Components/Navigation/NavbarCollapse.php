@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * NavbarCollapse Component
  *
- * Collapsible navigation menu container
+ * Collapsible navigation menu container within a Navbar.
+ * Hidden on mobile, toggled by NavbarToggle button.
  */
 class NavbarCollapse extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $id Element ID for collapse target
+     * @param null|string $id Element ID matching NavbarToggle target
      */
     public function __construct(
         public ?string $id = 'navbar-collapse'

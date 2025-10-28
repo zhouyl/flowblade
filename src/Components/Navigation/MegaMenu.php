@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * MegaMenu Component
  *
- * Large dropdown menu with multi-column layout
+ * Large dropdown menu with multi-column layout for complex navigation.
+ * Contains MegaMenuColumn components organizing MegaMenuItem components.
  */
 class MegaMenu extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $trigger Trigger mode: 'click', 'hover'
-     * @param string $width   Width: 'sm', 'md', 'lg', 'xl', 'full'
-     * @param int    $columns Number of columns: 1-4
-     * @param string $id      Unique identifier
+     * @param string $trigger Activation trigger: 'click', 'hover'
+     * @param string $width   Menu width: 'sm', 'md', 'lg', 'xl', 'full'
+     * @param int    $columns Number of columns in grid layout (1-4)
+     * @param string $id      Unique identifier (auto-generated if empty)
      */
     public function __construct(
         public string $trigger = 'hover',

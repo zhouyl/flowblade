@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * Sidebar Component
  *
- * Side navigation component for dashboard and admin layouts
+ * Side navigation container for dashboard and admin layouts.
+ * Contains SidebarItem and SidebarGroup components for hierarchical navigation.
  */
 class Sidebar extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $id        Element ID
-     * @param null|string $position  Position: left, right
-     * @param bool        $fixed     Whether sidebar is fixed
-     * @param bool        $offCanvas Whether sidebar is off-canvas (drawer style)
+     * @param null|string $id        Element ID for targeting
+     * @param null|string $position  Sidebar position: 'left', 'right'
+     * @param bool        $fixed     Whether sidebar is fixed to viewport
+     * @param bool        $offCanvas Whether sidebar is off-canvas drawer style (hidden by default, toggleable)
      */
     public function __construct(
         public ?string $id = 'sidebar',

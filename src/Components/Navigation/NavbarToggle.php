@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * NavbarToggle Component
  *
- * Hamburger menu button for mobile navigation
+ * Hamburger menu button for toggling mobile navigation.
+ * Controls visibility of NavbarCollapse component on small screens.
  */
 class NavbarToggle extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $target Target collapse element ID
+     * @param null|string $target Target NavbarCollapse element ID to toggle
      */
     public function __construct(
         public ?string $target = 'navbar-collapse'

@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * TabsList Component
  *
- * Container for tab triggers
+ * Container for tab trigger buttons within a Tabs component.
+ * Holds TabsTrigger components that control which content panel is visible.
  */
 class TabsList extends Component
 {

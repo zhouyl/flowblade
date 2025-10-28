@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * SidebarGroup Component
  *
- * Collapsible group for sidebar items
+ * Collapsible group container for organizing related SidebarItem components.
+ * Supports expand/collapse functionality for hierarchical navigation.
  */
 class SidebarGroup extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $title Title for the group
-     * @param null|string $icon  Icon name
-     * @param bool        $open  Whether group is open by default
+     * @param null|string $title Group title or label
+     * @param null|string $icon  Optional Iconify icon name
+     * @param bool        $open  Whether group is expanded by default
      */
     public function __construct(
         public ?string $title = null,

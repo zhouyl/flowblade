@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * SidebarItem Component
  *
- * Navigation item for sidebar
+ * Individual navigation link within a Sidebar.
+ * Supports icons, badges, and active state highlighting.
  */
 class SidebarItem extends Component
 {
@@ -17,9 +18,9 @@ class SidebarItem extends Component
      * Create a new component instance
      *
      * @param null|string $href   Link URL
-     * @param null|string $icon   Icon name
-     * @param null|string $badge  Badge text
-     * @param bool        $active Whether item is active
+     * @param null|string $icon   Optional Iconify icon name
+     * @param null|string $badge  Optional badge text (e.g., notification count)
+     * @param bool        $active Whether item represents current page (affects styling)
      */
     public function __construct(
         public ?string $href = '#',

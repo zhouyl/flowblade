@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * NavbarLink Component
  *
- * Navigation link item for navbar
+ * Individual navigation link within a Navbar or NavbarCollapse.
+ * Supports active state highlighting for current page.
  */
 class NavbarLink extends Component
 {
@@ -17,7 +18,7 @@ class NavbarLink extends Component
      * Create a new component instance
      *
      * @param null|string $href   Link URL
-     * @param bool        $active Whether link is active
+     * @param bool        $active Whether link represents current page (affects styling)
      */
     public function __construct(
         public ?string $href = '#',

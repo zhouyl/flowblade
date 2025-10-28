@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
@@ -11,24 +11,25 @@ use Illuminate\View\Component;
 /**
  * Pagination Component
  *
- * Pagination component for navigating through pages
+ * Pagination navigation component for multi-page data sets.
+ * Supports Laravel paginator integration and multiple visual variants.
  */
 class Pagination extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|LengthAwarePaginator|PaginatorContract $paginator    Laravel paginator instance
-     * @param string                                      $variant      Variant: simple, default, verbose
-     * @param string                                      $size         Size: xs, sm, md, lg, xl
-     * @param int                                         $currentPage  Current page number
-     * @param int                                         $totalPages   Total number of pages
-     * @param int                                         $total        Total number of items (for verbose variant)
-     * @param int                                         $perPage      Items per page (for verbose variant)
-     * @param null|string                                 $prevLabel    Previous button label
-     * @param null|string                                 $nextLabel    Next button label
-     * @param bool                                        $showEdges    Show first/last page buttons
-     * @param int                                         $siblingCount Number of sibling pages to show
+     * @param null|LengthAwarePaginator|PaginatorContract $paginator    Laravel paginator instance (auto-extracts page info)
+     * @param string                                      $variant      Visual variant: 'simple' (prev/next only), 'default' (numbered), 'verbose' (with item counts)
+     * @param string                                      $size         Pagination size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param int                                         $currentPage  Current active page number
+     * @param int                                         $totalPages   Total number of pages available
+     * @param int                                         $total        Total number of items across all pages
+     * @param int                                         $perPage      Number of items per page
+     * @param null|string                                 $prevLabel    Custom label for previous button (null for default)
+     * @param null|string                                 $nextLabel    Custom label for next button (null for default)
+     * @param bool                                        $showEdges    Whether to show first/last page buttons
+     * @param int                                         $siblingCount Number of page buttons to show on each side of current page
      */
     public function __construct(
         LengthAwarePaginator|PaginatorContract|null $paginator = null,
@@ -61,7 +62,9 @@ class Pagination extends Component
     }
 
     /**
-     * Get page range to display
+     * Get page range to display with ellipsis for large page counts
+     *
+     * @return array Array of page numbers and '...' for ellipsis
      */
     public function getPageRange(): array
     {
@@ -97,7 +100,9 @@ class Pagination extends Component
     }
 
     /**
-     * Get start item number
+     * Get start item number for current page
+     *
+     * @return int First item number on current page
      */
     public function getStartItem(): int
     {
@@ -105,7 +110,9 @@ class Pagination extends Component
     }
 
     /**
-     * Get end item number
+     * Get end item number for current page
+     *
+     * @return int Last item number on current page
      */
     public function getEndItem(): int
     {

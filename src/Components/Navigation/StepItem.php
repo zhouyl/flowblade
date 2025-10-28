@@ -2,26 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * StepItem Component
  *
- * Individual step item within a Steps component
+ * Individual step within a Steps progress indicator.
+ * Displays step number, title, description, and completion status.
  */
 class StepItem extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $title       Step title
-     * @param null|string $description Step description
-     * @param null|string $status      Status: pending, current, complete
-     * @param null|string $icon        Icon name (via Iconify)
-     * @param null|int    $number      Step number
-     * @param bool        $showIcon    Whether to show icon/checkmark
+     * @param null|string $title       Step title or label
+     * @param null|string $description Optional step description or details
+     * @param null|string $status      Step status: 'pending' (not started), 'current' (active), 'complete' (finished)
+     * @param null|string $icon        Optional Iconify icon name (overrides default number/checkmark)
+     * @param null|int    $number      Step number (auto-generated if null)
+     * @param bool        $showIcon    Whether to display icon or checkmark for completed steps
      */
     public function __construct(
         public ?string $title = null,

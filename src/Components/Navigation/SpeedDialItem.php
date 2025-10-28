@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * SpeedDialItem Component
  *
- * Individual action button in speed dial
+ * Individual action button within a SpeedDial component.
+ * Displays with icon and tooltip when speed dial is expanded.
  */
 class SpeedDialItem extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $icon    Icon name
-     * @param string $tooltip Tooltip text
-     * @param string $href    Link URL
+     * @param string $icon    Iconify icon name
+     * @param string $tooltip Tooltip text describing the action
+     * @param string $href    Link URL or action target
      */
     public function __construct(
         public string $icon = '',

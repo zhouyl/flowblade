@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * SpeedDial Component
  *
- * Floating action button group with expand/collapse animation
+ * Floating action button group with expand/collapse animation.
+ * Contains SpeedDialItem components for quick access to common actions.
  */
 class SpeedDial extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $position Position: 'bottom-right', 'bottom-left', 'top-right', 'top-left'
-     * @param string $trigger  Trigger mode: 'click', 'hover'
-     * @param string $tooltip  Tooltip position: 'left', 'right', 'top', 'bottom'
-     * @param string $id       Unique identifier for the speed dial
+     * @param string $position Screen position: 'bottom-right', 'bottom-left', 'top-right', 'top-left'
+     * @param string $trigger  Activation trigger: 'click', 'hover'
+     * @param string $tooltip  Tooltip position for items: 'left', 'right', 'top', 'bottom'
+     * @param string $id       Unique identifier (auto-generated if empty)
      */
     public function __construct(
         public string $position = 'bottom-right',

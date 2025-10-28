@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * BreadcrumbItem Component
  *
- * Individual item in breadcrumb navigation
+ * Individual item within a Breadcrumb navigation component.
+ * Represents a single page or section in the navigation hierarchy.
  */
 class BreadcrumbItem extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $href    Link URL
-     * @param null|string $icon    Icon name
-     * @param bool        $current Whether this is the current page
+     * @param null|string $href    Link URL (null for current/non-clickable item)
+     * @param null|string $icon    Optional Iconify icon name
+     * @param bool        $current Whether this represents the current page (affects styling and accessibility)
      */
     public function __construct(
         public ?string $href = null,

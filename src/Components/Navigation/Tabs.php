@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * Tabs Component
  *
- * Tabs component for organizing content into separate views
+ * Tabs container for organizing content into separate switchable views.
+ * Contains TabsList (triggers) and TabsContent (panels) components.
  */
 class Tabs extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $variant      Variant: line, enclosed, pills
-     * @param string      $size         Size: xs, sm, md, lg, xl
-     * @param null|string $defaultValue Default active tab value
+     * @param string      $variant      Visual variant: 'line' (underline), 'enclosed' (bordered), 'pills' (rounded)
+     * @param string      $size         Tab size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $defaultValue Default active tab identifier value
      */
     public function __construct(
         public string $variant = 'line',

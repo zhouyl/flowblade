@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * MegaMenuColumn Component
  *
- * Column in mega menu
+ * Column container within a MegaMenu component.
+ * Groups related MegaMenuItem components under a common heading.
  */
 class MegaMenuColumn extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $title Column title
+     * @param string $title Column heading or category title
      */
     public function __construct(
         public string $title = ''

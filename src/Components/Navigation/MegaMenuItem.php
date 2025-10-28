@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * MegaMenuItem Component
  *
- * Individual item in mega menu
+ * Individual navigation link within a MegaMenuColumn.
+ * Supports icon, title, and description for rich navigation items.
  */
 class MegaMenuItem extends Component
 {
@@ -17,9 +18,9 @@ class MegaMenuItem extends Component
      * Create a new component instance
      *
      * @param string $href        Link URL
-     * @param string $icon        Icon name
-     * @param string $title       Item title
-     * @param string $description Item description
+     * @param string $icon        Optional Iconify icon name
+     * @param string $title       Item title or label
+     * @param string $description Optional item description or subtitle
      */
     public function __construct(
         public string $href = '#',

@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * Navbar Component
  *
- * Responsive navigation bar component with logo, links, and mobile menu
+ * Responsive navigation bar container with brand, links, and mobile menu support.
+ * Contains NavbarBrand, NavbarToggle, NavbarCollapse, and NavbarLink components.
  */
 class Navbar extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $variant Variant: default, solid
-     * @param bool        $sticky  Whether navbar is sticky
-     * @param bool        $border  Whether to show border
+     * @param null|string $variant Visual variant: 'default' (transparent), 'solid' (background color)
+     * @param bool        $sticky  Whether navbar sticks to top on scroll
+     * @param bool        $border  Whether to display bottom border
      */
     public function __construct(
         public ?string $variant = 'default',

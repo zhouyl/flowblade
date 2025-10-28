@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * Steps Component
  *
- * Display step-by-step progress indicator for multi-step processes
+ * Step-by-step progress indicator container for multi-step processes.
+ * Contains StepItem components showing completion status and navigation.
  */
 class Steps extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $orientation Orientation: horizontal, vertical
-     * @param null|string $variant     Variant: default, progress, detailed, breadcrumb
-     * @param null|int    $current     Current step index (1-based)
-     * @param null|int    $total       Total number of steps
+     * @param null|string $orientation Layout orientation: 'horizontal', 'vertical'
+     * @param null|string $variant     Visual variant: 'default', 'progress' (with progress bar), 'detailed' (with descriptions), 'breadcrumb' (compact)
+     * @param null|int    $current     Current active step index (1-based)
+     * @param null|int    $total       Total number of steps (null to auto-detect from children)
      */
     public function __construct(
         public ?string $orientation = 'horizontal',

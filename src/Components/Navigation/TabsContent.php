@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Navigation;
+namespace Flowblade\Components\Navigation;
 
 use Illuminate\View\Component;
 
 /**
  * TabsContent Component
  *
- * Content panel for a tab
+ * Content panel associated with a tab trigger.
+ * Displays when corresponding TabsTrigger is active.
  */
 class TabsContent extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $value Tab value identifier
+     * @param string $value Unique tab identifier matching TabsTrigger value
      */
     public function __construct(
         public string $value
