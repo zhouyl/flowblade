@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **129+ Components** - Comprehensive UI component library (215% of initial goal!)
+- 🎨 **131+ Components** - Comprehensive UI component library (218% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 129/60+ (215% of Initial Goal! 🎉)
+### Current Progress: 131/60+ (218% of Initial Goal! 🎉)
 
 #### Layout Components (18)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -168,7 +168,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ Datepicker, DateRangePicker, InlineDatepicker (Flowbite JS integration; autohide; action buttons; custom formats; min/max dates)
 - ✅ Timepicker (HTML5 time input; clock icon; min/max time; step intervals)
 
-#### Data Display Components (21) ✅
+#### Data Display Components (23) ✅
 - ✅ Icon, Avatar, Badge, Tag, Stat
 - ✅ Card (with Header, Body, Footer)
 - ✅ DataList, DataListItem
@@ -178,6 +178,8 @@ Edit `config/flowblade.php` to customize:
 - ✅ Rating (with readonly and interactive modes; half-star support; 8 colors)
 - ✅ ColorSwatch (with hex/rgb/hsl support; copyable; square/circle variants)
 - ✅ ListGroup, ListGroupItem (interactive lists; links/buttons; active/disabled states; icons; badges)
+- ✅ Indicator (status indicators; 8 colors; 5 sizes; 5 positions; ping animation; perfect for online/offline status)
+- ✅ ChatBubble (chat messages; left/right alignment; avatars; timestamps; read status; 8 colors; message tail)
 - ✅ TagsInput (with keyboard shortcuts; auto-split; max tags; prevent duplicates)
 
 #### Navigation Components (18)
