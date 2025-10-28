@@ -2,26 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Indicator Component
  *
- * Status indicator for online/offline, notifications, and activity states
+ * Status indicator dot for displaying online/offline, notifications, and activity states.
+ * Supports positioning relative to parent elements and optional ping animation.
  */
 class Indicator extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $color    Color: 'gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink'
-     * @param string $size     Size: 'xs', 'sm', 'md', 'lg', 'xl'
-     * @param string $position Position: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'inline'
-     * @param bool   $ping     Enable ping animation
-     * @param bool   $border   Add white border
-     * @param string $label    Accessible label
+     * @param string $color    Indicator color: 'gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink'
+     * @param string $size     Indicator size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string $position Positioning: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'inline'
+     * @param bool   $ping     Whether to enable pulsing ping animation
+     * @param bool   $border   Whether to add white border around indicator
+     * @param string $label    Accessible label for screen readers
      */
     public function __construct(
         public string $color = 'gray',

@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Badge Component
  *
- * Badge component for displaying status or labels
+ * Compact badge for displaying status, labels, or counts.
+ * Supports multiple colors, sizes, and visual variants.
  */
 class Badge extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $size    Size: xs, sm, md, lg, xl
-     * @param string      $color   Color: primary, secondary, success, warning, danger, info, gray
-     * @param string      $variant Variant: solid, subtle, outline
-     * @param null|string $icon    Icon name
+     * @param string      $size    Badge size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $color   Badge color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param string      $variant Visual variant: 'solid', 'subtle', 'outline'
+     * @param null|string $icon    Optional Iconify icon name to display
      */
     public function __construct(
         public string $size = 'md',

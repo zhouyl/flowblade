@@ -2,22 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * DataListItem Component
  *
- * Data list item component for displaying a single key-value pair
+ * Individual item within a DataList for displaying a single key-value pair.
+ * Supports custom content via slots for label and value.
  */
 class DataListItem extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $label Label text
-     * @param null|string $value Value text
+     * @param null|string $label Label text (key)
+     * @param null|string $value Value text (data)
      */
     public function __construct(
         public ?string $label = null,

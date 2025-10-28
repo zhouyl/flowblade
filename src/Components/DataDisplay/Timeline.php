@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Timeline Component
  *
- * Timeline component for displaying chronological events
+ * Vertical timeline container for displaying chronological events or activities.
+ * Contains TimelineItem components connected by a visual line.
  */
 class Timeline extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $size    Size: xs, sm, md, lg, xl
-     * @param string $color   Color: primary, secondary, success, warning, danger, info, gray
-     * @param string $variant Variant: solid, outline
+     * @param string $size    Timeline size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string $color   Timeline color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param string $variant Visual variant: 'solid' (filled markers), 'outline' (hollow markers)
      */
     public function __construct(
         public string $size = 'md',

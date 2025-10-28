@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * CardBody Component
  *
- * Card body component for main content
+ * Card body section for displaying the main content area.
+ * Provides consistent padding and spacing within a Card component.
  */
 class CardBody extends Component
 {

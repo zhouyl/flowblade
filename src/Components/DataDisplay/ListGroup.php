@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * ListGroup Component
  *
- * Container component for displaying a series of items, buttons or links
+ * Container for displaying a series of items, buttons, or links following Flowbite patterns.
+ * Contains ListGroupItem components with consistent styling.
  */
 class ListGroup extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $as Element type (ul or div)
+     * @param string $as HTML element type: 'ul' (unordered list) or 'div' (generic container)
      */
     public function __construct(
         public string $as = 'ul'

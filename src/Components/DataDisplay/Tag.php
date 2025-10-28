@@ -2,25 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Tag Component
  *
- * Tag component for labels and categorization
+ * Removable tag for labels, categories, and filters.
+ * Supports icons and optional close button for interactive removal.
  */
 class Tag extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $size     Size: xs, sm, md, lg, xl
-     * @param string      $color    Color: primary, secondary, success, warning, danger, info, gray
-     * @param string      $variant  Variant: solid, subtle, outline
-     * @param null|string $icon     Icon name
-     * @param bool        $closable Show close button
+     * @param string      $size     Tag size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $color    Tag color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param string      $variant  Visual variant: 'solid', 'subtle', 'outline'
+     * @param null|string $icon     Optional Iconify icon name
+     * @param bool        $closable Whether to show close/remove button
      */
     public function __construct(
         public string $size = 'md',

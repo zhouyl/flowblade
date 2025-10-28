@@ -2,22 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Card Component
  *
- * Card component for grouping related content
+ * Container card for grouping related content with optional header, body, and footer.
+ * Supports multiple visual variants and sizes following Flowbite patterns.
  */
 class Card extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $size    Size: xs, sm, md, lg, xl
-     * @param string $variant Variant: elevated, outline, filled, ghost
+     * @param string $size    Card size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string $variant Visual variant: 'elevated' (shadow), 'outline' (border), 'filled' (background), 'ghost' (minimal)
      */
     public function __construct(
         public string $size = 'md',

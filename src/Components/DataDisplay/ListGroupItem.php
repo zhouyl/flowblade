@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * ListGroupItem Component
  *
- * Individual item component for list groups
+ * Individual item within a ListGroup component.
+ * Can be rendered as list item, link, or button with active/disabled states.
  */
 class ListGroupItem extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $as       Element type (li, a, or button)
-     * @param string $href     Link URL (only for 'a' type)
-     * @param string $type     Button type (only for 'button' type)
-     * @param bool   $active   Whether the item is active
-     * @param bool   $disabled Whether the item is disabled
-     * @param bool   $first    Whether this is the first item
-     * @param bool   $last     Whether this is the last item
+     * @param string $as       HTML element type: 'li' (list item), 'a' (link), or 'button'
+     * @param string $href     Link URL (only used when as='a')
+     * @param string $type     Button type attribute (only used when as='button')
+     * @param bool   $active   Whether item is in active/selected state
+     * @param bool   $disabled Whether item is disabled
+     * @param bool   $first    Whether this is the first item (affects border radius)
+     * @param bool   $last     Whether this is the last item (affects border radius)
      */
     public function __construct(
         public string $as = 'li',

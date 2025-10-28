@@ -2,25 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Avatar Component
  *
- * Avatar component for displaying user profile images
+ * User profile avatar with image, initials, or icon fallback.
+ * Supports multiple sizes and shapes following Flowbite design patterns.
  */
 class Avatar extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $size  Size: 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl
-     * @param null|string $src   Image source URL
-     * @param null|string $name  Name for fallback initials
-     * @param null|string $icon  Icon name for fallback
-     * @param string      $shape Shape: circle, square, rounded
+     * @param string      $size  Avatar size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $src   Image source URL (primary display)
+     * @param null|string $name  User name for generating fallback initials
+     * @param null|string $icon  Iconify icon name for fallback display
+     * @param string      $shape Avatar shape: 'circle', 'square', 'rounded'
      */
     public function __construct(
         public string $size = 'md',
@@ -32,7 +33,11 @@ class Avatar extends Component
     }
 
     /**
-     * Get initials from name
+     * Get initials from user name
+     *
+     * Extracts first letter of first two words, or first two letters if single word.
+     *
+     * @return string Uppercase initials (e.g., 'JD' for 'John Doe')
      */
     public function getInitials(): string
     {

@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * CardFooter Component
  *
- * Card footer component for actions or additional info
+ * Card footer section for displaying actions, links, or additional information.
+ * Typically used as the last child of a Card component.
  */
 class CardFooter extends Component
 {

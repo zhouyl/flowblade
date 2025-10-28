@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * CardHeader Component
  *
- * Card header component for card titles and actions
+ * Card header section for displaying titles, subtitles, and action buttons.
+ * Typically used as the first child of a Card component.
  */
 class CardHeader extends Component
 {

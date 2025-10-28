@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * TreeViewItem Component
  *
- * Tree view item component for displaying a single node
+ * Individual node within a TreeView component.
+ * Supports nesting, icons, and expand/collapse states.
  */
 class TreeViewItem extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $label       Label text
-     * @param null|string $icon        Icon name
-     * @param bool        $expanded    Is expanded by default
-     * @param bool        $hasChildren Has children nodes
+     * @param null|string $label       Node label text
+     * @param null|string $icon        Optional Iconify icon name
+     * @param bool        $expanded    Whether node is expanded by default
+     * @param bool        $hasChildren Whether node has child items (shows expand/collapse icon)
      */
     public function __construct(
         public ?string $label = null,

@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Table Component
  *
- * Table component for displaying tabular data
+ * Responsive table component for displaying structured tabular data.
+ * Supports multiple visual variants and interactive features following Flowbite patterns.
  */
 class Table extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $size    Size: xs, sm, md, lg, xl
-     * @param string $variant Variant: simple, striped, bordered
-     * @param bool   $hover   Enable hover effect
+     * @param string $size    Table size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string $variant Visual variant: 'simple' (minimal), 'striped' (alternating rows), 'bordered' (with borders)
+     * @param bool   $hover   Whether to enable row hover effect
      */
     public function __construct(
         public string $size = 'md',

@@ -2,28 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * ColorSwatch Component
  *
- * Color swatch component for displaying color samples
+ * Color sample display component for design systems and color pickers.
+ * Supports various color formats and optional copy-to-clipboard functionality.
  */
 class ColorSwatch extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string      $color      Color value (hex, rgb, hsl, or named color)
-     * @param string      $size       Size: xs, sm, md, lg, xl
-     * @param string      $variant    Variant: square, circle
-     * @param bool        $withBorder Whether to show border
-     * @param bool        $withShadow Whether to show shadow
-     * @param null|string $label      Optional label text
-     * @param bool        $showValue  Whether to show color value
-     * @param bool        $copyable   Whether the color value is copyable
+     * @param string      $color      Color value (hex: '#FF0000', rgb: 'rgb(255,0,0)', hsl, or CSS named color)
+     * @param string      $size       Swatch size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $variant    Swatch shape: 'square', 'circle'
+     * @param bool        $withBorder Whether to display border around swatch
+     * @param bool        $withShadow Whether to display shadow effect
+     * @param null|string $label      Optional descriptive label text
+     * @param bool        $showValue  Whether to display color value text
+     * @param bool        $copyable   Whether to enable click-to-copy color value
      */
     public function __construct(
         public string $color = '#000000',

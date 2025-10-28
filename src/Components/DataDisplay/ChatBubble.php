@@ -2,28 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * ChatBubble Component
  *
- * Chat message bubble for messaging interfaces
+ * Message bubble component for chat and messaging interfaces.
+ * Supports sender/receiver alignment, avatars, timestamps, and read status.
  */
 class ChatBubble extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $align     Alignment: 'left', 'right'
-     * @param string $color     Color: 'gray', 'blue', 'green', 'red', 'yellow', 'indigo', 'purple', 'pink'
-     * @param bool   $avatar    Show avatar
-     * @param string $avatarSrc Avatar image source
+     * @param string $align     Bubble alignment: 'left' (received), 'right' (sent)
+     * @param string $color     Bubble color: 'gray', 'blue', 'green', 'red', 'yellow', 'indigo', 'purple', 'pink'
+     * @param bool   $avatar    Whether to display sender avatar
+     * @param string $avatarSrc Avatar image URL
      * @param string $name      Sender name
-     * @param string $time      Message timestamp
-     * @param bool   $read      Read status
-     * @param bool   $tail      Show message tail
+     * @param string $time      Message timestamp text
+     * @param bool   $read      Whether message has been read
+     * @param bool   $tail      Whether to show speech bubble tail
      */
     public function __construct(
         public string $align = 'left',

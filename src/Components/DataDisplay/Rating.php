@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Rating Component
  *
- * Rating component for displaying and collecting star ratings
+ * Star rating component for displaying or collecting user ratings.
+ * Supports read-only display and interactive input modes.
  */
 class Rating extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param float       $value     Current rating value (0-max)
-     * @param int         $max       Maximum rating value
-     * @param string      $size      Size: xs, sm, md, lg, xl
-     * @param string      $color     Color: yellow, red, orange, green, blue, purple, pink, gray
-     * @param bool        $readonly  Whether the rating is readonly
-     * @param bool        $showValue Whether to show the numeric value
-     * @param null|string $name      Form input name (for interactive ratings)
+     * @param float       $value     Current rating value (0 to max)
+     * @param int         $max       Maximum rating value (typically 5)
+     * @param string      $size      Star size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $color     Star color: 'yellow', 'red', 'orange', 'green', 'blue', 'purple', 'pink', 'gray'
+     * @param bool        $readonly  Whether rating is read-only (display) or interactive (input)
+     * @param bool        $showValue Whether to display numeric value alongside stars
+     * @param null|string $name      Form input name for interactive ratings
      */
     public function __construct(
         public float $value = 0,

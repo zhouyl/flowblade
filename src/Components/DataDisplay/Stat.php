@@ -2,26 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\DataDisplay;
+namespace Flowblade\Components\DataDisplay;
 
 use Illuminate\View\Component;
 
 /**
  * Stat Component
  *
- * Stat component for displaying statistics and metrics
+ * Statistics display component for showcasing metrics, KPIs, and data insights.
+ * Supports trend indicators, icons, and helper text.
  */
 class Stat extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $label      Label text
-     * @param null|string $value      Value text
-     * @param null|string $helpText   Help text
-     * @param null|string $icon       Icon name
-     * @param null|string $trend      Trend: up, down, neutral
-     * @param null|string $trendValue Trend value text
+     * @param null|string $label      Metric label or description
+     * @param null|string $value      Primary metric value (number or text)
+     * @param null|string $helpText   Additional context or explanation text
+     * @param null|string $icon       Optional Iconify icon name
+     * @param null|string $trend      Trend direction: 'up' (positive), 'down' (negative), 'neutral'
+     * @param null|string $trendValue Trend percentage or change value (e.g., '+12%', '-5')
      */
     public function __construct(
         public ?string $label = null,
