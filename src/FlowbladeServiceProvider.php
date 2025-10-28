@@ -122,6 +122,10 @@ class FlowbladeServiceProvider extends ServiceProvider
             'navbar-toggle' => Components\Navigation\NavbarToggle::class,
             'navbar-collapse' => Components\Navigation\NavbarCollapse::class,
             'navbar-link' => Components\Navigation\NavbarLink::class,
+            'sidebar' => Components\Navigation\Sidebar::class,
+            'sidebar-item' => Components\Navigation\SidebarItem::class,
+            'sidebar-group' => Components\Navigation\SidebarGroup::class,
+            'sidebar-toggle' => Components\Navigation\SidebarToggle::class,
 
             // Disclosure Components
             'accordion' => Components\Disclosure\Accordion::class,
