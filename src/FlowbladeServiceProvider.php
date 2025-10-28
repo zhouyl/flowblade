@@ -124,6 +124,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'progress' => Components\Feedback\Progress::class,
             'progress-circle' => Components\Feedback\ProgressCircle::class,
             'status' => Components\Feedback\Status::class,
+            'empty-state' => Components\Feedback\EmptyState::class,
 
             // Typography Components
             'heading' => Components\Typography\Heading::class,
