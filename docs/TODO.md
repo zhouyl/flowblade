@@ -12,9 +12,9 @@
 **总任务数**: 2 个主要任务
 **已完成**: 0 个
 **待完成**: 2 个
-**完成度**: 0%
+**完成度**: 5%
 
-**当前阶段**: Phase 1 - Style Props 实现 (待开始)
+**当前阶段**: Phase 1 - Style Props 实现 (进行中)
 
 ## 工作目标
 
@@ -57,6 +57,9 @@
 - `display` - display property
 - `position` - position property
 - `top`, `right`, `bottom`, `left` - positioning
+- `zIndex` / `z` - z-index
+- `overflow` - overflow property
+- `overflowX`, `overflowY` - overflow x/y axis
 
 **阴影 (Shadow)**
 - `shadow` - box shadow
@@ -66,6 +69,34 @@
 - `fontWeight` - font weight
 - `textAlign` - text alignment
 - `lineHeight` - line height
+- `letterSpacing` - letter spacing
+- `textTransform` - text transform
+- `textDecoration` - text decoration
+
+**Flexbox**
+- `flex` - flex property
+- `flexDirection` / `direction` - flex direction
+- `flexWrap` / `wrap` - flex wrap
+- `alignItems` / `align` - align items
+- `justifyContent` / `justify` - justify content
+- `alignSelf` - align self
+- `flexGrow` / `grow` - flex grow
+- `flexShrink` / `shrink` - flex shrink
+- `gap` - gap between items
+
+**Grid**
+- `gridTemplateColumns` / `templateColumns` - grid template columns
+- `gridTemplateRows` / `templateRows` - grid template rows
+- `gridColumn` / `colSpan` - grid column span
+- `gridRow` / `rowSpan` - grid row span
+- `gridGap` / `gap` - grid gap
+
+**其他 (Others)**
+- `opacity` - opacity
+- `cursor` - cursor style
+- `transition` - transition property
+- `transform` - transform property
+- `visibility` - visibility property
 
 #### 实现方案
 
@@ -164,17 +195,19 @@
 
 **目标**: 实现核心 Style Props 功能
 
-- [ ] 1.1 创建 HasStyleProps Trait
-  - [ ] 定义 style props 属性列表
-  - [ ] 实现 props 到 Tailwind 类的转换逻辑
-  - [ ] 支持响应式值 (如: `p={{ base: '4', md: '6' }}`)
-  - [ ] 添加完整的英文注释
+- [x] 1.1 创建 HasStyleProps Trait - 已完成
+  - [x] 定义 style props 属性列表
+  - [x] 实现 props 到 Tailwind 类的转换逻辑
+  - [x] 添加完整的英文注释和 @property 注解
+  - [x] 实现魔术方法支持动态属性访问
+  - [ ] 支持响应式值 (如: `p={{ base: '4', md: '6' }}`) - 待后续实现
 
-- [ ] 1.2 更新 Box 组件
-  - [ ] 集成 HasStyleProps Trait
-  - [ ] 扩展现有的 style props 支持
-  - [ ] 更新组件文档
-  - [ ] 添加使用示例
+- [x] 1.2 更新 Box 组件 - 已完成
+  - [x] 创建 Flowblade\Components\Component 基类
+  - [x] 集成 HasStyleProps Trait
+  - [x] 扩展现有的 style props 支持（支持所有 style props）
+  - [ ] 更新组件文档 - 待完成
+  - [ ] 添加使用示例 - 待完成
 
 - [ ] 1.3 更新其他布局组件
   - [ ] Flex 组件
