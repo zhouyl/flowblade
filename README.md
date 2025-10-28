@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **135+ Components** - Comprehensive UI component library (225% of initial goal!)
+- 🎨 **138+ Components** - Comprehensive UI component library (230% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,15 +135,16 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 135/60+ (225% of Initial Goal! 🎉)
+### Current Progress: 138/60+ (230% of Initial Goal! 🎉)
 
-#### Layout Components (18)
+#### Layout Components (19) ✅
 - ✅ Box, Container, Center, AbsoluteCenter
 - ✅ Flex, Grid, SimpleGrid
 - ✅ Stack, HStack, VStack
 - ✅ Wrap, Separator, Spacer
 - ✅ Group, AspectRatio, ScrollArea
 - ✅ Footer, Jumbotron (hero sections with background images/gradients; 4 sizes; 3 alignments; overlay support)
+- ✅ Divider (enhanced separator with text/icon support; horizontal/vertical; solid/dashed/dotted styles)
 
 #### Button Components (4)
 - ✅ Button, IconButton, CloseButton, ButtonGroup
@@ -154,10 +155,11 @@ Edit `config/flowblade.php` to customize:
 - ✅ Mark, Em, Strong
 - ✅ Blockquote, Highlight, List
 
-#### Form Components (28) ✅
+#### Form Components (29) ✅
 - ✅ Input, Textarea, PasswordInput, SearchInput
-- ✅ Checkbox, Radio, Switch
+- ✅ Checkbox, Radio, Switch (Flowbite style with 9 colors; 3 sizes; label support)
 - ✅ Select (enhanced with search, multi-select, Alpine.js), NativeSelect
+- ✅ PhoneInput (country code selector; 30+ countries; auto-formatting; flag emojis)
 - ✅ PinInput, NumberInput
 - ✅ Field, Fieldset
 - ✅ InputGroup, InputAddon, InputElement
