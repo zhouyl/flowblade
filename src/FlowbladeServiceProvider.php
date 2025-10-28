@@ -117,6 +117,11 @@ class FlowbladeServiceProvider extends ServiceProvider
             'tabs-content' => Components\Navigation\TabsContent::class,
             'steps' => Components\Navigation\Steps::class,
             'step-item' => Components\Navigation\StepItem::class,
+            'navbar' => Components\Navigation\Navbar::class,
+            'navbar-brand' => Components\Navigation\NavbarBrand::class,
+            'navbar-toggle' => Components\Navigation\NavbarToggle::class,
+            'navbar-collapse' => Components\Navigation\NavbarCollapse::class,
+            'navbar-link' => Components\Navigation\NavbarLink::class,
 
             // Disclosure Components
             'accordion' => Components\Disclosure\Accordion::class,
