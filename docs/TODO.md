@@ -12,12 +12,12 @@
 
 ## 开发进度
 
-**当前状态**: 127/60+ 组件 (212%)
+**当前状态**: 128/60+ 组件 (213%)
 
 **最近更新**: 2025-10-28
 - 完成 Phase 14 高级表单组件（8个）
-- 完成 Phase 16 媒体与展示组件（3/4个）
-- 添加 Video 组件（HTML5 视频播放器）
+- 完成 Phase 16 媒体与展示组件（4/4个）✅
+- 添加 DeviceMockup 组件（设备模型展示）
 
 ### ✅ Phase 1: 项目基础 (已完成)
 
@@ -275,20 +275,21 @@
 - MegaMenu 适用于大型网站的复杂导航
 - BottomNavigation 专为移动端设计
 
-### Phase 16: 媒体与展示组件 (进行中)
+### Phase 16: 媒体与展示组件 (已完成) ✅
 
 **开始时间**: 2025-10-28
+**完成时间**: 2025-10-28
 
 - [x] Gallery - 图片画廊（图片网格展示，支持响应式列数、自定义间距、Lightbox 集成）
 - [x] Carousel - 轮播图（图片/内容轮播，支持自动播放、指示器、导航按钮、Flowbite JS 集成）
 - [x] Video - 视频播放器（HTML5 视频播放器增强，支持自动播放、循环、静音、海报图、预加载、多源、字幕、响应式）
-- [ ] DeviceMockup - 设备模型（展示应用界面的设备框架，支持 iPhone/iPad/Android/Desktop 等设备）
+- [x] DeviceMockup - 设备模型（展示应用界面的设备框架，支持 mobile/tablet/laptop/desktop，横竖屏切换，纯 CSS 实现）
 
 **说明**：
 - Gallery 已完成（包含 Gallery、GalleryItem 两个组件）
 - Carousel 已完成（包含 Carousel、CarouselItem 两个组件，需要 Flowbite JS）
 - Video 已完成（基于 HTML5 video 元素，支持多种视频格式、字幕、响应式设计）
-- DeviceMockup 纯 CSS 实现
+- DeviceMockup 已完成（纯 CSS 实现，支持 4 种设备类型，横竖屏切换，深色模式）
 
 ### Phase 17: 特殊用途组件 (进行中)
 
@@ -319,6 +320,7 @@
 6. ~~**Gallery**~~ - 已完成 ✅
 7. ~~**Carousel**~~ - 已完成 ✅
 8. ~~**Video**~~ - 已完成 ✅
+9. ~~**DeviceMockup**~~ - 已完成 ✅
 
 ### 中优先级（可选实现）
 
