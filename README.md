@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **94+ Components** - Comprehensive UI component library (157% of initial goal!)
+- 🎨 **95+ Components** - Comprehensive UI component library (158% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 94/60+ (157% of Initial Goal! 🎉)
+### Current Progress: 95/60+ (158% of Initial Goal! 🎉)
 
 #### Layout Components (16)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -182,10 +182,11 @@ Edit `config/flowblade.php` to customize:
 - ✅ Accordion, AccordionItem (with default, separated, contained variants)
 - ✅ Collapsible (simple expand/collapse component)
 
-#### Overlay Components (7)
+#### Overlay Components (8)
 - ✅ Tooltip (with top/right/bottom/left placement; hover/click trigger; dark/light styles; Flowbite integration)
 - ✅ Popover (with top/right/bottom/left placement; hover/click trigger; 5 width sizes; rich content support; Flowbite integration)
 - ✅ HoverCard (hover-only trigger; 4 placements; 5 width sizes; configurable delay; rich content support; Flowbite integration)
+- ✅ Modal (dialog with 10 sizes; 9 placements; static/dynamic backdrop; header/body/footer slots; Flowbite integration)
 - ✅ Menu (dropdown menu with 12 placements; click/hover trigger; 6 width sizes; icon support; Flowbite integration)
 - ✅ MenuItem (menu item with href, icon, active, disabled, danger states)
 - ✅ MenuDivider (horizontal divider for menu sections)
