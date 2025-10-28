@@ -205,6 +205,10 @@ class FlowbladeServiceProvider extends ServiceProvider
             // Data Display Components
             'list-group' => Components\DataDisplay\ListGroup::class,
             'list-group-item' => Components\DataDisplay\ListGroupItem::class,
+
+            // Media Components
+            'gallery' => Components\Media\Gallery::class,
+            'gallery-item' => Components\Media\GalleryItem::class,
         ];
     }
 }
