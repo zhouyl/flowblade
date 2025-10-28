@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 88/60+ (147%)
+**组件进度**: 89/60+ (148%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -180,7 +180,7 @@
 
 - [ ] Modal - 模态框(Dialog)
 - [ ] Drawer - 抽屉
-- [ ] Popover - 弹出框
+- [x] Popover - 弹出框（支持 top/right/bottom/left 位置，hover/click 触发，5种宽度，可选标题/箭头，支持富文本内容）
 - [x] Tooltip - 提示（支持 top/right/bottom/left 位置，hover/click 触发，dark/light 样式，可选箭头）
 - [ ] Menu - 菜单
 - [ ] HoverCard - 悬停卡片
