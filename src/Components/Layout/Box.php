@@ -1,49 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowblade\Components\Layout;
 
 use Flowblade\Support\ComponentHelper;
 use Illuminate\View\Component;
 
+/**
+ * Box Component
+ *
+ * Flexible layout container with styling options for background, padding, margin,
+ * border radius, shadow, and border. Can render as any HTML element.
+ */
 class Box extends Component
 {
-    public ?string $as;
-
-    public ?string $bg;
-
-    public ?string $color;
-
-    public ?string $p;
-
-    public ?string $m;
-
-    public ?string $rounded;
-
-    public ?string $shadow;
-
-    public ?string $border;
-
     /**
-     * Create a new component instance.
+     * Create a new component instance
+     *
+     * @param null|string $as      HTML element to render (default: 'div')
+     * @param null|string $bg      Background color (primary, secondary, success, warning, danger, info, gray)
+     * @param null|string $color   Text color
+     * @param null|string $p       Padding using Tailwind spacing scale (0-96)
+     * @param null|string $m       Margin using Tailwind spacing scale (0-96)
+     * @param null|string $rounded Border radius (none, sm, md, lg, xl, 2xl, 3xl, full)
+     * @param null|string $shadow  Shadow size (none, sm, md, lg, xl, 2xl)
+     * @param null|string $border  Border color
      */
     public function __construct(
-        ?string $as = 'div',
-        ?string $bg = null,
-        ?string $color = null,
-        ?string $p = null,
-        ?string $m = null,
-        ?string $rounded = null,
-        ?string $shadow = null,
-        ?string $border = null,
+        public ?string $as = 'div',
+        public ?string $bg = null,
+        public ?string $color = null,
+        public ?string $p = null,
+        public ?string $m = null,
+        public ?string $rounded = null,
+        public ?string $shadow = null,
+        public ?string $border = null,
     ) {
-        $this->as = $as;
-        $this->bg = $bg;
-        $this->color = $color;
-        $this->p = $p;
-        $this->m = $m;
-        $this->rounded = $rounded;
-        $this->shadow = $shadow;
-        $this->border = $border;
     }
 
     /**
