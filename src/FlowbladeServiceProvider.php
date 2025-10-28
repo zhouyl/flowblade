@@ -201,6 +201,10 @@ class FlowbladeServiceProvider extends ServiceProvider
             'date-range-picker' => Components\Forms\DateRangePicker::class,
             'inline-datepicker' => Components\Forms\InlineDatepicker::class,
             'timepicker' => Components\Forms\Timepicker::class,
+
+            // Data Display Components
+            'list-group' => Components\DataDisplay\ListGroup::class,
+            'list-group-item' => Components\DataDisplay\ListGroupItem::class,
         ];
     }
 }
