@@ -193,6 +193,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'file-upload' => Components\Forms\FileUpload::class,
             'slider' => Components\Forms\Slider::class,
             'range-slider' => Components\Forms\RangeSlider::class,
+            'clipboard' => Components\Forms\Clipboard::class,
         ];
     }
 }
