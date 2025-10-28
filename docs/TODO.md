@@ -162,7 +162,7 @@
 - [x] PasswordInput - 密码输入
 - [x] SearchInput - 搜索输入
 
-**组件进度**: 80/60+ (133%)
+**组件进度**: 81/60+ (135%)
 
 ### Phase 7: 集合组件 (4个) - 已完成 ✅
 
@@ -190,7 +190,7 @@
 - [x] Alert - 警告（支持 info/success/warning/danger 状态，solid/subtle/left-accent/top-accent 四种模式）
 - [ ] Toast - 提示消息
 - [x] Progress - 进度条（支持 default/striped/animated 三种模式，indeterminate 状态）
-- [ ] ProgressCircle - 圆形进度
+- [x] ProgressCircle - 圆形进度（支持 SVG 圆形进度，indeterminate 状态，可自定义粗细）
 - [x] Spinner - 加载动画（支持 spinner/dots/pulse/ring 四种模式）
 - [ ] EmptyState - 空状态
 - [ ] Status - 状态指示
