@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * InputGroup Component
  *
- * Container component for grouping input with addons and elements
+ * Container component for grouping input fields with addons (prefix/suffix).
+ * Enables creating composite input controls with text, icons, or buttons.
  */
 class InputGroup extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $size Size: xs, sm, md, lg, xl
+     * @param string $size Input group size: 'xs', 'sm', 'md', 'lg', 'xl'
      */
     public function __construct(
         public string $size = 'md'

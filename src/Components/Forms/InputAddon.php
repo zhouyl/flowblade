@@ -2,22 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
  * InputAddon Component
  *
- * Addon component for input group (prefix/suffix text)
+ * Addon component for InputGroup providing prefix or suffix content.
+ * Can contain text, icons, or other elements to enhance input context.
  */
 class InputAddon extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $placement Placement: left, right
-     * @param string $size      Size: xs, sm, md, lg, xl
+     * @param string $placement Addon placement: 'left' (prefix) or 'right' (suffix)
+     * @param string $size      Addon size: 'xs', 'sm', 'md', 'lg', 'xl'
      */
     public function __construct(
         public string $placement = 'left',

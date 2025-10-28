@@ -2,24 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Forms;
+namespace Flowblade\Components\Forms;
 
 use Illuminate\View\Component;
 
 /**
- * Switch Component
+ * SwitchInput Component
  *
- * Toggle switch for binary on/off states (Flowbite style)
+ * Toggle switch for binary on/off states following Flowbite design patterns.
+ * Provides an accessible alternative to checkboxes for boolean values.
  */
 class SwitchInput extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $size     Size: 'sm', 'md', 'lg'
-     * @param string $color    Color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'purple', 'teal', 'orange'
+     * @param string $size     Switch size: 'sm', 'md', 'lg'
+     * @param string $color    Switch color theme: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'purple', 'teal', 'orange'
      * @param bool   $disabled Whether the switch is disabled
-     * @param string $label    Label text
+     * @param string $label    Label text displayed next to the switch
      */
     public function __construct(
         public string $size = 'md',

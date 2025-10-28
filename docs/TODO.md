@@ -124,13 +124,13 @@
 ### Phase 4: Form Components Review Part 1 (15 个组件)
 
 **预计时间**: 2 个会话
-**当前状态**: 部分完成 (11/15) ⏳
+**当前状态**: 已完成 ✅
 
 - [x] Input - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
 - [x] Textarea - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
 - [x] Checkbox - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
 - [x] Radio - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
-- [ ] Switch - ⚠️ 组件文件不存在，需要创建
+- [x] SwitchInput - 已完成（修复命名空间错误、改进文档）
 - [x] Select - 已完成（修复命名空间错误）
 - [x] NativeSelect - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
 - [x] PinInput - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
@@ -139,8 +139,9 @@
 - [x] Fieldset - 已完成（修复命名空间错误）
 - [x] PasswordInput - 已完成（添加 declare(strict_types)、添加完整类和方法注释）
 - [x] SearchInput - 已完成（修复命名空间错误）
-- [ ] InputGroup - 待 review
-- [ ] InputAddon - 待 review
+- [x] FileUpload - 已完成（修复命名空间错误）
+- [x] InputGroup - 已完成（修复命名空间错误、改进文档）
+- [x] InputAddon - 已完成（修复命名空间错误、改进文档）
 
 ### Phase 5: Form Components Review Part 2 (14 个组件)
 
@@ -267,11 +268,11 @@
 ## 当前进度
 
 **总组件数**: 138 个
-**已 Review**: 46 个
-**待 Review**: 92 个
-**完成度**: 33.3%
+**已 Review**: 49 个
+**待 Review**: 89 个
+**完成度**: 35.5%
 
-**当前阶段**: Phase 4 - Form Components Review Part 1 (11/15 部分完成 ⏳)
+**当前阶段**: Phase 5 - Form Components Review Part 2 (0/14 待开始)
 
 ## 问题追踪
 
