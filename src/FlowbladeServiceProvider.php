@@ -130,6 +130,8 @@ class FlowbladeServiceProvider extends ServiceProvider
             'sidebar-item' => Components\Navigation\SidebarItem::class,
             'sidebar-group' => Components\Navigation\SidebarGroup::class,
             'sidebar-toggle' => Components\Navigation\SidebarToggle::class,
+            'speed-dial' => Components\Navigation\SpeedDial::class,
+            'speed-dial-item' => Components\Navigation\SpeedDialItem::class,
 
             // Disclosure Components
             'accordion' => Components\Disclosure\Accordion::class,
