@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **116+ Components** - Comprehensive UI component library (193% of initial goal!)
+- 🎨 **119+ Components** - Comprehensive UI component library (198% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 116/60+ (193% of Initial Goal! 🎉)
+### Current Progress: 119/60+ (198% of Initial Goal! 🎉)
 
 #### Layout Components (17)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -154,7 +154,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ Mark, Em, Strong
 - ✅ Blockquote, Highlight, List
 
-#### Form Components (24) ✅
+#### Form Components (27) ✅
 - ✅ Input, Textarea, PasswordInput, SearchInput
 - ✅ Checkbox, Radio, Switch
 - ✅ Select (enhanced with search, multi-select, Alpine.js), NativeSelect
@@ -165,6 +165,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ Slider, RangeSlider
 - ✅ Clipboard (copy to clipboard with Flowbite JS; icon/text modes; tooltip support; multiple sizes and variants)
 - ✅ FloatingLabel, FloatingTextarea, FloatingSelect (Material Design style; 4 variants; smooth animations; error states)
+- ✅ Datepicker, DateRangePicker, InlineDatepicker (Flowbite JS integration; autohide; action buttons; custom formats; min/max dates)
 
 #### Data Display Components (19) ✅
 - ✅ Icon, Avatar, Badge, Tag, Stat
