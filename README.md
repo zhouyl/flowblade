@@ -11,7 +11,7 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, i
 
 ## ✨ Features
 
-- 🎨 **97+ Components** - Comprehensive UI component library (162% of initial goal!)
+- 🎨 **98+ Components** - Comprehensive UI component library (163% of initial goal!)
 - 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
@@ -135,7 +135,7 @@ Edit `config/flowblade.php` to customize:
 
 ## 📝 Available Components
 
-### Current Progress: 97/60+ (162% of Initial Goal! 🎉)
+### Current Progress: 98/60+ (163% of Initial Goal! 🎉)
 
 #### Layout Components (16)
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -194,7 +194,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ MenuDivider (horizontal divider for menu sections)
 - ✅ MenuHeader (header for menu sections)
 
-#### Feedback Components (7) ✅
+#### Feedback Components (8) ✅
 - ✅ Alert (with info, success, warning, danger status; solid, subtle, left-accent, top-accent variants)
 - ✅ Spinner (with spinner, dots, pulse, ring variants; 8 color options)
 - ✅ Progress (with default, striped, animated variants; indeterminate state)
@@ -202,6 +202,7 @@ Edit `config/flowblade.php` to customize:
 - ✅ Status (with dot, badge, pill variants; 8 status types; pulse animation)
 - ✅ EmptyState (with icon, title, description; action buttons; 3 sizes)
 - ✅ Toast (with auto-dismiss; 6 positions; Alpine.js integration; action buttons)
+- ✅ Skeleton (loading placeholder with 8 preset types: text, image, video, card, avatar, button, circle, rectangle)
 
 #### Data Display Components (1)
 - ✅ Icon (100,000+ icons via Iconify)
