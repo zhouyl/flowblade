@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Media;
+namespace Flowblade\Components\Media;
 
 use Illuminate\View\Component;
 
 /**
  * QRCode Component
  *
- * Display QR codes with consistent styling and sizing
+ * QR code generator component for encoding URLs, text, and other data.
+ * Supports multiple formats and error correction levels with consistent styling.
  */
 class QRCode extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param null|string $data            Data to encode (URL, text, etc.)
-     * @param null|string $size            Size: xs, sm, md, lg, xl, 2xl
-     * @param null|string $format          Format: svg, png (default: svg)
-     * @param null|string $errorCorrection Error correction level: L, M, Q, H (default: M)
-     * @param null|string $label           Optional label below QR code
-     * @param bool        $rounded         Whether to use rounded corners
-     * @param bool        $border          Whether to show border
+     * @param null|string $data            Data to encode (URL, text, vCard, etc.)
+     * @param null|string $size            QR code size: 'xs', 'sm', 'md', 'lg', 'xl', '2xl'
+     * @param null|string $format          Output format: 'svg' (vector), 'png' (raster)
+     * @param null|string $errorCorrection Error correction level: 'L' (7%), 'M' (15%), 'Q' (25%), 'H' (30%)
+     * @param null|string $label           Optional descriptive label displayed below QR code
+     * @param bool        $rounded         Whether to apply rounded corners to QR code container
+     * @param bool        $border          Whether to display border around QR code
      */
     public function __construct(
         public ?string $data = null,

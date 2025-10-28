@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Media;
+namespace Flowblade\Components\Media;
 
 use Illuminate\View\Component;
 
 /**
  * Gallery Component
  *
- * Image gallery component with grid layout
+ * Image gallery container component with responsive grid or masonry layout.
+ * Works with GalleryItem components to display image collections.
  */
 class Gallery extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $cols   Number of columns (2, 3, 4, 5, 6)
-     * @param string $gap    Gap size (1, 2, 3, 4, 5, 6, 8)
-     * @param string $layout Layout type (grid or masonry)
+     * @param string $cols   Number of grid columns: '2', '3', '4', '5', '6' (responsive breakpoints supported)
+     * @param string $gap    Gap spacing between items: '1', '2', '3', '4', '5', '6', '8' (Tailwind spacing scale)
+     * @param string $layout Layout type: 'grid' (uniform grid), 'masonry' (Pinterest-style layout)
      */
     public function __construct(
         public string $cols = '3',

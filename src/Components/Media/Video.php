@@ -2,31 +2,32 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Media;
+namespace Flowblade\Components\Media;
 
 use Illuminate\View\Component;
 
 /**
  * Video Component
  *
- * HTML5 video player component with enhanced features
+ * HTML5 video player component with enhanced styling and features.
+ * Supports standard video attributes with consistent Flowblade styling.
  */
 class Video extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param string $src      Video source URL
-     * @param string $poster   Poster image URL
-     * @param bool   $controls Show video controls
-     * @param bool   $autoplay Autoplay video
-     * @param bool   $loop     Loop video
-     * @param bool   $muted    Mute video
-     * @param string $preload  Preload option: 'none', 'metadata', 'auto'
-     * @param string $width    Width classes
-     * @param string $height   Height classes
-     * @param bool   $rounded  Apply rounded corners
-     * @param bool   $border   Apply border
+     * @param string $src      Video source URL (MP4, WebM, OGG)
+     * @param string $poster   Poster image URL displayed before video plays
+     * @param bool   $controls Whether to display video playback controls
+     * @param bool   $autoplay Whether to autoplay video on load (requires muted for most browsers)
+     * @param bool   $loop     Whether to loop video playback
+     * @param bool   $muted    Whether to mute video audio
+     * @param string $preload  Preload strategy: 'none' (no preload), 'metadata' (preload metadata only), 'auto' (preload entire video)
+     * @param string $width    Width Tailwind classes (e.g., 'w-full', 'w-96')
+     * @param string $height   Height Tailwind classes (e.g., 'h-auto', 'h-64')
+     * @param bool   $rounded  Whether to apply rounded corners
+     * @param bool   $border   Whether to display border around video
      */
     public function __construct(
         public string $src = '',

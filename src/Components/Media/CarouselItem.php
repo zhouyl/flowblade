@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Mellivora\Flowblade\Components\Media;
+namespace Flowblade\Components\Media;
 
 use Illuminate\View\Component;
 
 /**
  * CarouselItem Component
  *
- * Individual carousel slide item
+ * Individual carousel slide item component for use within a Carousel.
+ * Supports custom transition animations and active state.
  */
 class CarouselItem extends Component
 {
     /**
      * Create a new component instance
      *
-     * @param bool   $active   Whether this item is active
-     * @param string $duration Animation duration (e.g., '700', '200')
-     * @param string $easing   Animation easing (e.g., 'ease-in-out', 'ease-linear')
+     * @param bool   $active   Whether this slide is currently active/visible
+     * @param string $duration Transition animation duration in milliseconds (e.g., '700', '200')
+     * @param string $easing   Transition easing function: 'ease-in-out', 'ease-linear', 'ease-in', 'ease-out'
      */
     public function __construct(
         public bool $active = false,
