@@ -30,7 +30,7 @@
     $emptyStars = $max - $filledStars - ($hasHalfStar ? 1 : 0);
 @endphp
 
-<div 
+<div
     @if(!$readonly)
     x-data="{
         rating: {{ $value }},
@@ -44,7 +44,7 @@
         }
     }"
     @endif
-    {{ $attributes->merge(['class' => 'inline-flex items-center gap-2']) }}
+    {{ $attributes->merge(['class' => $classes()]) }}
 >
     <div class="flex items-center gap-0.5">
         @for($i = 1; $i <= $max; $i++)

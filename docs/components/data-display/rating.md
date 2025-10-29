@@ -28,9 +28,15 @@ For interactive ratings, this component requires **Alpine.js** to be installed i
 | `showValue` | `bool` | `false` | Whether to show the numeric value |
 | `name` | `string` | `null` | Form input name (for interactive ratings) |
 
-### Style Props
+## Style Props
 
-Rating supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Rating supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Readonly Ratings
 
