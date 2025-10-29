@@ -75,6 +75,50 @@
 4. Overlay 组件
 5. Disclosure 组件
 
+---
+
+### 🟡 列表组件重复和归类问题 (Important)
+
+**发现时间**: Code Review Phase 2
+**优先级**: 中
+**状态**: 待分析和处理
+
+**问题描述**:
+存在多个列表相关的组件，功能有重叠，需要明确定位和归类：
+
+1. **ListGroup + ListGroupItem** (DataDisplay)
+   - 用于创建交互式列表（按钮、链接等）
+   - 基于 Flowbite 的原生设计
+   - 缺少 Style Props 支持
+   - 需要 first/last 属性来管理边框半径
+
+2. **ListItem** (DataDisplay)
+   - 灵活的列表项组件
+   - 支持图标、徽章、链接等
+   - 已有 Style Props 支持
+   - 可单独使用或在列表中使用
+
+3. **ListComponent** (Typography)
+   - 基础的列表容器（ol/ul）
+   - 用于包装 li 元素
+   - 缺少 Style Props 支持
+   - 归类在 Typography 中可能不太合适
+
+**问题分析**:
+- ListGroup/ListGroupItem 和 ListItem 有功能重叠
+- ListComponent 的归类位置不太合适（应该在 Layout 还是 Typography？）
+- 三个组件都缺少 Style Props 支持（除了 ListItem）
+
+**建议方案**:
+1. 保留 ListGroup/ListGroupItem 用于交互式列表
+2. 保留 ListItem 用于灵活的列表项
+3. 考虑将 ListComponent 移到 Layout 类别或重新命名
+4. 为 ListGroup/ListGroupItem 添加 Style Props 支持
+5. 为 ListComponent 添加 Style Props 支持
+6. 在文档中明确说明三个组件的使用场景和区别
+
+**预期完成**: 下一个会话（需要与用户确认处理方案）
+
 ## 已解决问题
 
 ### ✅ Switch 组件文件缺失 (已解决)
