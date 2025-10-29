@@ -1,6 +1,6 @@
 # Button
 
-Versatile button component with multiple variants and states.
+Versatile button component with multiple variants and states. Button provides a flexible way to create interactive buttons with support for various colors, sizes, variants, and states.
 
 ## Props
 
@@ -15,6 +15,10 @@ Versatile button component with multiple variants and states.
 | `left-icon` | string | `null` | Icon name for left side |
 | `right-icon` | string | `null` | Icon name for right side |
 | `type` | string | `'button'` | Button type (button, submit, reset) |
+
+### Style Props
+
+Button supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Basic Usage
 
@@ -90,11 +94,11 @@ Versatile button component with multiple variants and states.
 ### Button Types
 
 ```blade
-<form>
+<x-box as="form">
     <x-button type="submit" color="primary">Submit</x-button>
     <x-button type="reset" variant="outline">Reset</x-button>
     <x-button type="button">Button</x-button>
-</form>
+</x-box>
 ```
 
 ## Common Patterns
@@ -111,11 +115,12 @@ Versatile button component with multiple variants and states.
 ### Call to Action
 
 ```blade
-<x-button 
-    color="primary" 
-    size="xl" 
+<x-button
+    color="primary"
+    size="xl"
     right-icon="heroicons:arrow-right"
-    class="w-full md:w-auto"
+    w="full"
+    class="md:w-auto"
 >
     Get Started
 </x-button>
@@ -158,18 +163,18 @@ Versatile button component with multiple variants and states.
 ### Social Buttons
 
 ```blade
-<x-button 
-    left-icon="fa:github" 
-    variant="outline" 
-    class="w-full"
+<x-button
+    left-icon="fa:github"
+    variant="outline"
+    w="full"
 >
     Continue with GitHub
 </x-button>
 
-<x-button 
-    left-icon="fa:google" 
-    variant="outline" 
-    class="w-full"
+<x-button
+    left-icon="fa:google"
+    variant="outline"
+    w="full"
 >
     Continue with Google
 </x-button>
