@@ -1,6 +1,6 @@
 # Separator
 
-Visual separator / divider line component.
+Visual separator / divider line component. Separator provides a simple way to create visual dividers between content sections with support for horizontal and vertical orientations.
 
 ## Props
 
@@ -10,6 +10,10 @@ Visual separator / divider line component.
 | `color` | string | `'gray'` | Border color (primary, secondary, success, warning, danger, info, gray) |
 | `thickness` | string | `'1'` | Border thickness (1, 2, 4, 8) |
 | `length` | string | `null` | Length for vertical separators (0-96) |
+
+### Style Props
+
+Separator supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Basic Usage
 
@@ -22,21 +26,21 @@ Visual separator / divider line component.
 ### Horizontal Separator
 
 ```blade
-<div>Content above</div>
+<x-text>Content above</x-text>
 <x-separator />
-<div>Content below</div>
+<x-text>Content below</x-text>
 ```
 
 ### Vertical Separator
 
 ```blade
-<div class="flex items-center gap-4">
-    <span>Item 1</span>
+<x-flex align="center" gap="4">
+    <x-text as="span">Item 1</x-text>
     <x-separator orientation="vertical" length="6" />
-    <span>Item 2</span>
+    <x-text as="span">Item 2</x-text>
     <x-separator orientation="vertical" length="6" />
-    <span>Item 3</span>
-</div>
+    <x-text as="span">Item 3</x-text>
+</x-flex>
 ```
 
 ### Different Colors
@@ -60,15 +64,15 @@ Visual separator / divider line component.
 ### Custom Length (Vertical)
 
 ```blade
-<div class="flex items-center gap-4">
-    <span>Short</span>
+<x-flex align="center" gap="4">
+    <x-text as="span">Short</x-text>
     <x-separator orientation="vertical" length="4" />
-    <span>Medium</span>
+    <x-text as="span">Medium</x-text>
     <x-separator orientation="vertical" length="8" />
-    <span>Tall</span>
+    <x-text as="span">Tall</x-text>
     <x-separator orientation="vertical" length="12" />
-    <span>Extra Tall</span>
-</div>
+    <x-text as="span">Extra Tall</x-text>
+</x-flex>
 ```
 
 ## Common Patterns
@@ -76,8 +80,8 @@ Visual separator / divider line component.
 ### Section Divider
 
 ```blade
-<section>
-    <h2>Section 1</h2>
+<x-box as="section">
+    <x-heading as="h2">Section 1</x-heading>
     <p>Content...</p>
 </section>
 
