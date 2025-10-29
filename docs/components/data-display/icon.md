@@ -10,9 +10,15 @@ Iconify icon component with access to 100,000+ icons. Icon provides a flexible w
 | `size` | string | `'1.2em'` | Icon size (any CSS size value) |
 | `color` | string | `null` | Icon color (primary, secondary, success, warning, danger, info, gray) |
 
-### Style Props
+## Style Props
 
-Icon supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Icon supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Basic Usage
 
