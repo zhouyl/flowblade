@@ -1,6 +1,6 @@
 # Carousel
 
-Image and content carousel component with automatic sliding, navigation controls, and indicators. Requires Flowbite JS.
+Image and content carousel component with automatic sliding, navigation controls, and indicators. Carousel provides a flexible way to display image and content carousels. Requires Flowbite JS.
 
 ## Components
 
@@ -12,13 +12,13 @@ Image and content carousel component with automatic sliding, navigation controls
 ```blade
 <x-carousel>
     <x-carousel-item :active="true">
-        <img src="/images/slide1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Slide 1">
+        <x-image src="/images/slide1.jpg" position="absolute" w="full" top="1/2" left="1/2" transform="-translate-x-1/2 -translate-y-1/2" alt="Slide 1" />
     </x-carousel-item>
     <x-carousel-item>
-        <img src="/images/slide2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Slide 2">
+        <x-image src="/images/slide2.jpg" position="absolute" w="full" top="1/2" left="1/2" transform="-translate-x-1/2 -translate-y-1/2" alt="Slide 2" />
     </x-carousel-item>
     <x-carousel-item>
-        <img src="/images/slide3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Slide 3">
+        <x-image src="/images/slide3.jpg" position="absolute" w="full" top="1/2" left="1/2" transform="-translate-x-1/2 -translate-y-1/2" alt="Slide 3" />
     </x-carousel-item>
 </x-carousel>
 ```
@@ -42,6 +42,10 @@ Image and content carousel component with automatic sliding, navigation controls
 | `active` | `bool` | `false` | Whether this slide is initially active |
 | `duration` | `string` | `'700'` | Animation duration in milliseconds |
 | `easing` | `string` | `'ease-in-out'` | Animation easing function |
+
+### Style Props
+
+Carousel and CarouselItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 

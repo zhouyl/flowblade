@@ -1,6 +1,6 @@
 # QRCode
 
-Display QR codes with consistent styling and sizing. Works with simple-qrcode package or custom QR code generation.
+Display QR codes with consistent styling and sizing. QRCode provides a flexible way to display QR codes. Works with simple-qrcode package or custom QR code generation.
 
 ## Installation
 
@@ -21,9 +21,9 @@ However, you can also use it with any QR code generation method or even static i
 <x-qrcode data="https://example.com" />
 
 {{-- With label --}}
-<x-qrcode 
-    data="https://example.com" 
-    label="Scan to visit our website" 
+<x-qrcode
+    data="https://example.com"
+    label="Scan to visit our website"
 />
 ```
 
@@ -58,6 +58,10 @@ However, you can also use it with any QR code generation method or even static i
 |------|------|---------|-------------|
 | `data` | `string\|null` | `null` | Data to encode (requires simple-qrcode) |
 | `size` | `string\|null` | `'md'` | Size: `xs`, `sm`, `md`, `lg`, `xl`, `2xl` |
+
+### Style Props
+
+QRCode supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `format` | `string\|null` | `'svg'` | Format: `svg`, `png` (for simple-qrcode) |
 | `errorCorrection` | `string\|null` | `'M'` | Error correction: `L`, `M`, `Q`, `H` |
 | `label` | `string\|null` | `null` | Optional label below QR code |

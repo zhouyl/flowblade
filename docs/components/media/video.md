@@ -1,6 +1,6 @@
 # Video
 
-HTML5 video player component with enhanced features for embedding and playing video content.
+HTML5 video player component with enhanced features for embedding and playing video content. Video provides a flexible way to embed and play video content.
 
 ## Basic Usage
 
@@ -23,6 +23,10 @@ HTML5 video player component with enhanced features for embedding and playing vi
 | `height` | `string` | `'h-auto'` | Height classes |
 | `rounded` | `bool` | `false` | Apply rounded corners |
 | `border` | `bool` | `false` | Apply border |
+
+### Style Props
+
+Video supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 

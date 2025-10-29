@@ -1,6 +1,6 @@
 # Gallery
 
-Image gallery component with responsive grid layout for displaying collections of images.
+Image gallery component with responsive grid layout for displaying collections of images. Gallery provides a flexible way to display image galleries.
 
 ## Components
 
@@ -28,6 +28,10 @@ Image gallery component with responsive grid layout for displaying collections o
 |------|------|---------|-------------|
 | `cols` | `string` | `'3'` | Number of columns: `2`, `3`, `4`, `5`, `6` |
 | `gap` | `string` | `'4'` | Gap size: `1`, `2`, `3`, `4`, `5`, `6`, `8` |
+
+### Style Props
+
+Gallery and GalleryItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `layout` | `string` | `'grid'` | Layout type: `grid` or `masonry` |
 
 ### GalleryItem Props
