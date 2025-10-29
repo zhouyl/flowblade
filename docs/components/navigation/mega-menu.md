@@ -1,38 +1,38 @@
 # MegaMenu Component
 
-Large dropdown menu with multi-column layout, icons, descriptions, and grouping for complex navigation.
+Large dropdown menu with multi-column layout, icons, descriptions, and grouping for complex navigation. MegaMenu provides a flexible way to create complex dropdown menus.
 
 ## Basic Usage
 
 ```blade
 <x-mega-menu>
     <x-slot name="trigger">Products</x-slot>
-    
+
     <x-mega-menu-column title="Features">
-        <x-mega-menu-item 
-            icon="heroicons:rocket-launch" 
-            title="Analytics" 
+        <x-mega-menu-item
+            icon="heroicons:rocket-launch"
+            title="Analytics"
             description="Track your metrics"
             href="/analytics"
         />
-        <x-mega-menu-item 
-            icon="heroicons:chart-bar" 
-            title="Reports" 
+        <x-mega-menu-item
+            icon="heroicons:chart-bar"
+            title="Reports"
             description="Generate insights"
             href="/reports"
         />
     </x-mega-menu-column>
-    
+
     <x-mega-menu-column title="Resources">
-        <x-mega-menu-item 
-            icon="heroicons:book-open" 
-            title="Documentation" 
+        <x-mega-menu-item
+            icon="heroicons:book-open"
+            title="Documentation"
             description="Learn how to use"
             href="/docs"
         />
-        <x-mega-menu-item 
-            icon="heroicons:academic-cap" 
-            title="Tutorials" 
+        <x-mega-menu-item
+            icon="heroicons:academic-cap"
+            title="Tutorials"
             description="Step-by-step guides"
             href="/tutorials"
         />
@@ -65,6 +65,10 @@ Large dropdown menu with multi-column layout, icons, descriptions, and grouping 
 | `icon` | string | `''` | Icon name (Iconify format) |
 | `title` | string | `''` | Item title |
 | `description` | string | `''` | Item description |
+
+### Style Props
+
+MegaMenu and related components support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 

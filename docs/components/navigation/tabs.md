@@ -1,6 +1,6 @@
 # Tabs
 
-Tabs component for organizing content into separate views that can be easily navigated.
+Tabs component for organizing content into separate views that can be easily navigated. Tabs provides a flexible way to organize content with support for various sizes and variants.
 
 ## Basic Usage
 
@@ -11,17 +11,17 @@ Tabs component for organizing content into separate views that can be easily nav
         <x-tabs-trigger value="tab2">Tab 2</x-tabs-trigger>
         <x-tabs-trigger value="tab3">Tab 3</x-tabs-trigger>
     </x-tabs-list>
-    
+
     <x-tabs-content value="tab1">
-        <p>Content for Tab 1</p>
+        <x-text as="p">Content for Tab 1</x-text>
     </x-tabs-content>
-    
+
     <x-tabs-content value="tab2">
-        <p>Content for Tab 2</p>
+        <x-text as="p">Content for Tab 2</x-text>
     </x-tabs-content>
-    
+
     <x-tabs-content value="tab3">
-        <p>Content for Tab 3</p>
+        <x-text as="p">Content for Tab 3</x-text>
     </x-tabs-content>
 </x-tabs>
 ```
@@ -48,6 +48,10 @@ Tabs component for organizing content into separate views that can be easily nav
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
+
+### Style Props
+
+Tabs, TabsTrigger, and TabsContent support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `value` | `string` | required | Tab value identifier (must match trigger) |
 
 ## Variants

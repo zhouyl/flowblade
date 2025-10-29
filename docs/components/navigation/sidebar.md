@@ -1,12 +1,12 @@
 # Sidebar
 
-Side navigation component for dashboard and admin layouts with support for icons, badges, and multi-level menus. Built with Flowbite's collapse and drawer functionality.
+Side navigation component for dashboard and admin layouts with support for icons, badges, and multi-level menus. Built with Flowbite's collapse and drawer functionality. Sidebar provides a flexible way to create side navigation.
 
 ## Basic Usage
 
 ```blade
 <x-sidebar>
-    <ul class="space-y-2 font-medium">
+    <x-vstack gap="2" fontWeight="medium">
         <x-sidebar-item href="/dashboard" icon="dashboard" :active="true">
             Dashboard
         </x-sidebar-item>
@@ -19,7 +19,7 @@ Side navigation component for dashboard and admin layouts with support for icons
         <x-sidebar-item href="/settings" icon="cog">
             Settings
         </x-sidebar-item>
-    </ul>
+    </x-vstack>
 </x-sidebar>
 ```
 
@@ -48,6 +48,10 @@ Navigation item for sidebar.
 | `active` | `bool` | `false` | Whether item is active |
 
 ### SidebarGroup
+
+### Style Props
+
+Sidebar and related components support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 Collapsible group for sidebar items.
 

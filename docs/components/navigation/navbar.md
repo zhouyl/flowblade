@@ -1,15 +1,15 @@
 # Navbar
 
-Responsive navigation bar component with logo, links, and mobile hamburger menu. Built with Flowbite's collapse functionality for mobile responsiveness.
+Responsive navigation bar component with logo, links, and mobile hamburger menu. Built with Flowbite's collapse functionality for mobile responsiveness. Navbar provides a flexible way to create responsive navigation bars.
 
 ## Basic Usage
 
 ```blade
 <x-navbar>
     <x-navbar-brand href="/" logo="/logo.svg" name="My App" />
-    
+
     <x-navbar-toggle target="navbar-menu" />
-    
+
     <x-navbar-collapse id="navbar-menu">
         <x-navbar-link href="/" :active="true">Home</x-navbar-link>
         <x-navbar-link href="/about">About</x-navbar-link>
@@ -38,6 +38,10 @@ Logo and brand name section.
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `href` | `string\|null` | `'#'` | Link URL |
+
+### Style Props
+
+Navbar and related components support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `logo` | `string\|null` | `null` | Logo image URL |
 | `name` | `string\|null` | `null` | Brand name |
 

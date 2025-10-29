@@ -1,6 +1,6 @@
 # Breadcrumb
 
-Breadcrumb navigation component for showing the current page's location within a navigational hierarchy.
+Breadcrumb navigation component for showing the current page's location within a navigational hierarchy. Breadcrumb provides a flexible way to display navigation paths with support for various sizes and separators.
 
 ## Basic Usage
 
@@ -28,6 +28,10 @@ Breadcrumb navigation component for showing the current page's location within a
 | `href` | `string` | `null` | Link URL |
 | `icon` | `string` | `null` | Icon name |
 | `current` | `bool` | `false` | Whether this is the current page |
+
+### Style Props
+
+Breadcrumb and BreadcrumbItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 

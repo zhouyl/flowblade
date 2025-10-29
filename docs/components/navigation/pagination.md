@@ -1,6 +1,6 @@
 # Pagination
 
-Pagination component for navigating through pages with multiple variants.
+Pagination component for navigating through pages with multiple variants. Pagination provides a flexible way to navigate through pages with support for various sizes and variants.
 
 ## Basic Usage
 
@@ -38,6 +38,10 @@ You can also manually specify pagination parameters:
 | `totalPages` | `int` | `1` | Total number of pages (auto-set if paginator provided) |
 | `total` | `int` | `0` | Total number of items (auto-set if paginator provided) |
 | `perPage` | `int` | `10` | Items per page (auto-set if paginator provided) |
+
+### Style Props
+
+Pagination supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `prevLabel` | `string` | `'Previous'` | Previous button label |
 | `nextLabel` | `string` | `'Next'` | Next button label |
 | `showEdges` | `bool` | `true` | Show first/last page buttons |

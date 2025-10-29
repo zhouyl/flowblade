@@ -1,6 +1,6 @@
 # SpeedDial Component
 
-Floating action button group with expand/collapse animation for quick access to common actions.
+Floating action button group with expand/collapse animation for quick access to common actions. SpeedDial provides a flexible way to create floating action button groups.
 
 ## Basic Usage
 
@@ -31,6 +31,10 @@ Floating action button group with expand/collapse animation for quick access to 
 | `icon` | string | `''` | Icon name (Iconify format) |
 | `tooltip` | string | `''` | Tooltip text |
 | `href` | string | `'#'` | Link URL |
+
+### Style Props
+
+SpeedDial and SpeedDialItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 

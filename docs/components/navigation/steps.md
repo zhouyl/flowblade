@@ -1,6 +1,6 @@
 # Steps
 
-Display step-by-step progress indicator for multi-step processes like forms, wizards, and workflows.
+Display step-by-step progress indicator for multi-step processes like forms, wizards, and workflows. Steps provides a flexible way to display progress with support for various orientations and variants.
 
 ## Basic Usage
 
@@ -33,6 +33,10 @@ Display step-by-step progress indicator for multi-step processes like forms, wiz
 | `icon` | `string\|null` | `null` | Icon name (via Iconify) |
 | `number` | `int\|null` | `null` | Step number |
 | `showIcon` | `bool` | `true` | Whether to show icon/checkmark |
+
+### Style Props
+
+Steps and StepItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Variants
 
