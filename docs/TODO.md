@@ -23,7 +23,9 @@
 - Rating: ✅ 完成
 - ChatBubble: ✅ 完成
 - Stat: ✅ 完成
-- 待修复: ~41 个组件
+- Timeline: ✅ 完成
+- TreeView: ✅ 完成
+- 待修复: ~39 个组件
 
 ## 工作计划
 
@@ -92,8 +94,10 @@
   - [x] Rating - ✅ Style Props 已添加
   - [x] ChatBubble - ✅ Style Props 已添加
   - [x] Stat - ✅ Style Props 已添加
+  - [x] Timeline - ✅ Style Props 已添加
+  - [x] TreeView - ✅ Style Props 已添加
   - [x] ListItem - ✅ 新增组件，符合规范
-  - [ ] 其他 14 个 - 待检查
+  - [ ] 其他 12 个 - 待检查
 
 - [ ] 3.3 Disclosure 组件 (3 个) - 进行中
   - [x] Accordion - ⚠️ 缺少 Style Props 支持
