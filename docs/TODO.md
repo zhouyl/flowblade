@@ -30,7 +30,14 @@
 - Indicator: ✅ 完成
 - ListGroup: ✅ 完成
 - TagsInput: ✅ 完成
-- 待修复: ~34 个组件
+- ListGroupItem: ✅ 完成
+- CardBody: ✅ 完成
+- CardHeader: ✅ 完成
+- CardFooter: ✅ 完成
+- TimelineItem: ✅ 完成
+- TreeViewItem: ✅ 完成
+- DataListItem: ✅ 完成
+- 待修复: ~27 个组件
 
 ## 工作计划
 
@@ -81,6 +88,7 @@
 4. 是否避免直接调用其他组件（使用动态组件）
 5. 是否优先使用 Flowbite 样式
 6. 代码是否通过 php-cs-fixer 格式化
+7. 保持统一的组件、类的设计风格、编码风格、变量/参数/方法命名风格
 
 **Review 分类**:
 - [x] 3.1 Buttons 组件 (4 个) - ✅ 已完成
@@ -95,19 +103,25 @@
   - [x] Icon - ✅ Style Props 已添加
   - [x] Tag - ✅ Style Props 已添加
   - [x] Card - ✅ Style Props 已添加
+  - [x] CardHeader - ✅ Style Props 已添加
+  - [x] CardBody - ✅ Style Props 已添加
+  - [x] CardFooter - ✅ Style Props 已添加
   - [x] Table - ✅ Style Props 已添加
   - [x] Rating - ✅ Style Props 已添加
   - [x] ChatBubble - ✅ Style Props 已添加
   - [x] Stat - ✅ Style Props 已添加
   - [x] Timeline - ✅ Style Props 已添加
+  - [x] TimelineItem - ✅ Style Props 已添加
   - [x] TreeView - ✅ Style Props 已添加
+  - [x] TreeViewItem - ✅ Style Props 已添加
   - [x] ColorSwatch - ✅ Style Props 已添加
   - [x] DataList - ✅ Style Props 已添加
+  - [x] DataListItem - ✅ Style Props 已添加
   - [x] Indicator - ✅ Style Props 已添加
   - [x] ListGroup - ✅ Style Props 已添加
+  - [x] ListGroupItem - ✅ Style Props 已添加
   - [x] TagsInput - ✅ Style Props 已添加
   - [x] ListItem - ✅ 新增组件，符合规范
-  - [ ] 其他 7 个 - 待检查
 
 - [ ] 3.3 Disclosure 组件 (3 个) - 进行中
   - [x] Accordion - ⚠️ 缺少 Style Props 支持
