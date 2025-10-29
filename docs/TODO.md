@@ -2,460 +2,97 @@
 
 ## 项目概述
 
-**项目名称**: Flowblade - Laravel Blade Component Library
-**当前状态**: 137 个组件已完成代码 Review
-**当前任务**: 添加 Style Props 支持 & 文档规范化
+**项目名称**: Flowblade - Laravel Blade Component Library  
+**项目状态**: 137 个组件已完成，进入 Code Review 阶段  
+**当前任务**: 第二次 Code Review & 新增组件  
 **开始时间**: 2025-10-28
 
 ## 当前进度
 
-**总任务数**: 2 个主要任务
-**已完成**: 1.7 个
-**待完成**: 0.3 个
-**完成度**: 78%
+**总体完成度**: 进行中
+**当前阶段**: Code Review Phase 2 (第二次代码审查)
+**组件总数**: 140 个 (新增 3 个)
+**已完成**: Phase 1 (新增组件) + Phase 2 (文档检查)
 
-**当前阶段**: Phase 4 - 其他组件 Style Props 实现 (进行中 - Button 和 Forms 核心组件已完成)
+## 工作计划
 
-## 工作目标
+### 第一阶段：新增组件 (Phase 1) - ✅ 已完成
 
-### 任务 1: 添加 Style Props 支持
+新增 3 个核心组件，完善组件库的功能：
 
-参考 Chakra UI 的 style-props 系统，为 Flowblade 组件添加常用的通用样式属性支持。
+- [x] 1.1 Image 组件 (Media 类别)
+  - [x] 1.1.1 组件类实现
+  - [x] 1.1.2 Blade 模板
+  - [x] 1.1.3 使用文档
 
-#### 核心 Style Props 列表
+- [x] 1.2 ListItem 组件 (DataDisplay 类别)
+  - [x] 1.2.1 组件类实现
+  - [x] 1.2.2 Blade 模板
+  - [x] 1.2.3 使用文档
 
-**间距 (Spacing)**
-- `p` - padding (all sides)
-- `px` - padding left & right
-- `py` - padding top & bottom
-- `pt`, `pr`, `pb`, `pl` - padding individual sides
-- `m` - margin (all sides)
-- `mx` - margin left & right
-- `my` - margin top & bottom
-- `mt`, `mr`, `mb`, `ml` - margin individual sides
+- [x] 1.3 Form 组件 (Forms 类别)
+  - [x] 1.3.1 组件类实现
+  - [x] 1.3.2 Blade 模板
+  - [x] 1.3.3 使用文档
 
-**尺寸 (Sizing)**
-- `w` - width
-- `h` - height
-- `minW` - min-width
-- `maxW` - max-width
-- `minH` - min-height
-- `maxH` - max-height
+### 第二阶段：文档示例检查 (Phase 2) - 进行中
 
-**颜色 (Colors)**
-- `bg` - background color
-- `color` - text color
-- `borderColor` - border color
+检查所有组件文档中的示例，确保优先使用项目组件而不是原生 HTML：
 
-**边框 (Borders)**
-- `border` - border width
-- `borderTop`, `borderRight`, `borderBottom`, `borderLeft` - individual borders
-- `rounded` / `borderRadius` - border radius
-- `roundedTop`, `roundedRight`, `roundedBottom`, `roundedLeft` - individual corners
+- [x] 2.1 检查 DataDisplay 组件文档示例 - 已完成
+- [x] 2.2 检查 Forms 组件文档示例 - 已完成
+- [x] 2.3 检查 Layout 组件文档示例 - 已完成
+- [x] 2.4 检查 Navigation 组件文档示例 - 已完成
+- [x] 2.5 检查 Overlay 组件文档示例 - 已完成
+- [x] 2.6 检查 Feedback 组件文档示例 - 已完成
+- [x] 2.7 检查 Media 组件文档示例 - 已完成
+- [x] 2.8 检查 Disclosure 组件文档示例 - 已完成
+- [x] 2.9 检查 Typography 组件文档示例 - 已完成
+- [x] 2.10 检查 Buttons 组件文档示例 - 已完成
 
-**布局 (Layout)**
-- `display` - display property
-- `position` - position property
-- `top`, `right`, `bottom`, `left` - positioning
-- `zIndex` / `z` - z-index
-- `overflow` - overflow property
-- `overflowX`, `overflowY` - overflow x/y axis
+**结论**: 所有组件文档示例已检查，均已优先使用项目组件，无需修改。
 
-**阴影 (Shadow)**
-- `shadow` - box shadow
+### 第三阶段：Code Review Phase 2 (Phase 3)
 
-**文字 (Typography)**
-- `fontSize` - font size
-- `fontWeight` - font weight
-- `textAlign` - text alignment
-- `lineHeight` - line height
-- `letterSpacing` - letter spacing
-- `textTransform` - text transform
-- `textDecoration` - text decoration
+对所有 137 个组件进行第二次 Code Review，重点检查：
 
-**Flexbox**
-- `flex` - flex property
-- `flexDirection` / `direction` - flex direction
-- `flexWrap` / `wrap` - flex wrap
-- `alignItems` / `align` - align items
-- `justifyContent` / `justify` - justify content
-- `alignSelf` - align self
-- `flexGrow` / `grow` - flex grow
-- `flexShrink` / `shrink` - flex shrink
-- `gap` - gap between items
+**Review 标准**:
+1. 组件类是否遵循开发规范
+2. Style Props 是否正确集成
+3. Blade 模板是否使用语义化 HTML
+4. 是否避免直接调用其他组件（使用动态组件）
+5. 是否优先使用 Flowbite 样式
+6. 代码是否通过 php-cs-fixer 格式化
 
-**Grid**
-- `gridTemplateColumns` / `templateColumns` - grid template columns
-- `gridTemplateRows` / `templateRows` - grid template rows
-- `gridColumn` / `colSpan` - grid column span
-- `gridRow` / `rowSpan` - grid row span
-- `gridGap` / `gap` - grid gap
+**Review 分类**:
+- [ ] 3.1 Buttons 组件 (4 个)
+- [ ] 3.2 DataDisplay 组件 (16 个)
+- [ ] 3.3 Disclosure 组件 (3 个)
+- [ ] 3.4 Feedback 组件 (9 个)
+- [ ] 3.5 Forms 组件 (29 个)
+- [ ] 3.6 Layout 组件 (15 个)
+- [ ] 3.7 Media 组件 (6 个)
+- [ ] 3.8 Navigation 组件 (17 个)
+- [ ] 3.9 Overlay 组件 (8 个)
+- [ ] 3.10 Typography 组件 (11 个)
 
-**其他 (Others)**
-- `opacity` - opacity
-- `cursor` - cursor style
-- `transition` - transition property
-- `transform` - transform property
-- `visibility` - visibility property
+## 工作要求
 
-#### 实现方案
+1. ✅ 禁止生成工作总结性文档，工作计划在 docs/TODO.md 中维护（中文）
+2. ✅ 问题在 docs/ISSUE.md 中提出
+3. ✅ 宁愿完成少，也要保证质量
+4. ✅ 及时清理临时文件
+5. ✅ 文档内容为英文
+6. ✅ 代码注释使用英文
+7. ✅ 避免直接调用组件，使用动态组件
+8. ✅ 优先使用 Flowbite 样式
 
-1. **创建 StyleProps Trait**
-   - 位置: `src/Traits/HasStyleProps.php`
-   - 功能: 解析 style props 并转换为 Tailwind CSS 类
+## 开发规范
 
-2. **更新核心组件**
-   - Box 组件 (已有部分支持，需扩展)
-   - Flex 组件
-   - Grid 组件
-   - Stack 组件
-   - Text 组件
-   - Heading 组件
-   - 其他布局组件
-
-3. **值映射规则**
-   - 数字值映射到 Tailwind spacing scale (0-16)
-   - 颜色值映射到主题颜色 (primary, secondary, success, warning, danger, info, gray)
-   - 尺寸值支持 Tailwind 预设 (xs, sm, md, lg, xl, 2xl, full)
-
-#### 示例用法
-
-```blade
-{{-- 间距 --}}
-<x-box p="4" m="2">Content</x-box>
-<x-box px="6" py="4">Content</x-box>
-
-{{-- 颜色 --}}
-<x-box bg="primary" color="white">Content</x-box>
-
-{{-- 边框 --}}
-<x-box border="2" borderColor="gray" rounded="md">Content</x-box>
-
-{{-- 组合使用 --}}
-<x-box 
-    p="6" 
-    m="4" 
-    bg="blue.500" 
-    rounded="lg" 
-    shadow="md"
->
-    Content
-</x-box>
-```
-
-### 任务 2: 文档规范化
-
-修正所有组件文档中未使用 Flowblade 组件的示例，将 HTML 标签替换为对应的 Flowblade 组件。
-
-#### 替换规则
-
-| HTML 标签 | Flowblade 组件 | 说明 |
-|-----------|---------------|------|
-| `<div>` | `<x-box>` | 通用容器 |
-| `<span>` | `<x-text as="span">` | 行内文本 |
-| `<p>` | `<x-text>` | 段落文本 |
-| `<h1>` - `<h6>` | `<x-heading>` | 标题 |
-| `<section>` | `<x-box as="section">` | 区块容器 |
-| `<article>` | `<x-box as="article">` | 文章容器 |
-| `<header>` | `<x-box as="header">` | 头部容器 |
-| `<footer>` | `<x-footer>` | 页脚容器 |
-| `<ul>`, `<ol>` | `<x-list-group>` | 列表 |
-| `<button>` | `<x-button>` | 按钮 |
-| `<a>` | `<x-button variant="link">` | 链接按钮 |
-| `<img>` | 保持 `<img>` | 图片标签保持原样 |
-| `<input>` | `<x-input>` | 输入框 |
-| `<textarea>` | `<x-textarea>` | 文本域 |
-| `<select>` | `<x-select>` | 选择框 |
-
-#### 需要检查的文档
-
-所有 `docs/components/` 目录下的 `.md` 文件，共约 80+ 个文档文件。
-
-#### 优先级
-
-1. **高优先级** (核心布局组件文档)
-   - Layout 组件文档 (19 个)
-   - Typography 组件文档 (2 个)
-   - Button 组件文档 (4 个)
-
-2. **中优先级** (常用组件文档)
-   - Forms 组件文档 (20+ 个)
-   - Data Display 组件文档 (10+ 个)
-   - Navigation 组件文档 (8 个)
-
-3. **低优先级** (其他组件文档)
-   - Overlay 组件文档 (6 个)
-   - Feedback 组件文档 (9 个)
-   - Media 组件文档 (4 个)
-   - Disclosure 组件文档 (2 个)
-
-## 工作阶段
-
-### Phase 1: Style Props 实现 (预计 2-3 个会话)
-
-**目标**: 实现核心 Style Props 功能
-
-- [x] 1.1 创建 HasStyleProps Trait - 已完成
-  - [x] 定义 style props 属性列表
-  - [x] 实现 props 到 Tailwind 类的转换逻辑
-  - [x] 添加完整的英文注释和 @property 注解
-  - [x] 实现魔术方法支持动态属性访问
-  - [ ] 支持响应式值 (如: `p={{ base: '4', md: '6' }}`) - 待后续实现
-
-- [x] 1.2 更新 Box 组件 - 已完成
-  - [x] 创建 Flowblade\Components\Component 基类
-  - [x] 集成 HasStyleProps Trait
-  - [x] 扩展现有的 style props 支持（支持所有 style props）
-  - [ ] 更新组件文档 - 待完成
-  - [ ] 添加使用示例 - 待完成
-
-- [x] 1.3 更新其他布局组件 - 已完成
-  - [x] Box 组件 - 已完成（统一构造函数风格）
-  - [x] Flex 组件 - 已完成（移除 HasStyleProps 中已有的参数）
-  - [x] Grid 组件 - 已完成（移除 HasStyleProps 中已有的参数，支持 columns/rows 别名）
-  - [x] Stack (HStack, VStack) 组件 - 已完成（移除 align/justify 参数）
-  - [x] Container 组件 - 已完成（移除 px/py 参数）
-  - [x] Center 组件 - 已完成
-
-- [x] 1.4 更新文字组件 - 已完成
-  - [x] Text 组件 - 已完成（支持 size/weight/align 别名，保留 truncate/lineClamp）
-  - [x] Heading 组件 - 已完成（支持 size/weight 别名，保留默认样式逻辑）
-
-- [x] 1.5 测试与优化 - 已完成
-  - [ ] 创建测试示例页面 - 暂不实现（用户要求）
-  - [x] 验证所有 props 正常工作 - 已完成（通过文档示例验证）
-  - [x] 性能优化 - 已完成（代码已优化）
-  - [x] 代码格式化 (php-cs-fixer) - 已完成（0 个文件需要修复）
-
-### Phase 2: 文档规范化 - 布局组件 (预计 1-2 个会话)
-
-**目标**: 修正所有布局组件文档
-
-- [x] 2.1 Box 组件文档 - 已完成
-- [x] 2.2 Container 组件文档 - 已完成
-- [x] 2.3 Flex 组件文档 - 已完成
-- [x] 2.4 Grid 组件文档 - 已完成
-- [x] 2.5 Stack 组件文档 - 已完成
-- [x] 2.6 HStack 组件文档 - 已完成
-- [x] 2.7 VStack 组件文档 - 已完成
-- [x] 2.8 Center 组件文档 - 已完成
-- [x] 2.9.1 AbsoluteCenter 组件文档 - 已完成
-- [x] 2.9.2 AspectRatio 组件文档 - 已完成
-- [x] 2.9.3 Divider 组件文档 - 已完成
-- [x] 2.9.4 Footer 组件文档 - 已完成
-- [x] 2.9.5 Group 组件文档 - 已完成
-- [x] 2.9.6 Jumbotron 组件文档 - 已完成
-- [x] 2.9.7 ScrollArea 组件文档 - 已完成
-- [x] 2.9.8 Separator 组件文档 - 已完成
-- [x] 2.9.9 SimpleGrid 组件文档 - 已完成
-- [x] 2.9.10 Spacer 组件文档 - 已完成
-- [x] 2.9.11 Wrap 组件文档 - 已完成
-
-### Phase 3: 文档规范化 - 其他组件 (已完成 100%)
-
-**目标**: 修正所有其他组件文档
-
-- [x] 3.1 Typography 组件文档 (2 个) - 已完成
-  - [x] 3.1.1 Text 组件文档 - 已完成
-  - [x] 3.1.2 Heading 组件文档 - 已完成
-- [x] 3.2 Button 组件文档 (4 个) - 已完成
-  - [x] 3.2.1 Button 组件文档 - 已完成
-  - [x] 3.2.2 IconButton 组件文档 - 已完成
-  - [x] 3.2.3 ButtonGroup 组件文档 - 已完成
-  - [x] 3.2.4 CloseButton 组件文档 - 已完成
-- [x] 3.3 Forms 组件文档 (20+ 个) - 已完成 (11/11)
-  - [x] 3.3.1 Input 组件文档 - 已完成
-  - [x] 3.3.2 Textarea 组件文档 - 已完成
-  - [x] 3.3.3 Select 组件文档 - 已完成
-  - [x] 3.3.4 Checkbox 组件文档 - 已完成
-  - [x] 3.3.5 Radio 组件文档 - 已完成
-  - [x] 3.3.6 Switch 组件文档 - 已完成
-  - [x] 3.3.7 Field 组件文档 - 已完成
-  - [x] 3.3.8 PasswordInput 组件文档 - 已完成
-- [x] 3.4 Data Display 组件文档 (10+ 个) - 已完成 (16/16)
-  - [x] 3.4.1 Badge 组件文档 - 已完成
-  - [x] 3.4.2 Tag 组件文档 - 已完成
-  - [x] 3.4.3 Avatar 组件文档 - 已完成
-  - [x] 3.4.4 Card 组件文档 - 已完成
-  - [x] 3.4.5 Icon 组件文档 - 已完成
-  - [x] 3.4.6 Indicator 组件文档 - 已完成
-  - [x] 3.4.7 Table 组件文档 - 已完成
-  - [x] 3.4.8 Stat 组件文档 - 已完成
-  - [x] 3.4.9 Rating 组件文档 - 已完成
-  - [x] 3.4.10 ListGroup 组件文档 - 已完成
-  - [x] 3.4.11 DataList 组件文档 - 已完成
-  - [x] 3.4.12 ChatBubble 组件文档 - 已完成
-  - [x] 3.4.13 ColorSwatch 组件文档 - 已完成
-  - [x] 3.4.14 TagsInput 组件文档 - 已完成
-  - [x] 3.4.15 Timeline 组件文档 - 已完成
-  - [x] 3.4.16 TreeView 组件文档 - 已完成
-- [x] 3.5 Navigation 组件文档 (8 个) - 已完成 (8/8)
-  - [x] 3.5.1 Breadcrumb 组件文档 - 已完成
-  - [x] 3.5.2 Pagination 组件文档 - 已完成
-  - [x] 3.5.3 Tabs 组件文档 - 已完成
-  - [x] 3.5.4 Navbar 组件文档 - 已完成
-  - [x] 3.5.5 Sidebar 组件文档 - 已完成
-  - [x] 3.5.6 Steps 组件文档 - 已完成
-  - [x] 3.5.7 MegaMenu 组件文档 - 已完成
-  - [x] 3.5.8 SpeedDial 组件文档 - 已完成
-- [x] 3.6 Overlay 组件文档 (6 个) - 已完成 (6/6)
-  - [x] 3.6.1 Modal 组件文档 - 已完成
-  - [x] 3.6.2 Drawer 组件文档 - 已完成
-  - [x] 3.6.3 Tooltip 组件文档 - 已完成
-  - [x] 3.6.4 Popover 组件文档 - 已完成
-  - [x] 3.6.5 Menu 组件文档 - 已完成
-  - [x] 3.6.6 HoverCard 组件文档 - 已完成
-- [x] 3.7 Feedback 组件文档 (9 个) - 已完成 (9/9)
-  - [x] 3.7.1 Alert 组件文档 - 已完成
-  - [x] 3.7.2 Banner 组件文档 - 已完成
-  - [x] 3.7.3 EmptyState 组件文档 - 已完成
-  - [x] 3.7.4 ProgressCircle 组件文档 - 已完成
-  - [x] 3.7.5 Progress 组件文档 - 已完成
-  - [x] 3.7.6 Skeleton 组件文档 - 已完成
-  - [x] 3.7.7 Spinner 组件文档 - 已完成
-  - [x] 3.7.8 Status 组件文档 - 已完成
-  - [x] 3.7.9 Toast 组件文档 - 已完成
-- [x] 3.8 Media 组件文档 (4 个) - 已完成 (4/4)
-  - [x] 3.8.1 Carousel 组件文档 - 已完成
-  - [x] 3.8.2 Gallery 组件文档 - 已完成
-  - [x] 3.8.3 QRCode 组件文档 - 已完成
-  - [x] 3.8.4 Video 组件文档 - 已完成
-- [x] 3.9 Disclosure 组件文档 (2 个) - 已完成 (2/2)
-  - [x] 3.9.1 Accordion 组件文档 - 已完成
-  - [x] 3.9.2 Collapsible 组件文档 - 已完成
-
-## 工作原则
-
-1. **质量优先**: 宁愿进度慢，也要确保实现质量和文档准确性
-2. **细致全面**: 每个组件和文档都要仔细检查
-3. **及时测试**: 实现功能后立即测试验证
-4. **文档同步**: 修改代码后立即更新相关文档
-5. **提交规范**: 每完成一个阶段提交一次代码
-6. **英文注释**: 所有代码注释使用英文
-7. **中文计划**: 工作计划文档使用中文
-
-## 技术要点
-
-### Style Props 实现参考
-
-```php
-// HasStyleProps Trait 示例结构
-trait HasStyleProps
-{
-    protected function parseStyleProps(array $props): string
-    {
-        $classes = [];
-        
-        // Spacing
-        if (isset($props['p'])) {
-            $classes[] = "p-{$props['p']}";
-        }
-        
-        // Colors
-        if (isset($props['bg'])) {
-            $classes[] = $this->mapBackgroundColor($props['bg']);
-        }
-        
-        // ... more mappings
-        
-        return implode(' ', $classes);
-    }
-}
-```
-
-### 文档替换示例
-
-```blade
-<!-- 修改前 -->
-<div class="flex items-center gap-4">
-    <div class="text-lg font-bold">Title</div>
-    <span class="text-gray-500">Subtitle</span>
-</div>
-
-<!-- 修改后 -->
-<x-flex align="center" gap="4">
-    <x-text fontSize="lg" fontWeight="bold">Title</x-text>
-    <x-text as="span" color="gray.500">Subtitle</x-text>
-</x-flex>
-```
-
-### Phase 4: 其他组件 Style Props 实现 (进行中)
-
-**目标**: 为其他非布局组件添加 Style Props 支持
-
-- [x] 4.1 Button 组件 Style Props - 已完成 (4/4)
-  - [x] 4.1.1 Button 组件 - 已完成
-  - [x] 4.1.2 IconButton 组件 - 已完成
-  - [x] 4.1.3 ButtonGroup 组件 - 已完成
-  - [x] 4.1.4 CloseButton 组件 - 已完成
-
-- [x] 4.2 Forms 组件 Style Props (核心组件) - 已完成 (6/6)
-  - [x] 4.2.1 Input 组件 - 已完成
-  - [x] 4.2.2 Textarea 组件 - 已完成
-  - [x] 4.2.3 Select 组件 - 已完成
-  - [x] 4.2.4 Checkbox 组件 - 已完成
-  - [x] 4.2.5 Radio 组件 - 已完成
-  - [x] 4.2.6 SwitchInput 组件 - 已完成
-
-根据优先级，建议的实现顺序：
-1. **高优先级** - 常用组件
-   - Typography 组件 (Text, Heading) - 已完成
-   - Button 组件 (Button, IconButton, ButtonGroup, CloseButton) - 已完成
-   - Forms 组件 (Input, Textarea, Select, Checkbox, Radio, Switch, etc.) - 已完成 (核心 6 个)
-
-2. **中优先级** - 数据展示组件
-   - Data Display 组件 (Badge, Tag, Avatar, Card, etc.) - 待实现
-   - Navigation 组件 (Breadcrumb, Pagination, Tabs, etc.) - 待实现
-
-3. **低优先级** - 其他组件
-   - Overlay 组件 (Modal, Drawer, Tooltip, etc.) - 待实现
-   - Feedback 组件 (Alert, Toast, etc.) - 待实现
-   - Media 组件 (Carousel, Gallery, etc.) - 待实现
-   - Disclosure 组件 (Accordion, Collapsible) - 待实现
+详见 `docs/STANDARDS.md`
 
 ## 下一步行动
 
-### 本会话完成的工作
-
-**Phase 1.5**: 测试与优化 - 已完成 (除创建测试示例页面外)
-- 代码格式化 (php-cs-fixer): 0 个文件需要修复
-- Props 验证: 通过文档示例完成
-- 性能优化: 已完成
-
-**Phase 4.1**: Button 组件 Style Props - 已完成 (4/4)
-- Button, IconButton, ButtonGroup, CloseButton
-
-**Phase 4.2**: Forms 核心组件 Style Props - 已完成 (6/6)
-- Input, Textarea, Select, Checkbox, Radio, SwitchInput
-
-### 下一个会话的工作计划
-
-**Phase 4.3**: 其他 Forms 组件 Style Props (可选)
-- PasswordInput, SearchInput, NumberInput, PinInput, etc.
-
-**Phase 4.4**: Data Display 组件 Style Props
-- Badge, Tag, Avatar, Card, Icon, Indicator, Table, Stat, Rating, ListGroup, DataList, ChatBubble, ColorSwatch, TagsInput, Timeline, TreeView
-
-**Phase 4.5**: Navigation 组件 Style Props
-- Breadcrumb, Pagination, Tabs, Navbar, Sidebar, Steps, MegaMenu, SpeedDial
-
-**Phase 4.6**: Overlay 组件 Style Props
-- Modal, Drawer, Tooltip, Popover, Menu, HoverCard
-
-**Phase 4.7**: Feedback 组件 Style Props
-- Alert, Banner, EmptyState, ProgressCircle, Progress, Skeleton, Spinner, Status, Toast
-
-**Phase 4.8**: Media 组件 Style Props
-- Carousel, Gallery, QRCode, Video
-
-**Phase 4.9**: Disclosure 组件 Style Props
-- Accordion, Collapsible
-
-### 建议
-
-根据用户要求"宁愿工作内容完成少，也要保证精细的完成每个工作任务"，建议：
-1. 每个会话专注于 1-2 个组件类别
-2. 确保每个组件都经过充分测试和验证
-3. 及时更新文档和 TODO.md
-4. 保持代码质量和一致性
-
+1. 新增 Image, ListItem, Form 组件
+2. 检查所有组件文档示例
+3. 开始第二次 Code Review
