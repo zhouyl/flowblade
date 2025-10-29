@@ -4,101 +4,95 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Typography;
 
-use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Text Component
  *
- * Versatile text component with support for sizing, alignment, truncation, and line clamping.
- * Perfect for body text, descriptions, and content paragraphs.
+ * Versatile text component with comprehensive style props support.
+ * Perfect for body text, descriptions, and content paragraphs with support for
+ * sizing, alignment, truncation, and line clamping.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Text extends Component
 {
+    use HasStyleProps;
+
+    /**
+     * HTML element to render
+     *
+     * @var string
+     */
+    public string $as = 'p';
+
+    /**
+     * Whether to truncate text with ellipsis
+     *
+     * @var bool
+     */
+    public bool $truncate = false;
+
+    /**
+     * Number of lines to clamp
+     *
+     * @var null|string
+     */
+    public ?string $lineClamp = null;
+
     /**
      * Create a new component instance
      *
-     * @param string      $as        HTML element: 'p', 'span', 'div', etc
-     * @param null|string $size      Text size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
-     * @param null|string $weight    Font weight: 'normal', 'medium', 'semibold', 'bold'
-     * @param null|string $color     Text color
-     * @param null|string $align     Text alignment: 'left', 'center', 'right', 'justify'
-     * @param bool        $truncate  Whether to truncate text with ellipsis
-     * @param null|string $lineClamp Number of lines to clamp: '1', '2', '3', '4', '5', '6'
+     * All style props are dynamically handled by HasStyleProps trait.
+     *
+     * @param string      $as            HTML element: 'p', 'span', 'div', etc
+     * @param bool        $truncate      Whether to truncate text with ellipsis
+     * @param null|string $lineClamp     Number of lines to clamp: '1', '2', '3', '4', '5', '6'
+     * @param mixed       ...$styleProps Style props including:
+     *                                   - fontSize/size: Text size ('xs', 'sm', 'base', 'lg', 'xl', '2xl', etc.)
+     *                                   - fontWeight/weight: Font weight ('normal', 'medium', 'semibold', 'bold')
+     *                                   - color: Text color
+     *                                   - textAlign/align: Text alignment ('left', 'center', 'right', 'justify')
+     *                                   - And all other style props (p, m, bg, w, h, etc.)
      */
     public function __construct(
-        public string $as = 'p',
-        public ?string $size = null,
-        public ?string $weight = null,
-        public ?string $color = null,
-        public ?string $align = null,
-        public bool $truncate = false,
-        public ?string $lineClamp = null,
+        string $as = 'p',
+        bool $truncate = false,
+        ?string $lineClamp = null,
+        ...$styleProps
     ) {
+        $this->as = $as;
+        $this->truncate = $truncate;
+        $this->lineClamp = $lineClamp;
+
+        // Map 'size' to 'fontSize', 'weight' to 'fontWeight', 'align' to 'textAlign' if provided
+        if (isset($styleProps['size'])) {
+            $styleProps['fontSize'] = $styleProps['size'];
+            unset($styleProps['size']);
+        }
+
+        if (isset($styleProps['weight'])) {
+            $styleProps['fontWeight'] = $styleProps['weight'];
+            unset($styleProps['weight']);
+        }
+
+        if (isset($styleProps['align'])) {
+            $styleProps['textAlign'] = $styleProps['align'];
+            unset($styleProps['align']);
+        }
+
+        $this->setStyleProps($styleProps);
     }
 
     /**
      * Get the component classes
+     *
+     * @return string Generated CSS classes
      */
     public function classes(): string
     {
         $classes = [];
-
-        // Size
-        if ($this->size) {
-            $sizeMap = ComponentHelper::config('sizes.text', [
-                '2xs' => 'text-xs',
-                'xs' => 'text-xs',
-                'sm' => 'text-sm',
-                'md' => 'text-base',
-                'lg' => 'text-lg',
-                'xl' => 'text-xl',
-                '2xl' => 'text-2xl',
-                '3xl' => 'text-3xl',
-                '4xl' => 'text-4xl',
-            ]);
-
-            if (isset($sizeMap[$this->size])) {
-                $classes[] = $sizeMap[$this->size];
-            }
-        }
-
-        // Weight
-        if ($this->weight) {
-            $weightMap = [
-                'normal' => 'font-normal',
-                'medium' => 'font-medium',
-                'semibold' => 'font-semibold',
-                'bold' => 'font-bold',
-            ];
-
-            if (isset($weightMap[$this->weight])) {
-                $classes[] = $weightMap[$this->weight];
-            }
-        }
-
-        // Color
-        if ($this->color) {
-            $colorClasses = ComponentHelper::getColorClasses($this->color, 'text');
-
-            if ($colorClasses) {
-                $classes[] = $colorClasses;
-            }
-        }
-
-        // Alignment
-        if ($this->align) {
-            $alignMap = [
-                'left' => 'text-left',
-                'center' => 'text-center',
-                'right' => 'text-right',
-                'justify' => 'text-justify',
-            ];
-
-            if (isset($alignMap[$this->align])) {
-                $classes[] = $alignMap[$this->align];
-            }
-        }
 
         // Truncate
         if ($this->truncate) {
@@ -121,7 +115,10 @@ class Text extends Component
             }
         }
 
-        return ComponentHelper::mergeClasses(...$classes);
+        // Add style props classes (includes fontSize, fontWeight, color, textAlign)
+        $styleClasses = $this->parseStyleProps();
+
+        return trim(implode(' ', $classes).' '.$styleClasses);
     }
 
     /**

@@ -4,59 +4,75 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Typography;
 
-use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Heading Component
  *
- * Semantic heading component with automatic sizing based on heading level.
- * Supports custom sizes, weights, and colors for flexible typography.
+ * Semantic heading component with comprehensive style props support.
+ * Provides automatic sizing based on heading level with support for custom sizes,
+ * weights, and colors for flexible typography.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Heading extends Component
 {
+    use HasStyleProps;
+
+    /**
+     * HTML heading element to render
+     *
+     * @var string
+     */
+    public string $as = 'h2';
+
     /**
      * Create a new component instance
      *
-     * @param string      $as     HTML heading element: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
-     * @param null|string $size   Custom size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
-     * @param null|string $weight Font weight: 'normal', 'medium', 'semibold', 'bold', 'extrabold'
-     * @param null|string $color  Text color
+     * All style props are dynamically handled by HasStyleProps trait.
+     *
+     * @param string $as            HTML heading element: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
+     * @param mixed  ...$styleProps Style props including:
+     *                              - fontSize/size: Custom size ('xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl')
+     *                              - fontWeight/weight: Font weight ('normal', 'medium', 'semibold', 'bold', 'extrabold')
+     *                              - color: Text color
+     *                              - And all other style props (p, m, bg, w, h, etc.)
      */
     public function __construct(
-        public string $as = 'h2',
-        public ?string $size = null,
-        public ?string $weight = null,
-        public ?string $color = null,
+        string $as = 'h2',
+        ...$styleProps
     ) {
+        $this->as = $as;
+
+        // Map 'size' to 'fontSize', 'weight' to 'fontWeight' if provided
+        if (isset($styleProps['size'])) {
+            $styleProps['fontSize'] = $styleProps['size'];
+            unset($styleProps['size']);
+        }
+
+        if (isset($styleProps['weight'])) {
+            $styleProps['fontWeight'] = $styleProps['weight'];
+            unset($styleProps['weight']);
+        }
+
+        $this->setStyleProps($styleProps);
     }
 
     /**
      * Get the component classes
+     *
+     * @return string Generated CSS classes
      */
     public function classes(): string
     {
         $classes = [];
 
-        // Size mapping
-        if ($this->size) {
-            $sizeMap = [
-                '2xs' => 'text-xs',
-                'xs' => 'text-sm',
-                'sm' => 'text-base',
-                'md' => 'text-lg',
-                'lg' => 'text-xl',
-                'xl' => 'text-2xl',
-                '2xl' => 'text-3xl',
-                '3xl' => 'text-4xl',
-                '4xl' => 'text-5xl',
-            ];
+        // Check if fontSize is set via style props
+        $hasFontSize = isset($this->fontSize) || isset($this->size);
 
-            if (isset($sizeMap[$this->size])) {
-                $classes[] = $sizeMap[$this->size];
-            }
-        } else {
-            // Default sizes based on heading level
+        // Default sizes based on heading level (if no fontSize provided)
+        if (!$hasFontSize) {
             $defaultSizes = [
                 'h1' => 'text-4xl',
                 'h2' => 'text-3xl',
@@ -71,34 +87,18 @@ class Heading extends Component
             }
         }
 
-        // Weight
-        if ($this->weight) {
-            $weightMap = [
-                'normal' => 'font-normal',
-                'medium' => 'font-medium',
-                'semibold' => 'font-semibold',
-                'bold' => 'font-bold',
-                'extrabold' => 'font-extrabold',
-            ];
+        // Check if fontWeight is set via style props
+        $hasFontWeight = isset($this->fontWeight) || isset($this->weight);
 
-            if (isset($weightMap[$this->weight])) {
-                $classes[] = $weightMap[$this->weight];
-            }
-        } else {
-            // Default weight
+        // Default weight (if no fontWeight provided)
+        if (!$hasFontWeight) {
             $classes[] = 'font-bold';
         }
 
-        // Color
-        if ($this->color) {
-            $colorClasses = ComponentHelper::getColorClasses($this->color, 'text');
+        // Add style props classes (includes fontSize, fontWeight, color)
+        $styleClasses = $this->parseStyleProps();
 
-            if ($colorClasses) {
-                $classes[] = $colorClasses;
-            }
-        }
-
-        return ComponentHelper::mergeClasses(...$classes);
+        return trim(implode(' ', $classes).' '.$styleClasses);
     }
 
     /**
