@@ -18,10 +18,10 @@
             'tag' => 'text-sm px-3 py-1',
         ],
     ];
-    
+
     $inputSize = $sizeConfig[$size]['input'] ?? $sizeConfig['md']['input'];
     $tagSize = $sizeConfig[$size]['tag'] ?? $sizeConfig['md']['tag'];
-    
+
     // Color configurations for tags
     $colorConfig = [
         'primary' => 'bg-blue-100 text-blue-800 hover:bg-blue-200',
@@ -32,14 +32,15 @@
         'info' => 'bg-cyan-100 text-cyan-800 hover:bg-cyan-200',
         'gray' => 'bg-gray-100 text-gray-800 hover:bg-gray-200',
     ];
-    
+
     $tagColor = $colorConfig[$color] ?? $colorConfig['primary'];
-    
+
     // Convert tags array to JSON for Alpine.js
     $initialTags = json_encode($tags);
 @endphp
 
-<div 
+<div
+    {{ $attributes->merge(['class' => $classes()]) }}
     x-data="{
         tags: {{ $initialTags }},
         inputValue: '',

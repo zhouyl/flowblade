@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\DataDisplay;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * TagsInput Component
  *
  * Interactive input for adding and removing multiple tags.
  * Supports validation, limits, and keyboard shortcuts for tag management.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class TagsInput extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -27,6 +34,7 @@ class TagsInput extends Component
      * @param bool        $disabled        Whether input is disabled
      * @param bool        $readonly        Whether input is read-only
      * @param null|string $separator       Character to auto-split input into tags (e.g., ',', ';')
+     * @param mixed       ...$styleProps   All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public array $tags = [],
@@ -38,8 +46,40 @@ class TagsInput extends Component
         public bool $allowDuplicates = false,
         public bool $disabled = false,
         public bool $readonly = false,
-        public ?string $separator = null
+        public ?string $separator = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'w-full',
+            'flex',
+            'flex-wrap',
+            'gap-2',
+            'p-2',
+            'border',
+            'border-gray-300',
+            'rounded-lg',
+            'bg-white',
+            'focus-within:ring-2',
+            'focus-within:ring-blue-500',
+            'focus-within:border-transparent',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

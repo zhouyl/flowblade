@@ -31,9 +31,15 @@ This component requires **Alpine.js** to be installed in your project.
 | `readonly` | `bool` | `false` | Whether the input is readonly |
 | `separator` | `string` | `null` | Character to split input into tags (e.g., ',') |
 
-### Style Props
+## Style Props
 
-TagsInput supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+TagsInput supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## With Initial Tags
 
