@@ -1,14 +1,14 @@
 # HStack
 
-Horizontal stack layout component, a shortcut for Stack component in horizontal direction.
+Horizontal stack layout component, a shortcut for Stack component in horizontal direction. HStack provides a convenient way to arrange items horizontally with consistent spacing and alignment.
 
 ## Basic Usage
 
 ```blade
 <x-hstack>
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-hstack>
 ```
 
@@ -16,28 +16,37 @@ Horizontal stack layout component, a shortcut for Stack component in horizontal 
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `as` | `string` | `'div'` | HTML tag |
-| `spacing` | `string` | `null` | Spacing: `xs`, `sm`, `md`, `lg`, `xl` |
+| `as` | `string` | `'div'` | HTML element to render |
+| `spacing` | `string` | `'md'` | Spacing between items (2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl) |
+| `divider` | `boolean` | `false` | Show divider between items |
+
+### Flex-Specific Props (via Style Props)
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
 | `align` | `string` | `null` | Vertical alignment: `start`, `center`, `end`, `stretch`, `baseline` |
 | `justify` | `string` | `null` | Horizontal alignment: `start`, `center`, `end`, `between`, `around`, `evenly` |
-| `divider` | `boolean` | `false` | Show divider between items |
+
+### Style Props
+
+HStack supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Spacing
 
 ```blade
 <x-hstack spacing="xs">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-hstack>
 
 <x-hstack spacing="md">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-hstack>
 
 <x-hstack spacing="xl">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-hstack>
 ```
 
@@ -46,30 +55,30 @@ Horizontal stack layout component, a shortcut for Stack component in horizontal 
 ```blade
 <!-- Vertical center -->
 <x-hstack align="center">
-    <div class="h-20">Tall element</div>
-    <div>Normal element</div>
+    <x-box h="20">Tall element</x-box>
+    <x-box>Normal element</x-box>
 </x-hstack>
 
 <!-- Horizontal center -->
 <x-hstack justify="center">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-hstack>
 
 <!-- Space between -->
 <x-hstack justify="between">
-    <div>Left</div>
-    <div>Right</div>
+    <x-box>Left</x-box>
+    <x-box>Right</x-box>
 </x-hstack>
 ```
 
 ## Divider
 
 ```blade
-<x-hstack divider spacing="md">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+<x-hstack :divider="true" spacing="md">
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-hstack>
 ```
 
@@ -78,12 +87,12 @@ Horizontal stack layout component, a shortcut for Stack component in horizontal 
 ### Navigation Bar
 
 ```blade
-<x-hstack justify="between" align="center" class="p-4 bg-white shadow">
-    <div class="font-bold text-xl">Logo</div>
+<x-hstack justify="between" align="center" p="4" bg="white" shadow="md">
+    <x-text as="div" fontWeight="bold" fontSize="xl">Logo</x-text>
     <x-hstack spacing="md">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About</a>
+        <x-box as="a" href="#">Home</x-box>
+        <x-box as="a" href="#">Products</x-box>
+        <x-box as="a" href="#">About</x-box>
     </x-hstack>
 </x-hstack>
 ```
@@ -101,36 +110,36 @@ Horizontal stack layout component, a shortcut for Stack component in horizontal 
 
 ```blade
 <x-hstack spacing="md" align="end">
-    <div class="flex-1">
-        <label class="block text-sm font-medium mb-1">Name</label>
+    <x-box flex="1">
+        <x-box as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Name</x-box>
         <x-input />
-    </div>
-    <div class="flex-1">
-        <label class="block text-sm font-medium mb-1">Email</label>
+    </x-box>
+    <x-box flex="1">
+        <x-box as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Email</x-box>
         <x-input type="email" />
-    </div>
+    </x-box>
 </x-hstack>
 ```
 
 ### Card Actions
 
 ```blade
-<div class="p-6 bg-white rounded-lg shadow">
-    <h3 class="text-lg font-semibold mb-4">Card Title</h3>
-    <p class="mb-4">Card content...</p>
+<x-box p="6" bg="white" rounded="lg" shadow="md">
+    <x-heading as="h3" fontSize="lg" fontWeight="semibold" mb="4">Card Title</x-heading>
+    <x-text mb="4">Card content...</x-text>
     <x-hstack justify="end" spacing="sm">
         <x-button variant="outline">Cancel</x-button>
         <x-button>Confirm</x-button>
     </x-hstack>
-</div>
+</x-box>
 ```
 
 ### Icon with Text
 
 ```blade
 <x-hstack spacing="sm" align="center">
-    <x-icon name="mdi:check-circle" class="text-green-500" />
-    <span>Success</span>
+    <x-icon name="mdi:check-circle" color="success" />
+    <x-text>Success</x-text>
 </x-hstack>
 ```
 

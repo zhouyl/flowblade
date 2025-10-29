@@ -1,14 +1,14 @@
 # VStack
 
-Vertical stack layout component, a shortcut for Stack component in vertical direction.
+Vertical stack layout component, a shortcut for Stack component in vertical direction. VStack provides a convenient way to arrange items vertically with consistent spacing and alignment.
 
 ## Basic Usage
 
 ```blade
 <x-vstack>
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-vstack>
 ```
 
@@ -16,28 +16,37 @@ Vertical stack layout component, a shortcut for Stack component in vertical dire
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `as` | `string` | `'div'` | HTML tag |
-| `spacing` | `string` | `null` | Spacing: `xs`, `sm`, `md`, `lg`, `xl` |
+| `as` | `string` | `'div'` | HTML element to render |
+| `spacing` | `string` | `'md'` | Spacing between items (2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl) |
+| `divider` | `boolean` | `false` | Show divider between items |
+
+### Flex-Specific Props (via Style Props)
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
 | `align` | `string` | `null` | Horizontal alignment: `start`, `center`, `end`, `stretch` |
 | `justify` | `string` | `null` | Vertical alignment: `start`, `center`, `end`, `between`, `around`, `evenly` |
-| `divider` | `boolean` | `false` | Show divider between items |
+
+### Style Props
+
+VStack supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Spacing
 
 ```blade
 <x-vstack spacing="xs">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-vstack>
 
 <x-vstack spacing="md">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-vstack>
 
 <x-vstack spacing="xl">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-vstack>
 ```
 
@@ -46,30 +55,30 @@ Vertical stack layout component, a shortcut for Stack component in vertical dire
 ```blade
 <!-- Horizontal center -->
 <x-vstack align="center">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-vstack>
 
 <!-- Vertical center -->
-<x-vstack justify="center" class="h-64">
-    <div>Item 1</div>
-    <div>Item 2</div>
+<x-vstack justify="center" h="64">
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-vstack>
 
 <!-- Space between -->
-<x-vstack justify="between" class="h-64">
-    <div>Top</div>
-    <div>Bottom</div>
+<x-vstack justify="between" h="64">
+    <x-box>Top</x-box>
+    <x-box>Bottom</x-box>
 </x-vstack>
 ```
 
 ## Divider
 
 ```blade
-<x-vstack divider spacing="md">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+<x-vstack :divider="true" spacing="md">
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-vstack>
 ```
 
@@ -79,18 +88,18 @@ Vertical stack layout component, a shortcut for Stack component in vertical dire
 
 ```blade
 <x-vstack spacing="md">
-    <div>
-        <label class="block text-sm font-medium mb-1">Username</label>
+    <x-box>
+        <x-box as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Username</x-box>
         <x-input />
-    </div>
-    <div>
-        <label class="block text-sm font-medium mb-1">Email</label>
+    </x-box>
+    <x-box>
+        <x-box as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Email</x-box>
         <x-input type="email" />
-    </div>
-    <div>
-        <label class="block text-sm font-medium mb-1">Password</label>
+    </x-box>
+    <x-box>
+        <x-box as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Password</x-box>
         <x-input type="password" />
-    </div>
+    </x-box>
 </x-vstack>
 ```
 
@@ -98,56 +107,56 @@ Vertical stack layout component, a shortcut for Stack component in vertical dire
 
 ```blade
 <x-vstack spacing="md">
-    <div class="p-4 bg-white rounded-lg shadow">
-        <h3 class="font-semibold">Card 1</h3>
-        <p class="text-sm text-gray-600">Content...</p>
-    </div>
-    <div class="p-4 bg-white rounded-lg shadow">
-        <h3 class="font-semibold">Card 2</h3>
-        <p class="text-sm text-gray-600">Content...</p>
-    </div>
+    <x-box p="4" bg="white" rounded="lg" shadow="md">
+        <x-heading as="h3" fontWeight="semibold">Card 1</x-heading>
+        <x-text fontSize="sm" color="gray.600">Content...</x-text>
+    </x-box>
+    <x-box p="4" bg="white" rounded="lg" shadow="md">
+        <x-heading as="h3" fontWeight="semibold">Card 2</x-heading>
+        <x-text fontSize="sm" color="gray.600">Content...</x-text>
+    </x-box>
 </x-vstack>
 ```
 
 ### Sidebar Menu
 
 ```blade
-<x-vstack spacing="xs" class="w-64 p-4 bg-gray-50">
-    <a href="#" class="px-3 py-2 rounded hover:bg-gray-200">Home</a>
-    <a href="#" class="px-3 py-2 rounded hover:bg-gray-200">Products</a>
-    <a href="#" class="px-3 py-2 rounded hover:bg-gray-200">Services</a>
-    <a href="#" class="px-3 py-2 rounded hover:bg-gray-200">About</a>
+<x-vstack spacing="xs" w="64" p="4" bg="gray.50">
+    <x-box as="a" href="#" px="3" py="2" rounded="md" class="hover:bg-gray-200">Home</x-box>
+    <x-box as="a" href="#" px="3" py="2" rounded="md" class="hover:bg-gray-200">Products</x-box>
+    <x-box as="a" href="#" px="3" py="2" rounded="md" class="hover:bg-gray-200">Services</x-box>
+    <x-box as="a" href="#" px="3" py="2" rounded="md" class="hover:bg-gray-200">About</x-box>
 </x-vstack>
 ```
 
 ### Timeline
 
 ```blade
-<x-vstack spacing="lg" divider>
-    <div>
-        <div class="font-semibold">2024-01-01</div>
-        <div class="text-sm text-gray-600">Event 1</div>
-    </div>
-    <div>
-        <div class="font-semibold">2024-01-02</div>
-        <div class="text-sm text-gray-600">Event 2</div>
-    </div>
+<x-vstack spacing="lg" :divider="true">
+    <x-box>
+        <x-text fontWeight="semibold">2024-01-01</x-text>
+        <x-text fontSize="sm" color="gray.600">Event 1</x-text>
+    </x-box>
+    <x-box>
+        <x-text fontWeight="semibold">2024-01-02</x-text>
+        <x-text fontSize="sm" color="gray.600">Event 2</x-text>
+    </x-box>
 </x-vstack>
 ```
 
 ### Page Layout
 
 ```blade
-<x-vstack spacing="lg" class="min-h-screen">
-    <header class="p-4 bg-white shadow">
+<x-vstack spacing="lg" minH="screen">
+    <x-box as="header" p="4" bg="white" shadow="md">
         Navigation
-    </header>
-    <main class="flex-1 p-4">
+    </x-box>
+    <x-box as="main" flex="1" p="4">
         Main content
-    </main>
-    <footer class="p-4 bg-gray-100">
+    </x-box>
+    <x-box as="footer" p="4" bg="gray.100">
         Footer
-    </footer>
+    </x-box>
 </x-vstack>
 ```
 
