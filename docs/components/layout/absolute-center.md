@@ -1,6 +1,6 @@
 # AbsoluteCenter
 
-Absolutely positions and centers its child elements.
+Absolutely positions and centers its child elements. AbsoluteCenter provides a convenient way to center content within a positioned container with comprehensive style props support.
 
 ## Props
 
@@ -9,14 +9,18 @@ Absolutely positions and centers its child elements.
 | `as` | string | `'div'` | HTML element to render |
 | `axis` | string | `null` | Centering axis (both, horizontal, vertical) |
 
+### Style Props
+
+AbsoluteCenter supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Basic Usage
 
 ```blade
-<div class="relative h-64 bg-gray-100">
+<x-box position="relative" h="64" bg="gray.100">
     <x-absolute-center>
-        <div>Centered Content</div>
+        <x-box>Centered Content</x-box>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ## Examples
@@ -24,33 +28,33 @@ Absolutely positions and centers its child elements.
 ### Center Both Axes (Default)
 
 ```blade
-<div class="relative h-96 bg-gray-50">
+<x-box position="relative" h="96" bg="gray.50">
     <x-absolute-center>
         <x-box p="6" shadow="lg" rounded="xl">
             Centered in both directions
         </x-box>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ### Horizontal Center Only
 
 ```blade
-<div class="relative h-64 bg-gray-50">
-    <x-absolute-center axis="horizontal" class="top-4">
-        <div>Horizontally centered, top positioned</div>
+<x-box position="relative" h="64" bg="gray.50">
+    <x-absolute-center axis="horizontal" top="4">
+        <x-box>Horizontally centered, top positioned</x-box>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ### Vertical Center Only
 
 ```blade
-<div class="relative h-64 bg-gray-50">
-    <x-absolute-center axis="vertical" class="left-4">
-        <div>Vertically centered, left positioned</div>
+<x-box position="relative" h="64" bg="gray.50">
+    <x-absolute-center axis="vertical" left="4">
+        <x-box>Vertically centered, left positioned</x-box>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ## Common Patterns
@@ -58,98 +62,98 @@ Absolutely positions and centers its child elements.
 ### Modal Overlay
 
 ```blade
-<div class="fixed inset-0 bg-black bg-opacity-50 z-50">
+<x-box position="fixed" inset="0" bg="black" z="50" class="bg-opacity-50">
     <x-absolute-center>
         <x-box p="8" bg="white" rounded="xl" shadow="2xl" class="max-w-md">
-            <h2 class="text-2xl font-bold">Modal Title</h2>
-            <p class="mt-4">Modal content goes here...</p>
-            
-            <x-hstack spacing="sm" justify="end" class="mt-6">
+            <x-heading as="h2" fontSize="2xl" fontWeight="bold">Modal Title</x-heading>
+            <x-text mt="4">Modal content goes here...</x-text>
+
+            <x-hstack spacing="sm" justify="end" mt="6">
                 <x-button variant="outline">Cancel</x-button>
                 <x-button color="primary">Confirm</x-button>
             </x-hstack>
         </x-box>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ### Loading Overlay
 
 ```blade
-<div class="relative min-h-screen">
+<x-box position="relative" minH="screen">
     {{-- Content --}}
-    <div>Page content...</div>
-    
+    <x-box>Page content...</x-box>
+
     {{-- Loading overlay --}}
-    <div class="absolute inset-0 bg-white bg-opacity-75">
+    <x-box position="absolute" inset="0" bg="white" class="bg-opacity-75">
         <x-absolute-center>
             <x-vstack spacing="md" align="center">
                 <x-icon name="heroicons:arrow-path" size="48px" class="animate-spin text-primary-600" />
-                <span class="text-lg font-medium">Loading...</span>
+                <x-text fontSize="lg" fontWeight="medium">Loading...</x-text>
             </x-vstack>
         </x-absolute-center>
-    </div>
-</div>
+    </x-box>
+</x-box>
 ```
 
 ### Badge on Image
 
 ```blade
-<div class="relative w-64 h-64">
-    <img src="/image.jpg" class="w-full h-full object-cover rounded-lg">
-    
+<x-box position="relative" w="64" h="64">
+    <x-box as="img" src="/image.jpg" w="full" h="full" class="object-cover rounded-lg" />
+
     <x-absolute-center>
-        <x-box p="3" bg="primary" rounded="full" shadow="lg" class="text-white">
+        <x-box p="3" bg="primary" rounded="full" shadow="lg" color="white">
             <x-icon name="heroicons:play" size="24px" />
         </x-box>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ### Watermark
 
 ```blade
-<div class="relative">
-    <img src="/photo.jpg" class="w-full">
-    
+<x-box position="relative">
+    <x-box as="img" src="/photo.jpg" w="full" />
+
     <x-absolute-center>
-        <div class="text-6xl font-bold text-white opacity-20 rotate-45">
+        <x-text fontSize="6xl" fontWeight="bold" color="white" opacity="20" class="rotate-45">
             DRAFT
-        </div>
+        </x-text>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ### Hero Section CTA
 
 ```blade
-<div class="relative h-screen bg-cover bg-center" style="background-image: url('/hero.jpg')">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    
+<x-box position="relative" h="screen" class="bg-cover bg-center" style="background-image: url('/hero.jpg')">
+    <x-box position="absolute" inset="0" bg="black" class="bg-opacity-50"></x-box>
+
     <x-absolute-center>
-        <x-vstack spacing="lg" align="center" class="text-white">
-            <h1 class="text-6xl font-bold">Welcome</h1>
-            <p class="text-xl">Your amazing tagline here</p>
+        <x-vstack spacing="lg" align="center" color="white">
+            <x-heading as="h1" fontSize="6xl" fontWeight="bold">Welcome</x-heading>
+            <x-text fontSize="xl">Your amazing tagline here</x-text>
             <x-button color="primary" size="xl">Get Started</x-button>
         </x-vstack>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ### Notification Badge
 
 ```blade
-<div class="relative inline-block">
+<x-box position="relative" display="inline-block">
     <x-button variant="ghost">
         <x-icon name="heroicons:bell" size="24px" />
     </x-button>
-    
-    <x-absolute-center axis="horizontal" class="top-0">
-        <span class="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+
+    <x-absolute-center axis="horizontal" top="0">
+        <x-center w="5" h="5" bg="red.500" color="white" rounded="full" fontSize="xs">
             3
-        </span>
+        </x-center>
     </x-absolute-center>
-</div>
+</x-box>
 ```
 
 ## Notes

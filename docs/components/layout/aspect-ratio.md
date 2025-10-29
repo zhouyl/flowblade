@@ -1,6 +1,6 @@
 # AspectRatio
 
-Maintains a consistent aspect ratio for its content.
+Maintains a consistent aspect ratio for its content. AspectRatio is useful for preventing layout shift and maintaining consistent proportions for images, videos, and other media.
 
 ## Props
 
@@ -8,11 +8,15 @@ Maintains a consistent aspect ratio for its content.
 |------|------|---------|-------------|
 | `ratio` | string\|float | `'16/9'` | Aspect ratio (16/9, 4/3, 1/1, square, video, or custom like 3/2) |
 
+### Style Props
+
+AspectRatio supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Basic Usage
 
 ```blade
 <x-aspect-ratio ratio="16/9">
-    <img src="/image.jpg" class="w-full h-full object-cover">
+    <x-box as="img" src="/image.jpg" w="full" h="full" class="object-cover" />
 </x-aspect-ratio>
 ```
 
@@ -29,11 +33,13 @@ Maintains a consistent aspect ratio for its content.
 
 ```blade
 <x-aspect-ratio ratio="16/9">
-    <iframe 
-        src="https://www.youtube.com/embed/VIDEO_ID" 
-        class="w-full h-full"
+    <x-box
+        as="iframe"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        w="full"
+        h="full"
         allowfullscreen
-    ></iframe>
+    ></x-box>
 </x-aspect-ratio>
 ```
 
@@ -43,10 +49,13 @@ Maintains a consistent aspect ratio for its content.
 <x-simple-grid columns="3" spacing="md">
     @foreach($images as $image)
         <x-aspect-ratio ratio="1/1">
-            <img 
-                src="{{ $image }}" 
-                class="w-full h-full object-cover rounded-lg"
-            >
+            <x-box
+                as="img"
+                src="{{ $image }}"
+                w="full"
+                h="full"
+                class="object-cover rounded-lg"
+            />
         </x-aspect-ratio>
     @endforeach
 </x-simple-grid>
@@ -56,7 +65,7 @@ Maintains a consistent aspect ratio for its content.
 
 ```blade
 <x-aspect-ratio ratio="3/2">
-    <img src="/photo.jpg" class="w-full h-full object-cover">
+    <x-box as="img" src="/photo.jpg" w="full" h="full" class="object-cover" />
 </x-aspect-ratio>
 ```
 
@@ -64,7 +73,7 @@ Maintains a consistent aspect ratio for its content.
 
 ```blade
 <x-aspect-ratio :ratio="1.5">
-    <div class="w-full h-full bg-gradient-to-r from-blue-500 to-purple-600"></div>
+    <x-box w="full" h="full" class="bg-gradient-to-r from-blue-500 to-purple-600"></x-box>
 </x-aspect-ratio>
 ```
 
@@ -77,15 +86,18 @@ Maintains a consistent aspect ratio for its content.
     @foreach($products as $product)
         <x-box shadow="lg" rounded="xl" class="overflow-hidden">
             <x-aspect-ratio ratio="1/1">
-                <img 
-                    src="{{ $product->image }}" 
-                    class="w-full h-full object-cover hover:scale-110 transition duration-300"
-                >
+                <x-box
+                    as="img"
+                    src="{{ $product->image }}"
+                    w="full"
+                    h="full"
+                    class="object-cover hover:scale-110 transition duration-300"
+                />
             </x-aspect-ratio>
-            
-            <x-vstack spacing="sm" class="p-4">
-                <h3 class="font-bold">{{ $product->name }}</h3>
-                <p class="text-gray-600">${{ $product->price }}</p>
+
+            <x-vstack spacing="sm" p="4">
+                <x-heading as="h3" fontWeight="bold">{{ $product->name }}</x-heading>
+                <x-text color="gray.600">${{ $product->price }}</x-text>
             </x-vstack>
         </x-box>
     @endforeach
@@ -97,13 +109,15 @@ Maintains a consistent aspect ratio for its content.
 ```blade
 <x-box shadow="xl" rounded="xl" class="overflow-hidden">
     <x-aspect-ratio ratio="16/9">
-        <video 
-            controls 
-            class="w-full h-full"
+        <x-box
+            as="video"
+            w="full"
+            h="full"
+            controls
             poster="/thumbnail.jpg"
         >
             <source src="/video.mp4" type="video/mp4">
-        </video>
+        </x-box>
     </x-aspect-ratio>
 </x-box>
 ```
@@ -112,29 +126,34 @@ Maintains a consistent aspect ratio for its content.
 
 ```blade
 <x-aspect-ratio ratio="21/9">
-    <div 
-        class="w-full h-full bg-cover bg-center" 
+    <x-box
+        w="full"
+        h="full"
+        class="bg-cover bg-center"
         style="background-image: url('/hero.jpg')"
     >
-        <div class="w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-            <x-vstack spacing="lg" align="center" class="text-white">
-                <h1 class="text-5xl font-bold">Welcome</h1>
-                <p class="text-xl">Your tagline here</p>
+        <x-flex w="full" h="full" bg="black" align="center" justify="center" class="bg-opacity-50">
+            <x-vstack spacing="lg" align="center" color="white">
+                <x-heading as="h1" fontSize="5xl" fontWeight="bold">Welcome</x-heading>
+                <x-text fontSize="xl">Your tagline here</x-text>
                 <x-button color="primary" size="xl">Get Started</x-button>
             </x-vstack>
-        </div>
-    </div>
+        </x-flex>
+    </x-box>
 </x-aspect-ratio>
 ```
 
 ### Avatar
 
 ```blade
-<x-aspect-ratio ratio="1/1" class="w-32">
-    <img 
-        src="/avatar.jpg" 
-        class="w-full h-full object-cover rounded-full"
-    >
+<x-aspect-ratio ratio="1/1" w="32">
+    <x-box
+        as="img"
+        src="/avatar.jpg"
+        w="full"
+        h="full"
+        class="object-cover rounded-full"
+    />
 </x-aspect-ratio>
 ```
 
@@ -142,11 +161,14 @@ Maintains a consistent aspect ratio for its content.
 
 ```blade
 <x-aspect-ratio ratio="16/9">
-    <iframe 
-        src="https://www.google.com/maps/embed?..." 
-        class="w-full h-full rounded-lg"
+    <x-box
+        as="iframe"
+        src="https://www.google.com/maps/embed?..."
+        w="full"
+        h="full"
+        rounded="lg"
         loading="lazy"
-    ></iframe>
+    ></x-box>
 </x-aspect-ratio>
 ```
 
@@ -155,16 +177,19 @@ Maintains a consistent aspect ratio for its content.
 ```blade
 <x-box shadow="lg" rounded="xl" class="overflow-hidden">
     <x-aspect-ratio ratio="16/9">
-        <img 
-            src="/blog-post.jpg" 
-            class="w-full h-full object-cover"
-        >
+        <x-box
+            as="img"
+            src="/blog-post.jpg"
+            w="full"
+            h="full"
+            class="object-cover"
+        />
     </x-aspect-ratio>
-    
-    <x-vstack spacing="md" class="p-6">
-        <span class="text-xs text-gray-500">March 15, 2024</span>
-        <h2 class="text-2xl font-bold">Blog Post Title</h2>
-        <p class="text-gray-600">Post excerpt goes here...</p>
+
+    <x-vstack spacing="md" p="6">
+        <x-text as="span" fontSize="xs" color="gray.500">March 15, 2024</x-text>
+        <x-heading as="h2" fontSize="2xl" fontWeight="bold">Blog Post Title</x-heading>
+        <x-text color="gray.600">Post excerpt goes here...</x-text>
         <x-button variant="link" class="self-start">Read More →</x-button>
     </x-vstack>
 </x-box>
@@ -174,10 +199,10 @@ Maintains a consistent aspect ratio for its content.
 
 ```blade
 <x-aspect-ratio ratio="16/9">
-    <x-center class="w-full h-full bg-gray-100">
-        <x-vstack spacing="sm" align="center" class="text-gray-400">
+    <x-center w="full" h="full" bg="gray.100">
+        <x-vstack spacing="sm" align="center" color="gray.400">
             <x-icon name="heroicons:photo" size="48px" />
-            <span>No image</span>
+            <x-text as="span">No image</x-text>
         </x-vstack>
     </x-center>
 </x-aspect-ratio>
@@ -188,23 +213,26 @@ Maintains a consistent aspect ratio for its content.
 ```blade
 <x-wrap spacing="sm">
     @foreach($videos as $video)
-        <div class="w-48">
+        <x-box w="48">
             <x-aspect-ratio ratio="16/9">
-                <div class="relative w-full h-full">
-                    <img 
-                        src="{{ $video->thumbnail }}" 
-                        class="w-full h-full object-cover rounded-lg"
-                    >
+                <x-box position="relative" w="full" h="full">
+                    <x-box
+                        as="img"
+                        src="{{ $video->thumbnail }}"
+                        w="full"
+                        h="full"
+                        class="object-cover rounded-lg"
+                    />
                     <x-absolute-center>
                         <x-button size="sm" rounded="full" class="bg-black bg-opacity-75">
-                            <x-icon name="heroicons:play" class="text-white" />
+                            <x-icon name="heroicons:play" color="white" />
                         </x-button>
                     </x-absolute-center>
-                </div>
+                </x-box>
             </x-aspect-ratio>
-            
-            <h4 class="mt-2 text-sm font-medium">{{ $video->title }}</h4>
-        </div>
+
+            <x-heading as="h4" mt="2" fontSize="sm" fontWeight="medium">{{ $video->title }}</x-heading>
+        </x-box>
     @endforeach
 </x-wrap>
 ```
