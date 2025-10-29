@@ -15,12 +15,18 @@ Avatar component for displaying user profile images with fallback options. Avata
 | `size` | `string` | `'md'` | Size: `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
 | `src` | `string` | `null` | Image source URL |
 | `name` | `string` | `null` | Name for fallback initials |
-| `icon` | `string` | `null` | Icon name for fallback |
+| `icon` | `string` | `null` | Icon name (Iconify format) for fallback |
 | `shape` | `string` | `'circle'` | Shape: `circle`, `square`, `rounded` |
 
-### Style Props
+## Style Props
 
-Avatar supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Avatar supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## With Image
 

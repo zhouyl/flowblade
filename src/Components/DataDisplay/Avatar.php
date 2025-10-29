@@ -4,32 +4,42 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\DataDisplay;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Avatar Component
  *
  * User profile avatar with image, initials, or icon fallback.
  * Supports multiple sizes and shapes following Flowbite design patterns.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Avatar extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string      $size  Avatar size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
-     * @param null|string $src   Image source URL (primary display)
-     * @param null|string $name  User name for generating fallback initials
-     * @param null|string $icon  Iconify icon name for fallback display
-     * @param string      $shape Avatar shape: 'circle', 'square', 'rounded'
+     * @param string      $size          Avatar size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $src           Image source URL (primary display)
+     * @param null|string $name          User name for generating fallback initials
+     * @param null|string $icon          Iconify icon name for fallback display
+     * @param string      $shape         Avatar shape: 'circle', 'square', 'rounded'
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $size = 'md',
         public ?string $src = null,
         public ?string $name = null,
         public ?string $icon = null,
-        public string $shape = 'circle'
+        public string $shape = 'circle',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -52,6 +62,57 @@ class Avatar extends Component
         }
 
         return strtoupper(substr($this->name, 0, 2));
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'inline-flex',
+            'items-center',
+            'justify-center',
+            'flex-shrink-0',
+            'overflow-hidden',
+        ];
+
+        // Size
+        $sizeClasses = [
+            '2xs' => 'w-6 h-6 text-xs',
+            'xs' => 'w-8 h-8 text-xs',
+            'sm' => 'w-10 h-10 text-sm',
+            'md' => 'w-12 h-12 text-base',
+            'lg' => 'w-16 h-16 text-lg',
+            'xl' => 'w-20 h-20 text-xl',
+            '2xl' => 'w-24 h-24 text-2xl',
+            '3xl' => 'w-32 h-32 text-3xl',
+            '4xl' => 'w-40 h-40 text-4xl',
+        ];
+
+        if (isset($sizeClasses[$this->size])) {
+            $classes[] = $sizeClasses[$this->size];
+        }
+
+        // Shape
+        $shapeClasses = [
+            'circle' => 'rounded-full',
+            'square' => 'rounded-none',
+            'rounded' => 'rounded-lg',
+        ];
+
+        if (isset($shapeClasses[$this->shape])) {
+            $classes[] = $shapeClasses[$this->shape];
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
