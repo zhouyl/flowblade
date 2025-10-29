@@ -1,6 +1,6 @@
 # TagsInput
 
-Tags input component for adding and removing tags with keyboard support.
+Tags input component for adding and removing tags with keyboard support. TagsInput provides a flexible way to collect multiple tags with support for various sizes and colors.
 
 ## Requirements
 
@@ -30,6 +30,10 @@ This component requires **Alpine.js** to be installed in your project.
 | `disabled` | `bool` | `false` | Whether the input is disabled |
 | `readonly` | `bool` | `false` | Whether the input is readonly |
 | `separator` | `string` | `null` | Character to split input into tags (e.g., ',') |
+
+### Style Props
+
+TagsInput supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## With Initial Tags
 

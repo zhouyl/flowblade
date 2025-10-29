@@ -1,6 +1,6 @@
 # List Group
 
-Interactive list component for displaying a series of items, buttons or links inside a single container.
+Interactive list component for displaying a series of items, buttons or links inside a single container. ListGroup provides a flexible way to display lists with support for various item types.
 
 ## Components
 
@@ -38,6 +38,10 @@ Interactive list component for displaying a series of items, buttons or links in
 | `active` | `bool` | `false` | Whether the item is active |
 | `disabled` | `bool` | `false` | Whether the item is disabled |
 | `first` | `bool` | `false` | Whether this is the first item |
+
+### Style Props
+
+ListGroup and ListGroupItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `last` | `bool` | `false` | Whether this is the last item |
 
 ## Examples

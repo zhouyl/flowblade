@@ -1,6 +1,6 @@
 # TreeView
 
-Tree view component for displaying hierarchical data in an expandable/collapsible structure.
+Tree view component for displaying hierarchical data in an expandable/collapsible structure. TreeView provides a flexible way to display hierarchical data with support for various sizes.
 
 ## Basic Usage
 
@@ -35,6 +35,10 @@ Tree view component for displaying hierarchical data in an expandable/collapsibl
 | `icon` | `string` | `null` | Icon name |
 | `expanded` | `boolean` | `false` | Is expanded by default |
 | `hasChildren` | `boolean` | `false` | Has children nodes |
+
+### Style Props
+
+TreeView and TreeViewItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## With Icons
 

@@ -1,6 +1,6 @@
 # Rating
 
-Rating component for displaying and collecting star ratings.
+Rating component for displaying and collecting star ratings. Rating provides a flexible way to display and collect ratings with support for various sizes and colors.
 
 ## Requirements
 
@@ -27,6 +27,10 @@ For interactive ratings, this component requires **Alpine.js** to be installed i
 | `readonly` | `bool` | `true` | Whether the rating is readonly |
 | `showValue` | `bool` | `false` | Whether to show the numeric value |
 | `name` | `string` | `null` | Form input name (for interactive ratings) |
+
+### Style Props
+
+Rating supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Readonly Ratings
 

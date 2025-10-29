@@ -1,6 +1,6 @@
 # DataList
 
-Data list component for displaying key-value pairs in a structured format.
+Data list component for displaying key-value pairs in a structured format. DataList provides a flexible way to display data with support for various orientations and layouts.
 
 ## Basic Usage
 
@@ -29,6 +29,10 @@ Data list component for displaying key-value pairs in a structured format.
 |------|------|---------|-------------|
 | `label` | `string` | `null` | Label text |
 | `value` | `string` | `null` | Value text |
+
+### Style Props
+
+DataList and DataListItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Vertical Orientation
 

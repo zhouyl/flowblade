@@ -1,6 +1,6 @@
 # ChatBubble Component
 
-Chat message bubble component for messaging interfaces and chat applications.
+Chat message bubble component for messaging interfaces and chat applications. ChatBubble provides a flexible way to display chat messages with support for various alignments and colors.
 
 ## Basic Usage
 
@@ -23,20 +23,24 @@ Chat message bubble component for messaging interfaces and chat applications.
 | `read` | boolean | `false` | Read status indicator |
 | `tail` | boolean | `true` | Show message tail |
 
+### Style Props
+
+ChatBubble supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Examples
 
 ### Basic Messages
 
 ```blade
-<div class="space-y-4">
+<x-vstack gap="4">
     <x-chat-bubble>
         Hello! How are you?
     </x-chat-bubble>
-    
+
     <x-chat-bubble align="right" color="blue">
         I'm doing great, thanks for asking!
     </x-chat-bubble>
-</div>
+</x-vstack>
 ```
 
 ### With Avatar

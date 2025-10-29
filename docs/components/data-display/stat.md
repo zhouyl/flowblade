@@ -1,13 +1,13 @@
 # Stat
 
-Stat component for displaying statistics, metrics, and key performance indicators.
+Stat component for displaying statistics, metrics, and key performance indicators. Stat provides a flexible way to display metrics with support for icons and trend indicators.
 
 ## Basic Usage
 
 ```blade
-<x-stat 
-    label="Total Revenue" 
-    value="$45,231" 
+<x-stat
+    label="Total Revenue"
+    value="$45,231"
 />
 ```
 
@@ -21,6 +21,10 @@ Stat component for displaying statistics, metrics, and key performance indicator
 | `icon` | `string` | `null` | Icon name |
 | `trend` | `string` | `null` | Trend: `up`, `down`, `neutral` |
 | `trendValue` | `string` | `null` | Trend value text |
+
+### Style Props
+
+Stat supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## With Icon
 

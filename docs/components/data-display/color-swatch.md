@@ -1,6 +1,6 @@
 # ColorSwatch
 
-Color swatch component for displaying color samples with optional labels and copy functionality.
+Color swatch component for displaying color samples with optional labels and copy functionality. ColorSwatch provides a flexible way to display color samples with support for various sizes and variants.
 
 ## Requirements
 
@@ -28,6 +28,10 @@ For copyable color swatches, this component requires **Alpine.js** to be install
 | `label` | `string` | `null` | Optional label text |
 | `showValue` | `bool` | `false` | Whether to show color value |
 | `copyable` | `bool` | `false` | Whether the color value is copyable |
+
+### Style Props
+
+ColorSwatch supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Color Formats
 

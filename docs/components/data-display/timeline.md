@@ -1,23 +1,23 @@
 # Timeline
 
-Timeline component for displaying chronological events in a vertical layout.
+Timeline component for displaying chronological events in a vertical layout. Timeline provides a flexible way to display events with support for various sizes and colors.
 
 ## Basic Usage
 
 ```blade
 <x-timeline>
-    <x-timeline-item 
-        title="Order Placed" 
+    <x-timeline-item
+        title="Order Placed"
         description="Your order has been placed successfully"
         time="2 hours ago"
     />
-    <x-timeline-item 
-        title="Processing" 
+    <x-timeline-item
+        title="Processing"
         description="Your order is being processed"
         time="1 hour ago"
     />
-    <x-timeline-item 
-        title="Shipped" 
+    <x-timeline-item
+        title="Shipped"
         description="Your order has been shipped"
         time="30 minutes ago"
         :is-last="true"
@@ -45,6 +45,10 @@ Timeline component for displaying chronological events in a vertical layout.
 | `icon` | `string` | `null` | Icon name |
 | `color` | `string` | `null` | Color (overrides parent color) |
 | `isLast` | `boolean` | `false` | Is last item (no connector line) |
+
+### Style Props
+
+Timeline and TimelineItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Colors
 

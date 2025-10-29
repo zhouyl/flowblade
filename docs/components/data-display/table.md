@@ -1,6 +1,6 @@
 # Table
 
-Table component for displaying tabular data in a structured format.
+Table component for displaying tabular data in a structured format. Table provides a flexible way to display data with support for various sizes and variants.
 
 ## Basic Usage
 
@@ -13,7 +13,7 @@ Table component for displaying tabular data in a structured format.
             <x-table-head>Role</x-table-head>
         </x-table-row>
     </x-table-header>
-    
+
     <x-table-body>
         <x-table-row>
             <x-table-cell>John Doe</x-table-cell>
@@ -38,6 +38,10 @@ Table component for displaying tabular data in a structured format.
 | `size` | `string` | `'md'` | Size: `xs`, `sm`, `md`, `lg`, `xl` |
 | `variant` | `string` | `'simple'` | Variant: `simple`, `striped`, `bordered` |
 | `hover` | `boolean` | `false` | Enable hover effect |
+
+### Style Props
+
+Table supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Variants
 
