@@ -24,18 +24,24 @@
 
 ## 当前问题列表
 
-### 🟡 Badge 组件缺少 Style Props 支持 (Important)
+### 🟡 多个 DataDisplay 组件缺少 Style Props 支持 (Important)
 
-**组件**: Badge (DataDisplay)
+**组件**: Badge, Avatar, Icon, Tag (DataDisplay)
 **发现时间**: Code Review Phase 2
 **优先级**: 高
 **状态**: 待修复
 
 **问题描述**:
-- Badge 组件没有集成 HasStyleProps trait
+- 这些组件没有集成 HasStyleProps trait
 - 组件类继承自 `Illuminate\View\Component` 而不是 `Flowblade\Components\Component`
 - 无法使用 style props (p, m, bg, color, w, h 等)
 - 不符合开发规范
+
+**受影响的组件**:
+1. Badge - 数据显示组件
+2. Avatar - 用户头像组件
+3. Icon - 图标组件
+4. Tag - 标签组件
 
 **修复方案**:
 1. 更新组件类继承 `Flowblade\Components\Component`

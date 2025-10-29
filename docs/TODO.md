@@ -13,6 +13,9 @@
 **当前阶段**: Code Review Phase 2 (第二次代码审查)
 **组件总数**: 140 个 (新增 3 个)
 **已完成**: Phase 1 (新增组件) + Phase 2 (文档检查)
+**Code Review 进度**:
+- Buttons: 4/4 ✅ 完成
+- DataDisplay: 5/24 检查中 (4 个缺少 Style Props)
 
 ## 工作计划
 
@@ -65,15 +68,19 @@
 6. 代码是否通过 php-cs-fixer 格式化
 
 **Review 分类**:
-- [ ] 3.1 Buttons 组件 (4 个) - 进行中
+- [x] 3.1 Buttons 组件 (4 个) - ✅ 已完成
   - [x] Button - ✅ 符合规范
-  - [ ] IconButton - 待检查
-  - [ ] ButtonGroup - 待检查
-  - [ ] CloseButton - 待检查
+  - [x] IconButton - ✅ 符合规范
+  - [x] ButtonGroup - ✅ 符合规范
+  - [x] CloseButton - ✅ 符合规范
 
-- [ ] 3.2 DataDisplay 组件 (17 个) - 待开始
+- [ ] 3.2 DataDisplay 组件 (24 个) - 进行中
   - [x] Badge - ⚠️ 缺少 Style Props 支持
-  - [ ] 其他 16 个 - 待检查
+  - [x] Avatar - ⚠️ 缺少 Style Props 支持
+  - [x] Icon - ⚠️ 缺少 Style Props 支持
+  - [x] Tag - ⚠️ 缺少 Style Props 支持
+  - [x] ListItem - ✅ 新增组件，符合规范
+  - [ ] 其他 19 个 - 待检查
 
 - [ ] 3.3 Disclosure 组件 (3 个) - 待开始
 - [ ] 3.4 Feedback 组件 (9 个) - 待开始
