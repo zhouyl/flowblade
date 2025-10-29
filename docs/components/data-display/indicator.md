@@ -1,6 +1,6 @@
 # Indicator Component
 
-Status indicator component for online/offline states, notifications, and activity indicators.
+Status indicator component for online/offline states, notifications, and activity indicators. Indicator provides a flexible way to display status indicators with support for various colors, sizes, and positions.
 
 ## Basic Usage
 
@@ -19,30 +19,34 @@ Status indicator component for online/offline states, notifications, and activit
 | `border` | boolean | `false` | Add white border |
 | `label` | string | `''` | Accessible label for screen readers |
 
+### Style Props
+
+Indicator supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Examples
 
 ### Basic Indicators
 
 ```blade
-<div class="flex items-center gap-4">
+<x-flex align="center" gap="4">
     <x-indicator color="gray" />
     <x-indicator color="red" />
     <x-indicator color="yellow" />
     <x-indicator color="green" />
     <x-indicator color="blue" />
-</div>
+</x-flex>
 ```
 
 ### Sizes
 
 ```blade
-<div class="flex items-center gap-4">
+<x-flex align="center" gap="4">
     <x-indicator size="xs" color="green" />
     <x-indicator size="sm" color="green" />
     <x-indicator size="md" color="green" />
     <x-indicator size="lg" color="green" />
     <x-indicator size="xl" color="green" />
-</div>
+</x-flex>
 ```
 
 ### With Ping Animation

@@ -1,6 +1,6 @@
 # Icon
 
-Iconify icon component with access to 100,000+ icons.
+Iconify icon component with access to 100,000+ icons. Icon provides a flexible way to display icons from various icon collections.
 
 ## Props
 
@@ -9,6 +9,10 @@ Iconify icon component with access to 100,000+ icons.
 | `name` | string | required | Icon name in format `collection:icon-name` |
 | `size` | string | `'1.2em'` | Icon size (any CSS size value) |
 | `color` | string | `null` | Icon color (primary, secondary, success, warning, danger, info, gray) |
+
+### Style Props
+
+Icon supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Basic Usage
 

@@ -1,6 +1,6 @@
 # Card
 
-Card component for grouping and displaying related content in a contained format.
+Card component for grouping and displaying related content in a contained format. Card provides a flexible way to organize content with support for headers, bodies, and footers.
 
 ## Basic Usage
 
@@ -9,11 +9,11 @@ Card component for grouping and displaying related content in a contained format
     <x-card-header>
         <x-heading size="lg">Card Title</x-heading>
     </x-card-header>
-    
+
     <x-card-body>
         <x-text>This is the card content.</x-text>
     </x-card-body>
-    
+
     <x-card-footer>
         <x-button>Action</x-button>
     </x-card-footer>
@@ -28,6 +28,10 @@ Card component for grouping and displaying related content in a contained format
 |------|------|---------|-------------|
 | `size` | `string` | `'md'` | Size: `xs`, `sm`, `md`, `lg`, `xl` |
 | `variant` | `string` | `'elevated'` | Variant: `elevated`, `outline`, `filled`, `ghost` |
+
+### Style Props
+
+Card supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Variants
 
