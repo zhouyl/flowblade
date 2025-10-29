@@ -1,6 +1,6 @@
 # Textarea
 
-Multi-line text input component.
+Multi-line text input component. Textarea provides a flexible way to create multi-line text input fields with support for various sizes, variants, and states.
 
 ## Basic Usage
 
@@ -21,6 +21,10 @@ Multi-line text input component.
 | `placeholder` | `string` | `null` | Placeholder text |
 | `rows` | `int` | `3` | Number of rows |
 | `resize` | `boolean` | `true` | Allow resize |
+
+### Style Props
+
+Textarea supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
@@ -82,42 +86,42 @@ Multi-line text input component.
 ### Comment Input
 
 ```blade
-<div>
-    <label class="block text-sm font-medium mb-1">Comment</label>
-    <x-textarea 
+<x-box>
+    <x-text as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Comment</x-text>
+    <x-textarea
         name="comment"
         rows="4"
         placeholder="Write your comment..."
     />
-</div>
+</x-box>
 ```
 
 ### Description Field
 
 ```blade
-<div>
-    <label class="block text-sm font-medium mb-1">Product Description</label>
-    <x-textarea 
+<x-box>
+    <x-text as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Product Description</x-text>
+    <x-textarea
         name="description"
         rows="6"
         placeholder="Enter product description"
     />
-</div>
+</x-box>
 ```
 
 ### With Validation
 
 ```blade
-<div>
-    <x-textarea 
+<x-box>
+    <x-textarea
         name="content"
         :invalid="$errors->has('content')"
         placeholder="Enter content"
     />
     @error('content')
-        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+        <x-text mt="1" fontSize="sm" color="red.600">{{ $message }}</x-text>
     @enderror
-</div>
+</x-box>
 ```
 
 ## Livewire Integration
@@ -133,15 +137,15 @@ Multi-line text input component.
 ## Alpine.js Integration
 
 ```blade
-<div x-data="{ content: '' }">
-    <x-textarea 
+<x-box x-data="{ content: '' }">
+    <x-textarea
         x-model="content"
         rows="4"
         placeholder="Enter content"
     />
-    <p class="mt-2 text-sm text-gray-500">
-        Character count: <span x-text="content.length"></span>
-    </p>
-</div>
+    <x-text as="p" mt="2" fontSize="sm" color="gray.500">
+        Character count: <x-text as="span" x-text="content.length"></x-text>
+    </x-text>
+</x-box>
 ```
 

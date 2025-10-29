@@ -1,6 +1,6 @@
 # Select
 
-Enhanced select component with search, multi-select, and custom styling capabilities.
+Enhanced select component with search, multi-select, and custom styling capabilities. Select provides a flexible way to create dropdown selections with support for various sizes, variants, and states.
 
 ## Requirements
 
@@ -43,6 +43,10 @@ npm install alpinejs
 | `invalid` | `bool` | `false` | Show error state |
 | `helperText` | `string\|null` | `null` | Helper text below select |
 | `errorText` | `string\|null` | `null` | Error message text |
+
+### Style Props
+
+Select supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 

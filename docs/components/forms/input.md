@@ -1,6 +1,6 @@
 # Input
 
-Input component for text input.
+Input component for text input. Input provides a flexible way to create text input fields with support for various sizes, variants, and states.
 
 ## Basic Usage
 
@@ -20,6 +20,10 @@ Input component for text input.
 | `required` | `boolean` | `false` | Required |
 | `invalid` | `boolean` | `false` | Invalid state |
 | `placeholder` | `string` | `null` | Placeholder text |
+
+### Style Props
+
+Input supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
@@ -77,43 +81,43 @@ Input component for text input.
 ### Form Fields
 
 ```blade
-<div class="space-y-4">
-    <div>
-        <label class="block text-sm font-medium mb-1">Username</label>
+<x-vstack gap="4">
+    <x-box>
+        <x-text as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Username</x-text>
         <x-input name="username" placeholder="Enter username" />
-    </div>
-    
-    <div>
-        <label class="block text-sm font-medium mb-1">Email</label>
+    </x-box>
+
+    <x-box>
+        <x-text as="label" display="block" fontSize="sm" fontWeight="medium" mb="1">Email</x-text>
         <x-input type="email" name="email" placeholder="Enter email" />
-    </div>
-</div>
+    </x-box>
+</x-vstack>
 ```
 
 ### Search Box
 
 ```blade
-<x-input 
-    type="search" 
-    placeholder="Search..." 
-    class="w-full"
+<x-input
+    type="search"
+    placeholder="Search..."
+    w="full"
 />
 ```
 
 ### Input with Validation
 
 ```blade
-<div>
-    <x-input 
+<x-box>
+    <x-input
         name="email"
         type="email"
         :invalid="$errors->has('email')"
         placeholder="Enter email"
     />
     @error('email')
-        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+        <x-text mt="1" fontSize="sm" color="red.600">{{ $message }}</x-text>
     @enderror
-</div>
+</x-box>
 ```
 
 ## Livewire Integration
@@ -135,12 +139,12 @@ Input component for text input.
 ## Alpine.js Integration
 
 ```blade
-<div x-data="{ value: '' }">
-    <x-input 
+<x-box x-data="{ value: '' }">
+    <x-input
         x-model="value"
         placeholder="Enter content"
     />
-    <p x-text="value"></p>
-</div>
+    <x-text as="p" x-text="value"></x-text>
+</x-box>
 ```
 
