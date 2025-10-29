@@ -46,9 +46,15 @@ Timeline component for displaying chronological events in a vertical layout. Tim
 | `color` | `string` | `null` | Color (overrides parent color) |
 | `isLast` | `boolean` | `false` | Is last item (no connector line) |
 
-### Style Props
+## Style Props
 
-Timeline and TimelineItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Timeline and TimelineItem support all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Colors
 
