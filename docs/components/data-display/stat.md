@@ -22,9 +22,15 @@ Stat component for displaying statistics, metrics, and key performance indicator
 | `trend` | `string` | `null` | Trend: `up`, `down`, `neutral` |
 | `trendValue` | `string` | `null` | Trend value text |
 
-### Style Props
+## Style Props
 
-Stat supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Stat supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## With Icon
 

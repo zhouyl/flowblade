@@ -5,19 +5,19 @@
         'down' => 'text-red-600',
         'neutral' => 'text-gray-600',
     ];
-    
+
     // Trend icons
     $trendIcons = [
         'up' => 'heroicons:arrow-trending-up',
         'down' => 'heroicons:arrow-trending-down',
         'neutral' => 'heroicons:minus',
     ];
-    
+
     $trendColor = $trend ? ($trendColors[$trend] ?? $trendColors['neutral']) : '';
     $trendIcon = $trend ? ($trendIcons[$trend] ?? $trendIcons['neutral']) : '';
 @endphp
 
-<div {{ $attributes->merge(['class' => 'flex flex-col']) }}>
+<div {{ $attributes->merge(['class' => $classes()]) }}>
     @if($label || $labelSlot ?? false)
     <div class="text-sm font-medium text-gray-600 mb-1">
         @if($label)
