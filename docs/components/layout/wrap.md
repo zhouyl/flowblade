@@ -1,6 +1,6 @@
 # Wrap
 
-Flex layout that automatically wraps items to the next line.
+Flex layout that automatically wraps items to the next line. Wrap provides a flexible container for creating responsive layouts that wrap content to multiple lines with support for spacing and alignment.
 
 ## Props
 
@@ -13,14 +13,18 @@ Flex layout that automatically wraps items to the next line.
 | `align` | string | `null` | Align items (start, center, end, stretch, baseline) |
 | `justify` | string | `null` | Justify content (start, center, end, between, around, evenly) |
 
+### Style Props
+
+Wrap supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Basic Usage
 
 ```blade
 <x-wrap spacing="md">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
-    <div>Item 4</div>
+    <x-text>Item 1</x-text>
+    <x-text>Item 2</x-text>
+    <x-text>Item 3</x-text>
+    <x-text>Item 4</x-text>
 </x-wrap>
 ```
 
@@ -52,9 +56,9 @@ Flex layout that automatically wraps items to the next line.
 
 ```blade
 <x-wrap spacing="md" align="center" justify="center">
-    <div class="w-32 h-32 bg-blue-500 rounded"></div>
-    <div class="w-32 h-32 bg-green-500 rounded"></div>
-    <div class="w-32 h-32 bg-red-500 rounded"></div>
+    <x-box w="32" h="32" bg="blue.500" rounded="md"></x-box>
+    <x-box w="32" h="32" bg="green.500" rounded="md"></x-box>
+    <x-box w="32" h="32" bg="red.500" rounded="md"></x-box>
 </x-wrap>
 ```
 
@@ -65,19 +69,23 @@ Flex layout that automatically wraps items to the next line.
 ```blade
 <x-box p="4" bg="gray" rounded="lg">
     <x-vstack spacing="sm">
-        <span class="text-sm font-medium">Filters:</span>
-        
+        <x-text fontSize="sm" fontWeight="medium">Filters:</x-text>
+
         <x-wrap spacing="xs">
             @foreach($activeFilters as $filter)
-                <x-hstack 
-                    spacing="xs" 
-                    align="center" 
-                    class="px-3 py-1 bg-white rounded-full text-sm"
+                <x-hstack
+                    spacing="xs"
+                    align="center"
+                    px="3"
+                    py="1"
+                    bg="white"
+                    rounded="full"
+                    fontSize="sm"
                 >
-                    <span>{{ $filter }}</span>
-                    <button wire:click="removeFilter('{{ $filter }}')">
-                        <x-icon name="heroicons:x-mark" size="16px" />
-                    </button>
+                    <x-text as="span">{{ $filter }}</x-text>
+                    <x-box as="button" wire:click="removeFilter('{{ $filter }}')">
+                        <x-dynamic-component :component="'icon'" name="heroicons:x-mark" size="16px" />
+                    </x-box>
                 </x-hstack>
             @endforeach
         </x-wrap>
@@ -89,13 +97,13 @@ Flex layout that automatically wraps items to the next line.
 
 ```blade
 <x-vstack spacing="md">
-    <h3 class="font-bold">Skills</h3>
-    
+    <x-heading as="h3" fontWeight="bold">Skills</x-heading>
+
     <x-wrap spacing="sm">
         @foreach($skills as $skill)
-            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+            <x-text px="3" py="1" bg="blue.100" color="blue.800" rounded="full" fontSize="sm">
                 {{ $skill }}
-            </span>
+            </x-text>
         @endforeach
     </x-wrap>
 </x-vstack>
