@@ -1,18 +1,5 @@
-@php
-    $parentData = '$parent';
-    
-    // Get label width class
-    $labelWidthClass = '';
-    if ($attributes->get('x-bind:class')) {
-        // Will be set by parent
-    } else {
-        // Default widths based on common patterns
-        $labelWidthClass = 'w-1/3';
-    }
-@endphp
-
-<div 
-    {{ $attributes->merge(['class' => 'flex']) }}
+<div
+    {{ $attributes->merge(['class' => $classes()]) }}
     x-data="{
         get isHorizontal() {
             return {$parentData}.orientation === 'horizontal';
