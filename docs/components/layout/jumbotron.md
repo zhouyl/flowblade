@@ -1,13 +1,13 @@
 # Jumbotron Component
 
-Large showcase section component for hero areas and landing pages.
+Large showcase section component for hero areas and landing pages. Jumbotron provides a flexible container for creating impressive hero sections with support for background images, gradients, and comprehensive style props.
 
 ## Basic Usage
 
 ```blade
 <x-jumbotron>
-    <h1 class="text-4xl font-bold mb-4">Welcome to Our Website</h1>
-    <p class="text-xl mb-6">Discover amazing features and services</p>
+    <x-heading as="h1" fontSize="4xl" fontWeight="bold" mb="4">Welcome to Our Website</x-heading>
+    <x-text fontSize="xl" mb="6">Discover amazing features and services</x-text>
     <x-button color="primary" size="lg">Get Started</x-button>
 </x-jumbotron>
 ```
@@ -23,22 +23,26 @@ Large showcase section component for hero areas and landing pages.
 | `bgGradient` | string | `''` | Background gradient classes |
 | `overlay` | string | `'none'` | Overlay opacity: `none`, `light`, `medium`, `dark` |
 
+### Style Props
+
+Jumbotron supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Examples
 
 ### Basic Jumbotron
 
 ```blade
 <x-jumbotron>
-    <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+    <x-heading as="h1" fontSize="5xl" fontWeight="bold" color="gray.900" mb="4" class="dark:text-white">
         Welcome to Flowblade
-    </h1>
-    <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+    </x-heading>
+    <x-text fontSize="xl" color="gray.600" mb="8" class="dark:text-gray-400">
         Build beautiful Laravel applications with Blade components
-    </p>
-    <div class="flex gap-4 justify-center">
+    </x-text>
+    <x-flex gap="4" justify="center">
         <x-button color="primary" size="lg">Get Started</x-button>
         <x-button variant="outline" size="lg">Learn More</x-button>
-    </div>
+    </x-flex>
 </x-jumbotron>
 ```
 
@@ -46,8 +50,8 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron size="sm">
-    <h2 class="text-3xl font-bold mb-2">Small Hero Section</h2>
-    <p class="text-lg mb-4">Perfect for secondary pages</p>
+    <x-heading as="h2" fontSize="3xl" fontWeight="bold" mb="2">Small Hero Section</x-heading>
+    <x-text fontSize="lg" mb="4">Perfect for secondary pages</x-text>
     <x-button color="primary">Learn More</x-button>
 </x-jumbotron>
 ```
@@ -56,8 +60,8 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron size="xl">
-    <h1 class="text-6xl font-bold mb-6">Extra Large Hero</h1>
-    <p class="text-2xl mb-8">Maximum impact for your landing page</p>
+    <x-heading as="h1" fontSize="6xl" fontWeight="bold" mb="6">Extra Large Hero</x-heading>
+    <x-text fontSize="2xl" mb="8">Maximum impact for your landing page</x-text>
     <x-button color="primary" size="xl">Get Started Now</x-button>
 </x-jumbotron>
 ```
@@ -66,8 +70,8 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron align="left">
-    <h1 class="text-5xl font-bold mb-4">Left Aligned Content</h1>
-    <p class="text-xl mb-6">Perfect for content-heavy sections</p>
+    <x-heading as="h1" fontSize="5xl" fontWeight="bold" mb="4">Left Aligned Content</x-heading>
+    <x-text fontSize="xl" mb="6">Perfect for content-heavy sections</x-text>
     <x-button color="primary" size="lg">Read More</x-button>
 </x-jumbotron>
 ```
@@ -76,8 +80,8 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron align="right">
-    <h1 class="text-5xl font-bold mb-4">Right Aligned Content</h1>
-    <p class="text-xl mb-6">Unique layout for your hero section</p>
+    <x-heading as="h1" fontSize="5xl" fontWeight="bold" mb="4">Right Aligned Content</x-heading>
+    <x-text fontSize="xl" mb="6">Unique layout for your hero section</x-text>
     <x-button color="primary" size="lg">Explore</x-button>
 </x-jumbotron>
 ```
@@ -86,8 +90,8 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron :fullWidth="true">
-    <h1 class="text-5xl font-bold mb-4">Full Width Hero</h1>
-    <p class="text-xl mb-6">Spans the entire viewport width</p>
+    <x-heading as="h1" fontSize="5xl" fontWeight="bold" mb="4">Full Width Hero</x-heading>
+    <x-text fontSize="xl" mb="6">Spans the entire viewport width</x-text>
     <x-button color="primary" size="lg">Get Started</x-button>
 </x-jumbotron>
 ```
@@ -96,12 +100,12 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron bgImage="/images/hero-bg.jpg" overlay="medium">
-    <h1 class="text-5xl font-bold text-white mb-4">
+    <x-heading as="h1" fontSize="5xl" fontWeight="bold" color="white" mb="4">
         Beautiful Background
-    </h1>
-    <p class="text-xl text-white mb-6">
+    </x-heading>
+    <x-text fontSize="xl" color="white" mb="6">
         With image overlay for better readability
-    </p>
+    </x-text>
     <x-button color="primary" size="lg">Explore Now</x-button>
 </x-jumbotron>
 ```
@@ -110,12 +114,12 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron bgImage="/images/hero.jpg" overlay="dark">
-    <h1 class="text-5xl font-bold text-white mb-4">
+    <x-heading as="h1" fontSize="5xl" fontWeight="bold" color="white" mb="4">
         Dark Overlay
-    </h1>
-    <p class="text-xl text-white/90 mb-6">
+    </x-heading>
+    <x-text fontSize="xl" color="white" mb="6" class="opacity-90">
         Maximum contrast for text readability
-    </p>
+    </x-text>
     <x-button color="white" size="lg">Get Started</x-button>
 </x-jumbotron>
 ```
@@ -124,12 +128,12 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron bgGradient="bg-gradient-to-r from-blue-500 to-purple-600">
-    <h1 class="text-5xl font-bold text-white mb-4">
+    <x-heading as="h1" fontSize="5xl" fontWeight="bold" color="white" mb="4">
         Gradient Background
-    </h1>
-    <p class="text-xl text-white/90 mb-6">
+    </x-heading>
+    <x-text fontSize="xl" color="white" mb="6" class="opacity-90">
         Modern and eye-catching design
-    </p>
+    </x-text>
     <x-button color="white" size="lg">Learn More</x-button>
 </x-jumbotron>
 ```
@@ -138,12 +142,12 @@ Large showcase section component for hero areas and landing pages.
 
 ```blade
 <x-jumbotron bgGradient="bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">
-    <h1 class="text-5xl font-bold text-white mb-4">
+    <x-heading as="h1" fontSize="5xl" fontWeight="bold" color="white" mb="4">
         Multi-Color Gradient
-    </h1>
-    <p class="text-xl text-white/90 mb-6">
+    </x-heading>
+    <x-text fontSize="xl" color="white" mb="6" class="opacity-90">
         Vibrant and dynamic background
-    </p>
+    </x-text>
     <x-button color="white" size="lg">Get Started</x-button>
 </x-jumbotron>
 ```
