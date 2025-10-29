@@ -1,6 +1,6 @@
 # IconButton
 
-Icon button component for displaying icon-only buttons.
+Icon button component for displaying icon-only buttons. IconButton provides a compact way to create icon-only buttons with support for various sizes, variants, and colors.
 
 ## Basic Usage
 
@@ -21,6 +21,10 @@ Icon button component for displaying icon-only buttons.
 | `loading` | `boolean` | `false` | Loading state |
 | `type` | `string` | `'button'` | Button type |
 | `ariaLabel` | `string` | `null` | Accessibility label |
+
+### Style Props
+
+IconButton supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
@@ -89,20 +93,20 @@ Icon button component for displaying icon-only buttons.
 ### Toolbar Buttons
 
 ```blade
-<div class="flex gap-2">
+<x-flex gap="2">
     <x-icon-button icon="mdi:content-save" aria-label="Save" />
     <x-icon-button icon="mdi:printer" aria-label="Print" />
     <x-icon-button icon="mdi:share" aria-label="Share" />
-</div>
+</x-flex>
 ```
 
 ### Action Buttons
 
 ```blade
-<div class="flex gap-1">
+<x-flex gap="1">
     <x-icon-button icon="mdi:pencil" size="sm" variant="ghost" />
     <x-icon-button icon="mdi:delete" size="sm" variant="ghost" color="danger" />
-</div>
+</x-flex>
 ```
 
 ## Livewire Integration
