@@ -1,6 +1,6 @@
 # ProgressCircle
 
-Circular progress component for displaying progress in a circular format.
+Circular progress component for displaying progress in a circular format. ProgressCircle provides a flexible way to display circular progress indicators.
 
 ## Basic Usage
 
@@ -20,6 +20,10 @@ Circular progress component for displaying progress in a circular format.
 | `showValue` | `bool` | `false` | Whether to show the percentage value |
 | `label` | `string` | `null` | Custom label text |
 | `indeterminate` | `bool` | `false` | Whether the progress is indeterminate |
+
+### Style Props
+
+ProgressCircle supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 

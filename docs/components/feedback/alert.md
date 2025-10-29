@@ -1,6 +1,6 @@
 # Alert
 
-Alert component for displaying important messages and notifications to users.
+Alert component for displaying important messages and notifications to users. Alert provides a flexible way to display alerts with various statuses and variants.
 
 ## Basic Usage
 
@@ -20,6 +20,10 @@ Alert component for displaying important messages and notifications to users.
 | `title` | `string` | `null` | Alert title |
 | `icon` | `string` | `null` | Custom icon name (defaults to status icon) |
 | `closable` | `bool` | `false` | Whether the alert can be closed |
+
+### Style Props
+
+Alert supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Status Types
 

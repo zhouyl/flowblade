@@ -1,6 +1,6 @@
 # Toast
 
-Toast notification component for displaying temporary messages with auto-dismiss functionality.
+Toast notification component for displaying temporary messages with auto-dismiss functionality. Toast provides a flexible way to display toast notifications.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ This component requires **Alpine.js** to be installed in your project for the in
 ## Basic Usage
 
 ```blade
-<x-toast 
+<x-toast
     status="success"
     title="Success"
     description="Your changes have been saved."
@@ -31,6 +31,10 @@ This component requires **Alpine.js** to be installed in your project for the in
 | `duration` | `int` | `5000` | Auto-dismiss duration in milliseconds (0 = no auto-dismiss) |
 | `closable` | `bool` | `true` | Whether the toast can be manually closed |
 | `position` | `string` | `'top-right'` | Position: `top-right`, `top-left`, `bottom-right`, `bottom-left`, `top-center`, `bottom-center` |
+
+### Style Props
+
+Toast supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Status Types
 

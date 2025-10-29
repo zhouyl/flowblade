@@ -1,6 +1,6 @@
 # Status
 
-Status indicator component for displaying status with color-coded indicators.
+Status indicator component for displaying status with color-coded indicators. Status provides a flexible way to display status indicators.
 
 ## Basic Usage
 
@@ -17,6 +17,10 @@ Status indicator component for displaying status with color-coded indicators.
 | `size` | `string` | `'md'` | Size: `xs`, `sm`, `md`, `lg` |
 | `label` | `string` | `null` | Status label text |
 | `pulse` | `bool` | `false` | Whether to show pulse animation |
+
+### Style Props
+
+Status supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Status Types
 

@@ -1,11 +1,11 @@
 # EmptyState
 
-Empty state component for displaying empty or no-data states with optional actions.
+Empty state component for displaying empty or no-data states with optional actions. EmptyState provides a flexible way to display empty states.
 
 ## Basic Usage
 
 ```blade
-<x-empty-state 
+<x-empty-state
     icon="heroicons:inbox"
     title="No messages"
     description="You don't have any messages yet."
@@ -20,6 +20,10 @@ Empty state component for displaying empty or no-data states with optional actio
 | `title` | `string` | `null` | Title text |
 | `description` | `string` | `null` | Description text |
 | `size` | `string` | `'md'` | Size: `sm`, `md`, `lg` |
+
+### Style Props
+
+EmptyState supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 

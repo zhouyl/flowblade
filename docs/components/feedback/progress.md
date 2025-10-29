@@ -1,6 +1,6 @@
 # Progress
 
-Progress component for displaying progress indicators and completion status.
+Progress component for displaying progress indicators and completion status. Progress provides a flexible way to display progress bars.
 
 ## Basic Usage
 
@@ -20,6 +20,10 @@ Progress component for displaying progress indicators and completion status.
 | `showValue` | `bool` | `false` | Whether to show the percentage value |
 | `label` | `string` | `null` | Custom label text |
 | `indeterminate` | `bool` | `false` | Whether the progress is indeterminate |
+
+### Style Props
+
+Progress supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 

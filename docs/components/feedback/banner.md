@@ -1,18 +1,18 @@
 # Banner
 
-Sticky banner component for announcements, marketing messages, and notifications fixed to the top or bottom of the page.
+Sticky banner component for announcements, marketing messages, and notifications fixed to the top or bottom of the page. Banner provides a flexible way to display sticky banners.
 
 ## Basic Usage
 
 ```blade
 <x-banner id="sticky-banner">
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-        <span class="inline-flex p-1 me-3 bg-gray-200 rounded-full dark:bg-gray-600 w-6 h-6 items-center justify-center shrink-0">
-            <x-icon name="megaphone" class="w-3 h-3 text-gray-500 dark:text-gray-400" />
-            <span class="sr-only">Announcement</span>
-        </span>
-        <span>New brand identity has been launched for the <a href="https://example.com" class="inline font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline">Company</a></span>
-    </p>
+    <x-flex align="center" fontSize="sm" color="gray.500">
+        <x-box p="1" me="3" bg="gray.200" rounded="full" w="6" h="6" display="flex" align="center" justify="center">
+            <x-dynamic-component :component="'icon'" name="megaphone" w="3" h="3" />
+            <x-text as="span" srOnly>Announcement</x-text>
+        </x-box>
+        <x-text as="span">New brand identity has been launched for the <x-link href="https://example.com" fontWeight="medium" textDecoration="underline">Company</x-link></x-text>
+    </x-flex>
 </x-banner>
 ```
 
@@ -23,6 +23,10 @@ Sticky banner component for announcements, marketing messages, and notifications
 | `id` | `string` | `'banner'` | Unique identifier for the banner (required for dismissible) |
 | `position` | `string` | `'top'` | Position of the banner: `top` or `bottom` |
 | `dismissible` | `bool` | `true` | Whether the banner can be dismissed |
+
+### Style Props
+
+Banner supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Variants
 

@@ -1,6 +1,6 @@
 # Spinner
 
-Spinner component for displaying loading states and indicating ongoing processes.
+Spinner component for displaying loading states and indicating ongoing processes. Spinner provides a flexible way to display loading indicators.
 
 ## Basic Usage
 
@@ -16,6 +16,10 @@ Spinner component for displaying loading states and indicating ongoing processes
 | `color` | `string` | `'primary'` | Color: `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `gray`, `white` |
 | `variant` | `string` | `'spinner'` | Variant: `spinner`, `dots`, `pulse`, `ring` |
 | `label` | `string` | `'Loading...'` | Accessible label for screen readers |
+
+### Style Props
+
+Spinner supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Variants
 

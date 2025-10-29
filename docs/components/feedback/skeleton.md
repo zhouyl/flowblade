@@ -1,6 +1,6 @@
 # Skeleton
 
-Loading placeholder component that mimics the structure of content being loaded. Provides visual feedback during data fetching.
+Loading placeholder component that mimics the structure of content being loaded. Provides visual feedback during data fetching. Skeleton provides a flexible way to display loading placeholders.
 
 ## Basic Usage
 
@@ -18,6 +18,10 @@ Loading placeholder component that mimics the structure of content being loaded.
 | `lines` | `int\|null` | `3` | Number of lines for text type |
 | `animate` | `bool` | `true` | Whether to animate with pulse effect |
 | `rounded` | `bool` | `true` | Whether to use rounded corners |
+
+### Style Props
+
+Skeleton supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Types
 
