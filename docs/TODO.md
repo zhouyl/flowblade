@@ -12,9 +12,9 @@
 **总任务数**: 2 个主要任务
 **已完成**: 0 个
 **待完成**: 2 个
-**完成度**: 53%
+**完成度**: 56%
 
-**当前阶段**: Phase 3 - 文档规范化 - 其他组件 (进行中 - Typography、Button、Forms、Data Display、Navigation 已完成 100%)
+**当前阶段**: Phase 3 - 文档规范化 - 其他组件 (进行中 - Typography、Button、Forms、Data Display、Navigation、Overlay 已完成 100%)
 
 ## 工作目标
 
@@ -298,7 +298,13 @@
   - [x] 3.5.6 Steps 组件文档 - 已完成
   - [x] 3.5.7 MegaMenu 组件文档 - 已完成
   - [x] 3.5.8 SpeedDial 组件文档 - 已完成
-- [ ] 3.6 Overlay 组件文档 (6 个)
+- [x] 3.6 Overlay 组件文档 (6 个) - 已完成 (6/6)
+  - [x] 3.6.1 Modal 组件文档 - 已完成
+  - [x] 3.6.2 Drawer 组件文档 - 已完成
+  - [x] 3.6.3 Tooltip 组件文档 - 已完成
+  - [x] 3.6.4 Popover 组件文档 - 已完成
+  - [x] 3.6.5 Menu 组件文档 - 已完成
+  - [x] 3.6.6 HoverCard 组件文档 - 已完成
 - [ ] 3.7 Feedback 组件文档 (9 个)
 - [ ] 3.8 Media 组件文档 (4 个)
 - [ ] 3.9 Disclosure 组件文档 (2 个)
