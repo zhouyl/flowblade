@@ -29,9 +29,15 @@ Card component for grouping and displaying related content in a contained format
 | `size` | `string` | `'md'` | Size: `xs`, `sm`, `md`, `lg`, `xl` |
 | `variant` | `string` | `'elevated'` | Variant: `elevated`, `outline`, `filled`, `ghost` |
 
-### Style Props
+## Style Props
 
-Card supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Card supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Variants
 
