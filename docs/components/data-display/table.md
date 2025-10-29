@@ -39,9 +39,15 @@ Table component for displaying tabular data in a structured format. Table provid
 | `variant` | `string` | `'simple'` | Variant: `simple`, `striped`, `bordered` |
 | `hover` | `boolean` | `false` | Enable hover effect |
 
-### Style Props
+## Style Props
 
-Table supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Table supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Variants
 
