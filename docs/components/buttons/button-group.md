@@ -1,6 +1,6 @@
 # ButtonGroup
 
-Button group component for grouping multiple buttons together.
+Button group component for grouping multiple buttons together. ButtonGroup provides a way to group related buttons with support for horizontal and vertical layouts.
 
 ## Basic Usage
 
@@ -19,6 +19,10 @@ Button group component for grouping multiple buttons together.
 | `orientation` | `string` | `'horizontal'` | Orientation: `horizontal`, `vertical` |
 | `attached` | `boolean` | `true` | Connect buttons (no gap) |
 | `spacing` | `string` | `null` | Spacing (only when `attached=false`)：`xs`, `sm`, `md`, `lg` |
+
+### Style Props
+
+ButtonGroup supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Horizontal Layout
 
@@ -65,13 +69,13 @@ Button group component for grouping multiple buttons together.
 ```blade
 <x-button-group>
     <x-button variant="outline">
-        <x-icon name="mdi:format-bold" />
+        <x-dynamic-component :component="'icon'" name="mdi:format-bold" />
     </x-button>
     <x-button variant="outline">
-        <x-icon name="mdi:format-italic" />
+        <x-dynamic-component :component="'icon'" name="mdi:format-italic" />
     </x-button>
     <x-button variant="outline">
-        <x-icon name="mdi:format-underline" />
+        <x-dynamic-component :component="'icon'" name="mdi:format-underline" />
     </x-button>
 </x-button-group>
 ```

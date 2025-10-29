@@ -1,6 +1,6 @@
 # CloseButton
 
-Close button component for dialogs, modals, notifications, etc.
+Close button component for dialogs, modals, notifications, etc. CloseButton provides a convenient way to create close buttons with consistent styling and accessibility.
 
 ## Basic Usage
 
@@ -15,6 +15,10 @@ Close button component for dialogs, modals, notifications, etc.
 | `size` | `string` | `'md'` | Button size：`xs`, `sm`, `md`, `lg`, `xl` |
 | `disabled` | `boolean` | `false` | Disabled state |
 | `ariaLabel` | `string` | `'Close'` | Accessibility label |
+
+### Style Props
+
+CloseButton supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
@@ -38,58 +42,60 @@ Close button component for dialogs, modals, notifications, etc.
 ### Dialog Close Button
 
 ```blade
-<div class="relative p-6 bg-white rounded-lg shadow-lg">
-    <x-close-button 
-        class="absolute top-4 right-4"
+<x-box position="relative" p="6" bg="white" rounded="lg" class="shadow-lg">
+    <x-close-button
+        position="absolute"
+        top="4"
+        right="4"
         aria-label="Close dialog"
     />
-    <h2>Dialog Title</h2>
-    <p>Dialog content...</p>
-</div>
+    <x-heading as="h2">Dialog Title</x-heading>
+    <x-text>Dialog content...</x-text>
+</x-box>
 ```
 
 ### Notification Close Button
 
 ```blade
-<div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
-    <div class="flex-1">
-        <h3 class="font-semibold">Notification Title</h3>
-        <p class="text-sm">Notification content...</p>
-    </div>
+<x-flex align="start" gap="3" p="4" bg="blue.50" rounded="lg">
+    <x-box flex="1">
+        <x-heading as="h3" fontWeight="semibold">Notification Title</x-heading>
+        <x-text fontSize="sm">Notification content...</x-text>
+    </x-box>
     <x-close-button size="sm" />
-</div>
+</x-flex>
 ```
 
 ### Alert Close Button
 
 ```blade
-<div class="flex items-center justify-between p-4 bg-yellow-50 border border-yellow-200 rounded">
-    <span>This is a warning message</span>
+<x-flex align="center" justify="between" p="4" bg="yellow.50" border="1" borderColor="yellow.200" rounded="md">
+    <x-text as="span">This is a warning message</x-text>
     <x-close-button size="sm" />
-</div>
+</x-flex>
 ```
 
 ## Alpine.js Integration
 
 ```blade
-<div x-data="{ show: true }" x-show="show">
-    <div class="p-4 bg-white rounded shadow">
+<x-box x-data="{ show: true }" x-show="show">
+    <x-box p="4" bg="white" rounded="md" class="shadow">
         <x-close-button @click="show = false" />
-        <p>Closeable content</p>
-    </div>
-</div>
+        <x-text>Closeable content</x-text>
+    </x-box>
+</x-box>
 ```
 
 ## Livewire Integration
 
 ```blade
-<div>
+<x-box>
     @if($showNotification)
-        <div class="p-4 bg-green-50 rounded">
+        <x-box p="4" bg="green.50" rounded="md">
             <x-close-button wire:click="$set('showNotification', false)" />
-            <p>Operation successful!</p>
-        </div>
+            <x-text>Operation successful!</x-text>
+        </x-box>
     @endif
-</div>
+</x-box>
 ```
 
