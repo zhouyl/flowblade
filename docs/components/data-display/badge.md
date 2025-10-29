@@ -18,11 +18,17 @@ Badge component for displaying status, labels, or counts. Badge provides a flexi
 | `size` | `string` | `'md'` | Size: `xs`, `sm`, `md`, `lg`, `xl` |
 | `color` | `string` | `'primary'` | Color: `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `gray` |
 | `variant` | `string` | `'solid'` | Variant: `solid`, `subtle`, `outline` |
-| `icon` | `string` | `null` | Icon name |
+| `icon` | `string` | `null` | Icon name (Iconify format) |
 
-### Style Props
+## Style Props
 
-Badge supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Badge supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Colors
 
