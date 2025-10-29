@@ -4,17 +4,23 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Buttons;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Button Component
  *
  * Versatile button component with multiple variants, sizes, and states.
  * Supports icons, loading states, and follows Flowbite design patterns.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Button extends Component
 {
+    use HasStyleProps;
+
     public string $color;
 
     public string $size;
@@ -26,15 +32,16 @@ class Button extends Component
     /**
      * Create a new component instance
      *
-     * @param null|string $color     button color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', etc
-     * @param null|string $size      Button size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'
-     * @param string      $variant   Button variant: 'solid', 'outline', 'ghost', 'link'
-     * @param string      $rounded   Border radius: 'none', 'sm', 'md', 'lg', 'xl', 'full'
-     * @param bool        $disabled  Whether button is disabled
-     * @param bool        $loading   Whether button is in loading state (also disables button)
-     * @param null|string $type      Button type attribute: 'button', 'submit', 'reset'
-     * @param null|string $leftIcon  Icon name for left side (Iconify format)
-     * @param null|string $rightIcon Icon name for right side (Iconify format)
+     * @param null|string $color         button color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', etc
+     * @param null|string $size          Button size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'
+     * @param string      $variant       Button variant: 'solid', 'outline', 'ghost', 'link'
+     * @param string      $rounded       Border radius: 'none', 'sm', 'md', 'lg', 'xl', 'full'
+     * @param bool        $disabled      Whether button is disabled
+     * @param bool        $loading       Whether button is in loading state (also disables button)
+     * @param null|string $type          Button type attribute: 'button', 'submit', 'reset'
+     * @param null|string $leftIcon      Icon name for left side (Iconify format)
+     * @param null|string $rightIcon     Icon name for right side (Iconify format)
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         ?string $color = null,
@@ -46,11 +53,13 @@ class Button extends Component
         public ?string $type = 'button',
         public ?string $leftIcon = null,
         public ?string $rightIcon = null,
+        ...$styleProps
     ) {
         $this->color = $color ?? ComponentHelper::config('default_color', 'primary');
         $this->size = $size ?? ComponentHelper::config('default_size', 'md');
         $this->variant = ComponentHelper::parseVariant($variant);
         $this->disabled = $disabled || $this->loading;
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -64,13 +73,15 @@ class Button extends Component
         $roundedClasses = ComponentHelper::getRoundedClass($this->rounded);
 
         $disabledClasses = $this->disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer';
+        $styleClasses = $this->parseStyleProps();
 
         return ComponentHelper::mergeClasses(
             $baseClasses,
             $variantClasses,
             $sizeClasses,
             $roundedClasses,
-            $disabledClasses
+            $disabledClasses,
+            $styleClasses
         );
     }
 

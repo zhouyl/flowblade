@@ -4,29 +4,38 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Buttons;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * ButtonGroup Component
  *
  * Container component for grouping multiple buttons together.
  * Supports both attached (seamless) and separated layouts in horizontal or vertical orientation.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class ButtonGroup extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string      $orientation Button layout direction: 'horizontal', 'vertical'
-     * @param bool        $attached    Whether buttons are attached (seamless) or separated
-     * @param null|string $spacing     Gap between buttons when not attached: 'xs', 'sm', 'md', 'lg'
+     * @param string      $orientation   Button layout direction: 'horizontal', 'vertical'
+     * @param bool        $attached      Whether buttons are attached (seamless) or separated
+     * @param null|string $spacing       Gap between buttons when not attached: 'xs', 'sm', 'md', 'lg'
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $orientation = 'horizontal',
         public bool $attached = true,
         public ?string $spacing = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -73,6 +82,13 @@ class ButtonGroup extends Component
             } else {
                 $classes[] = $this->orientation === 'horizontal' ? 'gap-2' : 'gap-2';
             }
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

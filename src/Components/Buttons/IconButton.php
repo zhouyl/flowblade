@@ -4,29 +4,36 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Buttons;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * IconButton Component
  *
  * Compact button component designed specifically for icons.
  * Perfect for toolbars, action menus, and space-constrained interfaces.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class IconButton extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string      $icon      Icon name in Iconify format (e.g., 'mdi:pencil')
-     * @param null|string $size      Button size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
-     * @param null|string $variant   Button variant: 'solid', 'outline', 'ghost', 'link'
-     * @param null|string $color     Button color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info'
-     * @param bool        $rounded   Whether to use fully rounded (circular) shape
-     * @param bool        $disabled  Whether button is disabled
-     * @param bool        $loading   Whether button is in loading state
-     * @param string      $type      Button type attribute: 'button', 'submit', 'reset'
-     * @param null|string $ariaLabel Accessible label for screen readers
+     * @param string      $icon          Icon name in Iconify format (e.g., 'mdi:pencil')
+     * @param null|string $size          Button size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $variant       Button variant: 'solid', 'outline', 'ghost', 'link'
+     * @param null|string $color         Button color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info'
+     * @param bool        $rounded       Whether to use fully rounded (circular) shape
+     * @param bool        $disabled      Whether button is disabled
+     * @param bool        $loading       Whether button is in loading state
+     * @param string      $type          Button type attribute: 'button', 'submit', 'reset'
+     * @param null|string $ariaLabel     Accessible label for screen readers
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $icon,
@@ -38,7 +45,9 @@ class IconButton extends Component
         public bool $loading = false,
         public string $type = 'button',
         public ?string $ariaLabel = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -91,6 +100,13 @@ class IconButton extends Component
         // Disabled state
         if ($this->disabled || $this->loading) {
             $classes[] = 'opacity-50 cursor-not-allowed';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

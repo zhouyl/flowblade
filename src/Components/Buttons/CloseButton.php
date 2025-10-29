@@ -4,29 +4,38 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Buttons;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * CloseButton Component
  *
  * Specialized button component for closing modals, dialogs, alerts, and other dismissible elements.
  * Features a consistent X icon with accessible labeling.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class CloseButton extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $size      Button size: 'xs', 'sm', 'md', 'lg', 'xl'
-     * @param bool        $disabled  Whether button is disabled
-     * @param null|string $ariaLabel Accessible label for screen readers (default: 'Close')
+     * @param null|string $size          Button size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param bool        $disabled      Whether button is disabled
+     * @param null|string $ariaLabel     Accessible label for screen readers (default: 'Close')
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $size = 'md',
         public bool $disabled = false,
         public ?string $ariaLabel = 'Close',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -65,6 +74,13 @@ class CloseButton extends Component
         // Disabled state
         if ($this->disabled) {
             $classes[] = 'opacity-50 cursor-not-allowed';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);
