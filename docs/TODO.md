@@ -16,7 +16,9 @@
 **Style Props 修复进度**:
 - Badge: ✅ 完成
 - Avatar: ✅ 完成
-- 待修复: ~50 个组件
+- Icon: ✅ 完成
+- Tag: ✅ 完成
+- 待修复: ~46 个组件
 
 ## 工作计划
 
@@ -78,8 +80,8 @@
 - [ ] 3.2 DataDisplay 组件 (24 个) - 进行中
   - [x] Badge - ✅ Style Props 已添加
   - [x] Avatar - ✅ Style Props 已添加
-  - [x] Icon - ⚠️ 缺少 Style Props 支持
-  - [x] Tag - ⚠️ 缺少 Style Props 支持
+  - [x] Icon - ✅ Style Props 已添加
+  - [x] Tag - ✅ Style Props 已添加
   - [x] ListItem - ✅ 新增组件，符合规范
   - [ ] 其他 19 个 - 待检查
 
