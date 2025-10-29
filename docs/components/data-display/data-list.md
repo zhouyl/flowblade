@@ -30,9 +30,15 @@ Data list component for displaying key-value pairs in a structured format. DataL
 | `label` | `string` | `null` | Label text |
 | `value` | `string` | `null` | Value text |
 
-### Style Props
+## Style Props
 
-DataList and DataListItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+DataList and DataListItem support all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Vertical Orientation
 
