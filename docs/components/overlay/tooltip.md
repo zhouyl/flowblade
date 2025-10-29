@@ -1,6 +1,6 @@
 # Tooltip
 
-Tooltip component for displaying additional information on hover or click.
+Tooltip component for displaying additional information on hover or click. Tooltip provides a flexible way to display tooltips with support for various placements and styles.
 
 ## Requirements
 
@@ -34,6 +34,10 @@ npm install flowbite
 | `style` | `string` | `'dark'` | Style: `dark`, `light` |
 | `arrow` | `bool` | `true` | Whether to show arrow |
 | `animation` | `string` | `'300'` | Animation duration: `100`, `150`, `200`, `300`, `500`, `700`, `1000` |
+
+### Style Props
+
+Tooltip supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Placement
 

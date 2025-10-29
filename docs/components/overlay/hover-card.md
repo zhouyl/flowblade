@@ -1,6 +1,6 @@
 # HoverCard
 
-Hover card component for displaying rich content when hovering over a trigger element. Specifically designed for hover interactions with automatic delay to prevent accidental triggers.
+Hover card component for displaying rich content when hovering over a trigger element. Specifically designed for hover interactions with automatic delay to prevent accidental triggers. HoverCard provides a flexible way to display hover cards.
 
 ## Requirements
 
@@ -38,6 +38,10 @@ npm install flowbite
 | `animation` | `string\|null` | `'300'` | Animation duration: `100`, `150`, `200`, `300`, `500`, `700`, `1000` |
 | `offset` | `int\|null` | `null` | Offset distance from trigger element |
 | `width` | `string\|null` | `'md'` | Width: `sm`, `md`, `lg`, `xl`, `2xl` |
+
+### Style Props
+
+HoverCard supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Slots
 

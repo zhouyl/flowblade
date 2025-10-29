@@ -1,6 +1,6 @@
 # Menu
 
-Dropdown menu component for displaying a list of menu items when clicking or hovering over a trigger element.
+Dropdown menu component for displaying a list of menu items when clicking or hovering over a trigger element. Menu provides a flexible way to create dropdown menus.
 
 ## Requirements
 
@@ -23,14 +23,14 @@ npm install flowbite
     <x-slot:trigger>
         <x-button>Open Menu</x-button>
     </x-slot:trigger>
-    
-    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+
+    <x-vstack py="2" fontSize="sm" color="gray.700">
         <x-menu-item href="#">Dashboard</x-menu-item>
         <x-menu-item href="#">Settings</x-menu-item>
         <x-menu-item href="#">Earnings</x-menu-item>
         <x-menu-divider />
         <x-menu-item href="#">Sign out</x-menu-item>
-    </ul>
+    </x-vstack>
 </x-menu>
 ```
 
@@ -74,6 +74,10 @@ Header for menu sections.
 |------|-------------|
 | `trigger` | The trigger element (button, link, etc.) |
 | Default slot | Menu content (items, dividers, headers) |
+
+### Style Props
+
+Menu and related components support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Simple Menu
 

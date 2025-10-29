@@ -1,6 +1,6 @@
 # Drawer
 
-Off-canvas drawer component (also known as sidebar or offcanvas) that slides in from the edge of the screen. Perfect for navigation menus, filters, shopping carts, and additional content.
+Off-canvas drawer component (also known as sidebar or offcanvas) that slides in from the edge of the screen. Perfect for navigation menus, filters, shopping carts, and additional content. Drawer provides a flexible way to display off-canvas content.
 
 ## Requirements
 
@@ -38,6 +38,10 @@ npm install flowbite
 |------|------|---------|-------------|
 | `id` | `string` | auto-generated | Drawer ID (required for targeting) |
 | `title` | `string\|null` | `null` | Drawer title |
+
+### Style Props
+
+Drawer supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `placement` | `string` | `'left'` | Placement: `left`, `right`, `top`, `bottom` |
 | `width` | `string\|null` | `'md'` | Width for left/right: `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `full` |
 | `height` | `string\|null` | `'md'` | Height for top/bottom: `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `full` |

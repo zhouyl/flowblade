@@ -1,6 +1,6 @@
 # Popover
 
-Popover component for displaying rich content in a popup box relative to a trigger element.
+Popover component for displaying rich content in a popup box relative to a trigger element. Popover provides a flexible way to display popovers with support for various placements and widths.
 
 ## Requirements
 
@@ -38,6 +38,10 @@ npm install flowbite
 | `animation` | `string\|null` | `'300'` | Animation duration: `100`, `150`, `200`, `300`, `500`, `700`, `1000` |
 | `offset` | `int\|null` | `null` | Offset distance from trigger element |
 | `width` | `string\|null` | `'md'` | Width: `sm`, `md`, `lg`, `xl`, `2xl` |
+
+### Style Props
+
+Popover supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Slots
 

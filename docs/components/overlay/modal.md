@@ -1,6 +1,6 @@
 # Modal
 
-Modal dialog component for displaying content in an overlay with backdrop. Perfect for confirmations, forms, and detailed content that requires user attention.
+Modal dialog component for displaying content in an overlay with backdrop. Perfect for confirmations, forms, and detailed content that requires user attention. Modal provides a flexible way to display modal dialogs.
 
 ## Requirements
 
@@ -28,12 +28,12 @@ npm install flowbite
 <x-modal id="default-modal" title="Terms of Service">
     <x-slot:body>
         <x-text>
-            With less than a month to go before the European Union enacts new consumer 
-            privacy laws for its citizens, companies around the world are updating their 
+            With less than a month to go before the European Union enacts new consumer
+            privacy laws for its citizens, companies around the world are updating their
             terms of service agreements to comply.
         </x-text>
     </x-slot:body>
-    
+
     <x-slot:footer>
         <x-button data-modal-hide="default-modal">I accept</x-button>
         <x-button variant="outline" data-modal-hide="default-modal">Decline</x-button>
@@ -70,6 +70,10 @@ npm install flowbite
 | `data-modal-toggle="modalId"` | Toggle modal visibility |
 | `data-modal-show="modalId"` | Show modal |
 | `data-modal-hide="modalId"` | Hide modal |
+
+### Style Props
+
+Modal supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Simple Modal
 
