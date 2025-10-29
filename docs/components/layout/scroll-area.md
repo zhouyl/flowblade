@@ -1,6 +1,6 @@
 # ScrollArea
 
-Scrollable container with customizable scrollbar behavior.
+Scrollable container with customizable scrollbar behavior. ScrollArea provides a flexible container for displaying scrollable content with support for fixed heights and comprehensive style props.
 
 ## Props
 
@@ -11,11 +11,15 @@ Scrollable container with customizable scrollbar behavior.
 | `max-height` | string | `null` | Maximum height |
 | `scrollbar` | string | `'auto'` | Scrollbar visibility (auto, always, hidden) |
 
+### Style Props
+
+ScrollArea supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Basic Usage
 
 ```blade
 <x-scroll-area height="400px">
-    <div>Long content that scrolls...</div>
+    <x-text>Long content that scrolls...</x-text>
 </x-scroll-area>
 ```
 
@@ -26,7 +30,7 @@ Scrollable container with customizable scrollbar behavior.
 ```blade
 <x-scroll-area height="300px">
     @foreach($items as $item)
-        <div class="p-4 border-b">{{ $item->name }}</div>
+        <x-box p="4" border="b">{{ $item->name }}</x-box>
     @endforeach
 </x-scroll-area>
 ```
@@ -35,10 +39,10 @@ Scrollable container with customizable scrollbar behavior.
 
 ```blade
 <x-scroll-area max-height="500px">
-    <article class="prose">
-        <h1>Article Title</h1>
-        <p>Long article content...</p>
-    </article>
+    <x-box as="article" class="prose">
+        <x-heading as="h1">Article Title</x-heading>
+        <x-text>Long article content...</x-text>
+    </x-box>
 </x-scroll-area>
 ```
 
@@ -46,7 +50,7 @@ Scrollable container with customizable scrollbar behavior.
 
 ```blade
 <x-scroll-area height="400px" scrollbar="hidden">
-    <div>Content with hidden scrollbar</div>
+    <x-text>Content with hidden scrollbar</x-text>
 </x-scroll-area>
 ```
 
@@ -55,17 +59,17 @@ Scrollable container with customizable scrollbar behavior.
 ### Chat Messages
 
 ```blade
-<x-box shadow="lg" rounded="xl" class="overflow-hidden">
-    <div class="p-4 bg-gray-100 border-b">
-        <h3 class="font-bold">Chat</h3>
-    </div>
-    
+<x-box shadow="lg" rounded="xl" overflow="hidden">
+    <x-box p="4" bg="gray.100" border="b">
+        <x-heading as="h3" fontWeight="bold">Chat</x-heading>
+    </x-box>
+
     <x-scroll-area height="400px">
-        <x-vstack spacing="sm" class="p-4">
+        <x-vstack spacing="sm" p="4">
             @foreach($messages as $message)
-                <x-box 
-                    p="3" 
-                    :bg="$message->isOwn ? 'primary' : 'gray'" 
+                <x-box
+                    p="3"
+                    :bg="$message->isOwn ? 'primary' : 'gray'"
                     rounded="lg"
                     :class="$message->isOwn ? 'self-end text-white' : 'self-start'"
                 >
@@ -74,10 +78,10 @@ Scrollable container with customizable scrollbar behavior.
             @endforeach
         </x-vstack>
     </x-scroll-area>
-    
-    <div class="p-4 border-t">
+
+    <x-box p="4" border="t">
         <x-input placeholder="Type a message..." />
-    </div>
+    </x-box>
 </x-box>
 ```
 
