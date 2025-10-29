@@ -1,6 +1,6 @@
 # Text
 
-Text component for displaying paragraph text.
+Text component for displaying paragraph text. Text provides a flexible way to render text content with support for various sizes, weights, colors, and alignment options.
 
 ## Basic Usage
 
@@ -19,6 +19,10 @@ Text component for displaying paragraph text.
 | `align` | `string` | `null` | Alignment: `left`, `center`, `right`, `justify` |
 | `truncate` | `boolean` | `false` | Truncate text |
 | `lineClamp` | `string` | `null` | Line clamp: `1`, `2`, `3`, `4`, `5`, `6` |
+
+### Style Props
+
+Text supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
@@ -62,12 +66,12 @@ Text component for displaying paragraph text.
 
 ```blade
 <!-- Single line truncation -->
-<x-text truncate class="w-64">
+<x-text truncate w="64">
     This is a very long text that will be truncated with ellipsis when it exceeds the container width
 </x-text>
 
 <!-- Multi-line truncation -->
-<x-text line-clamp="2" class="w-64">
+<x-text line-clamp="2" w="64">
     This is a very long text that will be truncated at the end of the second line with ellipsis.
     Content beyond will be hidden.
 </x-text>
@@ -78,7 +82,7 @@ Text component for displaying paragraph text.
 ### Paragraph Text
 
 ```blade
-<x-text class="mb-4">
+<x-text mb="4">
     Flowblade is a Laravel Blade component library based on Tailwind CSS,
     providing rich UI components to help you quickly build modern web applications.
 </x-text>
@@ -95,7 +99,7 @@ Text component for displaying paragraph text.
 ### Leading text
 
 ```blade
-<x-text size="lg" class="mb-6">
+<x-text size="lg" mb="6">
     Welcome to our product, let's get started!
 </x-text>
 ```
