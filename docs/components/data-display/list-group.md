@@ -39,10 +39,17 @@ Interactive list component for displaying a series of items, buttons or links in
 | `disabled` | `bool` | `false` | Whether the item is disabled |
 | `first` | `bool` | `false` | Whether this is the first item |
 
-### Style Props
-
-ListGroup and ListGroupItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `last` | `bool` | `false` | Whether this is the last item |
+
+## Style Props
+
+ListGroup and ListGroupItem support all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Examples
 

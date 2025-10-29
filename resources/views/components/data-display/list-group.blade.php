@@ -1,10 +1,10 @@
 @if($as === 'ul')
-<ul {{ $attributes->merge(['class' => 'w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white']) }}>
-    {{ $slot }}
-</ul>
+    <ul {{ $attributes->merge(['class' => $classes()]) }}>
+        {{ $slot }}
+    </ul>
 @else
-<div {{ $attributes->merge(['class' => 'w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white']) }}>
-    {{ $slot }}
-</div>
+    <div {{ $attributes->merge(['class' => $classes()]) }}>
+        {{ $slot }}
+    </div>
 @endif
 
