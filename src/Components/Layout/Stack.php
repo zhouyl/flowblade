@@ -4,42 +4,84 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Stack Component
  *
  * Flexbox-based layout component that stacks elements vertically or horizontally
- * with consistent spacing. Supports optional dividers between items.
+ * with consistent spacing. Supports optional dividers between items and comprehensive
+ * style props support.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Stack extends Component
 {
-    public string $spacing;
+    use HasStyleProps;
+
+    /**
+     * HTML element to render
+     *
+     * @var string
+     */
+    public string $as = 'div';
+
+    /**
+     * Stack direction
+     *
+     * @var string
+     */
+    public string $direction = 'vertical';
+
+    /**
+     * Spacing between items
+     *
+     * @var string
+     */
+    public string $spacing = 'md';
+
+    /**
+     * Whether to show dividers between items
+     *
+     * @var bool
+     */
+    public bool $divider = false;
 
     /**
      * Create a new component instance
      *
-     * @param string      $as        HTML element to render (default: 'div')
-     * @param string      $direction Stack direction: 'vertical', 'horizontal'
-     * @param null|string $spacing   Spacing between items: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
-     * @param null|string $align     Align items: 'start', 'center', 'end', 'stretch', 'baseline'
-     * @param null|string $justify   Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
-     * @param bool        $divider   Whether to show dividers between items
+     * All style props are dynamically handled by HasStyleProps trait.
+     *
+     * @param string      $as            HTML element to render (default: 'div')
+     * @param string      $direction     Stack direction: 'vertical', 'horizontal'
+     * @param null|string $spacing       Spacing between items: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param bool        $divider       Whether to show dividers between items
+     * @param mixed       ...$styleProps Style props including:
+     *                                   - align: Align items ('start', 'center', 'end', 'stretch', 'baseline')
+     *                                   - justify: Justify content ('start', 'center', 'end', 'between', 'around', 'evenly')
+     *                                   - And all other style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
-        public string $as = 'div',
-        public string $direction = 'vertical',
+        string $as = 'div',
+        string $direction = 'vertical',
         ?string $spacing = null,
-        public ?string $align = null,
-        public ?string $justify = null,
-        public bool $divider = false,
+        bool $divider = false,
+        ...$styleProps
     ) {
+        $this->as = $as;
+        $this->direction = $direction;
         $this->spacing = $spacing ?? 'md';
+        $this->divider = $divider;
+
+        $this->setStyleProps($styleProps);
     }
 
     /**
-     * Get the component classes.
+     * Get the component classes
+     *
+     * @return string Generated CSS classes
      */
     public function classes(): string
     {
@@ -59,37 +101,6 @@ class Stack extends Component
             $classes[] = "gap-{$spacingMap[$this->spacing]}";
         }
 
-        // Align items
-        if ($this->align) {
-            $alignMap = [
-                'start' => 'items-start',
-                'center' => 'items-center',
-                'end' => 'items-end',
-                'stretch' => 'items-stretch',
-                'baseline' => 'items-baseline',
-            ];
-
-            if (isset($alignMap[$this->align])) {
-                $classes[] = $alignMap[$this->align];
-            }
-        }
-
-        // Justify content
-        if ($this->justify) {
-            $justifyMap = [
-                'start' => 'justify-start',
-                'center' => 'justify-center',
-                'end' => 'justify-end',
-                'between' => 'justify-between',
-                'around' => 'justify-around',
-                'evenly' => 'justify-evenly',
-            ];
-
-            if (isset($justifyMap[$this->justify])) {
-                $classes[] = $justifyMap[$this->justify];
-            }
-        }
-
         // Divider
         if ($this->divider) {
             if ($this->direction === 'horizontal') {
@@ -100,11 +111,14 @@ class Stack extends Component
             $classes[] = 'divide-gray-200';
         }
 
-        return ComponentHelper::mergeClasses(...$classes);
+        // Add style props classes (includes align and justify)
+        $styleClasses = $this->parseStyleProps();
+
+        return trim(implode(' ', $classes).' '.$styleClasses);
     }
 
     /**
-     * Get the view / contents that represent the component.
+     * Get the view / contents that represent the component
      */
     public function render()
     {

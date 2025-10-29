@@ -39,53 +39,35 @@ class Grid extends Component
      * All style props are dynamically handled by HasStyleProps trait.
      *
      * @param string      $as            HTML element to render (default: 'div')
-     * @param null|string $columns       Number of columns: '1'-'12', 'none', 'subgrid' (alias for templateColumns)
-     * @param null|string $rows          Number of rows: '1'-'6', 'none', 'subgrid' (alias for templateRows)
-     * @param null|string $gap           Gap between items using Tailwind spacing scale (0-96)
-     * @param null|string $gapX          Horizontal gap using Tailwind spacing scale (0-96)
-     * @param null|string $gapY          Vertical gap using Tailwind spacing scale (0-96)
      * @param null|string $autoFlow      Grid auto flow: 'row', 'col', 'dense', 'row-dense', 'col-dense'
-     * @param mixed       ...$styleProps Additional style props (p, m, bg, color, etc.)
+     * @param mixed       ...$styleProps Style props including:
+     *                                   - templateColumns/columns: Number of columns ('1'-'12', 'none', 'subgrid')
+     *                                   - templateRows/rows: Number of rows ('1'-'6', 'none', 'subgrid')
+     *                                   - gap: Gap between items (0-96)
+     *                                   - gapX: Horizontal gap (0-96)
+     *                                   - gapY: Vertical gap (0-96)
+     *                                   - And all other style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         string $as = 'div',
-        ?string $columns = null,
-        ?string $rows = null,
-        ?string $gap = null,
-        ?string $gapX = null,
-        ?string $gapY = null,
         ?string $autoFlow = null,
         ...$styleProps
     ) {
         $this->as = $as;
         $this->autoFlow = $autoFlow;
 
-        // Map columns/rows to templateColumns/templateRows for HasStyleProps
-        $gridProps = [];
-
-        if ($columns) {
-            $gridProps['templateColumns'] = $columns;
+        // Map 'columns' to 'templateColumns' and 'rows' to 'templateRows' if provided
+        if (isset($styleProps['columns'])) {
+            $styleProps['templateColumns'] = $styleProps['columns'];
+            unset($styleProps['columns']);
         }
 
-        if ($rows) {
-            $gridProps['templateRows'] = $rows;
+        if (isset($styleProps['rows'])) {
+            $styleProps['templateRows'] = $styleProps['rows'];
+            unset($styleProps['rows']);
         }
 
-        if ($gap) {
-            $gridProps['gap'] = $gap;
-        }
-
-        if ($gapX) {
-            $gridProps['gapX'] = $gapX;
-        }
-
-        if ($gapY) {
-            $gridProps['gapY'] = $gapY;
-        }
-
-        // Merge grid-specific props with style props
-        $allProps = array_merge($gridProps, $styleProps);
-        $this->setStyleProps($allProps);
+        $this->setStyleProps($styleProps);
     }
 
     /**

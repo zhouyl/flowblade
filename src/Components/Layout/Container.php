@@ -4,47 +4,67 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
-use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Container Component
  *
  * Responsive container that centers content and applies max-width constraints.
  * Commonly used for page layouts and content sections in enterprise applications.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Container extends Component
 {
-    public string $maxWidth;
+    use HasStyleProps;
 
-    public bool $centerContent;
+    /**
+     * Maximum width
+     *
+     * @var string
+     */
+    public string $maxWidth = '7xl';
 
-    public ?string $px;
-
-    public ?string $py;
+    /**
+     * Whether to center content horizontally
+     *
+     * @var bool
+     */
+    public bool $centerContent = true;
 
     /**
      * Create a new component instance
      *
+     * All style props are dynamically handled by HasStyleProps trait.
+     *
      * @param null|string $maxWidth      Maximum width (sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, full)
      * @param bool        $centerContent Whether to center content horizontally with mx-auto
-     * @param null|string $px            Horizontal padding using Tailwind spacing scale (0-96)
-     * @param null|string $py            Vertical padding using Tailwind spacing scale (0-96)
+     * @param mixed       ...$styleProps Style props including:
+     *                                   - px: Horizontal padding (0-96)
+     *                                   - py: Vertical padding (0-96)
+     *                                   - And all other style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         ?string $maxWidth = null,
         bool $centerContent = true,
-        ?string $px = null,
-        ?string $py = null,
+        ...$styleProps
     ) {
         $this->maxWidth = $maxWidth ?? '7xl';
         $this->centerContent = $centerContent;
-        $this->px = $px ?? '4';
-        $this->py = $py;
+
+        // Set default px if not provided
+        if (!isset($styleProps['px']) && !isset($styleProps['p'])) {
+            $styleProps['px'] = '4';
+        }
+
+        $this->setStyleProps($styleProps);
     }
 
     /**
-     * Get the component classes.
+     * Get the component classes
+     *
+     * @return string Generated CSS classes
      */
     public function classes(): string
     {
@@ -74,20 +94,14 @@ class Container extends Component
             $classes[] = $maxWidthMap[$this->maxWidth];
         }
 
-        // Padding
-        if ($this->px) {
-            $classes[] = "px-{$this->px}";
-        }
+        // Add style props classes
+        $styleClasses = $this->parseStyleProps();
 
-        if ($this->py) {
-            $classes[] = "py-{$this->py}";
-        }
-
-        return ComponentHelper::mergeClasses(...$classes);
+        return trim(implode(' ', $classes).' '.$styleClasses);
     }
 
     /**
-     * Get the view / contents that represent the component.
+     * Get the view / contents that represent the component
      */
     public function render()
     {

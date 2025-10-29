@@ -38,35 +38,24 @@ class Flex extends Component
      *
      * All style props are dynamically handled by HasStyleProps trait.
      *
-     * @param string      $as            HTML element to render (default: 'div')
-     * @param null|string $direction     Flex direction: 'row', 'col', 'row-reverse', 'col-reverse'
-     * @param null|string $align         Align items: 'start', 'center', 'end', 'stretch', 'baseline'
-     * @param null|string $justify       Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
-     * @param null|string $wrap          Flex wrap: 'wrap', 'nowrap', 'wrap-reverse'
-     * @param null|string $gap           Gap between items using Tailwind spacing scale (0-96)
-     * @param bool        $inline        Whether to use inline-flex instead of flex
-     * @param mixed       ...$styleProps Additional style props (p, m, bg, color, etc.)
+     * @param string $as            HTML element to render (default: 'div')
+     * @param bool   $inline        Whether to use inline-flex instead of flex
+     * @param mixed  ...$styleProps Style props including:
+     *                              - direction: Flex direction ('row', 'col', 'row-reverse', 'col-reverse')
+     *                              - align: Align items ('start', 'center', 'end', 'stretch', 'baseline')
+     *                              - justify: Justify content ('start', 'center', 'end', 'between', 'around', 'evenly')
+     *                              - wrap: Flex wrap ('wrap', 'nowrap', 'wrap-reverse')
+     *                              - gap: Gap between items (0-96)
+     *                              - And all other style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         string $as = 'div',
-        ?string $direction = null,
-        ?string $align = null,
-        ?string $justify = null,
-        ?string $wrap = null,
-        ?string $gap = null,
         bool $inline = false,
         ...$styleProps
     ) {
         $this->as = $as;
         $this->inline = $inline;
-
-        // Merge flex-specific props with style props
-        $allProps = array_merge(
-            compact('direction', 'align', 'justify', 'wrap', 'gap'),
-            $styleProps
-        );
-
-        $this->setStyleProps($allProps);
+        $this->setStyleProps($styleProps);
     }
 
     /**

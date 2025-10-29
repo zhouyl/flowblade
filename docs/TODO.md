@@ -12,9 +12,9 @@
 **总任务数**: 2 个主要任务
 **已完成**: 0 个
 **待完成**: 2 个
-**完成度**: 15%
+**完成度**: 20%
 
-**当前阶段**: Phase 1 - Style Props 实现 (进行中 - 已完成 40%)
+**当前阶段**: Phase 1 - Style Props 实现 (进行中 - 已完成 60%)
 
 ## 工作目标
 
@@ -209,12 +209,13 @@
   - [ ] 更新组件文档 - 待完成
   - [ ] 添加使用示例 - 待完成
 
-- [ ] 1.3 更新其他布局组件 - 进行中
-  - [x] Flex 组件 - 已完成
-  - [x] Grid 组件 - 已完成（添加 gapX, gapY 支持）
-  - [ ] Stack (HStack, VStack) 组件
-  - [ ] Container 组件
-  - [ ] Center 组件
+- [x] 1.3 更新其他布局组件 - 已完成
+  - [x] Box 组件 - 已完成（统一构造函数风格）
+  - [x] Flex 组件 - 已完成（移除 HasStyleProps 中已有的参数）
+  - [x] Grid 组件 - 已完成（移除 HasStyleProps 中已有的参数，支持 columns/rows 别名）
+  - [x] Stack (HStack, VStack) 组件 - 已完成（移除 align/justify 参数）
+  - [x] Container 组件 - 已完成（移除 px/py 参数）
+  - [x] Center 组件 - 已完成
 
 - [ ] 1.4 更新文字组件
   - [ ] Text 组件
