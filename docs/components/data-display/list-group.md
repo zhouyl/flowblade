@@ -38,7 +38,6 @@ Interactive list component for displaying a series of items, buttons or links in
 | `active` | `bool` | `false` | Whether the item is active |
 | `disabled` | `bool` | `false` | Whether the item is disabled |
 | `first` | `bool` | `false` | Whether this is the first item |
-
 | `last` | `bool` | `false` | Whether this is the last item |
 
 ## Style Props
