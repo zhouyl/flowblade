@@ -29,9 +29,13 @@ Card component for grouping and displaying related content in a contained format
 | `size` | `string` | `'md'` | Size: `xs`, `sm`, `md`, `lg`, `xl` |
 | `variant` | `string` | `'elevated'` | Variant: `elevated`, `outline`, `filled`, `ghost` |
 
+### CardHeader, CardBody, CardFooter Props
+
+These sub-components support all common style props for flexible styling.
+
 ## Style Props
 
-Card supports all common style props for flexible styling:
+Card, CardHeader, CardBody, and CardFooter support all common style props for flexible styling:
 
 - **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
 - **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
