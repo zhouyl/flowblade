@@ -1,6 +1,6 @@
 # Divider Component
 
-Enhanced separator with text/icon support for visually dividing content sections.
+Enhanced separator with text/icon support for visually dividing content sections. Divider provides a flexible way to separate content with optional text or icons.
 
 ## Basic Usage
 
@@ -17,6 +17,10 @@ Enhanced separator with text/icon support for visually dividing content sections
 | `align` | string | `'center'` | Text alignment: `left`, `center`, `right` |
 | `icon` | string | `''` | Icon name (Iconify format) |
 | `text` | string | `''` | Divider text |
+
+### Style Props
+
+Divider supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -42,7 +46,7 @@ Enhanced separator with text/icon support for visually dividing content sections
 
 ```blade
 <x-divider>
-    <span class="font-bold">Section Break</span>
+    <x-text as="span" fontWeight="bold">Section Break</x-text>
 </x-divider>
 ```
 
@@ -75,34 +79,34 @@ Enhanced separator with text/icon support for visually dividing content sections
 ### Vertical Divider
 
 ```blade
-<div class="flex items-center gap-4 h-12">
-    <span>Item 1</span>
+<x-flex align="center" gap="4" h="12">
+    <x-text as="span">Item 1</x-text>
     <x-divider orientation="vertical" />
-    <span>Item 2</span>
+    <x-text as="span">Item 2</x-text>
     <x-divider orientation="vertical" />
-    <span>Item 3</span>
-</div>
+    <x-text as="span">Item 3</x-text>
+</x-flex>
 ```
 
 ### Login Form Example
 
 ```blade
-<form>
+<x-box as="form">
     <x-field label="Email">
         <x-input type="email" placeholder="your@email.com" />
     </x-field>
-    
+
     <x-field label="Password">
         <x-password-input placeholder="••••••••" />
     </x-field>
-    
-    <x-button type="submit" class="w-full">Sign In</x-button>
-</form>
 
-<x-divider text="OR" class="my-6" />
+    <x-button type="submit" w="full">Sign In</x-button>
+</x-box>
 
-<x-button variant="outline" class="w-full">
-    <x-icon name="logos:google-icon" class="w-5 h-5 mr-2" />
+<x-divider text="OR" my="6" />
+
+<x-button variant="outline" w="full">
+    <x-icon name="logos:google-icon" w="5" h="5" mr="2" />
     Continue with Google
 </x-button>
 ```
@@ -110,26 +114,26 @@ Enhanced separator with text/icon support for visually dividing content sections
 ### Section Dividers
 
 ```blade
-<div class="space-y-6">
-    <section>
-        <h2 class="text-xl font-bold mb-4">Personal Information</h2>
-        <p>Your personal details...</p>
-    </section>
-    
+<x-vstack spacing="6">
+    <x-box as="section">
+        <x-heading as="h2" fontSize="xl" fontWeight="bold" mb="4">Personal Information</x-heading>
+        <x-text>Your personal details...</x-text>
+    </x-box>
+
     <x-divider text="Account Settings" />
-    
-    <section>
-        <h2 class="text-xl font-bold mb-4">Account Settings</h2>
-        <p>Manage your account...</p>
-    </section>
-    
+
+    <x-box as="section">
+        <x-heading as="h2" fontSize="xl" fontWeight="bold" mb="4">Account Settings</x-heading>
+        <x-text>Manage your account...</x-text>
+    </x-box>
+
     <x-divider text="Security" />
-    
-    <section>
-        <h2 class="text-xl font-bold mb-4">Security</h2>
-        <p>Security settings...</p>
-    </section>
-</div>
+
+    <x-box as="section">
+        <x-heading as="h2" fontSize="xl" fontWeight="bold" mb="4">Security</x-heading>
+        <x-text>Security settings...</x-text>
+    </x-box>
+</x-vstack>
 ```
 
 ### With Icons and Text
@@ -146,13 +150,13 @@ Enhanced separator with text/icon support for visually dividing content sections
 
 ```blade
 <x-divider variant="dashed" text="Step 1" />
-<p>Complete your profile...</p>
+<x-text>Complete your profile...</x-text>
 
 <x-divider variant="dashed" text="Step 2" />
-<p>Verify your email...</p>
+<x-text>Verify your email...</x-text>
 
 <x-divider variant="dashed" text="Step 3" />
-<p>Start using the app...</p>
+<x-text>Start using the app...</x-text>
 ```
 
 ### Dotted Dividers
@@ -166,13 +170,13 @@ Enhanced separator with text/icon support for visually dividing content sections
 ### Custom Styling
 
 ```blade
-<x-divider 
-    text="Premium Content" 
-    class="my-8"
+<x-divider
+    text="Premium Content"
+    my="8"
 />
 
-<x-divider 
-    text="VIP Section" 
+<x-divider
+    text="VIP Section"
     class="border-yellow-500 dark:border-yellow-400"
 />
 ```
@@ -180,98 +184,98 @@ Enhanced separator with text/icon support for visually dividing content sections
 ### Sidebar Navigation
 
 ```blade
-<nav class="w-64 p-4">
-    <a href="#" class="block py-2">Dashboard</a>
-    <a href="#" class="block py-2">Profile</a>
-    <a href="#" class="block py-2">Settings</a>
-    
-    <x-divider class="my-4" />
-    
-    <a href="#" class="block py-2">Help</a>
-    <a href="#" class="block py-2">Logout</a>
-</nav>
+<x-box as="nav" w="64" p="4">
+    <x-box as="a" href="#" display="block" py="2">Dashboard</x-box>
+    <x-box as="a" href="#" display="block" py="2">Profile</x-box>
+    <x-box as="a" href="#" display="block" py="2">Settings</x-box>
+
+    <x-divider my="4" />
+
+    <x-box as="a" href="#" display="block" py="2">Help</x-box>
+    <x-box as="a" href="#" display="block" py="2">Logout</x-box>
+</x-box>
 ```
 
 ### Content Sections
 
 ```blade
-<article>
-    <h1>Article Title</h1>
-    <p>Introduction paragraph...</p>
-    
-    <x-divider icon="heroicons:document-text" text="Main Content" class="my-6" />
-    
-    <p>Main content...</p>
-    
-    <x-divider icon="heroicons:chat-bubble-left-right" text="Comments" class="my-6" />
-    
-    <div class="comments">
+<x-box as="article">
+    <x-heading as="h1">Article Title</x-heading>
+    <x-text>Introduction paragraph...</x-text>
+
+    <x-divider icon="heroicons:document-text" text="Main Content" my="6" />
+
+    <x-text>Main content...</x-text>
+
+    <x-divider icon="heroicons:chat-bubble-left-right" text="Comments" my="6" />
+
+    <x-box class="comments">
         <!-- Comments here -->
-    </div>
-</article>
+    </x-box>
+</x-box>
 ```
 
 ### Pricing Table
 
 ```blade
-<div class="grid grid-cols-3 gap-6">
-    <div class="border rounded-lg p-6">
-        <h3 class="text-xl font-bold">Basic</h3>
-        <p class="text-3xl font-bold my-4">$9/mo</p>
-        <x-divider class="my-4" />
-        <ul class="space-y-2">
-            <li>Feature 1</li>
-            <li>Feature 2</li>
-        </ul>
-    </div>
-    
-    <div class="border rounded-lg p-6">
-        <h3 class="text-xl font-bold">Pro</h3>
-        <p class="text-3xl font-bold my-4">$29/mo</p>
-        <x-divider class="my-4" />
-        <ul class="space-y-2">
-            <li>All Basic features</li>
-            <li>Feature 3</li>
-            <li>Feature 4</li>
-        </ul>
-    </div>
-    
-    <div class="border rounded-lg p-6">
-        <h3 class="text-xl font-bold">Enterprise</h3>
-        <p class="text-3xl font-bold my-4">$99/mo</p>
-        <x-divider class="my-4" />
-        <ul class="space-y-2">
-            <li>All Pro features</li>
-            <li>Feature 5</li>
-            <li>Feature 6</li>
-        </ul>
-    </div>
-</div>
+<x-grid columns="3" gap="6">
+    <x-box border="1" rounded="lg" p="6">
+        <x-heading as="h3" fontSize="xl" fontWeight="bold">Basic</x-heading>
+        <x-text fontSize="3xl" fontWeight="bold" my="4">$9/mo</x-text>
+        <x-divider my="4" />
+        <x-box as="ul" class="space-y-2">
+            <x-box as="li">Feature 1</x-box>
+            <x-box as="li">Feature 2</x-box>
+        </x-box>
+    </x-box>
+
+    <x-box border="1" rounded="lg" p="6">
+        <x-heading as="h3" fontSize="xl" fontWeight="bold">Pro</x-heading>
+        <x-text fontSize="3xl" fontWeight="bold" my="4">$29/mo</x-text>
+        <x-divider my="4" />
+        <x-box as="ul" class="space-y-2">
+            <x-box as="li">All Basic features</x-box>
+            <x-box as="li">Feature 3</x-box>
+            <x-box as="li">Feature 4</x-box>
+        </x-box>
+    </x-box>
+
+    <x-box border="1" rounded="lg" p="6">
+        <x-heading as="h3" fontSize="xl" fontWeight="bold">Enterprise</x-heading>
+        <x-text fontSize="3xl" fontWeight="bold" my="4">$99/mo</x-text>
+        <x-divider my="4" />
+        <x-box as="ul" class="space-y-2">
+            <x-box as="li">All Pro features</x-box>
+            <x-box as="li">Feature 5</x-box>
+            <x-box as="li">Feature 6</x-box>
+        </x-box>
+    </x-box>
+</x-grid>
 ```
 
 ### Timeline with Dividers
 
 ```blade
-<div class="space-y-4">
-    <div>
-        <h3 class="font-bold">2024</h3>
-        <p>Current year events...</p>
-    </div>
-    
+<x-vstack spacing="4">
+    <x-box>
+        <x-heading as="h3" fontWeight="bold">2024</x-heading>
+        <x-text>Current year events...</x-text>
+    </x-box>
+
     <x-divider variant="dashed" />
-    
-    <div>
-        <h3 class="font-bold">2023</h3>
-        <p>Last year events...</p>
-    </div>
-    
+
+    <x-box>
+        <x-heading as="h3" fontWeight="bold">2023</x-heading>
+        <x-text>Last year events...</x-text>
+    </x-box>
+
     <x-divider variant="dashed" />
-    
-    <div>
-        <h3 class="font-bold">2022</h3>
-        <p>Previous events...</p>
-    </div>
-</div>
+
+    <x-box>
+        <x-heading as="h3" fontWeight="bold">2022</x-heading>
+        <x-text>Previous events...</x-text>
+    </x-box>
+</x-vstack>
 ```
 
 ## Accessibility
