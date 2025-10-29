@@ -1,26 +1,35 @@
 # Grid
 
-CSS Grid layout component.
+CSS Grid layout component with comprehensive style props support. The Grid component provides a powerful grid layout system for building complex, responsive layouts with full control over columns, rows, gaps, and auto-flow behavior.
 
 ## Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `as` | string | `'div'` | HTML element to render |
-| `columns` | string | `null` | Number of columns (1-12, none, subgrid) |
-| `rows` | string | `null` | Number of rows (1-6, none, subgrid) |
-| `gap` | string | `null` | Gap between items (0-16) |
-| `gap-x` | string | `null` | Horizontal gap (0-16) |
-| `gap-y` | string | `null` | Vertical gap (0-16) |
 | `auto-flow` | string | `null` | Grid auto flow (row, col, dense, row-dense, col-dense) |
+
+### Grid-Specific Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `columns` / `templateColumns` | string | `null` | Number of columns (1-12, none, subgrid) |
+| `rows` / `templateRows` | string | `null` | Number of rows (1-6, none, subgrid) |
+| `gap` | string | `null` | Gap between items (0-96) |
+| `gapX` | string | `null` | Horizontal gap (0-96) |
+| `gapY` | string | `null` | Vertical gap (0-96) |
+
+### Style Props
+
+Grid component supports all style props from the HasStyleProps trait, including spacing, sizing, colors, borders, and more. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Basic Usage
 
 ```blade
 <x-grid columns="3" gap="4">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-grid>
 ```
 
@@ -30,8 +39,8 @@ CSS Grid layout component.
 
 ```blade
 <x-grid columns="2" gap="4">
-    <div>Column 1</div>
-    <div>Column 2</div>
+    <x-box>Column 1</x-box>
+    <x-box>Column 2</x-box>
 </x-grid>
 ```
 
@@ -39,12 +48,12 @@ CSS Grid layout component.
 
 ```blade
 <x-grid columns="3" gap="6">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
-    <div>Item 4</div>
-    <div>Item 5</div>
-    <div>Item 6</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
+    <x-box>Item 4</x-box>
+    <x-box>Item 5</x-box>
+    <x-box>Item 6</x-box>
 </x-grid>
 ```
 
@@ -63,10 +72,10 @@ CSS Grid layout component.
 ### Different Gaps
 
 ```blade
-<x-grid columns="3" gap-x="8" gap-y="4">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+<x-grid columns="3" gapX="8" gapY="4">
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-grid>
 ```
 
@@ -74,12 +83,12 @@ CSS Grid layout component.
 
 ```blade
 <x-grid columns="3" rows="2" gap="4">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
+    <x-box>1</x-box>
+    <x-box>2</x-box>
+    <x-box>3</x-box>
+    <x-box>4</x-box>
+    <x-box>5</x-box>
+    <x-box>6</x-box>
 </x-grid>
 ```
 
@@ -87,10 +96,10 @@ CSS Grid layout component.
 
 ```blade
 <x-grid columns="3" auto-flow="dense" gap="4">
-    <div class="col-span-2">Wide item</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
-    <div class="col-span-2">Another wide item</div>
+    <x-box class="col-span-2">Wide item</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
+    <x-box class="col-span-2">Another wide item</x-box>
 </x-grid>
 ```
 
@@ -102,10 +111,10 @@ CSS Grid layout component.
 <x-grid columns="3" gap="6">
     @foreach($products as $product)
         <x-box p="6" shadow="lg" rounded="xl">
-            <img src="{{ $product->image }}" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="mt-4 font-semibold">{{ $product->name }}</h3>
-            <p class="mt-2 text-gray-600">{{ $product->price }}</p>
-            <x-button class="mt-4 w-full">Add to Cart</x-button>
+            <x-box as="img" src="{{ $product->image }}" w="full" h="48" class="object-cover rounded-lg" />
+            <x-heading as="h3" mt="4" fontWeight="semibold">{{ $product->name }}</x-heading>
+            <x-text mt="2" color="gray.600">{{ $product->price }}</x-text>
+            <x-button mt="4" w="full">Add to Cart</x-button>
         </x-box>
     @endforeach
 </x-grid>
@@ -117,23 +126,23 @@ CSS Grid layout component.
 <x-grid columns="4" gap="4">
     {{-- Stat Cards --}}
     <x-box p="6" shadow="md" rounded="lg">
-        <div class="text-sm text-gray-600">Total Users</div>
-        <div class="text-3xl font-bold mt-2">1,234</div>
+        <x-text fontSize="sm" color="gray.600">Total Users</x-text>
+        <x-text fontSize="3xl" fontWeight="bold" mt="2">1,234</x-text>
     </x-box>
-    
+
     <x-box p="6" shadow="md" rounded="lg">
-        <div class="text-sm text-gray-600">Revenue</div>
-        <div class="text-3xl font-bold mt-2">$12,345</div>
+        <x-text fontSize="sm" color="gray.600">Revenue</x-text>
+        <x-text fontSize="3xl" fontWeight="bold" mt="2">$12,345</x-text>
     </x-box>
-    
+
     <x-box p="6" shadow="md" rounded="lg">
-        <div class="text-sm text-gray-600">Orders</div>
-        <div class="text-3xl font-bold mt-2">567</div>
+        <x-text fontSize="sm" color="gray.600">Orders</x-text>
+        <x-text fontSize="3xl" fontWeight="bold" mt="2">567</x-text>
     </x-box>
-    
+
     <x-box p="6" shadow="md" rounded="lg">
-        <div class="text-sm text-gray-600">Growth</div>
-        <div class="text-3xl font-bold mt-2">+23%</div>
+        <x-text fontSize="sm" color="gray.600">Growth</x-text>
+        <x-text fontSize="3xl" fontWeight="bold" mt="2">+23%</x-text>
     </x-box>
 </x-grid>
 ```
@@ -143,10 +152,13 @@ CSS Grid layout component.
 ```blade
 <x-grid columns="4" gap="2">
     @foreach($images as $image)
-        <img 
-            src="{{ $image }}" 
-            class="w-full h-48 object-cover rounded cursor-pointer hover:opacity-75"
-        >
+        <x-box
+            as="img"
+            src="{{ $image }}"
+            w="full"
+            h="48"
+            class="object-cover rounded cursor-pointer hover:opacity-75"
+        />
     @endforeach
 </x-grid>
 ```
@@ -155,34 +167,34 @@ CSS Grid layout component.
 
 ```blade
 <x-grid columns="2" gap="4">
-    <div>
-        <label>First Name</label>
+    <x-box>
+        <x-box as="label">First Name</x-box>
         <x-input />
-    </div>
-    
-    <div>
-        <label>Last Name</label>
+    </x-box>
+
+    <x-box>
+        <x-box as="label">Last Name</x-box>
         <x-input />
-    </div>
-    
-    <div class="col-span-2">
-        <label>Email</label>
+    </x-box>
+
+    <x-box class="col-span-2">
+        <x-box as="label">Email</x-box>
         <x-input type="email" />
-    </div>
-    
-    <div class="col-span-2">
-        <label>Message</label>
+    </x-box>
+
+    <x-box class="col-span-2">
+        <x-box as="label">Message</x-box>
         <x-textarea rows="4" />
-    </div>
+    </x-box>
 </x-grid>
 ```
 
 ### Responsive Grid
 
 ```blade
-<x-grid 
-    columns="1" 
-    gap="4" 
+<x-grid
+    columns="1"
+    gap="4"
     class="md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 >
     @foreach($items as $item)
@@ -197,11 +209,11 @@ CSS Grid layout component.
 
 ```blade
 <x-grid columns="3" auto-flow="dense" gap="4">
-    <div class="row-span-2">Tall item</div>
-    <div>Normal item</div>
-    <div>Normal item</div>
-    <div class="col-span-2">Wide item</div>
-    <div>Normal item</div>
+    <x-box class="row-span-2">Tall item</x-box>
+    <x-box>Normal item</x-box>
+    <x-box>Normal item</x-box>
+    <x-box class="col-span-2">Wide item</x-box>
+    <x-box>Normal item</x-box>
 </x-grid>
 ```
 
