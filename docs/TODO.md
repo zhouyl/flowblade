@@ -82,14 +82,46 @@
   - [x] ListItem - ✅ 新增组件，符合规范
   - [ ] 其他 19 个 - 待检查
 
-- [ ] 3.3 Disclosure 组件 (3 个) - 待开始
-- [ ] 3.4 Feedback 组件 (9 个) - 待开始
-- [ ] 3.5 Forms 组件 (29 个) - 待开始
-- [ ] 3.6 Layout 组件 (15 个) - 待开始
-- [ ] 3.7 Media 组件 (7 个) - 待开始
-- [ ] 3.8 Navigation 组件 (17 个) - 待开始
-- [ ] 3.9 Overlay 组件 (8 个) - 待开始
-- [ ] 3.10 Typography 组件 (11 个) - 待开始
+- [ ] 3.3 Disclosure 组件 (3 个) - 进行中
+  - [x] Accordion - ⚠️ 缺少 Style Props 支持
+  - [x] Collapsible - 待检查
+  - [ ] 其他 - 待检查
+
+- [ ] 3.4 Feedback 组件 (9 个) - 进行中
+  - [x] Alert - ⚠️ 缺少 Style Props 支持
+  - [ ] 其他 8 个 - 待检查
+
+- [ ] 3.5 Forms 组件 (29 个) - 进行中
+  - [x] Form - ✅ 符合规范
+  - [x] Input - ✅ 符合规范
+  - [x] Textarea - ✅ 符合规范
+  - [x] Select - ✅ 符合规范
+  - [x] Checkbox - ✅ 符合规范
+  - [x] Radio - ✅ 符合规范
+  - [ ] 其他 23 个 - 待检查
+
+- [ ] 3.6 Layout 组件 (15 个) - 进行中
+  - [x] Box - ✅ 符合规范
+  - [x] Flex - ✅ 符合规范
+  - [x] Grid - ✅ 符合规范
+  - [ ] 其他 12 个 - 待检查
+
+- [ ] 3.7 Media 组件 (7 个) - 进行中
+  - [x] Image - ✅ 新增组件，符合规范
+  - [ ] 其他 6 个 - 待检查
+
+- [ ] 3.8 Navigation 组件 (17 个) - 进行中
+  - [x] Navbar - ⚠️ 缺少 Style Props 支持
+  - [ ] 其他 16 个 - 待检查
+
+- [ ] 3.9 Overlay 组件 (8 个) - 进行中
+  - [x] Modal - ⚠️ 缺少 Style Props 支持
+  - [ ] 其他 7 个 - 待检查
+
+- [ ] 3.10 Typography 组件 (11 个) - 进行中
+  - [x] Text - ✅ 符合规范
+  - [x] Heading - ✅ 符合规范
+  - [ ] 其他 9 个 - 待检查
 
 ## 工作要求
 

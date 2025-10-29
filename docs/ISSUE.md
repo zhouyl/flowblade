@@ -24,24 +24,39 @@
 
 ## 当前问题列表
 
-### 🟡 多个 DataDisplay 组件缺少 Style Props 支持 (Important)
+### 🔴 大规模缺少 Style Props 支持 (Critical)
 
-**组件**: Badge, Avatar, Icon, Tag (DataDisplay)
 **发现时间**: Code Review Phase 2
 **优先级**: 高
 **状态**: 待修复
 
 **问题描述**:
-- 这些组件没有集成 HasStyleProps trait
-- 组件类继承自 `Illuminate\View\Component` 而不是 `Flowblade\Components\Component`
+- 大量组件没有集成 HasStyleProps trait
+- 这些组件类继承自 `Illuminate\View\Component` 而不是 `Flowblade\Components\Component`
 - 无法使用 style props (p, m, bg, color, w, h 等)
 - 不符合开发规范
 
-**受影响的组件**:
-1. Badge - 数据显示组件
-2. Avatar - 用户头像组件
-3. Icon - 图标组件
-4. Tag - 标签组件
+**受影响的组件类别**:
+
+#### DataDisplay (约 15 个组件)
+- Badge, Avatar, Icon, Tag, Card, Table, Rating
+- ChatBubble, Stat, Timeline, TreeView, ListGroup
+- ColorSwatch, DataList, Indicator
+
+#### Navigation (约 17 个组件)
+- Navbar, Breadcrumb, Tabs, Pagination, Sidebar
+- Steps, SpeedDial, MegaMenu 及其子组件
+
+#### Feedback (9 个组件)
+- Alert, Banner, Toast, Spinner, Progress
+- ProgressCircle, Skeleton, EmptyState, Status
+
+#### Overlay (8 个组件)
+- Modal, Drawer, Tooltip, Popover, Menu
+- HoverCard 及其子组件
+
+#### Disclosure (3 个组件)
+- Accordion, Collapsible 及其子组件
 
 **修复方案**:
 1. 更新组件类继承 `Flowblade\Components\Component`
@@ -51,7 +66,14 @@
 5. 调用 `$this->setStyleProps($styleProps);`
 6. 运行 `composer phpcs-fix` 进行代码格式化
 
-**预期完成**: 下一个会话
+**预期完成**: 多个会话（按优先级逐步修复）
+
+**修复优先级**:
+1. DataDisplay 组件 (最常用)
+2. Navigation 组件
+3. Feedback 组件
+4. Overlay 组件
+5. Disclosure 组件
 
 ## 已解决问题
 
