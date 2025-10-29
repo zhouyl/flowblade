@@ -1,6 +1,6 @@
 # SimpleGrid
 
-Simplified grid layout with responsive columns or auto-fit behavior.
+Simplified grid layout with responsive columns or auto-fit behavior. SimpleGrid provides an easy way to create responsive grid layouts with support for fixed columns or auto-fit behavior.
 
 ## Props
 
@@ -13,13 +13,17 @@ Simplified grid layout with responsive columns or auto-fit behavior.
 | `spacing-x` | string | `null` | Horizontal gap |
 | `spacing-y` | string | `null` | Vertical gap |
 
+### Style Props
+
+SimpleGrid supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Basic Usage
 
 ```blade
 <x-simple-grid columns="3" spacing="md">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <x-text>Item 1</x-text>
+    <x-text>Item 2</x-text>
+    <x-text>Item 3</x-text>
 </x-simple-grid>
 ```
 
@@ -44,9 +48,9 @@ Simplified grid layout with responsive columns or auto-fit behavior.
 <x-simple-grid min-child-width="200px" spacing="md">
     @foreach($products as $product)
         <x-box p="6" shadow="lg" rounded="xl">
-            <img src="{{ $product->image }}" class="w-full h-48 object-cover rounded-lg">
-            <h3 class="mt-4 font-semibold">{{ $product->name }}</h3>
-            <p class="mt-2 text-gray-600">${{ $product->price }}</p>
+            <x-box as="img" src="{{ $product->image }}" w="full" h="48" class="object-cover rounded-lg" />
+            <x-heading as="h3" mt="4" fontWeight="semibold">{{ $product->name }}</x-heading>
+            <x-text mt="2" color="gray.600">${{ $product->price }}</x-text>
         </x-box>
     @endforeach
 </x-simple-grid>
@@ -56,9 +60,9 @@ Simplified grid layout with responsive columns or auto-fit behavior.
 
 ```blade
 <x-simple-grid columns="3" spacing-x="lg" spacing-y="sm">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <x-text>Item 1</x-text>
+    <x-text>Item 2</x-text>
+    <x-text>Item 3</x-text>
 </x-simple-grid>
 ```
 
@@ -69,14 +73,14 @@ Simplified grid layout with responsive columns or auto-fit behavior.
 ```blade
 <x-simple-grid min-child-width="250px" spacing="lg">
     @foreach($products as $product)
-        <x-box shadow="lg" rounded="xl" class="overflow-hidden">
-            <img src="{{ $product->image }}" class="w-full h-56 object-cover">
-            
-            <x-vstack spacing="sm" class="p-6">
-                <h3 class="text-lg font-bold">{{ $product->name }}</h3>
-                <p class="text-gray-600">{{ $product->description }}</p>
-                <div class="text-2xl font-bold text-primary-600">${{ $product->price }}</div>
-                <x-button color="primary" class="w-full">Add to Cart</x-button>
+        <x-box shadow="lg" rounded="xl" overflow="hidden">
+            <x-box as="img" src="{{ $product->image }}" w="full" h="56" class="object-cover" />
+
+            <x-vstack spacing="sm" p="6">
+                <x-heading as="h3" fontSize="lg" fontWeight="bold">{{ $product->name }}</x-heading>
+                <x-text color="gray.600">{{ $product->description }}</x-text>
+                <x-text fontSize="2xl" fontWeight="bold" color="primary.600">${{ $product->price }}</x-text>
+                <x-button color="primary" w="full">Add to Cart</x-button>
             </x-vstack>
         </x-box>
     @endforeach
