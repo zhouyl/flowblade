@@ -7,26 +7,26 @@
         'lg' => 'w-12 h-12',
         'xl' => 'w-16 h-16',
     ];
-    
+
     $swatchSize = $sizeConfig[$size] ?? $sizeConfig['md'];
-    
+
     // Variant configurations
     $variantClasses = [
         'square' => 'rounded',
         'circle' => 'rounded-full',
     ];
-    
+
     $variantClass = $variantClasses[$variant] ?? $variantClasses['square'];
-    
+
     // Border and shadow
     $borderClass = $withBorder ? 'ring-2 ring-gray-200 ring-offset-2' : '';
     $shadowClass = $withShadow ? 'shadow-md' : '';
-    
+
     // Normalize color value for display
     $displayColor = $color;
 @endphp
 
-<div 
+<div
     @if($copyable)
     x-data="{
         copied: false,
@@ -38,7 +38,7 @@
         }
     }"
     @endif
-    {{ $attributes->merge(['class' => 'inline-flex flex-col items-center gap-2']) }}
+    {{ $attributes->merge(['class' => $classes()]) }}
 >
     @if($label)
         <span class="text-sm font-medium text-gray-700">{{ $label }}</span>

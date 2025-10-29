@@ -29,9 +29,15 @@ For copyable color swatches, this component requires **Alpine.js** to be install
 | `showValue` | `bool` | `false` | Whether to show color value |
 | `copyable` | `bool` | `false` | Whether the color value is copyable |
 
-### Style Props
+## Style Props
 
-ColorSwatch supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+ColorSwatch supports all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## Color Formats
 
