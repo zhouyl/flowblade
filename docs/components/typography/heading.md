@@ -1,6 +1,6 @@
 # Heading
 
-Heading component for displaying headings at various levels.
+Heading component for displaying headings at various levels. Heading provides semantic heading elements with support for various sizes, weights, and colors.
 
 ## Basic Usage
 
@@ -16,6 +16,10 @@ Heading component for displaying headings at various levels.
 | `size` | `string` | `null` | Text size: `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
 | `weight` | `string` | `null` | Font weight: `normal`, `medium`, `semibold`, `bold`, `extrabold` |
 | `color` | `string` | `null` | Text color |
+
+### Style Props
+
+Heading supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Heading level
 
@@ -61,7 +65,7 @@ Heading component for displaying headings at various levels.
 ### Page Heading
 
 ```blade
-<x-heading as="h1" size="4xl" class="mb-4">
+<x-heading as="h1" size="4xl" mb="4">
     Welcome to Flowblade
 </x-heading>
 <x-text size="lg" color="gray">
@@ -72,7 +76,7 @@ Heading component for displaying headings at various levels.
 ### Section Heading
 
 ```blade
-<x-heading as="h2" size="2xl" class="mb-3">
+<x-heading as="h2" size="2xl" mb="3">
     Features
 </x-heading>
 <x-text>
@@ -83,11 +87,11 @@ Heading component for displaying headings at various levels.
 ### Card Heading
 
 ```blade
-<div class="p-6 bg-white rounded-lg shadow">
-    <x-heading as="h3" size="lg" class="mb-2">
+<x-box p="6" bg="white" rounded="lg" class="shadow">
+    <x-heading as="h3" size="lg" mb="2">
         Card Heading
     </x-heading>
     <x-text>Card content...</x-text>
-</div>
+</x-box>
 ```
 
