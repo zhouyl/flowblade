@@ -1,6 +1,6 @@
 # Group
 
-Wrapper component that enables Tailwind's group hover/focus states for child elements.
+Wrapper component that enables Tailwind's group hover/focus states for child elements. Group provides a flexible container for creating interactive elements with coordinated hover effects across multiple children.
 
 ## Props
 
@@ -8,11 +8,15 @@ Wrapper component that enables Tailwind's group hover/focus states for child ele
 |------|------|---------|-------------|
 | `as` | string | `'div'` | HTML element to render |
 
+### Style Props
+
+Group supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Basic Usage
 
 ```blade
-<x-group>
-    <div>Hover over this group to see effects on children</div>
+<x-group p="6" border="1" rounded="lg" cursor="pointer">
+    <x-text>Hover over this group to see effects on children</x-text>
 </x-group>
 ```
 
@@ -21,27 +25,27 @@ Wrapper component that enables Tailwind's group hover/focus states for child ele
 ### Hover Effects
 
 ```blade
-<x-group class="p-6 border rounded-lg cursor-pointer">
-    <h3 class="font-bold group-hover:text-blue-600 transition">Card Title</h3>
-    <p class="text-gray-600 group-hover:text-gray-900 transition">
+<x-group p="6" border="1" rounded="lg" cursor="pointer">
+    <x-heading as="h3" fontWeight="bold" class="group-hover:text-blue-600 transition">Card Title</x-heading>
+    <x-text color="gray.600" class="group-hover:text-gray-900 transition">
         Hover over the card to see the text color change
-    </p>
+    </x-text>
 </x-group>
 ```
 
 ### Image Card with Overlay
 
 ```blade
-<x-group class="relative overflow-hidden rounded-lg cursor-pointer">
-    <img src="/image.jpg" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300">
-    
-    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition">
+<x-group position="relative" overflow="hidden" rounded="lg" cursor="pointer">
+    <x-box as="img" src="/image.jpg" w="full" h="64" class="object-cover group-hover:scale-110 transition duration-300" />
+
+    <x-box position="absolute" inset="0" bg="black" class="bg-opacity-0 group-hover:bg-opacity-50 transition">
         <x-absolute-center>
             <x-button class="opacity-0 group-hover:opacity-100 transition">
                 View Details
             </x-button>
         </x-absolute-center>
-    </div>
+    </x-box>
 </x-group>
 ```
 
@@ -50,21 +54,17 @@ Wrapper component that enables Tailwind's group hover/focus states for child ele
 ### Card with Hover Effect
 
 ```blade
-<x-group class="p-6 border rounded-lg hover:shadow-lg transition cursor-pointer">
+<x-group p="6" border="1" rounded="lg" cursor="pointer" class="hover:shadow-lg transition">
     <x-vstack spacing="md">
-        <x-icon 
-            name="heroicons:star" 
-            size="32px" 
-            class="text-gray-400 group-hover:text-yellow-500 transition"
-        />
-        <h3 class="text-xl font-bold group-hover:text-blue-600 transition">
+        <x-dynamic-component :component="'icon'" name="heroicons:star" size="32px" class="text-gray-400 group-hover:text-yellow-500 transition" />
+        <x-heading as="h3" fontSize="xl" fontWeight="bold" class="group-hover:text-blue-600 transition">
             Feature Title
-        </h3>
-        <p class="text-gray-600">
+        </x-heading>
+        <x-text color="gray.600">
             Feature description goes here
-        </p>
-        <x-button 
-            variant="link" 
+        </x-text>
+        <x-button
+            variant="link"
             class="self-start opacity-0 group-hover:opacity-100 transition"
         >
             Learn More →
@@ -76,41 +76,33 @@ Wrapper component that enables Tailwind's group hover/focus states for child ele
 ### Navigation Link
 
 ```blade
-<x-group as="a" href="/page" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100">
-    <x-icon 
-        name="heroicons:home" 
-        class="text-gray-600 group-hover:text-blue-600 transition"
-    />
-    <span class="group-hover:text-blue-600 transition">Home</span>
-    <x-icon 
-        name="heroicons:chevron-right" 
-        class="ml-auto text-gray-400 opacity-0 group-hover:opacity-100 transition"
-    />
+<x-group as="a" href="/page" display="flex" align="center" gap="3" p="3" rounded="lg" class="hover:bg-gray-100">
+    <x-dynamic-component :component="'icon'" name="heroicons:home" class="text-gray-600 group-hover:text-blue-600 transition" />
+    <x-text as="span" class="group-hover:text-blue-600 transition">Home</x-text>
+    <x-dynamic-component :component="'icon'" name="heroicons:chevron-right" class="ml-auto text-gray-400 opacity-0 group-hover:opacity-100 transition" />
 </x-group>
 ```
 
 ### Product Card
 
 ```blade
-<x-group class="border rounded-lg overflow-hidden hover:shadow-xl transition cursor-pointer">
-    <div class="relative overflow-hidden">
-        <img 
-            src="/product.jpg" 
-            class="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
-        >
-        <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition">
+<x-group border="1" rounded="lg" overflow="hidden" cursor="pointer" class="hover:shadow-xl transition">
+    <x-box position="relative" overflow="hidden">
+        <x-box as="img" src="/product.jpg" w="full" h="48" class="object-cover group-hover:scale-105 transition duration-300" />
+        <x-box position="absolute" top="2" right="2" class="opacity-0 group-hover:opacity-100 transition">
             <x-button size="sm" rounded="full">
-                <x-icon name="heroicons:heart" />
+                <x-dynamic-component :component="'icon'" name="heroicons:heart" />
             </x-button>
-        </div>
-    </div>
-    
-    <x-vstack spacing="sm" class="p-4">
-        <h3 class="font-bold group-hover:text-blue-600 transition">Product Name</h3>
-        <p class="text-gray-600">$99.99</p>
-        <x-button 
-            color="primary" 
-            class="w-full opacity-0 group-hover:opacity-100 transition"
+        </x-box>
+    </x-box>
+
+    <x-vstack spacing="sm" p="4">
+        <x-heading as="h3" fontWeight="bold" class="group-hover:text-blue-600 transition">Product Name</x-heading>
+        <x-text color="gray.600">$99.99</x-text>
+        <x-button
+            color="primary"
+            w="full"
+            class="opacity-0 group-hover:opacity-100 transition"
         >
             Add to Cart
         </x-button>
@@ -121,83 +113,80 @@ Wrapper component that enables Tailwind's group hover/focus states for child ele
 ### List Item
 
 ```blade
-<x-group class="flex items-center gap-4 p-4 border-b hover:bg-gray-50 cursor-pointer">
-    <img 
-        src="/avatar.jpg" 
-        class="w-12 h-12 rounded-full group-hover:ring-2 group-hover:ring-blue-500 transition"
-    >
-    
-    <div class="flex-1">
-        <h4 class="font-semibold group-hover:text-blue-600 transition">John Doe</h4>
-        <p class="text-sm text-gray-600">john@example.com</p>
-    </div>
-    
-    <x-icon 
-        name="heroicons:chevron-right" 
-        class="text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition"
-    />
+<x-group display="flex" align="center" gap="4" p="4" border="b" cursor="pointer" class="hover:bg-gray-50">
+    <x-box as="img" src="/avatar.jpg" w="12" h="12" rounded="full" class="group-hover:ring-2 group-hover:ring-blue-500 transition" />
+
+    <x-box flex="1">
+        <x-heading as="h4" fontWeight="semibold" class="group-hover:text-blue-600 transition">John Doe</x-heading>
+        <x-text fontSize="sm" color="gray.600">john@example.com</x-text>
+    </x-box>
+
+    <x-dynamic-component :component="'icon'" name="heroicons:chevron-right" class="text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition" />
 </x-group>
 ```
 
 ### Button with Icon
 
 ```blade
-<x-group 
-    as="button" 
-    class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+<x-group
+    as="button"
+    display="flex"
+    align="center"
+    gap="2"
+    px="4"
+    py="2"
+    bg="blue.600"
+    color="white"
+    rounded="lg"
+    class="hover:bg-blue-700 transition"
 >
-    <span>Get Started</span>
-    <x-icon 
-        name="heroicons:arrow-right" 
-        class="group-hover:translate-x-1 transition"
-    />
+    <x-text as="span">Get Started</x-text>
+    <x-dynamic-component :component="'icon'" name="heroicons:arrow-right" class="group-hover:translate-x-1 transition" />
 </x-group>
 ```
 
 ### Sidebar Menu Item
 
 ```blade
-<x-group 
-    as="a" 
-    href="/dashboard" 
-    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-50"
+<x-group
+    as="a"
+    href="/dashboard"
+    display="flex"
+    align="center"
+    gap="3"
+    px="4"
+    py="3"
+    rounded="lg"
+    class="hover:bg-blue-50"
 >
-    <x-icon 
-        name="heroicons:chart-bar" 
-        class="text-gray-600 group-hover:text-blue-600 transition"
-    />
-    <span class="group-hover:text-blue-600 group-hover:font-medium transition">
+    <x-dynamic-component :component="'icon'" name="heroicons:chart-bar" class="text-gray-600 group-hover:text-blue-600 transition" />
+    <x-text as="span" class="group-hover:text-blue-600 group-hover:font-medium transition">
         Dashboard
-    </span>
+    </x-text>
 </x-group>
 ```
 
 ### Testimonial Card
 
 ```blade
-<x-group class="p-6 border rounded-lg hover:border-blue-500 hover:shadow-lg transition cursor-pointer">
+<x-group p="6" border="1" rounded="lg" cursor="pointer" class="hover:border-blue-500 hover:shadow-lg transition">
     <x-vstack spacing="md">
         <x-hstack spacing="xs">
             @for($i = 0; $i < 5; $i++)
-                <x-icon 
-                    name="heroicons:star" 
-                    size="20px" 
-                    class="text-gray-300 group-hover:text-yellow-500 transition"
-                    style="transition-delay: {{ $i * 50 }}ms"
-                />
+                <x-dynamic-component :component="'icon'" name="heroicons:star" size="20px" class="text-gray-300 group-hover:text-yellow-500 transition" :style="'transition-delay: ' . ($i * 50) . 'ms'" />
             @endfor
         </x-hstack>
-        
-        <p class="text-gray-600 group-hover:text-gray-900 transition">
+
+        <x-text color="gray.600" class="group-hover:text-gray-900 transition">
             "This product is amazing! Highly recommended."
-        </p>
-        
+        </x-text>
+
         <x-hstack spacing="sm" align="center">
-            <img src="/avatar.jpg" class="w-10 h-10 rounded-full">
-            <div>
-                <div class="font-semibold group-hover:text-blue-600 transition">Jane Smith</div>
-                <div class="text-sm text-gray-500">CEO, Company</div>
-            </div>
+            <x-box as="img" src="/avatar.jpg" w="10" h="10" rounded="full" />
+            <x-box>
+                <x-text fontWeight="semibold" class="group-hover:text-blue-600 transition">Jane Smith</x-text>
+                <x-text fontSize="sm" color="gray.500">CEO, Company</x-text>
+            </x-box>
         </x-hstack>
     </x-vstack>
 </x-group>
