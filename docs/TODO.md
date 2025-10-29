@@ -10,9 +10,9 @@
 ## 当前进度
 
 **总体完成度**: 进行中
-**当前阶段**: Code Review Phase 2 + Style Props 修复
-**组件总数**: 140 个 (新增 3 个)
-**已完成**: Phase 1 (新增组件) + Phase 2 (文档检查) + Code Review Phase 2 (全面分析)
+**当前阶段**: Code Review Phase 2 + Style Props 修复 + 列表组件整合
+**组件总数**: 138 个 (新增 3 个，删除 2 个重复组件)
+**已完成**: Phase 1 (新增组件) + Phase 2 (文档检查) + Code Review Phase 2 (全面分析) + 列表组件整合
 **Style Props 修复进度**:
 - Badge: ✅ 完成
 - Avatar: ✅ 完成
@@ -163,6 +163,26 @@
   - [x] Text - ✅ 符合规范
   - [x] Heading - ✅ 符合规范
   - [ ] 其他 9 个 - 待检查
+
+### 第四阶段：列表组件整合 (Phase 4) - ✅ 已完成
+
+整合 ListComponent 及 ListItem 到 ListGroup + ListGroupItem，并删除重复组件：
+
+- [x] 4.1 删除 ListItem 组件 (DataDisplay)
+  - [x] 4.1.1 删除 PHP 类文件
+  - [x] 4.1.2 删除 Blade 模板文件
+  - [x] 4.1.3 删除文档文件
+
+- [x] 4.2 删除 ListComponent 组件 (Typography)
+  - [x] 4.2.1 删除 PHP 类文件
+  - [x] 4.2.2 删除 Blade 模板文件
+  - [x] 4.2.3 从 FlowbladeServiceProvider 中删除注册
+
+- [x] 4.3 更新项目文档
+  - [x] 4.3.1 更新 TODO.md
+  - [x] 4.3.2 更新 ISSUE.md
+
+**结果**: 组件总数从 140 个减少到 138 个，ListGroup + ListGroupItem 成为唯一的列表组件
 
 ## 工作要求
 

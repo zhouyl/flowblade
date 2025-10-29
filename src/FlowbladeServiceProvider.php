@@ -179,7 +179,6 @@ class FlowbladeServiceProvider extends ServiceProvider
             'strong' => Components\Typography\Strong::class,
             'blockquote' => Components\Typography\Blockquote::class,
             'highlight' => Components\Typography\Highlight::class,
-            'list' => Components\Typography\ListComponent::class,
 
             // Form Components
             'input' => Components\Forms\Input::class,
