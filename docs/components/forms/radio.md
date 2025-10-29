@@ -1,6 +1,6 @@
 # Radio
 
-Radio button component.
+Radio button component for selecting one option from a group. Radio provides a flexible way to create radio button inputs with support for various sizes, colors, and states.
 
 ## Basic Usage
 
@@ -17,6 +17,10 @@ Radio button component.
 | `disabled` | `boolean` | `false` | Disabled state |
 | `invalid` | `boolean` | `false` | Invalid state |
 | `value` | `string` | `null` | Value |
+
+### Style Props
+
+Radio supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
@@ -50,99 +54,99 @@ Radio button component.
 ### Radio Group
 
 ```blade
-<div class="space-y-2">
-    <label class="flex items-center gap-2">
+<x-vstack gap="2">
+    <x-flex as="label" align="center" gap="2">
         <x-radio name="plan" value="free" />
-        <span>Free</span>
-    </label>
-    <label class="flex items-center gap-2">
+        <x-text as="span">Free</x-text>
+    </x-flex>
+    <x-flex as="label" align="center" gap="2">
         <x-radio name="plan" value="pro" />
-        <span>Pro</span>
-    </label>
-    <label class="flex items-center gap-2">
+        <x-text as="span">Pro</x-text>
+    </x-flex>
+    <x-flex as="label" align="center" gap="2">
         <x-radio name="plan" value="enterprise" />
-        <span>Enterprise</span>
-    </label>
-</div>
+        <x-text as="span">Enterprise</x-text>
+    </x-flex>
+</x-vstack>
 ```
 
 ### With Description
 
 ```blade
-<div class="space-y-3">
-    <label class="flex items-start gap-3">
-        <x-radio name="plan" value="basic" class="mt-1" />
-        <div>
-            <div class="font-medium">Basic</div>
-            <div class="text-sm text-gray-500">For personal use</div>
-        </div>
-    </label>
-    <label class="flex items-start gap-3">
-        <x-radio name="plan" value="pro" class="mt-1" />
-        <div>
-            <div class="font-medium">Pro</div>
-            <div class="text-sm text-gray-500">For team use</div>
-        </div>
-    </label>
-</div>
+<x-vstack gap="3">
+    <x-flex as="label" align="start" gap="3">
+        <x-radio name="plan" value="basic" mt="1" />
+        <x-box>
+            <x-text fontWeight="medium">Basic</x-text>
+            <x-text fontSize="sm" color="gray.500">For personal use</x-text>
+        </x-box>
+    </x-flex>
+    <x-flex as="label" align="start" gap="3">
+        <x-radio name="plan" value="pro" mt="1" />
+        <x-box>
+            <x-text fontWeight="medium">Pro</x-text>
+            <x-text fontSize="sm" color="gray.500">For team use</x-text>
+        </x-box>
+    </x-flex>
+</x-vstack>
 ```
 
 ### Form Field
 
 ```blade
-<div>
-    <label class="block text-sm font-medium mb-2">Select payment method</label>
-    <div class="space-y-2">
-        <label class="flex items-center gap-2">
+<x-box>
+    <x-text as="label" display="block" fontSize="sm" fontWeight="medium" mb="2">Select payment method</x-text>
+    <x-vstack gap="2">
+        <x-flex as="label" align="center" gap="2">
             <x-radio name="payment" value="credit_card" />
-            <span>Credit Card</span>
-        </label>
-        <label class="flex items-center gap-2">
+            <x-text as="span">Credit Card</x-text>
+        </x-flex>
+        <x-flex as="label" align="center" gap="2">
             <x-radio name="payment" value="paypal" />
-            <span>PayPal</span>
-        </label>
-        <label class="flex items-center gap-2">
+            <x-text as="span">PayPal</x-text>
+        </x-flex>
+        <x-flex as="label" align="center" gap="2">
             <x-radio name="payment" value="alipay" />
-            <span>Alipay</span>
-        </label>
-    </div>
-</div>
+            <x-text as="span">Alipay</x-text>
+        </x-flex>
+    </x-vstack>
+</x-box>
 ```
 
 ## Livewire Integration
 
 ```blade
-<div class="space-y-2">
-    <label class="flex items-center gap-2">
+<x-vstack gap="2">
+    <x-flex as="label" align="center" gap="2">
         <x-radio wire:model="selectedPlan" value="free" />
-        <span>Free</span>
-    </label>
-    <label class="flex items-center gap-2">
+        <x-text as="span">Free</x-text>
+    </x-flex>
+    <x-flex as="label" align="center" gap="2">
         <x-radio wire:model="selectedPlan" value="pro" />
-        <span>Pro</span>
-    </label>
-</div>
+        <x-text as="span">Pro</x-text>
+    </x-flex>
+</x-vstack>
 
-<p class="mt-4">
+<x-text as="p" mt="4">
     Selected: {{ $selectedPlan }}
-</p>
+</x-text>
 ```
 
 ## Alpine.js Integration
 
 ```blade
-<div x-data="{ selected: 'option1' }">
-    <div class="space-y-2">
-        <label class="flex items-center gap-2">
+<x-box x-data="{ selected: 'option1' }">
+    <x-vstack gap="2">
+        <x-flex as="label" align="center" gap="2">
             <x-radio x-model="selected" value="option1" />
-            <span>Option 1</span>
-        </label>
-        <label class="flex items-center gap-2">
+            <x-text as="span">Option 1</x-text>
+        </x-flex>
+        <x-flex as="label" align="center" gap="2">
             <x-radio x-model="selected" value="option2" />
-            <span>Option 2</span>
-        </label>
-    </div>
-    <p class="mt-4" x-text="'Selected: ' + selected"></p>
-</div>
+            <x-text as="span">Option 2</x-text>
+        </x-flex>
+    </x-vstack>
+    <x-text as="p" mt="4" x-text="'Selected: ' + selected"></x-text>
+</x-box>
 ```
 

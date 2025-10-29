@@ -1,6 +1,6 @@
 # Checkbox
 
-Checkbox component.
+Checkbox component for selecting one or more options. Checkbox provides a flexible way to create checkbox inputs with support for various sizes, colors, and states.
 
 ## Basic Usage
 
@@ -17,6 +17,10 @@ Checkbox component.
 | `disabled` | `boolean` | `false` | Disabled state |
 | `invalid` | `boolean` | `false` | Invalid state |
 | `value` | `string` | `null` | Value |
+
+### Style Props
+
+Checkbox supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
@@ -50,82 +54,82 @@ Checkbox component.
 ### With Label
 
 ```blade
-<label class="flex items-center gap-2">
+<x-flex as="label" align="center" gap="2">
     <x-checkbox name="agree" />
-    <span>I agree to the terms of service</span>
-</label>
+    <x-text as="span">I agree to the terms of service</x-text>
+</x-flex>
 ```
 
 ### Checkbox Group
 
 ```blade
-<div class="space-y-2">
-    <label class="flex items-center gap-2">
+<x-vstack gap="2">
+    <x-flex as="label" align="center" gap="2">
         <x-checkbox name="interests[]" value="reading" />
-        <span>Reading</span>
-    </label>
-    <label class="flex items-center gap-2">
+        <x-text as="span">Reading</x-text>
+    </x-flex>
+    <x-flex as="label" align="center" gap="2">
         <x-checkbox name="interests[]" value="music" />
-        <span>Music</span>
-    </label>
-    <label class="flex items-center gap-2">
+        <x-text as="span">Music</x-text>
+    </x-flex>
+    <x-flex as="label" align="center" gap="2">
         <x-checkbox name="interests[]" value="sports" />
-        <span>Sports</span>
-    </label>
-</div>
+        <x-text as="span">Sports</x-text>
+    </x-flex>
+</x-vstack>
 ```
 
 ### Form Field
 
 ```blade
-<div>
-    <label class="block text-sm font-medium mb-2">Select features</label>
-    <div class="space-y-2">
-        <label class="flex items-center gap-2">
+<x-box>
+    <x-text as="label" display="block" fontSize="sm" fontWeight="medium" mb="2">Select features</x-text>
+    <x-vstack gap="2">
+        <x-flex as="label" align="center" gap="2">
             <x-checkbox name="features[]" value="feature1" />
-            <span>Feature 1</span>
-        </label>
-        <label class="flex items-center gap-2">
+            <x-text as="span">Feature 1</x-text>
+        </x-flex>
+        <x-flex as="label" align="center" gap="2">
             <x-checkbox name="features[]" value="feature2" />
-            <span>Feature 2</span>
-        </label>
-    </div>
-</div>
+            <x-text as="span">Feature 2</x-text>
+        </x-flex>
+    </x-vstack>
+</x-box>
 ```
 
 ## Livewire Integration
 
 ```blade
-<label class="flex items-center gap-2">
+<x-flex as="label" align="center" gap="2">
     <x-checkbox wire:model="agreed" />
-    <span>I agree to the terms</span>
-</label>
+    <x-text as="span">I agree to the terms</x-text>
+</x-flex>
 
 <!-- Multiple selection -->
-<div class="space-y-2">
+<x-vstack gap="2">
     @foreach($options as $option)
-        <label class="flex items-center gap-2">
-            <x-checkbox 
+        <x-flex as="label" align="center" gap="2">
+            <x-checkbox
                 wire:model="selected"
                 value="{{ $option->id }}"
             />
-            <span>{{ $option->name }}</span>
-        </label>
+            <x-text as="span">{{ $option->name }}</x-text>
+        </x-flex>
     @endforeach
-</div>
+</x-vstack>
 ```
 
 ## Alpine.js Integration
 
 ```blade
-<div x-data="{ checked: false }">
-    <label class="flex items-center gap-2">
+<x-box x-data="{ checked: false }">
+    <x-flex as="label" align="center" gap="2">
         <x-checkbox x-model="checked" />
-        <span>Option</span>
-    </label>
-    <p x-show="checked" class="mt-2 text-sm text-green-600">
+        <x-text as="span">Option</x-text>
+    </x-flex>
+    <x-text as="p" x-show="checked" mt="2" fontSize="sm" color="green.600">
         Selected
-    </p>
-</div>
+    </x-text>
+</x-box>
 ```
 

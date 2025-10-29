@@ -1,6 +1,6 @@
 # Switch Component
 
-Toggle switch component for binary on/off states, built with Flowbite styling.
+Toggle switch component for binary on/off states, built with Flowbite styling. Switch provides a flexible way to create toggle switches with support for various sizes, colors, and states.
 
 ## Basic Usage
 
@@ -16,6 +16,10 @@ Toggle switch component for binary on/off states, built with Flowbite styling.
 | `color` | string | `'primary'` | Color: `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `purple`, `teal`, `orange` |
 | `disabled` | bool | `false` | Whether the switch is disabled |
 | `label` | string | `''` | Label text |
+
+### Style Props
+
+Switch supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -81,70 +85,70 @@ Toggle switch component for binary on/off states, built with Flowbite styling.
 
 ```blade
 <x-switch>
-    <span class="font-bold">Custom Label</span>
+    <x-text as="span" fontWeight="bold">Custom Label</x-text>
 </x-switch>
 ```
 
 ### Form Integration
 
 ```blade
-<form>
+<x-box as="form">
     <x-field label="Notification Settings">
-        <div class="space-y-3">
-            <x-switch 
-                name="email_notifications" 
-                label="Email notifications" 
-                checked 
+        <x-vstack gap="3">
+            <x-switch
+                name="email_notifications"
+                label="Email notifications"
+                checked
             />
-            
-            <x-switch 
-                name="push_notifications" 
-                label="Push notifications" 
+
+            <x-switch
+                name="push_notifications"
+                label="Push notifications"
             />
-            
-            <x-switch 
-                name="sms_notifications" 
-                label="SMS notifications" 
+
+            <x-switch
+                name="sms_notifications"
+                label="SMS notifications"
             />
-        </div>
+        </x-vstack>
     </x-field>
-    
+
     <x-button type="submit">Save Settings</x-button>
-</form>
+</x-box>
 ```
 
 ### Settings Panel
 
 ```blade
-<div class="space-y-4">
-    <div class="flex items-center justify-between">
-        <div>
-            <h3 class="font-semibold">Dark Mode</h3>
-            <p class="text-sm text-gray-500">Enable dark theme</p>
-        </div>
+<x-vstack gap="4">
+    <x-flex align="center" justify="between">
+        <x-box>
+            <x-heading as="h3" fontWeight="semibold">Dark Mode</x-heading>
+            <x-text fontSize="sm" color="gray.500">Enable dark theme</x-text>
+        </x-box>
         <x-switch name="dark_mode" />
-    </div>
-    
+    </x-flex>
+
     <x-divider />
-    
-    <div class="flex items-center justify-between">
-        <div>
-            <h3 class="font-semibold">Auto-save</h3>
-            <p class="text-sm text-gray-500">Automatically save changes</p>
-        </div>
+
+    <x-flex align="center" justify="between">
+        <x-box>
+            <x-heading as="h3" fontWeight="semibold">Auto-save</x-heading>
+            <x-text fontSize="sm" color="gray.500">Automatically save changes</x-text>
+        </x-box>
         <x-switch name="auto_save" checked />
-    </div>
-    
+    </x-flex>
+
     <x-divider />
-    
-    <div class="flex items-center justify-between">
-        <div>
-            <h3 class="font-semibold">Two-factor Authentication</h3>
-            <p class="text-sm text-gray-500">Add an extra layer of security</p>
-        </div>
+
+    <x-flex align="center" justify="between">
+        <x-box>
+            <x-heading as="h3" fontWeight="semibold">Two-factor Authentication</x-heading>
+            <x-text fontSize="sm" color="gray.500">Add an extra layer of security</x-text>
+        </x-box>
         <x-switch name="2fa" color="success" />
-    </div>
-</div>
+    </x-flex>
+</x-vstack>
 ```
 
 ### Privacy Settings
