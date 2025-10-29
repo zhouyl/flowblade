@@ -77,43 +77,6 @@
 
 ---
 
-### 🟡 列表组件重复和归类问题 (Important)
-
-**发现时间**: Code Review Phase 2
-**优先级**: 中
-**状态**: 处理中
-
-**问题描述**:
-存在多个列表相关的组件，功能有重叠，需要明确定位和归类：
-
-1. **ListGroup + ListGroupItem** (DataDisplay)
-   - 用于创建交互式列表（按钮、链接等）
-   - 基于 Flowbite 的原生设计
-   - 已有 Style Props 支持 ✅
-   - 需要 first/last 属性来管理边框半径
-
-2. **ListItem** (DataDisplay)
-   - 灵活的列表项组件
-   - 支持图标、徽章、链接等
-   - 已有 Style Props 支持
-   - 可单独使用或在列表中使用
-
-3. **ListComponent** (Typography)
-   - 基础的列表容器（ol/ul）
-   - 用于包装 li 元素
-   - 缺少 Style Props 支持
-   - 归类在 Typography 中不太合适
-
-**解决方案**:
-整合 ListComponent 及 ListItem 到 ListGroup + ListGroupItem，并删除 ListComponent 及 ListItem
-
-1. ✅ ListGroup/ListGroupItem 已有 Style Props 支持
-2. 删除 ListItem 组件（DataDisplay）
-3. 删除 ListComponent 组件（Typography）
-4. 更新相关文档和引用
-
-**预期完成**: 当前会话
-
 ## 已解决问题
 
 ### ✅ 列表组件重复和归类问题 (已解决)
