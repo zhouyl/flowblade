@@ -1,6 +1,6 @@
 # Spacer
 
-Flexible space component that fills available space in flex layouts.
+Flexible space component that fills available space in flex layouts. Spacer is useful for pushing content to edges or distributing space evenly in flex containers.
 
 ## Props
 
@@ -10,9 +10,9 @@ No props - Spacer automatically fills available space.
 
 ```blade
 <x-flex>
-    <div>Left</div>
+    <x-text>Left</x-text>
     <x-spacer />
-    <div>Right</div>
+    <x-text>Right</x-text>
 </x-flex>
 ```
 
@@ -22,9 +22,9 @@ No props - Spacer automatically fills available space.
 
 ```blade
 <x-flex>
-    <div>Left Content</div>
+    <x-text>Left Content</x-text>
     <x-spacer />
-    <div>Right Content</div>
+    <x-text>Right Content</x-text>
 </x-flex>
 ```
 
@@ -32,21 +32,21 @@ No props - Spacer automatically fills available space.
 
 ```blade
 <x-flex>
-    <div>Left</div>
+    <x-text>Left</x-text>
     <x-spacer />
-    <div>Center</div>
+    <x-text>Center</x-text>
     <x-spacer />
-    <div>Right</div>
+    <x-text>Right</x-text>
 </x-flex>
 ```
 
 ### Vertical Spacer
 
 ```blade
-<x-vstack class="h-screen">
-    <header>Header</header>
+<x-vstack h="screen">
+    <x-box as="header">Header</x-box>
     <x-spacer />
-    <footer>Footer</footer>
+    <x-box as="footer">Footer</x-box>
 </x-vstack>
 ```
 
@@ -55,19 +55,19 @@ No props - Spacer automatically fills available space.
 ### Navigation Bar
 
 ```blade
-<x-hstack align="center" class="p-4 bg-white shadow">
-    <div class="text-xl font-bold">Logo</div>
-    
+<x-hstack align="center" p="4" bg="white" class="shadow">
+    <x-text fontSize="xl" fontWeight="bold">Logo</x-text>
+
     <x-spacer />
-    
-    <nav class="flex gap-6">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-    
+
+    <x-box as="nav" class="flex gap-6">
+        <x-box as="a" href="#">Home</x-box>
+        <x-box as="a" href="#">About</x-box>
+        <x-box as="a" href="#">Contact</x-box>
+    </x-box>
+
     <x-spacer />
-    
+
     <x-button>Sign In</x-button>
 </x-hstack>
 ```
@@ -76,10 +76,10 @@ No props - Spacer automatically fills available space.
 
 ```blade
 <x-box p="6" shadow="lg" rounded="xl">
-    <h2 class="text-xl font-bold">Card Title</h2>
-    <p class="mt-2 text-gray-600">Card description...</p>
-    
-    <x-hstack class="mt-6">
+    <x-heading as="h2" fontSize="xl" fontWeight="bold">Card Title</x-heading>
+    <x-text mt="2" color="gray.600">Card description...</x-text>
+
+    <x-hstack mt="6">
         <x-button variant="outline">Cancel</x-button>
         <x-spacer />
         <x-button color="primary">Confirm</x-button>
@@ -90,14 +90,14 @@ No props - Spacer automatically fills available space.
 ### Sticky Footer
 
 ```blade
-<x-vstack class="min-h-screen">
-    <header class="p-4 bg-white shadow">
+<x-vstack minH="screen">
+    <x-box as="header" p="4" bg="white" class="shadow">
         Header
-    </header>
-    
-    <main class="flex-1 p-8">
+    </x-box>
+
+    <x-box as="main" flex="1" p="8">
         Main Content
-    </main>
+    </x-box>
     
     <x-spacer />
     
