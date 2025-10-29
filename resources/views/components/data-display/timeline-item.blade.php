@@ -36,8 +36,8 @@
     $itemColor = $color ?? $attributes->get('x-bind:data-color') ?? 'primary';
 @endphp
 
-<div 
-    {{ $attributes->merge(['class' => 'relative flex gap-4 pb-8']) }}
+<div
+    {{ $attributes->merge(['class' => $classes()]) }}
     x-data="{
         get dotColor() {
             const color = '{{ $itemColor }}' || {$parentData}.color;
