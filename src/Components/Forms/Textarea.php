@@ -4,29 +4,36 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Textarea Component
  *
  * Multi-line text input component with resizing and validation support.
  * Supports multiple variants and sizes following Flowbite design patterns.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Textarea extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $size        Textarea size: 'xs', 'sm', 'md', 'lg', 'xl'
-     * @param null|string $variant     Textarea variant: 'outline', 'filled', 'flushed'
-     * @param bool        $disabled    Whether textarea is disabled
-     * @param bool        $readonly    Whether textarea is read-only
-     * @param bool        $required    Whether textarea is required
-     * @param bool        $invalid     Whether textarea has validation error
-     * @param null|string $placeholder Placeholder text
-     * @param null|int    $rows        Number of visible text rows
-     * @param bool        $resize      Whether to allow manual resizing
+     * @param null|string $size          Textarea size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $variant       Textarea variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled      Whether textarea is disabled
+     * @param bool        $readonly      Whether textarea is read-only
+     * @param bool        $required      Whether textarea is required
+     * @param bool        $invalid       Whether textarea has validation error
+     * @param null|string $placeholder   Placeholder text
+     * @param null|int    $rows          Number of visible text rows
+     * @param bool        $resize        Whether to allow manual resizing
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $size = 'md',
@@ -38,7 +45,9 @@ class Textarea extends Component
         public ?string $placeholder = null,
         public ?int $rows = 3,
         public bool $resize = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -103,6 +112,13 @@ class Textarea extends Component
         // Disabled state
         if ($this->disabled) {
             $classes[] = 'opacity-50 cursor-not-allowed bg-gray-50';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

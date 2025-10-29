@@ -4,25 +4,32 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Radio Component
  *
  * Styled radio button input with customizable colors and sizes.
  * Supports validation states and disabled state following Flowbite patterns.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Radio extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $size     Radio button size: 'sm', 'md', 'lg'
-     * @param null|string $color    Radio button color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info'
-     * @param bool        $disabled Whether radio button is disabled
-     * @param bool        $invalid  Whether radio button has validation error
-     * @param null|string $value    Radio button value attribute
+     * @param null|string $size          Radio button size: 'sm', 'md', 'lg'
+     * @param null|string $color         Radio button color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info'
+     * @param bool        $disabled      Whether radio button is disabled
+     * @param bool        $invalid       Whether radio button has validation error
+     * @param null|string $value         Radio button value attribute
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $size = 'md',
@@ -30,7 +37,9 @@ class Radio extends Component
         public bool $disabled = false,
         public bool $invalid = false,
         public ?string $value = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -78,6 +87,13 @@ class Radio extends Component
         // Disabled state
         if ($this->disabled) {
             $classes[] = 'opacity-50 cursor-not-allowed';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

@@ -4,28 +4,35 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Input Component
  *
  * Versatile text input component with multiple variants and validation states.
  * Supports various input types, sizes, and styling options following Flowbite patterns.
+ * Supports all common styling options via style props.
+ *
+ * @see HasStyleProps For all available style props
  */
 class Input extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string      $type        input type: 'text', 'email', 'password', 'number', 'tel', 'url', etc
-     * @param null|string $size        Input size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
-     * @param null|string $variant     Input variant: 'outline', 'filled', 'flushed'
-     * @param bool        $disabled    Whether input is disabled
-     * @param bool        $readonly    Whether input is read-only
-     * @param bool        $required    Whether input is required
-     * @param bool        $invalid     Whether input has validation error
-     * @param null|string $placeholder Placeholder text
+     * @param string      $type          input type: 'text', 'email', 'password', 'number', 'tel', 'url', etc
+     * @param null|string $size          Input size: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $variant       Input variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled      Whether input is disabled
+     * @param bool        $readonly      Whether input is read-only
+     * @param bool        $required      Whether input is required
+     * @param bool        $invalid       Whether input has validation error
+     * @param null|string $placeholder   Placeholder text
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $type = 'text',
@@ -36,7 +43,9 @@ class Input extends Component
         public bool $required = false,
         public bool $invalid = false,
         public ?string $placeholder = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -100,6 +109,13 @@ class Input extends Component
         // Disabled state
         if ($this->disabled) {
             $classes[] = 'opacity-50 cursor-not-allowed bg-gray-50';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);
