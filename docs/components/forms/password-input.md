@@ -1,6 +1,6 @@
 # PasswordInput
 
-Password input component with show/hide toggle functionality.
+Password input component with show/hide toggle functionality. PasswordInput provides a secure way to input passwords with optional visibility toggle.
 
 ## Basic Usage
 
@@ -20,6 +20,10 @@ Password input component with show/hide toggle functionality.
 | `readonly` | `boolean` | `false` | Read-only state |
 | `placeholder` | `string` | `null` | Placeholder text |
 | `showToggle` | `boolean` | `true` | Show visibility toggle button |
+
+### Style Props
+
+PasswordInput supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
@@ -71,7 +75,7 @@ Password input component with show/hide toggle functionality.
 ### Login Form
 
 ```blade
-<form>
+<x-box as="form">
     <x-field label="Email" required>
         <x-input type="email" required />
     </x-field>
@@ -80,14 +84,14 @@ Password input component with show/hide toggle functionality.
         <x-password-input required />
     </x-field>
 
-    <x-button type="submit" class="w-full">Sign In</x-button>
-</form>
+    <x-button type="submit" w="full">Sign In</x-button>
+</x-box>
 ```
 
 ### Registration Form
 
 ```blade
-<form>
+<x-box as="form">
     <x-field label="Password" helper-text="At least 8 characters" required>
         <x-password-input required />
     </x-field>
@@ -96,14 +100,14 @@ Password input component with show/hide toggle functionality.
         <x-password-input required />
     </x-field>
 
-    <x-button type="submit" class="w-full">Create Account</x-button>
-</form>
+    <x-button type="submit" w="full">Create Account</x-button>
+</x-box>
 ```
 
 ### Change Password Form
 
 ```blade
-<form>
+<x-box as="form">
     <x-field label="Current Password" required>
         <x-password-input required />
     </x-field>
@@ -117,7 +121,7 @@ Password input component with show/hide toggle functionality.
     </x-field>
 
     <x-button type="submit">Update Password</x-button>
-</form>
+</x-box>
 ```
 
 ## Livewire Integration

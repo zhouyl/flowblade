@@ -1,6 +1,6 @@
 # Field
 
-Form field wrapper component that provides label, helper text, and error message support.
+Form field wrapper component that provides label, helper text, and error message support. Field provides a convenient way to wrap form inputs with labels and validation messages.
 
 ## Basic Usage
 
@@ -19,6 +19,10 @@ Form field wrapper component that provides label, helper text, and error message
 | `errorText` | `string` | `null` | Error message text |
 | `required` | `boolean` | `false` | Show required indicator |
 | `invalid` | `boolean` | `false` | Invalid state |
+
+### Style Props
+
+Field supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## With Helper Text
 
@@ -49,7 +53,7 @@ Form field wrapper component that provides label, helper text, and error message
 ### Login Form
 
 ```blade
-<form>
+<x-box as="form">
     <x-field label="Email" required>
         <x-input type="email" required />
     </x-field>
@@ -58,14 +62,14 @@ Form field wrapper component that provides label, helper text, and error message
         <x-password-input required />
     </x-field>
 
-    <x-button type="submit" class="w-full">Sign In</x-button>
-</form>
+    <x-button type="submit" w="full">Sign In</x-button>
+</x-box>
 ```
 
 ### Registration Form
 
 ```blade
-<form>
+<x-box as="form">
     <x-field label="Username" helper-text="3-20 characters, letters and numbers only" required>
         <x-input required />
     </x-field>
@@ -78,8 +82,8 @@ Form field wrapper component that provides label, helper text, and error message
         <x-password-input required />
     </x-field>
 
-    <x-button type="submit" class="w-full">Create Account</x-button>
-</form>
+    <x-button type="submit" w="full">Create Account</x-button>
+</x-box>
 ```
 
 ### With Validation (Livewire)
