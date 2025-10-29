@@ -1,6 +1,6 @@
 # Stack / HStack / VStack
 
-Layout components that stack elements with consistent spacing.
+Layout components that stack elements with consistent spacing and comprehensive style props support. Stack components provide a convenient way to manage spacing and alignment of child elements with optional dividers.
 
 ## Props
 
@@ -9,9 +9,18 @@ Layout components that stack elements with consistent spacing.
 | `as` | string | `'div'` | HTML element to render |
 | `direction` | string | `'vertical'` | Stack direction (vertical, horizontal) - Stack only |
 | `spacing` | string | `'md'` | Spacing between items (2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl) |
+| `divider` | bool | `false` | Whether to show dividers between items |
+
+### Flex-Specific Props (via Style Props)
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
 | `align` | string | `null` | Align items (start, center, end, stretch, baseline) |
 | `justify` | string | `null` | Justify content (start, center, end, between, around, evenly) |
-| `divider` | bool | `false` | Whether to show dividers between items |
+
+### Style Props
+
+Stack components support all style props from the HasStyleProps trait, including spacing, sizing, colors, borders, and more. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Components
 
@@ -25,9 +34,9 @@ Layout components that stack elements with consistent spacing.
 
 ```blade
 <x-vstack spacing="md">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-vstack>
 ```
 
@@ -35,9 +44,9 @@ Layout components that stack elements with consistent spacing.
 
 ```blade
 <x-hstack spacing="lg">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-hstack>
 ```
 
@@ -48,20 +57,20 @@ Layout components that stack elements with consistent spacing.
 ```blade
 {{-- Extra small spacing --}}
 <x-vstack spacing="xs">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-vstack>
 
 {{-- Large spacing --}}
 <x-vstack spacing="lg">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-vstack>
 
 {{-- Extra large spacing --}}
 <x-vstack spacing="2xl">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-vstack>
 ```
 
@@ -69,27 +78,27 @@ Layout components that stack elements with consistent spacing.
 
 ```blade
 <x-vstack spacing="md" align="center">
-    <div>Centered Item 1</div>
-    <div>Centered Item 2</div>
+    <x-box>Centered Item 1</x-box>
+    <x-box>Centered Item 2</x-box>
 </x-vstack>
 
 <x-hstack spacing="md" align="center">
-    <div class="h-20">Tall item</div>
-    <div class="h-10">Short item</div>
+    <x-box h="20">Tall item</x-box>
+    <x-box h="10">Short item</x-box>
 </x-hstack>
 ```
 
 ### With Justification
 
 ```blade
-<x-hstack spacing="md" justify="between" class="w-full">
-    <div>Left</div>
-    <div>Right</div>
+<x-hstack spacing="md" justify="between" w="full">
+    <x-box>Left</x-box>
+    <x-box>Right</x-box>
 </x-hstack>
 
 <x-hstack spacing="md" justify="center">
-    <div>Item 1</div>
-    <div>Item 2</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
 </x-hstack>
 ```
 
@@ -97,15 +106,15 @@ Layout components that stack elements with consistent spacing.
 
 ```blade
 <x-vstack :divider="true" spacing="sm">
-    <div>Section 1</div>
-    <div>Section 2</div>
-    <div>Section 3</div>
+    <x-box>Section 1</x-box>
+    <x-box>Section 2</x-box>
+    <x-box>Section 3</x-box>
 </x-vstack>
 
 <x-hstack :divider="true" spacing="md">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <x-box>Item 1</x-box>
+    <x-box>Item 2</x-box>
+    <x-box>Item 3</x-box>
 </x-hstack>
 ```
 
@@ -115,21 +124,21 @@ Layout components that stack elements with consistent spacing.
 
 ```blade
 <x-vstack spacing="md">
-    <div>
-        <label class="block text-sm font-medium">Name</label>
-        <x-input class="mt-1" />
-    </div>
-    
-    <div>
-        <label class="block text-sm font-medium">Email</label>
-        <x-input type="email" class="mt-1" />
-    </div>
-    
-    <div>
-        <label class="block text-sm font-medium">Message</label>
-        <x-textarea class="mt-1" />
-    </div>
-    
+    <x-box>
+        <x-box as="label" display="block" fontSize="sm" fontWeight="medium">Name</x-box>
+        <x-input mt="1" />
+    </x-box>
+
+    <x-box>
+        <x-box as="label" display="block" fontSize="sm" fontWeight="medium">Email</x-box>
+        <x-input type="email" mt="1" />
+    </x-box>
+
+    <x-box>
+        <x-box as="label" display="block" fontSize="sm" fontWeight="medium">Message</x-box>
+        <x-textarea mt="1" />
+    </x-box>
+
     <x-button color="primary">Submit</x-button>
 </x-vstack>
 ```
@@ -139,9 +148,9 @@ Layout components that stack elements with consistent spacing.
 ```blade
 <x-box p="6" shadow="lg" rounded="xl">
     <x-vstack spacing="md">
-        <h2 class="text-xl font-bold">Card Title</h2>
-        <p class="text-gray-600">Card description goes here...</p>
-        
+        <x-heading as="h2" fontSize="xl" fontWeight="bold">Card Title</x-heading>
+        <x-text color="gray.600">Card description goes here...</x-text>
+
         <x-hstack spacing="sm" justify="end">
             <x-button variant="outline">Cancel</x-button>
             <x-button color="primary">Confirm</x-button>
@@ -153,17 +162,17 @@ Layout components that stack elements with consistent spacing.
 ### Navigation
 
 ```blade
-<x-hstack spacing="lg" align="center" class="p-4">
-    <div class="text-xl font-bold">Logo</div>
-    
+<x-hstack spacing="lg" align="center" p="4">
+    <x-text as="div" fontSize="xl" fontWeight="bold">Logo</x-text>
+
     <x-spacer />
-    
+
     <x-hstack spacing="md">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <x-box as="a" href="#">Home</x-box>
+        <x-box as="a" href="#">About</x-box>
+        <x-box as="a" href="#">Contact</x-box>
     </x-hstack>
-    
+
     <x-button>Sign In</x-button>
 </x-hstack>
 ```
@@ -173,9 +182,9 @@ Layout components that stack elements with consistent spacing.
 ```blade
 <x-vstack :divider="true" spacing="sm">
     @foreach($items as $item)
-        <x-hstack spacing="md" align="center" class="py-2">
+        <x-hstack spacing="md" align="center" py="2">
             <x-icon name="heroicons:check-circle" color="success" />
-            <div class="flex-1">{{ $item->name }}</div>
+            <x-box flex="1">{{ $item->name }}</x-box>
             <x-badge>{{ $item->status }}</x-badge>
         </x-hstack>
     @endforeach
@@ -186,19 +195,19 @@ Layout components that stack elements with consistent spacing.
 
 ```blade
 <x-hstack spacing="lg">
-    <x-box p="6" shadow="md" rounded="lg" class="flex-1">
+    <x-box p="6" shadow="md" rounded="lg" flex="1">
         <x-vstack spacing="xs">
-            <div class="text-sm text-gray-600">Total Users</div>
-            <div class="text-3xl font-bold">1,234</div>
-            <div class="text-sm text-green-600">+12% from last month</div>
+            <x-text fontSize="sm" color="gray.600">Total Users</x-text>
+            <x-text fontSize="3xl" fontWeight="bold">1,234</x-text>
+            <x-text fontSize="sm" color="green.600">+12% from last month</x-text>
         </x-vstack>
     </x-box>
-    
-    <x-box p="6" shadow="md" rounded="lg" class="flex-1">
+
+    <x-box p="6" shadow="md" rounded="lg" flex="1">
         <x-vstack spacing="xs">
-            <div class="text-sm text-gray-600">Revenue</div>
-            <div class="text-3xl font-bold">$12,345</div>
-            <div class="text-sm text-green-600">+8% from last month</div>
+            <x-text fontSize="sm" color="gray.600">Revenue</x-text>
+            <x-text fontSize="3xl" fontWeight="bold">$12,345</x-text>
+            <x-text fontSize="sm" color="green.600">+8% from last month</x-text>
         </x-vstack>
     </x-box>
 </x-hstack>
@@ -212,9 +221,9 @@ Layout components that stack elements with consistent spacing.
         <x-icon name="heroicons:arrow-left" />
         Previous
     </x-button>
-    
+
     <x-spacer />
-    
+
     <x-button color="primary">
         Next
         <x-icon name="heroicons:arrow-right" />
@@ -225,18 +234,18 @@ Layout components that stack elements with consistent spacing.
 ### Sidebar Layout
 
 ```blade
-<x-hstack spacing="0" class="min-h-screen">
+<x-hstack spacing="0" minH="screen">
     {{-- Sidebar --}}
-    <aside class="w-64 bg-gray-100">
-        <x-vstack spacing="xs" class="p-4">
-            <a href="#" class="p-2 rounded hover:bg-gray-200">Dashboard</a>
-            <a href="#" class="p-2 rounded hover:bg-gray-200">Users</a>
-            <a href="#" class="p-2 rounded hover:bg-gray-200">Settings</a>
+    <x-box as="aside" w="64" bg="gray.100">
+        <x-vstack spacing="xs" p="4">
+            <x-box as="a" href="#" p="2" rounded="md" class="hover:bg-gray-200">Dashboard</x-box>
+            <x-box as="a" href="#" p="2" rounded="md" class="hover:bg-gray-200">Users</x-box>
+            <x-box as="a" href="#" p="2" rounded="md" class="hover:bg-gray-200">Settings</x-box>
         </x-vstack>
-    </aside>
-    
+    </x-box>
+
     {{-- Main Content --}}
-    <main class="flex-1 p-8">
+    <x-box as="main" flex="1" p="8">
         <x-vstack spacing="lg">
             <h1 class="text-3xl font-bold">Page Title</h1>
             <div>Content goes here...</div>
