@@ -10,11 +10,11 @@
 ## 当前进度
 
 **总任务数**: 2 个主要任务
-**已完成**: 1.5 个
-**待完成**: 0.5 个
-**完成度**: 75%
+**已完成**: 1.6 个
+**待完成**: 0.4 个
+**完成度**: 76%
 
-**当前阶段**: Phase 4 - 其他组件 Style Props 实现 (待规划)
+**当前阶段**: Phase 4 - 其他组件 Style Props 实现 (进行中 - Button 组件已完成)
 
 ## 工作目标
 
@@ -379,25 +379,31 @@ trait HasStyleProps
 </x-flex>
 ```
 
-### Phase 4: 其他组件 Style Props 实现 (待规划)
+### Phase 4: 其他组件 Style Props 实现 (进行中)
 
 **目标**: 为其他非布局组件添加 Style Props 支持
+
+- [x] 4.1 Button 组件 Style Props - 已完成 (4/4)
+  - [x] 4.1.1 Button 组件 - 已完成
+  - [x] 4.1.2 IconButton 组件 - 已完成
+  - [x] 4.1.3 ButtonGroup 组件 - 已完成
+  - [x] 4.1.4 CloseButton 组件 - 已完成
 
 根据优先级，建议的实现顺序：
 1. **高优先级** - 常用组件
    - Typography 组件 (Text, Heading) - 已完成
-   - Button 组件 (Button, IconButton, ButtonGroup, CloseButton)
-   - Forms 组件 (Input, Textarea, Select, Checkbox, Radio, Switch, etc.)
+   - Button 组件 (Button, IconButton, ButtonGroup, CloseButton) - 已完成
+   - Forms 组件 (Input, Textarea, Select, Checkbox, Radio, Switch, etc.) - 待实现
 
 2. **中优先级** - 数据展示组件
-   - Data Display 组件 (Badge, Tag, Avatar, Card, etc.)
-   - Navigation 组件 (Breadcrumb, Pagination, Tabs, etc.)
+   - Data Display 组件 (Badge, Tag, Avatar, Card, etc.) - 待实现
+   - Navigation 组件 (Breadcrumb, Pagination, Tabs, etc.) - 待实现
 
 3. **低优先级** - 其他组件
-   - Overlay 组件 (Modal, Drawer, Tooltip, etc.)
-   - Feedback 组件 (Alert, Toast, etc.)
-   - Media 组件 (Carousel, Gallery, etc.)
-   - Disclosure 组件 (Accordion, Collapsible)
+   - Overlay 组件 (Modal, Drawer, Tooltip, etc.) - 待实现
+   - Feedback 组件 (Alert, Toast, etc.) - 待实现
+   - Media 组件 (Carousel, Gallery, etc.) - 待实现
+   - Disclosure 组件 (Accordion, Collapsible) - 待实现
 
 ## 下一步行动
 
