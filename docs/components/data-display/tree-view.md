@@ -36,9 +36,15 @@ Tree view component for displaying hierarchical data in an expandable/collapsibl
 | `expanded` | `boolean` | `false` | Is expanded by default |
 | `hasChildren` | `boolean` | `false` | Has children nodes |
 
-### Style Props
+## Style Props
 
-TreeView and TreeViewItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+TreeView and TreeViewItem support all common style props for flexible styling:
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`
+- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
 
 ## With Icons
 
