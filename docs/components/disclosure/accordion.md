@@ -1,6 +1,6 @@
 # Accordion
 
-Accordion component for organizing collapsible content sections in a vertical stack.
+Accordion component for organizing collapsible content sections in a vertical stack. Accordion provides a flexible way to display collapsible content.
 
 ## Basic Usage
 
@@ -9,11 +9,11 @@ Accordion component for organizing collapsible content sections in a vertical st
     <x-accordion-item value="item1" title="What is Flowblade?">
         Flowblade is a comprehensive Laravel Blade component library built with Tailwind CSS.
     </x-accordion-item>
-    
+
     <x-accordion-item value="item2" title="How do I install it?">
         You can install Flowblade via Composer: composer require mellivora/flowblade
     </x-accordion-item>
-    
+
     <x-accordion-item value="item3" title="Is it free?">
         Yes, Flowblade is completely free and open source.
     </x-accordion-item>
@@ -38,6 +38,10 @@ Accordion component for organizing collapsible content sections in a vertical st
 | `value` | `string` | required | Item value identifier |
 | `title` | `string` | `null` | Item title |
 | `icon` | `string` | `null` | Icon name |
+
+### Style Props
+
+Accordion and AccordionItem support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 | `disabled` | `bool` | `false` | Whether the item is disabled |
 
 ## Variants

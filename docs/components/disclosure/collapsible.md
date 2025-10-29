@@ -1,6 +1,6 @@
 # Collapsible
 
-Collapsible component for toggling content visibility with a simple expand/collapse interaction.
+Collapsible component for toggling content visibility with a simple expand/collapse interaction. Collapsible provides a flexible way to display collapsible content.
 
 ## Basic Usage
 
@@ -19,6 +19,10 @@ Collapsible component for toggling content visibility with a simple expand/colla
 | `icon` | `string` | `null` | Icon name |
 | `disabled` | `bool` | `false` | Whether the collapsible is disabled |
 
+### Style Props
+
+Collapsible supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ## Open by Default
 
 ```blade
@@ -31,11 +35,11 @@ Collapsible component for toggling content visibility with a simple expand/colla
 
 ```blade
 <x-collapsible title="Settings" icon="heroicons:cog-6-tooth">
-    <div class="space-y-3">
+    <x-vstack gap="3">
         <x-checkbox name="notifications">Enable notifications</x-checkbox>
         <x-checkbox name="auto_save">Auto-save changes</x-checkbox>
         <x-checkbox name="dark_mode">Dark mode</x-checkbox>
-    </div>
+    </x-vstack>
 </x-collapsible>
 ```
 
