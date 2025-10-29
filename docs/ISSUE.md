@@ -24,7 +24,28 @@
 
 ## 当前问题列表
 
-_暂无问题记录_
+### 🟡 Badge 组件缺少 Style Props 支持 (Important)
+
+**组件**: Badge (DataDisplay)
+**发现时间**: Code Review Phase 2
+**优先级**: 高
+**状态**: 待修复
+
+**问题描述**:
+- Badge 组件没有集成 HasStyleProps trait
+- 组件类继承自 `Illuminate\View\Component` 而不是 `Flowblade\Components\Component`
+- 无法使用 style props (p, m, bg, color, w, h 等)
+- 不符合开发规范
+
+**修复方案**:
+1. 更新组件类继承 `Flowblade\Components\Component`
+2. 添加 `use HasStyleProps;` trait
+3. 添加 `classes()` 方法来处理样式
+4. 在构造函数中添加 `...$styleProps` 参数
+5. 调用 `$this->setStyleProps($styleProps);`
+6. 运行 `composer phpcs-fix` 进行代码格式化
+
+**预期完成**: 下一个会话
 
 ## 已解决问题
 
