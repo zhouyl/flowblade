@@ -1,6 +1,6 @@
 # Badge
 
-Badge component for displaying status, labels, or counts.
+Badge component for displaying status, labels, or counts. Badge provides a flexible way to display small pieces of information with support for various sizes, colors, and variants.
 
 ## Basic Usage
 
@@ -19,6 +19,10 @@ Badge component for displaying status, labels, or counts.
 | `color` | `string` | `'primary'` | Color: `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `gray` |
 | `variant` | `string` | `'solid'` | Variant: `solid`, `subtle`, `outline` |
 | `icon` | `string` | `null` | Icon name |
+
+### Style Props
+
+Badge supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Colors
 
@@ -91,15 +95,15 @@ Badge component for displaying status, labels, or counts.
 ### Notification Counts
 
 ```blade
-<div class="flex items-center gap-2">
-    <span>Messages</span>
+<x-flex align="center" gap="2">
+    <x-text as="span">Messages</x-text>
     <x-badge size="sm" color="danger">5</x-badge>
-</div>
+</x-flex>
 
-<div class="flex items-center gap-2">
-    <span>Notifications</span>
+<x-flex align="center" gap="2">
+    <x-text as="span">Notifications</x-text>
     <x-badge size="sm" color="primary">12</x-badge>
-</div>
+</x-flex>
 ```
 
 ### User Roles
@@ -114,23 +118,23 @@ Badge component for displaying status, labels, or counts.
 ### Product Tags
 
 ```blade
-<div class="flex gap-2">
+<x-flex gap="2">
     <x-badge variant="outline" color="success">In Stock</x-badge>
     <x-badge variant="outline" color="warning">Limited</x-badge>
     <x-badge variant="outline" color="danger">Sale</x-badge>
     <x-badge variant="outline" color="info">New Arrival</x-badge>
-</div>
+</x-flex>
 ```
 
 ### Category Labels
 
 ```blade
-<div class="flex flex-wrap gap-2">
+<x-wrap gap="2">
     <x-badge size="sm" variant="subtle" color="primary">Technology</x-badge>
     <x-badge size="sm" variant="subtle" color="success">Business</x-badge>
     <x-badge size="sm" variant="subtle" color="info">Design</x-badge>
     <x-badge size="sm" variant="subtle" color="warning">Marketing</x-badge>
-</div>
+</x-wrap>
 ```
 
 ### Priority Levels

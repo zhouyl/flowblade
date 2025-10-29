@@ -1,6 +1,6 @@
 # Avatar
 
-Avatar component for displaying user profile images with fallback options.
+Avatar component for displaying user profile images with fallback options. Avatar provides a flexible way to display user avatars with support for various sizes and shapes.
 
 ## Basic Usage
 
@@ -17,6 +17,10 @@ Avatar component for displaying user profile images with fallback options.
 | `name` | `string` | `null` | Name for fallback initials |
 | `icon` | `string` | `null` | Icon name for fallback |
 | `shape` | `string` | `'circle'` | Shape: `circle`, `square`, `rounded` |
+
+### Style Props
+
+Avatar supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## With Image
 
@@ -82,68 +86,68 @@ When no image is provided, the avatar displays initials from the name:
 ### User Profile
 
 ```blade
-<div class="flex items-center gap-3">
+<x-flex align="center" gap="3">
     <x-avatar src="/avatar.jpg" name="John Doe" size="lg" />
-    <div>
+    <x-box>
         <x-heading size="md">John Doe</x-heading>
-        <x-text size="sm" color="gray">Software Developer</x-text>
-    </div>
-</div>
+        <x-text fontSize="sm" color="gray">Software Developer</x-text>
+    </x-box>
+</x-flex>
 ```
 
 ### User List
 
 ```blade
-<div class="space-y-3">
-    <div class="flex items-center gap-3">
+<x-vstack gap="3">
+    <x-flex align="center" gap="3">
         <x-avatar src="/user1.jpg" name="John Doe" />
-        <div class="flex-1">
-            <x-text weight="medium">John Doe</x-text>
-            <x-text size="sm" color="gray">john@example.com</x-text>
-        </div>
+        <x-box flex="1">
+            <x-text fontWeight="medium">John Doe</x-text>
+            <x-text fontSize="sm" color="gray">john@example.com</x-text>
+        </x-box>
         <x-badge color="success">Active</x-badge>
-    </div>
-    
-    <div class="flex items-center gap-3">
+    </x-flex>
+
+    <x-flex align="center" gap="3">
         <x-avatar name="Jane Smith" />
-        <div class="flex-1">
-            <x-text weight="medium">Jane Smith</x-text>
-            <x-text size="sm" color="gray">jane@example.com</x-text>
-        </div>
+        <x-box flex="1">
+            <x-text fontWeight="medium">Jane Smith</x-text>
+            <x-text fontSize="sm" color="gray">jane@example.com</x-text>
+        </x-box>
         <x-badge color="gray">Offline</x-badge>
-    </div>
-</div>
+    </x-flex>
+</x-vstack>
 ```
 
 ### Avatar Group (Stacked)
 
 ```blade
-<div class="flex -space-x-2">
+<x-flex class="-space-x-2">
     <x-avatar src="/user1.jpg" name="User 1" class="ring-2 ring-white" />
     <x-avatar src="/user2.jpg" name="User 2" class="ring-2 ring-white" />
     <x-avatar src="/user3.jpg" name="User 3" class="ring-2 ring-white" />
     <x-avatar name="+5" class="ring-2 ring-white bg-gray-300" />
-</div>
+</x-flex>
 ```
 
 ### With Status Indicator
 
 ```blade
-<div class="relative inline-block">
+<x-box position="relative" display="inline-block">
     <x-avatar src="/avatar.jpg" name="John Doe" size="lg" />
-    <span class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></span>
-</div>
+    <x-box position="absolute" bottom="0" right="0" w="4" h="4" bg="green.500" border="2" borderColor="white" rounded="full"></x-box>
+</x-box>
 ```
 
 ### With Badge
 
 ```blade
-<div class="relative inline-block">
+<x-box position="relative" display="inline-block">
     <x-avatar src="/avatar.jpg" name="John Doe" size="lg" />
-    <span class="absolute -top-1 -right-1">
+    <x-box position="absolute" top="-1" right="-1">
         <x-badge size="xs" color="danger">3</x-badge>
-    </span>
-</div>
+    </x-box>
+</x-box>
 ```
 
 ### Comment Author

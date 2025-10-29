@@ -1,6 +1,6 @@
 # Tag
 
-Tag component for labels, categories, and keywords.
+Tag component for labels, categories, and keywords. Tag provides a flexible way to display tags with support for various sizes, colors, variants, and optional close buttons.
 
 ## Basic Usage
 
@@ -20,6 +20,10 @@ Tag component for labels, categories, and keywords.
 | `variant` | `string` | `'subtle'` | Variant: `solid`, `subtle`, `outline` |
 | `icon` | `string` | `null` | Icon name |
 | `closable` | `boolean` | `false` | Show close button |
+
+### Style Props
+
+Tag supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Colors
 
@@ -91,33 +95,33 @@ Tag component for labels, categories, and keywords.
 ### Article Tags
 
 ```blade
-<div class="flex flex-wrap gap-2">
+<x-wrap gap="2">
     <x-tag size="sm" color="primary">Technology</x-tag>
     <x-tag size="sm" color="success">Tutorial</x-tag>
     <x-tag size="sm" color="info">Laravel</x-tag>
     <x-tag size="sm" color="warning">PHP</x-tag>
-</div>
+</x-wrap>
 ```
 
 ### Product Categories
 
 ```blade
-<div class="flex flex-wrap gap-2">
+<x-wrap gap="2">
     <x-tag variant="outline" color="primary">Electronics</x-tag>
     <x-tag variant="outline" color="success">In Stock</x-tag>
     <x-tag variant="outline" color="danger">Sale</x-tag>
     <x-tag variant="outline" color="info">New Arrival</x-tag>
-</div>
+</x-wrap>
 ```
 
 ### Status Tags
 
 ```blade
-<div class="flex gap-2">
+<x-flex gap="2">
     <x-tag variant="solid" color="success" icon="heroicons:check-circle">Completed</x-tag>
     <x-tag variant="solid" color="warning" icon="heroicons:clock">Pending</x-tag>
     <x-tag variant="solid" color="danger" icon="heroicons:x-circle">Failed</x-tag>
-</div>
+</x-flex>
 ```
 
 ### Skill Tags
@@ -127,16 +131,16 @@ Tag component for labels, categories, and keywords.
     <x-card-header>
         <x-heading size="lg">Skills</x-heading>
     </x-card-header>
-    
+
     <x-card-body>
-        <div class="flex flex-wrap gap-2">
+        <x-wrap gap="2">
             <x-tag color="primary">Laravel</x-tag>
             <x-tag color="primary">PHP</x-tag>
             <x-tag color="success">Vue.js</x-tag>
             <x-tag color="success">JavaScript</x-tag>
             <x-tag color="info">Tailwind CSS</x-tag>
             <x-tag color="warning">MySQL</x-tag>
-        </div>
+        </x-wrap>
     </x-card-body>
 </x-card>
 ```
