@@ -1,9 +1,5 @@
-@php
-    $parentData = '$parent';
-@endphp
-
-<div 
-    {{ $attributes->merge(['class' => '']) }}
+<div
+    {{ $attributes->merge(['class' => $classes()]) }}
     x-data="{
         expanded: {{ $expanded ? 'true' : 'false' }},
         hasChildren: {{ $hasChildren ? 'true' : 'false' }},
