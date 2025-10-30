@@ -1,6 +1,6 @@
 # Box
 
-Flexible layout container component with comprehensive style props support. The Box component is the most fundamental layout primitive in Flowblade, providing a flexible foundation for building layouts with full access to spacing, sizing, colors, borders, and more.
+Flexible layout container component with comprehensive style props support. The Box component is the most fundamental layout primitive in Flowblade, providing a flexible foundation for building layouts with full access to spacing, sizing, colors, borders, and more. Perfect for building custom layouts and containers.
 
 ## Props
 
@@ -276,6 +276,16 @@ For a complete list of available style props, see the [HasStyleProps trait docum
     </x-box>
 </x-flex>
 ```
+
+## Accessibility
+
+The Box component:
+- Maintains semantic HTML structure
+- Supports all HTML elements via `as` prop
+- Preserves content accessibility
+- Does not interfere with keyboard navigation
+- Supports screen reader navigation
+- Properly announces content
 
 ## Related Components
 
