@@ -1,10 +1,5 @@
-@php
-    $baseClasses = '';
-    $disabledClasses = $disabled ? 'opacity-50 cursor-not-allowed' : '';
-@endphp
-
-<div 
-    {{ $attributes->merge(['class' => $baseClasses . ' ' . $disabledClasses]) }}
+<div
+    {{ $attributes->merge(['class' => $classes()]) }}
     x-bind:class="{
         'border-b border-gray-200': variant === 'default',
         'border border-gray-200 rounded-lg': variant === 'separated',

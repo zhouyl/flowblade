@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Disclosure;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Collapsible Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Collapsible extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -26,8 +30,30 @@ class Collapsible extends Component
         public bool $open = false,
         public ?string $title = null,
         public ?string $icon = null,
-        public bool $disabled = false
+        public bool $disabled = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'border border-gray-200 rounded-lg dark:border-gray-700',
+            $this->disabled ? 'opacity-50 cursor-not-allowed' : '',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

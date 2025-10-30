@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Disclosure;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Accordion Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Accordion extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -26,8 +30,29 @@ class Accordion extends Component
         public string $variant = 'default',
         public string $size = 'md',
         public bool $multiple = false,
-        public ?string $defaultValue = null
+        public ?string $defaultValue = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'space-y-2',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

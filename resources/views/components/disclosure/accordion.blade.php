@@ -1,26 +1,24 @@
 @php
-    // Size classes
-    $sizeClasses = [
-        'xs' => 'text-xs',
-        'sm' => 'text-sm',
-        'md' => 'text-base',
-        'lg' => 'text-lg',
-        'xl' => 'text-xl',
-    ];
-    
-    // Variant classes
-    $variantClasses = [
-        'default' => 'border-t border-gray-200',
-        'separated' => 'space-y-2',
-        'contained' => 'border border-gray-200 rounded-lg overflow-hidden',
-    ];
-    
-    $sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
-    $variantClass = $variantClasses[$variant] ?? $variantClasses['default'];
+$sizeClasses = [
+    'xs' => 'text-xs',
+    'sm' => 'text-sm',
+    'md' => 'text-base',
+    'lg' => 'text-lg',
+    'xl' => 'text-xl',
+];
+
+$variantClasses = [
+    'default' => 'border-t border-gray-200',
+    'separated' => 'space-y-2',
+    'contained' => 'border border-gray-200 rounded-lg overflow-hidden',
+];
+
+$sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
+$variantClass = $variantClasses[$variant] ?? $variantClasses['default'];
 @endphp
 
-<div 
-    {{ $attributes->merge(['class' => $sizeClass . ' ' . $variantClass]) }}
+<div
+    {{ $attributes->merge(['class' => $classes() . ' ' . $sizeClass . ' ' . $variantClass]) }}
     x-data="{ 
         openItems: {{ $defaultValue ? '[\'' . $defaultValue . '\']' : '[]' }},
         multiple: {{ $multiple ? 'true' : 'false' }},

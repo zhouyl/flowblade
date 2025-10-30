@@ -1,9 +1,5 @@
-@php
-    $disabledClasses = $disabled ? 'opacity-50 cursor-not-allowed' : '';
-@endphp
-
-<div 
-    {{ $attributes->merge(['class' => $disabledClasses]) }}
+<div
+    {{ $attributes->merge(['class' => $classes()]) }}
     x-data="{ 
         open: {{ $open ? 'true' : 'false' }},
         disabled: {{ $disabled ? 'true' : 'false' }},
