@@ -1,6 +1,6 @@
 # Floating Label
 
-Material Design style floating label input components with smooth animations and multiple variants.
+Material Design style floating label input components with smooth animations and multiple variants. Perfect for modern form designs, Material Design interfaces, and elegant input fields.
 
 ## Components
 
@@ -473,9 +473,11 @@ The Floating Label components:
 - Include proper label associations via `for` and `id` attributes
 - Support required field indicators
 - Provide error states with appropriate ARIA attributes
-- Support keyboard navigation
+- Support keyboard navigation (Tab, Enter)
 - Use proper color contrast ratios
 - Show visual indicators for required fields
+- Announce floating label state to screen readers
+- Supports proper ARIA attributes for form validation
 
 ## Notes
 
