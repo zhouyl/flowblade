@@ -1,6 +1,6 @@
 # NumberInput
 
-NumberInput component for numeric input with increment/decrement buttons. Provides a user-friendly interface for entering and adjusting numeric values.
+NumberInput component for numeric input with increment/decrement buttons. Provides a user-friendly interface for entering and adjusting numeric values. Perfect for quantities, prices, and numeric form fields.
 
 ## Basic Usage
 
@@ -21,6 +21,10 @@ NumberInput component for numeric input with increment/decrement buttons. Provid
 | `required` | `boolean` | `false` | Required field |
 
 NumberInput also supports all common style props for flexible styling.
+
+### Style Props
+
+NumberInput supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -103,9 +107,11 @@ NumberInput also supports all common style props for flexible styling.
 ## Accessibility
 
 The NumberInput component:
-- Uses semantic HTML structure
-- Supports keyboard navigation
+- Uses semantic HTML structure with proper `<input type="number">`
+- Supports keyboard navigation (Arrow keys for increment/decrement, Tab)
 - Works with screen readers
-- Provides clear increment/decrement buttons
-- Supports min/max validation
+- Provides clear increment/decrement buttons with accessible labels
+- Supports min/max validation with ARIA attributes
+- Announces value changes to screen readers
+- Maintains focus management for keyboard users
 
