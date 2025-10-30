@@ -116,11 +116,12 @@ PinInput supports all style props from the HasStyleProps trait. For a complete l
 
 The PinInput component:
 - Uses semantic HTML structure with proper input elements
-- Supports keyboard navigation (Tab, Arrow keys, Backspace)
+- Supports keyboard navigation (Tab, Arrow keys, Backspace, Enter)
 - Works with screen readers
 - Provides clear input fields with proper labels
 - Auto-focuses next field on input for seamless entry
 - Announces field count and current position to screen readers
 - Supports paste functionality for accessibility
 - Maintains focus management for keyboard users
+- Supports proper ARIA attributes for PIN input validation
 
