@@ -98,4 +98,6 @@ The TreeViewItem component:
 - Should be used within a TreeView component
 - Provides clear indication of parent/child relationships
 - Announces expanded/collapsed state to screen readers
+- Properly announces tree node hierarchy to screen readers
+- Supports proper ARIA attributes for tree navigation
 
