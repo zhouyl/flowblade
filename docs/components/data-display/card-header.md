@@ -97,8 +97,10 @@ The CardHeader component:
 - Uses semantic HTML structure
 - Maintains proper heading hierarchy
 - Works with screen readers
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Should contain appropriate heading elements (h1-h6)
 - Provides clear visual separation from card body
 - Supports ARIA attributes for additional context
+- Properly announces header content to screen readers
+- Maintains proper focus order for interactive elements
 
