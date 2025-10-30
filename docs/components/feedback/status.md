@@ -1,6 +1,6 @@
 # Status
 
-Status indicator component for displaying status with color-coded indicators. Status provides a flexible way to display status indicators.
+Status indicator component for displaying status with color-coded indicators. Status provides a flexible way to display status indicators. Perfect for user presence, system status, and availability indicators.
 
 ## Basic Usage
 
@@ -521,4 +521,7 @@ The Status component:
 - Works with keyboard navigation
 - Uses animations sparingly with the pulse option
 - Supports multiple variants for different contexts
+- Includes ARIA labels for status indicators
+- Announces status changes to screen readers
+- Provides alternative text for color-only indicators
 
