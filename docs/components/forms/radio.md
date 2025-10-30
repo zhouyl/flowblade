@@ -1,6 +1,6 @@
 # Radio
 
-Radio button component for selecting one option from a group. Radio provides a flexible way to create radio button inputs with support for various sizes, colors, and states.
+Radio button component for selecting one option from a group. Radio provides a flexible way to create radio button inputs with support for various sizes, colors, and states. Perfect for single-select options, payment methods, and preference selections.
 
 ## Basic Usage
 
@@ -149,4 +149,17 @@ Radio supports all style props from the HasStyleProps trait. For a complete list
     <x-text as="p" mt="4" x-text="'Selected: ' + selected"></x-text>
 </x-box>
 ```
+
+## Accessibility
+
+The Radio component:
+- Uses semantic HTML structure with proper `<input type="radio">`
+- Supports keyboard navigation (Arrow keys to navigate, Space to select, Tab for focus)
+- Works with screen readers
+- Provides clear selected/unselected states with ARIA attributes
+- Should always be associated with a label element
+- Announces state changes to screen readers
+- Maintains focus management for keyboard users
+- Provides visual feedback for focus and state
+- Supports radio groups with proper grouping semantics
 
