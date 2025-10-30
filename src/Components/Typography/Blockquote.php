@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Typography;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Blockquote Component
@@ -15,14 +16,19 @@ use Illuminate\View\Component;
  */
 class Blockquote extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $color Border color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param null|string $color         Border color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $color = 'gray',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -50,6 +56,13 @@ class Blockquote extends Component
 
         if ($this->color && isset($colorMap[$this->color])) {
             $classes[] = $colorMap[$this->color];
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

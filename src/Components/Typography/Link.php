@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Typography;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Link Component
@@ -15,20 +16,25 @@ use Illuminate\View\Component;
  */
 class Link extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $href      Link URL
-     * @param null|string $color     Link color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info'
-     * @param bool        $underline Whether to show underline
-     * @param bool        $external  Whether link opens in new tab (adds target="_blank" and rel="noopener noreferrer")
+     * @param null|string $href          Link URL
+     * @param null|string $color         Link color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info'
+     * @param bool        $underline     Whether to show underline
+     * @param bool        $external      Whether link opens in new tab (adds target="_blank" and rel="noopener noreferrer")
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $href = null,
         public ?string $color = 'primary',
         public bool $underline = true,
         public bool $external = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -55,6 +61,13 @@ class Link extends Component
         // Hover effect
         $classes[] = 'hover:opacity-80';
         $classes[] = 'transition';
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
 
         return ComponentHelper::mergeClasses(...$classes);
     }

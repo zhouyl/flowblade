@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Typography;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Highlight Component
@@ -15,16 +16,21 @@ use Illuminate\View\Component;
  */
 class Highlight extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $query Search query to highlight within text
-     * @param null|string $color Highlight color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param null|string $query         Search query to highlight within text
+     * @param null|string $color         Highlight color: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $query = null,
         public ?string $color = 'warning',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -47,6 +53,13 @@ class Highlight extends Component
 
         if ($this->color && isset($colorMap[$this->color])) {
             $classes[] = $colorMap[$this->color];
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);
