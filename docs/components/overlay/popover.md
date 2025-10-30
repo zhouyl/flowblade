@@ -1,6 +1,6 @@
 # Popover
 
-Popover component for displaying rich content in a popup box relative to a trigger element. Popover provides a flexible way to display popovers with support for various placements and widths.
+Popover component for displaying rich content in a popup box relative to a trigger element. Popover provides a flexible way to display popovers with support for various placements and widths. Perfect for detailed information, forms, and interactive content.
 
 ## Requirements
 
@@ -620,11 +620,12 @@ popover.isVisible();
 ## Accessibility
 
 The Popover component:
-- Uses semantic HTML with `role="tooltip"`
-- Supports keyboard navigation
+- Uses semantic HTML with `role="tooltip"` or `role="dialog"`
+- Supports keyboard navigation (Tab, Enter, Escape)
 - Works with screen readers
 - Provides proper ARIA attributes
 - Maintains focus management
+- Announces popover content to screen readers
 - Supports both hover and click triggers
 - Uses Popper.js for intelligent positioning
 - Respects user motion preferences
