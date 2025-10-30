@@ -152,4 +152,6 @@ The HStack component:
 - Supports keyboard navigation
 - Preserves semantic meaning of child elements
 - Should use appropriate semantic elements for content
+- Properly announces contained content
+- Does not interfere with screen reader navigation
 
