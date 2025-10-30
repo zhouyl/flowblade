@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Editable Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Editable extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -26,6 +30,7 @@ class Editable extends Component
      * @param bool        $submitOnBlur     Whether to submit changes on blur
      * @param bool        $submitOnEnter    Whether to submit changes on Enter key
      * @param bool        $cancelOnEscape   Whether to cancel changes on Escape key
+     * @param mixed       ...$styleProps    All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $value = null,
@@ -36,8 +41,27 @@ class Editable extends Component
         public bool $selectAllOnFocus = true,
         public bool $submitOnBlur = true,
         public bool $submitOnEnter = true,
-        public bool $cancelOnEscape = true
+        public bool $cancelOnEscape = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

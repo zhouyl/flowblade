@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * DateRangePicker Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class DateRangePicker extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -30,6 +34,7 @@ class DateRangePicker extends Component
      * @param bool   $required         Whether both dates are required
      * @param bool   $disabled         Whether both inputs are disabled
      * @param bool   $readonly         Whether both inputs are read-only
+     * @param mixed  ...$styleProps    All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $id = '',
@@ -44,7 +49,8 @@ class DateRangePicker extends Component
         public bool $showIcon = true,
         public bool $required = false,
         public bool $disabled = false,
-        public bool $readonly = false
+        public bool $readonly = false,
+        ...$styleProps
     ) {
         // Generate IDs if not provided
         if (empty($this->id)) {
@@ -58,6 +64,25 @@ class DateRangePicker extends Component
         if (empty($this->endId)) {
             $this->endId = $this->id.'-end';
         }
+
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

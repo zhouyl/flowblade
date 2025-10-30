@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Field Component
@@ -15,22 +16,27 @@ use Illuminate\View\Component;
  */
 class Field extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $label      Field label text
-     * @param null|string $helperText Helper text below the input
-     * @param null|string $errorText  Error message text
-     * @param bool        $required   Whether field is required
-     * @param bool        $invalid    Whether field has validation error
+     * @param null|string $label         Field label text
+     * @param null|string $helperText    Helper text below the input
+     * @param null|string $errorText     Error message text
+     * @param bool        $required      Whether field is required
+     * @param bool        $invalid       Whether field has validation error
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $label = null,
         public ?string $helperText = null,
         public ?string $errorText = null,
         public bool $required = false,
-        public bool $invalid = false
+        public bool $invalid = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -41,6 +47,13 @@ class Field extends Component
         $classes = [
             'mb-4',
         ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
 
         return ComponentHelper::mergeClasses(...$classes);
     }
