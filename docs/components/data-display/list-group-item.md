@@ -1,6 +1,6 @@
 # ListGroupItem
 
-ListGroupItem component for displaying individual items within a ListGroup. Each item can contain text, icons, badges, or custom content.
+ListGroupItem component for displaying individual items within a ListGroup. Each item can contain text, icons, badges, or custom content. Perfect for lists, navigation menus, and item collections.
 
 ## Basic Usage
 
@@ -14,13 +14,11 @@ ListGroupItem component for displaying individual items within a ListGroup. Each
 
 ## Props
 
-ListGroupItem supports all common style props for flexible styling:
+ListGroupItem supports all common style props for flexible styling.
 
-- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
-- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
-- **Colors**: `bg`, `color`, `borderColor`
-- **Layout**: `display`, `position`, `zIndex`, `overflow`
-- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
+### Style Props
+
+ListGroupItem supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -107,4 +105,7 @@ The ListGroupItem component:
 - Maintains proper content hierarchy
 - Works with screen readers
 - Supports keyboard navigation
+- Should be used within a ListGroup component
+- Provides clear visual separation between items
+- Supports ARIA attributes for additional context
 
