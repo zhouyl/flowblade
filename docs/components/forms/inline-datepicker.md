@@ -129,9 +129,11 @@ InlineDatepicker supports all style props from the HasStyleProps trait. For a co
 
 The InlineDatepicker component:
 - Uses semantic HTML structure
-- Supports keyboard navigation (Arrow keys, Enter)
+- Supports keyboard navigation (Arrow keys, Enter, Tab)
 - Works with screen readers
 - Provides clear date selection interface
 - Supports date range validation
 - Announces selected dates to assistive technologies
+- Supports proper ARIA attributes for date selection
+- Maintains proper focus management for keyboard users
 
