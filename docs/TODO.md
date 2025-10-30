@@ -215,9 +215,9 @@
   - [x] 5.5.1 Steps 组件 ✅
   - [x] 5.5.2 StepItem 组件 ✅
 
-- [ ] 5.6 SpeedDial 组件 (2 个)
-  - [ ] 5.6.1 SpeedDial 组件
-  - [ ] 5.6.2 SpeedDialItem 组件
+- [x] 5.6 SpeedDial 组件 (2 个) ✅ 完成
+  - [x] 5.6.1 SpeedDial 组件 ✅
+  - [x] 5.6.2 SpeedDialItem 组件 ✅
 
 - [ ] 5.7 MegaMenu 组件 (3 个)
   - [ ] 5.7.1 MegaMenu 组件
@@ -227,7 +227,7 @@
 - [x] 5.8 其他组件 (1 个) ✅ 完成
   - [x] 5.8.1 BreadcrumbItem 组件 ✅
 
-**当前进度**: 18/23 个 Navigation 组件已完成 (78.3%)
+**当前进度**: 20/23 个 Navigation 组件已完成 (87.0%)
 
 ## 工作要求
 
