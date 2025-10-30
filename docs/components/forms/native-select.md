@@ -1,6 +1,6 @@
 # NativeSelect
 
-NativeSelect component for creating a native HTML select dropdown. Uses the browser's native select element for better accessibility and performance.
+NativeSelect component for creating a native HTML select dropdown. Uses the browser's native select element for better accessibility and performance. Perfect for simple dropdowns and mobile-friendly forms.
 
 ## Basic Usage
 
@@ -118,8 +118,10 @@ NativeSelect also supports all common style props for flexible styling.
 
 The NativeSelect component:
 - Uses native HTML select element
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
 - Works with screen readers
 - Provides clear option labels
 - Supports required field validation
+- Announces selected option to screen readers
+- Supports proper ARIA attributes for select validation
 
