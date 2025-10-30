@@ -1,6 +1,6 @@
 # MenuItem
 
-MenuItem component for displaying individual menu items within a Menu. Each item can be a link, button, or custom content.
+MenuItem component for displaying individual menu items within a Menu. Each item can be a link, button, or custom content. Perfect for dropdown menus, context menus, and action menus.
 
 ## Basic Usage
 
@@ -9,7 +9,7 @@ MenuItem component for displaying individual menu items within a Menu. Each item
     <x-menu-trigger>
         <x-button>Menu</x-button>
     </x-menu-trigger>
-    
+
     <x-menu-content>
         <x-menu-item href="/edit">Edit</x-menu-item>
         <x-menu-item href="/delete">Delete</x-menu-item>
@@ -25,6 +25,10 @@ MenuItem component for displaying individual menu items within a Menu. Each item
 | `disabled` | `boolean` | `false` | Disabled state |
 
 MenuItem also supports all common style props for flexible styling.
+
+### Style Props
+
+MenuItem supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -92,7 +96,10 @@ MenuItem also supports all common style props for flexible styling.
 
 The MenuItem component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Arrow keys, Enter, Escape)
 - Works with screen readers
 - Provides clear menu item indication
+- Should be used within a Menu component
+- Disabled items are properly announced to screen readers
+- Supports ARIA attributes for additional context
 
