@@ -1,6 +1,6 @@
 # SpeedDialItem
 
-SpeedDialItem component for displaying individual action items within a SpeedDial. Each item is a quick action button.
+SpeedDialItem component for displaying individual action items within a SpeedDial. Each item is a quick action button. Perfect for quick actions and floating action buttons.
 
 ## Basic Usage
 
@@ -49,7 +49,9 @@ SpeedDialItem also supports all common style props for flexible styling.
 
 The SpeedDialItem component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
 - Provides clear action labels
+- Announces action to screen readers
+- Supports proper link semantics
 
