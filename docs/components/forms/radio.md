@@ -154,7 +154,7 @@ Radio supports all style props from the HasStyleProps trait. For a complete list
 
 The Radio component:
 - Uses semantic HTML structure with proper `<input type="radio">`
-- Supports keyboard navigation (Arrow keys to navigate, Space to select, Tab for focus)
+- Supports keyboard navigation (Arrow keys to navigate, Space to select, Tab for focus, Enter)
 - Works with screen readers
 - Provides clear selected/unselected states with ARIA attributes
 - Should always be associated with a label element
@@ -162,4 +162,5 @@ The Radio component:
 - Maintains focus management for keyboard users
 - Provides visual feedback for focus and state
 - Supports radio groups with proper grouping semantics
+- Supports proper ARIA attributes for radio validation
 
