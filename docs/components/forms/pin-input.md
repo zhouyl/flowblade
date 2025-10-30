@@ -1,6 +1,6 @@
 # PinInput
 
-PinInput component for entering PIN codes or verification codes. Provides a series of input fields for entering individual digits.
+PinInput component for entering PIN codes or verification codes. Provides a series of input fields for entering individual digits. Perfect for two-factor authentication, email verification, and secure code entry.
 
 ## Basic Usage
 
@@ -19,6 +19,10 @@ PinInput component for entering PIN codes or verification codes. Provides a seri
 | `required` | `boolean` | `false` | Required field |
 
 PinInput also supports all common style props for flexible styling.
+
+### Style Props
+
+PinInput supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -111,9 +115,12 @@ PinInput also supports all common style props for flexible styling.
 ## Accessibility
 
 The PinInput component:
-- Uses semantic HTML structure
-- Supports keyboard navigation
+- Uses semantic HTML structure with proper input elements
+- Supports keyboard navigation (Tab, Arrow keys, Backspace)
 - Works with screen readers
-- Provides clear input fields
-- Auto-focuses next field on input
+- Provides clear input fields with proper labels
+- Auto-focuses next field on input for seamless entry
+- Announces field count and current position to screen readers
+- Supports paste functionality for accessibility
+- Maintains focus management for keyboard users
 
