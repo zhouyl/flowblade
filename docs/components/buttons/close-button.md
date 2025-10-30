@@ -1,6 +1,6 @@
 # CloseButton
 
-Close button component for dialogs, modals, notifications, etc. CloseButton provides a convenient way to create close buttons with consistent styling and accessibility.
+Close button component for dialogs, modals, notifications, etc. CloseButton provides a convenient way to create close buttons with consistent styling and accessibility. Perfect for dismissible components and modal windows.
 
 ## Basic Usage
 
@@ -98,4 +98,16 @@ CloseButton supports all style props from the HasStyleProps trait. For a complet
     @endif
 </x-box>
 ```
+
+## Accessibility
+
+The CloseButton component:
+- Uses semantic HTML button element
+- Includes proper ARIA labels for screen readers
+- Supports keyboard navigation (Tab, Enter, Space)
+- Has clear focus indicators
+- Provides visual feedback on hover and active states
+- Should always have an accessible label (default: "Close")
+- Works with screen readers to announce button purpose
+- Maintains proper color contrast ratios
 
