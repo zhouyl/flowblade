@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * AbsoluteCenter Component
@@ -15,16 +16,21 @@ use Illuminate\View\Component;
  */
 class AbsoluteCenter extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string      $as   HTML element to render (default: 'div')
-     * @param null|string $axis Centering axis: 'both', 'horizontal', 'vertical' (default: 'both')
+     * @param string      $as            HTML element to render (default: 'div')
+     * @param null|string $axis          Centering axis: 'both', 'horizontal', 'vertical' (default: 'both')
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $as = 'div',
         public ?string $axis = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -49,6 +55,13 @@ class AbsoluteCenter extends Component
             $classes[] = 'left-1/2';
             $classes[] = '-translate-x-1/2';
             $classes[] = '-translate-y-1/2';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

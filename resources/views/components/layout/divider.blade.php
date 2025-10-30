@@ -38,12 +38,12 @@ if ($orientation === 'vertical') {
 @endphp
 
 @if($orientation === 'vertical')
-    <div {{ $attributes->merge(['class' => $containerClasses]) }}>
+    <div {{ $attributes->merge(['class' => $classes() . ' ' . $containerClasses]) }}>
         <div class="{{ $lineClasses }}"></div>
     </div>
 @else
     @if($hasContent)
-        <div {{ $attributes->merge(['class' => $containerClasses]) }}>
+        <div {{ $attributes->merge(['class' => $classes() . ' ' . $containerClasses]) }}>
             @if($align === 'left' || $align === 'center')
                 <div class="{{ $lineClasses }}"></div>
             @endif
@@ -71,7 +71,7 @@ if ($orientation === 'vertical') {
             @endif
         </div>
     @else
-        <div {{ $attributes->merge(['class' => $containerClasses]) }}>
+        <div {{ $attributes->merge(['class' => $classes() . ' ' . $containerClasses]) }}>
             <div class="{{ $lineClasses }}"></div>
         </div>
     @endif

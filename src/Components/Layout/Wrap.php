@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Wrap Component
@@ -15,15 +16,18 @@ use Illuminate\View\Component;
  */
 class Wrap extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string      $as       HTML element to render (default: 'div')
-     * @param null|string $spacing  Gap between items: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
-     * @param null|string $spacingX Horizontal gap
-     * @param null|string $spacingY Vertical gap
-     * @param null|string $align    Align items: 'start', 'center', 'end', 'stretch', 'baseline'
-     * @param null|string $justify  Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
+     * @param string      $as            HTML element to render (default: 'div')
+     * @param null|string $spacing       Gap between items: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
+     * @param null|string $spacingX      Horizontal gap
+     * @param null|string $spacingY      Vertical gap
+     * @param null|string $align         Align items: 'start', 'center', 'end', 'stretch', 'baseline'
+     * @param null|string $justify       Justify content: 'start', 'center', 'end', 'between', 'around', 'evenly'
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $as = 'div',
@@ -32,7 +36,9 @@ class Wrap extends Component
         public ?string $spacingY = null,
         public ?string $align = null,
         public ?string $justify = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -89,6 +95,13 @@ class Wrap extends Component
 
         if ($this->spacing && !$this->spacingX && !$this->spacingY && isset($spacingMap[$this->spacing])) {
             $classes[] = "gap-{$spacingMap[$this->spacing]}";
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

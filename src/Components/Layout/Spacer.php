@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Spacer Component
@@ -14,12 +16,16 @@ use Illuminate\View\Component;
  */
 class Spacer extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
+     *
+     * @param mixed ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
-    public function __construct()
+    public function __construct(...$styleProps)
     {
-        //
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -27,7 +33,18 @@ class Spacer extends Component
      */
     public function classes(): string
     {
-        return 'flex-1';
+        $classes = [
+            'flex-1',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

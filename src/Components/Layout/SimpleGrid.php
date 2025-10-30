@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * SimpleGrid Component
@@ -15,6 +16,8 @@ use Illuminate\View\Component;
  */
 class SimpleGrid extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -24,6 +27,7 @@ class SimpleGrid extends Component
      * @param null|string $spacing       Gap between items: '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'
      * @param null|string $spacingX      Horizontal gap
      * @param null|string $spacingY      Vertical gap
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $as = 'div',
@@ -32,7 +36,9 @@ class SimpleGrid extends Component
         public ?string $spacing = null,
         public ?string $spacingX = null,
         public ?string $spacingY = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -80,6 +86,13 @@ class SimpleGrid extends Component
 
         if ($this->spacing && !$this->spacingX && !$this->spacingY && isset($spacingMap[$this->spacing])) {
             $classes[] = "gap-{$spacingMap[$this->spacing]}";
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

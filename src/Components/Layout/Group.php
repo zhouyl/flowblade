@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Group Component
@@ -14,14 +16,19 @@ use Illuminate\View\Component;
  */
 class Group extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string $as HTML element to render (default: 'div')
+     * @param string $as            HTML element to render (default: 'div')
+     * @param mixed  ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $as = 'div',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -29,7 +36,18 @@ class Group extends Component
      */
     public function classes(): string
     {
-        return 'group';
+        $classes = [
+            'group',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

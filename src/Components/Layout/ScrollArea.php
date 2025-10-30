@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Layout;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * ScrollArea Component
@@ -15,20 +16,25 @@ use Illuminate\View\Component;
  */
 class ScrollArea extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string      $as        HTML element to render (default: 'div')
-     * @param null|string $height    Fixed height (e.g., '400px', '50vh')
-     * @param null|string $maxHeight Maximum height (e.g., '600px', '80vh')
-     * @param string      $scrollbar Scrollbar visibility: 'auto', 'always', 'hidden'
+     * @param string      $as            HTML element to render (default: 'div')
+     * @param null|string $height        Fixed height (e.g., '400px', '50vh')
+     * @param null|string $maxHeight     Maximum height (e.g., '600px', '80vh')
+     * @param string      $scrollbar     Scrollbar visibility: 'auto', 'always', 'hidden'
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $as = 'div',
         public ?string $height = null,
         public ?string $maxHeight = null,
         public string $scrollbar = 'auto',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -53,6 +59,13 @@ class ScrollArea extends Component
             $classes[] = 'scrollbar-thin';
             $classes[] = 'scrollbar-thumb-gray-400';
             $classes[] = 'scrollbar-track-gray-100';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);
