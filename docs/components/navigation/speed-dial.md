@@ -1,6 +1,6 @@
 # SpeedDial Component
 
-Floating action button group with expand/collapse animation for quick access to common actions. SpeedDial provides a flexible way to create floating action button groups.
+Floating action button group with expand/collapse animation for quick access to common actions. SpeedDial provides a flexible way to create floating action button groups. Perfect for quick actions, floating menus, and action buttons.
 
 ## Basic Usage
 
@@ -283,6 +283,8 @@ The SpeedDial component includes proper ARIA attributes:
 - Uses `aria-controls` to link button to menu
 - Includes `sr-only` text for screen readers
 - Keyboard accessible (Tab, Enter, Escape)
+- Announces menu state to screen readers
+- Supports proper button semantics
 
 ## Browser Support
 
