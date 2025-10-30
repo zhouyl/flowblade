@@ -432,7 +432,7 @@
 - [ ] 12.9 审查 Media 组件文档 (6 个)
 - [x] 12.10 审查 Typography 组件文档 (11 个) - 已改进 8 个组件
 
-**当前进度**: 63/138 个文档已改进 (46%)
+**当前进度**: 86/138 个文档已改进 (62%)
 
 **已改进的 Typography 组件** (8 个):
 - [x] Blockquote - 添加了更多示例和常见模式
@@ -544,6 +544,31 @@
 - [x] MenuItem - 已在前面改进
 - [x] MenuHeader - 已在前面改进
 - [x] MenuDivider - 已在前面改进
+
+**已改进的 Navigation 组件** (23 个 - 当前会话新增 19 个):
+- [x] Breadcrumb - 改进了描述和无障碍性说明
+- [x] BreadcrumbItem - 改进了描述和无障碍性说明
+- [x] Navbar - 改进了描述和无障碍性说明
+- [x] NavbarBrand - 改进了描述和无障碍性说明
+- [x] NavbarCollapse - 改进了描述和无障碍性说明
+- [x] NavbarLink - 改进了描述和无障碍性说明
+- [x] NavbarToggle - 改进了描述和无障碍性说明
+- [x] Pagination - 改进了描述和无障碍性说明
+- [x] Sidebar - 改进了描述和无障碍性说明
+- [x] SidebarGroup - 改进了描述和无障碍性说明
+- [x] Tabs - 改进了描述和无障碍性说明
+- [x] TabsList - 改进了描述和无障碍性说明
+- [x] TabsContent - 改进了描述和无障碍性说明
+- [x] Steps - 改进了描述和无障碍性说明
+- [x] StepItem - 改进了描述和无障碍性说明
+- [x] SpeedDial - 改进了描述和无障碍性说明
+- [x] SpeedDialItem - 改进了描述和无障碍性说明
+- [x] MegaMenu - 改进了描述和无障碍性说明
+- [x] MegaMenuColumn - 改进了描述和无障碍性说明
+- [x] MegaMenuItem - 改进了描述和无障碍性说明
+- [x] SidebarToggle - 已在前面改进
+- [x] TabsTrigger - 已在前面改进
+- [x] SidebarItem - 已在前面改进
 
 **改进总结**:
 - 为每个文档添加了更详细的描述
