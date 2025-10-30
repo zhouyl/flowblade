@@ -1,6 +1,6 @@
 # MegaMenuColumn
 
-MegaMenuColumn component for creating columns within a MegaMenu. Organizes menu items into multiple columns for better layout.
+MegaMenuColumn component for creating columns within a MegaMenu. Organizes menu items into multiple columns for better layout. Perfect for organizing menu items and creating multi-column layouts.
 
 ## Basic Usage
 
@@ -50,7 +50,9 @@ MegaMenuColumn also supports all common style props for flexible styling.
 
 The MegaMenuColumn component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Arrow keys)
 - Works with screen readers
 - Provides clear column organization
+- Announces column title to screen readers
+- Supports proper list structure
 
