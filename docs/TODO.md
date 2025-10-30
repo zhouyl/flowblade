@@ -224,10 +224,10 @@
   - [ ] 5.7.2 MegaMenuColumn 组件
   - [ ] 5.7.3 MegaMenuItem 组件
 
-- [ ] 5.8 其他组件 (1 个)
-  - [ ] 5.8.1 BreadcrumbItem 组件
+- [x] 5.8 其他组件 (1 个) ✅ 完成
+  - [x] 5.8.1 BreadcrumbItem 组件 ✅
 
-**当前进度**: 12/23 个 Navigation 组件已完成 (52.2%)
+**当前进度**: 13/23 个 Navigation 组件已完成 (56.5%)
 
 ## 工作要求
 
