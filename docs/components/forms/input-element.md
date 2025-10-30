@@ -1,6 +1,6 @@
 # InputElement
 
-InputElement component for adding custom elements inside an input group. Useful for buttons, icons, or other interactive elements. Perfect for search inputs, filters, and action buttons.
+InputElement component for adding custom elements inside an input group. Useful for buttons, icons, or other interactive elements. Perfect for search inputs, filters, action buttons, and custom input controls.
 
 ## Basic Usage
 
@@ -145,7 +145,9 @@ InputElement supports all style props from the HasStyleProps trait. For a comple
 The InputElement component:
 - Uses semantic HTML structure
 - Works with screen readers
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Provides clear interactive elements
 - Should be used within InputGroup for proper structure
+- Announces element content to screen readers
+- Supports proper ARIA attributes for interactive elements
 
