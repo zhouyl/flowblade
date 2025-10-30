@@ -1,6 +1,6 @@
 # NavbarCollapse
 
-NavbarCollapse component for creating a collapsible navigation menu. Used with NavbarToggle for responsive mobile navigation.
+NavbarCollapse component for creating a collapsible navigation menu. Used with NavbarToggle for responsive mobile navigation. Perfect for responsive navigation menus and mobile-friendly layouts.
 
 ## Basic Usage
 
@@ -74,7 +74,9 @@ NavbarCollapse supports all common style props for flexible styling.
 
 The NavbarCollapse component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Escape)
 - Works with screen readers
 - Provides clear expand/collapse indicators
+- Announces collapse state to screen readers
+- Supports proper ARIA attributes for menu state
 
