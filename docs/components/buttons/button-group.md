@@ -1,6 +1,6 @@
 # ButtonGroup
 
-Button group component for grouping multiple buttons together. ButtonGroup provides a way to group related buttons with support for horizontal and vertical layouts.
+Button group component for grouping multiple buttons together. ButtonGroup provides a way to group related buttons with support for horizontal and vertical layouts. Perfect for toolbars, segmented controls, and action groups.
 
 ## Basic Usage
 
@@ -132,19 +132,19 @@ ButtonGroup supports all style props from the HasStyleProps trait. For a complet
 ```blade
 <div x-data="{ active: 'tab1' }">
     <x-button-group>
-        <x-button 
+        <x-button
             @click="active = 'tab1'"
             :variant="active === 'tab1' ? 'solid' : 'outline'"
         >
             Tag 1
         </x-button>
-        <x-button 
+        <x-button
             @click="active = 'tab2'"
             :variant="active === 'tab2' ? 'solid' : 'outline'"
         >
             Tag 2
         </x-button>
-        <x-button 
+        <x-button
             @click="active = 'tab3'"
             :variant="active === 'tab3' ? 'solid' : 'outline'"
         >
@@ -153,4 +153,17 @@ ButtonGroup supports all style props from the HasStyleProps trait. For a complet
     </x-button-group>
 </div>
 ```
+
+## Accessibility
+
+The ButtonGroup component:
+- Uses semantic HTML structure with proper button elements
+- Supports keyboard navigation (Tab, Arrow keys)
+- Works with screen readers
+- Provides clear button labels and descriptions
+- Maintains focus management for keyboard users
+- Provides visual feedback for focus and state
+- Supports ARIA attributes for button groups
+- Announces button state changes to screen readers
+- Supports role attributes for segmented controls or toolbars
 
