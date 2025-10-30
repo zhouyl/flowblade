@@ -54,6 +54,55 @@ SidebarItem also supports all common style props for flexible styling.
 </x-sidebar>
 ```
 
+## Common Patterns
+
+### Admin Dashboard Sidebar
+
+```blade
+<x-sidebar>
+    <x-sidebar-item href="/dashboard" active>
+        <div class="flex items-center gap-2">
+            <x-icon name="heroicons:home" class="w-5 h-5" />
+            Dashboard
+        </div>
+    </x-sidebar-item>
+
+    <x-sidebar-item href="/users">
+        <div class="flex items-center gap-2">
+            <x-icon name="heroicons:users" class="w-5 h-5" />
+            Users
+        </div>
+    </x-sidebar-item>
+
+    <x-sidebar-item href="/products">
+        <div class="flex items-center gap-2">
+            <x-icon name="heroicons:shopping-bag" class="w-5 h-5" />
+            Products
+        </div>
+    </x-sidebar-item>
+
+    <x-sidebar-item href="/settings">
+        <div class="flex items-center gap-2">
+            <x-icon name="heroicons:cog" class="w-5 h-5" />
+            Settings
+        </div>
+    </x-sidebar-item>
+</x-sidebar>
+```
+
+### With Badge
+
+```blade
+<x-sidebar>
+    <x-sidebar-item href="/messages">
+        <div class="flex items-center justify-between">
+            <span>Messages</span>
+            <x-badge color="danger">5</x-badge>
+        </div>
+    </x-sidebar-item>
+</x-sidebar>
+```
+
 ## Accessibility
 
 The SidebarItem component:
@@ -61,4 +110,5 @@ The SidebarItem component:
 - Supports keyboard navigation
 - Works with screen readers
 - Provides clear active state indication
+- Should be used within a Sidebar component
 
