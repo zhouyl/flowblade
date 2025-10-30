@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Steps Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Steps extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -26,8 +30,32 @@ class Steps extends Component
         public ?string $orientation = 'horizontal',
         public ?string $variant = 'default',
         public ?int $current = 1,
-        public ?int $total = null
+        public ?int $total = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            match ($this->orientation) {
+                'vertical' => 'flex flex-col',
+                default => 'flex flex-row',
+            },
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

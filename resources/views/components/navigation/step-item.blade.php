@@ -64,9 +64,9 @@
     }
 @endphp
 
-<li 
+<li
     {{ $attributes->merge([
-        'class' => $itemClasses . ' ' . $statusColor
+        'class' => $itemClasses . ' ' . $classes()
     ]) }}
 >
     @if($parentVariant === 'detailed')

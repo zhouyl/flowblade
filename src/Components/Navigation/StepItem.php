@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * StepItem Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class StepItem extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -30,8 +34,36 @@ class StepItem extends Component
         public ?string $status = 'pending',
         public ?string $icon = null,
         public ?int $number = null,
-        public bool $showIcon = true
+        public bool $showIcon = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'flex items-center',
+        ];
+
+        // Status-based styling
+        $classes[] = match ($this->status) {
+            'complete' => 'text-blue-600 dark:text-blue-500',
+            'current' => 'text-blue-600 dark:text-blue-500',
+            default => 'text-gray-500 dark:text-gray-400',
+        };
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
