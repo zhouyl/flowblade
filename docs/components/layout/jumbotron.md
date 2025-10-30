@@ -1,6 +1,6 @@
 # Jumbotron Component
 
-Large showcase section component for hero areas and landing pages. Jumbotron provides a flexible container for creating impressive hero sections with support for background images, gradients, and comprehensive style props.
+Large showcase section component for hero areas and landing pages. Jumbotron provides a flexible container for creating impressive hero sections with support for background images, gradients, and comprehensive style props. Perfect for hero sections and landing pages.
 
 ## Basic Usage
 
@@ -315,6 +315,12 @@ The Jumbotron component uses semantic HTML:
     </x-button>
 </x-jumbotron>
 ```
+
+- Uses semantic HTML structure
+- Maintains proper heading hierarchy
+- Supports keyboard navigation
+- Announces content to screen readers
+- Supports proper ARIA attributes
 
 ## Browser Support
 
