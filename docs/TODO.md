@@ -284,15 +284,29 @@
 
 ### 第十阶段：其他组件 Style Props 修复 (Phase 10) - 待进行
 
-为其他组件添加 Style Props 支持（共 ~20 个组件）：
+为其他组件添加 Style Props 支持（共 45 个组件，不含 Component.php 基类）：
 
-包括但不限于：
-- Form 组件子组件 (FormGroup, FormLabel, FormHelperText, FormErrorMessage, etc.)
-- Layout 组件 (Container, Flex, Grid, Stack, etc.)
-- Typography 组件 (Heading, Text, Code, etc.)
-- 其他组件
+#### Layout 组件 (10 个)
+- AbsoluteCenter, AspectRatio, Divider, Footer, Group
+- Jumbotron, ScrollArea, Separator, SimpleGrid, Spacer, Wrap
 
-**当前进度**: 0/20+ 个其他组件已完成 (0%)
+#### Forms 组件 (23 个)
+- Clipboard, Datepicker, DateRangePicker, Editable, Field, Fieldset
+- FileUpload, FloatingLabel, FloatingSelect, FloatingTextarea, InlineDatepicker
+- InputAddon, InputElement, InputGroup, NativeSelect, NumberInput
+- PasswordInput, PhoneInput, PinInput, RangeSlider, SearchInput
+- Slider, Timepicker
+
+#### Typography 组件 (9 个)
+- Blockquote, Code, CodeBlock, Em, Highlight, Kbd, Link, Mark, Strong
+
+#### Media 组件 (2 个)
+- CarouselItem, Video
+
+#### 其他 (1 个)
+- Component.php (基类，可能不需要修改)
+
+**当前进度**: 0/45 个其他组件已完成 (0%)
 
 ## 工作要求
 
