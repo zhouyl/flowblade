@@ -1,6 +1,6 @@
 # Navbar
 
-Responsive navigation bar component with logo, links, and mobile hamburger menu. Built with Flowbite's collapse functionality for mobile responsiveness. Navbar provides a flexible way to create responsive navigation bars.
+Responsive navigation bar component with logo, links, and mobile hamburger menu. Built with Flowbite's collapse functionality for mobile responsiveness. Navbar provides a flexible way to create responsive navigation bars. Perfect for website headers, application navigation, and responsive menus.
 
 ## Basic Usage
 
@@ -408,9 +408,11 @@ The Navbar component:
 - Uses semantic `<nav>` element
 - Includes proper ARIA attributes (`aria-controls`, `aria-expanded`, `aria-current`)
 - Provides screen reader text for toggle button
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Escape)
 - Maintains proper focus management
 - Uses semantic HTML structure
+- Announces navigation state to screen readers
+- Supports mobile menu toggle with keyboard
 
 ## Notes
 
