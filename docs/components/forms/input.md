@@ -1,6 +1,6 @@
 # Input
 
-Input component for text input. Input provides a flexible way to create text input fields with support for various sizes, variants, and states.
+Input component for text input. Input provides a flexible way to create text input fields with support for various sizes, variants, and states. Perfect for forms, search boxes, and user data collection.
 
 ## Basic Usage
 
@@ -147,4 +147,17 @@ Input supports all style props from the HasStyleProps trait. For a complete list
     <x-text as="p" x-text="value"></x-text>
 </x-box>
 ```
+
+## Accessibility
+
+The Input component:
+- Uses semantic HTML structure with proper `<input>` element
+- Supports keyboard navigation (Tab, Shift+Tab, Arrow keys)
+- Works with screen readers
+- Provides clear placeholder text and labels
+- Supports required field validation
+- Announces state changes to screen readers
+- Maintains focus management for keyboard users
+- Provides visual feedback for focus and state
+- Supports various input types with appropriate keyboards on mobile devices
 
