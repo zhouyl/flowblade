@@ -1,6 +1,6 @@
 # EmptyState
 
-Empty state component for displaying empty or no-data states with optional actions. EmptyState provides a flexible way to display empty states.
+Empty state component for displaying empty or no-data states with optional actions. EmptyState provides a flexible way to display empty states. Perfect for lists, tables, and search results with no data.
 
 ## Basic Usage
 
@@ -492,12 +492,14 @@ class ItemList extends Component
 ## Accessibility
 
 The EmptyState component:
-- Uses semantic HTML structure
-- Provides clear and descriptive text
-- Supports keyboard navigation for action buttons
+- Uses semantic HTML structure with proper heading elements
+- Provides clear and descriptive text for empty states
+- Supports keyboard navigation for action buttons (Tab, Enter, Space)
 - Maintains proper heading hierarchy
-- Uses appropriate color contrast
+- Uses appropriate color contrast ratios
 - Works well with screen readers
 - Provides meaningful empty state messages
 - Supports custom content via slots
+- Announces empty state to screen readers
+- Supports ARIA labels for icons and actions
 
