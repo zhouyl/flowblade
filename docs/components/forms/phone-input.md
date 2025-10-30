@@ -1,6 +1,6 @@
 # PhoneInput Component
 
-Phone number input with country code selector, auto-formatting, and validation support.
+Phone number input with country code selector, auto-formatting, and validation support. Perfect for international phone number collection, contact forms, and user registration.
 
 ## Basic Usage
 
@@ -299,11 +299,13 @@ public function rules()
 
 The PhoneInput component:
 - Uses semantic HTML with proper input types
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
 - Includes proper ARIA attributes
 - Focus management for dropdown
 - Screen reader friendly
 - Disabled state properly indicated
+- Announces country selection to screen readers
+- Supports proper ARIA attributes for phone input validation
 
 ## Browser Support
 
