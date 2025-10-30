@@ -1,6 +1,6 @@
 # Separator
 
-Visual separator / divider line component. Separator provides a simple way to create visual dividers between content sections with support for horizontal and vertical orientations.
+Visual separator / divider line component. Separator provides a simple way to create visual dividers between content sections with support for horizontal and vertical orientations. Perfect for separating content sections and visual organization.
 
 ## Props
 
@@ -203,4 +203,14 @@ Separator supports all style props from the HasStyleProps trait. For a complete 
     <p>Content...</p>
 </x-box>
 ```
+
+## Accessibility
+
+The Separator component:
+- Uses semantic HTML structure
+- Maintains proper visual hierarchy
+- Does not interfere with keyboard navigation
+- Supports screen reader navigation
+- Properly announces separator to screen readers
+- Uses proper ARIA attributes
 
