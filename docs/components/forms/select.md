@@ -1,6 +1,6 @@
 # Select
 
-Enhanced select component with search, multi-select, and custom styling capabilities. Select provides a flexible way to create dropdown selections with support for various sizes, variants, and states.
+Enhanced select component with search, multi-select, and custom styling capabilities. Select provides a flexible way to create dropdown selections with support for various sizes, variants, and states. Perfect for option selection, filtering, and multi-select scenarios.
 
 ## Requirements
 
@@ -340,4 +340,18 @@ The Select component:
 - Standard select: All modern browsers
 - Searchable select: Requires JavaScript enabled and Alpine.js support
 - Multiple select: All modern browsers with native support
+
+## Accessibility
+
+The Select component:
+- Uses semantic HTML structure with proper `<select>` element
+- Supports keyboard navigation (Arrow keys, Enter, Escape)
+- Works with screen readers
+- Provides clear option labels and descriptions
+- Supports required field validation
+- Announces state changes to screen readers
+- Maintains focus management for keyboard users
+- Provides visual feedback for focus and state
+- Searchable variant includes ARIA attributes for dynamic content
+- Supports ARIA labels and descriptions for better context
 
