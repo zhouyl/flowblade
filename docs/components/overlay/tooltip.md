@@ -1,6 +1,6 @@
 # Tooltip
 
-Tooltip component for displaying additional information on hover or click. Tooltip provides a flexible way to display tooltips with support for various placements and styles.
+Tooltip component for displaying additional information on hover or click. Tooltip provides a flexible way to display tooltips with support for various placements and styles. Perfect for help text, abbreviations, and supplementary information.
 
 ## Requirements
 
@@ -447,10 +447,11 @@ tooltip.toggle();
 
 The Tooltip component:
 - Uses semantic HTML with `role="tooltip"`
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Escape)
 - Works with screen readers
-- Provides proper ARIA attributes
+- Provides proper ARIA attributes (`aria-describedby`)
 - Maintains focus management
+- Announces tooltip content to screen readers
 - Supports both hover and click triggers
 - Uses Popper.js for intelligent positioning
 - Respects user motion preferences
