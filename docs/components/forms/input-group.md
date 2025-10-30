@@ -1,6 +1,6 @@
 # InputGroup
 
-Input group components for combining inputs with addons and elements.
+Input group components for combining inputs with addons and elements. Perfect for creating complex input fields with prefixes, suffixes, and interactive elements.
 
 ## Components
 
@@ -258,8 +258,14 @@ Input group components for combining inputs with addons and elements.
 
 ## Accessibility
 
+The InputGroup component:
+- Uses semantic HTML structure
+- Works with screen readers
+- Supports keyboard navigation (Tab, Enter)
 - Use proper labels with Field component
 - Ensure addons have appropriate text contrast
 - Icons should have proper aria-labels when interactive
 - Maintain keyboard navigation support
+- Announces input group structure to screen readers
+- Supports proper ARIA attributes for grouped inputs
 
