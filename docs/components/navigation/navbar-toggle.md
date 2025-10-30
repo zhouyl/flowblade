@@ -1,6 +1,6 @@
 # NavbarToggle
 
-NavbarToggle component for creating a hamburger menu button. Used with NavbarCollapse to toggle mobile navigation visibility.
+NavbarToggle component for creating a hamburger menu button. Used with NavbarCollapse to toggle mobile navigation visibility. Perfect for responsive mobile navigation and hamburger menus.
 
 ## Basic Usage
 
@@ -59,8 +59,10 @@ NavbarToggle supports all common style props for flexible styling.
 
 The NavbarToggle component:
 - Uses semantic HTML button element
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Space)
 - Works with screen readers
 - Provides clear toggle state indication
 - Announces menu state to assistive technologies
+- Supports `aria-expanded` for toggle state
+- Provides proper button semantics
 
