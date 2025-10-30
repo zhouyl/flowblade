@@ -1,6 +1,6 @@
 # Steps
 
-Display step-by-step progress indicator for multi-step processes like forms, wizards, and workflows. Steps provides a flexible way to display progress with support for various orientations and variants.
+Display step-by-step progress indicator for multi-step processes like forms, wizards, and workflows. Steps provides a flexible way to display progress with support for various orientations and variants. Perfect for multi-step forms, wizards, and process flows.
 
 ## Basic Usage
 
@@ -296,10 +296,12 @@ public function previousStep()
 The Steps component:
 - Uses semantic `<ol>` element for step list
 - Includes proper ARIA attributes
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab)
 - Provides screen reader text for status
 - Uses semantic HTML structure
 - Maintains proper heading hierarchy
+- Announces current step to screen readers
+- Supports step status announcements
 
 ## Notes
 
