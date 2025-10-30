@@ -1,6 +1,6 @@
 # SwitchInput
 
-SwitchInput component for creating a toggle switch. Provides a user-friendly way to toggle between two states (on/off).
+SwitchInput component for creating a toggle switch. Provides a user-friendly way to toggle between two states (on/off). Perfect for settings, preferences, and boolean options.
 
 ## Basic Usage
 
@@ -18,6 +18,10 @@ SwitchInput component for creating a toggle switch. Provides a user-friendly way
 | `size` | `string` | `'md'` | Size: `sm`, `md`, `lg` |
 
 SwitchInput also supports all common style props for flexible styling.
+
+### Style Props
+
+SwitchInput supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -109,9 +113,12 @@ SwitchInput also supports all common style props for flexible styling.
 ## Accessibility
 
 The SwitchInput component:
-- Uses semantic HTML structure
-- Supports keyboard navigation (Space/Enter to toggle)
+- Uses semantic HTML structure with proper `<input type="checkbox">`
+- Supports keyboard navigation (Space/Enter to toggle, Tab for focus)
 - Works with screen readers
-- Provides clear on/off states
+- Provides clear on/off states with ARIA attributes
 - Supports required field validation
+- Announces state changes to screen readers
+- Maintains focus management for keyboard users
+- Provides visual feedback for focus and state
 
