@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Overlay;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Menu Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Menu extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -28,8 +32,29 @@ class Menu extends Component
         public string $trigger = 'click',
         public ?int $delay = 300,
         public ?string $width = 'sm',
-        public bool $divided = false
+        public bool $divided = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'absolute z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

@@ -1,43 +1,39 @@
 @php
-    // Generate unique ID for modal
-    $modalId = $attributes->get('id') ?? 'modal-' . uniqid();
-    
-    // Size configurations (max-width)
-    $sizeConfig = [
-        'sm' => 'max-w-sm',      // 24rem
-        'md' => 'max-w-md',      // 28rem
-        'lg' => 'max-w-lg',      // 32rem
-        'xl' => 'max-w-xl',      // 36rem
-        '2xl' => 'max-w-2xl',    // 42rem (default in Flowbite)
-        '3xl' => 'max-w-3xl',    // 48rem
-        '4xl' => 'max-w-4xl',    // 56rem
-        '5xl' => 'max-w-5xl',    // 64rem
-        '6xl' => 'max-w-6xl',    // 72rem
-        '7xl' => 'max-w-7xl',    // 80rem
-    ];
-    
-    $maxWidth = $sizeConfig[$size] ?? $sizeConfig['2xl'];
-    
-    // Placement data attribute mapping
-    $placementMap = [
-        'center' => 'center',
-        'top-left' => 'top-left',
-        'top-center' => 'top-center',
-        'top-right' => 'top-right',
-        'center-left' => 'center-left',
-        'center-right' => 'center-right',
-        'bottom-left' => 'bottom-left',
-        'bottom-center' => 'bottom-center',
-        'bottom-right' => 'bottom-right',
-    ];
-    
-    $modalPlacement = $placementMap[$placement] ?? 'center';
+$modalId = $attributes->get('id') ?? 'modal-' . uniqid();
+
+$sizeConfig = [
+    'sm' => 'max-w-sm',
+    'md' => 'max-w-md',
+    'lg' => 'max-w-lg',
+    'xl' => 'max-w-xl',
+    '2xl' => 'max-w-2xl',
+    '3xl' => 'max-w-3xl',
+    '4xl' => 'max-w-4xl',
+    '5xl' => 'max-w-5xl',
+    '6xl' => 'max-w-6xl',
+    '7xl' => 'max-w-7xl',
+];
+
+$maxWidth = $sizeConfig[$size] ?? $sizeConfig['2xl'];
+
+$placementMap = [
+    'center' => 'center',
+    'top-left' => 'top-left',
+    'top-center' => 'top-center',
+    'top-right' => 'top-right',
+    'center-left' => 'center-left',
+    'center-right' => 'center-right',
+    'bottom-left' => 'bottom-left',
+    'bottom-center' => 'bottom-center',
+    'bottom-right' => 'bottom-right',
+];
+
+$modalPlacement = $placementMap[$placement] ?? 'center';
 @endphp
 
-{{-- Modal element --}}
-<div 
+<div
     id="{{ $modalId }}"
-    tabindex="-1" 
+    tabindex="-1"
     aria-hidden="true"
     @if($backdrop === 'static')
     data-modal-backdrop="static"
@@ -46,7 +42,7 @@
     data-modal-placement="{{ $modalPlacement }}"
     @endif
     {{ $attributes->except(['id'])->merge([
-        'class' => 'hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full'
+        'class' => $classes()
     ]) }}
 >
     <div class="relative p-4 w-full {{ $maxWidth }} max-h-full">

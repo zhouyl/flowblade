@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Overlay;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Modal Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Modal extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -30,8 +34,29 @@ class Modal extends Component
         public ?string $placement = 'center',
         public ?string $backdrop = 'dynamic',
         public bool $closable = true,
-        public bool $showClose = true
+        public bool $showClose = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

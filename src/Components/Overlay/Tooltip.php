@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Overlay;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Tooltip Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Tooltip extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -30,8 +34,29 @@ class Tooltip extends Component
         public string $trigger = 'hover',
         public string $style = 'dark',
         public bool $arrow = true,
-        public ?string $animation = '300'
+        public ?string $animation = '300',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'absolute z-10 inline-block px-3 py-2 text-sm font-medium rounded-lg shadow-sm',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

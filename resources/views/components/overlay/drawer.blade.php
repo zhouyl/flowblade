@@ -68,7 +68,7 @@
     data-drawer-body-scrolling="true"
     @endif
     {{ $attributes->except(['id'])->merge([
-        'class' => "fixed {$positionClass} z-40 p-4 overflow-y-auto transition-transform {$transformClass} bg-white {$sizeClass} dark:bg-gray-800"
+        'class' => $classes() . " {$positionClass} p-4 overflow-y-auto transition-transform {$transformClass} bg-white {$sizeClass} dark:bg-gray-800"
     ]) }}
 >
     @if($title || $showClose || $headerSlot = $slot->offsetGet('header'))

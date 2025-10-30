@@ -32,9 +32,9 @@
 </span>
 
 {{-- Menu content --}}
-<div 
-    id="{{ $menuId }}" 
-    class="z-10 hidden bg-white rounded-lg shadow-sm {{ $menuWidth }} {{ $dividedClass }} dark:bg-gray-700"
+<div
+    id="{{ $menuId }}"
+    class="{{ $classes() }} {{ $menuWidth }} {{ $dividedClass }}"
 >
     {{ $slot }}
 </div>

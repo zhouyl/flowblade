@@ -34,11 +34,11 @@
 </span>
 
 {{-- Hover card content --}}
-<div 
-    data-popover 
-    id="{{ $hoverCardId }}" 
-    role="tooltip" 
-    class="absolute z-10 invisible inline-block {{ $cardWidth }} text-sm text-gray-500 transition-opacity {{ $durationClass }} bg-white border border-gray-200 rounded-lg shadow-xs opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800"
+<div
+    data-popover
+    id="{{ $hoverCardId }}"
+    role="tooltip"
+    class="{{ $classes() }} invisible opacity-0 transition-opacity {{ $durationClass }} {{ $cardWidth }}"
 >
     @if($title || $titleSlot = $slot->offsetGet('title'))
     <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">

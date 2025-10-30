@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Overlay;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Popover Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Popover extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -34,8 +38,29 @@ class Popover extends Component
         public bool $arrow = true,
         public ?string $animation = '300',
         public ?int $offset = null,
-        public ?string $width = 'md'
+        public ?string $width = 'md',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'absolute z-10 invisible inline-block w-64 text-sm font-light text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

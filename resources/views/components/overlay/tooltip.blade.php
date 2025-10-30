@@ -28,10 +28,10 @@
 </span>
 
 {{-- Tooltip content --}}
-<div 
-    id="{{ $tooltipId }}" 
-    role="tooltip" 
-    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium rounded-lg shadow-xs opacity-0 tooltip {{ $tooltipStyle }} {{ $animationClass }}"
+<div
+    id="{{ $tooltipId }}"
+    role="tooltip"
+    class="{{ $classes() }} invisible opacity-0 tooltip {{ $tooltipStyle }} {{ $animationClass }}"
 >
     {{ $content }}
     

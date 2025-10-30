@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Overlay;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Drawer Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Drawer extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -36,8 +40,29 @@ class Drawer extends Component
         public bool $bodyScrolling = false,
         public bool $showClose = true,
         public bool $edge = false,
-        public ?string $edgeOffset = null
+        public ?string $edgeOffset = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'fixed top-0 left-0 z-40 w-full h-full bg-black/50 hidden',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

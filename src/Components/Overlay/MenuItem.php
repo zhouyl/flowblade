@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Overlay;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * MenuItem Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class MenuItem extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -28,8 +32,32 @@ class MenuItem extends Component
         public ?string $icon = null,
         public bool $disabled = false,
         public bool $active = false,
-        public bool $danger = false
+        public bool $danger = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600',
+            $this->disabled ? 'opacity-50 cursor-not-allowed' : '',
+            $this->active ? 'bg-gray-100 dark:bg-gray-600' : '',
+            $this->danger ? 'text-red-600 dark:text-red-400' : '',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
