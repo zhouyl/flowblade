@@ -1,6 +1,6 @@
 # List Group
 
-Interactive list component for displaying a series of items, buttons or links inside a single container. ListGroup provides a flexible way to display lists with support for various item types.
+Interactive list component for displaying a series of items, buttons or links inside a single container. ListGroup provides a flexible way to display lists with support for various item types. Perfect for navigation lists, menu items, and interactive lists.
 
 ## Components
 
@@ -315,11 +315,13 @@ ListGroup and ListGroupItem support all common style props for flexible styling:
 The ListGroup component:
 - Uses semantic HTML elements (ul/li or div/a/button)
 - Includes proper ARIA attributes for active items
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Arrow keys)
 - Provides screen reader support
 - Uses proper color contrast ratios
 - Shows visual focus indicators
 - Supports disabled state for buttons
+- Properly announces list items to screen readers
+- Supports proper ARIA roles for list structure
 
 ## Notes
 
