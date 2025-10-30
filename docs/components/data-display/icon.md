@@ -1,6 +1,6 @@
 # Icon
 
-Iconify icon component with access to 100,000+ icons. Icon provides a flexible way to display icons from various icon collections.
+Iconify icon component with access to 100,000+ icons. Icon provides a flexible way to display icons from various icon collections. Perfect for UI icons, status indicators, and visual elements.
 
 ## Props
 
@@ -262,4 +262,15 @@ Browse all icons at: https://icon-sets.iconify.design/
 - `heroicons:exclamation-triangle` - Warning
 - `heroicons:information-circle` - Info
 - `heroicons:clock` - Pending
+
+## Accessibility
+
+The Icon component:
+- Uses semantic SVG elements
+- Supports ARIA labels for screen readers
+- Maintains proper color contrast
+- Does not interfere with keyboard navigation
+- Provides visual feedback
+- Supports proper ARIA attributes for icon descriptions
+- Works with screen readers when properly labeled
 
