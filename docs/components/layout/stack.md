@@ -1,6 +1,6 @@
 # Stack / HStack / VStack
 
-Layout components that stack elements with consistent spacing and comprehensive style props support. Stack components provide a convenient way to manage spacing and alignment of child elements with optional dividers.
+Layout components that stack elements with consistent spacing and comprehensive style props support. Stack components provide a convenient way to manage spacing and alignment of child elements with optional dividers. Perfect for flexible layouts and consistent spacing.
 
 ## Props
 
@@ -253,4 +253,14 @@ Stack components support all style props from the HasStyleProps trait, including
     </main>
 </x-hstack>
 ```
+
+## Accessibility
+
+The Stack components:
+- Maintain semantic HTML structure
+- Preserve content accessibility
+- Support keyboard navigation
+- Support screen reader navigation
+- Properly announce contained content
+- Maintain proper reading order
 
