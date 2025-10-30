@@ -1,6 +1,6 @@
 # Timepicker
 
-Time picker component based on HTML5 time input with clock icon and validation support.
+Time picker component based on HTML5 time input with clock icon and validation support. Perfect for appointment scheduling, time selection, and time-based filtering.
 
 ## Basic Usage
 
@@ -382,11 +382,13 @@ public function messages()
 The Timepicker component:
 - Uses semantic HTML5 time input element
 - Includes proper label associations
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
 - Provides screen reader support
 - Uses proper color contrast ratios
 - Shows visual focus indicators
 - Supports required field indicators
+- Announces time selection to screen readers
+- Supports proper ARIA attributes for time input validation
 
 ## Notes
 
