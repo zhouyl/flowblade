@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Media;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * GalleryItem Component
@@ -14,16 +16,44 @@ use Illuminate\View\Component;
  */
 class GalleryItem extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string $src Image source URL
-     * @param string $alt Image alt text for accessibility (important for screen readers)
+     * @param string $src           Image source URL
+     * @param string $alt           Image alt text for accessibility (important for screen readers)
+     * @param mixed  ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $src = '',
-        public string $alt = ''
+        public string $alt = '',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'overflow-hidden',
+            'rounded-lg',
+            'transition-transform',
+            'duration-300',
+            'hover:scale-105',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

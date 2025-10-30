@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Media;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * QRCode Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class QRCode extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -24,6 +28,7 @@ class QRCode extends Component
      * @param null|string $label           Optional descriptive label displayed below QR code
      * @param bool        $rounded         Whether to apply rounded corners to QR code container
      * @param bool        $border          Whether to display border around QR code
+     * @param mixed       ...$styleProps   All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $data = null,
@@ -32,8 +37,49 @@ class QRCode extends Component
         public ?string $errorCorrection = 'M',
         public ?string $label = null,
         public bool $rounded = true,
-        public bool $border = true
+        public bool $border = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $sizeMap = [
+            'xs' => 'w-16 h-16',
+            'sm' => 'w-24 h-24',
+            'md' => 'w-32 h-32',
+            'lg' => 'w-40 h-40',
+            'xl' => 'w-48 h-48',
+            '2xl' => 'w-64 h-64',
+        ];
+
+        $sizeClass = $sizeMap[$this->size] ?? $sizeMap['md'];
+
+        $classes = [
+            'flex',
+            'flex-col',
+            'items-center',
+            'justify-center',
+            'gap-4',
+            $sizeClass,
+            $this->rounded ? 'rounded-lg' : '',
+            $this->border ? 'border border-gray-200 dark:border-gray-700' : '',
+            'bg-white dark:bg-gray-900',
+            'p-4',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

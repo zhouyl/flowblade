@@ -1,4 +1,4 @@
-<div id="{{ $id }}" {{ $attributes->merge(['class' => 'relative w-full']) }} data-carousel="{{ $mode }}">
+<div id="{{ $id }}" {{ $attributes->merge(['class' => $classes()]) }} data-carousel="{{ $mode }}">
     <!-- Carousel wrapper -->
     <div class="relative {{ $height }} overflow-hidden rounded-lg">
         {{ $slot }}

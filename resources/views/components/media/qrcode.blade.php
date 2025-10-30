@@ -1,38 +1,24 @@
 @php
-    // Size configurations
-    $sizeClasses = [
-        'xs' => 'w-24 h-24',
-        'sm' => 'w-32 h-32',
-        'md' => 'w-48 h-48',
-        'lg' => 'w-64 h-64',
-        'xl' => 'w-80 h-80',
-        '2xl' => 'w-96 h-96',
-    ];
-    
-    $sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
-    $roundedClass = $rounded ? 'rounded-lg' : '';
-    $borderClass = $border ? 'border border-gray-200 dark:border-gray-700' : '';
-    
-    // Generate QR code if data is provided and simple-qrcode is available
-    $qrCode = null;
-    if ($data && class_exists('\SimpleSoftwareIO\QrCode\Facades\QrCode')) {
-        try {
-            $qrCode = \SimpleSoftwareIO\QrCode\Facades\QrCode::size(384)
-                ->errorCorrection($errorCorrection)
-                ->format($format)
-                ->generate($data);
-        } catch (\Exception $e) {
-            // Silently fail if QR code generation fails
-        }
+// Generate QR code if data is provided and simple-qrcode is available
+$qrCode = null;
+if ($data && class_exists('\SimpleSoftwareIO\QrCode\Facades\QrCode')) {
+    try {
+        $qrCode = \SimpleSoftwareIO\QrCode\Facades\QrCode::size(384)
+            ->errorCorrection($errorCorrection)
+            ->format($format)
+            ->generate($data);
+    } catch (\Exception $e) {
+        // Silently fail if QR code generation fails
     }
+}
 @endphp
 
-<div 
+<div
     {{ $attributes->merge([
-        'class' => 'inline-flex flex-col items-center gap-2'
+        'class' => $classes()
     ]) }}
 >
-    <div class="flex items-center justify-center {{ $sizeClass }} {{ $roundedClass }} {{ $borderClass }} bg-white dark:bg-gray-800 p-2">
+    <div class="flex items-center justify-center w-full h-full">
         @if($qrCode)
             {{-- Generated QR code from simple-qrcode --}}
             <div class="w-full h-full flex items-center justify-center">
