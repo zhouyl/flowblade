@@ -1,25 +1,7 @@
-@php
-    // Position classes
-    $positionClasses = [
-        'left' => 'left-0',
-        'right' => 'right-0',
-    ];
-    
-    $positionClass = $positionClasses[$position] ?? $positionClasses['left'];
-    
-    // Fixed class
-    $fixedClass = $fixed ? 'fixed top-0 z-40 h-screen' : '';
-    
-    // Off-canvas classes (drawer style)
-    $offCanvasClasses = $offCanvas 
-        ? 'transition-transform -translate-x-full sm:translate-x-0' 
-        : '';
-@endphp
-
-<aside 
+<aside
     id="{{ $id }}"
     {{ $attributes->merge([
-        'class' => $fixedClass . ' ' . $positionClass . ' ' . $offCanvasClasses . ' w-64',
+        'class' => $classes() . ' w-64',
         'aria-label' => 'Sidebar'
     ]) }}
 >

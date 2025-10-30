@@ -1,13 +1,4 @@
 @php
-    // Size classes
-    $sizeClasses = [
-        'xs' => 'text-xs',
-        'sm' => 'text-sm',
-        'md' => 'text-base',
-        'lg' => 'text-lg',
-        'xl' => 'text-xl',
-    ];
-    
     // Button size classes
     $buttonSizes = [
         'xs' => 'px-2 py-1 text-xs',
@@ -16,20 +7,19 @@
         'lg' => 'px-5 py-2.5 text-lg',
         'xl' => 'px-6 py-3 text-xl',
     ];
-    
-    $sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
+
     $buttonSize = $buttonSizes[$size] ?? $buttonSizes['md'];
-    
+
     $prevText = $prevLabel ?? 'Previous';
     $nextText = $nextLabel ?? 'Next';
-    
+
     $hasPrev = $currentPage > 1;
     $hasNext = $currentPage < $totalPages;
-    
+
     $pageRange = $variant === 'simple' ? [] : $this->getPageRange();
 @endphp
 
-<div {{ $attributes->merge(['class' => 'flex items-center gap-2 ' . $sizeClass]) }}>
+<div {{ $attributes->merge(['class' => $classes()]) }}>
     @if($variant === 'verbose')
     {{-- Verbose variant: Stats + Jump to page on left, pagination on right --}}
     <div class="flex items-center justify-between w-full">

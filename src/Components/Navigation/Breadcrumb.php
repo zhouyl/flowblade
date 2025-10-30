@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Breadcrumb Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Breadcrumb extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -22,8 +26,37 @@ class Breadcrumb extends Component
      */
     public function __construct(
         public string $size = 'md',
-        public ?string $separator = null
+        public ?string $separator = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            // Size classes
+            match ($this->size) {
+                'xs' => 'text-xs',
+                'sm' => 'text-sm',
+                'lg' => 'text-lg',
+                'xl' => 'text-xl',
+                default => 'text-base',
+            },
+            'flex items-center',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

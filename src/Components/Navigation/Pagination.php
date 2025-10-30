@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
-use Illuminate\View\Component;
 
 /**
  * Pagination Component
@@ -16,6 +18,8 @@ use Illuminate\View\Component;
  */
 class Pagination extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -42,8 +46,11 @@ class Pagination extends Component
         public ?string $prevLabel = null,
         public ?string $nextLabel = null,
         public bool $showEdges = true,
-        public int $siblingCount = 1
+        public int $siblingCount = 1,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+
         // If paginator is provided, extract values from it
         if ($paginator !== null) {
             $this->currentPage = $paginator->currentPage();
@@ -59,6 +66,33 @@ class Pagination extends Component
                 $this->total = 0;
             }
         }
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            // Size classes
+            match ($this->size) {
+                'xs' => 'text-xs',
+                'sm' => 'text-sm',
+                'lg' => 'text-lg',
+                'xl' => 'text-xl',
+                default => 'text-base',
+            },
+            'flex items-center gap-2',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

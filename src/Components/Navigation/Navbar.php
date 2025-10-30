@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Navbar Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Navbar extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -24,8 +28,43 @@ class Navbar extends Component
     public function __construct(
         public ?string $variant = 'default',
         public bool $sticky = false,
-        public bool $border = true
+        public bool $border = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            // Variant classes
+            match ($this->variant) {
+                'solid' => 'bg-gray-50 dark:bg-gray-800',
+                default => 'bg-white dark:bg-gray-900',
+            },
+        ];
+
+        // Border class
+        if ($this->border) {
+            $classes[] = 'border-b border-gray-200 dark:border-gray-700';
+        }
+
+        // Sticky class
+        if ($this->sticky) {
+            $classes[] = 'sticky top-0 z-50';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
