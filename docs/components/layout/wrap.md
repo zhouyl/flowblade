@@ -1,6 +1,6 @@
 # Wrap
 
-Flex layout that automatically wraps items to the next line. Wrap provides a flexible container for creating responsive layouts that wrap content to multiple lines with support for spacing and alignment.
+Flex layout that automatically wraps items to the next line. Wrap provides a flexible container for creating responsive layouts that wrap content to multiple lines with support for spacing and alignment. Perfect for wrapping layouts and responsive content.
 
 ## Props
 
@@ -193,6 +193,16 @@ Wrap supports all style props from the HasStyleProps trait. For a complete list,
     @endforeach
 </x-wrap>
 ```
+
+## Accessibility
+
+The Wrap component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Supports keyboard navigation
+- Supports screen reader navigation
+- Properly announces contained content
+- Maintains proper reading order
 
 ## Tips
 
