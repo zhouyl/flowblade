@@ -1,6 +1,6 @@
 # InputAddon
 
-InputAddon component for adding prefix or suffix content to an input field. Commonly used for currency symbols, units, or icons.
+InputAddon component for adding prefix or suffix content to an input field. Commonly used for currency symbols, units, or icons. Perfect for providing context and improving user experience.
 
 ## Basic Usage
 
@@ -20,6 +20,10 @@ InputAddon supports all common style props for flexible styling:
 - **Colors**: `bg`, `color`, `borderColor`
 - **Layout**: `display`, `position`, `zIndex`, `overflow`
 - **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
+
+### Style Props
+
+InputAddon supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -80,6 +84,52 @@ InputAddon supports all common style props for flexible styling:
 </x-input-group>
 ```
 
+## Common Patterns
+
+### Price Input with Currency
+
+```blade
+<x-field label="Price">
+    <x-input-group>
+        <x-input-addon bg="gray.100">$</x-input-addon>
+        <x-input type="number" placeholder="0.00" step="0.01" />
+    </x-input-group>
+</x-field>
+```
+
+### Search with Icon
+
+```blade
+<x-input-group>
+    <x-input-addon>
+        <x-icon name="heroicons:magnifying-glass" class="w-5 h-5 text-gray-400" />
+    </x-input-addon>
+    <x-input placeholder="Search products..." />
+</x-input-group>
+```
+
+### Domain Input
+
+```blade
+<x-field label="Website">
+    <x-input-group>
+        <x-input-addon bg="gray.100">https://</x-input-addon>
+        <x-input placeholder="example.com" />
+    </x-input-group>
+</x-field>
+```
+
+### Discount Percentage
+
+```blade
+<x-field label="Discount">
+    <x-input-group>
+        <x-input type="number" placeholder="0" min="0" max="100" />
+        <x-input-addon bg="gray.100">%</x-input-addon>
+    </x-input-group>
+</x-field>
+```
+
 ## Accessibility
 
 The InputAddon component:
@@ -87,4 +137,5 @@ The InputAddon component:
 - Works with screen readers
 - Supports keyboard navigation
 - Provides clear input context
+- Should be used within InputGroup for proper structure
 
