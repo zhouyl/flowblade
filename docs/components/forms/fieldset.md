@@ -1,6 +1,6 @@
 # Fieldset
 
-Fieldset component for grouping related form fields.
+Fieldset component for grouping related form fields. Perfect for organizing form sections, multi-step forms, and field grouping.
 
 ## Basic Usage
 
@@ -275,4 +275,6 @@ The Fieldset component:
 - Supports disabled state for all child inputs
 - Provides clear error messaging
 - Maintains proper focus management
+- Announces fieldset grouping to screen readers
+- Supports proper ARIA attributes for form organization
 
