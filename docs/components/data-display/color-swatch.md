@@ -1,6 +1,6 @@
 # ColorSwatch
 
-Color swatch component for displaying color samples with optional labels and copy functionality. ColorSwatch provides a flexible way to display color samples with support for various sizes and variants.
+Color swatch component for displaying color samples with optional labels and copy functionality. ColorSwatch provides a flexible way to display color samples with support for various sizes and variants. Perfect for color palettes, design systems, and color selection interfaces.
 
 ## Requirements
 
@@ -579,4 +579,6 @@ The ColorSwatch component:
 - Provides visual feedback on copy action
 - Works with form submissions
 - Supports various color formats (hex, rgb, hsl, named)
+- Announces color values to screen readers
+- Supports proper ARIA labels for color information
 
