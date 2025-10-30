@@ -127,4 +127,6 @@ The DataListItem component:
 - Works with screen readers
 - Supports keyboard navigation
 - Should be used within a DataList component
+- Properly announces label and value pairs to screen readers
+- Supports proper ARIA attributes for data organization
 
