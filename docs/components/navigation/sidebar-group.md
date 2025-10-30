@@ -1,6 +1,6 @@
 # SidebarGroup
 
-SidebarGroup component for grouping related sidebar items. Provides a collapsible section for organizing navigation items.
+SidebarGroup component for grouping related sidebar items. Provides a collapsible section for organizing navigation items. Perfect for organizing navigation hierarchies and grouping related menu items.
 
 ## Basic Usage
 
@@ -49,7 +49,9 @@ SidebarGroup also supports all common style props for flexible styling.
 
 The SidebarGroup component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Arrow keys)
 - Works with screen readers
 - Provides clear group indication
+- Announces group title to screen readers
+- Supports collapsible state announcement
 
