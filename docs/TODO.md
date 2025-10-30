@@ -211,9 +211,9 @@
   - [x] 5.4.2 SidebarGroup 组件 ✅
   - [x] 5.4.3 SidebarToggle 组件 ✅
 
-- [ ] 5.5 Steps 组件 (2 个)
-  - [ ] 5.5.1 Steps 组件
-  - [ ] 5.5.2 StepItem 组件
+- [x] 5.5 Steps 组件 (2 个) ✅ 完成
+  - [x] 5.5.1 Steps 组件 ✅
+  - [x] 5.5.2 StepItem 组件 ✅
 
 - [ ] 5.6 SpeedDial 组件 (2 个)
   - [ ] 5.6.1 SpeedDial 组件
@@ -227,7 +227,7 @@
 - [x] 5.8 其他组件 (1 个) ✅ 完成
   - [x] 5.8.1 BreadcrumbItem 组件 ✅
 
-**当前进度**: 16/23 个 Navigation 组件已完成 (69.6%)
+**当前进度**: 18/23 个 Navigation 组件已完成 (78.3%)
 
 ## 工作要求
 
