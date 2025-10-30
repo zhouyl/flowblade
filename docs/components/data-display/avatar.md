@@ -1,6 +1,6 @@
 # Avatar
 
-Avatar component for displaying user profile images with fallback options. Avatar provides a flexible way to display user avatars with support for various sizes and shapes.
+Avatar component for displaying user profile images with fallback options. Avatar provides a flexible way to display user avatars with support for various sizes and shapes. Perfect for user profiles, team members, and user identification.
 
 ## Basic Usage
 
@@ -346,4 +346,6 @@ The Avatar component:
 - Maintains proper contrast ratios
 - Works with screen readers
 - Supports keyboard navigation when interactive
+- Announces user information to screen readers
+- Supports proper ARIA attributes for image descriptions
 
