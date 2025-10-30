@@ -1,6 +1,6 @@
 # ScrollArea
 
-Scrollable container with customizable scrollbar behavior. ScrollArea provides a flexible container for displaying scrollable content with support for fixed heights and comprehensive style props.
+Scrollable container with customizable scrollbar behavior. ScrollArea provides a flexible container for displaying scrollable content with support for fixed heights and comprehensive style props. Perfect for scrollable content and fixed-height containers.
 
 ## Props
 
@@ -242,6 +242,16 @@ ScrollArea supports all style props from the HasStyleProps trait. For a complete
     </x-vstack>
 </x-scroll-area>
 ```
+
+## Accessibility
+
+The ScrollArea component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Supports keyboard navigation (Arrow keys, Page Up/Down)
+- Supports screen reader navigation
+- Properly announces scrollable content
+- Maintains focus management
 
 ## Tips
 
