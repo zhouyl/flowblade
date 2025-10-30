@@ -1,6 +1,6 @@
 # SimpleGrid
 
-Simplified grid layout with responsive columns or auto-fit behavior. SimpleGrid provides an easy way to create responsive grid layouts with support for fixed columns or auto-fit behavior.
+Simplified grid layout with responsive columns or auto-fit behavior. SimpleGrid provides an easy way to create responsive grid layouts with support for fixed columns or auto-fit behavior. Perfect for responsive grid layouts and card grids.
 
 ## Props
 
@@ -198,6 +198,16 @@ SimpleGrid supports all style props from the HasStyleProps trait. For a complete
     @endforeach
 </x-simple-grid>
 ```
+
+## Accessibility
+
+The SimpleGrid component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Does not interfere with keyboard navigation
+- Supports screen reader navigation
+- Properly announces contained content
+- Maintains proper reading order
 
 ## Tips
 
