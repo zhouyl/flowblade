@@ -1,6 +1,6 @@
 # Spacer
 
-Flexible space component that fills available space in flex layouts. Spacer is useful for pushing content to edges or distributing space evenly in flex containers.
+Flexible space component that fills available space in flex layouts. Spacer is useful for pushing content to edges or distributing space evenly in flex containers. Perfect for flexible spacing and layout distribution.
 
 ## Props
 
@@ -187,4 +187,13 @@ No props - Spacer automatically fills available space.
     <x-button color="primary">Publish</x-button>
 </x-hstack>
 ```
+
+## Accessibility
+
+The Spacer component:
+- Does not interfere with keyboard navigation
+- Is invisible to screen readers
+- Maintains proper content order
+- Does not affect semantic meaning
+- Purely for visual layout purposes
 
