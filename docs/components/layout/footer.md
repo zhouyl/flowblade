@@ -1,6 +1,6 @@
 # Footer
 
-Footer section component for website pages with support for copyright notices, links, logos, and social media icons. Footer provides a flexible container for footer content with comprehensive style props support.
+Footer section component for website pages with support for copyright notices, links, logos, and social media icons. Footer provides a flexible container for footer content with comprehensive style props support. Perfect for website footers and page bottom sections.
 
 ## Basic Usage
 
@@ -253,9 +253,11 @@ Footer supports all style props from the HasStyleProps trait. For a complete lis
 The Footer component:
 - Uses semantic `<footer>` element
 - Includes proper screen reader text for icon-only links
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab)
 - Maintains proper focus management
 - Uses semantic HTML structure
+- Announces footer content to screen readers
+- Supports proper link semantics
 
 ## Notes
 
