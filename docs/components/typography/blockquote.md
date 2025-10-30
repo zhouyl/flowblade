@@ -1,6 +1,6 @@
 # Blockquote
 
-Blockquote component for displaying quoted text. Provides semantic HTML with visual styling to distinguish quoted content.
+Blockquote component for displaying quoted text. Provides semantic HTML with visual styling to distinguish quoted content from regular text. Perfect for testimonials, quotes, and highlighted passages.
 
 ## Basic Usage
 
@@ -17,6 +17,10 @@ Blockquote component for displaying quoted text. Provides semantic HTML with vis
 | `color` | `string` | `'gray'` | Border color: `primary`, `success`, `danger`, `warning`, `info`, `gray` |
 
 Blockquote also supports all common style props for flexible styling.
+
+### Style Props
+
+Blockquote supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -93,6 +97,68 @@ Blockquote also supports all common style props for flexible styling.
 </article>
 ```
 
+## Common Patterns
+
+### Testimonial
+
+```blade
+<x-card variant="outline" p="6">
+    <x-blockquote color="primary" mb="4">
+        Flowblade has transformed how we build Laravel applications. The component library is intuitive and powerful.
+    </x-blockquote>
+
+    <div class="flex items-center gap-3">
+        <img src="/avatar.jpg" class="w-12 h-12 rounded-full" />
+        <div>
+            <x-text weight="semibold">John Doe</x-text>
+            <x-text size="sm" color="gray">CEO, Tech Company</x-text>
+        </div>
+    </div>
+</x-card>
+```
+
+### Blog Post Quote
+
+```blade
+<x-blockquote color="info" my="6" p="4" bg="blue.50" rounded="lg">
+    <x-text mb="2">
+        "The best way to predict the future is to invent it."
+    </x-text>
+    <x-text size="sm" color="gray">
+        — Alan Kay
+    </x-text>
+</x-blockquote>
+```
+
+### Highlighted Information
+
+```blade
+<x-blockquote color="warning" p="4" bg="yellow.50" rounded="md">
+    <x-text weight="semibold" mb="2">Important Notice</x-text>
+    <x-text size="sm">
+        This feature is currently in beta and may change in future releases.
+    </x-text>
+</x-blockquote>
+```
+
+### Multiple Quotes
+
+```blade
+<x-vstack spacing="4">
+    <x-blockquote color="primary">
+        First quote goes here.
+    </x-blockquote>
+
+    <x-blockquote color="success">
+        Second quote goes here.
+    </x-blockquote>
+
+    <x-blockquote color="danger">
+        Third quote goes here.
+    </x-blockquote>
+</x-vstack>
+```
+
 ## Accessibility
 
 The Blockquote component:
@@ -100,4 +166,5 @@ The Blockquote component:
 - Maintains proper content hierarchy
 - Works with screen readers
 - Provides clear visual distinction for quoted content
+- Supports proper citation with `<cite>` elements
 
