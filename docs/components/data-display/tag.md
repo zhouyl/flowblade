@@ -1,6 +1,6 @@
 # Tag
 
-Tag component for labels, categories, and keywords. Tag provides a flexible way to display tags with support for various sizes, colors, variants, and optional close buttons.
+Tag component for labels, categories, and keywords. Tag provides a flexible way to display tags with support for various sizes, colors, variants, and optional close buttons. Perfect for labels, categories, and keyword displays.
 
 ## Basic Usage
 
@@ -357,6 +357,8 @@ The Tag component:
 - Provides clear visual distinction
 - Maintains proper color contrast
 - Works with screen readers
-- Supports keyboard navigation for closable tags
+- Supports keyboard navigation for closable tags (Tab, Enter, Delete)
 - Emits events for tag removal
+- Announces tag content to screen readers
+- Supports proper ARIA attributes for tag information
 
