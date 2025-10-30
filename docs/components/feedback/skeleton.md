@@ -1,6 +1,6 @@
 # Skeleton
 
-Loading placeholder component that mimics the structure of content being loaded. Provides visual feedback during data fetching. Skeleton provides a flexible way to display loading placeholders.
+Loading placeholder component that mimics the structure of content being loaded. Provides visual feedback during data fetching. Skeleton provides a flexible way to display loading placeholders. Perfect for improving perceived performance during content loading.
 
 ## Basic Usage
 
@@ -292,4 +292,18 @@ The Skeleton component:
 - No JavaScript required
 - Pure CSS animations
 - Responsive by default
+
+## Accessibility
+
+The Skeleton component:
+- Uses semantic HTML structure
+- Provides visual feedback for loading states
+- Supports screen readers with proper ARIA attributes
+- Can be marked with `aria-busy="true"` during loading
+- Maintains proper color contrast ratios
+- Supports keyboard navigation
+- Provides alternative text for skeleton placeholders
+- Works with reduced motion preferences
+- Announces loading state to assistive technologies
+- Supports `aria-label` for describing loading content
 
