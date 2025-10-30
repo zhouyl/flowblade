@@ -1,6 +1,6 @@
 # Textarea
 
-Multi-line text input component. Textarea provides a flexible way to create multi-line text input fields with support for various sizes, variants, and states.
+Multi-line text input component. Textarea provides a flexible way to create multi-line text input fields with support for various sizes, variants, and states. Perfect for comments, descriptions, and long-form text input.
 
 ## Basic Usage
 
@@ -148,4 +148,17 @@ Textarea supports all style props from the HasStyleProps trait. For a complete l
     </x-text>
 </x-box>
 ```
+
+## Accessibility
+
+The Textarea component:
+- Uses semantic HTML structure with proper `<textarea>` element
+- Supports keyboard navigation (Tab, Shift+Tab, Arrow keys)
+- Works with screen readers
+- Provides clear placeholder text and labels
+- Supports required field validation
+- Announces state changes to screen readers
+- Maintains focus management for keyboard users
+- Provides visual feedback for focus and state
+- Supports resize control for user preference
 
