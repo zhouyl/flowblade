@@ -1,6 +1,6 @@
 # Container
 
-Responsive container component that centers content and applies max-width constraints. The Container component provides a consistent layout wrapper with automatic centering and responsive padding, perfect for page layouts and content sections.
+Responsive container component that centers content and applies max-width constraints. The Container component provides a consistent layout wrapper with automatic centering and responsive padding, perfect for page layouts and content sections. Perfect for page layouts and responsive content sections.
 
 ## Props
 
@@ -433,6 +433,15 @@ Avoid deeply nesting containers. Use one main container per page section:
     </x-container>
 </x-container>
 ```
+
+## Accessibility
+
+The Container component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Does not interfere with keyboard navigation
+- Supports screen reader navigation
+- Properly announces contained content
 
 ## Related Components
 
