@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * InlineDatepicker Component
@@ -14,20 +16,43 @@ use Illuminate\View\Component;
  */
 class InlineDatepicker extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string $id   Container element ID (auto-generated if empty)
-     * @param string $date Default selected date value
+     * @param string $id            Container element ID (auto-generated if empty)
+     * @param string $date          Default selected date value
+     * @param mixed  ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $id = '',
-        public string $date = ''
+        public string $date = '',
+        ...$styleProps
     ) {
         // Generate ID if not provided
         if (empty($this->id)) {
             $this->id = 'inline-datepicker-'.uniqid();
         }
+
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

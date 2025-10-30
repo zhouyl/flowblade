@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * FloatingLabel Component
@@ -14,22 +16,25 @@ use Illuminate\View\Component;
  */
 class FloatingLabel extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string $type        Input type: 'text', 'email', 'password', 'number', 'tel', 'url', 'search', 'date', 'time', 'datetime-local', 'month', 'week', 'color'
-     * @param string $id          Input element ID (auto-generated if empty)
-     * @param string $name        Input name attribute (defaults to ID if empty)
-     * @param string $label       Floating label text
-     * @param string $value       Input value
-     * @param string $placeholder Placeholder text (space by default for floating effect)
-     * @param bool   $required    Whether input is required
-     * @param bool   $disabled    Whether input is disabled
-     * @param bool   $readonly    Whether input is read-only
-     * @param string $variant     Input variant: 'default', 'outlined', 'filled', 'standard'
-     * @param string $size        Input size: 'sm', 'md', 'lg'
-     * @param bool   $error       Whether to show error state
-     * @param string $helperText  Helper text displayed below input
+     * @param string $type          Input type: 'text', 'email', 'password', 'number', 'tel', 'url', 'search', 'date', 'time', 'datetime-local', 'month', 'week', 'color'
+     * @param string $id            Input element ID (auto-generated if empty)
+     * @param string $name          Input name attribute (defaults to ID if empty)
+     * @param string $label         Floating label text
+     * @param string $value         Input value
+     * @param string $placeholder   Placeholder text (space by default for floating effect)
+     * @param bool   $required      Whether input is required
+     * @param bool   $disabled      Whether input is disabled
+     * @param bool   $readonly      Whether input is read-only
+     * @param string $variant       Input variant: 'default', 'outlined', 'filled', 'standard'
+     * @param string $size          Input size: 'sm', 'md', 'lg'
+     * @param bool   $error         Whether to show error state
+     * @param string $helperText    Helper text displayed below input
+     * @param mixed  ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $type = 'text',
@@ -44,7 +49,8 @@ class FloatingLabel extends Component
         public string $variant = 'default',
         public string $size = 'md',
         public bool $error = false,
-        public string $helperText = ''
+        public string $helperText = '',
+        ...$styleProps
     ) {
         // Generate ID if not provided
         if (empty($this->id)) {
@@ -55,6 +61,25 @@ class FloatingLabel extends Component
         if (empty($this->name)) {
             $this->name = $this->id;
         }
+
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

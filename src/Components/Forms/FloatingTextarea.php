@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * FloatingTextarea Component
@@ -14,21 +16,24 @@ use Illuminate\View\Component;
  */
 class FloatingTextarea extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string $id          Textarea element ID (auto-generated if empty)
-     * @param string $name        Textarea name attribute (defaults to ID if empty)
-     * @param string $label       Floating label text
-     * @param string $value       Textarea value
-     * @param string $placeholder Placeholder text (space by default for floating effect)
-     * @param int    $rows        Number of visible text rows
-     * @param bool   $required    Whether textarea is required
-     * @param bool   $disabled    Whether textarea is disabled
-     * @param bool   $readonly    Whether textarea is read-only
-     * @param string $variant     Textarea variant: 'default', 'outlined', 'filled', 'standard'
-     * @param bool   $error       Whether to show error state
-     * @param string $helperText  Helper text displayed below textarea
+     * @param string $id            Textarea element ID (auto-generated if empty)
+     * @param string $name          Textarea name attribute (defaults to ID if empty)
+     * @param string $label         Floating label text
+     * @param string $value         Textarea value
+     * @param string $placeholder   Placeholder text (space by default for floating effect)
+     * @param int    $rows          Number of visible text rows
+     * @param bool   $required      Whether textarea is required
+     * @param bool   $disabled      Whether textarea is disabled
+     * @param bool   $readonly      Whether textarea is read-only
+     * @param string $variant       Textarea variant: 'default', 'outlined', 'filled', 'standard'
+     * @param bool   $error         Whether to show error state
+     * @param string $helperText    Helper text displayed below textarea
+     * @param mixed  ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $id = '',
@@ -42,7 +47,8 @@ class FloatingTextarea extends Component
         public bool $readonly = false,
         public string $variant = 'default',
         public bool $error = false,
-        public string $helperText = ''
+        public string $helperText = '',
+        ...$styleProps
     ) {
         // Generate ID if not provided
         if (empty($this->id)) {
@@ -53,6 +59,25 @@ class FloatingTextarea extends Component
         if (empty($this->name)) {
             $this->name = $this->id;
         }
+
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

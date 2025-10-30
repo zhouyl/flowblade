@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * FileUpload Component
@@ -13,17 +15,20 @@ use Illuminate\View\Component;
  */
 class FileUpload extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $accept      Accepted file types
-     * @param bool        $multiple    Allow multiple files
-     * @param bool        $disabled    Disabled state
-     * @param bool        $required    Required field
-     * @param null|string $maxSize     Max file size (e.g., "5MB")
-     * @param null|int    $maxFiles    Max number of files
-     * @param bool        $showPreview Show file preview
-     * @param null|string $placeholder Placeholder text
+     * @param null|string $accept        Accepted file types
+     * @param bool        $multiple      Allow multiple files
+     * @param bool        $disabled      Disabled state
+     * @param bool        $required      Required field
+     * @param null|string $maxSize       Max file size (e.g., "5MB")
+     * @param null|int    $maxFiles      Max number of files
+     * @param bool        $showPreview   Show file preview
+     * @param null|string $placeholder   Placeholder text
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $accept = null,
@@ -33,8 +38,27 @@ class FileUpload extends Component
         public ?string $maxSize = null,
         public ?int $maxFiles = null,
         public bool $showPreview = true,
-        public ?string $placeholder = 'Click to upload or drag and drop'
+        public ?string $placeholder = 'Click to upload or drag and drop',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

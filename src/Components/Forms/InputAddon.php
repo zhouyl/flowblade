@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * InputAddon Component
@@ -14,16 +16,38 @@ use Illuminate\View\Component;
  */
 class InputAddon extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string $placement Addon placement: 'left' (prefix) or 'right' (suffix)
-     * @param string $size      Addon size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string $placement     Addon placement: 'left' (prefix) or 'right' (suffix)
+     * @param string $size          Addon size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param mixed  ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $placement = 'left',
-        public string $size = 'md'
+        public string $size = 'md',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
