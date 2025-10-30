@@ -1,6 +1,6 @@
 # Indicator Component
 
-Status indicator component for online/offline states, notifications, and activity indicators. Indicator provides a flexible way to display status indicators with support for various colors, sizes, and positions.
+Status indicator component for online/offline states, notifications, and activity indicators. Indicator provides a flexible way to display status indicators with support for various colors, sizes, and positions. Perfect for status badges, online indicators, and activity notifications.
 
 ## Basic Usage
 
@@ -304,7 +304,15 @@ Indicator supports all common style props for flexible styling:
 
 ## Accessibility
 
-The Indicator component includes proper ARIA attributes:
+The Indicator component:
+- Includes proper ARIA attributes
+- Supports screen reader announcements
+- Provides accessible labels
+- Maintains proper color contrast
+- Does not interfere with keyboard navigation
+- Supports proper ARIA roles for status information
+
+Example with accessibility attributes:
 
 ```blade
 <x-indicator color="green" label="User is online" />
