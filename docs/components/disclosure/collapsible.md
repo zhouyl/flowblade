@@ -1,6 +1,6 @@
 # Collapsible
 
-Collapsible component for toggling content visibility with a simple expand/collapse interaction. Collapsible provides a flexible way to display collapsible content.
+Collapsible component for toggling content visibility with a simple expand/collapse interaction. Collapsible provides a flexible way to display collapsible content. Perfect for settings panels, additional information, and progressive disclosure.
 
 ## Basic Usage
 
@@ -391,10 +391,12 @@ class DetailsPanel extends Component
 The Collapsible component:
 - Uses semantic HTML with proper button elements
 - Manages `aria-expanded` attribute for screen readers
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Space)
 - Provides clear visual feedback for open/closed states
+- Announces expanded/collapsed state to screen readers
 - Emits `collapsible-change` event for integration
 - Supports disabled state with proper ARIA attributes
 - Uses Alpine.js collapse directive for smooth animations
 - Includes chevron icon that rotates to indicate state
+- Supports `aria-controls` for associating headers with content
 
