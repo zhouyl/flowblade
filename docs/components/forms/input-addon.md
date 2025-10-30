@@ -1,6 +1,6 @@
 # InputAddon
 
-InputAddon component for adding prefix or suffix content to an input field. Commonly used for currency symbols, units, or icons. Perfect for providing context and improving user experience.
+InputAddon component for adding prefix or suffix content to an input field. Commonly used for currency symbols, units, or icons. Perfect for providing context, improving user experience, and clarifying input requirements.
 
 ## Basic Usage
 
@@ -135,7 +135,9 @@ InputAddon supports all style props from the HasStyleProps trait. For a complete
 The InputAddon component:
 - Uses semantic HTML structure
 - Works with screen readers
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Provides clear input context
 - Should be used within InputGroup for proper structure
+- Announces addon content to screen readers
+- Supports proper ARIA attributes for input context
 
