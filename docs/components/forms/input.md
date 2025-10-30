@@ -152,7 +152,7 @@ Input supports all style props from the HasStyleProps trait. For a complete list
 
 The Input component:
 - Uses semantic HTML structure with proper `<input>` element
-- Supports keyboard navigation (Tab, Shift+Tab, Arrow keys)
+- Supports keyboard navigation (Tab, Shift+Tab, Arrow keys, Enter)
 - Works with screen readers
 - Provides clear placeholder text and labels
 - Supports required field validation
@@ -160,4 +160,5 @@ The Input component:
 - Maintains focus management for keyboard users
 - Provides visual feedback for focus and state
 - Supports various input types with appropriate keyboards on mobile devices
+- Supports proper ARIA attributes for input validation
 
