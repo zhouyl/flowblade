@@ -1,8 +1,6 @@
-# Image Component
+# Image
 
-## Overview
-
-The Image component is a responsive image wrapper with built-in support for lazy loading, fallback handling, and accessibility features. It provides a consistent way to display images across your application with optional styling and effects.
+The Image component is a responsive image wrapper with built-in support for lazy loading, fallback handling, and accessibility features. It provides a consistent way to display images across your application with optional styling and effects. Perfect for product images, hero sections, and galleries.
 
 ## Props
 
@@ -102,11 +100,54 @@ The Image component supports all common style props for flexible styling:
 />
 ```
 
+## Common Patterns
+
+### Product Image
+
+```blade
+<x-image
+    src="/products/product-1.jpg"
+    alt="Blue Wireless Headphones"
+    w="full"
+    maxW="sm"
+    rounded="lg"
+    shadow
+/>
+```
+
+### Avatar Image
+
+```blade
+<x-image
+    src="/avatars/user.jpg"
+    alt="User Avatar"
+    w="12"
+    h="12"
+    rounded="full"
+    objectFit="cover"
+/>
+```
+
+### Hero Image
+
+```blade
+<x-image
+    src="/hero.jpg"
+    alt="Hero Banner"
+    w="full"
+    h="96"
+    objectFit="cover"
+    objectPosition="center"
+/>
+```
+
 ## Accessibility
 
 - Always provide meaningful `alt` text for screen readers
 - Use `title` attribute for additional context when needed
 - The component automatically sets `loading="lazy"` for performance
+- Decorative images should have empty `alt=""` attribute
+- Avoid using images as the only way to convey information
 
 ## Notes
 
