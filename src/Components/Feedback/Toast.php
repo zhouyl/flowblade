@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Feedback;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Toast Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Toast extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -32,8 +36,10 @@ class Toast extends Component
         public ?string $icon = null,
         public int $duration = 5000,
         public bool $closable = true,
-        public string $position = 'top-right'
+        public string $position = 'top-right',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -50,6 +56,25 @@ class Toast extends Component
             'info' => 'heroicons:information-circle',
             default => 'heroicons:information-circle',
         };
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'flex items-start gap-3 p-4 rounded-lg border shadow-lg bg-white dark:bg-gray-800 dark:border-gray-700',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

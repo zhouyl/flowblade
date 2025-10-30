@@ -1,36 +1,31 @@
 @php
-    // Size configurations
-    $sizeConfig = [
-        'sm' => [
-            'container' => 'py-8',
-            'icon' => 'w-12 h-12',
-            'title' => 'text-base',
-            'description' => 'text-sm',
-            'gap' => 'gap-3',
-        ],
-        'md' => [
-            'container' => 'py-12',
-            'icon' => 'w-16 h-16',
-            'title' => 'text-lg',
-            'description' => 'text-base',
-            'gap' => 'gap-4',
-        ],
-        'lg' => [
-            'container' => 'py-16',
-            'icon' => 'w-24 h-24',
-            'title' => 'text-xl',
-            'description' => 'text-lg',
-            'gap' => 'gap-6',
-        ],
-    ];
-    
-    $config = $sizeConfig[$size] ?? $sizeConfig['md'];
-    
-    // Get dynamic component name for icon
-    $iconComponent = config('flowblade.prefix') ? config('flowblade.prefix') . '-icon' : 'icon';
+$sizeConfig = [
+    'sm' => [
+        'icon' => 'w-12 h-12',
+        'title' => 'text-base',
+        'description' => 'text-sm',
+        'gap' => 'gap-3',
+    ],
+    'md' => [
+        'icon' => 'w-16 h-16',
+        'title' => 'text-lg',
+        'description' => 'text-base',
+        'gap' => 'gap-4',
+    ],
+    'lg' => [
+        'icon' => 'w-24 h-24',
+        'title' => 'text-xl',
+        'description' => 'text-lg',
+        'gap' => 'gap-6',
+    ],
+];
+
+$config = $sizeConfig[$size] ?? $sizeConfig['md'];
+
+$iconComponent = config('flowblade.prefix') ? config('flowblade.prefix') . '-icon' : 'icon';
 @endphp
 
-<div {{ $attributes->merge(['class' => 'flex flex-col items-center justify-center text-center ' . $config['container']]) }}>
+<div {{ $attributes->merge(['class' => $classes()]) }}>
     <div class="flex flex-col items-center {{ $config['gap'] }} max-w-md mx-auto">
         @if($icon)
         {{-- Icon --}}

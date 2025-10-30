@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Feedback;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Banner Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Banner extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -24,8 +28,33 @@ class Banner extends Component
     public function __construct(
         public string $id = 'banner',
         public string $position = 'top',
-        public bool $dismissible = true
+        public bool $dismissible = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'fixed left-0 right-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700',
+            match ($this->position) {
+                'bottom' => 'bottom-0',
+                default => 'top-0',
+            },
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

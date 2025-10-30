@@ -1,15 +1,14 @@
 @php
-    // Position classes
-    $positionClass = $position === 'bottom' 
-        ? 'bottom-0 border-t' 
-        : 'top-0 border-b';
+$positionClass = $position === 'bottom'
+    ? 'bottom-0 border-t'
+    : 'top-0 border-b';
 @endphp
 
-<div 
+<div
     id="{{ $id }}"
     tabindex="-1"
     {{ $attributes->merge([
-        'class' => 'fixed start-0 z-50 flex justify-between w-full p-4 border-gray-200 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 ' . $positionClass
+        'class' => $classes() . ' flex justify-between p-4 ' . $positionClass
     ]) }}
 >
     <div class="flex items-center mx-auto">

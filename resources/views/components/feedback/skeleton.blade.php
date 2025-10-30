@@ -1,62 +1,57 @@
 @php
-    // Base classes
-    $baseClasses = 'bg-gray-200 dark:bg-gray-700';
-    $animateClass = $animate ? 'animate-pulse' : '';
-    
-    // Type-specific configurations
-    $typeConfigs = [
-        'text' => [
-            'width' => $width ?? 'w-full',
-            'height' => $height ?? 'h-2',
-            'rounded' => $rounded ? 'rounded-full' : '',
-        ],
-        'image' => [
-            'width' => $width ?? 'w-full',
-            'height' => $height ?? 'h-48',
-            'rounded' => $rounded ? 'rounded-sm' : '',
-        ],
-        'video' => [
-            'width' => $width ?? 'w-full',
-            'height' => $height ?? 'h-56',
-            'rounded' => $rounded ? 'rounded-lg' : '',
-        ],
-        'card' => [
-            'width' => $width ?? 'w-full',
-            'height' => $height ?? 'h-64',
-            'rounded' => $rounded ? 'rounded-lg' : '',
-        ],
-        'avatar' => [
-            'width' => $width ?? 'w-10',
-            'height' => $height ?? 'h-10',
-            'rounded' => $rounded ? 'rounded-full' : '',
-        ],
-        'button' => [
-            'width' => $width ?? 'w-24',
-            'height' => $height ?? 'h-10',
-            'rounded' => $rounded ? 'rounded-lg' : '',
-        ],
-        'circle' => [
-            'width' => $width ?? 'w-12',
-            'height' => $height ?? 'h-12',
-            'rounded' => 'rounded-full',
-        ],
-        'rectangle' => [
-            'width' => $width ?? 'w-full',
-            'height' => $height ?? 'h-32',
-            'rounded' => $rounded ? 'rounded-lg' : '',
-        ],
-    ];
-    
-    $config = $typeConfigs[$type] ?? $typeConfigs['text'];
-    $widthClass = $config['width'];
-    $heightClass = $config['height'];
-    $roundedClass = $config['rounded'];
+$typeConfigs = [
+    'text' => [
+        'width' => $width ?? 'w-full',
+        'height' => $height ?? 'h-2',
+        'rounded' => $rounded ? 'rounded-full' : '',
+    ],
+    'image' => [
+        'width' => $width ?? 'w-full',
+        'height' => $height ?? 'h-48',
+        'rounded' => $rounded ? 'rounded-sm' : '',
+    ],
+    'video' => [
+        'width' => $width ?? 'w-full',
+        'height' => $height ?? 'h-56',
+        'rounded' => $rounded ? 'rounded-lg' : '',
+    ],
+    'card' => [
+        'width' => $width ?? 'w-full',
+        'height' => $height ?? 'h-64',
+        'rounded' => $rounded ? 'rounded-lg' : '',
+    ],
+    'avatar' => [
+        'width' => $width ?? 'w-10',
+        'height' => $height ?? 'h-10',
+        'rounded' => $rounded ? 'rounded-full' : '',
+    ],
+    'button' => [
+        'width' => $width ?? 'w-24',
+        'height' => $height ?? 'h-10',
+        'rounded' => $rounded ? 'rounded-lg' : '',
+    ],
+    'circle' => [
+        'width' => $width ?? 'w-12',
+        'height' => $height ?? 'h-12',
+        'rounded' => 'rounded-full',
+    ],
+    'rectangle' => [
+        'width' => $width ?? 'w-full',
+        'height' => $height ?? 'h-32',
+        'rounded' => $rounded ? 'rounded-lg' : '',
+    ],
+];
+
+$config = $typeConfigs[$type] ?? $typeConfigs['text'];
+$widthClass = $config['width'];
+$heightClass = $config['height'];
+$roundedClass = $config['rounded'];
 @endphp
 
-<div 
-    role="status" 
+<div
+    role="status"
     {{ $attributes->merge([
-        'class' => $animateClass
+        'class' => $classes()
     ]) }}
 >
     @if($type === 'text' && $lines > 1)

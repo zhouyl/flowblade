@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Feedback;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Progress Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Progress extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -34,8 +38,10 @@ class Progress extends Component
         public string $variant = 'default',
         public bool $showValue = false,
         public ?string $label = null,
-        public bool $indeterminate = false
+        public bool $indeterminate = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -52,6 +58,32 @@ class Progress extends Component
         $percentage = ($this->value / $this->max) * 100;
 
         return min(100, max(0, $percentage));
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'w-full bg-gray-200 rounded-full dark:bg-gray-700',
+            match ($this->size) {
+                'xs' => 'h-1',
+                'sm' => 'h-2',
+                'lg' => 'h-4',
+                'xl' => 'h-6',
+                default => 'h-3',
+            },
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

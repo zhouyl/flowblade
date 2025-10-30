@@ -1,61 +1,58 @@
 @php
-    // Size classes
-    $sizeClasses = [
-        'xs' => 'text-xs px-3 py-2',
-        'sm' => 'text-sm px-3 py-2',
-        'md' => 'text-base px-4 py-3',
-        'lg' => 'text-lg px-5 py-4',
-        'xl' => 'text-xl px-6 py-5',
-    ];
-    
-    // Status color mappings for different variants
-    $statusColors = [
-        'info' => [
-            'solid' => 'bg-blue-600 text-white border-blue-600',
-            'subtle' => 'bg-blue-50 text-blue-900 border-blue-200',
-            'left-accent' => 'bg-blue-50 text-blue-900 border-l-4 border-l-blue-600 border-blue-200',
-            'top-accent' => 'bg-blue-50 text-blue-900 border-t-4 border-t-blue-600 border-blue-200',
-            'icon' => 'text-blue-600',
-        ],
-        'success' => [
-            'solid' => 'bg-green-600 text-white border-green-600',
-            'subtle' => 'bg-green-50 text-green-900 border-green-200',
-            'left-accent' => 'bg-green-50 text-green-900 border-l-4 border-l-green-600 border-green-200',
-            'top-accent' => 'bg-green-50 text-green-900 border-t-4 border-t-green-600 border-green-200',
-            'icon' => 'text-green-600',
-        ],
-        'warning' => [
-            'solid' => 'bg-yellow-600 text-white border-yellow-600',
-            'subtle' => 'bg-yellow-50 text-yellow-900 border-yellow-200',
-            'left-accent' => 'bg-yellow-50 text-yellow-900 border-l-4 border-l-yellow-600 border-yellow-200',
-            'top-accent' => 'bg-yellow-50 text-yellow-900 border-t-4 border-t-yellow-600 border-yellow-200',
-            'icon' => 'text-yellow-600',
-        ],
-        'danger' => [
-            'solid' => 'bg-red-600 text-white border-red-600',
-            'subtle' => 'bg-red-50 text-red-900 border-red-200',
-            'left-accent' => 'bg-red-50 text-red-900 border-l-4 border-l-red-600 border-red-200',
-            'top-accent' => 'bg-red-50 text-red-900 border-t-4 border-t-red-600 border-red-200',
-            'icon' => 'text-red-600',
-        ],
-    ];
-    
-    // Default icons for each status
-    $defaultIcons = [
-        'info' => 'heroicons:information-circle',
-        'success' => 'heroicons:check-circle',
-        'warning' => 'heroicons:exclamation-triangle',
-        'danger' => 'heroicons:x-circle',
-    ];
-    
-    $sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
-    $colorClass = $statusColors[$status][$variant] ?? $statusColors['info'][$variant];
-    $iconColorClass = $statusColors[$status]['icon'] ?? $statusColors['info']['icon'];
-    $displayIcon = $icon ?? $defaultIcons[$status] ?? null;
+$sizeClasses = [
+    'xs' => 'text-xs px-3 py-2',
+    'sm' => 'text-sm px-3 py-2',
+    'md' => 'text-base px-4 py-3',
+    'lg' => 'text-lg px-5 py-4',
+    'xl' => 'text-xl px-6 py-5',
+];
+
+$statusColors = [
+    'info' => [
+        'solid' => 'bg-blue-600 text-white border-blue-600',
+        'subtle' => 'bg-blue-50 text-blue-900 border-blue-200',
+        'left-accent' => 'bg-blue-50 text-blue-900 border-l-4 border-l-blue-600 border-blue-200',
+        'top-accent' => 'bg-blue-50 text-blue-900 border-t-4 border-t-blue-600 border-blue-200',
+        'icon' => 'text-blue-600',
+    ],
+    'success' => [
+        'solid' => 'bg-green-600 text-white border-green-600',
+        'subtle' => 'bg-green-50 text-green-900 border-green-200',
+        'left-accent' => 'bg-green-50 text-green-900 border-l-4 border-l-green-600 border-green-200',
+        'top-accent' => 'bg-green-50 text-green-900 border-t-4 border-t-green-600 border-green-200',
+        'icon' => 'text-green-600',
+    ],
+    'warning' => [
+        'solid' => 'bg-yellow-600 text-white border-yellow-600',
+        'subtle' => 'bg-yellow-50 text-yellow-900 border-yellow-200',
+        'left-accent' => 'bg-yellow-50 text-yellow-900 border-l-4 border-l-yellow-600 border-yellow-200',
+        'top-accent' => 'bg-yellow-50 text-yellow-900 border-t-4 border-t-yellow-600 border-yellow-200',
+        'icon' => 'text-yellow-600',
+    ],
+    'danger' => [
+        'solid' => 'bg-red-600 text-white border-red-600',
+        'subtle' => 'bg-red-50 text-red-900 border-red-200',
+        'left-accent' => 'bg-red-50 text-red-900 border-l-4 border-l-red-600 border-red-200',
+        'top-accent' => 'bg-red-50 text-red-900 border-t-4 border-t-red-600 border-red-200',
+        'icon' => 'text-red-600',
+    ],
+];
+
+$defaultIcons = [
+    'info' => 'heroicons:information-circle',
+    'success' => 'heroicons:check-circle',
+    'warning' => 'heroicons:exclamation-triangle',
+    'danger' => 'heroicons:x-circle',
+];
+
+$sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
+$colorClass = $statusColors[$status][$variant] ?? $statusColors['info'][$variant];
+$iconColorClass = $statusColors[$status]['icon'] ?? $statusColors['info']['icon'];
+$displayIcon = $icon ?? $defaultIcons[$status] ?? null;
 @endphp
 
-<div 
-    {{ $attributes->merge(['class' => 'rounded-lg border ' . $sizeClass . ' ' . $colorClass]) }}
+<div
+    {{ $attributes->merge(['class' => $classes() . ' ' . $sizeClass . ' ' . $colorClass]) }}
     role="alert"
     x-data="{ show: true }"
     x-show="show"

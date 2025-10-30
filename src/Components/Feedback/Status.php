@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Feedback;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Status Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Status extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -28,8 +32,35 @@ class Status extends Component
         public string $variant = 'dot',
         public string $size = 'md',
         public ?string $label = null,
-        public bool $pulse = false
+        public bool $pulse = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'inline-flex items-center',
+            match ($this->size) {
+                'xs' => 'gap-1',
+                'sm' => 'gap-1.5',
+                'lg' => 'gap-3',
+                default => 'gap-2',
+            },
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

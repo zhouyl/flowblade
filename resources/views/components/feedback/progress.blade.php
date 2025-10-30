@@ -1,27 +1,16 @@
 @php
-    // Size classes
-    $sizeClasses = [
-        'xs' => 'h-1',
-        'sm' => 'h-2',
-        'md' => 'h-3',
-        'lg' => 'h-4',
-        'xl' => 'h-6',
-    ];
-    
-    // Color classes
-    $colorClasses = [
-        'primary' => 'bg-blue-600',
-        'secondary' => 'bg-gray-600',
-        'success' => 'bg-green-600',
-        'warning' => 'bg-yellow-600',
-        'danger' => 'bg-red-600',
-        'info' => 'bg-cyan-600',
-        'gray' => 'bg-gray-400',
-    ];
-    
-    $sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
-    $colorClass = $colorClasses[$color] ?? $colorClasses['primary'];
-    $percentage = $getPercentage();
+$colorClasses = [
+    'primary' => 'bg-blue-600',
+    'secondary' => 'bg-gray-600',
+    'success' => 'bg-green-600',
+    'warning' => 'bg-yellow-600',
+    'danger' => 'bg-red-600',
+    'info' => 'bg-cyan-600',
+    'gray' => 'bg-gray-400',
+];
+
+$colorClass = $colorClasses[$color] ?? $colorClasses['primary'];
+$percentage = $getPercentage();
 @endphp
 
 <div {{ $attributes->merge(['class' => 'w-full']) }}>
@@ -30,15 +19,15 @@
         @if($label)
         <span class="text-sm font-medium text-gray-700">{{ $label }}</span>
         @endif
-        
+
         @if($showValue && !$indeterminate)
         <span class="text-sm font-medium text-gray-700">{{ number_format($percentage, 0) }}%</span>
         @endif
     </div>
     @endif
-    
-    <div 
-        class="w-full bg-gray-200 rounded-full overflow-hidden {{ $sizeClass }}"
+
+    <div
+        {{ $attributes->merge(['class' => $classes() . ' overflow-hidden']) }}
         role="progressbar"
         aria-valuenow="{{ $indeterminate ? null : $value }}"
         aria-valuemin="0"

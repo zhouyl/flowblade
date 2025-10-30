@@ -1,34 +1,31 @@
 @php
-    // Size classes
-    $sizeClasses = [
-        'xs' => ['size' => 40, 'text' => 'text-xs'],
-        'sm' => ['size' => 56, 'text' => 'text-sm'],
-        'md' => ['size' => 80, 'text' => 'text-base'],
-        'lg' => ['size' => 112, 'text' => 'text-lg'],
-        'xl' => ['size' => 144, 'text' => 'text-xl'],
-    ];
-    
-    // Color classes
-    $colorClasses = [
-        'primary' => ['stroke' => 'stroke-blue-600', 'text' => 'text-blue-600'],
-        'secondary' => ['stroke' => 'stroke-gray-600', 'text' => 'text-gray-600'],
-        'success' => ['stroke' => 'stroke-green-600', 'text' => 'text-green-600'],
-        'warning' => ['stroke' => 'stroke-yellow-600', 'text' => 'text-yellow-600'],
-        'danger' => ['stroke' => 'stroke-red-600', 'text' => 'text-red-600'],
-        'info' => ['stroke' => 'stroke-cyan-600', 'text' => 'text-cyan-600'],
-        'gray' => ['stroke' => 'stroke-gray-400', 'text' => 'text-gray-400'],
-    ];
-    
-    $sizeConfig = $sizeClasses[$size] ?? $sizeClasses['md'];
-    $colorConfig = $colorClasses[$color] ?? $colorClasses['primary'];
-    $percentage = $getPercentage();
-    
-    // SVG circle calculations
-    $svgSize = $sizeConfig['size'];
-    $center = $svgSize / 2;
-    $radius = ($svgSize - $thickness * 2) / 2;
-    $circumference = 2 * pi() * $radius;
-    $offset = $circumference - ($percentage / 100) * $circumference;
+$sizeClasses = [
+    'xs' => ['size' => 40, 'text' => 'text-xs'],
+    'sm' => ['size' => 56, 'text' => 'text-sm'],
+    'md' => ['size' => 80, 'text' => 'text-base'],
+    'lg' => ['size' => 112, 'text' => 'text-lg'],
+    'xl' => ['size' => 144, 'text' => 'text-xl'],
+];
+
+$colorClasses = [
+    'primary' => ['stroke' => 'stroke-blue-600', 'text' => 'text-blue-600'],
+    'secondary' => ['stroke' => 'stroke-gray-600', 'text' => 'text-gray-600'],
+    'success' => ['stroke' => 'stroke-green-600', 'text' => 'text-green-600'],
+    'warning' => ['stroke' => 'stroke-yellow-600', 'text' => 'text-yellow-600'],
+    'danger' => ['stroke' => 'stroke-red-600', 'text' => 'text-red-600'],
+    'info' => ['stroke' => 'stroke-cyan-600', 'text' => 'text-cyan-600'],
+    'gray' => ['stroke' => 'stroke-gray-400', 'text' => 'text-gray-400'],
+];
+
+$sizeConfig = $sizeClasses[$size] ?? $sizeClasses['md'];
+$colorConfig = $colorClasses[$color] ?? $colorClasses['primary'];
+$percentage = $getPercentage();
+
+$svgSize = $sizeConfig['size'];
+$center = $svgSize / 2;
+$radius = ($svgSize - $thickness * 2) / 2;
+$circumference = 2 * pi() * $radius;
+$offset = $circumference - ($percentage / 100) * $circumference;
 @endphp
 
 <div {{ $attributes->merge(['class' => 'inline-flex flex-col items-center gap-2']) }}>

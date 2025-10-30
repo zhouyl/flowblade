@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Feedback;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Alert Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Alert extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -30,8 +34,29 @@ class Alert extends Component
         public string $size = 'md',
         public ?string $title = null,
         public ?string $icon = null,
-        public bool $closable = false
+        public bool $closable = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'rounded-lg border',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

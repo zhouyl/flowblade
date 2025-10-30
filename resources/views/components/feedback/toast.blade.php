@@ -1,55 +1,51 @@
 @php
-    // Status color configurations
-    $statusColors = [
-        'success' => [
-            'bg' => 'bg-green-50',
-            'border' => 'border-green-200',
-            'icon' => 'text-green-500',
-            'title' => 'text-green-900',
-            'description' => 'text-green-700',
-        ],
-        'error' => [
-            'bg' => 'bg-red-50',
-            'border' => 'border-red-200',
-            'icon' => 'text-red-500',
-            'title' => 'text-red-900',
-            'description' => 'text-red-700',
-        ],
-        'warning' => [
-            'bg' => 'bg-yellow-50',
-            'border' => 'border-yellow-200',
-            'icon' => 'text-yellow-500',
-            'title' => 'text-yellow-900',
-            'description' => 'text-yellow-700',
-        ],
-        'info' => [
-            'bg' => 'bg-blue-50',
-            'border' => 'border-blue-200',
-            'icon' => 'text-blue-500',
-            'title' => 'text-blue-900',
-            'description' => 'text-blue-700',
-        ],
-    ];
-    
-    $colors = $statusColors[$status] ?? $statusColors['info'];
-    
-    // Position configurations
-    $positionClasses = [
-        'top-right' => 'top-4 right-4',
-        'top-left' => 'top-4 left-4',
-        'bottom-right' => 'bottom-4 right-4',
-        'bottom-left' => 'bottom-4 left-4',
-        'top-center' => 'top-4 left-1/2 -translate-x-1/2',
-        'bottom-center' => 'bottom-4 left-1/2 -translate-x-1/2',
-    ];
-    
-    $positionClass = $positionClasses[$position] ?? $positionClasses['top-right'];
-    
-    // Get icon
-    $displayIcon = $icon ?? $getDefaultIcon();
-    
-    // Get dynamic component name for icon
-    $iconComponent = config('flowblade.prefix') ? config('flowblade.prefix') . '-icon' : 'icon';
+$statusColors = [
+    'success' => [
+        'bg' => 'bg-green-50',
+        'border' => 'border-green-200',
+        'icon' => 'text-green-500',
+        'title' => 'text-green-900',
+        'description' => 'text-green-700',
+    ],
+    'error' => [
+        'bg' => 'bg-red-50',
+        'border' => 'border-red-200',
+        'icon' => 'text-red-500',
+        'title' => 'text-red-900',
+        'description' => 'text-red-700',
+    ],
+    'warning' => [
+        'bg' => 'bg-yellow-50',
+        'border' => 'border-yellow-200',
+        'icon' => 'text-yellow-500',
+        'title' => 'text-yellow-900',
+        'description' => 'text-yellow-700',
+    ],
+    'info' => [
+        'bg' => 'bg-blue-50',
+        'border' => 'border-blue-200',
+        'icon' => 'text-blue-500',
+        'title' => 'text-blue-900',
+        'description' => 'text-blue-700',
+    ],
+];
+
+$colors = $statusColors[$status] ?? $statusColors['info'];
+
+$positionClasses = [
+    'top-right' => 'top-4 right-4',
+    'top-left' => 'top-4 left-4',
+    'bottom-right' => 'bottom-4 right-4',
+    'bottom-left' => 'bottom-4 left-4',
+    'top-center' => 'top-4 left-1/2 -translate-x-1/2',
+    'bottom-center' => 'bottom-4 left-1/2 -translate-x-1/2',
+];
+
+$positionClass = $positionClasses[$position] ?? $positionClasses['top-right'];
+
+$displayIcon = $icon ?? $getDefaultIcon();
+
+$iconComponent = config('flowblade.prefix') ? config('flowblade.prefix') . '-icon' : 'icon';
 @endphp
 
 <div 
@@ -80,7 +76,7 @@
         'aria-atomic' => 'true',
     ]) }}
 >
-    <div class="rounded-lg border shadow-lg {{ $colors['bg'] }} {{ $colors['border'] }} p-4">
+    <div class="{{ $classes() }} {{ $colors['bg'] }} {{ $colors['border'] }}">
         <div class="flex items-start gap-3">
             {{-- Icon --}}
             <div class="flex-shrink-0 w-5 h-5 {{ $colors['icon'] }}">

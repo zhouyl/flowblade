@@ -1,33 +1,30 @@
 @php
-    // Size classes
-    $sizeClasses = [
-        'xs' => 'w-3 h-3',
-        'sm' => 'w-4 h-4',
-        'md' => 'w-6 h-6',
-        'lg' => 'w-8 h-8',
-        'xl' => 'w-12 h-12',
-    ];
-    
-    // Color classes
-    $colorClasses = [
-        'primary' => 'text-blue-600',
-        'secondary' => 'text-gray-600',
-        'success' => 'text-green-600',
-        'warning' => 'text-yellow-600',
-        'danger' => 'text-red-600',
-        'info' => 'text-cyan-600',
-        'gray' => 'text-gray-400',
-        'white' => 'text-white',
-    ];
-    
-    $sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
-    $colorClass = $colorClasses[$color] ?? $colorClasses['primary'];
+$sizeClasses = [
+    'xs' => 'w-3 h-3',
+    'sm' => 'w-4 h-4',
+    'md' => 'w-6 h-6',
+    'lg' => 'w-8 h-8',
+    'xl' => 'w-12 h-12',
+];
+
+$colorClasses = [
+    'primary' => 'text-blue-600',
+    'secondary' => 'text-gray-600',
+    'success' => 'text-green-600',
+    'warning' => 'text-yellow-600',
+    'danger' => 'text-red-600',
+    'info' => 'text-cyan-600',
+    'gray' => 'text-gray-400',
+    'white' => 'text-white',
+];
+
+$sizeClass = $sizeClasses[$size] ?? $sizeClasses['md'];
+$colorClass = $colorClasses[$color] ?? $colorClasses['primary'];
 @endphp
 
 @if($variant === 'spinner')
-{{-- Default Spinner --}}
-<div 
-    {{ $attributes->merge(['class' => 'inline-block ' . $sizeClass . ' ' . $colorClass]) }}
+<div
+    {{ $attributes->merge(['class' => $classes() . ' ' . $colorClass]) }}
     role="status"
     aria-label="{{ $label }}"
 >

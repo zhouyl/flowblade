@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Feedback;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * ProgressCircle Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class ProgressCircle extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -34,8 +38,10 @@ class ProgressCircle extends Component
         public int $thickness = 4,
         public bool $showValue = false,
         public ?string $label = null,
-        public bool $indeterminate = false
+        public bool $indeterminate = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -52,6 +58,32 @@ class ProgressCircle extends Component
         $percentage = ($this->value / $this->max) * 100;
 
         return min(100, max(0, $percentage));
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'flex items-center justify-center',
+            match ($this->size) {
+                'xs' => 'w-12 h-12',
+                'sm' => 'w-16 h-16',
+                'lg' => 'w-32 h-32',
+                'xl' => 'w-40 h-40',
+                default => 'w-24 h-24',
+            },
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

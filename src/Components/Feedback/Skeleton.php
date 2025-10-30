@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Feedback;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Skeleton Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class Skeleton extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -30,8 +34,31 @@ class Skeleton extends Component
         public ?string $height = null,
         public ?int $lines = 3,
         public bool $animate = true,
-        public bool $rounded = true
+        public bool $rounded = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'bg-gray-200 dark:bg-gray-700',
+            $this->animate ? 'animate-pulse' : '',
+            $this->rounded ? 'rounded' : '',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
