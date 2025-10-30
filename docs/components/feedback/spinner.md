@@ -1,6 +1,6 @@
 # Spinner
 
-Spinner component for displaying loading states and indicating ongoing processes. Spinner provides a flexible way to display loading indicators.
+Spinner component for displaying loading states and indicating ongoing processes. Spinner provides a flexible way to display loading indicators. Perfect for async operations, data fetching, and processing feedback.
 
 ## Basic Usage
 
@@ -400,7 +400,10 @@ The Spinner component:
 - Includes `aria-label` for accessibility
 - Provides `.sr-only` text for screen reader users
 - Supports custom labels via the `label` prop
+- Announces loading state to screen readers
 - Uses CSS animations for smooth performance
 - Works with keyboard navigation
-- Maintains proper color contrast
+- Maintains proper color contrast ratios
+- Supports `aria-live="polite"` for dynamic updates
+- Provides clear indication of loading state
 
