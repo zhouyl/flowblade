@@ -1,6 +1,6 @@
 # NavbarBrand
 
-NavbarBrand component for displaying the brand or logo section of a Navbar. Typically placed at the start of the navigation bar.
+NavbarBrand component for displaying the brand or logo section of a Navbar. Typically placed at the start of the navigation bar. Perfect for displaying company logos, brand names, and home links.
 
 ## Basic Usage
 
@@ -69,7 +69,9 @@ NavbarBrand also supports all common style props for flexible styling.
 
 The NavbarBrand component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
 - Provides clear brand identification
+- Supports proper link semantics
+- Announces brand link to screen readers
 
