@@ -206,10 +206,10 @@
   - [x] 5.3.2 TabsTrigger 组件 ✅
   - [x] 5.3.3 TabsContent 组件 ✅
 
-- [ ] 5.4 Sidebar 子组件 (3 个)
-  - [ ] 5.4.1 SidebarItem 组件
-  - [ ] 5.4.2 SidebarGroup 组件
-  - [ ] 5.4.3 SidebarToggle 组件
+- [x] 5.4 Sidebar 子组件 (3 个) ✅ 完成
+  - [x] 5.4.1 SidebarItem 组件 ✅
+  - [x] 5.4.2 SidebarGroup 组件 ✅
+  - [x] 5.4.3 SidebarToggle 组件 ✅
 
 - [ ] 5.5 Steps 组件 (2 个)
   - [ ] 5.5.1 Steps 组件
@@ -227,7 +227,7 @@
 - [x] 5.8 其他组件 (1 个) ✅ 完成
   - [x] 5.8.1 BreadcrumbItem 组件 ✅
 
-**当前进度**: 13/23 个 Navigation 组件已完成 (56.5%)
+**当前进度**: 16/23 个 Navigation 组件已完成 (69.6%)
 
 ## 工作要求
 
