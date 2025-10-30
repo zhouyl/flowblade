@@ -1,6 +1,6 @@
 # Toast
 
-Toast notification component for displaying temporary messages with auto-dismiss functionality. Toast provides a flexible way to display toast notifications.
+Toast notification component for displaying temporary messages with auto-dismiss functionality. Toast provides a flexible way to display toast notifications. Perfect for success messages, error alerts, and user feedback.
 
 ## Requirements
 
@@ -521,9 +521,11 @@ The Toast component:
 - Uses `role="alert"` for screen reader announcements
 - Uses `aria-live="assertive"` for important notifications
 - Uses `aria-atomic="true"` to announce the entire content
-- Provides keyboard-accessible close button
+- Provides keyboard-accessible close button (Tab, Enter, Space)
 - Maintains proper color contrast ratios
 - Supports auto-dismiss for non-critical messages
 - Allows manual dismissal for user control
 - Uses semantic HTML structure
+- Announces toast content immediately to screen readers
+- Supports ARIA labels for custom content
 
