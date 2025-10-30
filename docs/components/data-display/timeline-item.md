@@ -1,6 +1,6 @@
 # TimelineItem
 
-TimelineItem component for displaying individual events or milestones within a Timeline. Each item represents a point in time with associated content.
+TimelineItem component for displaying individual events or milestones within a Timeline. Each item represents a point in time with associated content. Perfect for showing project history, order tracking, and process steps.
 
 ## Basic Usage
 
@@ -26,6 +26,10 @@ TimelineItem also supports all common style props for flexible styling:
 - **Colors**: `bg`, `color`, `borderColor`
 - **Layout**: `display`, `position`, `zIndex`, `overflow`
 - **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
+
+### Style Props
+
+TimelineItem supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -83,11 +87,36 @@ TimelineItem also supports all common style props for flexible styling:
 </x-timeline>
 ```
 
+## Common Patterns
+
+### Project Milestones
+
+```blade
+<x-timeline>
+    <x-timeline-item title="Project Kickoff" description="January 1, 2024">
+        <x-text size="sm" color="gray">Team assembled and requirements gathered</x-text>
+    </x-timeline-item>
+    <x-timeline-item title="Design Phase" description="January 15, 2024">
+        <x-text size="sm" color="gray">UI/UX design completed and approved</x-text>
+    </x-timeline-item>
+    <x-timeline-item title="Development" description="February 1, 2024">
+        <x-text size="sm" color="gray">Core features implementation started</x-text>
+    </x-timeline-item>
+    <x-timeline-item title="Testing" description="March 1, 2024">
+        <x-text size="sm" color="gray">QA testing and bug fixes</x-text>
+    </x-timeline-item>
+    <x-timeline-item title="Launch" description="March 15, 2024">
+        <x-text size="sm" color="gray">Public release</x-text>
+    </x-timeline-item>
+</x-timeline>
+```
+
 ## Accessibility
 
 The TimelineItem component:
 - Uses semantic HTML structure
 - Maintains proper content hierarchy
+- Should be used within a Timeline component
 - Works with screen readers
 - Supports keyboard navigation
 
