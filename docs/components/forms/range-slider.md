@@ -1,6 +1,6 @@
 # RangeSlider
 
-Range slider component for selecting a range of values.
+Range slider component for selecting a range of values. Perfect for price ranges, date ranges, and value filtering.
 
 ## Basic Usage
 
@@ -356,11 +356,13 @@ class RangeSliderDemo extends Component
 ## Accessibility
 
 The RangeSlider component:
-- Supports keyboard navigation (arrow keys for each thumb)
+- Supports keyboard navigation (arrow keys for each thumb, Tab)
 - Provides visual feedback during interaction
 - Shows current values when enabled
 - Maintains proper focus management
 - Works with screen readers
 - Supports disabled state
 - Prevents thumbs from crossing each other
+- Announces value changes to screen readers
+- Supports proper ARIA attributes for range slider validation
 
