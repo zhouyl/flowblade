@@ -1,6 +1,6 @@
 # Mark
 
-Mark component for marking or highlighting text. Uses semantic HTML `<mark>` element to represent marked or highlighted content.
+Mark component for marking or highlighting text. Uses semantic HTML `<mark>` element to represent marked or highlighted content. Perfect for search results, tutorials, and important passages.
 
 ## Basic Usage
 
@@ -19,6 +19,10 @@ Mark supports all common style props for flexible styling:
 - **Colors**: `bg`, `color`, `borderColor`
 - **Layout**: `display`, `position`, `zIndex`, `overflow`
 - **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
+
+### Style Props
+
+Mark supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -69,6 +73,54 @@ Mark supports all common style props for flexible styling:
 </x-text>
 ```
 
+## Common Patterns
+
+### Exam Study Guide
+
+```blade
+<x-card>
+    <x-card-body>
+        <x-heading size="lg" mb="3">Key Concepts</x-heading>
+
+        <x-text mb="4">
+            The <x-mark>mitochondria</x-mark> is the powerhouse of the cell, responsible for producing energy through <x-mark>ATP synthesis</x-mark>.
+        </x-text>
+    </x-card-body>
+</x-card>
+```
+
+### Document Review
+
+```blade
+<x-text>
+    The contract states that <x-mark>payment is due within 30 days</x-mark> of invoice date. Additionally, <x-mark>late fees of 1.5% per month</x-mark> will be applied to overdue amounts.
+</x-text>
+```
+
+### Tutorial Highlights
+
+```blade
+<x-vstack spacing="3">
+    <x-text>
+        Step 1: Click the <x-mark>Settings</x-mark> button in the top right corner.
+    </x-text>
+    <x-text>
+        Step 2: Navigate to <x-mark>Account Settings</x-mark> section.
+    </x-text>
+    <x-text>
+        Step 3: Click <x-mark>Save Changes</x-mark> to apply your settings.
+    </x-text>
+</x-vstack>
+```
+
+### Comparison Table
+
+```blade
+<x-text>
+    Plan A includes <x-mark>basic features</x-mark>, while Plan B includes <x-mark>advanced features</x-mark> and <x-mark>priority support</x-mark>.
+</x-text>
+```
+
 ## Accessibility
 
 The Mark component:
@@ -77,4 +129,5 @@ The Mark component:
 - Maintains text hierarchy
 - Works with all assistive technologies
 - Provides visual distinction
+- Should not be the only way to convey information
 
