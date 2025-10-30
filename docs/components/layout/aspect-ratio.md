@@ -1,6 +1,6 @@
 # AspectRatio
 
-Maintains a consistent aspect ratio for its content. AspectRatio is useful for preventing layout shift and maintaining consistent proportions for images, videos, and other media.
+Maintains a consistent aspect ratio for its content. AspectRatio is useful for preventing layout shift and maintaining consistent proportions for images, videos, and other media. Perfect for responsive images, videos, and media containers.
 
 ## Props
 
@@ -236,6 +236,15 @@ AspectRatio supports all style props from the HasStyleProps trait. For a complet
     @endforeach
 </x-wrap>
 ```
+
+## Accessibility
+
+The AspectRatio component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Does not interfere with keyboard navigation
+- Supports screen reader navigation
+- Properly announces contained media
 
 ## Tips
 
