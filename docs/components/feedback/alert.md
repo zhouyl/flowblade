@@ -1,6 +1,6 @@
 # Alert
 
-Alert component for displaying important messages and notifications to users. Alert provides a flexible way to display alerts with various statuses and variants.
+Alert component for displaying important messages and notifications to users. Alert provides a flexible way to display alerts with various statuses and variants. Perfect for system messages, validation feedback, and user notifications.
 
 ## Basic Usage
 
@@ -439,9 +439,12 @@ class AlertDemo extends Component
 The Alert component:
 - Uses semantic `role="alert"` for screen readers
 - Provides clear visual distinction between status types
-- Supports keyboard navigation for closable alerts
+- Supports keyboard navigation for closable alerts (Tab, Enter, Space)
 - Includes proper ARIA labels for close button
+- Announces alert content to screen readers immediately
 - Emits `alert-closed` event when dismissed
 - Uses smooth transitions for better UX
 - Maintains proper color contrast ratios
+- Supports ARIA live regions for dynamic alerts
+- Provides clear status indicators for different alert types
 
