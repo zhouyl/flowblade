@@ -1,6 +1,6 @@
 # AccordionItem
 
-AccordionItem component for displaying individual accordion items within an Accordion. Each item contains a trigger and content that can be expanded or collapsed.
+AccordionItem component for displaying individual accordion items within an Accordion. Each item contains a trigger and content that can be expanded or collapsed. Perfect for FAQs, documentation, and collapsible content sections.
 
 ## Basic Usage
 
@@ -23,6 +23,10 @@ AccordionItem component for displaying individual accordion items within an Acco
 | `disabled` | `boolean` | `false` | Disabled state |
 
 AccordionItem also supports all common style props for flexible styling.
+
+### Style Props
+
+AccordionItem supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -86,12 +90,33 @@ AccordionItem also supports all common style props for flexible styling.
 </x-accordion>
 ```
 
+## Common Patterns
+
+### FAQ Section
+
+```blade
+<x-accordion>
+    <x-accordion-item title="What is Flowblade?">
+        Flowblade is a comprehensive Laravel Blade component library built with Tailwind CSS and Flowbite.
+    </x-accordion-item>
+
+    <x-accordion-item title="How do I install it?">
+        You can install Flowblade via Composer using the command: composer require flowblade/flowblade
+    </x-accordion-item>
+
+    <x-accordion-item title="Is it free?">
+        Yes, Flowblade is open source and free to use.
+    </x-accordion-item>
+</x-accordion>
+```
+
 ## Accessibility
 
 The AccordionItem component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Arrow keys, Enter)
 - Works with screen readers
 - Provides clear expand/collapse indicators
 - Maintains proper heading hierarchy
+- Should be used within an Accordion component
 
