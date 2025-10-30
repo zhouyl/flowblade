@@ -112,4 +112,6 @@ The FloatingSelect component:
 - Supports required field validation with ARIA attributes
 - Includes proper error state indication
 - Maintains focus management for keyboard users
+- Announces selected option to screen readers
+- Supports proper ARIA attributes for select validation
 
