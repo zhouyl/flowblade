@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * NavbarToggle Component
@@ -14,14 +16,37 @@ use Illuminate\View\Component;
  */
 class NavbarToggle extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
      * @param null|string $target Target NavbarCollapse element ID to toggle
      */
     public function __construct(
-        public ?string $target = 'navbar-collapse'
+        public ?string $target = 'navbar-collapse',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

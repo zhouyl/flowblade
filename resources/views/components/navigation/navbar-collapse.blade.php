@@ -1,5 +1,5 @@
-<div 
-    class="hidden w-full md:block md:w-auto" 
+<div
+    class="{{ $classes() }}"
     id="{{ $id }}"
     {{ $attributes }}
 >

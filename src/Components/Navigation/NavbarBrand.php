@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * NavbarBrand Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class NavbarBrand extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -24,8 +28,29 @@ class NavbarBrand extends Component
     public function __construct(
         public ?string $href = '#',
         public ?string $logo = null,
-        public ?string $name = null
+        public ?string $name = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'flex items-center space-x-3 rtl:space-x-reverse',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
