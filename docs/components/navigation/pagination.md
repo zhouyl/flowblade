@@ -1,6 +1,6 @@
 # Pagination
 
-Pagination component for navigating through pages with multiple variants. Pagination provides a flexible way to navigate through pages with support for various sizes and variants.
+Pagination component for navigating through pages with multiple variants. Pagination provides a flexible way to navigate through pages with support for various sizes and variants. Perfect for search results, product listings, and data tables.
 
 ## Basic Usage
 
@@ -545,7 +545,9 @@ The Pagination component:
 - Uses semantic HTML with button elements
 - Provides clear visual feedback for current page
 - Disables buttons when not applicable
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
+- Announces current page to screen readers
 - Emits `page-change` event for integration
+- Supports `aria-label` for page buttons
 
