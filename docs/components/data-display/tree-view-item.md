@@ -1,6 +1,6 @@
 # TreeViewItem
 
-TreeViewItem component for displaying individual nodes within a TreeView. Each item can have child items to create a hierarchical tree structure.
+TreeViewItem component for displaying individual nodes within a TreeView. Each item can have child items to create a hierarchical tree structure. Perfect for file explorers, navigation menus, and hierarchical data display.
 
 ## Basic Usage
 
@@ -22,13 +22,11 @@ TreeViewItem component for displaying individual nodes within a TreeView. Each i
 |------|------|---------|-------------|
 | `label` | `string` | `null` | Label text for the tree item |
 
-TreeViewItem also supports all common style props for flexible styling:
+TreeViewItem also supports all common style props for flexible styling.
 
-- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
-- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
-- **Colors**: `bg`, `color`, `borderColor`
-- **Layout**: `display`, `position`, `zIndex`, `overflow`
-- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
+### Style Props
+
+TreeViewItem supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -95,6 +93,9 @@ The TreeViewItem component:
 - Uses semantic HTML structure
 - Maintains proper content hierarchy
 - Works with screen readers
-- Supports keyboard navigation
-- Supports expand/collapse functionality
+- Supports keyboard navigation (Arrow keys, Enter, Space)
+- Supports expand/collapse functionality with proper ARIA attributes
+- Should be used within a TreeView component
+- Provides clear indication of parent/child relationships
+- Announces expanded/collapsed state to screen readers
 
