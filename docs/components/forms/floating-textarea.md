@@ -1,6 +1,6 @@
 # FloatingTextarea
 
-FloatingTextarea component for creating a textarea with a floating label. The label floats above the textarea when focused or when it has content.
+FloatingTextarea component for creating a textarea with a floating label. The label floats above the textarea when focused or when it has content. Perfect for comments, messages, and multi-line text input.
 
 ## Basic Usage
 
@@ -107,8 +107,10 @@ FloatingTextarea also supports all common style props for flexible styling.
 
 The FloatingTextarea component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
 - Provides clear floating labels
 - Supports required field validation
+- Announces textarea content to screen readers
+- Supports proper ARIA attributes for textarea validation
 
