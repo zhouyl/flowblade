@@ -1,6 +1,6 @@
 # FileUpload
 
-File upload component with drag and drop support.
+File upload component with drag and drop support. Perfect for document uploads, image uploads, and file management.
 
 ## Basic Usage
 
@@ -328,9 +328,11 @@ class FileUploadDemo extends Component
 
 The FileUpload component:
 - Uses semantic HTML with proper file input
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Space)
 - Provides clear visual feedback for drag and drop
 - Shows file information (name, size)
 - Supports screen readers
 - Maintains focus management
+- Announces file selection to screen readers
+- Supports proper ARIA attributes for file upload
 
