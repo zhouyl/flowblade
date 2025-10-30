@@ -1,6 +1,6 @@
 # Menu
 
-Dropdown menu component for displaying a list of menu items when clicking or hovering over a trigger element. Menu provides a flexible way to create dropdown menus.
+Dropdown menu component for displaying a list of menu items when clicking or hovering over a trigger element. Menu provides a flexible way to create dropdown menus. Perfect for navigation, actions, and context menus.
 
 ## Requirements
 
@@ -507,13 +507,15 @@ dropdown.toggle();
 
 The Menu component:
 - Uses semantic HTML with proper list structure
-- Supports keyboard navigation (Arrow keys, Enter, Escape)
+- Supports keyboard navigation (Arrow keys, Enter, Escape, Tab)
 - Works with screen readers
-- Provides proper ARIA attributes
+- Provides proper ARIA attributes (`role="menu"`, `role="menuitem"`)
 - Maintains focus management
+- Announces menu state to screen readers
 - Supports both click and hover triggers
 - Uses Popper.js for intelligent positioning
 - Closes on outside click or Escape key
+- Supports `aria-label` for menu identification
 
 ## Notes
 
