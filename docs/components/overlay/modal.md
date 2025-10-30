@@ -607,13 +607,15 @@ if (modal.isHidden()) {
 
 The Modal component:
 - Uses semantic HTML with proper ARIA attributes
-- Supports keyboard navigation (ESC to close)
+- Supports keyboard navigation (Tab, Escape to close)
 - Traps focus within the modal when open
 - Returns focus to trigger element when closed
 - Provides screen reader announcements
 - Supports backdrop click to close (configurable)
 - Has proper heading hierarchy
 - Includes visible focus indicators
+- Supports `role="dialog"` for screen readers
+- Announces modal state changes to assistive technologies
 
 ## Notes
 
