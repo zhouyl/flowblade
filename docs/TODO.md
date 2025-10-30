@@ -369,7 +369,22 @@
 ✅ **Forms 组件** (10/10 - 100%)
 ✅ **Typography 组件** (9/9 - 100%)
 
-**总计**: 26 个新文档已完成，仅剩 1 个文档待补充
+**总计**: 26 个新文档已完成
+
+### 发现的额外缺失文档 (19 个)
+
+#### Disclosure 组件 (1 个)
+- [x] AccordionItem
+
+#### Navigation 组件 (15 个)
+- [x] BreadcrumbItem, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle
+- [ ] MegaMenuColumn, MegaMenuItem, SidebarGroup, SidebarItem, SidebarToggle
+- [ ] SpeedDialItem, StepItem, TabsContent, TabsList, TabsTrigger
+
+#### Overlay 组件 (3 个)
+- [x] MenuDivider, MenuHeader, MenuItem
+
+**当前进度**: 36/45 个文档已完成 (80%)
 
 ## 下一步行动
 
