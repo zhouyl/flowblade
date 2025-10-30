@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * TabsTrigger Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class TabsTrigger extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -24,8 +28,34 @@ class TabsTrigger extends Component
     public function __construct(
         public string $value,
         public ?string $icon = null,
-        public bool $disabled = false
+        public bool $disabled = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:border-gray-300 border-b-2 border-transparent dark:text-gray-400 dark:hover:text-white',
+        ];
+
+        // Disabled state
+        if ($this->disabled) {
+            $classes[] = 'opacity-50 cursor-not-allowed';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

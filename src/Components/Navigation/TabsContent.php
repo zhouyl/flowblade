@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * TabsContent Component
@@ -14,14 +16,37 @@ use Illuminate\View\Component;
  */
 class TabsContent extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
      * @param string $value Unique tab identifier matching TabsTrigger value
      */
     public function __construct(
-        public string $value
+        public string $value,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'p-4 text-gray-700 dark:text-gray-300',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

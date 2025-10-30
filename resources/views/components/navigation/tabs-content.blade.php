@@ -1,5 +1,5 @@
 <div
-    {{ $attributes->merge(['class' => 'py-4']) }}
+    {{ $attributes->merge(['class' => $classes()]) }}
     role="tabpanel"
     x-show="activeTab === '{{ $value }}'"
     x-bind:aria-hidden="activeTab !== '{{ $value }}'"
