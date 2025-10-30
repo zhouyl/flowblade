@@ -1,6 +1,6 @@
 # TreeView
 
-Tree view component for displaying hierarchical data in an expandable/collapsible structure. TreeView provides a flexible way to display hierarchical data with support for various sizes.
+Tree view component for displaying hierarchical data in an expandable/collapsible structure. TreeView provides a flexible way to display hierarchical data with support for various sizes. Perfect for file trees, navigation hierarchies, and nested data display.
 
 ## Basic Usage
 
@@ -423,9 +423,11 @@ TreeView and TreeViewItem support all common style props for flexible styling:
 
 The TreeView component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Arrow keys, Enter, Space)
 - Provides visual feedback for expand/collapse
 - Maintains proper focus management
 - Works with screen readers
 - Clear visual hierarchy
+- Properly announces tree structure to screen readers
+- Supports proper ARIA attributes for tree navigation
 
