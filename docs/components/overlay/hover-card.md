@@ -397,11 +397,14 @@ const hoverCard = new Popover(targetEl, triggerEl, options);
 The HoverCard component:
 - Uses semantic HTML with proper ARIA attributes
 - Works with screen readers
-- Provides keyboard navigation support
+- Provides keyboard navigation support (Tab, Enter, Escape)
 - Uses Popper.js for intelligent positioning
 - Respects user motion preferences
 - Provides sufficient color contrast
 - Has configurable delay to prevent accidental triggers
+- Supports `role="tooltip"` for screen readers
+- Announces card content to assistive technologies
+- Provides alternative interaction methods for touch devices
 
 ## Notes
 
