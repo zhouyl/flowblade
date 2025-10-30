@@ -1,6 +1,6 @@
 # NavbarLink
 
-NavbarLink component for displaying navigation links within a Navbar. Provides styling for active and inactive states.
+NavbarLink component for displaying navigation links within a Navbar. Provides styling for active and inactive states. Perfect for main navigation items and menu links.
 
 ## Basic Usage
 
@@ -87,7 +87,9 @@ NavbarLink also supports all common style props for flexible styling.
 
 The NavbarLink component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
 - Provides clear active state indication
+- Announces active link with `aria-current="page"`
+- Supports proper link semantics
 
