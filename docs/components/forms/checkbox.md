@@ -144,4 +144,6 @@ The Checkbox component:
 - Announces state changes to screen readers
 - Maintains focus management for keyboard users
 - Provides visual feedback for focus and state
+- Properly announces checked/unchecked state to screen readers
+- Supports proper ARIA attributes for form validation
 
