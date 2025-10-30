@@ -1,6 +1,6 @@
 # VStack
 
-Vertical stack layout component, a shortcut for Stack component in vertical direction. VStack provides a convenient way to arrange items vertically with consistent spacing and alignment.
+Vertical stack layout component, a shortcut for Stack component in vertical direction. VStack provides a convenient way to arrange items vertically with consistent spacing and alignment. Perfect for creating forms, lists, and vertical layouts.
 
 ## Basic Usage
 
@@ -159,4 +159,14 @@ VStack supports all style props from the HasStyleProps trait. For a complete lis
     </x-box>
 </x-vstack>
 ```
+
+## Accessibility
+
+The VStack component:
+- Uses semantic HTML structure
+- Maintains proper content hierarchy
+- Works with screen readers
+- Supports keyboard navigation
+- Preserves semantic meaning of child elements
+- Should use appropriate semantic elements for content
 

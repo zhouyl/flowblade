@@ -1,6 +1,6 @@
 # Center
 
-Centers its child elements using flexbox. The Center component provides a convenient way to center content both vertically and horizontally with comprehensive style props support.
+Centers its child elements using flexbox. The Center component provides a convenient way to center content both vertically and horizontally with comprehensive style props support. Perfect for creating centered layouts, modals, and hero sections.
 
 ## Props
 
@@ -108,4 +108,14 @@ Center supports all style props from the HasStyleProps trait, including spacing,
     </x-box>
 </x-center>
 ```
+
+## Accessibility
+
+The Center component:
+- Uses semantic HTML structure
+- Maintains proper content hierarchy
+- Works with screen readers
+- Supports keyboard navigation
+- Preserves semantic meaning of child elements
+- Should use appropriate semantic elements (e.g., `as="section"`, `as="main"`)
 

@@ -1,6 +1,6 @@
 # HStack
 
-Horizontal stack layout component, a shortcut for Stack component in horizontal direction. HStack provides a convenient way to arrange items horizontally with consistent spacing and alignment.
+Horizontal stack layout component, a shortcut for Stack component in horizontal direction. HStack provides a convenient way to arrange items horizontally with consistent spacing and alignment. Perfect for creating navigation bars, button groups, and horizontal layouts.
 
 ## Basic Usage
 
@@ -142,4 +142,14 @@ HStack supports all style props from the HasStyleProps trait. For a complete lis
     <x-text>Success</x-text>
 </x-hstack>
 ```
+
+## Accessibility
+
+The HStack component:
+- Uses semantic HTML structure
+- Maintains proper content hierarchy
+- Works with screen readers
+- Supports keyboard navigation
+- Preserves semantic meaning of child elements
+- Should use appropriate semantic elements for content
 
