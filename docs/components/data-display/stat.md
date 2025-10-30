@@ -1,6 +1,6 @@
 # Stat
 
-Stat component for displaying statistics, metrics, and key performance indicators. Stat provides a flexible way to display metrics with support for icons and trend indicators.
+Stat component for displaying statistics, metrics, and key performance indicators. Stat provides a flexible way to display metrics with support for icons and trend indicators. Perfect for dashboards, analytics, and KPI displays.
 
 ## Basic Usage
 
@@ -503,4 +503,6 @@ The Stat component:
 - Maintains proper color contrast
 - Works with screen readers
 - Supports keyboard navigation
+- Properly announces statistics to screen readers
+- Supports proper ARIA attributes for metric information
 
