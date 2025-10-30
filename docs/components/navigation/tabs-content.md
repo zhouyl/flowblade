@@ -1,6 +1,6 @@
 # TabsContent
 
-TabsContent component for displaying content panels within a Tabs component. Each panel is associated with a TabsTrigger.
+TabsContent component for displaying content panels within a Tabs component. Each panel is associated with a TabsTrigger. Perfect for organizing tabbed content and managing panel visibility.
 
 ## Basic Usage
 
@@ -90,7 +90,9 @@ TabsContent also supports all common style props for flexible styling.
 
 The TabsContent component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab)
 - Works with screen readers
 - Maintains proper content association
+- Announces tab panel role to screen readers
+- Supports proper ARIA attributes for content visibility
 
