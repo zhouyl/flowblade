@@ -1,6 +1,6 @@
 # MegaMenu Component
 
-Large dropdown menu with multi-column layout, icons, descriptions, and grouping for complex navigation. MegaMenu provides a flexible way to create complex dropdown menus.
+Large dropdown menu with multi-column layout, icons, descriptions, and grouping for complex navigation. MegaMenu provides a flexible way to create complex dropdown menus. Perfect for complex navigation, product menus, and multi-column dropdowns.
 
 ## Basic Usage
 
@@ -441,9 +441,11 @@ MegaMenu and related components support all style props from the HasStyleProps t
 The MegaMenu component includes proper ARIA attributes and keyboard navigation:
 
 - Uses semantic HTML (`<nav>`, `<ul>`, `<li>`)
-- Keyboard accessible (Tab, Enter, Escape)
+- Keyboard accessible (Tab, Enter, Escape, Arrow keys)
 - Screen reader friendly
 - Focus management
+- Announces menu structure to screen readers
+- Supports proper ARIA attributes for menu state
 
 ## Browser Support
 
