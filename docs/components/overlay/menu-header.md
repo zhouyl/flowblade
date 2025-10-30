@@ -1,6 +1,6 @@
 # MenuHeader
 
-MenuHeader component for displaying header text within a Menu. Useful for labeling menu sections or providing context.
+MenuHeader component for displaying header text within a Menu. Useful for labeling menu sections or providing context. Perfect for organizing menu items into logical groups.
 
 ## Basic Usage
 
@@ -9,7 +9,7 @@ MenuHeader component for displaying header text within a Menu. Useful for labeli
     <x-menu-trigger>
         <x-button>Menu</x-button>
     </x-menu-trigger>
-    
+
     <x-menu-content>
         <x-menu-header>File</x-menu-header>
         <x-menu-item href="/new">New</x-menu-item>
@@ -21,6 +21,10 @@ MenuHeader component for displaying header text within a Menu. Useful for labeli
 ## Props
 
 MenuHeader supports all common style props for flexible styling.
+
+### Style Props
+
+MenuHeader supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -76,6 +80,31 @@ MenuHeader supports all common style props for flexible styling.
 </x-menu>
 ```
 
+## Common Patterns
+
+### Application Menu
+
+```blade
+<x-menu>
+    <x-menu-trigger>
+        <x-button>Menu</x-button>
+    </x-menu-trigger>
+
+    <x-menu-content>
+        <x-menu-header>File</x-menu-header>
+        <x-menu-item href="/new">New</x-menu-item>
+        <x-menu-item href="/open">Open</x-menu-item>
+        <x-menu-item href="/save">Save</x-menu-item>
+
+        <x-menu-divider />
+
+        <x-menu-header>Edit</x-menu-header>
+        <x-menu-item href="/undo">Undo</x-menu-item>
+        <x-menu-item href="/redo">Redo</x-menu-item>
+    </x-menu-content>
+</x-menu>
+```
+
 ## Accessibility
 
 The MenuHeader component:
@@ -83,4 +112,5 @@ The MenuHeader component:
 - Provides clear menu section labels
 - Works with screen readers
 - Maintains menu structure
+- Should be used within a Menu component
 

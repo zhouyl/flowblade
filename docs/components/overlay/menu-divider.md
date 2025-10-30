@@ -1,6 +1,6 @@
 # MenuDivider
 
-MenuDivider component for separating menu items into logical groups. Provides visual separation between different menu sections.
+MenuDivider component for separating menu items into logical groups. Provides visual separation between different menu sections. Perfect for organizing related menu items.
 
 ## Basic Usage
 
@@ -9,13 +9,13 @@ MenuDivider component for separating menu items into logical groups. Provides vi
     <x-menu-trigger>
         <x-button>Menu</x-button>
     </x-menu-trigger>
-    
+
     <x-menu-content>
         <x-menu-item href="/edit">Edit</x-menu-item>
         <x-menu-item href="/copy">Copy</x-menu-item>
-        
+
         <x-menu-divider />
-        
+
         <x-menu-item href="/delete">Delete</x-menu-item>
     </x-menu-content>
 </x-menu>
@@ -24,6 +24,10 @@ MenuDivider component for separating menu items into logical groups. Provides vi
 ## Props
 
 MenuDivider supports all common style props for flexible styling.
+
+### Style Props
+
+MenuDivider supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -77,6 +81,32 @@ MenuDivider supports all common style props for flexible styling.
 </x-menu>
 ```
 
+## Common Patterns
+
+### Context Menu
+
+```blade
+<x-menu>
+    <x-menu-trigger>
+        <x-button variant="ghost">⋮</x-button>
+    </x-menu-trigger>
+
+    <x-menu-content>
+        <x-menu-item href="/edit">Edit</x-menu-item>
+        <x-menu-item href="/duplicate">Duplicate</x-menu-item>
+
+        <x-menu-divider />
+
+        <x-menu-item href="/share">Share</x-menu-item>
+        <x-menu-item href="/download">Download</x-menu-item>
+
+        <x-menu-divider />
+
+        <x-menu-item href="/delete" color="danger">Delete</x-menu-item>
+    </x-menu-content>
+</x-menu>
+```
+
 ## Accessibility
 
 The MenuDivider component:
@@ -84,4 +114,5 @@ The MenuDivider component:
 - Provides visual separation
 - Works with screen readers
 - Maintains menu structure
+- Should be used within a Menu component
 
