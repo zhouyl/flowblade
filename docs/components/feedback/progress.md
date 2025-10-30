@@ -1,6 +1,6 @@
 # Progress
 
-Progress component for displaying progress indicators and completion status. Progress provides a flexible way to display progress bars.
+Progress component for displaying progress indicators and completion status. Progress provides a flexible way to display progress bars. Perfect for file uploads, downloads, and task completion tracking.
 
 ## Basic Usage
 
@@ -429,8 +429,11 @@ The Progress component:
 - Uses semantic `role="progressbar"` for screen readers
 - Includes `aria-valuenow`, `aria-valuemin`, `aria-valuemax` attributes
 - Supports `aria-label` for custom labels
+- Announces progress updates to screen readers
 - Provides visual feedback with smooth transitions
 - Supports indeterminate state for unknown progress
 - Maintains proper color contrast ratios
 - Works with keyboard navigation
+- Supports `aria-labelledby` for associating with labels
+- Provides text representation of progress percentage
 
