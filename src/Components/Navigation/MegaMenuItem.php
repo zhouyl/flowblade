@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * MegaMenuItem Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class MegaMenuItem extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -26,8 +30,29 @@ class MegaMenuItem extends Component
         public string $href = '#',
         public string $icon = '',
         public string $title = '',
-        public string $description = ''
+        public string $description = '',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'flex items-start p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

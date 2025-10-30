@@ -1,15 +1,4 @@
 @php
-// Width classes
-$widthClasses = match($width) {
-    'sm' => 'max-w-screen-sm',
-    'md' => 'max-w-screen-md',
-    'lg' => 'max-w-screen-lg',
-    'xl' => 'max-w-screen-xl',
-    'full' => 'w-full',
-    default => 'w-full',
-};
-
-// Column classes
 $columnClasses = match($columns) {
     1 => 'grid-cols-1',
     2 => 'grid-cols-1 md:grid-cols-2',
@@ -18,12 +7,11 @@ $columnClasses = match($columns) {
     default => 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
 };
 
-// Trigger attribute
 $triggerAttr = $trigger === 'hover' ? 'data-dropdown-trigger="hover"' : 'data-dropdown-trigger="click"';
 @endphp
 
 <div {{ $attributes->merge(['class' => 'relative']) }} id="{{ $id }}">
-    <button 
+    <button
         type="button"
         id="{{ $id }}-button"
         data-dropdown-toggle="{{ $id }}-dropdown"
@@ -36,9 +24,9 @@ $triggerAttr = $trigger === 'hover' ? 'data-dropdown-trigger="hover"' : 'data-dr
         </svg>
     </button>
 
-    <div 
+    <div
         id="{{ $id }}-dropdown"
-        class="absolute z-10 hidden bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 {{ $widthClasses }}"
+        {{ $attributes->merge(['class' => $classes() . ' hidden']) }}
     >
         <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
             <div class="grid {{ $columnClasses }} gap-4">
