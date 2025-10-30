@@ -1,6 +1,6 @@
 # Flex
 
-Flexible box layout component with full control over flex properties. The Flex component provides a powerful flexbox layout system with comprehensive style props support for building responsive layouts.
+Flexible box layout component with full control over flex properties. The Flex component provides a powerful flexbox layout system with comprehensive style props support for building responsive layouts. Perfect for flexible layouts and responsive designs.
 
 ## Props
 
@@ -174,4 +174,13 @@ Flex component supports all style props from the HasStyleProps trait, including 
     <x-box>Content 3</x-box>
 </x-flex>
 ```
+
+## Accessibility
+
+The Flex component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Does not interfere with keyboard navigation
+- Supports screen reader navigation
+- Properly announces contained content
 
