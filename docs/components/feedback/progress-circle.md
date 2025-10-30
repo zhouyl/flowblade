@@ -1,6 +1,6 @@
 # ProgressCircle
 
-Circular progress component for displaying progress in a circular format. ProgressCircle provides a flexible way to display circular progress indicators.
+Circular progress component for displaying progress in a circular format. ProgressCircle provides a flexible way to display circular progress indicators. Perfect for dashboards, loading states, and skill representations.
 
 ## Basic Usage
 
@@ -463,9 +463,12 @@ The ProgressCircle component:
 - Uses semantic `role="progressbar"` for screen readers
 - Includes `aria-valuenow`, `aria-valuemin`, `aria-valuemax` attributes
 - Supports `aria-label` for custom labels
+- Announces progress updates to screen readers
 - Provides visual feedback with smooth transitions
 - Supports indeterminate state for unknown progress
 - Uses SVG for scalable and crisp rendering
 - Maintains proper color contrast ratios
 - Works with keyboard navigation
+- Supports `aria-labelledby` for associating with labels
+- Provides text representation of progress percentage
 
