@@ -1,6 +1,6 @@
 # DataList
 
-Data list component for displaying key-value pairs in a structured format. DataList provides a flexible way to display data with support for various orientations and layouts.
+Data list component for displaying key-value pairs in a structured format. DataList provides a flexible way to display data with support for various orientations and layouts. Perfect for displaying structured data, metadata, and information panels.
 
 ## Basic Usage
 
@@ -298,4 +298,6 @@ The DataList component:
 - Supports screen readers
 - Maintains proper text contrast
 - Responsive layout options
+- Properly announces key-value pairs to screen readers
+- Supports proper ARIA attributes for data structure
 
