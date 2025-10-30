@@ -1,6 +1,6 @@
 # Divider Component
 
-Enhanced separator with text/icon support for visually dividing content sections. Divider provides a flexible way to separate content with optional text or icons.
+Enhanced separator with text/icon support for visually dividing content sections. Divider provides a flexible way to separate content with optional text or icons. Perfect for separating content sections and visual organization.
 
 ## Basic Usage
 
@@ -285,6 +285,8 @@ The Divider component:
 - Supports dark mode
 - Text content is readable by screen readers
 - Proper contrast ratios
+- Announces divider text to screen readers
+- Supports proper ARIA attributes
 
 ## Browser Support
 
