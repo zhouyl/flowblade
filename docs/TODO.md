@@ -245,21 +245,21 @@
 
 **当前进度**: 9/9 个 Feedback 组件已完成 (100%) ✅
 
-### 第七阶段：Overlay 组件 Style Props 修复 (Phase 7) - 进行中
+### 第七阶段：Overlay 组件 Style Props 修复 (Phase 7) ✅ 完成
 
 为 Overlay 组件添加 Style Props 支持（共 9 个组件）：
 
-- [ ] 7.1 Modal 组件
-- [ ] 7.2 Drawer 组件
-- [ ] 7.3 Tooltip 组件
-- [ ] 7.4 Popover 组件
-- [ ] 7.5 Menu 组件
-- [ ] 7.6 MenuItem 组件
-- [ ] 7.7 MenuHeader 组件
-- [ ] 7.8 MenuDivider 组件
-- [ ] 7.9 HoverCard 组件
+- [x] 7.1 Modal 组件 ✅
+- [x] 7.2 Drawer 组件 ✅
+- [x] 7.3 Tooltip 组件 ✅
+- [x] 7.4 Popover 组件 ✅
+- [x] 7.5 Menu 组件 ✅
+- [x] 7.6 MenuItem 组件 ✅
+- [x] 7.7 MenuHeader 组件 ✅
+- [x] 7.8 MenuDivider 组件 ✅
+- [x] 7.9 HoverCard 组件 ✅
 
-**当前进度**: 0/9 个 Overlay 组件已完成 (0%)
+**当前进度**: 9/9 个 Overlay 组件已完成 (100%) ✅
 
 ## 工作要求
 
