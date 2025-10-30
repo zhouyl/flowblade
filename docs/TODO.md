@@ -261,6 +261,27 @@
 
 **当前进度**: 9/9 个 Overlay 组件已完成 (100%) ✅
 
+### 第八阶段：Disclosure 组件 Style Props 修复 (Phase 8) - 进行中
+
+为 Disclosure 组件添加 Style Props 支持（共 3 个组件）：
+
+- [ ] 8.1 Accordion 组件
+- [ ] 8.2 AccordionItem 组件
+- [ ] 8.3 Collapsible 组件
+
+**当前进度**: 0/3 个 Disclosure 组件已完成 (0%)
+
+### 第九阶段：Media 组件 Style Props 修复 (Phase 9) - 待进行
+
+为 Media 组件添加 Style Props 支持（共 4 个组件）：
+
+- [ ] 9.1 Carousel 组件
+- [ ] 9.2 Gallery 组件
+- [ ] 9.3 GalleryItem 组件
+- [ ] 9.4 QRCode 组件
+
+**当前进度**: 0/4 个 Media 组件已完成 (0%)
+
 ## 工作要求
 
 1. ✅ 禁止生成工作总结性文档，工作计划在 docs/TODO.md 中维护（中文）
