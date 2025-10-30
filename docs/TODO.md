@@ -261,15 +261,15 @@
 
 **当前进度**: 9/9 个 Overlay 组件已完成 (100%) ✅
 
-### 第八阶段：Disclosure 组件 Style Props 修复 (Phase 8) - 进行中
+### 第八阶段：Disclosure 组件 Style Props 修复 (Phase 8) ✅ 完成
 
 为 Disclosure 组件添加 Style Props 支持（共 3 个组件）：
 
-- [ ] 8.1 Accordion 组件
-- [ ] 8.2 AccordionItem 组件
-- [ ] 8.3 Collapsible 组件
+- [x] 8.1 Accordion 组件 ✅
+- [x] 8.2 AccordionItem 组件 ✅
+- [x] 8.3 Collapsible 组件 ✅
 
-**当前进度**: 0/3 个 Disclosure 组件已完成 (0%)
+**当前进度**: 3/3 个 Disclosure 组件已完成 (100%) ✅
 
 ### 第九阶段：Media 组件 Style Props 修复 (Phase 9) - 待进行
 
