@@ -119,4 +119,6 @@ The TimelineItem component:
 - Should be used within a Timeline component
 - Works with screen readers
 - Supports keyboard navigation
+- Properly announces timeline events to screen readers
+- Supports proper ARIA attributes for event information
 
