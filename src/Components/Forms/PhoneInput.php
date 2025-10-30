@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * PhoneInput Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class PhoneInput extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -23,6 +27,7 @@ class PhoneInput extends Component
      * @param bool   $invalid        Whether input has validation error
      * @param string $placeholder    Placeholder text for phone number
      * @param string $id             Input element ID (auto-generated if empty)
+     * @param mixed  ...$styleProps  All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $size = 'md',
@@ -30,11 +35,31 @@ class PhoneInput extends Component
         public bool $disabled = false,
         public bool $invalid = false,
         public string $placeholder = '',
-        public string $id = ''
+        public string $id = '',
+        ...$styleProps
     ) {
         if (empty($this->id)) {
             $this->id = 'phone-input-'.uniqid();
         }
+
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

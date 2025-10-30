@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * NativeSelect Component
@@ -15,15 +16,18 @@ use Illuminate\View\Component;
  */
 class NativeSelect extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $size        Select size: 'xs', 'sm', 'md', 'lg', 'xl'
-     * @param null|string $variant     Select variant: 'outline', 'filled', 'flushed'
-     * @param bool        $disabled    Whether select is disabled
-     * @param bool        $required    Whether select is required
-     * @param bool        $invalid     Whether select has validation error
-     * @param null|string $placeholder Placeholder option text
+     * @param null|string $size          Select size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $variant       Select variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled      Whether select is disabled
+     * @param bool        $required      Whether select is required
+     * @param bool        $invalid       Whether select has validation error
+     * @param null|string $placeholder   Placeholder option text
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $size = 'md',
@@ -32,7 +36,9 @@ class NativeSelect extends Component
         public bool $required = false,
         public bool $invalid = false,
         public ?string $placeholder = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
     }
 
     /**
@@ -93,6 +99,13 @@ class NativeSelect extends Component
         // Disabled state
         if ($this->disabled) {
             $classes[] = 'opacity-50 cursor-not-allowed bg-gray-50';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
         }
 
         return ComponentHelper::mergeClasses(...$classes);

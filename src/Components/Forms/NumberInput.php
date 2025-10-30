@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * NumberInput Component
@@ -15,19 +16,22 @@ use Illuminate\View\Component;
  */
 class NumberInput extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $size        Input size: 'xs', 'sm', 'md', 'lg', 'xl'
-     * @param null|string $variant     Input variant: 'outline', 'filled', 'flushed'
-     * @param bool        $disabled    Whether input is disabled
-     * @param bool        $required    Whether input is required
-     * @param bool        $invalid     Whether input has validation error
-     * @param bool        $readonly    Whether input is read-only
-     * @param null|int    $min         Minimum allowed value
-     * @param null|int    $max         Maximum allowed value
-     * @param null|int    $step        Step increment/decrement value
-     * @param null|string $placeholder Placeholder text
+     * @param null|string $size          Input size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $variant       Input variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled      Whether input is disabled
+     * @param bool        $required      Whether input is required
+     * @param bool        $invalid       Whether input has validation error
+     * @param bool        $readonly      Whether input is read-only
+     * @param null|int    $min           Minimum allowed value
+     * @param null|int    $max           Maximum allowed value
+     * @param null|int    $step          Step increment/decrement value
+     * @param null|string $placeholder   Placeholder text
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $size = 'md',
@@ -39,8 +43,27 @@ class NumberInput extends Component
         public ?int $min = null,
         public ?int $max = null,
         public ?int $step = 1,
-        public ?string $placeholder = null
+        public ?string $placeholder = null,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

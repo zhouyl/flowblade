@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * PasswordInput Component
@@ -15,17 +16,20 @@ use Illuminate\View\Component;
  */
 class PasswordInput extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param null|string $size        Input size: 'xs', 'sm', 'md', 'lg', 'xl'
-     * @param null|string $variant     Input variant: 'outline', 'filled', 'flushed'
-     * @param bool        $disabled    Whether input is disabled
-     * @param bool        $required    Whether input is required
-     * @param bool        $invalid     Whether input has validation error
-     * @param bool        $readonly    Whether input is read-only
-     * @param null|string $placeholder Placeholder text
-     * @param bool        $showToggle  Whether to show visibility toggle button
+     * @param null|string $size          Input size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param null|string $variant       Input variant: 'outline', 'filled', 'flushed'
+     * @param bool        $disabled      Whether input is disabled
+     * @param bool        $required      Whether input is required
+     * @param bool        $invalid       Whether input has validation error
+     * @param bool        $readonly      Whether input is read-only
+     * @param null|string $placeholder   Placeholder text
+     * @param bool        $showToggle    Whether to show visibility toggle button
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public ?string $size = 'md',
@@ -35,8 +39,27 @@ class PasswordInput extends Component
         public bool $invalid = false,
         public bool $readonly = false,
         public ?string $placeholder = null,
-        public bool $showToggle = true
+        public bool $showToggle = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
