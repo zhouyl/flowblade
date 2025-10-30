@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Form component is a wrapper for form elements with built-in support for validation, error handling, and consistent styling. It automatically handles CSRF tokens, method spoofing, and provides flexible layout options.
+The Form component is a wrapper for form elements with built-in support for validation, error handling, and consistent styling. It automatically handles CSRF tokens, method spoofing, and provides flexible layout options. Perfect for creating secure, accessible forms with minimal configuration.
 
 ## Props
 
@@ -131,6 +131,17 @@ The Form component supports all common style props for flexible styling:
 - **Flexible Layout**: Support for inline and vertical layouts
 - **Consistent Spacing**: Configurable spacing between form elements
 - **Validation Support**: Works seamlessly with Laravel validation
+
+## Accessibility
+
+The Form component:
+- Uses semantic HTML `<form>` element
+- Automatically includes CSRF token for security
+- Supports keyboard navigation (Tab, Enter)
+- Works with screen readers
+- Provides proper form structure for accessibility
+- Supports proper ARIA attributes for form validation
+- Maintains proper focus management for keyboard users
 
 ## Notes
 
