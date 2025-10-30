@@ -1,6 +1,6 @@
 # Timeline
 
-Timeline component for displaying chronological events in a vertical layout. Timeline provides a flexible way to display events with support for various sizes and colors.
+Timeline component for displaying chronological events in a vertical layout. Timeline provides a flexible way to display events with support for various sizes and colors. Perfect for event timelines, process flows, and chronological displays.
 
 ## Basic Usage
 
@@ -386,4 +386,7 @@ The Timeline component:
 - Supports screen readers
 - Maintains proper text contrast
 - Responsive layout
+- Properly announces timeline events to screen readers
+- Supports proper ARIA attributes for event structure
+- Maintains proper reading order for chronological events
 
