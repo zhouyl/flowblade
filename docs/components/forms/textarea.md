@@ -153,7 +153,7 @@ Textarea supports all style props from the HasStyleProps trait. For a complete l
 
 The Textarea component:
 - Uses semantic HTML structure with proper `<textarea>` element
-- Supports keyboard navigation (Tab, Shift+Tab, Arrow keys)
+- Supports keyboard navigation (Tab, Shift+Tab, Arrow keys, Enter)
 - Works with screen readers
 - Provides clear placeholder text and labels
 - Supports required field validation
@@ -161,4 +161,5 @@ The Textarea component:
 - Maintains focus management for keyboard users
 - Provides visual feedback for focus and state
 - Supports resize control for user preference
+- Supports proper ARIA attributes for textarea validation
 
