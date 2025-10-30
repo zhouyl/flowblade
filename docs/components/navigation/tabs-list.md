@@ -1,6 +1,6 @@
 # TabsList
 
-TabsList component for creating a container for tab triggers. Groups all TabsTrigger components together.
+TabsList component for creating a container for tab triggers. Groups all TabsTrigger components together. Perfect for organizing tab navigation and managing tab layout.
 
 ## Basic Usage
 
@@ -58,7 +58,9 @@ TabsList supports all common style props for flexible styling.
 
 The TabsList component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Arrow keys)
 - Works with screen readers
 - Maintains proper tab order
+- Announces tab list role to screen readers
+- Supports proper ARIA attributes
 
