@@ -1,6 +1,6 @@
 # Grid
 
-CSS Grid layout component with comprehensive style props support. The Grid component provides a powerful grid layout system for building complex, responsive layouts with full control over columns, rows, gaps, and auto-flow behavior.
+CSS Grid layout component with comprehensive style props support. The Grid component provides a powerful grid layout system for building complex, responsive layouts with full control over columns, rows, gaps, and auto-flow behavior. Perfect for grid layouts and complex responsive designs.
 
 ## Props
 
@@ -216,4 +216,13 @@ Grid component supports all style props from the HasStyleProps trait, including 
     <x-box>Normal item</x-box>
 </x-grid>
 ```
+
+## Accessibility
+
+The Grid component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Does not interfere with keyboard navigation
+- Supports screen reader navigation
+- Properly announces contained content
 
