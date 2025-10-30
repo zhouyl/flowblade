@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * SearchInput Component
@@ -13,17 +15,20 @@ use Illuminate\View\Component;
  */
 class SearchInput extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string      $size        Size: xs, sm, md, lg, xl
-     * @param string      $variant     Variant: outline, filled, flushed
-     * @param bool        $disabled    Disabled state
-     * @param bool        $required    Required field
-     * @param bool        $invalid     Invalid state
-     * @param bool        $readonly    Read-only state
-     * @param null|string $placeholder Placeholder text
-     * @param bool        $showClear   Show clear button
+     * @param string      $size          Size: xs, sm, md, lg, xl
+     * @param string      $variant       Variant: outline, filled, flushed
+     * @param bool        $disabled      Disabled state
+     * @param bool        $required      Required field
+     * @param bool        $invalid       Invalid state
+     * @param bool        $readonly      Read-only state
+     * @param null|string $placeholder   Placeholder text
+     * @param bool        $showClear     Show clear button
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $size = 'md',
@@ -33,8 +38,27 @@ class SearchInput extends Component
         public bool $invalid = false,
         public bool $readonly = false,
         public ?string $placeholder = null,
-        public bool $showClear = true
+        public bool $showClear = true,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

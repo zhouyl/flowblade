@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
+use Flowblade\Components\Component;
 use Flowblade\Support\ComponentHelper;
-use Illuminate\View\Component;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * PinInput Component
@@ -15,15 +16,18 @@ use Illuminate\View\Component;
  */
 class PinInput extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param int         $length      Number of PIN digits/characters
-     * @param null|string $size        Input size: 'sm', 'md', 'lg'
-     * @param bool        $mask        Whether to mask input (password-style)
-     * @param bool        $disabled    Whether inputs are disabled
-     * @param bool        $invalid     Whether inputs have validation error
-     * @param null|string $placeholder Placeholder character for empty inputs
+     * @param int         $length        Number of PIN digits/characters
+     * @param null|string $size          Input size: 'sm', 'md', 'lg'
+     * @param bool        $mask          Whether to mask input (password-style)
+     * @param bool        $disabled      Whether inputs are disabled
+     * @param bool        $invalid       Whether inputs have validation error
+     * @param null|string $placeholder   Placeholder character for empty inputs
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public int $length = 4,
@@ -31,8 +35,27 @@ class PinInput extends Component
         public bool $mask = false,
         public bool $disabled = false,
         public bool $invalid = false,
-        public ?string $placeholder = '○'
+        public ?string $placeholder = '○',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

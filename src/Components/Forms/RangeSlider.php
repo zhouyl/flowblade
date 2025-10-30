@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * RangeSlider Component
@@ -14,20 +16,23 @@ use Illuminate\View\Component;
  */
 class RangeSlider extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param float|int   $minValue    Current minimum selected value
-     * @param float|int   $maxValue    Current maximum selected value
-     * @param float|int   $min         Minimum allowed value for range
-     * @param float|int   $max         Maximum allowed value for range
-     * @param float|int   $step        Step increment for value changes
-     * @param string      $size        Slider size: 'xs', 'sm', 'md', 'lg', 'xl'
-     * @param string      $color       Slider color theme: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
-     * @param bool        $disabled    Whether slider is disabled
-     * @param bool        $showValues  Whether to display current min/max values
-     * @param bool        $showMarks   Whether to show min/max value marks
-     * @param null|string $orientation Slider orientation: 'horizontal' or 'vertical'
+     * @param float|int   $minValue      Current minimum selected value
+     * @param float|int   $maxValue      Current maximum selected value
+     * @param float|int   $min           Minimum allowed value for range
+     * @param float|int   $max           Maximum allowed value for range
+     * @param float|int   $step          Step increment for value changes
+     * @param string      $size          Slider size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $color         Slider color theme: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param bool        $disabled      Whether slider is disabled
+     * @param bool        $showValues    Whether to display current min/max values
+     * @param bool        $showMarks     Whether to show min/max value marks
+     * @param null|string $orientation   Slider orientation: 'horizontal' or 'vertical'
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public float|int $minValue = 0,
@@ -40,8 +45,27 @@ class RangeSlider extends Component
         public bool $disabled = false,
         public bool $showValues = false,
         public bool $showMarks = false,
-        public ?string $orientation = 'horizontal'
+        public ?string $orientation = 'horizontal',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

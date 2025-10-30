@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Timepicker Component
@@ -14,20 +16,23 @@ use Illuminate\View\Component;
  */
 class Timepicker extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param string $id          Input element ID (auto-generated if empty)
-     * @param string $name        Input name attribute (defaults to ID if empty)
-     * @param string $value       Selected time value in HH:MM format (24-hour)
-     * @param string $placeholder Placeholder text when no time selected
-     * @param string $min         Minimum selectable time in HH:MM format
-     * @param string $max         Maximum selectable time in HH:MM format
-     * @param string $step        Step interval in seconds (e.g., '60' for 1-minute steps)
-     * @param bool   $showIcon    Whether to display clock icon
-     * @param bool   $required    Whether time selection is required
-     * @param bool   $disabled    Whether picker is disabled
-     * @param bool   $readonly    Whether input is read-only
+     * @param string $id            Input element ID (auto-generated if empty)
+     * @param string $name          Input name attribute (defaults to ID if empty)
+     * @param string $value         Selected time value in HH:MM format (24-hour)
+     * @param string $placeholder   Placeholder text when no time selected
+     * @param string $min           Minimum selectable time in HH:MM format
+     * @param string $max           Maximum selectable time in HH:MM format
+     * @param string $step          Step interval in seconds (e.g., '60' for 1-minute steps)
+     * @param bool   $showIcon      Whether to display clock icon
+     * @param bool   $required      Whether time selection is required
+     * @param bool   $disabled      Whether picker is disabled
+     * @param bool   $readonly      Whether input is read-only
+     * @param mixed  ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public string $id = '',
@@ -40,7 +45,8 @@ class Timepicker extends Component
         public bool $showIcon = true,
         public bool $required = false,
         public bool $disabled = false,
-        public bool $readonly = false
+        public bool $readonly = false,
+        ...$styleProps
     ) {
         // Generate ID if not provided
         if (empty($this->id)) {
@@ -51,6 +57,25 @@ class Timepicker extends Component
         if (empty($this->name)) {
             $this->name = $this->id;
         }
+
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

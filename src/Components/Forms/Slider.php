@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Forms;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * Slider Component
@@ -14,19 +16,22 @@ use Illuminate\View\Component;
  */
 class Slider extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
-     * @param float|int   $value       Current selected value
-     * @param float|int   $min         Minimum allowed value
-     * @param float|int   $max         Maximum allowed value
-     * @param float|int   $step        Step increment for value changes
-     * @param string      $size        Slider size: 'xs', 'sm', 'md', 'lg', 'xl'
-     * @param string      $color       Slider color theme: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
-     * @param bool        $disabled    Whether slider is disabled
-     * @param bool        $showValue   Whether to display current value
-     * @param bool        $showMarks   Whether to show min/max value marks
-     * @param null|string $orientation Slider orientation: 'horizontal' or 'vertical'
+     * @param float|int   $value         Current selected value
+     * @param float|int   $min           Minimum allowed value
+     * @param float|int   $max           Maximum allowed value
+     * @param float|int   $step          Step increment for value changes
+     * @param string      $size          Slider size: 'xs', 'sm', 'md', 'lg', 'xl'
+     * @param string      $color         Slider color theme: 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'gray'
+     * @param bool        $disabled      Whether slider is disabled
+     * @param bool        $showValue     Whether to display current value
+     * @param bool        $showMarks     Whether to show min/max value marks
+     * @param null|string $orientation   Slider orientation: 'horizontal' or 'vertical'
+     * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
         public float|int $value = 0,
@@ -38,8 +43,27 @@ class Slider extends Component
         public bool $disabled = false,
         public bool $showValue = false,
         public bool $showMarks = false,
-        public ?string $orientation = 'horizontal'
+        public ?string $orientation = 'horizontal',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
