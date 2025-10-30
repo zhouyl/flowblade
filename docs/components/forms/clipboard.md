@@ -1,6 +1,6 @@
 # Clipboard
 
-Copy to clipboard component with success feedback and tooltip support. Integrates with Flowbite's CopyClipboard JavaScript component.
+Copy to clipboard component with success feedback and tooltip support. Integrates with Flowbite's CopyClipboard JavaScript component. Perfect for copying code snippets, API keys, and other text content.
 
 ## Basic Usage
 
@@ -282,9 +282,11 @@ The Clipboard component:
 - Uses semantic HTML button element
 - Includes proper ARIA attributes
 - Provides screen reader text for icons
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Shows visual feedback on success
 - Uses proper color contrast ratios
+- Announces copy success to screen readers
+- Supports proper ARIA attributes for button functionality
 
 ## Notes
 
