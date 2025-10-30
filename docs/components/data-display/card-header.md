@@ -1,6 +1,6 @@
 # CardHeader
 
-CardHeader component for displaying the header section of a Card. Typically used for titles, subtitles, and action buttons at the top of a card.
+CardHeader component for displaying the header section of a Card. Typically used for titles, subtitles, and action buttons at the top of a card. Perfect for card titles, section headers, and card metadata.
 
 ## Basic Usage
 
@@ -9,7 +9,7 @@ CardHeader component for displaying the header section of a Card. Typically used
     <x-card-header>
         <x-heading size="lg">Card Title</x-heading>
     </x-card-header>
-    
+
     <x-card-body>
         <x-text>Card content goes here.</x-text>
     </x-card-body>
@@ -18,13 +18,11 @@ CardHeader component for displaying the header section of a Card. Typically used
 
 ## Props
 
-CardHeader supports all common style props for flexible styling:
+CardHeader supports all common style props for flexible styling.
 
-- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
-- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
-- **Colors**: `bg`, `color`, `borderColor`
-- **Layout**: `display`, `position`, `zIndex`, `overflow`
-- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
+### Style Props
+
+CardHeader supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -100,4 +98,7 @@ The CardHeader component:
 - Maintains proper heading hierarchy
 - Works with screen readers
 - Supports keyboard navigation
+- Should contain appropriate heading elements (h1-h6)
+- Provides clear visual separation from card body
+- Supports ARIA attributes for additional context
 
