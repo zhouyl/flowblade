@@ -1,6 +1,6 @@
 # Banner
 
-Sticky banner component for announcements, marketing messages, and notifications fixed to the top or bottom of the page. Banner provides a flexible way to display sticky banners.
+Sticky banner component for announcements, marketing messages, and notifications fixed to the top or bottom of the page. Banner provides a flexible way to display sticky banners. Perfect for system announcements, promotional messages, and important notifications.
 
 ## Basic Usage
 
@@ -190,11 +190,13 @@ import 'flowbite';
 
 The Banner component:
 - Uses semantic HTML structure
-- Includes proper ARIA attributes (`tabindex="-1"`)
-- Provides screen reader text for icon-only elements
-- Supports keyboard navigation
+- Includes proper ARIA attributes (`tabindex="-1"`, `role="alert"` for important messages)
+- Provides screen reader text for icon-only elements using `sr-only` class
+- Supports keyboard navigation (Tab, Enter for close button)
 - Includes focus management for the close button
-- Uses proper color contrast ratios
+- Uses proper color contrast ratios (WCAG AA compliant)
+- Dismissible banners should have clear close button with accessible label
+- Important announcements should use `role="alert"` for immediate screen reader notification
 
 ## Notes
 
