@@ -1,6 +1,6 @@
 # Rating
 
-Rating component for displaying and collecting star ratings. Rating provides a flexible way to display and collect ratings with support for various sizes and colors.
+Rating component for displaying and collecting star ratings. Rating provides a flexible way to display and collect ratings with support for various sizes and colors. Perfect for product reviews, feedback forms, and rating displays.
 
 ## Requirements
 
@@ -472,11 +472,13 @@ class RatingForm extends Component
 
 The Rating component:
 - Uses semantic HTML structure
-- Provides keyboard navigation for interactive ratings
+- Provides keyboard navigation for interactive ratings (Arrow keys, Enter)
 - Includes focus indicators for interactive stars
 - Supports screen readers with proper ARIA attributes
 - Maintains proper color contrast ratios
 - Works with form submissions
 - Provides visual feedback on hover and click
 - Supports half-star ratings for precise display
+- Announces rating values to screen readers
+- Supports proper ARIA labels for rating information
 
