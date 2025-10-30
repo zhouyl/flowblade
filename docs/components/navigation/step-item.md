@@ -1,6 +1,6 @@
 # StepItem
 
-StepItem component for displaying individual steps within a Steps component. Used for showing progress through a multi-step process.
+StepItem component for displaying individual steps within a Steps component. Used for showing progress through a multi-step process. Perfect for representing individual steps in wizards and workflows.
 
 ## Basic Usage
 
@@ -49,7 +49,9 @@ StepItem also supports all common style props for flexible styling.
 
 The StepItem component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab)
 - Works with screen readers
 - Provides clear step indication
+- Announces step status to screen readers
+- Supports proper ARIA attributes for step state
 
