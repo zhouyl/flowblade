@@ -1,6 +1,6 @@
 # Tabs
 
-Tabs component for organizing content into separate views that can be easily navigated. Tabs provides a flexible way to organize content with support for various sizes and variants.
+Tabs component for organizing content into separate views that can be easily navigated. Tabs provides a flexible way to organize content with support for various sizes and variants. Perfect for content organization, settings panels, and multi-step forms.
 
 ## Basic Usage
 
@@ -507,8 +507,10 @@ class ItemsManager extends Component
 The Tabs component:
 - Uses semantic ARIA roles (`tablist`, `tab`, `tabpanel`)
 - Manages `aria-selected` and `aria-hidden` attributes
-- Supports keyboard navigation with proper `tabindex` management
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
 - Provides clear visual feedback for active and disabled states
+- Announces tab state to screen readers
 - Emits `tab-change` event for integration
 - Works with screen readers
+- Supports proper focus management
 
