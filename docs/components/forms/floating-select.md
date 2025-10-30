@@ -1,6 +1,6 @@
 # FloatingSelect
 
-FloatingSelect component for creating a select dropdown with a floating label. The label floats above the input when focused or when it has a value.
+FloatingSelect component for creating a select dropdown with a floating label. The label floats above the input when focused or when it has a value. Perfect for modern forms with elegant label animations.
 
 ## Basic Usage
 
@@ -23,6 +23,10 @@ FloatingSelect component for creating a select dropdown with a floating label. T
 | `invalid` | `boolean` | `false` | Invalid state |
 
 FloatingSelect also supports all common style props for flexible styling.
+
+### Style Props
+
+FloatingSelect supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -101,9 +105,11 @@ FloatingSelect also supports all common style props for flexible styling.
 ## Accessibility
 
 The FloatingSelect component:
-- Uses semantic HTML structure
-- Supports keyboard navigation
+- Uses semantic HTML structure with proper `<select>` element
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
 - Works with screen readers
-- Provides clear floating labels
-- Supports required field validation
+- Provides clear floating labels that are associated with the select
+- Supports required field validation with ARIA attributes
+- Includes proper error state indication
+- Maintains focus management for keyboard users
 
