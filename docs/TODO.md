@@ -355,13 +355,13 @@
 - [x] DataListItem, ListGroupItem, TimelineItem, TreeViewItem
 
 #### Forms 组件 (10 个缺失文档)
-- [ ] DateRangePicker, FloatingSelect, FloatingTextarea, InlineDatepicker
-- [ ] InputAddon, InputElement, NativeSelect, NumberInput, PinInput, SwitchInput
+- [x] DateRangePicker, FloatingSelect, FloatingTextarea, InlineDatepicker
+- [x] InputAddon, InputElement, NativeSelect, NumberInput, PinInput, SwitchInput
 
 #### Typography 组件 (9 个缺失文档)
 - [ ] Blockquote, Code, CodeBlock, Em, Highlight, Kbd, Link, Mark, Strong
 
-**当前进度**: 7/27 个文档已完成 (26%)
+**当前进度**: 17/27 个文档已完成 (63%)
 
 ## 下一步行动
 
