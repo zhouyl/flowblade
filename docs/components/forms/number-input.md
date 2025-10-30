@@ -108,10 +108,11 @@ NumberInput supports all style props from the HasStyleProps trait. For a complet
 
 The NumberInput component:
 - Uses semantic HTML structure with proper `<input type="number">`
-- Supports keyboard navigation (Arrow keys for increment/decrement, Tab)
+- Supports keyboard navigation (Arrow keys for increment/decrement, Tab, Enter)
 - Works with screen readers
 - Provides clear increment/decrement buttons with accessible labels
 - Supports min/max validation with ARIA attributes
 - Announces value changes to screen readers
 - Maintains focus management for keyboard users
+- Supports proper ARIA attributes for number input validation
 
