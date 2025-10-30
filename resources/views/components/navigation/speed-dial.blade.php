@@ -1,17 +1,6 @@
 @php
-// Position classes
-$positionClasses = match($position) {
-    'bottom-right' => 'fixed bottom-6 right-6',
-    'bottom-left' => 'fixed bottom-6 left-6',
-    'top-right' => 'fixed top-6 right-6',
-    'top-left' => 'fixed top-6 left-6',
-    default => 'fixed bottom-6 right-6',
-};
-
-// Trigger attribute
 $triggerAttr = $trigger === 'hover' ? 'data-dial-trigger="hover"' : 'data-dial-trigger="click"';
 
-// Tooltip position
 $tooltipPosition = match($tooltip) {
     'left' => 'data-dial-tooltip-position="left"',
     'right' => 'data-dial-tooltip-position="right"',
@@ -20,14 +9,13 @@ $tooltipPosition = match($tooltip) {
     default => 'data-dial-tooltip-position="left"',
 };
 
-// Get icon component name from config
-$iconComponent = config('flowblade.prefix') 
-    ? config('flowblade.prefix').'.icon' 
+$iconComponent = config('flowblade.prefix')
+    ? config('flowblade.prefix').'.icon'
     : 'icon';
 @endphp
 
-<div 
-    {{ $attributes->merge(['class' => $positionClasses.' group']) }}
+<div
+    {{ $attributes->merge(['class' => $classes() . ' group']) }}
     data-dial-init
     {!! $triggerAttr !!}
     {!! $tooltipPosition !!}

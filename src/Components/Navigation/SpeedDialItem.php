@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * SpeedDialItem Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class SpeedDialItem extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -24,8 +28,29 @@ class SpeedDialItem extends Component
     public function __construct(
         public string $icon = '',
         public string $tooltip = '',
-        public string $href = '#'
+        public string $href = '#',
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'flex items-center justify-center text-white bg-blue-700 rounded-full w-12 h-12 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

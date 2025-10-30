@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * SpeedDial Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class SpeedDial extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -26,11 +30,38 @@ class SpeedDial extends Component
         public string $position = 'bottom-right',
         public string $trigger = 'click',
         public string $tooltip = 'left',
-        public string $id = ''
+        public string $id = '',
+        ...$styleProps
     ) {
         if (empty($this->id)) {
             $this->id = 'speed-dial-'.uniqid();
         }
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'fixed flex flex-col items-center justify-center gap-2',
+            match ($this->position) {
+                'bottom-left' => 'bottom-6 left-6',
+                'top-right' => 'top-6 right-6',
+                'top-left' => 'top-6 left-6',
+                default => 'bottom-6 right-6',
+            },
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
