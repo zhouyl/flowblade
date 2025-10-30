@@ -1,6 +1,6 @@
 # PasswordInput
 
-Password input component with show/hide toggle functionality. PasswordInput provides a secure way to input passwords with optional visibility toggle.
+Password input component with show/hide toggle functionality. PasswordInput provides a secure way to input passwords with optional visibility toggle. Perfect for login forms, registration, and password management.
 
 ## Basic Usage
 
@@ -196,4 +196,15 @@ function checkStrength() {
     </div>
 </div>
 ```
+
+## Accessibility
+
+The PasswordInput component:
+- Uses semantic HTML structure with proper `<input type="password">`
+- Supports keyboard navigation (Tab, Enter)
+- Works with screen readers
+- Provides clear visibility toggle button with accessible labels
+- Announces password visibility state to screen readers
+- Maintains focus management for keyboard users
+- Supports proper ARIA attributes for password input validation
 
