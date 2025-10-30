@@ -1,6 +1,6 @@
 # TagsInput
 
-Tags input component for adding and removing tags with keyboard support. TagsInput provides a flexible way to collect multiple tags with support for various sizes and colors.
+Tags input component for adding and removing tags with keyboard support. TagsInput provides a flexible way to collect multiple tags with support for various sizes and colors. Perfect for tag collection, keyword input, and multi-value forms.
 
 ## Requirements
 
@@ -481,7 +481,7 @@ public function store(Request $request)
 
 The TagsInput component:
 - Uses semantic HTML structure
-- Provides keyboard navigation (Enter, Backspace)
+- Provides keyboard navigation (Enter, Backspace, Tab)
 - Includes focus indicators
 - Supports screen readers with proper ARIA labels
 - Maintains proper color contrast ratios
@@ -491,4 +491,6 @@ The TagsInput component:
 - Auto-splits tags with configurable separator
 - Prevents duplicate tags (configurable)
 - Limits maximum tags (configurable)
+- Announces tag additions and removals to screen readers
+- Supports proper ARIA attributes for input validation
 
