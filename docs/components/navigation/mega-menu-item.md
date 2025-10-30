@@ -1,6 +1,6 @@
 # MegaMenuItem
 
-MegaMenuItem component for displaying individual items within a MegaMenu column. Each item is a clickable link.
+MegaMenuItem component for displaying individual items within a MegaMenu column. Each item is a clickable link. Perfect for menu items and navigation links.
 
 ## Basic Usage
 
@@ -48,7 +48,9 @@ MegaMenuItem also supports all common style props for flexible styling.
 
 The MegaMenuItem component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
 - Provides clear menu item indication
+- Announces menu item to screen readers
+- Supports proper link semantics
 
