@@ -1,6 +1,6 @@
 # Field
 
-Form field wrapper component that provides label, helper text, and error message support. Field provides a convenient way to wrap form inputs with labels and validation messages.
+Form field wrapper component that provides label, helper text, and error message support. Field provides a convenient way to wrap form inputs with labels and validation messages. Perfect for form layouts, validation display, and field organization.
 
 ## Basic Usage
 
@@ -160,12 +160,12 @@ Field supports all style props from the HasStyleProps trait. For a complete list
 
 ```blade
 <div x-data="{ email: '', error: '' }">
-    <x-field 
-        label="Email" 
+    <x-field
+        label="Email"
         :invalid="error !== ''"
         x-bind:error-text="error"
     >
-        <x-input 
+        <x-input
             type="email"
             x-model="email"
             @blur="validateEmail()"
@@ -173,4 +173,16 @@ Field supports all style props from the HasStyleProps trait. For a complete list
     </x-field>
 </div>
 ```
+
+## Accessibility
+
+The Field component:
+- Uses semantic HTML structure with proper `<label>` elements
+- Associates labels with form inputs using `for` attribute
+- Supports keyboard navigation (Tab, Enter)
+- Works with screen readers
+- Announces error messages to screen readers
+- Provides clear visual feedback for validation states
+- Supports proper ARIA attributes for form validation
+- Maintains proper focus management for keyboard users
 
