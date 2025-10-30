@@ -1,6 +1,6 @@
 # Slider
 
-Slider component for selecting a value from a range.
+Slider component for selecting a value from a range. Perfect for volume controls, brightness adjustment, and value selection.
 
 ## Basic Usage
 
@@ -321,10 +321,12 @@ class SliderDemo extends Component
 ## Accessibility
 
 The Slider component:
-- Supports keyboard navigation (arrow keys)
+- Supports keyboard navigation (arrow keys, Tab)
 - Provides visual feedback during interaction
 - Shows current value when enabled
 - Maintains proper focus management
 - Works with screen readers
 - Supports disabled state
+- Announces value changes to screen readers
+- Supports proper ARIA attributes for slider validation
 
