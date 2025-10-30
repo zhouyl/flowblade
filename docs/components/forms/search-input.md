@@ -1,6 +1,6 @@
 # SearchInput
 
-Search input component with search icon and optional clear button.
+Search input component with search icon and optional clear button. Perfect for search bars, filters, and query inputs.
 
 ## Basic Usage
 
@@ -240,6 +240,8 @@ The SearchInput component includes:
 - Proper `type="search"` attribute
 - Clear button with `aria-label`
 - Support for `required` and `aria-invalid` attributes
-- Keyboard navigation support
+- Keyboard navigation support (Tab, Enter)
 - Focus management for clear button
+- Announces search input to screen readers
+- Supports proper ARIA attributes for search input validation
 
