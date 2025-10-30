@@ -1,6 +1,6 @@
 # BreadcrumbItem
 
-BreadcrumbItem component for displaying individual breadcrumb items within a Breadcrumb. Each item represents a level in the navigation hierarchy.
+BreadcrumbItem component for displaying individual breadcrumb items within a Breadcrumb. Each item represents a level in the navigation hierarchy. Perfect for creating navigation paths and showing page location context.
 
 ## Basic Usage
 
@@ -76,8 +76,10 @@ BreadcrumbItem also supports all common style props for flexible styling.
 
 The BreadcrumbItem component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
 - Provides clear navigation hierarchy
-- Marks current page appropriately
+- Marks current page with `aria-current="page"`
+- Announces breadcrumb item role to screen readers
+- Supports proper link semantics
 
