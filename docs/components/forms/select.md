@@ -345,7 +345,7 @@ The Select component:
 
 The Select component:
 - Uses semantic HTML structure with proper `<select>` element
-- Supports keyboard navigation (Arrow keys, Enter, Escape)
+- Supports keyboard navigation (Arrow keys, Enter, Escape, Tab)
 - Works with screen readers
 - Provides clear option labels and descriptions
 - Supports required field validation
@@ -354,4 +354,5 @@ The Select component:
 - Provides visual feedback for focus and state
 - Searchable variant includes ARIA attributes for dynamic content
 - Supports ARIA labels and descriptions for better context
+- Supports proper ARIA attributes for select validation
 
