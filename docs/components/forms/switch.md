@@ -1,6 +1,6 @@
 # Switch Component
 
-Toggle switch component for binary on/off states, built with Flowbite styling. Switch provides a flexible way to create toggle switches with support for various sizes, colors, and states.
+Toggle switch component for binary on/off states, built with Flowbite styling. Switch provides a flexible way to create toggle switches with support for various sizes, colors, and states. Perfect for settings, preferences, and feature toggles.
 
 ## Basic Usage
 
@@ -269,11 +269,13 @@ Switch supports all style props from the HasStyleProps trait. For a complete lis
 
 The Switch component:
 - Uses semantic checkbox input with `sr-only` class
-- Supports keyboard navigation (Space to toggle)
+- Supports keyboard navigation (Space to toggle, Tab)
 - Includes proper ARIA attributes
 - Focus ring for keyboard users
 - Disabled state properly indicated
 - Label association for screen readers
+- Announces switch state to screen readers
+- Supports proper ARIA attributes for switch validation
 
 ## Browser Support
 
