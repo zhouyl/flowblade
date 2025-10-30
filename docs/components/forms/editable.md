@@ -1,6 +1,6 @@
 # Editable
 
-Editable text component for inline editing.
+Editable text component for inline editing. Perfect for inline content editing, profile fields, and quick edits.
 
 ## Basic Usage
 
@@ -301,9 +301,11 @@ class EditableDemo extends Component
 ## Accessibility
 
 The Editable component:
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Escape)
 - Provides clear visual feedback for editable state
 - Maintains focus management
 - Supports required field validation
 - Works with screen readers
+- Announces editable state to screen readers
+- Supports proper ARIA attributes for inline editing
 
