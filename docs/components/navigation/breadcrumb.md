@@ -1,6 +1,6 @@
 # Breadcrumb
 
-Breadcrumb navigation component for showing the current page's location within a navigational hierarchy. Breadcrumb provides a flexible way to display navigation paths with support for various sizes and separators.
+Breadcrumb navigation component for showing the current page's location within a navigational hierarchy. Breadcrumb provides a flexible way to display navigation paths with support for various sizes and separators. Perfect for website navigation, product hierarchies, and multi-step processes.
 
 ## Basic Usage
 
@@ -324,5 +324,7 @@ The Breadcrumb component:
 - Marks current page with `aria-current="page"`
 - Hides separator from screen readers with `aria-hidden="true"`
 - Provides clear visual hierarchy
-- Supports keyboard navigation through links
+- Supports keyboard navigation through links (Tab, Enter)
+- Announces breadcrumb structure to screen readers
+- Provides proper link semantics for navigation
 
