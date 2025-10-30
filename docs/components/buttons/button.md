@@ -1,6 +1,6 @@
 # Button
 
-Versatile button component with multiple variants and states. Button provides a flexible way to create interactive buttons with support for various colors, sizes, variants, and states.
+Versatile button component with multiple variants and states. Button provides a flexible way to create interactive buttons with support for various colors, sizes, variants, and states. Perfect for actions, submissions, and user interactions.
 
 ## Props
 
@@ -234,6 +234,17 @@ Button supports all style props from the HasStyleProps trait. For a complete lis
 ```
 
 ## Accessibility
+
+The Button component:
+- Uses semantic HTML structure with proper `<button>` element
+- Supports keyboard navigation (Tab, Enter, Space)
+- Works with screen readers
+- Provides clear button labels and descriptions
+- Supports disabled state with proper ARIA attributes
+- Announces state changes to screen readers
+- Maintains focus management for keyboard users
+- Provides visual feedback for focus and state
+- Supports ARIA labels for icon-only buttons
 
 ```blade
 <x-button aria-label="Close dialog">
