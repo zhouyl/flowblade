@@ -1,6 +1,6 @@
 # DateRangePicker
 
-DateRangePicker component for selecting a date range with start and end dates. Powered by Flowbite JavaScript for interactive date selection.
+DateRangePicker component for selecting a date range with start and end dates. Powered by Flowbite JavaScript for interactive date selection. Perfect for date range filters, booking systems, and report date ranges.
 
 ## Basic Usage
 
@@ -105,8 +105,10 @@ DateRangePicker also supports all common style props for flexible styling.
 
 The DateRangePicker component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
 - Works with screen readers
 - Provides clear date input labels
 - Supports required field validation
+- Announces selected date range to screen readers
+- Supports proper ARIA attributes for date input validation
 
