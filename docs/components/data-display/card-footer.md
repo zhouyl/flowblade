@@ -1,6 +1,6 @@
 # CardFooter
 
-CardFooter component for displaying the footer section of a Card. Typically used for action buttons, links, or additional information at the bottom of a card.
+CardFooter component for displaying the footer section of a Card. Typically used for action buttons, links, or additional information at the bottom of a card. Perfect for card actions, metadata, and footer information.
 
 ## Basic Usage
 
@@ -9,7 +9,7 @@ CardFooter component for displaying the footer section of a Card. Typically used
     <x-card-body>
         <x-text>Card content goes here.</x-text>
     </x-card-body>
-    
+
     <x-card-footer>
         <x-button>Action</x-button>
     </x-card-footer>
@@ -18,13 +18,11 @@ CardFooter component for displaying the footer section of a Card. Typically used
 
 ## Props
 
-CardFooter supports all common style props for flexible styling:
+CardFooter supports all common style props for flexible styling.
 
-- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
-- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
-- **Colors**: `bg`, `color`, `borderColor`
-- **Layout**: `display`, `position`, `zIndex`, `overflow`
-- **And more**: See [HasStyleProps trait documentation](../../traits/has-style-props.md)
+### Style Props
+
+CardFooter supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -112,4 +110,7 @@ The CardFooter component:
 - Maintains proper content hierarchy
 - Works with screen readers
 - Supports keyboard navigation
+- Should contain interactive elements (buttons, links) with proper labels
+- Provides clear visual separation from card body
+- Supports ARIA attributes for additional context
 
