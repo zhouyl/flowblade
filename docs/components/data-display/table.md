@@ -1,6 +1,6 @@
 # Table
 
-Table component for displaying tabular data in a structured format. Table provides a flexible way to display data with support for various sizes and variants.
+Table component for displaying tabular data in a structured format. Table provides a flexible way to display data with support for various sizes and variants. Perfect for data tables, lists, and structured data display.
 
 ## Basic Usage
 
@@ -408,4 +408,7 @@ The Table component:
 - Supports screen readers
 - Maintains proper text contrast
 - Responsive with horizontal scroll on small screens
+- Properly announces table headers to screen readers
+- Supports proper ARIA attributes for table structure
+- Supports keyboard navigation
 
