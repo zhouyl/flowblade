@@ -1,6 +1,6 @@
 # Sidebar
 
-Side navigation component for dashboard and admin layouts with support for icons, badges, and multi-level menus. Built with Flowbite's collapse and drawer functionality. Sidebar provides a flexible way to create side navigation.
+Side navigation component for dashboard and admin layouts with support for icons, badges, and multi-level menus. Built with Flowbite's collapse and drawer functionality. Sidebar provides a flexible way to create side navigation. Perfect for admin dashboards, application layouts, and side menus.
 
 ## Basic Usage
 
@@ -477,9 +477,11 @@ The Sidebar component:
 - Uses semantic `<aside>` element
 - Includes proper ARIA attributes (`aria-label`, `aria-controls`, `aria-current`)
 - Provides screen reader text for toggle button
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Arrow keys)
 - Maintains proper focus management
 - Uses semantic HTML structure with `<nav>` and `<ul>` elements
+- Announces sidebar state to screen readers
+- Supports multi-level menu navigation
 
 ## Notes
 
