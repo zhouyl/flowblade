@@ -1,6 +1,6 @@
 # ChatBubble Component
 
-Chat message bubble component for messaging interfaces and chat applications. ChatBubble provides a flexible way to display chat messages with support for various alignments and colors.
+Chat message bubble component for messaging interfaces and chat applications. ChatBubble provides a flexible way to display chat messages with support for various alignments and colors. Perfect for chat interfaces, messaging applications, and conversation displays.
 
 ## Basic Usage
 
@@ -400,11 +400,20 @@ ChatBubble supports all common style props for flexible styling:
 
 ## Accessibility
 
-The ChatBubble component uses semantic HTML and includes proper attributes:
+The ChatBubble component:
+- Uses semantic HTML structure
+- Includes proper ARIA attributes
+- Announces sender information to screen readers
+- Supports keyboard navigation
+- Maintains proper reading order
+- Provides timestamp information for context
+- Supports proper color contrast
+
+Example with accessibility attributes:
 
 ```blade
-<x-chat-bubble 
-    :avatar="true" 
+<x-chat-bubble
+    :avatar="true"
     avatarSrc="/images/user.jpg"
     name="John Doe"
     time="10:30 AM"
