@@ -1,6 +1,6 @@
 # Checkbox
 
-Checkbox component for selecting one or more options. Checkbox provides a flexible way to create checkbox inputs with support for various sizes, colors, and states.
+Checkbox component for selecting one or more options. Checkbox provides a flexible way to create checkbox inputs with support for various sizes, colors, and states. Perfect for multi-select options, agreements, and feature toggles.
 
 ## Basic Usage
 
@@ -132,4 +132,16 @@ Checkbox supports all style props from the HasStyleProps trait. For a complete l
     </x-text>
 </x-box>
 ```
+
+## Accessibility
+
+The Checkbox component:
+- Uses semantic HTML structure with proper `<input type="checkbox">`
+- Supports keyboard navigation (Space to toggle, Tab for focus)
+- Works with screen readers
+- Provides clear checked/unchecked states with ARIA attributes
+- Should always be associated with a label element
+- Announces state changes to screen readers
+- Maintains focus management for keyboard users
+- Provides visual feedback for focus and state
 
