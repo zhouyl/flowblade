@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * SidebarItem Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class SidebarItem extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -26,8 +30,36 @@ class SidebarItem extends Component
         public ?string $href = '#',
         public ?string $icon = null,
         public ?string $badge = null,
-        public bool $active = false
+        public bool $active = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'flex items-center p-2 text-base font-normal rounded-lg',
+        ];
+
+        // Active state
+        if ($this->active) {
+            $classes[] = 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white';
+        } else {
+            $classes[] = 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
+        }
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**

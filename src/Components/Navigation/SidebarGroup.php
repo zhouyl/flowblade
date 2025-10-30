@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Components\Navigation;
 
-use Illuminate\View\Component;
+use Flowblade\Components\Component;
+use Flowblade\Support\ComponentHelper;
+use Flowblade\Traits\HasStyleProps;
 
 /**
  * SidebarGroup Component
@@ -14,6 +16,8 @@ use Illuminate\View\Component;
  */
 class SidebarGroup extends Component
 {
+    use HasStyleProps;
+
     /**
      * Create a new component instance
      *
@@ -24,8 +28,29 @@ class SidebarGroup extends Component
     public function __construct(
         public ?string $title = null,
         public ?string $icon = null,
-        public bool $open = false
+        public bool $open = false,
+        ...$styleProps
     ) {
+        $this->setStyleProps($styleProps);
+    }
+
+    /**
+     * Get the component classes
+     */
+    public function classes(): string
+    {
+        $classes = [
+            'space-y-2',
+        ];
+
+        // Style props
+        $styleClasses = $this->parseStyleProps();
+
+        if ($styleClasses) {
+            $classes[] = $styleClasses;
+        }
+
+        return ComponentHelper::mergeClasses(...$classes);
     }
 
     /**
