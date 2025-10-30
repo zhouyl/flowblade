@@ -1,6 +1,6 @@
 # Datepicker
 
-Date picker component with Flowbite JS integration for selecting dates, date ranges, and inline date display.
+Date picker component with Flowbite JS integration for selecting dates, date ranges, and inline date display. Perfect for birthday selection, event scheduling, and date filtering.
 
 ## Components
 
@@ -478,10 +478,12 @@ Supported date formats:
 The Datepicker component:
 - Uses semantic HTML input elements
 - Includes proper ARIA attributes
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
 - Provides screen reader support
 - Uses proper color contrast ratios
 - Shows visual focus indicators
+- Announces selected date to screen readers
+- Supports proper ARIA attributes for date input validation
 
 ## Notes
 
