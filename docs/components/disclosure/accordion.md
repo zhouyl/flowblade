@@ -1,6 +1,6 @@
 # Accordion
 
-Accordion component for organizing collapsible content sections in a vertical stack. Accordion provides a flexible way to display collapsible content.
+Accordion component for organizing collapsible content sections in a vertical stack. Accordion provides a flexible way to display collapsible content. Perfect for FAQs, documentation, and content organization.
 
 ## Basic Usage
 
@@ -456,9 +456,12 @@ class AccordionContent extends Component
 The Accordion component:
 - Uses semantic HTML with proper button elements
 - Manages `aria-expanded` attribute for screen readers
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter, Space, Arrow keys)
 - Provides clear visual feedback for open/closed states
+- Announces expanded/collapsed state to screen readers
 - Emits `accordion-change` event for integration
 - Supports disabled state with proper ARIA attributes
 - Uses Alpine.js collapse directive for smooth animations
+- Supports `aria-controls` for associating headers with content
+- Maintains focus management for keyboard users
 
