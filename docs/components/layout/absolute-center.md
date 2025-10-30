@@ -1,6 +1,6 @@
 # AbsoluteCenter
 
-Absolutely positions and centers its child elements. AbsoluteCenter provides a convenient way to center content within a positioned container with comprehensive style props support.
+Absolutely positions and centers its child elements. AbsoluteCenter provides a convenient way to center content within a positioned container with comprehensive style props support. Perfect for overlays, modals, and centered content within containers.
 
 ## Props
 
@@ -155,6 +155,15 @@ AbsoluteCenter supports all style props from the HasStyleProps trait. For a comp
     </x-absolute-center>
 </x-box>
 ```
+
+## Accessibility
+
+The AbsoluteCenter component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Does not interfere with keyboard navigation
+- Supports screen reader navigation
+- Properly announces centered content
 
 ## Notes
 
