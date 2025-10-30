@@ -1,6 +1,6 @@
 # Group
 
-Wrapper component that enables Tailwind's group hover/focus states for child elements. Group provides a flexible container for creating interactive elements with coordinated hover effects across multiple children.
+Wrapper component that enables Tailwind's group hover/focus states for child elements. Group provides a flexible container for creating interactive elements with coordinated hover effects across multiple children. Perfect for interactive cards and hover effects.
 
 ## Props
 
@@ -191,6 +191,16 @@ Group supports all style props from the HasStyleProps trait. For a complete list
     </x-vstack>
 </x-group>
 ```
+
+## Accessibility
+
+The Group component:
+- Maintains semantic HTML structure
+- Preserves content accessibility
+- Supports keyboard navigation
+- Supports focus states with `group-focus:`
+- Properly announces contained content
+- Does not interfere with screen reader navigation
 
 ## Tips
 
