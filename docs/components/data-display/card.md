@@ -1,6 +1,6 @@
 # Card
 
-Card component for grouping and displaying related content in a contained format. Card provides a flexible way to organize content with support for headers, bodies, and footers.
+Card component for grouping and displaying related content in a contained format. Card provides a flexible way to organize content with support for headers, bodies, and footers. Perfect for content containers, product cards, and information panels.
 
 ## Basic Usage
 
@@ -445,4 +445,6 @@ The Card component:
 - Maintains proper heading hierarchy
 - Provides clear visual boundaries
 - Works with screen readers
+- Properly announces card sections to screen readers
+- Supports proper ARIA attributes for card structure
 
