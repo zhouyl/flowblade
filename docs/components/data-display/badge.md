@@ -1,6 +1,6 @@
 # Badge
 
-Badge component for displaying status, labels, or counts. Badge provides a flexible way to display small pieces of information with support for various sizes, colors, and variants.
+Badge component for displaying status, labels, or counts. Badge provides a flexible way to display small pieces of information with support for various sizes, colors, and variants. Perfect for status indicators, labels, and notification counts.
 
 ## Basic Usage
 
@@ -275,4 +275,6 @@ The Badge component:
 - Maintains proper color contrast
 - Works with screen readers
 - Supports keyboard navigation when interactive
+- Announces badge content to screen readers
+- Supports proper ARIA attributes for status information
 
