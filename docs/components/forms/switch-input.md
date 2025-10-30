@@ -121,4 +121,5 @@ The SwitchInput component:
 - Announces state changes to screen readers
 - Maintains focus management for keyboard users
 - Provides visual feedback for focus and state
+- Supports proper ARIA attributes for switch validation
 
