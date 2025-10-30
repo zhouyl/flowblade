@@ -127,4 +127,6 @@ The CardBody component:
 - Works with screen readers
 - Supports keyboard navigation
 - Should be used within a Card component
+- Properly announces card content to screen readers
+- Supports proper ARIA attributes for content organization
 
