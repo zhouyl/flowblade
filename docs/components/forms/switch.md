@@ -2,7 +2,7 @@
 
 Toggle switch component for binary on/off states, built with Flowbite styling. Switch provides a flexible way to create toggle switches with support for various sizes, colors, and states. Perfect for settings, preferences, and feature toggles.
 
-**Note**: The component class is named `SwitchInput` because `switch` is a reserved keyword in PHP. However, it is registered as `<x-switch>` in Blade templates.
+**Note**: The component class is named `Switch_` because `switch` is a reserved keyword in PHP. However, it is registered as `<x-switch>` in Blade templates.
 
 ## Basic Usage
 

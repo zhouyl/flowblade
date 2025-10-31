@@ -1,11 +1,13 @@
-# EmptyState
+# Empty Component
 
-Empty state component for displaying empty or no-data states with optional actions. EmptyState provides a flexible way to display empty states. Perfect for lists, tables, and search results with no data.
+Empty state component for displaying empty or no-data states with optional actions. Empty provides a flexible way to display empty states. Perfect for lists, tables, and search results with no data.
+
+**Note**: The component class is named `Empty_` because `empty` is a reserved keyword in PHP. However, it is registered as `<x-empty>` in Blade templates.
 
 ## Basic Usage
 
 ```blade
-<x-empty-state
+<x-empty
     icon="heroicons:inbox"
     title="No messages"
     description="You don't have any messages yet."
@@ -23,14 +25,14 @@ Empty state component for displaying empty or no-data states with optional actio
 
 ### Style Props
 
-EmptyState supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Empty supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Sizes
 
 ### Small Size
 
 ```blade
-<x-empty-state 
+<x-empty 
     icon="heroicons:inbox"
     title="No messages"
     description="You don't have any messages yet."
@@ -41,7 +43,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ### Medium Size (Default)
 
 ```blade
-<x-empty-state 
+<x-empty 
     icon="heroicons:inbox"
     title="No messages"
     description="You don't have any messages yet."
@@ -52,7 +54,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ### Large Size
 
 ```blade
-<x-empty-state 
+<x-empty 
     icon="heroicons:inbox"
     title="No messages"
     description="You don't have any messages yet."
@@ -63,7 +65,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ## With Action Button
 
 ```blade
-<x-empty-state 
+<x-empty 
     icon="heroicons:inbox"
     title="No messages"
     description="You don't have any messages yet."
@@ -77,7 +79,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ## With Multiple Actions
 
 ```blade
-<x-empty-state 
+<x-empty 
     icon="heroicons:folder-open"
     title="No projects"
     description="Get started by creating a new project."
@@ -96,7 +98,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ## Without Icon
 
 ```blade
-<x-empty-state 
+<x-empty 
     title="No results found"
     description="Try adjusting your search or filter to find what you're looking for."
 />
@@ -105,7 +107,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ## Without Description
 
 ```blade
-<x-empty-state 
+<x-empty 
     icon="heroicons:document-text"
     title="No documents"
 >
@@ -122,7 +124,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:inbox"
             title="Your inbox is empty"
             description="When you receive messages, they will appear here."
@@ -136,7 +138,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:magnifying-glass"
             title="No results found"
             description="We couldn't find anything matching your search. Try different keywords."
@@ -154,7 +156,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:shopping-cart"
             title="Your cart is empty"
             description="Add items to your cart to get started."
@@ -172,7 +174,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:bell"
             title="No notifications"
             description="You're all caught up! Check back later for updates."
@@ -187,7 +189,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:document"
             title="No files uploaded"
             description="Upload your first file to get started."
@@ -210,7 +212,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:user-group"
             title="No team members yet"
             description="Invite team members to collaborate on projects."
@@ -228,7 +230,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:star"
             title="No favorites"
             description="Items you mark as favorite will appear here."
@@ -246,7 +248,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:chart-bar"
             title="No data available"
             description="There's no data to display yet. Data will appear here once available."
@@ -260,7 +262,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:clipboard-document-check"
             title="All tasks completed!"
             description="Great job! You've completed all your tasks."
@@ -277,7 +279,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 
 ```blade
 <div class="border rounded-lg p-6">
-    <x-empty-state 
+    <x-empty 
         icon="heroicons:chat-bubble-left-right"
         title="No comments yet"
         description="Be the first to share your thoughts."
@@ -295,7 +297,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:photo"
             title="No photos"
             description="Upload photos to create your gallery."
@@ -313,7 +315,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:bookmark"
             title="No bookmarks"
             description="Save your favorite pages for quick access."
@@ -327,7 +329,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:calendar"
             title="No events scheduled"
             description="Your calendar is clear. Add events to stay organized."
@@ -345,7 +347,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:link"
             title="No connections"
             description="Connect with others to expand your network."
@@ -363,7 +365,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <x-card>
     <x-card-body>
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:musical-note"
             title="Empty playlist"
             description="Add songs to create your perfect playlist."
@@ -382,7 +384,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 <x-card>
     <x-card-body>
         @if($users->isEmpty())
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:users"
             title="No users found"
             description="There are no users matching your criteria."
@@ -405,7 +407,7 @@ EmptyState supports all style props from the HasStyleProps trait. For a complete
 ```blade
 <div>
     @if($items->isEmpty())
-    <x-empty-state 
+    <x-empty 
         icon="heroicons:inbox"
         title="No items"
         description="You don't have any items yet."
@@ -464,7 +466,7 @@ class ItemList extends Component
     }
 }">
     <template x-if="items.length === 0">
-        <x-empty-state 
+        <x-empty 
             icon="heroicons:inbox"
             title="No items"
             description="Add your first item to get started."

@@ -123,7 +123,7 @@ Form input components with validation support.
 Components for displaying data and content.
 
 - [Card](data-display/card.md) - Card container with header, body, and footer
-- [ListGroup](data-display/list-group.md) - List group component with items
+- [List](data-display/list-group.md) - List component with items (class: `List_`)
 - [Table](data-display/table.md) - Data table component
 - [Avatar](data-display/avatar.md) - Avatar component with initials or images
 - [Badge](data-display/badge.md) - Badge component for labels and tags
@@ -185,7 +185,7 @@ Feedback and status components for user feedback.
 - [Spinner](feedback/spinner.md) - Loading spinner component
 - [Skeleton](feedback/skeleton.md) - Skeleton loading component
 - [Status](feedback/status.md) - Status indicator component
-- [EmptyState](feedback/empty-state.md) - Empty state component
+- [Empty](feedback/empty-state.md) - Empty state component (class: `Empty_`)
 
 ## Disclosure Components
 
@@ -260,7 +260,7 @@ Disclosure and collapsible components.
 | Component | HTML Tag | Dependencies | Documentation |
 |-----------|----------|--------------|----------------|
 | Card | `<div>` | None | [card.md](data-display/card.md) |
-| ListGroup | `<ul>` | None | [list-group.md](data-display/list-group.md) |
+| List | `<ul>` | None | [list-group.md](data-display/list-group.md) |
 | Table | `<table>` | Alpine.js | [table.md](data-display/table.md) |
 | Avatar | `<div>` | None | [avatar.md](data-display/avatar.md) |
 | Badge | `<span>` | None | [badge.md](data-display/badge.md) |
@@ -321,7 +321,7 @@ Disclosure and collapsible components.
 | Spinner | `<div>` | None | [spinner.md](feedback/spinner.md) |
 | Skeleton | `<div>` | None | [skeleton.md](feedback/skeleton.md) |
 | Status | `<div>` | None | [status.md](feedback/status.md) |
-| EmptyState | `<div>` | None | [empty-state.md](feedback/empty-state.md) |
+| Empty | `<div>` | None | [empty-state.md](feedback/empty-state.md) |
 
 ### Typography Components
 

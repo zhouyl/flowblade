@@ -303,25 +303,32 @@
 
 ---
 
-### 14.13 组件命名优化 - [ ] 未开始
+### 14.13 组件命名优化 - [ ] 进行中
 
 **目标**: 优化某些组件的命名，使其更简洁和直观
 
 **任务**:
-- [ ] 14.13.1 分析 list-group 组件的功能和使用场景
-- [ ] 14.13.2 重命名 list-group -> list（包括类名、Blade 文件、配置、文档）
-- [ ] 14.13.3 更新所有相关的子组件命名
-- [ ] 14.13.4 分析 empty-state 组件的功能
-- [ ] 14.13.5 重命名 empty-state -> empty（类名保持 EmptyState，因为 empty 是 PHP 关键字）
-- [ ] 14.13.6 更新所有相关文档和配置
+- [x] 14.13.1 分析 list-group 组件的功能和使用场景
+- [x] 14.13.2 重命名 list-group -> list（包括类名、Blade 文件、配置、文档）
+- [x] 14.13.3 更新所有相关的子组件命名
+- [x] 14.13.4 分析 empty-state 组件的功能
+- [x] 14.13.5 重命名 empty-state -> empty（类名改为 Empty_，因为 empty 是 PHP 关键字）
+- [x] 14.13.6 修改 switch 组件类名为 Switch_（因为 switch 是 PHP 关键字）
+- [ ] 14.13.7 更新所有相关文档
+- [ ] 14.13.8 更新 Blade 文件中的组件引用
 
 **预期完成**: 1-2 个会话
 
-**说明**:
-- list-group 重命名为 list，相关子组件也需要同步更新
-- empty-state 重命名为 empty，但组件类名保持 EmptyState（因为 empty 是 PHP 保留字）
-- 需要更新 ServiceProvider 中的组件注册
-- 需要更新所有文档中的组件引用
+**已完成**:
+- 重命名 ListGroup → List_，ListGroupItem → ListItem
+- 重命名 EmptyState → Empty_
+- 重命名 SwitchInput → Switch_
+- 更新 ServiceProvider 中的组件注册
+- 更新组件类中的注释
+
+**待完成**:
+- 更新文档中的组件引用
+- 更新 Blade 文件中的组件引用
 
 ---
 
