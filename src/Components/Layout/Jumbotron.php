@@ -46,12 +46,7 @@ class Jumbotron extends Component
      */
     public function classes(): string
     {
-        $sizeMap = [
-            'sm' => 'py-8 px-4',
-            'md' => 'py-12 px-6',
-            'lg' => 'py-16 px-8',
-            'xl' => 'py-24 px-12',
-        ];
+        $sizeClass = ComponentHelper::getSizeClasses('jumbotron', $this->size) ?? 'py-16 px-8';
 
         $alignMap = [
             'left' => 'text-left',
@@ -71,7 +66,7 @@ class Jumbotron extends Component
             'relative',
             'overflow-hidden',
             'bg-gray-100 dark:bg-gray-900',
-            $sizeMap[$this->size] ?? $sizeMap['lg'],
+            $sizeClass,
             $alignMap[$this->align] ?? $alignMap['center'],
             $overlayMap[$this->overlay] ?? '',
         ];

@@ -69,18 +69,12 @@ class ButtonGroup extends Component
 
             // Spacing
             if ($this->spacing) {
-                $spacingMap = [
-                    'xs' => $this->orientation === 'horizontal' ? 'gap-1' : 'gap-1',
-                    'sm' => $this->orientation === 'horizontal' ? 'gap-2' : 'gap-2',
-                    'md' => $this->orientation === 'horizontal' ? 'gap-3' : 'gap-3',
-                    'lg' => $this->orientation === 'horizontal' ? 'gap-4' : 'gap-4',
-                ];
-
-                if (isset($spacingMap[$this->spacing])) {
-                    $classes[] = $spacingMap[$this->spacing];
+                $spacingClass = ComponentHelper::getSizeClasses('button_group_spacing', $this->spacing);
+                if ($spacingClass) {
+                    $classes[] = $spacingClass;
                 }
             } else {
-                $classes[] = $this->orientation === 'horizontal' ? 'gap-2' : 'gap-2';
+                $classes[] = 'gap-2';
             }
         }
 

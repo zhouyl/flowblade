@@ -44,16 +44,9 @@ class TreeView extends Component
         ];
 
         // Size
-        $sizeClasses = [
-            'xs' => 'text-xs',
-            'sm' => 'text-sm',
-            'md' => 'text-base',
-            'lg' => 'text-lg',
-            'xl' => 'text-xl',
-        ];
-
-        if (isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        $sizeClass = ComponentHelper::getSizeClasses('tree_view', $this->size);
+        if ($sizeClass) {
+            $classes[] = $sizeClass;
         }
 
         // Style props

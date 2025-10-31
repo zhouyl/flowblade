@@ -49,15 +49,9 @@ class Kbd extends Component
 
         // Size
         if ($this->size) {
-            $sizeMap = [
-                'xs' => 'text-xs',
-                'sm' => 'text-sm',
-                'md' => 'text-base',
-                'lg' => 'text-lg',
-            ];
-
-            if (isset($sizeMap[$this->size])) {
-                $classes[] = $sizeMap[$this->size];
+            $sizeClass = ComponentHelper::getSizeClasses('kbd', $this->size);
+            if ($sizeClass) {
+                $classes[] = $sizeClass;
             }
         } else {
             $classes[] = 'text-sm';

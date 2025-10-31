@@ -48,16 +48,7 @@ class QRCode extends Component
      */
     public function classes(): string
     {
-        $sizeMap = [
-            'xs' => 'w-16 h-16',
-            'sm' => 'w-24 h-24',
-            'md' => 'w-32 h-32',
-            'lg' => 'w-40 h-40',
-            'xl' => 'w-48 h-48',
-            '2xl' => 'w-64 h-64',
-        ];
-
-        $sizeClass = $sizeMap[$this->size] ?? $sizeMap['md'];
+        $sizeClass = ComponentHelper::getSizeClasses('qrcode', $this->size) ?? 'w-32 h-32';
 
         $classes = [
             'flex',

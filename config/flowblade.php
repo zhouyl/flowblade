@@ -276,6 +276,52 @@ return [
             'lg' => 'text-lg',
             'xl' => 'text-xl',
         ],
+        'table' => [
+            'xs' => 'text-xs',
+            'sm' => 'text-sm',
+            'md' => 'text-base',
+            'lg' => 'text-lg',
+            'xl' => 'text-xl',
+        ],
+        'tree_view' => [
+            'xs' => 'text-xs',
+            'sm' => 'text-sm',
+            'md' => 'text-base',
+            'lg' => 'text-lg',
+            'xl' => 'text-xl',
+        ],
+        'code' => [
+            'xs' => 'text-xs',
+            'sm' => 'text-sm',
+            'md' => 'text-base',
+            'lg' => 'text-lg',
+        ],
+        'kbd' => [
+            'xs' => 'text-xs',
+            'sm' => 'text-sm',
+            'md' => 'text-base',
+            'lg' => 'text-lg',
+        ],
+        'qrcode' => [
+            'xs' => 'w-16 h-16',
+            'sm' => 'w-24 h-24',
+            'md' => 'w-32 h-32',
+            'lg' => 'w-40 h-40',
+            'xl' => 'w-48 h-48',
+            '2xl' => 'w-64 h-64',
+        ],
+        'jumbotron' => [
+            'sm' => 'py-8 px-4',
+            'md' => 'py-12 px-6',
+            'lg' => 'py-16 px-8',
+            'xl' => 'py-24 px-12',
+        ],
+        'button_group_spacing' => [
+            'xs' => 'gap-1',
+            'sm' => 'gap-2',
+            'md' => 'gap-3',
+            'lg' => 'gap-4',
+        ],
     ],
 
     /*
