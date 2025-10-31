@@ -3,750 +3,179 @@
 ## 项目概述
 
 **项目名称**: Flowblade - Laravel Blade Component Library
-**项目状态**: 138 个组件全部完成 Style Props 支持 + 完整文档 + 完善的文档系统！
-**当前任务**: Phase 13 完成 - 主文档系统完善
-**开始时间**: 2025-10-28
+**项目状态**: Phase 14 - 项目优化和完善阶段
+**开始时间**: 2025-10-31
 **最后更新**: 2025-10-31
 
 ## 当前进度
 
-**总体完成度**: Phase 13 完成 (100%)
-**当前阶段**: 所有 138 个组件已完成 Style Props 集成 + 完整文档 + 完善的文档系统
-**组件总数**: 138 个 (新增 3 个，删除 2 个重复组件)
-**已完成**:
-- Phase 1 (新增组件) ✅
-- Phase 2 (文档检查) ✅
-- Phase 3 (Code Review Phase 2) ✅
-- Phase 4 (列表组件整合) ✅
-- Phase 5 (Navigation 组件 Style Props) ✅
-- Phase 6 (Feedback 组件 Style Props) ✅
-- Phase 7 (Overlay 组件 Style Props) ✅
-- Phase 8 (Disclosure 组件 Style Props) ✅
-- Phase 9 (Media 组件 Style Props) ✅
-- Phase 10 (其他组件 Style Props) ✅
-- Phase 11 (组件文档编写) ✅
-- Phase 12 (组件文档质量提升) ✅
-- Phase 13 (主文档系统完善) ✅
-
-**Style Props 修复进度**: 138/138 个组件已完成 (100%) ✅
-**文档完成进度**: 138/138 个组件已完成 (100%) ✅
-**文档系统完成度**: 100% ✅
-
-## 工作计划
-
-### 第一阶段：新增组件 (Phase 1) - ✅ 已完成
-
-新增 3 个核心组件，完善组件库的功能：
-
-- [x] 1.1 Image 组件 (Media 类别)
-  - [x] 1.1.1 组件类实现
-  - [x] 1.1.2 Blade 模板
-  - [x] 1.1.3 使用文档
-
-- [x] 1.2 ListItem 组件 (DataDisplay 类别)
-  - [x] 1.2.1 组件类实现
-  - [x] 1.2.2 Blade 模板
-  - [x] 1.2.3 使用文档
-
-- [x] 1.3 Form 组件 (Forms 类别)
-  - [x] 1.3.1 组件类实现
-  - [x] 1.3.2 Blade 模板
-  - [x] 1.3.3 使用文档
-
-### 第二阶段：文档示例检查 (Phase 2) - 进行中
-
-检查所有组件文档中的示例，确保优先使用项目组件而不是原生 HTML：
-
-- [x] 2.1 检查 DataDisplay 组件文档示例 - 已完成
-- [x] 2.2 检查 Forms 组件文档示例 - 已完成
-- [x] 2.3 检查 Layout 组件文档示例 - 已完成
-- [x] 2.4 检查 Navigation 组件文档示例 - 已完成
-- [x] 2.5 检查 Overlay 组件文档示例 - 已完成
-- [x] 2.6 检查 Feedback 组件文档示例 - 已完成
-- [x] 2.7 检查 Media 组件文档示例 - 已完成
-- [x] 2.8 检查 Disclosure 组件文档示例 - 已完成
-- [x] 2.9 检查 Typography 组件文档示例 - 已完成
-- [x] 2.10 检查 Buttons 组件文档示例 - 已完成
-
-**结论**: 所有组件文档示例已检查，均已优先使用项目组件，无需修改。
-
-### 第三阶段：Code Review Phase 2 (Phase 3) - 进行中
-
-对所有 140 个组件进行第二次 Code Review，重点检查：
-
-**Review 标准**:
-1. 组件类是否遵循开发规范
-2. Style Props 是否正确集成
-3. Blade 模板是否使用语义化 HTML
-4. 是否避免直接调用其他组件（使用动态组件）
-5. 是否优先使用 Flowbite 样式
-6. 代码是否通过 php-cs-fixer 格式化
-7. 保持统一的组件、类的设计风格、编码风格、变量/参数/方法命名风格
-
-**Review 分类**:
-- [x] 3.1 Buttons 组件 (4 个) - ✅ 已完成
-  - [x] Button - ✅ 符合规范
-  - [x] IconButton - ✅ 符合规范
-  - [x] ButtonGroup - ✅ 符合规范
-  - [x] CloseButton - ✅ 符合规范
-
-- [ ] 3.2 DataDisplay 组件 (24 个) - 进行中
-  - [x] Badge - ✅ Style Props 已添加
-  - [x] Avatar - ✅ Style Props 已添加
-  - [x] Icon - ✅ Style Props 已添加
-  - [x] Tag - ✅ Style Props 已添加
-  - [x] Card - ✅ Style Props 已添加
-  - [x] CardHeader - ✅ Style Props 已添加
-  - [x] CardBody - ✅ Style Props 已添加
-  - [x] CardFooter - ✅ Style Props 已添加
-  - [x] Table - ✅ Style Props 已添加
-  - [x] Rating - ✅ Style Props 已添加
-  - [x] ChatBubble - ✅ Style Props 已添加
-  - [x] Stat - ✅ Style Props 已添加
-  - [x] Timeline - ✅ Style Props 已添加
-  - [x] TimelineItem - ✅ Style Props 已添加
-  - [x] TreeView - ✅ Style Props 已添加
-  - [x] TreeViewItem - ✅ Style Props 已添加
-  - [x] ColorSwatch - ✅ Style Props 已添加
-  - [x] DataList - ✅ Style Props 已添加
-  - [x] DataListItem - ✅ Style Props 已添加
-  - [x] Indicator - ✅ Style Props 已添加
-  - [x] ListGroup - ✅ Style Props 已添加
-  - [x] ListGroupItem - ✅ Style Props 已添加
-  - [x] TagsInput - ✅ Style Props 已添加
-  - [x] ListItem - ✅ 新增组件，符合规范
-
-- [ ] 3.3 Disclosure 组件 (3 个) - 进行中
-  - [x] Accordion - ⚠️ 缺少 Style Props 支持
-  - [x] Collapsible - 待检查
-  - [ ] 其他 - 待检查
-
-- [ ] 3.4 Feedback 组件 (9 个) - 进行中
-  - [x] Alert - ⚠️ 缺少 Style Props 支持
-  - [ ] 其他 8 个 - 待检查
-
-- [ ] 3.5 Forms 组件 (29 个) - 进行中
-  - [x] Form - ✅ 符合规范
-  - [x] Input - ✅ 符合规范
-  - [x] Textarea - ✅ 符合规范
-  - [x] Select - ✅ 符合规范
-  - [x] Checkbox - ✅ 符合规范
-  - [x] Radio - ✅ 符合规范
-  - [ ] 其他 23 个 - 待检查
-
-- [ ] 3.6 Layout 组件 (15 个) - 进行中
-  - [x] Box - ✅ 符合规范
-  - [x] Flex - ✅ 符合规范
-  - [x] Grid - ✅ 符合规范
-  - [ ] 其他 12 个 - 待检查
-
-- [ ] 3.7 Media 组件 (7 个) - 进行中
-  - [x] Image - ✅ 新增组件，符合规范
-  - [ ] 其他 6 个 - 待检查
-
-- [ ] 3.8 Navigation 组件 (17 个) - 进行中
-  - [x] Navbar - ⚠️ 缺少 Style Props 支持
-  - [ ] 其他 16 个 - 待检查
-
-- [ ] 3.9 Overlay 组件 (8 个) - 进行中
-  - [x] Modal - ⚠️ 缺少 Style Props 支持
-  - [ ] 其他 7 个 - 待检查
-
-- [ ] 3.10 Typography 组件 (11 个) - 进行中
-  - [x] Text - ✅ 符合规范
-  - [x] Heading - ✅ 符合规范
-  - [ ] 其他 9 个 - 待检查
-
-### 第四阶段：列表组件整合 (Phase 4) - ✅ 已完成
-
-整合 ListComponent 及 ListItem 到 ListGroup + ListGroupItem，并删除重复组件：
-
-- [x] 4.1 删除 ListItem 组件 (DataDisplay)
-  - [x] 4.1.1 删除 PHP 类文件
-  - [x] 4.1.2 删除 Blade 模板文件
-  - [x] 4.1.3 删除文档文件
-
-- [x] 4.2 删除 ListComponent 组件 (Typography)
-  - [x] 4.2.1 删除 PHP 类文件
-  - [x] 4.2.2 删除 Blade 模板文件
-  - [x] 4.2.3 从 FlowbladeServiceProvider 中删除注册
+**总体完成度**: Phase 14 规划中 (0%)
+**当前阶段**: 项目优化和完善
 
-- [x] 4.3 更新项目文档
-  - [x] 4.3.1 更新 TODO.md
-  - [x] 4.3.2 更新 ISSUE.md
+## Phase 14: 项目优化和完善 - 进行中
 
-**结果**: 组件总数从 140 个减少到 138 个，ListGroup + ListGroupItem 成为唯一的列表组件
+### 14.1 快速开始文档完善 - [ ] 未开始
 
-### 第五阶段：Navigation 组件 Style Props 修复 (Phase 5) ✅ 完成
+**目标**: 在快速开始文档中添加 ServiceProvider 的配置说明
 
-为 Navigation 组件添加 Style Props 支持（共 23 个组件）：
+**任务**:
+- [ ] 14.1.1 在 docs/quick-start.md 中添加 ServiceProvider 配置部分
+- [ ] 14.1.2 说明如何发布配置文件
+- [ ] 14.1.3 提供配置示例
 
-- [x] 5.1 主要容器组件 (5 个) ✅ 完成
-  - [x] 5.1.1 Navbar 组件 ✅
-  - [x] 5.1.2 Breadcrumb 组件 ✅
-  - [x] 5.1.3 Tabs 组件 ✅
-  - [x] 5.1.4 Pagination 组件 ✅
-  - [x] 5.1.5 Sidebar 组件 ✅
-
-- [x] 5.2 Navbar 子组件 (4 个) ✅ 完成
-  - [x] 5.2.1 NavbarBrand 组件 ✅
-  - [x] 5.2.2 NavbarToggle 组件 ✅
-  - [x] 5.2.3 NavbarCollapse 组件 ✅
-  - [x] 5.2.4 NavbarLink 组件 ✅
-
-- [x] 5.3 Tabs 子组件 (3 个) ✅ 完成
-  - [x] 5.3.1 TabsList 组件 ✅
-  - [x] 5.3.2 TabsTrigger 组件 ✅
-  - [x] 5.3.3 TabsContent 组件 ✅
-
-- [x] 5.4 Sidebar 子组件 (3 个) ✅ 完成
-  - [x] 5.4.1 SidebarItem 组件 ✅
-  - [x] 5.4.2 SidebarGroup 组件 ✅
-  - [x] 5.4.3 SidebarToggle 组件 ✅
-
-- [x] 5.5 Steps 组件 (2 个) ✅ 完成
-  - [x] 5.5.1 Steps 组件 ✅
-  - [x] 5.5.2 StepItem 组件 ✅
-
-- [x] 5.6 SpeedDial 组件 (2 个) ✅ 完成
-  - [x] 5.6.1 SpeedDial 组件 ✅
-  - [x] 5.6.2 SpeedDialItem 组件 ✅
-
-- [x] 5.7 MegaMenu 组件 (3 个) ✅ 完成
-  - [x] 5.7.1 MegaMenu 组件 ✅
-  - [x] 5.7.2 MegaMenuColumn 组件 ✅
-  - [x] 5.7.3 MegaMenuItem 组件 ✅
-
-- [x] 5.8 其他组件 (1 个) ✅ 完成
-  - [x] 5.8.1 BreadcrumbItem 组件 ✅
-
-**当前进度**: 23/23 个 Navigation 组件已完成 (100%) ✅
-
-### 第六阶段：Feedback 组件 Style Props 修复 (Phase 6) ✅ 完成
-
-为 Feedback 组件添加 Style Props 支持（共 9 个组件）：
-
-- [x] 6.1 Alert 组件 ✅
-- [x] 6.2 Banner 组件 ✅
-- [x] 6.3 EmptyState 组件 ✅
-- [x] 6.4 Progress 组件 ✅
-- [x] 6.5 ProgressCircle 组件 ✅
-- [x] 6.6 Skeleton 组件 ✅
-- [x] 6.7 Spinner 组件 ✅
-- [x] 6.8 Status 组件 ✅
-- [x] 6.9 Toast 组件 ✅
-
-**当前进度**: 9/9 个 Feedback 组件已完成 (100%) ✅
-
-### 第七阶段：Overlay 组件 Style Props 修复 (Phase 7) ✅ 完成
-
-为 Overlay 组件添加 Style Props 支持（共 9 个组件）：
-
-- [x] 7.1 Modal 组件 ✅
-- [x] 7.2 Drawer 组件 ✅
-- [x] 7.3 Tooltip 组件 ✅
-- [x] 7.4 Popover 组件 ✅
-- [x] 7.5 Menu 组件 ✅
-- [x] 7.6 MenuItem 组件 ✅
-- [x] 7.7 MenuHeader 组件 ✅
-- [x] 7.8 MenuDivider 组件 ✅
-- [x] 7.9 HoverCard 组件 ✅
-
-**当前进度**: 9/9 个 Overlay 组件已完成 (100%) ✅
-
-### 第八阶段：Disclosure 组件 Style Props 修复 (Phase 8) ✅ 完成
-
-为 Disclosure 组件添加 Style Props 支持（共 3 个组件）：
-
-- [x] 8.1 Accordion 组件 ✅
-- [x] 8.2 AccordionItem 组件 ✅
-- [x] 8.3 Collapsible 组件 ✅
-
-**当前进度**: 3/3 个 Disclosure 组件已完成 (100%) ✅
-
-### 第九阶段：Media 组件 Style Props 修复 (Phase 9) ✅ 完成
-
-为 Media 组件添加 Style Props 支持（共 4 个组件）：
-
-- [x] 9.1 Carousel 组件 ✅
-- [x] 9.2 Gallery 组件 ✅
-- [x] 9.3 GalleryItem 组件 ✅
-- [x] 9.4 QRCode 组件 ✅
-
-**当前进度**: 4/4 个 Media 组件已完成 (100%) ✅
-
-### 第十阶段：其他组件 Style Props 修复 (Phase 10) ✅ 完成
-
-为其他组件添加 Style Props 支持（共 45 个组件，不含 Component.php 基类）：
-
-#### Layout 组件 (10 个) ✅ 完成
-- [x] AbsoluteCenter ✅
-- [x] AspectRatio ✅
-- [x] Divider ✅
-- [x] Footer ✅
-- [x] Group ✅
-- [x] Jumbotron ✅
-- [x] ScrollArea ✅
-- [x] Separator ✅
-- [x] SimpleGrid ✅
-- [x] Spacer ✅
-- [x] Wrap ✅
-
-#### Forms 组件 (23 个) ✅ 完成
-- [x] Clipboard ✅
-- [x] Datepicker ✅
-- [x] DateRangePicker ✅
-- [x] Editable ✅
-- [x] Field ✅
-- [x] Fieldset ✅
-- [x] FileUpload ✅
-- [x] FloatingLabel ✅
-- [x] FloatingSelect ✅
-- [x] FloatingTextarea ✅
-- [x] InlineDatepicker ✅
-- [x] InputAddon ✅
-- [x] InputElement ✅
-- [x] InputGroup ✅
-- [x] NativeSelect ✅
-- [x] NumberInput ✅
-- [x] PasswordInput ✅
-- [x] PhoneInput ✅
-- [x] PinInput ✅
-- [x] RangeSlider ✅
-- [x] SearchInput ✅
-- [x] Slider ✅
-- [x] Timepicker ✅
-
-#### Typography 组件 (9 个) ✅ 完成
-- [x] Blockquote ✅
-- [x] Code ✅
-- [x] CodeBlock ✅
-- [x] Em ✅
-- [x] Highlight ✅
-- [x] Kbd ✅
-- [x] Link ✅
-- [x] Mark ✅
-- [x] Strong ✅
-
-#### Media 组件 (2 个) ✅ 完成
-- [x] CarouselItem ✅
-- [x] Video ✅
-
-#### 其他 (1 个)
-- Component.php (基类，无需修改)
-
-**当前进度**: 45/45 个其他组件已完成 (100%) ✅
-
-## 工作要求
-
-1. ✅ 禁止生成工作总结性文档，工作计划在 docs/TODO.md 中维护（中文）
-2. ✅ 问题在 docs/ISSUE.md 中提出
-3. ✅ 宁愿完成少，也要保证质量
-4. ✅ 及时清理临时文件
-5. ✅ 文档内容为英文
-6. ✅ 代码注释使用英文
-7. ✅ 避免直接调用组件，使用动态组件
-8. ✅ 优先使用 Flowbite 样式
-
-## 开发规范
-
-详见 `docs/STANDARDS.md`
-
-### 第十一阶段：组件文档编写 (Phase 11) - 进行中
-
-为缺失文档的组件编写完整的使用文档（共 27 个组件）：
-
-#### DataDisplay 组件 (7 个缺失文档)
-- [x] CardBody, CardFooter, CardHeader
-- [x] DataListItem, ListGroupItem, TimelineItem, TreeViewItem
-
-#### Forms 组件 (10 个缺失文档)
-- [x] DateRangePicker, FloatingSelect, FloatingTextarea, InlineDatepicker
-- [x] InputAddon, InputElement, NativeSelect, NumberInput, PinInput, SwitchInput
-
-#### Typography 组件 (9 个缺失文档)
-- [x] Blockquote, Code, CodeBlock, Em, Highlight, Kbd, Link, Mark, Strong
-
-**当前进度**: 26/27 个文档已完成 (96%)
-
-### 第十一阶段完成情况
-
-✅ **DataDisplay 组件** (7/7 - 100%)
-✅ **Forms 组件** (10/10 - 100%)
-✅ **Typography 组件** (9/9 - 100%)
-
-**总计**: 26 个新文档已完成
-
-### 发现的额外缺失文档 (19 个)
-
-#### Disclosure 组件 (1 个)
-- [x] AccordionItem
-
-#### Navigation 组件 (15 个)
-- [x] BreadcrumbItem, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle
-- [x] MegaMenuColumn, MegaMenuItem, SidebarGroup, SidebarItem, SidebarToggle
-- [x] SpeedDialItem, StepItem, TabsContent, TabsList, TabsTrigger
-
-#### Overlay 组件 (3 个)
-- [x] MenuDivider, MenuHeader, MenuItem
-
-**当前进度**: 45/45 个文档已完成 (100%)
-
-### 第十一阶段完成总结
-
-✅ **所有缺失文档已完成！**
-
-- DataDisplay 组件: 7 个文档 ✅
-- Forms 组件: 10 个文档 ✅
-- Typography 组件: 9 个文档 ✅
-- Disclosure 组件: 1 个文档 ✅
-- Navigation 组件: 15 个文档 ✅
-- Overlay 组件: 3 个文档 ✅
-
-**总计**: 45 个新文档已完成
-
-### 第十二阶段：组件文档质量提升 (Phase 12) - 进行中
-
-对所有 138 个组件的文档进行质量审查和改进，确保文档的完整性、一致性和高质量。
-
-**工作目标**:
-1. 统一所有组件文档的格式和结构
-2. 补充缺失的示例和说明
-3. 确保每个文档都包含必要的部分
-4. 提升文档的可读性和实用性
-
-**文档标准**:
-- 组件描述：清晰简洁的组件功能说明
-- Props 表格：完整的属性列表和说明
-- 基本用法：最简单的使用示例
-- 示例代码：多个实际应用示例
-- 常见模式：展示组件的常见使用场景
-- 集成示例：Livewire、Alpine.js 等集成示例
-- 无障碍性：说明组件的无障碍特性
-
-**审查计划**:
-- [x] 12.1 审查 Buttons 组件文档 (4 个) - 质量良好，无需改进
-- [ ] 12.2 审查 DataDisplay 组件文档 (23 个)
-- [ ] 12.3 审查 Forms 组件文档 (31 个)
-- [ ] 12.4 审查 Layout 组件文档 (19 个)
-- [ ] 12.5 审查 Navigation 组件文档 (23 个)
-- [ ] 12.6 审查 Overlay 组件文档 (9 个)
-- [ ] 12.7 审查 Feedback 组件文档 (9 个)
-- [ ] 12.8 审查 Disclosure 组件文档 (3 个)
-- [ ] 12.9 审查 Media 组件文档 (6 个)
-- [x] 12.10 审查 Typography 组件文档 (11 个) - 已改进 8 个组件
-
-**当前进度**: 86/138 个文档已改进 (62%)
-
-**已改进的 Typography 组件** (8 个):
-- [x] Blockquote - 添加了更多示例和常见模式
-- [x] Code - 添加了 API 文档、配置示例等
-- [x] Em - 添加了文章、说明、比较等示例
-- [x] Highlight - 添加了教程、错误、功能公告等示例
-- [x] Kbd - 添加了游戏控制、编辑器快捷键等示例
-- [x] Link - 添加了面包屑、CTA、页脚链接等示例
-- [x] Mark - 添加了学习指南、文档审查等示例
-- [x] Strong - 添加了警告、重要通知、功能等示例
-
-**已改进的 Navigation 组件** (2 个):
-- [x] TabsTrigger - 添加了产品详情、用户设置等示例
-- [x] SidebarItem - 添加了仪表板、徽章等示例
-
-**已改进的 Forms 组件** (3 个):
-- [x] InlineDatepicker - 添加了酒店预订、事件调度等示例
-- [x] InputAddon - 添加了价格、搜索、域名等示例
-- [x] InputElement - 添加了搜索、密码可见性、数量选择器等示例
-
-**已改进的 DataDisplay 组件** (3 个):
-- [x] CardBody - 添加了产品卡、用户资料、统计卡等示例
-- [x] DataListItem - 添加了用户资料、订单详情、产品规格等示例
-- [x] TimelineItem - 添加了项目里程碑示例
-
-**已改进的 Overlay 组件** (2 个):
-- [x] MenuHeader - 添加了应用菜单示例
-- [x] MenuDivider - 添加了上下文菜单示例
-
-**已改进的 Layout 组件** (3 个):
-- [x] Center - 改进了描述和无障碍性说明
-- [x] HStack - 改进了描述和无障碍性说明
-- [x] VStack - 改进了描述和无障碍性说明
-
-**已改进的 Media 组件** (1 个):
-- [x] Image - 添加了产品图、头像、英雄图等示例
-
-**已改进的 Disclosure 组件** (1 个):
-- [x] AccordionItem - 添加了 FAQ 部分示例
-
-**已改进的 Feedback 组件** (1 个):
-- [x] Banner - 改进了描述和无障碍性说明
-
-**已改进的 Buttons 组件** (1 个):
-- [x] CloseButton - 改进了描述和无障碍性说明
-
-**已改进的 Overlay 组件** (3 个):
-- [x] MenuItem - 改进了描述和无障碍性说明
-- [x] MenuHeader - 已在前面改进
-- [x] MenuDivider - 已在前面改进
-
-**已改进的 Navigation 组件** (3 个):
-- [x] SidebarToggle - 添加了更多示例和常见模式
-- [x] TabsTrigger - 已在前面改进
-- [x] SidebarItem - 已在前面改进
-
-**已改进的 Forms 组件** (12 个):
-- [x] FloatingSelect - 改进了描述和无障碍性说明
-- [x] NumberInput - 改进了描述和无障碍性说明
-- [x] PinInput - 改进了描述和无障碍性说明
-- [x] SwitchInput - 改进了描述和无障碍性说明
-- [x] Checkbox - 改进了描述和无障碍性说明
-- [x] Radio - 改进了描述和无障碍性说明
-- [x] Textarea - 改进了描述和无障碍性说明
-- [x] Input - 改进了描述和无障碍性说明
-- [x] Select - 改进了描述和无障碍性说明
-- [x] InlineDatepicker - 已在前面改进
-- [x] InputAddon - 已在前面改进
-- [x] InputElement - 已在前面改进
-
-**已改进的 DataDisplay 组件** (7 个):
-- [x] TreeViewItem - 改进了描述和无障碍性说明
-- [x] CardHeader - 改进了描述和无障碍性说明
-- [x] ListGroupItem - 改进了描述和无障碍性说明
-- [x] CardFooter - 改进了描述和无障碍性说明
-- [x] CardBody - 已在前面改进
-- [x] DataListItem - 已在前面改进
-- [x] TimelineItem - 已在前面改进
-
-**已改进的 Buttons 组件** (4 个):
-- [x] Button - 改进了描述和无障碍性说明
-- [x] ButtonGroup - 改进了描述和无障碍性说明
-- [x] IconButton - 改进了描述和无障碍性说明
-- [x] CloseButton - 已在前面改进
-
-**已改进的 Feedback 组件** (9 个):
-- [x] Alert - 改进了描述和无障碍性说明
-- [x] EmptyState - 改进了描述和无障碍性说明
-- [x] Progress - 改进了描述和无障碍性说明
-- [x] ProgressCircle - 改进了描述和无障碍性说明
-- [x] Skeleton - 改进了描述和无障碍性说明
-- [x] Spinner - 改进了描述和无障碍性说明
-- [x] Status - 改进了描述和无障碍性说明
-- [x] Toast - 改进了描述和无障碍性说明
-- [x] Banner - 已在前面改进
-
-**已改进的 Disclosure 组件** (3 个):
-- [x] Accordion - 改进了描述和无障碍性说明
-- [x] Collapsible - 改进了描述和无障碍性说明
-- [x] AccordionItem - 已在前面改进
-
-**已改进的 Overlay 组件** (9 个):
-- [x] Drawer - 改进了描述和无障碍性说明
-- [x] HoverCard - 改进了描述和无障碍性说明
-- [x] Menu - 改进了描述和无障碍性说明
-- [x] Modal - 改进了描述和无障碍性说明
-- [x] Popover - 改进了描述和无障碍性说明
-- [x] Tooltip - 改进了描述和无障碍性说明
-- [x] MenuItem - 已在前面改进
-- [x] MenuHeader - 已在前面改进
-- [x] MenuDivider - 已在前面改进
-
-**已改进的 Navigation 组件** (23 个 - 当前会话新增 19 个):
-- [x] Breadcrumb - 改进了描述和无障碍性说明
-- [x] BreadcrumbItem - 改进了描述和无障碍性说明
-- [x] Navbar - 改进了描述和无障碍性说明
-- [x] NavbarBrand - 改进了描述和无障碍性说明
-- [x] NavbarCollapse - 改进了描述和无障碍性说明
-- [x] NavbarLink - 改进了描述和无障碍性说明
-- [x] NavbarToggle - 改进了描述和无障碍性说明
-- [x] Pagination - 改进了描述和无障碍性说明
-- [x] Sidebar - 改进了描述和无障碍性说明
-- [x] SidebarGroup - 改进了描述和无障碍性说明
-- [x] Tabs - 改进了描述和无障碍性说明
-- [x] TabsList - 改进了描述和无障碍性说明
-- [x] TabsContent - 改进了描述和无障碍性说明
-- [x] Steps - 改进了描述和无障碍性说明
-- [x] StepItem - 改进了描述和无障碍性说明
-- [x] SpeedDial - 改进了描述和无障碍性说明
-- [x] SpeedDialItem - 改进了描述和无障碍性说明
-- [x] MegaMenu - 改进了描述和无障碍性说明
-- [x] MegaMenuColumn - 改进了描述和无障碍性说明
-- [x] MegaMenuItem - 改进了描述和无障碍性说明
-- [x] SidebarToggle - 已在前面改进
-- [x] TabsTrigger - 已在前面改进
-- [x] SidebarItem - 已在前面改进
-
-**已改进的 Layout 组件** (19 个 - 当前会话新增 19 个):
-- [x] AbsoluteCenter - 改进了描述和无障碍性说明
-- [x] AspectRatio - 改进了描述和无障碍性说明
-- [x] Box - 改进了描述和无障碍性说明
-- [x] Container - 改进了描述和无障碍性说明
-- [x] Divider - 改进了描述和无障碍性说明
-- [x] Flex - 改进了描述和无障碍性说明
-- [x] Footer - 改进了描述和无障碍性说明
-- [x] Grid - 改进了描述和无障碍性说明
-- [x] Group - 改进了描述和无障碍性说明
-- [x] HStack - 改进了描述和无障碍性说明
-- [x] Jumbotron - 改进了描述和无障碍性说明
-- [x] ScrollArea - 改进了描述和无障碍性说明
-- [x] Separator - 改进了描述和无障碍性说明
-- [x] SimpleGrid - 改进了描述和无障碍性说明
-- [x] Spacer - 改进了描述和无障碍性说明
-- [x] Stack - 改进了描述和无障碍性说明
-- [x] VStack - 改进了描述和无障碍性说明
-- [x] Wrap - 改进了描述和无障碍性说明
-- [x] Center - 已在前面改进
-
-**已改进的 DataDisplay 组件** (14 个 - 当前会话新增 14 个):
-- [x] Avatar - 改进了描述和无障碍性说明
-- [x] Badge - 改进了描述和无障碍性说明
-- [x] Card - 改进了描述和无障碍性说明
-- [x] ChatBubble - 改进了描述和无障碍性说明
-- [x] ColorSwatch - 改进了描述和无障碍性说明
-- [x] DataList - 改进了描述和无障碍性说明
-- [x] Icon - 改进了描述和无障碍性说明
-- [x] Indicator - 改进了描述和无障碍性说明
-- [x] ListGroup - 改进了描述和无障碍性说明
-- [x] Rating - 改进了描述和无障碍性说明
-- [x] Stat - 改进了描述和无障碍性说明
-- [x] Table - 改进了描述和无障碍性说明
-- [x] Tag - 改进了描述和无障碍性说明
-- [x] TagsInput - 改进了描述和无障碍性说明
-- [x] Timeline - 改进了描述和无障碍性说明
-- [x] TreeView - 改进了描述和无障碍性说明
-
-**已改进的 Forms 组件** (31 个 - 全部完成):
-- [x] Checkbox - 改进了描述和无障碍性说明
-- [x] Clipboard - 改进了描述和无障碍性说明
-- [x] DateRangePicker - 改进了描述和无障碍性说明
-- [x] Datepicker - 改进了描述和无障碍性说明
-- [x] Editable - 改进了描述和无障碍性说明
-- [x] Field - 改进了描述和无障碍性说明
-- [x] Fieldset - 改进了描述和无障碍性说明
-- [x] FileUpload - 改进了描述和无障碍性说明
-- [x] FloatingLabel - 改进了描述和无障碍性说明
-- [x] FloatingSelect - 改进了描述和无障碍性说明
-- [x] FloatingTextarea - 改进了描述和无障碍性说明
-- [x] Form - 改进了描述和无障碍性说明
-- [x] InlineDatepicker - 改进了描述和无障碍性说明
-- [x] InputAddon - 改进了描述和无障碍性说明
-- [x] InputElement - 改进了描述和无障碍性说明
-- [x] InputGroup - 改进了描述和无障碍性说明
-- [x] Input - 改进了描述和无障碍性说明
-- [x] NativeSelect - 改进了描述和无障碍性说明
-- [x] NumberInput - 改进了描述和无障碍性说明
-- [x] PasswordInput - 改进了描述和无障碍性说明
-- [x] PhoneInput - 改进了描述和无障碍性说明
-- [x] PinInput - 改进了描述和无障碍性说明
-- [x] Radio - 改进了描述和无障碍性说明
-- [x] RangeSlider - 改进了描述和无障碍性说明
-- [x] SearchInput - 改进了描述和无障碍性说明
-- [x] Select - 改进了描述和无障碍性说明
-- [x] Slider - 改进了描述和无障碍性说明
-- [x] SwitchInput - 改进了描述和无障碍性说明
-- [x] Switch - 改进了描述和无障碍性说明
-- [x] Textarea - 改进了描述和无障碍性说明
-- [x] Timepicker - 改进了描述和无障碍性说明
-
-**已改进的 Typography 组件** (11 个 - 全部完成):
-- [x] Blockquote - 改进了描述和无障碍性说明
-- [x] CodeBlock - 改进了描述和无障碍性说明
-- [x] Code - 改进了描述和无障碍性说明
-- [x] Em - 改进了描述和无障碍性说明
-- [x] Heading - 改进了描述和无障碍性说明
-- [x] Highlight - 改进了描述和无障碍性说明
-- [x] Kbd - 改进了描述和无障碍性说明
-- [x] Link - 改进了描述和无障碍性说明
-- [x] Mark - 改进了描述和无障碍性说明
-- [x] Strong - 改进了描述和无障碍性说明
-- [x] Text - 改进了描述和无障碍性说明
-
-**已改进的 Media 组件** (5 个 - 全部完成):
-- [x] Carousel - 改进了描述和无障碍性说明
-- [x] Gallery - 改进了描述和无障碍性说明
-- [x] Image - 改进了描述和无障碍性说明
-- [x] QRCode - 改进了描述和无障碍性说明
-- [x] Video - 改进了描述和无障碍性说明
-
-**改进总结**:
-- 为每个文档添加了更详细的描述
-- 添加了 Style Props 部分的说明
-- 添加了多个常见模式和实际应用示例
-- 改进了无障碍性说明
-- 文档平均长度从 173 行增加到 250+ 行
-- 总共改进了 161 个组件的文档 (63 + 19 + 23 + 31 + 9 + 11 + 5)
-
-## Phase 13: 更新主 README.md 文档 - ✅ 已完成
-
-### 改进内容
-
-1. **Style Props 系统文档**
-   - 添加了详细的 Style Props 说明
-   - 包括 Spacing、Sizing、Color、Layout、Flexbox、Typography、Border、Shadow 等
-   - 提供了实际的代码示例
-
-2. **高级使用示例**
-   - 表单验证示例
-   - 仪表板卡片网格示例
-   - 导航栏示例
-
-3. **组件列表改进**
-   - 添加了组件特性说明
-   - 强调了 Style Props 支持、完整文档、无障碍性、响应式设计等
-
-4. **文档结构改进**
-   - 添加了"获取帮助"部分
-   - 添加了"贡献指南"部分
-   - 添加了"更新日志"部分
-   - 添加了"支持"部分
-
-5. **资源链接**
-   - Flowbite 文档
-   - Tailwind CSS 文档
-   - Chakra UI 文档
-   - Iconify 图标库
-
-6. **组件文档改进**
-   - 更新了 docs/components/README.md
-   - 添加了 Style Props 系统说明
-   - 添加了 HasStyleProps trait 文档链接
-
-7. **HasStyleProps Trait 文档**
-   - 创建了 docs/traits/has-style-props.md
-   - 详细说明了所有支持的 Style Props
-   - 提供了使用示例和最佳实践
-
-## 下一步行动
-
-1. ✅ 完成 Phase 12: 组件文档质量提升
-2. ✅ 完成 Phase 13: 更新主 README.md 文档
-3. ✅ 创建 HasStyleProps Trait 文档
-4. ✅ 创建快速开始指南
-5. 考虑添加更多高级示例和用例
-6. 性能优化和代码审查
-7. 社区反馈收集和改进
-
-## 项目总体进度
-
-**总体完成度**: Phase 13 完成 (100%)
-
-**已完成的工作**:
-- ✅ Phase 1-11: 138 个组件的开发和 Style Props 集成
-- ✅ Phase 12: 所有 138 个组件的文档质量提升
-- ✅ Phase 13: 主文档系统的完善
-
-**文档完成情况**:
-- ✅ README.md - 主项目文档（已增强）
-- ✅ docs/installation.md - 安装指南
-- ✅ docs/quick-start.md - 快速开始指南（新增）
-- ✅ docs/components/README.md - 组件文档索引（已增强）
-- ✅ docs/traits/has-style-props.md - Style Props 文档（新增）
-- ✅ docs/STANDARDS.md - 开发规范
-- ✅ docs/TODO.md - 项目计划
-- ✅ docs/ISSUE.md - 问题追踪
-- ✅ 138 个组件的详细文档
-
-**项目统计**:
-- 总组件数: 138 个
-- 文档完成度: 100%
-- Style Props 支持: 100%
-- 无障碍性支持: 100%
-- 响应式设计: 100%
+**预期完成**: 本会话
+
+---
+
+### 14.2 合并同类组件文档 - [ ] 未开始
+
+**目标**: 将相关的组件文档合并到一个文件中
+
+**任务**:
+- [ ] 14.2.1 合并 Card 相关文档 (card, card-body, card-footer, card-header)
+- [ ] 14.2.2 合并 List 相关文档 (list-group, list-group-item)
+- [ ] 14.2.3 合并 Input 相关文档 (input, input-addon, input-element, input-group)
+- [ ] 14.2.4 合并 Stack 相关文档 (stack, hstack, vstack)
+- [ ] 14.2.5 合并其他相关组件文档
+- [ ] 14.2.6 更新 components/README.md 中的索引
+
+**预期完成**: 2-3 个会话
+
+---
+
+### 14.3 CSS 样式统一检查 - [ ] 未开始
+
+**目标**: 检查所有组件的 CSS 是否统一，包括大小、颜色、效果、事件风格
+
+**任务**:
+- [ ] 14.3.1 检查所有组件的大小定义是否统一
+- [ ] 14.3.2 检查所有组件的颜色定义是否统一
+- [ ] 14.3.3 检查所有组件的效果（阴影、圆角等）是否统一
+- [ ] 14.3.4 检查所有组件的事件风格（hover、focus、active）是否统一
+- [ ] 14.3.5 修复发现的不一致问题
+
+**预期完成**: 2-3 个会话
+
+---
+
+### 14.4 Livewire 组件封装 - [ ] 未开始
+
+**目标**: 检查是否需要为组件封装 Livewire 组件，并完成相应的 Livewire 类
+
+**任务**:
+- [ ] 14.4.1 分析哪些组件需要 Livewire 支持
+- [ ] 14.4.2 为需要的组件创建 Livewire 类
+- [ ] 14.4.3 创建 Livewire 组件文档
+- [ ] 14.4.4 提供 Livewire 使用示例
+
+**预期完成**: 2-3 个会话
+
+---
+
+### 14.5 重构 components/README.md - [ ] 未开始
+
+**目标**: 完善组件文档索引和组件列表
+
+**任务**:
+- [ ] 14.5.1 完善所有组件文档的索引
+- [ ] 14.5.2 创建组件表格，包括：
+  -   - 组件名称
+  -   - 可替换的 HTML 标签
+  -   - 依赖项（Alpine, Livewire 等）
+  -   - 文档链接
+- [ ] 14.5.3 按类别组织组件表格
+- [ ] 14.5.4 添加组件搜索和过滤说明
+
+**预期完成**: 1-2 个会话
+
+---
+
+### 14.6 去除 Chakra UI 描述 - [ ] 未开始
+
+**目标**: 从所有文档中去除关于 Chakra UI 的描述
+
+**任务**:
+- [ ] 14.6.1 搜索所有文档中的 Chakra UI 引用
+- [ ] 14.6.2 删除或替换这些引用
+- [ ] 14.6.3 验证所有文档已更新
+
+**预期完成**: 本会话
+
+---
+
+### 14.7 重新设计项目主 README.md - [ ] 未开始
+
+**目标**: 根据项目情况，重新设计并完成项目主 README.md
+
+**任务**:
+- [ ] 14.7.1 重新组织 README.md 的结构
+- [ ] 14.7.2 更新项目描述和特性列表
+- [ ] 14.7.3 改进快速开始部分
+- [ ] 14.7.4 添加项目统计和成就
+- [ ] 14.7.5 改进文档链接和资源
+
+**预期完成**: 1-2 个会话
+
+---
+
+### 14.8 引入 laravel/mcp 和 MCP 服务 - [ ] 未开始
+
+**目标**: 引入 laravel/mcp，并为项目生成提供给 AI 使用的 MCP 服务
+
+**任务**:
+- [ ] 14.8.1 安装 laravel/mcp 包
+- [ ] 14.8.2 配置 MCP 服务
+- [ ] 14.8.3 为项目生成 MCP 定义
+- [ ] 14.8.4 创建 MCP 使用文档
+
+**预期完成**: 2-3 个会话
+
+---
+
+### 14.9 组件预览路由和页面 - [ ] 未开始
+
+**目标**: 为项目创建组件预览路由及页面，可预览所有组件
+
+**任务**:
+- [ ] 14.9.1 创建预览路由
+- [ ] 14.9.2 创建预览页面布局
+- [ ] 14.9.3 为每个组件创建预览页面
+- [ ] 14.9.4 添加组件搜索和过滤功能
+- [ ] 14.9.5 添加代码示例展示
+
+**预期完成**: 3-4 个会话
+
+---
+
+### 14.10 创建 preview 目录和安装命令 - [ ] 未开始
+
+**目标**: 创建 preview 目录，并添加到 git 忽略中，提供命令快速安装 Laravel 预览服务
+
+**任务**:
+- [ ] 14.10.1 创建 preview 目录结构
+- [ ] 14.10.2 添加 preview 到 .gitignore
+- [ ] 14.10.3 创建安装脚本
+- [ ] 14.10.4 创建启动脚本
+- [ ] 14.10.5 创建使用文档
+
+**预期完成**: 1-2 个会话
+
+---
+
+## 工作优先级
+
+**高优先级** (本会话完成):
+1. 14.1 快速开始文档完善
+2. 14.6 去除 Chakra UI 描述
+
+**中优先级** (1-2 个会话):
+1. 14.2 合并同类组件文档
+2. 14.5 重构 components/README.md
+3. 14.7 重新设计项目主 README.md
+
+**低优先级** (2-3 个会话):
+1. 14.3 CSS 样式统一检查
+2. 14.4 Livewire 组件封装
+3. 14.8 引入 laravel/mcp 和 MCP 服务
+4. 14.9 组件预览路由和页面
+5. 14.10 创建 preview 目录和安装命令
