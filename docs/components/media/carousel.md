@@ -1,6 +1,6 @@
 # Carousel
 
-Image and content carousel component with automatic sliding, navigation controls, and indicators. Carousel provides a flexible way to display image and content carousels. Requires Flowbite JS.
+Image and content carousel component with automatic sliding, navigation controls, and indicators. Carousel provides a flexible way to display image and content carousels. Requires Flowbite JS. Perfect for image galleries, product showcases, and content sliders.
 
 ## Components
 
@@ -310,9 +310,11 @@ The Carousel component:
 - Uses semantic HTML button elements for controls
 - Includes proper ARIA labels for navigation
 - Provides screen reader text for controls
-- Supports keyboard navigation (when Flowbite JS is loaded)
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
 - Uses proper color contrast ratios
 - Shows visual focus indicators
+- Announces carousel state to screen readers
+- Supports proper ARIA attributes for carousel navigation
 
 ## Important Notes
 
