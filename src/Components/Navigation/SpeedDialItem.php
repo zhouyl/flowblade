@@ -40,7 +40,11 @@ class SpeedDialItem extends Component
     public function classes(): string
     {
         $classes = [
-            'flex items-center justify-center text-white bg-blue-700 rounded-full w-12 h-12 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800',
+            'flex items-center justify-center text-white bg-blue-700',
+            ComponentHelper::getRoundedClass('full'),
+            'w-12 h-12 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700',
+            ComponentHelper::getFocusClasses('button'),
+            'dark:focus:ring-blue-800',
         ];
 
         // Style props

@@ -66,7 +66,9 @@ class Progress extends Component
     public function classes(): string
     {
         $classes = [
-            'w-full bg-gray-200 rounded-full dark:bg-gray-700',
+            'w-full bg-gray-200',
+            ComponentHelper::getRoundedClass('full'),
+            'dark:bg-gray-700',
             match ($this->size) {
                 'xs' => 'h-1',
                 'sm' => 'h-2',

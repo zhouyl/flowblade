@@ -44,7 +44,10 @@ class Menu extends Component
     public function classes(): string
     {
         $classes = [
-            'absolute z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600',
+            'absolute z-10 hidden bg-white divide-y divide-gray-100',
+            ComponentHelper::getRoundedClass('lg'),
+            ComponentHelper::getShadowClass('md'),
+            'dark:bg-gray-700 dark:divide-gray-600',
         ];
 
         // Style props

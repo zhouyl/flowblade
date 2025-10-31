@@ -46,7 +46,8 @@ class Alert extends Component
     public function classes(): string
     {
         $classes = [
-            'rounded-lg border',
+            ComponentHelper::getRoundedClass('lg'),
+            'border',
         ];
 
         // Style props

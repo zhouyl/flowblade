@@ -50,7 +50,10 @@ class Popover extends Component
     public function classes(): string
     {
         $classes = [
-            'absolute z-10 invisible inline-block w-64 text-sm font-light text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800',
+            'absolute z-10 invisible inline-block w-64 text-sm font-light text-gray-500 bg-white border border-gray-200',
+            ComponentHelper::getRoundedClass('lg'),
+            ComponentHelper::getShadowClass('sm'),
+            'dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800',
         ];
 
         // Style props

@@ -104,7 +104,7 @@ class Image extends Component
 
         // Shadow
         if ($this->shadow) {
-            $classes[] = 'shadow-md';
+            $classes[] = ComponentHelper::getShadowClass('md');
         }
 
         // Style props

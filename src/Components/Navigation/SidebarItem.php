@@ -42,7 +42,8 @@ class SidebarItem extends Component
     public function classes(): string
     {
         $classes = [
-            'flex items-center p-2 text-base font-normal rounded-lg',
+            'flex items-center p-2 text-base font-normal',
+            ComponentHelper::getRoundedClass('lg'),
         ];
 
         // Active state

@@ -46,7 +46,9 @@ class Tooltip extends Component
     public function classes(): string
     {
         $classes = [
-            'absolute z-10 inline-block px-3 py-2 text-sm font-medium rounded-lg shadow-sm',
+            'absolute z-10 inline-block px-3 py-2 text-sm font-medium',
+            ComponentHelper::getRoundedClass('lg'),
+            ComponentHelper::getShadowClass('sm'),
         ];
 
         // Style props

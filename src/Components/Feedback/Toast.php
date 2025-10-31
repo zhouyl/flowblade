@@ -64,7 +64,11 @@ class Toast extends Component
     public function classes(): string
     {
         $classes = [
-            'flex items-start gap-3 p-4 rounded-lg border shadow-lg bg-white dark:bg-gray-800 dark:border-gray-700',
+            'flex items-start gap-3 p-4',
+            ComponentHelper::getRoundedClass('lg'),
+            'border',
+            ComponentHelper::getShadowClass('lg'),
+            'bg-white dark:bg-gray-800 dark:border-gray-700',
         ];
 
         // Style props

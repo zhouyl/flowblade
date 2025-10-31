@@ -42,7 +42,9 @@ class Collapsible extends Component
     public function classes(): string
     {
         $classes = [
-            'border border-gray-200 rounded-lg dark:border-gray-700',
+            'border border-gray-200',
+            ComponentHelper::getRoundedClass('lg'),
+            'dark:border-gray-700',
             $this->disabled ? 'opacity-50 cursor-not-allowed' : '',
         ];
 

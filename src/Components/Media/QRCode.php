@@ -57,7 +57,7 @@ class QRCode extends Component
             'justify-center',
             'gap-4',
             $sizeClass,
-            $this->rounded ? 'rounded-lg' : '',
+            $this->rounded ? ComponentHelper::getRoundedClass('lg') : '',
             $this->border ? 'border border-gray-200 dark:border-gray-700' : '',
             'bg-white dark:bg-gray-900',
             'p-4',

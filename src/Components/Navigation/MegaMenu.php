@@ -45,7 +45,10 @@ class MegaMenu extends Component
     public function classes(): string
     {
         $classes = [
-            'absolute top-full left-0 z-50 hidden bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700',
+            'absolute top-full left-0 z-50 hidden bg-white border border-gray-200',
+            ComponentHelper::getRoundedClass('lg'),
+            ComponentHelper::getShadowClass('lg'),
+            'dark:bg-gray-800 dark:border-gray-700',
             match ($this->width) {
                 'sm' => 'w-64',
                 'md' => 'w-96',

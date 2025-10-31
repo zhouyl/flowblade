@@ -46,7 +46,7 @@ class CodeBlock extends Component
             'p-4',
             'bg-gray-900',
             'text-gray-100',
-            'rounded-lg',
+            ComponentHelper::getRoundedClass('lg'),
             'overflow-x-auto',
         ];
 

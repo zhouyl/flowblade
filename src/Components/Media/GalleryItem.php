@@ -40,7 +40,7 @@ class GalleryItem extends Component
     {
         $classes = [
             'overflow-hidden',
-            'rounded-lg',
+            ComponentHelper::getRoundedClass('lg'),
             'transition-transform',
             'duration-300',
             'hover:scale-105',

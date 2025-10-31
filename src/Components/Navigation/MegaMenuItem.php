@@ -42,7 +42,9 @@ class MegaMenuItem extends Component
     public function classes(): string
     {
         $classes = [
-            'flex items-start p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700',
+            'flex items-start p-2',
+            ComponentHelper::getRoundedClass('lg'),
+            'hover:bg-gray-100 dark:hover:bg-gray-700',
         ];
 
         // Style props
