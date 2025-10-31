@@ -149,4 +149,6 @@ The Strong component:
 - Maintains text hierarchy
 - Works with all assistive technologies
 - Distinguishes from `<em>` for proper semantic meaning
+- Announces strong emphasis to screen readers
+- Supports proper ARIA attributes for strong text
 
