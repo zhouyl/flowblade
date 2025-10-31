@@ -1,6 +1,12 @@
-# Timeline
+# Timeline Components
 
-Timeline component for displaying chronological events in a vertical layout. Timeline provides a flexible way to display events with support for various sizes and colors. Perfect for event timelines, process flows, and chronological displays.
+Timeline component family for displaying chronological events in a vertical layout. Timeline provides a flexible way to display events with support for various sizes and colors. Perfect for event timelines, process flows, and chronological displays.
+
+## Overview
+
+The Timeline component system consists of:
+- **Timeline** - Container component for timeline items
+- **TimelineItem** - Individual event item within a timeline
 
 ## Basic Usage
 

@@ -1,6 +1,12 @@
-# Accordion
+# Accordion Components
 
-Accordion component for organizing collapsible content sections in a vertical stack. Accordion provides a flexible way to display collapsible content. Perfect for FAQs, documentation, and content organization.
+Accordion component family for organizing collapsible content sections in a vertical stack. Accordion provides a flexible way to display collapsible content. Perfect for FAQs, documentation, and content organization.
+
+## Overview
+
+The Accordion component system consists of:
+- **Accordion** - Container component for accordion items
+- **AccordionItem** - Individual collapsible item within an accordion
 
 ## Basic Usage
 

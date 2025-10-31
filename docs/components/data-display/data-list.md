@@ -1,6 +1,12 @@
-# DataList
+# DataList Components
 
-Data list component for displaying key-value pairs in a structured format. DataList provides a flexible way to display data with support for various orientations and layouts. Perfect for displaying structured data, metadata, and information panels.
+Data list component family for displaying key-value pairs in a structured format. DataList provides a flexible way to display data with support for various orientations and layouts. Perfect for displaying structured data, metadata, and information panels.
+
+## Overview
+
+The DataList component system consists of:
+- **DataList** - Container component for data list items
+- **DataListItem** - Individual key-value pair item within a data list
 
 ## Basic Usage
 

@@ -1,6 +1,12 @@
-# SpeedDial Component
+# SpeedDial Components
 
-Floating action button group with expand/collapse animation for quick access to common actions. SpeedDial provides a flexible way to create floating action button groups. Perfect for quick actions, floating menus, and action buttons.
+Floating action button group component family with expand/collapse animation for quick access to common actions. SpeedDial provides a flexible way to create floating action button groups. Perfect for quick actions, floating menus, and action buttons.
+
+## Overview
+
+The SpeedDial component system consists of:
+- **SpeedDial** - Container component for floating action button group
+- **SpeedDialItem** - Individual action button item
 
 ## Basic Usage
 

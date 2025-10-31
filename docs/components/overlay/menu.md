@@ -1,6 +1,14 @@
-# Menu
+# Menu Components
 
-Dropdown menu component for displaying a list of menu items when clicking or hovering over a trigger element. Menu provides a flexible way to create dropdown menus. Perfect for navigation, actions, and context menus.
+Dropdown menu component family for displaying a list of menu items when clicking or hovering over a trigger element. Menu provides a flexible way to create dropdown menus. Perfect for navigation, actions, and context menus.
+
+## Overview
+
+The Menu component system consists of:
+- **Menu** - Container component for dropdown menu
+- **MenuItem** - Individual menu item
+- **MenuHeader** - Header section within menu
+- **MenuDivider** - Divider line between menu items
 
 ## Requirements
 

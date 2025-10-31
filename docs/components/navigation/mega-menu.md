@@ -1,6 +1,13 @@
-# MegaMenu Component
+# MegaMenu Components
 
-Large dropdown menu with multi-column layout, icons, descriptions, and grouping for complex navigation. MegaMenu provides a flexible way to create complex dropdown menus. Perfect for complex navigation, product menus, and multi-column dropdowns.
+Large dropdown menu component family with multi-column layout, icons, descriptions, and grouping for complex navigation. MegaMenu provides a flexible way to create complex dropdown menus. Perfect for complex navigation, product menus, and multi-column dropdowns.
+
+## Overview
+
+The MegaMenu component system consists of:
+- **MegaMenu** - Container component for mega menu
+- **MegaMenuColumn** - Column section within mega menu
+- **MegaMenuItem** - Individual menu item within a column
 
 ## Basic Usage
 

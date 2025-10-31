@@ -1,6 +1,12 @@
-# TreeView
+# TreeView Components
 
-Tree view component for displaying hierarchical data in an expandable/collapsible structure. TreeView provides a flexible way to display hierarchical data with support for various sizes. Perfect for file trees, navigation hierarchies, and nested data display.
+Tree view component family for displaying hierarchical data in an expandable/collapsible structure. TreeView provides a flexible way to display hierarchical data with support for various sizes. Perfect for file trees, navigation hierarchies, and nested data display.
+
+## Overview
+
+The TreeView component system consists of:
+- **TreeView** - Container component for tree view items
+- **TreeViewItem** - Individual item within a tree view (can be nested)
 
 ## Basic Usage
 

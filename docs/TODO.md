@@ -9,10 +9,10 @@
 
 ## 当前进度
 
-**总体完成度**: Phase 14 进行中 (30%)
+**总体完成度**: Phase 14 进行中 (40%)
 **当前阶段**: 项目优化和完善
-**已完成**: 14.1, 14.6, 14.2.1, 14.2.2
-**进行中**: 14.2
+**已完成**: 14.1, 14.6, 14.2
+**进行中**: 无
 **待开始**: 14.3, 14.4, 14.5, 14.7, 14.8, 14.9, 14.10
 
 ## Phase 14: 项目优化和完善 - 进行中
@@ -30,29 +30,39 @@
 
 ---
 
-### 14.2 合并同类组件文档 - [ ] 进行中
+### 14.2 合并同类组件文档 - [x] 已完成
 
 **目标**: 将相关的组件文档合并到一个文件中
 
 **任务**:
 - [x] 14.2.1 合并 Card 相关文档 (card, card-body, card-footer, card-header)
 - [x] 14.2.2 合并 List 相关文档 (list-group, list-group-item)
-- [ ] 14.2.3 合并 Input 相关文档 (input, input-addon, input-element, input-group)
-- [ ] 14.2.4 合并 Stack 相关文档 (stack, hstack, vstack)
-- [ ] 14.2.5 合并其他相关组件文档
+- [x] 14.2.3 合并 Input 相关文档 (input, input-addon, input-element, input-group)
+- [x] 14.2.4 合并 Stack 相关文档 (stack, hstack, vstack)
+- [x] 14.2.5 合并其他相关组件文档
 - [ ] 14.2.6 更新 components/README.md 中的索引
 
-**预期完成**: 2-3 个会话
+**完成时间**: 本会话
 
 **已完成的合并**:
 - Card 组件系列 (card, card-header, card-body, card-footer) → card.md
 - List Group 组件系列 (list-group, list-group-item) → list-group.md
+- Input 组件系列 (input, input-addon, input-element, input-group) → input-group.md
+- Stack 组件系列 (stack, hstack, vstack) → stack.md
+- Accordion 组件系列 (accordion, accordion-item) → accordion.md
+- DataList 组件系列 (data-list, data-list-item) → data-list.md
+- Timeline 组件系列 (timeline, timeline-item) → timeline.md
+- TreeView 组件系列 (tree-view, tree-view-item) → tree-view.md
+- Menu 组件系列 (menu, menu-item, menu-header, menu-divider) → menu.md
+- Tabs 组件系列 (tabs, tabs-list, tabs-trigger, tabs-content) → tabs.md
+- SpeedDial 组件系列 (speed-dial, speed-dial-item) → speed-dial.md
+- MegaMenu 组件系列 (mega-menu, mega-menu-item, mega-menu-column) → mega-menu.md
 
 ---
 
 ### 14.3 CSS 样式统一检查 - [ ] 未开始
 
-**目标**: 检查所有组件的 CSS 是否统一，包括大小、颜色、效果、事件风格
+**目标**: 检查所有组件的 CSS 是否统一，包括大小、颜色、效果、事件风格，并且优先使用了 flowbite
 
 **任务**:
 - [ ] 14.3.1 检查所有组件的大小定义是否统一
@@ -147,7 +157,7 @@
 
 ### 14.9 组件预览路由和页面 - [ ] 未开始
 
-**目标**: 为项目创建组件预览路由及页面，可预览所有组件
+**目标**: 为项目创建组件预览路由及页面 resources，可预览所有组件
 
 **任务**:
 - [ ] 14.9.1 创建预览路由

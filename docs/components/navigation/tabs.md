@@ -1,6 +1,14 @@
-# Tabs
+# Tabs Components
 
-Tabs component for organizing content into separate views that can be easily navigated. Tabs provides a flexible way to organize content with support for various sizes and variants. Perfect for content organization, settings panels, and multi-step forms.
+Tabs component family for organizing content into separate views that can be easily navigated. Tabs provides a flexible way to organize content with support for various sizes and variants. Perfect for content organization, settings panels, and multi-step forms.
+
+## Overview
+
+The Tabs component system consists of:
+- **Tabs** - Container component for tabs
+- **TabsList** - List container for tab triggers
+- **TabsTrigger** - Individual tab trigger/button
+- **TabsContent** - Content panel for each tab
 
 ## Basic Usage
 
