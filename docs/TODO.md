@@ -93,14 +93,13 @@
   - 更新 11 个组件使用配置中的大小
   - 修复了 switch 组件文档错误
 
-**已修复的组件** (11 个):
-- 数据显示：Badge, Tag, Avatar, Card
-- 表单：Checkbox, Radio, NativeSelect, NumberInput, PasswordInput, PinInput
+**已修复的组件** (14 个):
+- 数据显示：Badge, Tag, Avatar, Card, Indicator, Timeline
+- 表单：Checkbox, Radio, NativeSelect, NumberInput, PasswordInput, PinInput, Textarea
 - 按钮：CloseButton
 
-**还需修复的组件** (10+ 个):
-- 数据显示：Timeline, Table, TreeView, Indicator
-- 表单：Textarea
+**还需修复的组件** (7 个):
+- 数据显示：Table, TreeView
 - 排版：Code, Kbd
 - 媒体：QRCode
 - 布局：Jumbotron

@@ -269,6 +269,13 @@ return [
             'lg' => 'w-3.5 h-3.5',
             'xl' => 'w-4 h-4',
         ],
+        'timeline' => [
+            'xs' => 'text-xs',
+            'sm' => 'text-sm',
+            'md' => 'text-base',
+            'lg' => 'text-lg',
+            'xl' => 'text-xl',
+        ],
     ],
 
     /*

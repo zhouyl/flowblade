@@ -47,17 +47,10 @@ class Timeline extends Component
             'relative',
         ];
 
-        // Size
-        $sizeClasses = [
-            'xs' => 'text-xs',
-            'sm' => 'text-sm',
-            'md' => 'text-base',
-            'lg' => 'text-lg',
-            'xl' => 'text-xl',
-        ];
-
-        if (isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('timeline', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Style props
