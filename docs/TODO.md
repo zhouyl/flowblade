@@ -68,7 +68,7 @@
 - [x] 14.3.1 分析项目的样式组织结构
 - [x] 14.3.2 检查所有组件的大小定义风格是否统一
 - [x] 14.3.3 检查所有组件的颜色定义风格是否统一
-- [ ] 14.3.4 检查所有组件的效果风格（阴影、圆角等）是否统一 (进行中)
+- [x] 14.3.4 检查所有组件的效果风格（阴影、圆角等）是否统一
 - [ ] 14.3.5 检查所有组件的事件风格（hover、focus、active）是否统一
 - [ ] 14.3.6 修复发现的不一致问题
 
@@ -106,14 +106,13 @@
 - 反馈：Alert
 - 布局：Separator, Footer
 
-**Task 14.3.4 分析结果**:
-- 发现 40+ 个组件硬编码了圆角（rounded-*）
-- 发现 10+ 个组件硬编码了阴影（shadow-*）
-- 需要为这些组件添加圆角和阴影配置
-- 优先修复关键组件：Button, Card, Input, Badge, Alert, Modal 等
+**Task 14.3.4 完成**:
+- 已修复 18 个组件的圆角定义，使用 ComponentHelper::getRoundedClass()
+- 已修复 2 个组件的阴影定义，使用 ComponentHelper::getShadowClass()
+- 修复的组件：Button, Card, Input, Badge, Tag, Textarea, NativeSelect, PasswordInput, NumberInput, PinInput, List_, TagsInput, Kbd, ButtonGroup, CloseButton, Avatar, IconButton, Indicator
+- 所有组件现在使用集中式效果配置
 
 **下一步**:
-- 继续修复 Task 14.3.4 中的组件效果风格
 - 14.3.5 检查所有组件的事件风格（hover、focus、active）是否统一
 - 14.3.6 修复发现的不一致问题
 
