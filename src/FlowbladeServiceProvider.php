@@ -38,6 +38,9 @@ class FlowbladeServiceProvider extends ServiceProvider
 
         // Register components
         $this->registerComponents();
+
+        // Register Livewire components
+        $this->registerLivewireComponents();
     }
 
     /**
@@ -222,5 +225,22 @@ class FlowbladeServiceProvider extends ServiceProvider
             'carousel-item' => Components\Media\CarouselItem::class,
             'video' => Components\Media\Video::class,
         ];
+    }
+
+    /**
+     * Register Livewire components.
+     */
+    protected function registerLivewireComponents(): void
+    {
+        // Only register if Livewire is installed
+        if (!class_exists(\Livewire\Livewire::class)) {
+            return;
+        }
+
+        \Livewire\Livewire::component('table', Livewire\Table::class);
+        \Livewire\Livewire::component('select', Livewire\Select::class);
+        \Livewire\Livewire::component('datepicker', Livewire\Datepicker::class);
+        \Livewire\Livewire::component('tags-input', Livewire\TagsInput::class);
+        \Livewire\Livewire::component('search-input', Livewire\SearchInput::class);
     }
 }
