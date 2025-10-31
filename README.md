@@ -81,19 +81,176 @@ npm run dev
 </x-box>
 ```
 
-## 🎨 Available Props
+## 🎨 Style Props System
 
-### Colors
+Flowblade includes a powerful **Style Props** system inspired by Chakra UI, allowing you to style components using intuitive props instead of Tailwind classes:
 
-`primary` `secondary` `success` `warning` `danger` `info` `gray`
+### Spacing Props
 
-### Sizes
+```blade
+{{-- Padding --}}
+<x-box p="6">All sides</x-box>
+<x-box px="4" py="8">Horizontal and vertical</x-box>
+<x-box pt="2" pr="4" pb="6" pl="8">Individual sides</x-box>
+
+{{-- Margin --}}
+<x-box m="4">All sides</x-box>
+<x-box mx="auto">Horizontal centering</x-box>
+<x-box my="6">Vertical margin</x-box>
+```
+
+### Sizing Props
+
+```blade
+{{-- Width and Height --}}
+<x-box w="full" h="64">Full width, 16rem height</x-box>
+<x-box w="1/2" h="auto">Half width, auto height</x-box>
+<x-box minW="xs" maxW="2xl">Min/max width constraints</x-box>
+<x-box minH="screen" maxH="96">Min/max height constraints</x-box>
+```
+
+### Color Props
+
+```blade
+{{-- Background and Text Colors --}}
+<x-box bg="primary" color="white">Primary background</x-box>
+<x-box bg="blue.500" color="gray.700">Using color scales</x-box>
+<x-box borderColor="red.300">Border color</x-box>
+```
+
+### Layout Props
+
+```blade
+{{-- Display and Position --}}
+<x-box display="flex" position="relative">Flex layout</x-box>
+<x-box display="grid" zIndex="10">Grid layout</x-box>
+<x-box overflow="hidden" overflowY="auto">Overflow control</x-box>
+```
+
+### Flexbox Props
+
+```blade
+{{-- Flex Container --}}
+<x-box flex="1" flexDirection="column" alignItems="center" justifyContent="between" gap="4">
+    Flex layout with gap
+</x-box>
+```
+
+### Typography Props
+
+```blade
+{{-- Text Styling --}}
+<x-box fontSize="lg" fontWeight="bold" textAlign="center" lineHeight="tight">
+    Styled text
+</x-box>
+```
+
+### Border and Radius Props
+
+```blade
+{{-- Borders and Rounded Corners --}}
+<x-box border="2" borderColor="gray.300" rounded="lg">Bordered box</x-box>
+<x-box rounded="full">Fully rounded</x-box>
+<x-box borderRadius="xl">Large radius</x-box>
+```
+
+### Shadow and Effects Props
+
+```blade
+{{-- Shadows and Effects --}}
+<x-box shadow="md" opacity="75">Box with shadow</x-box>
+<x-box shadow="lg" cursor="pointer" transition="all">Interactive box</x-box>
+```
+
+### Available Color Scales
+
+`primary` `secondary` `success` `warning` `danger` `info` `gray` `blue` `red` `green` `yellow` `purple` `pink` `indigo` `cyan` `teal`
+
+Each color supports scales: `50`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`
+
+### Available Sizes
 
 `2xs` `xs` `sm` `md` `lg` `xl` `2xl` `3xl` `4xl`
 
 ### Button Variants
 
 `solid` `outline` `ghost` `link` `subtle`
+
+## 💡 Advanced Examples
+
+### Form with Validation
+
+```blade
+<x-box p="8" shadow="lg" rounded="xl" maxW="md" mx="auto">
+    <x-vstack spacing="md">
+        <x-heading size="lg">Contact Form</x-heading>
+
+        <div>
+            <label class="block text-sm font-medium mb-2">Name</label>
+            <x-input placeholder="Your name" />
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-2">Email</label>
+            <x-input type="email" placeholder="your@email.com" />
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-2">Message</label>
+            <x-textarea placeholder="Your message" rows="4" />
+        </div>
+
+        <x-hstack spacing="md" justify="end">
+            <x-button variant="outline">Cancel</x-button>
+            <x-button color="primary">Send</x-button>
+        </x-hstack>
+    </x-vstack>
+</x-box>
+```
+
+### Dashboard Card Grid
+
+```blade
+<x-grid columns="4" gap="6">
+    @foreach($stats as $stat)
+        <x-card shadow="md" rounded="lg">
+            <x-card-body>
+                <x-vstack spacing="md">
+                    <x-hstack justify="between" align="start">
+                        <x-vstack spacing="xs">
+                            <x-text color="gray.600" fontSize="sm">{{ $stat['label'] }}</x-text>
+                            <x-heading size="2xl">{{ $stat['value'] }}</x-heading>
+                        </x-vstack>
+                        <x-icon :name="$stat['icon']" size="32px" color="primary" />
+                    </x-hstack>
+                    <x-text color="green.600" fontSize="sm">{{ $stat['change'] }}</x-text>
+                </x-vstack>
+            </x-card-body>
+        </x-card>
+    @endforeach
+</x-grid>
+```
+
+### Navigation with Dropdown
+
+```blade
+<x-navbar bg="white" shadow="md">
+    <x-navbar-brand href="/">
+        <x-heading size="lg">MyApp</x-heading>
+    </x-navbar-brand>
+
+    <x-navbar-collapse>
+        <x-navbar-link href="/features">Features</x-navbar-link>
+        <x-navbar-link href="/pricing">Pricing</x-navbar-link>
+        <x-navbar-link href="/docs">Documentation</x-navbar-link>
+    </x-navbar-collapse>
+
+    <x-hstack spacing="md">
+        <x-button variant="ghost">Sign In</x-button>
+        <x-button color="primary">Get Started</x-button>
+    </x-hstack>
+</x-navbar>
+```
 
 ## ⚡ Livewire Integration
 
@@ -136,6 +293,13 @@ Edit `config/flowblade.php` to customize:
 ## 📝 Available Components
 
 ### Current Progress: 138/60+ (230% of Initial Goal! 🎉)
+
+All components include:
+- ✅ **Style Props Support** - Full Chakra UI-inspired styling system
+- ✅ **Complete Documentation** - Detailed usage examples and API reference
+- ✅ **Accessibility Features** - WCAG 2.1 compliant with keyboard navigation
+- ✅ **Responsive Design** - Mobile-first approach with Tailwind CSS
+- ✅ **Flowbite Integration** - Built on Flowbite design system
 
 #### Layout Components (19) ✅
 - ✅ Box, Container, Center, AbsoluteCenter
@@ -241,9 +405,74 @@ Edit `config/flowblade.php` to customize:
 
 See [docs/TODO.md](docs/TODO.md) for the complete development plan.
 
-## 🤝 Issues
+## 🚀 Getting Help
 
-If you find any issues, please open an issue on GitHub.
+### Documentation
+
+- [Installation Guide](docs/installation.md) - Step-by-step setup instructions
+- [Components Documentation](docs/components/README.md) - Complete component reference
+- [Development Plan](docs/TODO.md) - Project roadmap and progress
+
+### Resources
+
+- [Flowbite Documentation](https://flowbite.com/) - Design system reference
+- [Tailwind CSS Documentation](https://tailwindcss.com/) - Utility-first CSS framework
+- [Chakra UI Documentation](https://chakra-ui.com/) - Inspiration for API design
+- [Iconify Icons](https://icon-sets.iconify.design/) - Browse available icons
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Report Issues** - Found a bug? [Open an issue](https://github.com/zhouyl/flowblade/issues)
+2. **Suggest Features** - Have an idea? [Create a feature request](https://github.com/zhouyl/flowblade/issues)
+3. **Submit Pull Requests** - Want to contribute code? Fork and submit a PR
+4. **Improve Documentation** - Help us improve docs and examples
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/zhouyl/flowblade.git
+cd flowblade
+
+# Install dependencies
+composer install
+npm install
+
+# Run tests
+composer test
+
+# Build documentation
+npm run build
+```
+
+## 📋 Changelog
+
+### Version 1.0.0 (Latest)
+
+**Features:**
+- ✅ 138 components with full Style Props support
+- ✅ Complete documentation for all components
+- ✅ Accessibility features (WCAG 2.1 compliant)
+- ✅ Livewire and Alpine.js integration
+- ✅ Flowbite design system integration
+- ✅ 100,000+ icons via Iconify
+
+**Improvements:**
+- Enhanced component documentation with accessibility guidelines
+- Added comprehensive Style Props system
+- Improved responsive design support
+- Better error handling and validation
+
+**Components Added:**
+- Layout: Box, Container, Center, Flex, Grid, Stack, etc.
+- Forms: Input, Textarea, Select, Checkbox, Radio, etc.
+- Data Display: Card, Table, Avatar, Badge, Icon, etc.
+- Navigation: Navbar, Sidebar, Tabs, Breadcrumb, etc.
+- Overlay: Modal, Drawer, Popover, Tooltip, etc.
+- Feedback: Alert, Toast, Progress, Spinner, etc.
+- Media: Image, Gallery, Carousel, Video, QRCode, etc.
 
 ## 📄 License
 
@@ -253,4 +482,14 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 - **GitHub**: https://github.com/zhouyl/flowblade
 - **Packagist**: https://packagist.org/packages/mellivora/flowblade
+- **Issues**: https://github.com/zhouyl/flowblade/issues
+- **Discussions**: https://github.com/zhouyl/flowblade/discussions
+
+## 💝 Support
+
+If you find Flowblade helpful, please consider:
+- ⭐ Starring the repository
+- 🐛 Reporting bugs and suggesting features
+- 📝 Contributing to documentation
+- 🤝 Sharing with the community
 
