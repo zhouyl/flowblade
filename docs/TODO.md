@@ -9,10 +9,10 @@
 
 ## 当前进度
 
-**总体完成度**: Phase 14 进行中 (82%)
+**总体完成度**: Phase 14 进行中 (84%)
 **当前阶段**: 项目优化和完善
 **已完成**: 14.1, 14.6, 14.2, 14.7, 14.11, 14.5, 14.13
-**进行中**: 14.3 (CSS 样式统一检查 - 大小定义、颜色定义、效果定义已完成)
+**进行中**: 14.3 (CSS 样式统一检查 - 大小定义、颜色定义、效果定义、事件风格已完成)
 **待开始**: 14.4, 14.8, 14.9, 14.10, 14.12, 14.15, 14.16
 
 ## Phase 14: 项目优化和完善 - 进行中
@@ -69,7 +69,7 @@
 - [x] 14.3.2 检查所有组件的大小定义风格是否统一
 - [x] 14.3.3 检查所有组件的颜色定义风格是否统一
 - [x] 14.3.4 检查所有组件的效果风格（阴影、圆角等）是否统一
-- [ ] 14.3.5 检查所有组件的事件风格（hover、focus、active）是否统一
+- [x] 14.3.5 检查所有组件的事件风格（hover、focus、active）是否统一
 - [ ] 14.3.6 修复发现的不一致问题
 
 **预期完成**: 3-5 个会话
@@ -112,8 +112,23 @@
 - 修复的组件：Button, Card, Input, Badge, Tag, Textarea, NativeSelect, PasswordInput, NumberInput, PinInput, List_, TagsInput, Kbd, ButtonGroup, CloseButton, Avatar, IconButton, Indicator
 - 所有组件现在使用集中式效果配置
 
+**Task 14.3.5 完成**:
+- 在 config/flowblade.php 中添加 'events' 配置部分
+  - focus: outline, ring, ring_offset, ring_color
+  - hover: opacity, bg_opacity
+  - active: opacity, scale
+- 创建 ComponentHelper 方法：
+  - getFocusClasses(type): 获取 focus 事件样式
+  - getHoverClasses(type): 获取 hover 事件样式
+  - getActiveClasses(type): 获取 active 事件样式
+- 更新 8 个组件使用统一的事件风格：
+  - Input, Textarea, NativeSelect (input focus 风格)
+  - Checkbox, Radio (input focus 风格)
+  - CloseButton, IconButton (input focus 风格)
+  - Button (button focus 风格)
+- 所有组件现在使用集中式事件风格配置
+
 **下一步**:
-- 14.3.5 检查所有组件的事件风格（hover、focus、active）是否统一
 - 14.3.6 修复发现的不一致问题
 
 ---
