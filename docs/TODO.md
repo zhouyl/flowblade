@@ -211,19 +211,78 @@
 
 ---
 
+### 14.11 完成同类组件文档合并 - [ ] 未开始
+
+**目标**: 完整分析并彻底完成所有同类组件的文档合并工作
+
+**任务**:
+- [ ] 14.11.1 分析所有未合并的同类组件
+- [ ] 14.11.2 合并 Navbar 相关文档 (navbar, navbar-brand, navbar-toggle, navbar-collapse, navbar-link)
+- [ ] 14.11.3 合并 Sidebar 相关文档 (sidebar, sidebar-item, sidebar-group, sidebar-toggle)
+- [ ] 14.11.4 合并 Breadcrumb 相关文档 (breadcrumb, breadcrumb-item)
+- [ ] 14.11.5 合并 Steps 相关文档 (steps, step-item)
+- [ ] 14.11.6 合并 Gallery 相关文档 (gallery, gallery-item)
+- [ ] 14.11.7 合并 Carousel 相关文档 (carousel, carousel-item)
+- [ ] 14.11.8 合并 Button 相关文档 (button, icon-button, close-button, button-group)
+- [ ] 14.11.9 合并 Datepicker 相关文档 (datepicker, date-range-picker, inline-datepicker)
+- [ ] 14.11.10 合并 Floating 相关文档 (floating-label, floating-textarea, floating-select)
+- [ ] 14.11.11 合并 Switch 相关文档 (switch, switch-input)
+- [ ] 14.11.12 更新 components/README.md 中的索引
+
+**预期完成**: 3-4 个会话
+
+**说明**: 这个任务是对 14.2 的补充和完善，确保所有同类组件都被合并到一个文件中
+
+**已合并的组件** (来自 14.2):
+- Card, List Group, Input, Stack, Accordion, DataList, Timeline, TreeView, Menu, Tabs, SpeedDial, MegaMenu
+
+**待合并的组件**:
+- Navbar 系列 (5 个文件)
+- Sidebar 系列 (4 个文件)
+- Breadcrumb 系列 (2 个文件)
+- Steps 系列 (2 个文件)
+- Gallery 系列 (2 个文件)
+- Carousel 系列 (2 个文件)
+- Button 系列 (4 个文件)
+- Datepicker 系列 (3 个文件)
+- Floating 系列 (3 个文件)
+- Switch 系列 (2 个文件)
+
+---
+
+### 14.12 PhoneInput 国家支持扩展 - [ ] 未开始
+
+**目标**: 为 PhoneInput 添加更多的国家支持，并将国家配置添加到 config 配置中
+
+**任务**:
+- [ ] 14.12.1 分析当前 PhoneInput 的国家支持情况
+- [ ] 14.12.2 扩展国家列表（至少 100+ 个国家）
+- [ ] 14.12.3 在 config/flowblade.php 中添加国家配置
+- [ ] 14.12.4 更新 PhoneInput 组件以使用配置中的国家列表
+- [ ] 14.12.5 更新 PhoneInput 文档
+- [ ] 14.12.6 添加国家搜索功能
+
+**预期完成**: 2-3 个会话
+
+**说明**: 国家列表应包括国家代码、国家名称、电话区号、国旗 emoji 等信息
+
+---
+
 ## 工作优先级
 
-**高优先级** (本会话完成):
-1. 14.1 快速开始文档完善
-2. 14.6 去除 Chakra UI 描述
+**高优先级** (已完成):
+1. 14.1 快速开始文档完善 ✅
+2. 14.6 去除 Chakra UI 描述 ✅
+3. 14.2 合并同类组件文档 ✅
+4. 14.7 重新设计项目主 README.md ✅
 
 **中优先级** (1-2 个会话):
-1. 14.2 合并同类组件文档
+1. 14.11 完成同类组件文档合并
 2. 14.5 重构 components/README.md
-3. 14.7 重新设计项目主 README.md
+3. 14.3 CSS 样式统一检查
 
 **低优先级** (2-3 个会话):
-1. 14.3 CSS 样式统一检查
+1. 14.12 PhoneInput 国家支持扩展
 2. 14.4 Livewire 组件封装
 3. 14.8 引入 laravel/mcp 和 MCP 服务
 4. 14.9 组件预览路由和页面

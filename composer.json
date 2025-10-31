@@ -21,6 +21,11 @@
         "illuminate/support": "^11|^12",
         "illuminate/view": "^11|^12"
     },
+    "suggest": {
+        "livewire/livewire": "^3.6 - For reactive components and real-time updates",
+        "alpinejs": "^3.0 - For lightweight interactivity (included in Flowbite)",
+        "simple-qrcode": "^4.0 - For QR code generation in QRCode component"
+    },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3",
         "orchestra/testbench": "^8|^9",
