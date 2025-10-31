@@ -1,6 +1,6 @@
 # QRCode
 
-Display QR codes with consistent styling and sizing. QRCode provides a flexible way to display QR codes. Works with simple-qrcode package or custom QR code generation.
+Display QR codes with consistent styling and sizing. QRCode provides a flexible way to display QR codes. Works with simple-qrcode package or custom QR code generation. Perfect for contact information, URLs, and product tracking.
 
 ## Installation
 
@@ -357,6 +357,8 @@ The QRCode component:
 - Works with screen readers when label is provided
 - Maintains aspect ratio for proper scanning
 - Uses semantic HTML structure
+- Announces QR code content to screen readers
+- Supports proper ARIA attributes for QR codes
 
 ## Notes
 
