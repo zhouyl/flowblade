@@ -1,6 +1,6 @@
 # CodeBlock
 
-CodeBlock component for displaying multi-line code snippets with syntax highlighting. Ideal for documentation and tutorials.
+CodeBlock component for displaying multi-line code snippets with syntax highlighting. Ideal for documentation and tutorials. Perfect for code examples, documentation, and technical content.
 
 ## Basic Usage
 
@@ -104,8 +104,10 @@ This is a read-only code block
 
 The CodeBlock component:
 - Uses semantic HTML structure
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
 - Provides copy functionality
 - Maintains code formatting
+- Announces code content to screen readers
+- Supports proper ARIA attributes for code blocks
 
