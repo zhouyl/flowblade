@@ -167,4 +167,6 @@ The Blockquote component:
 - Works with screen readers
 - Provides clear visual distinction for quoted content
 - Supports proper citation with `<cite>` elements
+- Announces blockquote content to screen readers
+- Supports proper ARIA attributes for blockquote context
 
