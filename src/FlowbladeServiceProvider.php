@@ -159,7 +159,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'progress' => Components\Feedback\Progress::class,
             'progress-circle' => Components\Feedback\ProgressCircle::class,
             'status' => Components\Feedback\Status::class,
-            'empty-state' => Components\Feedback\EmptyState::class,
+            'empty' => Components\Feedback\Empty_::class,
             'toast' => Components\Feedback\Toast::class,
             'skeleton' => Components\Feedback\Skeleton::class,
             'banner' => Components\Feedback\Banner::class,
@@ -185,7 +185,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'textarea' => Components\Forms\Textarea::class,
             'checkbox' => Components\Forms\Checkbox::class,
             'radio' => Components\Forms\Radio::class,
-            'switch' => Components\Forms\SwitchInput::class,
+            'switch' => Components\Forms\Switch_::class,
             'select' => Components\Forms\Select::class,
             'native-select' => Components\Forms\NativeSelect::class,
             'pin-input' => Components\Forms\PinInput::class,
@@ -212,8 +212,8 @@ class FlowbladeServiceProvider extends ServiceProvider
             'phone-input' => Components\Forms\PhoneInput::class,
 
             // Data Display Components
-            'list-group' => Components\DataDisplay\ListGroup::class,
-            'list-group-item' => Components\DataDisplay\ListGroupItem::class,
+            'list' => Components\DataDisplay\List_::class,
+            'list-item' => Components\DataDisplay\ListItem::class,
 
             // Media Components
             'gallery' => Components\Media\Gallery::class,

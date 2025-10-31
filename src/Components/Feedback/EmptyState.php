@@ -9,12 +9,15 @@ use Flowblade\Support\ComponentHelper;
 use Flowblade\Traits\HasStyleProps;
 
 /**
- * EmptyState Component
+ * Empty_ Component
  *
  * Empty state component for displaying no-data or empty collection states.
  * Provides visual feedback with icon, title, description, and optional action buttons.
+ *
+ * Note: Class name is Empty_ because 'empty' is a reserved keyword in PHP.
+ * Registered as <x-empty> in Blade templates.
  */
-class EmptyState extends Component
+class Empty_ extends Component
 {
     use HasStyleProps;
 

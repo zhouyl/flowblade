@@ -8,15 +8,18 @@ use Flowblade\Components\Component;
 use Flowblade\Traits\HasStyleProps;
 
 /**
- * SwitchInput Component
+ * Switch_ Component
  *
  * Toggle switch for binary on/off states following Flowbite design patterns.
  * Provides an accessible alternative to checkboxes for boolean values.
  * Supports all common styling options via style props.
  *
+ * Note: Class name is Switch_ because 'switch' is a reserved keyword in PHP.
+ * Registered as <x-switch> in Blade templates.
+ *
  * @see HasStyleProps For all available style props
  */
-class SwitchInput extends Component
+class Switch_ extends Component
 {
     use HasStyleProps;
 

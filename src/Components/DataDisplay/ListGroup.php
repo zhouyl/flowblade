@@ -9,15 +9,18 @@ use Flowblade\Support\ComponentHelper;
 use Flowblade\Traits\HasStyleProps;
 
 /**
- * ListGroup Component
+ * List_ Component
  *
  * Container for displaying a series of items, buttons, or links following Flowbite patterns.
- * Contains ListGroupItem components with consistent styling.
+ * Contains ListItem components with consistent styling.
  * Supports all common styling options via style props.
+ *
+ * Note: Class name is List_ because 'list' is a reserved keyword in PHP.
+ * Registered as <x-list> in Blade templates.
  *
  * @see HasStyleProps For all available style props
  */
-class ListGroup extends Component
+class List_ extends Component
 {
     use HasStyleProps;
 

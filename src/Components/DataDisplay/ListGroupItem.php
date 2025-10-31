@@ -9,15 +9,15 @@ use Flowblade\Support\ComponentHelper;
 use Flowblade\Traits\HasStyleProps;
 
 /**
- * ListGroupItem Component
+ * ListItem Component
  *
- * Individual item within a ListGroup component.
+ * Individual item within a List_ component.
  * Can be rendered as list item, link, or button with active/disabled states.
  * Supports all common styling options via style props.
  *
  * @see HasStyleProps For all available style props
  */
-class ListGroupItem extends Component
+class ListItem extends Component
 {
     use HasStyleProps;
 
