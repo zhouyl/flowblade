@@ -1,6 +1,6 @@
 # Text
 
-Text component for displaying paragraph text. Text provides a flexible way to render text content with support for various sizes, weights, colors, and alignment options.
+Text component for displaying paragraph text. Text provides a flexible way to render text content with support for various sizes, weights, colors, and alignment options. Perfect for body text, descriptions, and content paragraphs.
 
 ## Basic Usage
 
@@ -103,4 +103,15 @@ Text supports all style props from the HasStyleProps trait. For a complete list,
     Welcome to our product, let's get started!
 </x-text>
 ```
+
+## Accessibility
+
+The Text component:
+- Uses semantic HTML paragraph elements
+- Maintains proper text hierarchy
+- Works with screen readers
+- Supports proper text contrast
+- Provides clear text formatting
+- Announces text content to screen readers
+- Supports proper ARIA attributes for text content
 
