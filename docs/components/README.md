@@ -194,6 +194,158 @@ Disclosure and collapsible components.
 - [Accordion](disclosure/accordion.md) - Accordion component with items
 - [Collapsible](disclosure/collapsible.md) - Collapsible component
 
+## Component Reference Table
+
+### Button Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Button | `<button>` | None | [button.md](buttons/button.md) |
+| IconButton | `<button>` | None | [button.md](buttons/button.md) |
+| CloseButton | `<button>` | None | [button.md](buttons/button.md) |
+| ButtonGroup | `<div>` | None | [button.md](buttons/button.md) |
+
+### Form Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Input | `<input>` | None | [input-group.md](forms/input-group.md) |
+| Textarea | `<textarea>` | None | [textarea.md](forms/textarea.md) |
+| Checkbox | `<input type="checkbox">` | None | [checkbox.md](forms/checkbox.md) |
+| Radio | `<input type="radio">` | None | [radio.md](forms/radio.md) |
+| Select | `<select>` | None | [select.md](forms/select.md) |
+| NativeSelect | `<select>` | None | [native-select.md](forms/native-select.md) |
+| Datepicker | `<input>` | Flowbite JS | [datepicker.md](forms/datepicker.md) |
+| Timepicker | `<input>` | Flowbite JS | [timepicker.md](forms/timepicker.md) |
+| FloatingLabel | `<input>` | None | [floating-label.md](forms/floating-label.md) |
+| Switch | `<input type="checkbox">` | None | [switch.md](forms/switch.md) |
+| PhoneInput | `<input>` | None | [phone-input.md](forms/phone-input.md) |
+| PinInput | `<input>` | None | [pin-input.md](forms/pin-input.md) |
+| NumberInput | `<input type="number">` | None | [number-input.md](forms/number-input.md) |
+| PasswordInput | `<input type="password">` | None | [password-input.md](forms/password-input.md) |
+| SearchInput | `<input type="search">` | None | [search-input.md](forms/search-input.md) |
+| RangeSlider | `<input type="range">` | None | [range-slider.md](forms/range-slider.md) |
+| Slider | `<input type="range">` | None | [slider.md](forms/slider.md) |
+| FileUpload | `<input type="file">` | None | [file-upload.md](forms/file-upload.md) |
+| Clipboard | `<button>` | None | [clipboard.md](forms/clipboard.md) |
+| Editable | `<div>` | Alpine.js | [editable.md](forms/editable.md) |
+| Field | `<div>` | None | [field.md](forms/field.md) |
+| Fieldset | `<fieldset>` | None | [fieldset.md](forms/fieldset.md) |
+| Form | `<form>` | None | [form.md](forms/form.md) |
+| TagsInput | `<div>` | Alpine.js | [tags-input.md](forms/tags-input.md) |
+
+### Layout Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Box | `<div>` | None | [box.md](layout/box.md) |
+| Container | `<div>` | None | [container.md](layout/container.md) |
+| Center | `<div>` | None | [center.md](layout/center.md) |
+| AbsoluteCenter | `<div>` | None | [absolute-center.md](layout/absolute-center.md) |
+| Flex | `<div>` | None | [flex.md](layout/flex.md) |
+| Grid | `<div>` | None | [grid.md](layout/grid.md) |
+| SimpleGrid | `<div>` | None | [simple-grid.md](layout/simple-grid.md) |
+| Stack | `<div>` | None | [stack.md](layout/stack.md) |
+| HStack | `<div>` | None | [stack.md](layout/stack.md) |
+| VStack | `<div>` | None | [stack.md](layout/stack.md) |
+| Wrap | `<div>` | None | [wrap.md](layout/wrap.md) |
+| Separator | `<div>` | None | [separator.md](layout/separator.md) |
+| Spacer | `<div>` | None | [spacer.md](layout/spacer.md) |
+| Group | `<div>` | None | [group.md](layout/group.md) |
+| AspectRatio | `<div>` | None | [aspect-ratio.md](layout/aspect-ratio.md) |
+| ScrollArea | `<div>` | None | [scroll-area.md](layout/scroll-area.md) |
+
+### Data Display Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Card | `<div>` | None | [card.md](data-display/card.md) |
+| ListGroup | `<ul>` | None | [list-group.md](data-display/list-group.md) |
+| Table | `<table>` | Alpine.js | [table.md](data-display/table.md) |
+| Avatar | `<div>` | None | [avatar.md](data-display/avatar.md) |
+| Badge | `<span>` | None | [badge.md](data-display/badge.md) |
+| Tag | `<span>` | Alpine.js | [tag.md](data-display/tag.md) |
+| Rating | `<div>` | None | [rating.md](data-display/rating.md) |
+| Stat | `<div>` | None | [stat.md](data-display/stat.md) |
+| Timeline | `<div>` | Alpine.js | [timeline.md](data-display/timeline.md) |
+| TreeView | `<div>` | Alpine.js | [tree-view.md](data-display/tree-view.md) |
+| DataList | `<div>` | Alpine.js | [data-list.md](data-display/data-list.md) |
+| ChatBubble | `<div>` | None | [chat-bubble.md](data-display/chat-bubble.md) |
+| Indicator | `<div>` | None | [indicator.md](data-display/indicator.md) |
+| ColorSwatch | `<div>` | None | [color-swatch.md](data-display/color-swatch.md) |
+| Icon | `<svg>` | None | [icon.md](data-display/icon.md) |
+
+### Navigation Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Navbar | `<nav>` | None | [navbar.md](navigation/navbar.md) |
+| Sidebar | `<aside>` | None | [sidebar.md](navigation/sidebar.md) |
+| Breadcrumb | `<nav>` | None | [breadcrumb.md](navigation/breadcrumb.md) |
+| Steps | `<div>` | None | [steps.md](navigation/steps.md) |
+| Pagination | `<nav>` | None | [pagination.md](navigation/pagination.md) |
+| Tabs | `<div>` | None | [tabs.md](navigation/tabs.md) |
+| Menu | `<div>` | Flowbite JS | [menu.md](overlay/menu.md) |
+| MegaMenu | `<nav>` | None | [mega-menu.md](navigation/mega-menu.md) |
+| SpeedDial | `<div>` | None | [speed-dial.md](navigation/speed-dial.md) |
+
+### Media Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Image | `<img>` | None | [image.md](media/image.md) |
+| Gallery | `<div>` | None | [gallery.md](media/gallery.md) |
+| Carousel | `<div>` | None | [carousel.md](media/carousel.md) |
+| Video | `<video>` | None | [video.md](media/video.md) |
+| QRCode | `<div>` | None | [qrcode.md](media/qrcode.md) |
+
+### Overlay Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Modal | `<div>` | Flowbite JS | [modal.md](overlay/modal.md) |
+| Drawer | `<div>` | Flowbite JS | [drawer.md](overlay/drawer.md) |
+| Popover | `<div>` | Flowbite JS | [popover.md](overlay/popover.md) |
+| Tooltip | `<div>` | Flowbite JS | [tooltip.md](overlay/tooltip.md) |
+| HoverCard | `<div>` | Flowbite JS | [hover-card.md](overlay/hover-card.md) |
+
+### Feedback Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Alert | `<div>` | None | [alert.md](feedback/alert.md) |
+| Banner | `<div>` | None | [banner.md](feedback/banner.md) |
+| Toast | `<div>` | Flowbite JS | [toast.md](feedback/toast.md) |
+| Progress | `<div>` | None | [progress.md](feedback/progress.md) |
+| ProgressCircle | `<svg>` | None | [progress-circle.md](feedback/progress-circle.md) |
+| Spinner | `<div>` | None | [spinner.md](feedback/spinner.md) |
+| Skeleton | `<div>` | None | [skeleton.md](feedback/skeleton.md) |
+| Status | `<div>` | None | [status.md](feedback/status.md) |
+| EmptyState | `<div>` | None | [empty-state.md](feedback/empty-state.md) |
+
+### Typography Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Heading | `<h1-h6>` | None | [heading.md](typography/heading.md) |
+| Text | `<p>` | None | [text.md](typography/text.md) |
+| Link | `<a>` | None | [link.md](typography/link.md) |
+| Code | `<code>` | None | [code.md](typography/code.md) |
+| CodeBlock | `<pre>` | None | [code-block.md](typography/code-block.md) |
+| Kbd | `<kbd>` | None | [kbd.md](typography/kbd.md) |
+| Mark | `<mark>` | None | [mark.md](typography/mark.md) |
+| Em | `<em>` | None | [em.md](typography/em.md) |
+| Strong | `<strong>` | None | [strong.md](typography/strong.md) |
+| Blockquote | `<blockquote>` | None | [blockquote.md](typography/blockquote.md) |
+| Highlight | `<div>` | None | [highlight.md](typography/highlight.md) |
+
+### Disclosure Components
+
+| Component | HTML Tag | Dependencies | Documentation |
+|-----------|----------|--------------|----------------|
+| Accordion | `<div>` | None | [accordion.md](disclosure/accordion.md) |
+| Collapsible | `<div>` | None | [collapsible.md](disclosure/collapsible.md) |
+
 ## Quick Reference
 
 ### Layout
