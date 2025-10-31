@@ -155,4 +155,6 @@ The Code component:
 - Works with screen readers
 - Provides clear visual distinction for code
 - Should be used within appropriate context elements
+- Announces code content to screen readers
+- Supports proper ARIA attributes for inline code
 
