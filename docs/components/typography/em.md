@@ -144,4 +144,6 @@ The Em component:
 - Maintains text hierarchy
 - Works with all assistive technologies
 - Distinguishes from `<strong>` for proper semantic meaning
+- Announces emphasis to screen readers
+- Supports proper ARIA attributes for emphasized text
 
