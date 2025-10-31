@@ -1,11 +1,12 @@
-# List Group
+# List Group Components
 
-Interactive list component for displaying a series of items, buttons or links inside a single container. ListGroup provides a flexible way to display lists with support for various item types. Perfect for navigation lists, menu items, and interactive lists.
+Interactive list component family for displaying a series of items, buttons or links inside a single container. ListGroup provides a flexible way to display lists with support for various item types. Perfect for navigation lists, menu items, and interactive lists.
 
-## Components
+## Overview
 
-- `<x-list-group>` - Container component
-- `<x-list-group-item>` - Individual list item
+The List Group component system consists of:
+- **ListGroup** - Container component
+- **ListGroupItem** - Individual list item component
 
 ## Basic Usage
 
