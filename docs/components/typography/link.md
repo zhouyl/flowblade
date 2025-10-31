@@ -155,10 +155,12 @@ Link supports all style props from the HasStyleProps trait. For a complete list,
 
 The Link component:
 - Uses semantic HTML `<a>` element
-- Supports keyboard navigation
+- Supports keyboard navigation (Tab, Enter)
 - Works with screen readers
 - Provides clear focus states
 - Should have descriptive link text
 - Provides clear link text
 - Supports external link indicators
+- Announces link destination to screen readers
+- Supports proper ARIA attributes for links
 
