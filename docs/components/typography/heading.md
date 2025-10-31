@@ -1,6 +1,6 @@
 # Heading
 
-Heading component for displaying headings at various levels. Heading provides semantic heading elements with support for various sizes, weights, and colors.
+Heading component for displaying headings at various levels. Heading provides semantic heading elements with support for various sizes, weights, and colors. Perfect for page titles, section headers, and content organization.
 
 ## Basic Usage
 
@@ -94,4 +94,14 @@ Heading supports all style props from the HasStyleProps trait. For a complete li
     <x-text>Card content...</x-text>
 </x-box>
 ```
+
+## Accessibility
+
+The Heading component:
+- Uses semantic HTML heading elements (h1-h6)
+- Maintains proper heading hierarchy
+- Works with screen readers
+- Announces heading level to assistive technologies
+- Supports proper ARIA attributes for headings
+- Provides clear visual distinction for heading levels
 
