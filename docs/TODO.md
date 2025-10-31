@@ -9,11 +9,11 @@
 
 ## 当前进度
 
-**总体完成度**: Phase 14 进行中 (20%)
+**总体完成度**: Phase 14 进行中 (30%)
 **当前阶段**: 项目优化和完善
-**已完成**: 14.1, 14.6
-**进行中**: 无
-**待开始**: 14.2, 14.3, 14.4, 14.5, 14.7, 14.8, 14.9, 14.10
+**已完成**: 14.1, 14.6, 14.2.1, 14.2.2
+**进行中**: 14.2
+**待开始**: 14.3, 14.4, 14.5, 14.7, 14.8, 14.9, 14.10
 
 ## Phase 14: 项目优化和完善 - 进行中
 
@@ -36,13 +36,17 @@
 
 **任务**:
 - [x] 14.2.1 合并 Card 相关文档 (card, card-body, card-footer, card-header)
-- [ ] 14.2.2 合并 List 相关文档 (list-group, list-group-item)
+- [x] 14.2.2 合并 List 相关文档 (list-group, list-group-item)
 - [ ] 14.2.3 合并 Input 相关文档 (input, input-addon, input-element, input-group)
 - [ ] 14.2.4 合并 Stack 相关文档 (stack, hstack, vstack)
 - [ ] 14.2.5 合并其他相关组件文档
 - [ ] 14.2.6 更新 components/README.md 中的索引
 
 **预期完成**: 2-3 个会话
+
+**已完成的合并**:
+- Card 组件系列 (card, card-header, card-body, card-footer) → card.md
+- List Group 组件系列 (list-group, list-group-item) → list-group.md
 
 ---
 
