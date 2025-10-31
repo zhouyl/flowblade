@@ -9,6 +9,27 @@
 
 A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, with an intuitive Style Props API for elegant component styling.
 
+## 🎯 Design Philosophy
+
+Flowblade embraces a **server-side component-driven architecture** using Laravel Livewire and Alpine.js, offering significant development efficiency improvements over traditional API + Vue/React approaches:
+
+### Why Flowblade?
+
+- **Faster Development**: Build interactive UIs without context-switching between backend and frontend frameworks. Write PHP and Blade templates, leverage Livewire for reactivity.
+- **Reduced Complexity**: No need to manage separate API endpoints, state management libraries, or complex build pipelines. Everything integrates seamlessly with Laravel.
+- **Better DX**: Full-stack developers can work on features end-to-end without learning multiple frameworks. Blade components are familiar to Laravel developers.
+- **Smaller Bundle Size**: Alpine.js (15KB) vs Vue/React (40KB+), resulting in faster page loads and better performance.
+- **Real-time Reactivity**: Livewire provides real-time component updates without writing JavaScript, while Alpine.js handles lightweight interactivity.
+- **SEO-Friendly**: Server-rendered HTML by default, perfect for content-heavy applications.
+
+### Perfect For
+
+- **Laravel Applications**: Seamless integration with Laravel's ecosystem
+- **Full-Stack Teams**: Developers comfortable with PHP and Blade templates
+- **Rapid Prototyping**: Build features quickly without framework overhead
+- **Content-Heavy Sites**: Server-side rendering with progressive enhancement
+- **Real-time Applications**: Livewire's reactive components for live updates
+
 ## ✨ Features
 
 - 🎨 **138+ Components** - Comprehensive UI component library
@@ -20,13 +41,57 @@ A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, w
 - 🎛️ **Highly Configurable** - Customize colors, sizes, and component prefixes
 - 📦 **Zero Config** - Works immediately after `composer require`
 
+## 📋 Requirements
+
+Before installing Flowblade, ensure your project meets these requirements:
+
+### System Requirements
+
+- **Laravel**: 11.0 or higher
+- **PHP**: 8.3 or higher
+- **Tailwind CSS**: 3.0 or higher
+- **Node.js**: 16.0 or higher (for asset compilation)
+
+### Dependencies
+
+Flowblade requires the following packages (automatically installed):
+
+- **flowbite**: ^2.0 - Design system and JavaScript components
+- **tailwindcss**: ^3.0 - Utility-first CSS framework
+- **@tailwindcss/forms**: ^0.5 - Form styling plugin
+
+### Optional Dependencies
+
+For enhanced functionality, you may want to install:
+
+- **Alpine.js**: ^3.0 - For lightweight interactivity (included in Flowbite)
+- **Livewire**: ^3.0 - For reactive components (`composer require livewire/livewire`)
+- **Iconify**: For icon support (included via CDN)
+
 ## 📦 Installation
+
+### Step 1: Install via Composer
 
 ```bash
 composer require mellivora/flowblade
 ```
 
-### Configure Tailwind CSS
+### Step 2: Publish Configuration (Optional)
+
+To customize component prefixes, colors, and sizes:
+
+```bash
+php artisan vendor:publish --tag=flowblade-config
+```
+
+This creates `config/flowblade.php` where you can configure:
+- Component prefix (default: `x-`)
+- Default colors and sizes
+- Color and size mappings
+
+See the [Quick Start Guide](docs/quick-start.md) for detailed configuration options.
+
+### Step 3: Configure Tailwind CSS
 
 Add Flowblade views to your `tailwind.config.js`:
 
@@ -39,47 +104,20 @@ export default {
 }
 ```
 
-### Compile Assets
+### Step 4: Compile Assets
 
 ```bash
 npm run dev
 ```
 
-## 🚀 Quick Start
+## 📚 Documentation
 
-### Button Component
+For detailed setup instructions and configuration options, see:
 
-```blade
-{{-- Basic Button --}}
-<x-button color="primary" size="lg">Click Me</x-button>
-
-{{-- With Icons --}}
-<x-button left-icon="heroicons:home" color="success">Home</x-button>
-
-{{-- Loading State --}}
-<x-button :loading="true">Processing...</x-button>
-
-{{-- Variants --}}
-<x-button variant="solid">Solid</x-button>
-<x-button variant="outline">Outline</x-button>
-<x-button variant="ghost">Ghost</x-button>
-```
-
-### Icon Component
-
-```blade
-<x-icon name="heroicons:heart" color="danger" size="24px" />
-<x-icon name="mdi:account" />
-<x-icon name="fa:github" />
-```
-
-### Box Component
-
-```blade
-<x-box p="6" bg="primary" rounded="lg" class="text-white">
-    Beautiful box with padding and rounded corners
-</x-box>
-```
+- [Quick Start Guide](docs/quick-start.md) - Get started in 5 minutes
+- [Installation Guide](docs/installation.md) - Step-by-step setup instructions
+- [Components Documentation](docs/components/README.md) - Complete component reference
+- [Style Props System](docs/traits/has-style-props.md) - Intuitive styling with props
 
 ## 🎨 Style Props System
 
@@ -252,158 +290,17 @@ Each color supports scales: `50`, `100`, `200`, `300`, `400`, `500`, `600`, `700
 </x-navbar>
 ```
 
-## ⚡ Livewire Integration
-
-```blade
-<x-button wire:click="save" color="primary">Save</x-button>
-<x-input wire:model="name" />
-<x-checkbox wire:model="agreed" />
-```
-
-## 🏔️ Alpine.js Integration
-
-```blade
-<div x-data="{ count: 0 }">
-    <x-button @click="count++">Increment</x-button>
-    <span x-text="count"></span>
-</div>
-```
-
-## ⚙️ Configuration
-
-Publish the configuration file:
-
-```bash
-php artisan vendor:publish --tag=flowblade-config
-```
-
-Edit `config/flowblade.php` to customize:
-
-- Component prefix
-- Default colors and sizes
-- Color mappings
-- Size mappings
-
-## 📚 Documentation
-
-- [Quick Start Guide](docs/quick-start.md) - Get started in 5 minutes
-- [Installation Guide](docs/installation.md) - Step-by-step setup instructions
-- [Components Documentation](docs/components/README.md) - Complete component reference
-- [Style Props System](docs/traits/has-style-props.md) - Intuitive styling with props
-- [Development Plan](docs/TODO.md) - Project roadmap and progress
-
 ## 📝 Available Components
 
-All components include:
+Flowblade includes **138+ production-ready components** organized by category. All components feature:
+
 - ✅ **Style Props Support** - Intuitive styling system with semantic props
 - ✅ **Complete Documentation** - Detailed usage examples and API reference
 - ✅ **Accessibility Features** - WCAG 2.1 compliant with keyboard navigation
 - ✅ **Responsive Design** - Mobile-first approach with Tailwind CSS
 - ✅ **Flowbite Integration** - Built on Flowbite design system
 
-#### Layout Components (19) ✅
-- ✅ Box, Container, Center, AbsoluteCenter
-- ✅ Flex, Grid, SimpleGrid
-- ✅ Stack, HStack, VStack
-- ✅ Wrap, Separator, Spacer
-- ✅ Group, AspectRatio, ScrollArea
-- ✅ Footer, Jumbotron (hero sections with background images/gradients; 4 sizes; 3 alignments; overlay support)
-- ✅ Divider (enhanced separator with text/icon support; horizontal/vertical; solid/dashed/dotted styles)
-
-#### Button Components (4)
-- ✅ Button, IconButton, CloseButton, ButtonGroup
-
-#### Typography Components (12)
-- ✅ Heading, Text, Link
-- ✅ Code, CodeBlock, Kbd
-- ✅ Mark, Em, Strong
-- ✅ Blockquote, Highlight, List
-
-#### Form Components (29) ✅
-- ✅ Input, Textarea, PasswordInput, SearchInput
-- ✅ Checkbox, Radio, Switch (Flowbite style with 9 colors; 3 sizes; label support)
-- ✅ Select (enhanced with search, multi-select, Alpine.js), NativeSelect
-- ✅ PhoneInput (country code selector; 30+ countries; auto-formatting; flag emojis)
-- ✅ PinInput, NumberInput
-- ✅ Field, Fieldset
-- ✅ InputGroup, InputAddon, InputElement
-- ✅ Editable, FileUpload
-- ✅ Slider, RangeSlider
-- ✅ Clipboard (copy to clipboard with Flowbite JS; icon/text modes; tooltip support; multiple sizes and variants)
-- ✅ FloatingLabel, FloatingTextarea, FloatingSelect (Material Design style; 4 variants; smooth animations; error states)
-- ✅ Datepicker, DateRangePicker, InlineDatepicker (Flowbite JS integration; autohide; action buttons; custom formats; min/max dates)
-- ✅ Timepicker (HTML5 time input; clock icon; min/max time; step intervals)
-
-#### Data Display Components (23) ✅
-- ✅ Icon, Avatar, Badge, Tag, Stat
-- ✅ Card (with Header, Body, Footer)
-- ✅ DataList, DataListItem
-- ✅ Timeline, TimelineItem
-- ✅ Table (with Header, Body, Row, Head, Cell)
-- ✅ TreeView, TreeViewItem
-- ✅ Rating (with readonly and interactive modes; half-star support; 8 colors)
-- ✅ ColorSwatch (with hex/rgb/hsl support; copyable; square/circle variants)
-- ✅ ListGroup, ListGroupItem (interactive lists; links/buttons; active/disabled states; icons; badges)
-- ✅ Indicator (status indicators; 8 colors; 5 sizes; 5 positions; ping animation; perfect for online/offline status)
-- ✅ ChatBubble (chat messages; left/right alignment; avatars; timestamps; read status; 8 colors; message tail)
-- ✅ TagsInput (with keyboard shortcuts; auto-split; max tags; prevent duplicates)
-
-#### Navigation Components (23) ✅
-- ✅ Breadcrumb, BreadcrumbItem
-- ✅ Pagination (with simple, default, verbose variants, Laravel Paginator support)
-- ✅ Tabs, TabsList, TabsTrigger, TabsContent (with line, enclosed, pills variants)
-- ✅ Steps, StepItem (with 4 variants: default, progress, detailed, breadcrumb; horizontal/vertical layouts)
-- ✅ Navbar, NavbarBrand, NavbarToggle, NavbarCollapse, NavbarLink (responsive mobile menu; Flowbite Collapse integration)
-- ✅ Sidebar, SidebarItem, SidebarGroup, SidebarToggle (fixed/off-canvas modes; multi-level menus; Flowbite Drawer and Collapse integration)
-- ✅ SpeedDial, SpeedDialItem (floating action buttons; 4 positions; click/hover trigger; tooltip support; perfect for quick actions)
-- ✅ MegaMenu, MegaMenuColumn, MegaMenuItem (large dropdown menu; 1-4 column layout; icons and descriptions; perfect for complex navigation)
-
-#### Disclosure Components (3)
-- ✅ Accordion, AccordionItem (with default, separated, contained variants)
-- ✅ Collapsible (simple expand/collapse component)
-
-#### Overlay Components (9) ✅
-- ✅ Tooltip (with top/right/bottom/left placement; hover/click trigger; dark/light styles; Flowbite integration)
-- ✅ Popover (with top/right/bottom/left placement; hover/click trigger; 5 width sizes; rich content support; Flowbite integration)
-- ✅ HoverCard (hover-only trigger; 4 placements; 5 width sizes; configurable delay; rich content support; Flowbite integration)
-- ✅ Modal (dialog with 10 sizes; 9 placements; static/dynamic backdrop; header/body/footer slots; Flowbite integration)
-- ✅ Drawer (off-canvas with 4 placements; 7 width/height sizes; backdrop control; body scrolling; edge mode; Flowbite integration)
-- ✅ Menu (dropdown menu with 12 placements; click/hover trigger; 6 width sizes; icon support; Flowbite integration)
-- ✅ MenuItem (menu item with href, icon, active, disabled, danger states)
-- ✅ MenuDivider (horizontal divider for menu sections)
-- ✅ MenuHeader (header for menu sections)
-
-#### Feedback Components (9) ✅
-- ✅ Alert (with info, success, warning, danger status; solid, subtle, left-accent, top-accent variants)
-- ✅ Spinner (with spinner, dots, pulse, ring variants; 8 color options)
-- ✅ Progress (with default, striped, animated variants; indeterminate state)
-- ✅ ProgressCircle (SVG-based circular progress; customizable thickness; indeterminate state)
-- ✅ Status (with dot, badge, pill variants; 8 status types; pulse animation)
-- ✅ EmptyState (with icon, title, description; action buttons; 3 sizes)
-- ✅ Toast (with auto-dismiss; 6 positions; Alpine.js integration; action buttons)
-- ✅ Skeleton (loading placeholder with 8 preset types: text, image, video, card, avatar, button, circle, rectangle)
-- ✅ Banner (sticky announcements with top/bottom positioning; dismissible; marketing/newsletter/informational variants; Flowbite Dismiss integration)
-
-#### Data Display Components (1)
-- ✅ Icon (100,000+ icons via Iconify)
-
-#### Media Components (6) ✅
-- ✅ QRCode (with simple-qrcode integration; 6 sizes; 4 error correction levels; SVG/PNG format; label support)
-- ✅ Gallery (responsive image grid; 2-6 columns; customizable gaps; mobile-first design; lightbox integration ready)
-- ✅ GalleryItem (individual gallery item; supports custom content; lazy loading; image optimization)
-- ✅ Carousel (image/content slider; static/slide modes; navigation controls; Flowbite JS integration; responsive heights)
-- ✅ CarouselItem (individual carousel slide; customizable animation; active state; duration/easing control)
-- ✅ Video (HTML5 video player; autoplay/loop/muted; poster images; multiple sources; subtitles support; responsive)
-
-### Coming Soon
-
-- Forms: Select, Slider, FileUpload, etc.
-- Overlays: Modal, Drawer, Popover, Tooltip, etc.
-- Feedback: Alert, Toast, Progress, Spinner, etc.
-- Data Display: Badge, Card, Avatar, Tag, Table, etc.
-- And many more...
-
-See [docs/TODO.md](docs/TODO.md) for the complete development plan.
+For a complete list of all components with detailed documentation, see [Components Documentation](docs/components/README.md).
 
 ## 🚀 Getting Help
 
@@ -446,33 +343,6 @@ composer test
 # Build documentation
 npm run build
 ```
-
-## 📋 Changelog
-
-### Version 1.0.0 (Latest)
-
-**Features:**
-- ✅ 138 components with full Style Props support
-- ✅ Complete documentation for all components
-- ✅ Accessibility features (WCAG 2.1 compliant)
-- ✅ Livewire and Alpine.js integration
-- ✅ Flowbite design system integration
-- ✅ 100,000+ icons via Iconify
-
-**Improvements:**
-- Enhanced component documentation with accessibility guidelines
-- Added comprehensive Style Props system
-- Improved responsive design support
-- Better error handling and validation
-
-**Components Added:**
-- Layout: Box, Container, Center, Flex, Grid, Stack, etc.
-- Forms: Input, Textarea, Select, Checkbox, Radio, etc.
-- Data Display: Card, Table, Avatar, Badge, Icon, etc.
-- Navigation: Navbar, Sidebar, Tabs, Breadcrumb, etc.
-- Overlay: Modal, Drawer, Popover, Tooltip, etc.
-- Feedback: Alert, Toast, Progress, Spinner, etc.
-- Media: Image, Gallery, Carousel, Video, QRCode, etc.
 
 ## 📄 License
 
