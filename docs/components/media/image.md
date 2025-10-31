@@ -148,6 +148,9 @@ The Image component supports all common style props for flexible styling:
 - The component automatically sets `loading="lazy"` for performance
 - Decorative images should have empty `alt=""` attribute
 - Avoid using images as the only way to convey information
+- Announces image content to screen readers
+- Supports proper ARIA attributes for images
+- Provides proper semantic HTML structure
 
 ## Notes
 
