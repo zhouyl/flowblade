@@ -85,9 +85,9 @@ class IconButton extends Component
 
         // Rounded
         if ($this->rounded) {
-            $classes[] = 'rounded-full';
+            $classes[] = ComponentHelper::getRoundedClass('full');
         } else {
-            $classes[] = 'rounded-md';
+            $classes[] = ComponentHelper::getRoundedClass('md');
         }
 
         // Variant & Color

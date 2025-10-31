@@ -85,9 +85,9 @@ class Avatar extends Component
 
         // Shape
         $shapeClasses = [
-            'circle' => 'rounded-full',
-            'square' => 'rounded-none',
-            'rounded' => 'rounded-lg',
+            'circle' => ComponentHelper::getRoundedClass('full'),
+            'square' => ComponentHelper::getRoundedClass('none'),
+            'rounded' => ComponentHelper::getRoundedClass('lg'),
         ];
 
         if (isset($shapeClasses[$this->shape])) {

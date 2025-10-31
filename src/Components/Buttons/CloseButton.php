@@ -49,7 +49,7 @@ class CloseButton extends Component
             'inline-flex',
             'items-center',
             'justify-center',
-            'rounded-md',
+            ComponentHelper::getRoundedClass('md'),
             $buttonConfig['text'] ?? 'text-gray-400',
             'hover:text-gray-500',
             'hover:bg-gray-100',

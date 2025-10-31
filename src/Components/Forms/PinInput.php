@@ -80,7 +80,7 @@ class PinInput extends Component
             'block',
             'text-center',
             'border',
-            'rounded-md',
+            ComponentHelper::getRoundedClass('md'),
             'transition',
             'focus:outline-none',
             'focus:ring-2',

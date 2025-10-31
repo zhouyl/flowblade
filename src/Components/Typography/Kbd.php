@@ -44,7 +44,7 @@ class Kbd extends Component
             'border',
             'border-gray-300',
             'rounded',
-            'shadow-sm',
+            ComponentHelper::getShadowClass('sm'),
         ];
 
         // Size

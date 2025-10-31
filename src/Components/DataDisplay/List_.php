@@ -52,7 +52,7 @@ class List_ extends Component
             $listConfig['bg'] ?? 'bg-white',
             'border',
             $listConfig['border'] ?? 'border-gray-200',
-            'rounded-lg',
+            ComponentHelper::getRoundedClass('lg'),
             $listConfig['dark_bg'] ?? 'dark:bg-gray-700',
             $listConfig['dark_border'] ?? 'dark:border-gray-600',
             $listConfig['dark_text'] ?? 'dark:text-white',

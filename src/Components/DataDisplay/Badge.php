@@ -50,7 +50,7 @@ class Badge extends Component
             'items-center',
             'gap-1',
             'font-medium',
-            'rounded-full',
+            ComponentHelper::getRoundedClass('full'),
         ];
 
         // Size - use configuration

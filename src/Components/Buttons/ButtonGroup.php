@@ -49,13 +49,13 @@ class ButtonGroup extends Component
             // Attached buttons
             if ($this->orientation === 'horizontal') {
                 $classes[] = 'inline-flex';
-                $classes[] = 'rounded-md';
-                $classes[] = 'shadow-sm';
+                $classes[] = ComponentHelper::getRoundedClass('md');
+                $classes[] = ComponentHelper::getShadowClass('sm');
             } else {
                 $classes[] = 'inline-flex';
                 $classes[] = 'flex-col';
-                $classes[] = 'rounded-md';
-                $classes[] = 'shadow-sm';
+                $classes[] = ComponentHelper::getRoundedClass('md');
+                $classes[] = ComponentHelper::getShadowClass('sm');
             }
         } else {
             // Separated buttons with spacing

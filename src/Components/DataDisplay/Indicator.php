@@ -50,7 +50,7 @@ class Indicator extends Component
     public function classes(): string
     {
         $classes = [
-            'rounded-full',
+            ComponentHelper::getRoundedClass('full'),
         ];
 
         // Size - use configuration

@@ -67,7 +67,7 @@ class TagsInput extends Component
             'p-2',
             'border',
             $inputConfig['border'] ?? 'border-gray-300',
-            'rounded-lg',
+            ComponentHelper::getRoundedClass('lg'),
             $inputConfig['bg'] ?? 'bg-white',
             'focus-within:ring-2',
             'focus-within:ring-blue-500',

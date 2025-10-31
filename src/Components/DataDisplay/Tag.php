@@ -51,7 +51,7 @@ class Tag extends Component
             'inline-flex',
             'items-center',
             'font-medium',
-            'rounded-md',
+            ComponentHelper::getRoundedClass('md'),
         ];
 
         // Size - use configuration

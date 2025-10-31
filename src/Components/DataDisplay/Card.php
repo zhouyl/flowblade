@@ -42,7 +42,7 @@ class Card extends Component
     public function classes(): string
     {
         $classes = [
-            'rounded-lg',
+            ComponentHelper::getRoundedClass('lg'),
             'overflow-hidden',
         ];
 
