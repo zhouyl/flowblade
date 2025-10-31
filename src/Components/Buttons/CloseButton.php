@@ -58,17 +58,10 @@ class CloseButton extends Component
             'transition',
         ];
 
-        // Size
-        $sizeClasses = [
-            'xs' => 'p-0.5',
-            'sm' => 'p-1',
-            'md' => 'p-1.5',
-            'lg' => 'p-2',
-            'xl' => 'p-2.5',
-        ];
-
-        if ($this->size && isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('close_button', $this->size ?? 'md');
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Disabled state
