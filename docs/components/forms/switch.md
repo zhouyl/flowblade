@@ -2,48 +2,28 @@
 
 Toggle switch component for binary on/off states, built with Flowbite styling. Switch provides a flexible way to create toggle switches with support for various sizes, colors, and states. Perfect for settings, preferences, and feature toggles.
 
-## Components
-
-- `<x-switch>` - Main switch component with label
-- `<x-switch-input>` - Switch input without label
+**Note**: The component class is named `SwitchInput` because `switch` is a reserved keyword in PHP. However, it is registered as `<x-switch>` in Blade templates.
 
 ## Basic Usage
-
-### Switch with Label
 
 ```blade
 <x-switch label="Toggle me" />
 ```
 
-### Switch Input Only
-
-```blade
-<x-switch-input />
-```
-
 ## Props
-
-### Switch Component
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `size` | string | `'md'` | Size: `sm`, `md`, `lg` |
 | `color` | string | `'primary'` | Color: `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `purple`, `teal`, `orange` |
 | `disabled` | bool | `false` | Whether the switch is disabled |
-| `label` | string | `''` | Label text |
-
-### SwitchInput Component
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
+| `label` | string | `''` | Label text displayed next to the switch |
 | `checked` | `boolean` | `false` | Initial checked state |
-| `disabled` | `boolean` | `false` | Disabled state |
 | `required` | `boolean` | `false` | Required field |
-| `size` | `string` | `'md'` | Size: `sm`, `md`, `lg` |
 
 ### Style Props
 
-Switch and SwitchInput support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+Switch supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Examples
 
@@ -289,34 +269,34 @@ Switch and SwitchInput support all style props from the HasStyleProps trait. For
 </p>
 ```
 
-## SwitchInput Examples
+## Additional Examples
 
-### Basic Toggle
+### Without Label
 
 ```blade
-<x-switch-input />
+<x-switch />
 ```
 
 ### Pre-checked
 
 ```blade
-<x-switch-input checked />
+<x-switch checked />
 ```
 
-### With Label
+### With Field Wrapper
 
 ```blade
 <x-field label="Enable notifications">
-    <x-switch-input />
+    <x-switch />
 </x-field>
 ```
 
 ### Different Sizes
 
 ```blade
-<x-switch-input size="sm" />
-<x-switch-input size="md" />
-<x-switch-input size="lg" />
+<x-switch size="sm" />
+<x-switch size="md" />
+<x-switch size="lg" />
 ```
 
 ### In a Form
@@ -324,15 +304,15 @@ Switch and SwitchInput support all style props from the HasStyleProps trait. For
 ```blade
 <x-form action="/settings" method="POST">
     <x-field label="Email Notifications">
-        <x-switch-input name="email_notifications" />
+        <x-switch name="email_notifications" />
     </x-field>
 
     <x-field label="SMS Notifications">
-        <x-switch-input name="sms_notifications" />
+        <x-switch name="sms_notifications" />
     </x-field>
 
     <x-field label="Push Notifications">
-        <x-switch-input name="push_notifications" checked />
+        <x-switch name="push_notifications" checked />
     </x-field>
 
     <x-button type="submit" class="mt-4">Save Settings</x-button>
@@ -371,28 +351,17 @@ Switch and SwitchInput support all style props from the HasStyleProps trait. For
 
 ## Accessibility
 
-### Switch
 The Switch component:
-- Uses semantic checkbox input with `sr-only` class
-- Supports keyboard navigation (Space to toggle, Tab)
-- Includes proper ARIA attributes
+- Uses semantic checkbox input with `sr-only` class for screen readers
+- Supports keyboard navigation (Space to toggle, Tab for focus)
+- Includes proper ARIA attributes for validation
 - Focus ring for keyboard users
 - Disabled state properly indicated
 - Label association for screen readers
 - Announces switch state to screen readers
-- Supports proper ARIA attributes for switch validation
-
-### SwitchInput
-The SwitchInput component:
-- Uses semantic HTML structure with proper `<input type="checkbox">`
-- Supports keyboard navigation (Space/Enter to toggle, Tab for focus)
-- Works with screen readers
-- Provides clear on/off states with ARIA attributes
-- Supports required field validation
-- Announces state changes to screen readers
+- Provides clear on/off states with visual feedback
 - Maintains focus management for keyboard users
-- Provides visual feedback for focus and state
-- Supports proper ARIA attributes for switch validation
+- Supports required field validation
 
 ## Browser Support
 
