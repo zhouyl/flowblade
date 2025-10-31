@@ -30,12 +30,12 @@
 
 ---
 
-### 14.2 合并同类组件文档 - [ ] 未开始
+### 14.2 合并同类组件文档 - [ ] 进行中
 
 **目标**: 将相关的组件文档合并到一个文件中
 
 **任务**:
-- [ ] 14.2.1 合并 Card 相关文档 (card, card-body, card-footer, card-header)
+- [x] 14.2.1 合并 Card 相关文档 (card, card-body, card-footer, card-header)
 - [ ] 14.2.2 合并 List 相关文档 (list-group, list-group-item)
 - [ ] 14.2.3 合并 Input 相关文档 (input, input-addon, input-element, input-group)
 - [ ] 14.2.4 合并 Stack 相关文档 (stack, hstack, vstack)
