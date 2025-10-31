@@ -466,10 +466,129 @@ Material Design style floating label input components with smooth animations and
 </form>
 ```
 
+## FloatingSelect Examples
+
+### With Multiple Options
+
+```blade
+<x-floating-select label="Choose a category">
+    <option value="">Select...</option>
+    <option value="electronics">Electronics</option>
+    <option value="clothing">Clothing</option>
+    <option value="books">Books</option>
+</x-floating-select>
+```
+
+### Required Field
+
+```blade
+<x-floating-select label="Required field" required>
+    <option value="">Select...</option>
+    <option value="1">Option 1</option>
+</x-floating-select>
+```
+
+### Different Sizes
+
+```blade
+<x-floating-select label="Small" size="sm">
+    <option value="">Choose...</option>
+    <option value="1">Option 1</option>
+</x-floating-select>
+
+<x-floating-select label="Medium" size="md">
+    <option value="">Choose...</option>
+    <option value="1">Option 1</option>
+</x-floating-select>
+
+<x-floating-select label="Large" size="lg">
+    <option value="">Choose...</option>
+    <option value="1">Option 1</option>
+</x-floating-select>
+```
+
+### In a Form
+
+```blade
+<x-form action="/submit" method="POST">
+    <x-floating-select label="Country" name="country" required>
+        <option value="">Select a country...</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="ca">Canada</option>
+    </x-floating-select>
+
+    <x-button type="submit" class="mt-4">Submit</x-button>
+</x-form>
+```
+
+## FloatingTextarea Examples
+
+### With Placeholder
+
+```blade
+<x-floating-textarea
+    label="Comments"
+    placeholder="Share your thoughts..."
+></x-floating-textarea>
+```
+
+### With Custom Rows
+
+```blade
+<x-floating-textarea
+    label="Description"
+    rows="6"
+></x-floating-textarea>
+```
+
+### Required Field
+
+```blade
+<x-floating-textarea
+    label="Required message"
+    required
+    placeholder="This field is required"
+></x-floating-textarea>
+```
+
+### In a Form
+
+```blade
+<x-form action="/submit" method="POST">
+    <x-floating-textarea
+        label="Your Message"
+        name="message"
+        rows="5"
+        required
+        placeholder="Type your message here..."
+    ></x-floating-textarea>
+
+    <x-button type="submit" class="mt-4">Send</x-button>
+</x-form>
+```
+
+### With Character Limit
+
+```blade
+<div>
+    <x-floating-textarea
+        label="Bio"
+        rows="4"
+        maxlength="500"
+        placeholder="Tell us about yourself (max 500 characters)"
+    ></x-floating-textarea>
+    <x-text size="sm" color="gray" class="mt-2">
+        <span id="charCount">0</span>/500 characters
+    </x-text>
+</div>
+```
+
 ## Accessibility
 
-The Floating Label components:
-- Use semantic HTML form elements
+### FloatingLabel
+The FloatingLabel component:
+- Uses semantic HTML form elements
 - Include proper label associations via `for` and `id` attributes
 - Support required field indicators
 - Provide error states with appropriate ARIA attributes
@@ -478,6 +597,28 @@ The Floating Label components:
 - Show visual indicators for required fields
 - Announce floating label state to screen readers
 - Supports proper ARIA attributes for form validation
+
+### FloatingSelect
+The FloatingSelect component:
+- Uses semantic HTML structure with proper `<select>` element
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
+- Works with screen readers
+- Provides clear floating labels that are associated with the select
+- Supports required field validation with ARIA attributes
+- Includes proper error state indication
+- Maintains focus management for keyboard users
+- Announces selected option to screen readers
+- Supports proper ARIA attributes for select validation
+
+### FloatingTextarea
+The FloatingTextarea component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab, Enter)
+- Works with screen readers
+- Provides clear floating labels
+- Supports required field validation
+- Announces textarea content to screen readers
+- Supports proper ARIA attributes for textarea validation
 
 ## Notes
 

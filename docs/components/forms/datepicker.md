@@ -462,6 +462,114 @@ const options = {
 const datepicker = new Datepicker(datepickerEl, options);
 ```
 
+## DateRangePicker Examples
+
+### With Custom Placeholders
+
+```blade
+<x-date-range-picker
+    startPlaceholder="From date"
+    endPlaceholder="To date"
+/>
+```
+
+### With Pre-selected Dates
+
+```blade
+<x-date-range-picker
+    startValue="2024-01-01"
+    endValue="2024-12-31"
+/>
+```
+
+### Required Date Range
+
+```blade
+<x-date-range-picker
+    required
+    startPlaceholder="Check-in date"
+    endPlaceholder="Check-out date"
+/>
+```
+
+### In a Form
+
+```blade
+<x-form action="/search" method="GET">
+    <x-field label="Date Range">
+        <x-date-range-picker
+            startName="start_date"
+            endName="end_date"
+            required
+        />
+    </x-field>
+
+    <x-button type="submit">Search</x-button>
+</x-form>
+```
+
+## InlineDatepicker Examples
+
+### With Pre-selected Date
+
+```blade
+<x-inline-datepicker value="2024-06-15" />
+```
+
+### With Date Range Limits
+
+```blade
+<x-inline-datepicker
+    minDate="2024-01-01"
+    maxDate="2024-12-31"
+/>
+```
+
+### In a Modal
+
+```blade
+<x-dialog title="Select a Date">
+    <x-inline-datepicker />
+
+    <x-dialog-footer>
+        <x-button variant="outline">Cancel</x-button>
+        <x-button>Confirm</x-button>
+    </x-dialog-footer>
+</x-dialog>
+```
+
+### Hotel Booking
+
+```blade
+<x-card>
+    <x-card-header>
+        <x-heading size="lg">Select Your Dates</x-heading>
+    </x-card-header>
+
+    <x-card-body>
+        <x-inline-datepicker
+            minDate="2024-01-01"
+            maxDate="2024-12-31"
+        />
+    </x-card-body>
+</x-card>
+```
+
+### Event Scheduling
+
+```blade
+<x-vstack spacing="4">
+    <x-heading size="md">Schedule Event</x-heading>
+
+    <x-inline-datepicker
+        minDate="2024-01-01"
+        value="2024-06-15"
+    />
+
+    <x-button>Confirm Date</x-button>
+</x-vstack>
+```
+
 ## Date Formats
 
 Supported date formats:
@@ -475,6 +583,7 @@ Supported date formats:
 
 ## Accessibility
 
+### Datepicker
 The Datepicker component:
 - Uses semantic HTML input elements
 - Includes proper ARIA attributes
@@ -484,6 +593,27 @@ The Datepicker component:
 - Shows visual focus indicators
 - Announces selected date to screen readers
 - Supports proper ARIA attributes for date input validation
+
+### DateRangePicker
+The DateRangePicker component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab, Arrow keys, Enter)
+- Works with screen readers
+- Provides clear date input labels
+- Supports required field validation
+- Announces selected date range to screen readers
+- Supports proper ARIA attributes for date input validation
+
+### InlineDatepicker
+The InlineDatepicker component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Arrow keys, Enter, Tab)
+- Works with screen readers
+- Provides clear date selection interface
+- Supports date range validation
+- Announces selected dates to assistive technologies
+- Supports proper ARIA attributes for date selection
+- Maintains proper focus management for keyboard users
 
 ## Notes
 
