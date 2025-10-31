@@ -87,23 +87,27 @@
   - 某些组件使用了 Flowbite 的样式，但不是所有组件都一致
 
 **本会话已完成**:
-- 14.3.1 分析项目的样式组织结构
-- 14.3.2 检查所有组件的大小定义风格（进行中）
-  - 添加 close_button, badge, tag 大小配置到 config/flowblade.php
-  - 更新 CloseButton, Badge, Tag 组件使用配置中的大小
-  - 发现 20+ 个组件在类中定义大小映射，需要逐个修复
+- 14.3.1 分析项目的样式组织结构 ✅
+- 14.3.2 检查所有组件的大小定义风格 ✅ (部分完成)
+  - 添加 close_button, badge, tag, avatar, card, checkbox, radio, native_select, number_input, password_input, pin_input 大小配置
+  - 更新 11 个组件使用配置中的大小
+  - 修复了 switch 组件文档错误
 
-**发现的问题**:
-- 大量组件在类中定义大小映射：
-  - 数据显示：Timeline, Table, TreeView, Badge, Card, Avatar, Tag, Indicator
-  - 表单：Textarea, Checkbox, Radio, NativeSelect, PinInput, NumberInput, PasswordInput
-  - 排版：Code, Kbd
-  - 媒体：QRCode
-  - 布局：Jumbotron
-  - 按钮：ButtonGroup (间距映射)
+**已修复的组件** (11 个):
+- 数据显示：Badge, Tag, Avatar, Card
+- 表单：Checkbox, Radio, NativeSelect, NumberInput, PasswordInput, PinInput
+- 按钮：CloseButton
+
+**还需修复的组件** (10+ 个):
+- 数据显示：Timeline, Table, TreeView, Indicator
+- 表单：Textarea
+- 排版：Code, Kbd
+- 媒体：QRCode
+- 布局：Jumbotron
+- 按钮：ButtonGroup (间距映射)
 
 **下一步**:
-- 继续修复其他组件的大小定义
+- 继续修复剩余组件的大小定义
 - 检查颜色定义的一致性
 - 检查事件风格的一致性
 

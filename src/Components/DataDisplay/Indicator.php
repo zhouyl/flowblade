@@ -53,17 +53,10 @@ class Indicator extends Component
             'rounded-full',
         ];
 
-        // Size
-        $sizeClasses = [
-            'xs' => 'w-2 h-2',
-            'sm' => 'w-2.5 h-2.5',
-            'md' => 'w-3 h-3',
-            'lg' => 'w-3.5 h-3.5',
-            'xl' => 'w-4 h-4',
-        ];
-
-        if (isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('indicator', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Color
