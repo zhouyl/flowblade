@@ -1,6 +1,6 @@
 # Gallery
 
-Image gallery component with responsive grid layout for displaying collections of images. Gallery provides a flexible way to display image galleries.
+Image gallery component with responsive grid layout for displaying collections of images. Gallery provides a flexible way to display image galleries. Perfect for photo galleries, product showcases, and image collections.
 
 ## Components
 
@@ -410,6 +410,17 @@ The Gallery component:
 
 {{ $images->links() }}
 ```
+
+## Accessibility
+
+The Gallery component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab, Arrow keys)
+- Works with screen readers
+- Provides proper alt text for images
+- Maintains proper image hierarchy
+- Announces gallery content to screen readers
+- Supports proper ARIA attributes for gallery navigation
 
 ## Related Components
 
