@@ -50,8 +50,7 @@ class Radio extends Component
         $classes = [
             'border-gray-300',
             'transition',
-            'focus:ring-2',
-            'focus:ring-offset-0',
+            ComponentHelper::getFocusClasses('input'),
         ];
 
         // Size - use configuration

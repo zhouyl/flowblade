@@ -61,9 +61,7 @@ class IconButton extends Component
             'justify-center',
             'font-medium',
             'transition',
-            'focus:outline-none',
-            'focus:ring-2',
-            'focus:ring-offset-2',
+            ComponentHelper::getFocusClasses('input'),
         ];
 
         // Size

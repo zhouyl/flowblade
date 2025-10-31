@@ -51,8 +51,7 @@ class Checkbox extends Component
             'rounded',
             'border-gray-300',
             'transition',
-            'focus:ring-2',
-            'focus:ring-offset-0',
+            ComponentHelper::getFocusClasses('input'),
         ];
 
         // Size - use configuration

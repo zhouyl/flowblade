@@ -547,6 +547,31 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Event Styles (Focus, Hover, Active)
+    |--------------------------------------------------------------------------
+    |
+    | Define consistent event styles for interactive components.
+    |
+    */
+    'events' => [
+        'focus' => [
+            'outline' => 'focus:outline-none',
+            'ring' => 'focus:ring-2',
+            'ring_offset' => 'focus:ring-offset-0',
+            'ring_color' => 'focus:ring-blue-500',
+        ],
+        'hover' => [
+            'opacity' => 'hover:opacity-90',
+            'bg_opacity' => 'hover:bg-opacity-90',
+        ],
+        'active' => [
+            'opacity' => 'active:opacity-75',
+            'scale' => 'active:scale-95',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Alpine.js Integration
     |--------------------------------------------------------------------------
     |

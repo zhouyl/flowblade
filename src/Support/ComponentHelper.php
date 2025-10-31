@@ -145,11 +145,70 @@ class ComponentHelper
     }
 
     /**
+     * Get focus event classes.
+     */
+    public static function getFocusClasses(string $type = 'default'): string
+    {
+        $focusConfig = self::config('events.focus', []);
+
+        return match ($type) {
+            'input' => self::mergeClasses(
+                $focusConfig['outline'] ?? 'focus:outline-none',
+                $focusConfig['ring'] ?? 'focus:ring-2',
+                $focusConfig['ring_offset'] ?? 'focus:ring-offset-0',
+                $focusConfig['ring_color'] ?? 'focus:ring-blue-500'
+            ),
+            'button' => self::mergeClasses(
+                $focusConfig['outline'] ?? 'focus:outline-none',
+                'focus:ring-4',
+                $focusConfig['ring_color'] ?? 'focus:ring-blue-500'
+            ),
+            default => self::mergeClasses(
+                $focusConfig['outline'] ?? 'focus:outline-none',
+                $focusConfig['ring'] ?? 'focus:ring-2',
+                $focusConfig['ring_offset'] ?? 'focus:ring-offset-0',
+                $focusConfig['ring_color'] ?? 'focus:ring-blue-500'
+            ),
+        };
+    }
+
+    /**
+     * Get hover event classes.
+     */
+    public static function getHoverClasses(string $type = 'default'): string
+    {
+        $hoverConfig = self::config('events.hover', []);
+
+        return match ($type) {
+            'opacity' => $hoverConfig['opacity'] ?? 'hover:opacity-90',
+            'bg_opacity' => $hoverConfig['bg_opacity'] ?? 'hover:bg-opacity-90',
+            default => $hoverConfig['opacity'] ?? 'hover:opacity-90',
+        };
+    }
+
+    /**
+     * Get active event classes.
+     */
+    public static function getActiveClasses(string $type = 'default'): string
+    {
+        $activeConfig = self::config('events.active', []);
+
+        return match ($type) {
+            'opacity' => $activeConfig['opacity'] ?? 'active:opacity-75',
+            'scale' => $activeConfig['scale'] ?? 'active:scale-95',
+            default => self::mergeClasses(
+                $activeConfig['opacity'] ?? 'active:opacity-75',
+                $activeConfig['scale'] ?? 'active:scale-95'
+            ),
+        };
+    }
+
+    /**
      * Build classes for button variants.
      */
     public static function getButtonVariantClasses(string $color, string $variant): string
     {
-        $baseClasses = 'font-medium focus:outline-none focus:ring-4 transition-colors duration-200';
+        $baseClasses = 'font-medium ' . self::getFocusClasses('button') . ' transition-colors duration-200';
 
         return match ($variant) {
             'solid' => self::mergeClasses(

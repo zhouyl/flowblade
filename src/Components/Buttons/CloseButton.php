@@ -53,10 +53,7 @@ class CloseButton extends Component
             $buttonConfig['text'] ?? 'text-gray-400',
             'hover:text-gray-500',
             'hover:bg-gray-100',
-            'focus:outline-none',
-            'focus:ring-2',
-            'focus:ring-offset-2',
-            'focus:ring-gray-500',
+            ComponentHelper::getFocusClasses('input'),
             'transition',
         ];
 

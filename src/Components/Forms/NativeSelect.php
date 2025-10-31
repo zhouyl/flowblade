@@ -52,9 +52,7 @@ class NativeSelect extends Component
             'border',
             ComponentHelper::getRoundedClass('md'),
             'transition',
-            'focus:outline-none',
-            'focus:ring-2',
-            'focus:ring-offset-0',
+            ComponentHelper::getFocusClasses('input'),
             'pr-10', // Space for dropdown icon
         ];
 
