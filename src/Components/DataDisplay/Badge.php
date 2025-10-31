@@ -89,42 +89,9 @@ class Badge extends Component
      */
     private function getColorClasses(): string
     {
-        $solidColors = [
-            'primary' => 'bg-blue-600 text-white',
-            'secondary' => 'bg-gray-600 text-white',
-            'success' => 'bg-green-600 text-white',
-            'warning' => 'bg-yellow-600 text-white',
-            'danger' => 'bg-red-600 text-white',
-            'info' => 'bg-cyan-600 text-white',
-            'gray' => 'bg-gray-600 text-white',
-        ];
+        $componentColors = ComponentHelper::config('component_colors.badge', []);
+        $variantColors = $componentColors[$this->variant] ?? $componentColors['solid'] ?? [];
 
-        $subtleColors = [
-            'primary' => 'bg-blue-100 text-blue-800',
-            'secondary' => 'bg-gray-100 text-gray-800',
-            'success' => 'bg-green-100 text-green-800',
-            'warning' => 'bg-yellow-100 text-yellow-800',
-            'danger' => 'bg-red-100 text-red-800',
-            'info' => 'bg-cyan-100 text-cyan-800',
-            'gray' => 'bg-gray-100 text-gray-800',
-        ];
-
-        $outlineColors = [
-            'primary' => 'border border-blue-600 text-blue-600',
-            'secondary' => 'border border-gray-600 text-gray-600',
-            'success' => 'border border-green-600 text-green-600',
-            'warning' => 'border border-yellow-600 text-yellow-600',
-            'danger' => 'border border-red-600 text-red-600',
-            'info' => 'border border-cyan-600 text-cyan-600',
-            'gray' => 'border border-gray-600 text-gray-600',
-        ];
-
-        $colorMap = match ($this->variant) {
-            'subtle' => $subtleColors,
-            'outline' => $outlineColors,
-            default => $solidColors,
-        };
-
-        return $colorMap[$this->color] ?? $colorMap['primary'];
+        return $variantColors[$this->color] ?? $variantColors['primary'] ?? '';
     }
 }

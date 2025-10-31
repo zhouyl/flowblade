@@ -65,18 +65,9 @@ class Separator extends Component
         }
 
         // Color
-        $colorMap = [
-            'primary' => 'border-blue-600',
-            'secondary' => 'border-gray-600',
-            'success' => 'border-green-600',
-            'warning' => 'border-yellow-500',
-            'danger' => 'border-red-600',
-            'info' => 'border-cyan-600',
-            'gray' => 'border-gray-200',
-        ];
-
-        if (isset($colorMap[$this->color])) {
-            $classes[] = $colorMap[$this->color];
+        $colorClasses = ComponentHelper::config("component_colors.separator.{$this->color}");
+        if ($colorClasses) {
+            $classes[] = $colorClasses;
         }
 
         // Style props

@@ -39,18 +39,11 @@ class Mark extends Component
         $classes = ['px-1'];
 
         // Color
-        $colorMap = [
-            'primary' => 'bg-blue-200',
-            'secondary' => 'bg-gray-200',
-            'success' => 'bg-green-200',
-            'warning' => 'bg-yellow-200',
-            'danger' => 'bg-red-200',
-            'info' => 'bg-cyan-200',
-            'gray' => 'bg-gray-200',
-        ];
-
-        if ($this->color && isset($colorMap[$this->color])) {
-            $classes[] = $colorMap[$this->color];
+        if ($this->color) {
+            $colorClasses = ComponentHelper::config("component_colors.mark.{$this->color}");
+            if ($colorClasses) {
+                $classes[] = $colorClasses;
+            }
         }
 
         // Style props

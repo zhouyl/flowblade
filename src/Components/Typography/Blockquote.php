@@ -44,18 +44,11 @@ class Blockquote extends Component
         ];
 
         // Border color
-        $colorMap = [
-            'primary' => 'border-blue-500',
-            'secondary' => 'border-gray-500',
-            'success' => 'border-green-500',
-            'warning' => 'border-yellow-500',
-            'danger' => 'border-red-500',
-            'info' => 'border-cyan-500',
-            'gray' => 'border-gray-400',
-        ];
-
-        if ($this->color && isset($colorMap[$this->color])) {
-            $classes[] = $colorMap[$this->color];
+        if ($this->color) {
+            $colorClasses = ComponentHelper::config("component_colors.blockquote.{$this->color}");
+            if ($colorClasses) {
+                $classes[] = $colorClasses;
+            }
         }
 
         // Style props
