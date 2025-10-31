@@ -25,6 +25,8 @@ Display step-by-step progress indicator for multi-step processes like forms, wiz
 
 ### StepItem Component
 
+Component for displaying individual steps within a Steps component. Used for showing progress through a multi-step process. Perfect for representing individual steps in wizards and workflows.
+
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `title` | `string\|null` | `null` | Step title |
@@ -33,6 +35,31 @@ Display step-by-step progress indicator for multi-step processes like forms, wiz
 | `icon` | `string\|null` | `null` | Icon name (via Iconify) |
 | `number` | `int\|null` | `null` | Step number |
 | `showIcon` | `bool` | `true` | Whether to show icon/checkmark |
+
+StepItem also supports all common style props for flexible styling.
+
+#### StepItem Examples
+
+**Basic Steps**
+
+```blade
+<x-steps>
+    <x-step-item title="Account" description="Create your account" status="completed" />
+    <x-step-item title="Profile" description="Complete your profile" status="active" />
+    <x-step-item title="Verification" description="Verify your email" status="pending" />
+</x-steps>
+```
+
+**Checkout Steps**
+
+```blade
+<x-steps>
+    <x-step-item title="Cart" description="Review items" status="completed" />
+    <x-step-item title="Shipping" description="Enter address" status="completed" />
+    <x-step-item title="Payment" description="Enter payment" status="active" />
+    <x-step-item title="Confirmation" description="Order confirmation" status="pending" />
+</x-steps>
+```
 
 ### Style Props
 
@@ -293,6 +320,7 @@ public function previousStep()
 
 ## Accessibility
 
+### Steps
 The Steps component:
 - Uses semantic `<ol>` element for step list
 - Includes proper ARIA attributes
@@ -302,6 +330,15 @@ The Steps component:
 - Maintains proper heading hierarchy
 - Announces current step to screen readers
 - Supports step status announcements
+
+### StepItem
+The StepItem component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab)
+- Works with screen readers
+- Provides clear step indication
+- Announces step status to screen readers
+- Supports proper ARIA attributes for step state
 
 ## Notes
 

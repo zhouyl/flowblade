@@ -211,16 +211,16 @@
 
 ---
 
-### 14.11 完成同类组件文档合并 - [ ] 未开始
+### 14.11 完成同类组件文档合并 - [ ] 进行中
 
 **目标**: 完整分析并彻底完成所有同类组件的文档合并工作
 
 **任务**:
-- [ ] 14.11.1 分析所有未合并的同类组件
-- [ ] 14.11.2 合并 Navbar 相关文档 (navbar, navbar-brand, navbar-toggle, navbar-collapse, navbar-link)
-- [ ] 14.11.3 合并 Sidebar 相关文档 (sidebar, sidebar-item, sidebar-group, sidebar-toggle)
-- [ ] 14.11.4 合并 Breadcrumb 相关文档 (breadcrumb, breadcrumb-item)
-- [ ] 14.11.5 合并 Steps 相关文档 (steps, step-item)
+- [x] 14.11.1 分析所有未合并的同类组件
+- [x] 14.11.2 合并 Navbar 相关文档 (navbar, navbar-brand, navbar-toggle, navbar-collapse, navbar-link)
+- [x] 14.11.3 合并 Sidebar 相关文档 (sidebar, sidebar-item, sidebar-group, sidebar-toggle)
+- [x] 14.11.4 合并 Breadcrumb 相关文档 (breadcrumb, breadcrumb-item)
+- [x] 14.11.5 合并 Steps 相关文档 (steps, step-item)
 - [ ] 14.11.6 合并 Gallery 相关文档 (gallery, gallery-item)
 - [ ] 14.11.7 合并 Carousel 相关文档 (carousel, carousel-item)
 - [ ] 14.11.8 合并 Button 相关文档 (button, icon-button, close-button, button-group)
@@ -236,11 +236,13 @@
 **已合并的组件** (来自 14.2):
 - Card, List Group, Input, Stack, Accordion, DataList, Timeline, TreeView, Menu, Tabs, SpeedDial, MegaMenu
 
+**本会话已合并的组件**:
+- Navbar 系列 (navbar, navbar-brand, navbar-toggle, navbar-collapse, navbar-link) → navbar.md
+- Sidebar 系列 (sidebar, sidebar-item, sidebar-group, sidebar-toggle) → sidebar.md
+- Breadcrumb 系列 (breadcrumb, breadcrumb-item) → breadcrumb.md
+- Steps 系列 (steps, step-item) → steps.md
+
 **待合并的组件**:
-- Navbar 系列 (5 个文件)
-- Sidebar 系列 (4 个文件)
-- Breadcrumb 系列 (2 个文件)
-- Steps 系列 (2 个文件)
 - Gallery 系列 (2 个文件)
 - Carousel 系列 (2 个文件)
 - Button 系列 (4 个文件)

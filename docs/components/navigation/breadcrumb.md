@@ -23,11 +23,67 @@ Breadcrumb navigation component for showing the current page's location within a
 
 ### BreadcrumbItem
 
+Component for displaying individual breadcrumb items within a Breadcrumb. Each item represents a level in the navigation hierarchy. Perfect for creating navigation paths and showing page location context.
+
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `href` | `string` | `null` | Link URL |
+| `href` | `string` | `null` | Link URL (if null, item is not clickable) |
+| `active` | `boolean` | `false` | Mark as active/current page |
 | `icon` | `string` | `null` | Icon name |
 | `current` | `bool` | `false` | Whether this is the current page |
+
+BreadcrumbItem also supports all common style props for flexible styling.
+
+#### BreadcrumbItem Examples
+
+**Navigation Breadcrumb**
+
+```blade
+<x-breadcrumb>
+    <x-breadcrumb-item href="/">Home</x-breadcrumb-item>
+    <x-breadcrumb-item href="/products">Products</x-breadcrumb-item>
+    <x-breadcrumb-item href="/products/electronics">Electronics</x-breadcrumb-item>
+    <x-breadcrumb-item active>Laptop</x-breadcrumb-item>
+</x-breadcrumb>
+```
+
+**With Icons**
+
+```blade
+<x-breadcrumb>
+    <x-breadcrumb-item href="/">
+        <div class="flex items-center gap-1">
+            <x-icon name="heroicons:home" class="w-4 h-4" />
+            Home
+        </div>
+    </x-breadcrumb-item>
+    <x-breadcrumb-item href="/docs">Documentation</x-breadcrumb-item>
+    <x-breadcrumb-item active>Components</x-breadcrumb-item>
+</x-breadcrumb>
+```
+
+**E-commerce Breadcrumb**
+
+```blade
+<x-breadcrumb>
+    <x-breadcrumb-item href="/">Home</x-breadcrumb-item>
+    <x-breadcrumb-item href="/shop">Shop</x-breadcrumb-item>
+    <x-breadcrumb-item href="/shop/mens">Men's</x-breadcrumb-item>
+    <x-breadcrumb-item href="/shop/mens/shoes">Shoes</x-breadcrumb-item>
+    <x-breadcrumb-item active>Running Shoes</x-breadcrumb-item>
+</x-breadcrumb>
+```
+
+**Blog Breadcrumb**
+
+```blade
+<x-breadcrumb>
+    <x-breadcrumb-item href="/">Home</x-breadcrumb-item>
+    <x-breadcrumb-item href="/blog">Blog</x-breadcrumb-item>
+    <x-breadcrumb-item href="/blog/category/technology">Technology</x-breadcrumb-item>
+    <x-breadcrumb-item active>Getting Started with Laravel</x-breadcrumb-item>
+</x-breadcrumb>
+```
 
 ### Style Props
 
@@ -318,6 +374,7 @@ class ProductShow extends Component
 
 ## Accessibility
 
+### Breadcrumb
 The Breadcrumb component:
 - Uses semantic `<nav>` and `<ol>` elements
 - Includes `aria-label="Breadcrumb"` for screen readers
@@ -327,4 +384,14 @@ The Breadcrumb component:
 - Supports keyboard navigation through links (Tab, Enter)
 - Announces breadcrumb structure to screen readers
 - Provides proper link semantics for navigation
+
+### BreadcrumbItem
+The BreadcrumbItem component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab, Enter)
+- Works with screen readers
+- Provides clear navigation hierarchy
+- Marks current page with `aria-current="page"`
+- Announces breadcrumb item role to screen readers
+- Supports proper link semantics
 

@@ -38,36 +38,159 @@ Main sidebar container.
 
 ### SidebarItem
 
-Navigation item for sidebar.
+Navigation item for displaying individual items within a Sidebar. Each item can be a link or button for navigation.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `href` | `string\|null` | `'#'` | Link URL |
-| `icon` | `string\|null` | `null` | Icon name |
+| `href` | `string` | `null` | Link URL |
+| `active` | `boolean` | `false` | Mark as active |
+| `icon` | `string` | `null` | Icon name |
 | `badge` | `string\|null` | `null` | Badge text |
-| `active` | `bool` | `false` | Whether item is active |
+
+SidebarItem also supports all common style props for flexible styling.
+
+#### SidebarItem Examples
+
+**Basic Sidebar**
+
+```blade
+<x-sidebar>
+    <x-sidebar-item href="/dashboard" active>Dashboard</x-sidebar-item>
+    <x-sidebar-item href="/users">Users</x-sidebar-item>
+    <x-sidebar-item href="/products">Products</x-sidebar-item>
+    <x-sidebar-item href="/settings">Settings</x-sidebar-item>
+</x-sidebar>
+```
+
+**With Icons**
+
+```blade
+<x-sidebar>
+    <x-sidebar-item href="/dashboard">
+        <div class="flex items-center gap-2">
+            <x-icon name="heroicons:home" class="w-5 h-5" />
+            Dashboard
+        </div>
+    </x-sidebar-item>
+    <x-sidebar-item href="/users">
+        <div class="flex items-center gap-2">
+            <x-icon name="heroicons:users" class="w-5 h-5" />
+            Users
+        </div>
+    </x-sidebar-item>
+</x-sidebar>
+```
+
+**With Badge**
+
+```blade
+<x-sidebar>
+    <x-sidebar-item href="/messages">
+        <div class="flex items-center justify-between">
+            <span>Messages</span>
+            <x-badge color="danger">5</x-badge>
+        </div>
+    </x-sidebar-item>
+</x-sidebar>
+```
 
 ### SidebarGroup
 
-### Style Props
-
-Sidebar and related components support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
-
-Collapsible group for sidebar items.
+Collapsible group for sidebar items. Provides a collapsible section for organizing navigation items. Perfect for organizing navigation hierarchies and grouping related menu items.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `title` | `string\|null` | `null` | Title for the group |
+| `title` | `string` | `null` | Group title |
+| `collapsible` | `boolean` | `true` | Allow collapsing |
 | `icon` | `string\|null` | `null` | Icon name |
 | `open` | `bool` | `false` | Whether group is open by default |
 
+SidebarGroup also supports all common style props for flexible styling.
+
+#### SidebarGroup Examples
+
+**Collapsible Groups**
+
+```blade
+<x-sidebar>
+    <x-sidebar-group title="Navigation" collapsible>
+        <x-sidebar-item href="/home">Home</x-sidebar-item>
+        <x-sidebar-item href="/about">About</x-sidebar-item>
+    </x-sidebar-group>
+
+    <x-sidebar-group title="Admin" collapsible>
+        <x-sidebar-item href="/users">Users</x-sidebar-item>
+        <x-sidebar-item href="/settings">Settings</x-sidebar-item>
+    </x-sidebar-group>
+</x-sidebar>
+```
+
 ### SidebarToggle
 
-Toggle button for off-canvas sidebar.
+Toggle button for off-canvas sidebar. Used for collapsing/expanding the sidebar. Perfect for responsive layouts and mobile-friendly navigation.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `target` | `string\|null` | `'sidebar'` | Target sidebar element ID |
+
+SidebarToggle supports all common style props for flexible styling.
+
+#### SidebarToggle Examples
+
+**In Header**
+
+```blade
+<header class="flex items-center gap-4 p-4 border-b">
+    <x-sidebar-toggle />
+    <x-heading size="lg">Dashboard</x-heading>
+</header>
+```
+
+**With Custom Styling**
+
+```blade
+<x-sidebar-toggle
+    p="2"
+    rounded="md"
+    hover:bg="gray.100"
+    transition="all"
+/>
+```
+
+**Mobile Navigation**
+
+```blade
+<div class="flex items-center justify-between p-4 md:hidden">
+    <x-heading as="h1" fontSize="lg">App</x-heading>
+    <x-sidebar-toggle />
+</div>
+```
+
+**Dashboard Layout**
+
+```blade
+<div class="flex h-screen">
+    <x-sidebar>
+        <x-sidebar-item href="/dashboard">Dashboard</x-sidebar-item>
+        <x-sidebar-item href="/users">Users</x-sidebar-item>
+        <x-sidebar-item href="/settings">Settings</x-sidebar-item>
+    </x-sidebar>
+
+    <div class="flex-1 flex flex-col">
+        <header class="flex items-center gap-4 p-4 border-b">
+            <x-sidebar-toggle />
+            <x-heading size="lg">Dashboard</x-heading>
+        </header>
+        <main class="flex-1 p-4">
+            <!-- Content -->
+        </main>
+    </div>
+</div>
+```
+
+### Style Props
+
+Sidebar and related components support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
 
 ## Variants
 
@@ -473,6 +596,7 @@ import 'flowbite';
 
 ## Accessibility
 
+### Sidebar
 The Sidebar component:
 - Uses semantic `<aside>` element
 - Includes proper ARIA attributes (`aria-label`, `aria-controls`, `aria-current`)
@@ -482,6 +606,32 @@ The Sidebar component:
 - Uses semantic HTML structure with `<nav>` and `<ul>` elements
 - Announces sidebar state to screen readers
 - Supports multi-level menu navigation
+
+### SidebarItem
+The SidebarItem component:
+- Uses semantic HTML structure
+- Supports keyboard navigation
+- Works with screen readers
+- Provides clear active state indication
+- Should be used within a Sidebar component
+
+### SidebarGroup
+The SidebarGroup component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab, Enter, Arrow keys)
+- Works with screen readers
+- Provides clear group indication
+- Announces group title to screen readers
+- Supports collapsible state announcement
+
+### SidebarToggle
+The SidebarToggle component:
+- Uses semantic HTML button element
+- Supports keyboard navigation (Tab, Enter, Space)
+- Works with screen readers
+- Provides clear toggle state indication
+- Has proper ARIA labels for accessibility
+- Maintains focus management
 
 ## Notes
 

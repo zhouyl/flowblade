@@ -31,44 +31,241 @@ Main navigation bar container.
 | `sticky` | `bool` | `false` | Whether navbar is sticky |
 | `border` | `bool` | `true` | Whether to show border |
 
+Navbar supports all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+
 ### NavbarBrand
 
-Logo and brand name section.
+Logo and brand name section. Typically placed at the start of the navigation bar. Perfect for displaying company logos, brand names, and home links.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `href` | `string\|null` | `'#'` | Link URL |
-
-### Style Props
-
-Navbar and related components support all style props from the HasStyleProps trait. For a complete list, see the [HasStyleProps trait documentation](../../traits/has-style-props.md).
+| `href` | `string` | `'/'` | Brand link URL |
 | `logo` | `string\|null` | `null` | Logo image URL |
 | `name` | `string\|null` | `null` | Brand name |
 
+NavbarBrand also supports all common style props for flexible styling.
+
+#### NavbarBrand Examples
+
+**With Logo and Text**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">
+        <img src="/logo.png" alt="Logo" class="h-8 w-8" />
+        <x-text weight="bold" size="lg" class="ml-2">Flowblade</x-text>
+    </x-navbar-brand>
+</x-navbar>
+```
+
+**Logo Only**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">
+        <img src="/logo.png" alt="Logo" class="h-10" />
+    </x-navbar-brand>
+</x-navbar>
+```
+
+**Text Only**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">
+        <x-heading as="h1" size="lg">MyBrand</x-heading>
+    </x-navbar-brand>
+</x-navbar>
+```
+
+**With Icon**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">
+        <x-icon name="heroicons:rocket-launch" class="w-8 h-8 text-blue-600" />
+        <x-text weight="bold" class="ml-2">Rocket</x-text>
+    </x-navbar-brand>
+</x-navbar>
+```
+
 ### NavbarToggle
 
-Hamburger menu button for mobile.
+Hamburger menu button for mobile. Used with NavbarCollapse to toggle mobile navigation visibility. Perfect for responsive mobile navigation and hamburger menus.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `target` | `string\|null` | `'navbar-collapse'` | Target collapse element ID |
 
+NavbarToggle supports all common style props for flexible styling.
+
+#### NavbarToggle Examples
+
+**Mobile Navigation**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">
+        <x-text weight="bold">MyApp</x-text>
+    </x-navbar-brand>
+
+    <x-navbar-toggle />
+
+    <x-navbar-collapse>
+        <x-navbar-link href="/">Home</x-navbar-link>
+        <x-navbar-link href="/about">About</x-navbar-link>
+        <x-navbar-link href="/contact">Contact</x-navbar-link>
+    </x-navbar-collapse>
+</x-navbar>
+```
+
+**With Custom Styling**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">Logo</x-navbar-brand>
+
+    <x-navbar-toggle
+        color="primary"
+        size="lg"
+    />
+
+    <x-navbar-collapse>
+        <x-navbar-link href="/">Home</x-navbar-link>
+    </x-navbar-collapse>
+</x-navbar>
+```
+
 ### NavbarCollapse
 
-Collapsible navigation menu container.
+Collapsible navigation menu container. Used with NavbarToggle for responsive mobile navigation. Perfect for responsive navigation menus and mobile-friendly layouts.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `id` | `string\|null` | `'navbar-collapse'` | Element ID for collapse target |
 
+NavbarCollapse supports all common style props for flexible styling.
+
+#### NavbarCollapse Examples
+
+**Responsive Navigation**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">
+        <x-text weight="bold" size="lg">MyApp</x-text>
+    </x-navbar-brand>
+
+    <x-navbar-toggle />
+
+    <x-navbar-collapse>
+        <x-navbar-link href="/" active>Home</x-navbar-link>
+        <x-navbar-link href="/about">About</x-navbar-link>
+        <x-navbar-link href="/services">Services</x-navbar-link>
+        <x-navbar-link href="/contact">Contact</x-navbar-link>
+    </x-navbar-collapse>
+</x-navbar>
+```
+
+**With User Menu**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">Logo</x-navbar-brand>
+
+    <x-navbar-toggle />
+
+    <x-navbar-collapse>
+        <x-navbar-link href="/">Home</x-navbar-link>
+        <x-navbar-link href="/about">About</x-navbar-link>
+
+        <x-menu>
+            <x-menu-trigger>
+                <x-navbar-link href="#">Account</x-navbar-link>
+            </x-menu-trigger>
+            <x-menu-content>
+                <x-menu-item href="/profile">Profile</x-menu-item>
+                <x-menu-item href="/settings">Settings</x-menu-item>
+                <x-menu-divider />
+                <x-menu-item href="/logout">Logout</x-menu-item>
+            </x-menu-content>
+        </x-menu>
+    </x-navbar-collapse>
+</x-navbar>
+```
+
 ### NavbarLink
 
-Navigation link item.
+Navigation link item. Provides styling for active and inactive states. Perfect for main navigation items and menu links.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `href` | `string\|null` | `'#'` | Link URL |
-| `active` | `bool` | `false` | Whether link is active |
+| `href` | `string` | `'#'` | Link URL |
+| `active` | `boolean` | `false` | Mark as active |
+
+NavbarLink also supports all common style props for flexible styling.
+
+#### NavbarLink Examples
+
+**Basic Navigation**
+
+```blade
+<x-navbar>
+    <x-navbar-brand href="/">Logo</x-navbar-brand>
+
+    <x-navbar-link href="/">Home</x-navbar-link>
+    <x-navbar-link href="/about">About</x-navbar-link>
+    <x-navbar-link href="/services">Services</x-navbar-link>
+    <x-navbar-link href="/contact">Contact</x-navbar-link>
+</x-navbar>
+```
+
+**With Active State**
+
+```blade
+<x-navbar>
+    <x-navbar-link href="/" active>Home</x-navbar-link>
+    <x-navbar-link href="/about">About</x-navbar-link>
+    <x-navbar-link href="/contact">Contact</x-navbar-link>
+</x-navbar>
+```
+
+**With Icons**
+
+```blade
+<x-navbar>
+    <x-navbar-link href="/">
+        <div class="flex items-center gap-2">
+            <x-icon name="heroicons:home" class="w-4 h-4" />
+            Home
+        </div>
+    </x-navbar-link>
+    <x-navbar-link href="/settings">
+        <div class="flex items-center gap-2">
+            <x-icon name="heroicons:cog" class="w-4 h-4" />
+            Settings
+        </div>
+    </x-navbar-link>
+</x-navbar>
+```
+
+**With Dropdown**
+
+```blade
+<x-navbar>
+    <x-navbar-link href="/">Home</x-navbar-link>
+
+    <x-menu>
+        <x-menu-trigger>
+            <x-navbar-link href="#">Products</x-navbar-link>
+        </x-menu-trigger>
+        <x-menu-content>
+            <x-menu-item href="/products/electronics">Electronics</x-menu-item>
+            <x-menu-item href="/products/clothing">Clothing</x-menu-item>
+        </x-menu-content>
+    </x-menu>
+</x-navbar>
+```
 
 ## Variants
 
@@ -404,6 +601,7 @@ import 'flowbite';
 
 ## Accessibility
 
+### Navbar
 The Navbar component:
 - Uses semantic `<nav>` element
 - Includes proper ARIA attributes (`aria-controls`, `aria-expanded`, `aria-current`)
@@ -413,6 +611,43 @@ The Navbar component:
 - Uses semantic HTML structure
 - Announces navigation state to screen readers
 - Supports mobile menu toggle with keyboard
+
+### NavbarBrand
+The NavbarBrand component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab, Enter)
+- Works with screen readers
+- Provides clear brand identification
+- Supports proper link semantics
+- Announces brand link to screen readers
+
+### NavbarToggle
+The NavbarToggle component:
+- Uses semantic HTML button element
+- Supports keyboard navigation (Tab, Enter, Space)
+- Works with screen readers
+- Provides clear toggle state indication
+- Announces menu state to assistive technologies
+- Supports `aria-expanded` for toggle state
+- Provides proper button semantics
+
+### NavbarCollapse
+The NavbarCollapse component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab, Enter, Escape)
+- Works with screen readers
+- Provides clear expand/collapse indicators
+- Announces collapse state to screen readers
+- Supports proper ARIA attributes for menu state
+
+### NavbarLink
+The NavbarLink component:
+- Uses semantic HTML structure
+- Supports keyboard navigation (Tab, Enter)
+- Works with screen readers
+- Provides clear active state indication
+- Announces active link with `aria-current="page"`
+- Supports proper link semantics
 
 ## Notes
 
