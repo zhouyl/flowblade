@@ -46,17 +46,10 @@ class Card extends Component
             'overflow-hidden',
         ];
 
-        // Size (padding)
-        $sizeClasses = [
-            'xs' => 'p-2',
-            'sm' => 'p-3',
-            'md' => 'p-4',
-            'lg' => 'p-6',
-            'xl' => 'p-8',
-        ];
-
-        if (isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size (padding) - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('card', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Variant

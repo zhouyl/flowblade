@@ -54,17 +54,10 @@ class Tag extends Component
             'rounded-md',
         ];
 
-        // Size
-        $sizeClasses = [
-            'xs' => 'text-xs px-2 py-0.5 gap-1',
-            'sm' => 'text-xs px-2.5 py-0.5 gap-1',
-            'md' => 'text-sm px-3 py-1 gap-1.5',
-            'lg' => 'text-base px-3.5 py-1 gap-1.5',
-            'xl' => 'text-lg px-4 py-1.5 gap-2',
-        ];
-
-        if (isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('tag', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Color based on variant

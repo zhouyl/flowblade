@@ -53,17 +53,10 @@ class Badge extends Component
             'rounded-full',
         ];
 
-        // Size
-        $sizeClasses = [
-            'xs' => 'text-xs px-2 py-0.5',
-            'sm' => 'text-xs px-2.5 py-0.5',
-            'md' => 'text-sm px-3 py-1',
-            'lg' => 'text-base px-3.5 py-1',
-            'xl' => 'text-lg px-4 py-1.5',
-        ];
-
-        if (isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('badge', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Color based on variant

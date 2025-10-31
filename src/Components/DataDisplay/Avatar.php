@@ -77,21 +77,10 @@ class Avatar extends Component
             'overflow-hidden',
         ];
 
-        // Size
-        $sizeClasses = [
-            '2xs' => 'w-6 h-6 text-xs',
-            'xs' => 'w-8 h-8 text-xs',
-            'sm' => 'w-10 h-10 text-sm',
-            'md' => 'w-12 h-12 text-base',
-            'lg' => 'w-16 h-16 text-lg',
-            'xl' => 'w-20 h-20 text-xl',
-            '2xl' => 'w-24 h-24 text-2xl',
-            '3xl' => 'w-32 h-32 text-3xl',
-            '4xl' => 'w-40 h-40 text-4xl',
-        ];
-
-        if (isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('avatar', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Shape
