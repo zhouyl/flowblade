@@ -169,4 +169,6 @@ The Kbd component:
 - Maintains text hierarchy
 - Provides clear visual distinction
 - Helps users understand keyboard interactions
+- Announces keyboard input to screen readers
+- Supports proper ARIA attributes for keyboard input
 
