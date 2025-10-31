@@ -147,4 +147,6 @@ The Highlight component:
 - Provides visual distinction
 - Supports color contrast requirements
 - Should not be the only way to convey information
+- Announces highlighted content to screen readers
+- Supports proper ARIA attributes for highlighted text
 
