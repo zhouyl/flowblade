@@ -47,6 +47,6 @@ class Switch_ extends Component
      */
     public function render()
     {
-        return view('flowblade::components.forms.switch');
+        return view('flowblade::components.forms.switch_');
     }
 }

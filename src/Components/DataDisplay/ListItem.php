@@ -156,6 +156,6 @@ class ListItem extends Component
      */
     public function render()
     {
-        return view('flowblade::components.data-display.list-group-item');
+        return view('flowblade::components.data-display.list-item');
     }
 }

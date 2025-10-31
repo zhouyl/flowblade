@@ -73,6 +73,6 @@ class List_ extends Component
      */
     public function render()
     {
-        return view('flowblade::components.data-display.list-group');
+        return view('flowblade::components.data-display.list');
     }
 }

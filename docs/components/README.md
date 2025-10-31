@@ -102,7 +102,7 @@ Form input components with validation support.
 - [Datepicker](forms/datepicker.md) - Date picker with range and inline variants
 - [Timepicker](forms/timepicker.md) - Time picker component
 - [FloatingLabel](forms/floating-label.md) - Floating label inputs, textareas, and selects
-- [Switch](forms/switch.md) - Toggle switch component
+- [Switch](forms/switch_.md) - Toggle switch component
 - [PhoneInput](forms/phone-input.md) - Phone number input with country support
 - [PinInput](forms/pin-input.md) - PIN/OTP input component
 - [NumberInput](forms/number-input.md) - Number input with increment/decrement
@@ -123,7 +123,7 @@ Form input components with validation support.
 Components for displaying data and content.
 
 - [Card](data-display/card.md) - Card container with header, body, and footer
-- [List](data-display/list-group.md) - List component with items (class: `List_`)
+- [List](data-display/list.md) - List component with items (class: `List_`)
 - [Table](data-display/table.md) - Data table component
 - [Avatar](data-display/avatar.md) - Avatar component with initials or images
 - [Badge](data-display/badge.md) - Badge component for labels and tags
@@ -185,7 +185,7 @@ Feedback and status components for user feedback.
 - [Spinner](feedback/spinner.md) - Loading spinner component
 - [Skeleton](feedback/skeleton.md) - Skeleton loading component
 - [Status](feedback/status.md) - Status indicator component
-- [Empty](feedback/empty-state.md) - Empty state component (class: `Empty_`)
+- [Empty](feedback/empty.md) - Empty state component (class: `Empty_`)
 
 ## Disclosure Components
 
@@ -218,7 +218,7 @@ Disclosure and collapsible components.
 | Datepicker | `<input>` | Flowbite JS | [datepicker.md](forms/datepicker.md) |
 | Timepicker | `<input>` | Flowbite JS | [timepicker.md](forms/timepicker.md) |
 | FloatingLabel | `<input>` | None | [floating-label.md](forms/floating-label.md) |
-| Switch | `<input type="checkbox">` | None | [switch.md](forms/switch.md) |
+| Switch | `<input type="checkbox">` | None | [switch_.md](forms/switch_.md) |
 | PhoneInput | `<input>` | None | [phone-input.md](forms/phone-input.md) |
 | PinInput | `<input>` | None | [pin-input.md](forms/pin-input.md) |
 | NumberInput | `<input type="number">` | None | [number-input.md](forms/number-input.md) |
@@ -260,7 +260,7 @@ Disclosure and collapsible components.
 | Component | HTML Tag | Dependencies | Documentation |
 |-----------|----------|--------------|----------------|
 | Card | `<div>` | None | [card.md](data-display/card.md) |
-| List | `<ul>` | None | [list-group.md](data-display/list-group.md) |
+| List | `<ul>` | None | [list.md](data-display/list.md) |
 | Table | `<table>` | Alpine.js | [table.md](data-display/table.md) |
 | Avatar | `<div>` | None | [avatar.md](data-display/avatar.md) |
 | Badge | `<span>` | None | [badge.md](data-display/badge.md) |
@@ -321,7 +321,7 @@ Disclosure and collapsible components.
 | Spinner | `<div>` | None | [spinner.md](feedback/spinner.md) |
 | Skeleton | `<div>` | None | [skeleton.md](feedback/skeleton.md) |
 | Status | `<div>` | None | [status.md](feedback/status.md) |
-| Empty | `<div>` | None | [empty-state.md](feedback/empty-state.md) |
+| Empty | `<div>` | None | [empty.md](feedback/empty.md) |
 
 ### Typography Components
 

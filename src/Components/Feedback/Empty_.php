@@ -68,6 +68,6 @@ class Empty_ extends Component
      */
     public function render()
     {
-        return view('flowblade::components.feedback.empty-state');
+        return view('flowblade::components.feedback.empty');
     }
 }
