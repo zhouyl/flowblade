@@ -87,15 +87,10 @@ class PinInput extends Component
             'focus:ring-offset-0',
         ];
 
-        // Size
-        $sizeClasses = [
-            'sm' => 'w-8 h-8 text-sm',
-            'md' => 'w-10 h-10 text-base',
-            'lg' => 'w-12 h-12 text-lg',
-        ];
-
-        if ($this->size && isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('pin_input', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Border and focus

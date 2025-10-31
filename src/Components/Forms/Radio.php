@@ -54,15 +54,10 @@ class Radio extends Component
             'focus:ring-offset-0',
         ];
 
-        // Size
-        $sizeClasses = [
-            'sm' => 'h-4 w-4',
-            'md' => 'h-5 w-5',
-            'lg' => 'h-6 w-6',
-        ];
-
-        if ($this->size && isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('radio', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Color

@@ -58,17 +58,10 @@ class NativeSelect extends Component
             'pr-10', // Space for dropdown icon
         ];
 
-        // Size
-        $sizeClasses = [
-            'xs' => 'px-2 py-1 text-xs',
-            'sm' => 'px-2.5 py-1.5 text-sm',
-            'md' => 'px-3 py-2 text-sm',
-            'lg' => 'px-4 py-2.5 text-base',
-            'xl' => 'px-5 py-3 text-base',
-        ];
-
-        if ($this->size && isset($sizeClasses[$this->size])) {
-            $classes[] = $sizeClasses[$this->size];
+        // Size - use configuration
+        $sizeClasses = ComponentHelper::getSizeClasses('native_select', $this->size);
+        if ($sizeClasses) {
+            $classes[] = $sizeClasses;
         }
 
         // Variant

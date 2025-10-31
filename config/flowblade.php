@@ -219,6 +219,42 @@ return [
             'lg' => 'p-6',
             'xl' => 'p-8',
         ],
+        'checkbox' => [
+            'sm' => 'h-4 w-4',
+            'md' => 'h-5 w-5',
+            'lg' => 'h-6 w-6',
+        ],
+        'radio' => [
+            'sm' => 'h-4 w-4',
+            'md' => 'h-5 w-5',
+            'lg' => 'h-6 w-6',
+        ],
+        'native_select' => [
+            'xs' => 'px-2 py-1 text-xs',
+            'sm' => 'px-2.5 py-1.5 text-sm',
+            'md' => 'px-3 py-2 text-sm',
+            'lg' => 'px-4 py-2.5 text-base',
+            'xl' => 'px-5 py-3 text-base',
+        ],
+        'number_input' => [
+            'xs' => 'px-2 py-1 text-xs',
+            'sm' => 'px-2.5 py-1.5 text-sm',
+            'md' => 'px-3 py-2 text-sm',
+            'lg' => 'px-4 py-2.5 text-base',
+            'xl' => 'px-5 py-3 text-base',
+        ],
+        'password_input' => [
+            'xs' => 'px-2 py-1 text-xs',
+            'sm' => 'px-2.5 py-1.5 text-sm',
+            'md' => 'px-3 py-2 text-sm',
+            'lg' => 'px-4 py-2.5 text-base',
+            'xl' => 'px-5 py-3 text-base',
+        ],
+        'pin_input' => [
+            'sm' => 'w-8 h-8 text-sm',
+            'md' => 'w-10 h-10 text-base',
+            'lg' => 'w-12 h-12 text-lg',
+        ],
     ],
 
     /*
