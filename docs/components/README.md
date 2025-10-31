@@ -1,6 +1,37 @@
 # Components Documentation
 
-Complete documentation for all Flowblade components.
+Complete documentation for all 138 Flowblade components. Each component includes:
+- ✅ Full Style Props support (Chakra UI-inspired)
+- ✅ Comprehensive usage examples
+- ✅ Accessibility guidelines
+- ✅ Responsive design support
+- ✅ Flowbite integration
+
+## Style Props System
+
+All Flowblade components support a powerful **Style Props** system inspired by Chakra UI. Instead of writing Tailwind classes, you can use intuitive props:
+
+```blade
+{{-- Traditional Tailwind approach --}}
+<div class="p-6 bg-blue-500 rounded-lg text-white">Content</div>
+
+{{-- Flowblade Style Props approach --}}
+<x-box p="6" bg="blue.500" rounded="lg" color="white">Content</x-box>
+```
+
+### Available Style Props
+
+- **Spacing**: `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml`
+- **Sizing**: `w`, `h`, `minW`, `maxW`, `minH`, `maxH`
+- **Colors**: `bg`, `color`, `borderColor` (supports color scales like `blue.500`)
+- **Borders**: `border`, `rounded`, `borderRadius`, `borderStyle`
+- **Layout**: `display`, `position`, `zIndex`, `overflow`, `overflowX`, `overflowY`
+- **Typography**: `fontSize`, `fontWeight`, `textAlign`, `lineHeight`, `letterSpacing`
+- **Flexbox**: `flex`, `flexDirection`, `alignItems`, `justifyContent`, `gap`, `flexWrap`
+- **Grid**: `gridTemplateColumns`, `gridColumn`, `gridRow`, `gap`
+- **Effects**: `shadow`, `opacity`, `cursor`, `transition`
+
+For detailed information, see [HasStyleProps trait documentation](../traits/has-style-props.md).
 
 ## Layout Components
 
