@@ -130,4 +130,6 @@ The Mark component:
 - Works with all assistive technologies
 - Provides visual distinction
 - Should not be the only way to convey information
+- Announces marked content to screen readers
+- Supports proper ARIA attributes for marked text
 
