@@ -1,11 +1,24 @@
 # Components Documentation
 
-Complete documentation for all 138 Flowblade components. Each component includes:
+Complete documentation for all 98 Flowblade components organized by category. Each component includes:
 - ✅ Full Style Props support for flexible styling
 - ✅ Comprehensive usage examples
 - ✅ Accessibility guidelines
 - ✅ Responsive design support
 - ✅ Flowbite integration
+
+## Component Categories
+
+- **Layout** (16 components) - Page structure and layout
+- **Button** (1 merged file) - Button variants and groups
+- **Typography** (11 components) - Text and content display
+- **Form** (27 components) - Input and form controls
+- **Data Display** (16 components) - Data presentation
+- **Navigation** (9 components) - Navigation and menus
+- **Media** (5 components) - Images and galleries
+- **Overlay** (6 components) - Modals and popovers
+- **Feedback** (9 components) - Status and notifications
+- **Disclosure** (2 components) - Collapsible content
 
 ## Style Props System
 
@@ -58,10 +71,7 @@ Layout components help you structure your page and organize content.
 
 Interactive button components with various styles and states.
 
-- [Button](buttons/button.md) - Versatile button with multiple variants
-- [IconButton](buttons/icon-button.md) - Icon-only button component
-- [CloseButton](buttons/close-button.md) - Close button for dialogs and notifications
-- [ButtonGroup](buttons/button-group.md) - Group buttons together
+- [Button](buttons/button.md) - Versatile button with multiple variants, icon buttons, close buttons, and button groups
 
 ## Typography Components
 
@@ -69,31 +79,120 @@ Text and typography components for content display.
 
 - [Heading](typography/heading.md) - Heading component (h1-h6)
 - [Text](typography/text.md) - Text and paragraph component
-- Link - Link component with external support
-- Code - Inline code snippets
-- CodeBlock - Code blocks with syntax highlighting
-- Kbd - Keyboard key display
-- Mark - Highlighted text
-- Em - Italic/emphasis text
-- Strong - Bold text
-- Blockquote - Quote blocks
-- Highlight - Text highlighting with search
-- List - Styled lists (ul/ol)
+- [Link](typography/link.md) - Link component with external support
+- [Code](typography/code.md) - Inline code snippets
+- [CodeBlock](typography/code-block.md) - Code blocks with syntax highlighting
+- [Kbd](typography/kbd.md) - Keyboard key display
+- [Mark](typography/mark.md) - Highlighted text
+- [Em](typography/em.md) - Italic/emphasis text
+- [Strong](typography/strong.md) - Bold text
+- [Blockquote](typography/blockquote.md) - Quote blocks
+- [Highlight](typography/highlight.md) - Text highlighting with search
 
 ## Form Components
 
 Form input components with validation support.
 
-- [Input](forms/input.md) - Text input with variants
+- [Input](forms/input-group.md) - Text input with variants, addons, and groups
 - [Textarea](forms/textarea.md) - Multi-line text input
 - [Checkbox](forms/checkbox.md) - Checkbox component
 - [Radio](forms/radio.md) - Radio button component
+- [Select](forms/select.md) - Select dropdown component
+- [NativeSelect](forms/native-select.md) - Native HTML select element
+- [Datepicker](forms/datepicker.md) - Date picker with range and inline variants
+- [Timepicker](forms/timepicker.md) - Time picker component
+- [FloatingLabel](forms/floating-label.md) - Floating label inputs, textareas, and selects
+- [Switch](forms/switch.md) - Toggle switch component
+- [PhoneInput](forms/phone-input.md) - Phone number input with country support
+- [PinInput](forms/pin-input.md) - PIN/OTP input component
+- [NumberInput](forms/number-input.md) - Number input with increment/decrement
+- [PasswordInput](forms/password-input.md) - Password input with visibility toggle
+- [SearchInput](forms/search-input.md) - Search input component
+- [RangeSlider](forms/range-slider.md) - Range slider component
+- [Slider](forms/slider.md) - Slider component
+- [FileUpload](forms/file-upload.md) - File upload component
+- [Clipboard](forms/clipboard.md) - Copy to clipboard component
+- [Editable](forms/editable.md) - Inline editable text
+- [Field](forms/field.md) - Form field wrapper with label and error
+- [Fieldset](forms/fieldset.md) - Form fieldset wrapper
+- [Form](forms/form.md) - Form wrapper component
+- [TagsInput](forms/tags-input.md) - Tags input component
 
 ## Data Display Components
 
 Components for displaying data and content.
 
+- [Card](data-display/card.md) - Card container with header, body, and footer
+- [ListGroup](data-display/list-group.md) - List group component with items
+- [Table](data-display/table.md) - Data table component
+- [Avatar](data-display/avatar.md) - Avatar component with initials or images
+- [Badge](data-display/badge.md) - Badge component for labels and tags
+- [Tag](data-display/tag.md) - Tag component
+- [Rating](data-display/rating.md) - Star rating component
+- [Stat](data-display/stat.md) - Statistics display component
+- [Timeline](data-display/timeline.md) - Timeline component with items
+- [TreeView](data-display/tree-view.md) - Tree view component
+- [DataList](data-display/data-list.md) - Data list component with items
+- [ChatBubble](data-display/chat-bubble.md) - Chat bubble component
+- [Indicator](data-display/indicator.md) - Status indicator component
+- [ColorSwatch](data-display/color-swatch.md) - Color swatch component
 - [Icon](data-display/icon.md) - Iconify icon component (100,000+ icons)
+
+## Navigation Components
+
+Navigation and menu components for page structure.
+
+- [Navbar](navigation/navbar.md) - Navigation bar with brand, links, and collapse
+- [Sidebar](navigation/sidebar.md) - Sidebar navigation with items and groups
+- [Breadcrumb](navigation/breadcrumb.md) - Breadcrumb navigation
+- [Steps](navigation/steps.md) - Step indicator component
+- [Pagination](navigation/pagination.md) - Pagination component
+- [Tabs](navigation/tabs.md) - Tab navigation component
+- [Menu](overlay/menu.md) - Dropdown menu component
+- [MegaMenu](navigation/mega-menu.md) - Mega menu component
+- [SpeedDial](navigation/speed-dial.md) - Speed dial floating action menu
+
+## Media Components
+
+Media display components for images, videos, and galleries.
+
+- [Image](media/image.md) - Image component with lazy loading
+- [Gallery](media/gallery.md) - Image gallery component
+- [Carousel](media/carousel.md) - Carousel/slider component
+- [Video](media/video.md) - Video player component
+- [QRCode](media/qrcode.md) - QR code generator component
+
+## Overlay Components
+
+Overlay and modal components for dialogs and popovers.
+
+- [Modal](overlay/modal.md) - Modal dialog component
+- [Drawer](overlay/drawer.md) - Drawer/sidebar overlay component
+- [Popover](overlay/popover.md) - Popover component
+- [Tooltip](overlay/tooltip.md) - Tooltip component
+- [HoverCard](overlay/hover-card.md) - Hover card component
+- [Menu](overlay/menu.md) - Dropdown menu component
+
+## Feedback Components
+
+Feedback and status components for user feedback.
+
+- [Alert](feedback/alert.md) - Alert component
+- [Banner](feedback/banner.md) - Banner component
+- [Toast](feedback/toast.md) - Toast notification component
+- [Progress](feedback/progress.md) - Progress bar component
+- [ProgressCircle](feedback/progress-circle.md) - Circular progress component
+- [Spinner](feedback/spinner.md) - Loading spinner component
+- [Skeleton](feedback/skeleton.md) - Skeleton loading component
+- [Status](feedback/status.md) - Status indicator component
+- [EmptyState](feedback/empty-state.md) - Empty state component
+
+## Disclosure Components
+
+Disclosure and collapsible components.
+
+- [Accordion](disclosure/accordion.md) - Accordion component with items
+- [Collapsible](disclosure/collapsible.md) - Collapsible component
 
 ## Quick Reference
 

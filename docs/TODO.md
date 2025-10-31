@@ -227,7 +227,7 @@
 - [x] 14.11.9 合并 Datepicker 相关文档 (datepicker, date-range-picker, inline-datepicker)
 - [x] 14.11.10 合并 Floating 相关文档 (floating-label, floating-textarea, floating-select)
 - [x] 14.11.11 合并 Switch 相关文档 (switch, switch-input)
-- [ ] 14.11.12 更新 components/README.md 中的索引
+- [x] 14.11.12 更新 components/README.md 中的索引
 
 **完成时间**: 本会话
 
