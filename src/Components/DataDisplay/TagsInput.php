@@ -57,6 +57,8 @@ class TagsInput extends Component
      */
     public function classes(): string
     {
+        $inputConfig = ComponentHelper::config('component_colors.tags_input', []);
+
         $classes = [
             'w-full',
             'flex',
@@ -64,9 +66,9 @@ class TagsInput extends Component
             'gap-2',
             'p-2',
             'border',
-            'border-gray-300',
+            $inputConfig['border'] ?? 'border-gray-300',
             'rounded-lg',
-            'bg-white',
+            $inputConfig['bg'] ?? 'bg-white',
             'focus-within:ring-2',
             'focus-within:ring-blue-500',
             'focus-within:border-transparent',

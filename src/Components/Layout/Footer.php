@@ -36,10 +36,14 @@ class Footer extends Component
      */
     public function classes(): string
     {
+        $footerConfig = ComponentHelper::config('component_colors.footer', []);
+
         $classes = [
             'w-full',
-            'bg-gray-100 dark:bg-gray-900',
-            'border-t border-gray-200 dark:border-gray-800',
+            $footerConfig['bg'] ?? 'bg-gray-100',
+            $footerConfig['dark_bg'] ?? 'dark:bg-gray-900',
+            $footerConfig['border'] ?? 'border-t border-gray-200',
+            $footerConfig['dark_border'] ?? 'dark:border-gray-800',
             $this->sticky ? 'sticky bottom-0' : '',
         ];
 

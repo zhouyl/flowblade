@@ -36,11 +36,13 @@ class CardFooter extends Component
      */
     public function classes(): string
     {
+        $footerConfig = ComponentHelper::config('component_colors.card_footer', []);
+
         $classes = [
             'px-4',
             'py-3',
-            'border-t',
-            'border-gray-200',
+            $footerConfig['border'] ?? 'border-t',
+            $footerConfig['border_color'] ?? 'border-gray-200',
             'dark:border-gray-700',
         ];
 

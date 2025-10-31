@@ -43,12 +43,14 @@ class CloseButton extends Component
      */
     public function classes(): string
     {
+        $buttonConfig = ComponentHelper::config('component_colors.close_button', []);
+
         $classes = [
             'inline-flex',
             'items-center',
             'justify-center',
             'rounded-md',
-            'text-gray-400',
+            $buttonConfig['text'] ?? 'text-gray-400',
             'hover:text-gray-500',
             'hover:bg-gray-100',
             'focus:outline-none',

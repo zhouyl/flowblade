@@ -53,11 +53,12 @@ class Card extends Component
         }
 
         // Variant
+        $cardConfig = ComponentHelper::config('component_colors.card', []);
         $variantClasses = [
-            'elevated' => 'bg-white shadow-md border border-gray-200',
-            'outline' => 'bg-white border border-gray-300',
-            'filled' => 'bg-gray-50 border border-gray-200',
-            'ghost' => 'bg-transparent',
+            'elevated' => $cardConfig['elevated'] ?? 'bg-white shadow-md border border-gray-200',
+            'outline' => $cardConfig['outline'] ?? 'bg-white border border-gray-300',
+            'filled' => $cardConfig['filled'] ?? 'bg-gray-50 border border-gray-200',
+            'ghost' => $cardConfig['ghost'] ?? 'bg-transparent',
         ];
 
         if (isset($variantClasses[$this->variant])) {

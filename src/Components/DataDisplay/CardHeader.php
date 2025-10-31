@@ -36,11 +36,13 @@ class CardHeader extends Component
      */
     public function classes(): string
     {
+        $headerConfig = ComponentHelper::config('component_colors.card_header', []);
+
         $classes = [
             'px-4',
             'py-3',
-            'border-b',
-            'border-gray-200',
+            $headerConfig['border'] ?? 'border-b',
+            $headerConfig['border_color'] ?? 'border-gray-200',
             'dark:border-gray-700',
         ];
 

@@ -42,18 +42,20 @@ class List_ extends Component
      */
     public function classes(): string
     {
+        $listConfig = ComponentHelper::config('component_colors.list', []);
+
         $classes = [
             'w-48',
             'text-sm',
             'font-medium',
-            'text-gray-900',
-            'bg-white',
+            $listConfig['text'] ?? 'text-gray-900',
+            $listConfig['bg'] ?? 'bg-white',
             'border',
-            'border-gray-200',
+            $listConfig['border'] ?? 'border-gray-200',
             'rounded-lg',
-            'dark:bg-gray-700',
-            'dark:border-gray-600',
-            'dark:text-white',
+            $listConfig['dark_bg'] ?? 'dark:bg-gray-700',
+            $listConfig['dark_border'] ?? 'dark:border-gray-600',
+            $listConfig['dark_text'] ?? 'dark:text-white',
         ];
 
         // Style props

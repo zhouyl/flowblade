@@ -51,6 +51,8 @@ class ListItem extends Component
      */
     public function classes(): string
     {
+        $itemConfig = ComponentHelper::config('component_colors.list_item', []);
+
         $baseClasses = [
             'w-full',
             'px-4',
@@ -62,8 +64,8 @@ class ListItem extends Component
 
         if (!$this->last) {
             $borderClasses[] = 'border-b';
-            $borderClasses[] = 'border-gray-200';
-            $borderClasses[] = 'dark:border-gray-600';
+            $borderClasses[] = $itemConfig['border'] ?? 'border-gray-200';
+            $borderClasses[] = $itemConfig['dark_border'] ?? 'dark:border-gray-600';
         }
 
         // Rounding classes
@@ -87,23 +89,23 @@ class ListItem extends Component
             $elementClasses = array_merge($elementClasses, $baseClasses, $borderClasses, $roundingClasses);
 
             if ($this->active) {
-                $elementClasses[] = 'text-white';
-                $elementClasses[] = 'bg-blue-700';
+                $elementClasses[] = $itemConfig['active_text'] ?? 'text-white';
+                $elementClasses[] = $itemConfig['active_bg'] ?? 'bg-blue-700';
                 $elementClasses[] = 'cursor-pointer';
-                $elementClasses[] = 'dark:bg-gray-800';
-                $elementClasses[] = 'dark:border-gray-600';
+                $elementClasses[] = $itemConfig['active_dark_bg'] ?? 'dark:bg-gray-800';
+                $elementClasses[] = $itemConfig['dark_border'] ?? 'dark:border-gray-600';
             } else {
                 $elementClasses[] = 'cursor-pointer';
-                $elementClasses[] = 'hover:bg-gray-100';
-                $elementClasses[] = 'hover:text-blue-700';
+                $elementClasses[] = $itemConfig['hover_bg'] ?? 'hover:bg-gray-100';
+                $elementClasses[] = $itemConfig['hover_text'] ?? 'hover:text-blue-700';
                 $elementClasses[] = 'focus:outline-none';
                 $elementClasses[] = 'focus:ring-2';
-                $elementClasses[] = 'focus:ring-blue-700';
-                $elementClasses[] = 'focus:text-blue-700';
-                $elementClasses[] = 'dark:hover:bg-gray-600';
-                $elementClasses[] = 'dark:hover:text-white';
-                $elementClasses[] = 'dark:focus:ring-gray-500';
-                $elementClasses[] = 'dark:focus:text-white';
+                $elementClasses[] = $itemConfig['focus_ring'] ?? 'focus:ring-blue-700';
+                $elementClasses[] = $itemConfig['focus_text'] ?? 'focus:text-blue-700';
+                $elementClasses[] = $itemConfig['dark_hover_bg'] ?? 'dark:hover:bg-gray-600';
+                $elementClasses[] = $itemConfig['dark_hover_text'] ?? 'dark:hover:text-white';
+                $elementClasses[] = $itemConfig['dark_focus_ring'] ?? 'dark:focus:ring-gray-500';
+                $elementClasses[] = $itemConfig['dark_focus_text'] ?? 'dark:focus:text-white';
             }
         } else {
             // Button styling
@@ -113,29 +115,29 @@ class ListItem extends Component
             $elementClasses = array_merge($elementClasses, $baseClasses, $borderClasses, $roundingClasses);
 
             if ($this->active) {
-                $elementClasses[] = 'text-white';
-                $elementClasses[] = 'bg-blue-700';
+                $elementClasses[] = $itemConfig['active_text'] ?? 'text-white';
+                $elementClasses[] = $itemConfig['active_bg'] ?? 'bg-blue-700';
                 $elementClasses[] = 'cursor-pointer';
                 $elementClasses[] = 'focus:outline-none';
-                $elementClasses[] = 'dark:bg-gray-800';
-                $elementClasses[] = 'dark:border-gray-600';
+                $elementClasses[] = $itemConfig['active_dark_bg'] ?? 'dark:bg-gray-800';
+                $elementClasses[] = $itemConfig['dark_border'] ?? 'dark:border-gray-600';
             } elseif ($this->disabled) {
-                $elementClasses[] = 'bg-gray-100';
+                $elementClasses[] = $itemConfig['disabled_bg'] ?? 'bg-gray-100';
                 $elementClasses[] = 'cursor-not-allowed';
-                $elementClasses[] = 'dark:bg-gray-600';
-                $elementClasses[] = 'dark:text-gray-400';
+                $elementClasses[] = $itemConfig['dark_disabled_bg'] ?? 'dark:bg-gray-600';
+                $elementClasses[] = $itemConfig['dark_disabled_text'] ?? 'dark:text-gray-400';
             } else {
                 $elementClasses[] = 'cursor-pointer';
-                $elementClasses[] = 'hover:bg-gray-100';
-                $elementClasses[] = 'hover:text-blue-700';
+                $elementClasses[] = $itemConfig['hover_bg'] ?? 'hover:bg-gray-100';
+                $elementClasses[] = $itemConfig['hover_text'] ?? 'hover:text-blue-700';
                 $elementClasses[] = 'focus:outline-none';
                 $elementClasses[] = 'focus:ring-2';
-                $elementClasses[] = 'focus:ring-blue-700';
-                $elementClasses[] = 'focus:text-blue-700';
-                $elementClasses[] = 'dark:hover:bg-gray-600';
-                $elementClasses[] = 'dark:hover:text-white';
-                $elementClasses[] = 'dark:focus:ring-gray-500';
-                $elementClasses[] = 'dark:focus:text-white';
+                $elementClasses[] = $itemConfig['focus_ring'] ?? 'focus:ring-blue-700';
+                $elementClasses[] = $itemConfig['focus_text'] ?? 'focus:text-blue-700';
+                $elementClasses[] = $itemConfig['dark_hover_bg'] ?? 'dark:hover:bg-gray-600';
+                $elementClasses[] = $itemConfig['dark_hover_text'] ?? 'dark:hover:text-white';
+                $elementClasses[] = $itemConfig['dark_focus_ring'] ?? 'dark:focus:ring-gray-500';
+                $elementClasses[] = $itemConfig['dark_focus_text'] ?? 'dark:focus:text-white';
             }
         }
 
