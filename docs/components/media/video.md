@@ -1,6 +1,6 @@
 # Video
 
-HTML5 video player component with enhanced features for embedding and playing video content. Video provides a flexible way to embed and play video content.
+HTML5 video player component with enhanced features for embedding and playing video content. Video provides a flexible way to embed and play video content. Perfect for tutorials, product demos, and multimedia content.
 
 ## Basic Usage
 
@@ -416,6 +416,17 @@ The Video component uses HTML5 video, which is supported by all modern browsers:
 - Opera 10.5+
 
 For older browsers, the fallback text will be displayed.
+
+## Accessibility
+
+The Video component:
+- Uses semantic HTML5 video element
+- Supports keyboard navigation (Tab, Space, Arrow keys)
+- Works with screen readers
+- Provides video controls for user interaction
+- Supports captions and subtitles
+- Announces video content to screen readers
+- Supports proper ARIA attributes for video players
 
 ## Important Notes
 
