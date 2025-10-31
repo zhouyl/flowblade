@@ -8,7 +8,58 @@ Get started with Flowblade in 5 minutes!
 composer require mellivora/flowblade
 ```
 
-## Configuration
+## Service Provider Configuration
+
+The package will be auto-discovered by Laravel. If you need to manually register it, add the following to your `config/app.php`:
+
+```php
+'providers' => [
+    // ...
+    Flowblade\FlowbladeServiceProvider::class,
+],
+```
+
+### Publishing Configuration
+
+To publish the configuration file:
+
+```bash
+php artisan vendor:publish --provider="Flowblade\FlowbladeServiceProvider" --tag="config"
+```
+
+This will create `config/flowblade.php` where you can customize:
+
+```php
+return [
+    // Component prefix (default: 'x-')
+    'prefix' => 'x-',
+
+    // Default component namespace
+    'namespace' => 'Flowblade\\Components',
+
+    // Color mappings
+    'colors' => [
+        'primary' => 'blue',
+        'secondary' => 'gray',
+        'success' => 'green',
+        'warning' => 'yellow',
+        'danger' => 'red',
+        'info' => 'cyan',
+    ],
+
+    // Size mappings
+    'sizes' => [
+        'xs' => 'xs',
+        'sm' => 'sm',
+        'md' => 'md',
+        'lg' => 'lg',
+        'xl' => 'xl',
+        '2xl' => '2xl',
+    ],
+];
+```
+
+## Tailwind CSS Configuration
 
 Update your `tailwind.config.js`:
 
@@ -257,8 +308,8 @@ Browse icons at: https://icon-sets.iconify.design/
 
 - [Flowbite Documentation](https://flowbite.com/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/)
-- [Chakra UI Documentation](https://chakra-ui.com/)
 - [Iconify Icons](https://icon-sets.iconify.design/)
+- [Laravel Documentation](https://laravel.com/docs)
 
 ## Need Help?
 

@@ -1,6 +1,6 @@
 # HasStyleProps Trait
 
-The `HasStyleProps` trait provides a powerful style props system inspired by Chakra UI, allowing you to style components using intuitive props instead of writing Tailwind CSS classes directly.
+The `HasStyleProps` trait provides a powerful style props system that allows you to style components using intuitive props instead of writing Tailwind CSS classes directly.
 
 ## Overview
 
@@ -241,7 +241,7 @@ class Box extends Component
 
 ## See Also
 
-- [Chakra UI Style Props](https://chakra-ui.com/docs/styled-system/style-props)
 - [Tailwind CSS Documentation](https://tailwindcss.com/)
+- [Flowbite Documentation](https://flowbite.com/)
 - [Component Development Standards](../STANDARDS.md)
 

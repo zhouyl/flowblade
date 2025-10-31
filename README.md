@@ -7,12 +7,12 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
 </p>
 
-A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, inspired by **Chakra UI**'s elegant API design.
+A modern Laravel Blade component library based on **Flowbite + Tailwind CSS**, with an intuitive Style Props API for elegant component styling.
 
 ## ✨ Features
 
 - 🎨 **138+ Components** - Comprehensive UI component library
-- 🚀 **Chakra-UI Inspired** - Intuitive props like `color="primary"` and `size="lg"`
+- 🚀 **Style Props System** - Intuitive props like `color="primary"` and `size="lg"` for flexible styling
 - 🎯 **Tailwind CSS** - Built on Tailwind's utility-first approach
 - ⚡ **Alpine.js Ready** - Built-in Alpine.js integration
 - 🔌 **Livewire Compatible** - Full support for `wire:model`, `wire:click`, etc.
@@ -83,7 +83,7 @@ npm run dev
 
 ## 🎨 Style Props System
 
-Flowblade includes a powerful **Style Props** system inspired by Chakra UI, allowing you to style components using intuitive props instead of Tailwind classes:
+Flowblade includes a powerful **Style Props** system that allows you to style components using intuitive props instead of writing Tailwind classes directly:
 
 ### Spacing Props
 
@@ -289,7 +289,7 @@ Edit `config/flowblade.php` to customize:
 - [Quick Start Guide](docs/quick-start.md) - Get started in 5 minutes
 - [Installation Guide](docs/installation.md) - Step-by-step setup instructions
 - [Components Documentation](docs/components/README.md) - Complete component reference
-- [Style Props System](docs/traits/has-style-props.md) - Chakra UI-inspired styling
+- [Style Props System](docs/traits/has-style-props.md) - Intuitive styling with props
 - [Development Plan](docs/TODO.md) - Project roadmap and progress
 
 ## 📝 Available Components
@@ -297,7 +297,7 @@ Edit `config/flowblade.php` to customize:
 ### Current Progress: 138/60+ (230% of Initial Goal! 🎉)
 
 All components include:
-- ✅ **Style Props Support** - Full Chakra UI-inspired styling system
+- ✅ **Style Props Support** - Intuitive styling system with semantic props
 - ✅ **Complete Documentation** - Detailed usage examples and API reference
 - ✅ **Accessibility Features** - WCAG 2.1 compliant with keyboard navigation
 - ✅ **Responsive Design** - Mobile-first approach with Tailwind CSS
@@ -419,7 +419,7 @@ See [docs/TODO.md](docs/TODO.md) for the complete development plan.
 
 - [Flowbite Documentation](https://flowbite.com/) - Design system reference
 - [Tailwind CSS Documentation](https://tailwindcss.com/) - Utility-first CSS framework
-- [Chakra UI Documentation](https://chakra-ui.com/) - Inspiration for API design
+- [Laravel Documentation](https://laravel.com/docs) - Laravel framework reference
 - [Iconify Icons](https://icon-sets.iconify.design/) - Browse available icons
 
 ## 🤝 Contributing

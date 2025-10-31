@@ -1,7 +1,7 @@
 # Components Documentation
 
 Complete documentation for all 138 Flowblade components. Each component includes:
-- ✅ Full Style Props support (Chakra UI-inspired)
+- ✅ Full Style Props support for flexible styling
 - ✅ Comprehensive usage examples
 - ✅ Accessibility guidelines
 - ✅ Responsive design support
@@ -9,7 +9,7 @@ Complete documentation for all 138 Flowblade components. Each component includes
 
 ## Style Props System
 
-All Flowblade components support a powerful **Style Props** system inspired by Chakra UI. Instead of writing Tailwind classes, you can use intuitive props:
+All Flowblade components support a powerful **Style Props** system that allows you to style components using intuitive props instead of writing Tailwind classes directly:
 
 ```blade
 {{-- Traditional Tailwind approach --}}
