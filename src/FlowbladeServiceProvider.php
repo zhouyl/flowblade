@@ -36,6 +36,9 @@ class FlowbladeServiceProvider extends ServiceProvider
             __DIR__.'/../resources/views' => resource_path('views/vendor/flowblade'),
         ], 'flowblade-views');
 
+        // Load routes
+        $this->loadRoutesFrom(__DIR__.'/../routes/preview.php');
+
         // Register components
         $this->registerComponents();
 
