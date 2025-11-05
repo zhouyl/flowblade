@@ -32,28 +32,7 @@
 
 ---
 
-### 2. 组件合并分析 (Task 14.14) - 已取消
-
-**问题**: absolute-center 和 center 两个组件是否需要合并
-
-**决策**: 取消此任务，保持两个组件分离
-
-**原因**:
-- **Center 组件**: 使用 flexbox 实现居中（`flex items-center justify-center`）
-  - 支持 `inline` 参数切换 `inline-flex`
-  - 适用于相对定位的容器
-
-- **AbsoluteCenter 组件**: 使用绝对定位实现居中（`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`）
-  - 支持 `axis` 参数控制居中方向（horizontal、vertical、both）
-  - 适用于绝对定位的容器
-
-- 两个组件功能不同，保持分离更符合单一职责原则
-
-**优先级**: 无（已取消）
-
----
-
-### 3. Config 文件过大优化 (Task 14.16) - 分析中
+### 2. Config 文件过大优化 (Task 14.16) - 分析中
 
 **问题**: config/flowblade.php 文件过大（571 行），包含大量重复的颜色和大小定义
 
@@ -122,7 +101,7 @@
 
 ---
 
-### 5. Dialog 组件设计分析 (Task 14.15) - 已确认
+### 3. Dialog 组件设计分析 (Task 14.15) - 已确认
 
 **问题**: 需要新增 Dialog 组件，提供多种对话框类型
 

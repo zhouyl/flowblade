@@ -32,10 +32,17 @@
             <h2 class="text-2xl font-bold text-gray-900 mb-6">
                 Preview
             </h2>
-            <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-                <p class="text-gray-600 text-center py-12">
-                    Component preview will be displayed here.
-                </p>
+            <div class="p-6 bg-gray-50 rounded-lg border border-gray-200 min-h-[200px] flex items-center justify-center">
+                @php
+                    $componentName = 'flowblade::' . str_replace('-', '.', $component);
+                @endphp
+                @if (view()->exists($componentName))
+                    <x-dynamic-component :component="$componentName" />
+                @else
+                    <p class="text-gray-600 text-center">
+                        Component preview not available. Please check the component documentation.
+                    </p>
+                @endif
             </div>
         </div>
 
@@ -47,8 +54,8 @@
             <p class="text-gray-600 mb-4">
                 To use this component in your Blade template:
             </p>
-            <div class="code-block">
-&lt;x-{{ $component }} /&gt;
+            <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
+                <code>&lt;x-{{ $component }} /&gt;</code>
             </div>
         </div>
 
@@ -98,43 +105,39 @@
         {{-- Examples Section --}}
         <div class="component-card mb-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4">
-                Examples
+                Code Examples
             </h2>
-            
+
             <div class="space-y-6">
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        Default
+                        Basic Example
                     </h3>
-                    <div class="code-block">
-&lt;x-{{ $component }} /&gt;
+                    <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
+                        <code>&lt;x-{{ $component }} /&gt;</code>
                     </div>
                 </div>
 
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        With Color
+                        With Attributes
                     </h3>
-                    <div class="code-block">
-&lt;x-{{ $component }} color="primary" /&gt;
+                    <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
+                        <code>&lt;x-{{ $component }}<br/>
+                        &nbsp;&nbsp;color="primary"<br/>
+                        &nbsp;&nbsp;size="lg"<br/>
+                        /&gt;</code>
                     </div>
                 </div>
 
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        With Size
+                        With Slot Content
                     </h3>
-                    <div class="code-block">
-&lt;x-{{ $component }} size="lg" /&gt;
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        Disabled State
-                    </h3>
-                    <div class="code-block">
-&lt;x-{{ $component }} :disabled="true" /&gt;
+                    <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
+                        <code>&lt;x-{{ $component }}&gt;<br/>
+                        &nbsp;&nbsp;Your content here<br/>
+                        &lt;/x-{{ $component }}&gt;</code>
                     </div>
                 </div>
             </div>
