@@ -36,22 +36,21 @@
 **预期完成**: 3-4 个会话
 
 **本会话完成**:
-- ✅ 清理 TODO.md，移除已完成的详细内容
-- ✅ 为 preview 添加 Highlight.js 代码高亮
-- ✅ 为 preview 添加复制代码功能（带反馈提示）
-- ✅ 为 13 个组件创建 preview 代码文件（checkbox、radio、button、badge、tag、text、heading、label、link、avatar、code、divider）
-- ✅ 将 13 个组件的预览示例转换为 <x-preview> 方式
-- ✅ 创建 53 个 preview 代码文件
-- ✅ 代码行数减少：1550 行删除，315 行新增
+- ✅ 将代码预览从 Highlight.js 替换为 Prism.js
+- ✅ 集成 Prism.js 复制代码插件
+- ✅ 为 15 个组件创建 preview 代码文件（checkbox、radio、button、badge、tag、text、heading、label、link、avatar、code、divider、card、input）
+- ✅ 将 15 个组件的预览示例转换为 <x-preview> 方式
+- ✅ 创建 63 个 preview 代码文件
+- ✅ 更新 display.blade.php 使用 Prism.js
 
 **已完成**:
 - ✅ Preview 组件基础实现（使用 Blade 视图命名约定）
 - ✅ 创建 Preview 视图文件和错误处理
-- ✅ 代码高亮和复制功能
-- ✅ 13 个组件的完整 preview 重构
+- ✅ Prism.js 代码高亮和复制功能
+- ✅ 15 个组件的完整 preview 重构
 
 **待完成**:
-- 为其他 11 个组件创建 preview 代码文件（card、input、modal、pagination、progress、spinner、switch、tabs、accordion、alert）
+- 为其他 9 个组件创建 preview 代码文件（modal、pagination、progress、spinner、switch、tabs、accordion、alert）
 - 更新其他预览示例使用新的 <x-preview> 方式
 - 添加交互式示例（可切换属性）
 

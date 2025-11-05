@@ -1,6 +1,7 @@
 {{-- Preview Display Component
 
     Displays both a live demo and the code from a separate file.
+    Uses Prism.js for syntax highlighting with copy code plugin.
 
     Variables:
     - $file: Path to the code file
@@ -8,19 +9,53 @@
 --}}
 
 @push('styles')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    {{-- Prism.js CSS --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    {{-- Prism.js Copy Code Plugin CSS --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.css">
+    <style>
+        .prism-copy-wrapper {
+            position: relative;
+        }
+        .prism-copy-wrapper pre {
+            margin: 0;
+        }
+        .prism-copy-wrapper .copy-to-clipboard-button {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #d1d5db;
+            background-color: #374151;
+            border: 1px solid #4b5563;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+        .prism-copy-wrapper .copy-to-clipboard-button:hover {
+            background-color: #4b5563;
+            border-color: #6b7280;
+        }
+        .prism-copy-wrapper .copy-to-clipboard-button.copied {
+            background-color: #10b981;
+            border-color: #059669;
+            color: white;
+        }
+    </style>
 @endpush
 
 @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Highlight all code blocks
-            document.querySelectorAll('pre code').forEach(block => {
-                hljs.highlightElement(block);
-            });
-        });
-    </script>
+    {{-- Prism.js Core --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    {{-- Prism.js HTML Language Support --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    {{-- Prism.js Toolbar --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    {{-- Prism.js Copy to Clipboard Plugin --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 @endpush
 
 <div class="space-y-4">
@@ -29,46 +64,9 @@
         @include($file)
     </div>
 
-    {{-- Code Display with Copy Button --}}
-    <div class="preview-code-wrapper">
-        <div class="flex items-center justify-between bg-gray-800 rounded-t-lg">
-            <span class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Code</span>
-            <button
-                type="button"
-                class="copy-code-btn px-3 py-1 text-xs font-medium text-gray-300 bg-gray-700 hover:bg-gray-600 rounded transition-colors"
-                data-code-target="preview-code-{{ uniqid() }}"
-                onclick="copyCode(this)"
-            >
-                <span class="copy-text">Copy</span>
-                <span class="copy-success hidden">Copied!</span>
-            </button>
-        </div>
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-b-lg overflow-x-auto" id="preview-code-{{ uniqid() }}">
-            <pre class="font-mono text-sm m-0"><code class="language-html">{!! $code !!}</code></pre>
-        </div>
+    {{-- Code Display with Prism.js --}}
+    <div class="prism-copy-wrapper bg-gray-900 text-gray-100 rounded-lg overflow-x-auto font-mono text-sm">
+        <pre class="language-html"><code>{!! $code !!}</code></pre>
     </div>
 </div>
-
-<script>
-    function copyCode(button) {
-        const targetId = button.getAttribute('data-code-target');
-        const codeBlock = document.getElementById(targetId);
-        const code = codeBlock.querySelector('code').textContent;
-
-        navigator.clipboard.writeText(code).then(() => {
-            const copyText = button.querySelector('.copy-text');
-            const copySuccess = button.querySelector('.copy-success');
-
-            copyText.classList.add('hidden');
-            copySuccess.classList.remove('hidden');
-
-            setTimeout(() => {
-                copyText.classList.remove('hidden');
-                copySuccess.classList.add('hidden');
-            }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy code:', err);
-        });
-    }
-</script>
 

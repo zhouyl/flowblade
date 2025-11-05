@@ -6,9 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Input</h3>
         <p class="text-gray-600 mb-4">Simple text input field for user data entry.</p>
 
-        <x-preview>
-            <x-input placeholder="Enter your name" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.input.basic-input" />
 
     </div>
 
@@ -17,11 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Sizes</h3>
         <p class="text-gray-600 mb-4">Input fields come in different sizes.</p>
 
-        <x-preview>
-            <x-input size="sm" placeholder="Small input" />
-            <x-input size="md" placeholder="Medium input" />
-            <x-input size="lg" placeholder="Large input" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.input.input-sizes" />
 
     </div>
 
@@ -30,12 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">With Label</h3>
         <p class="text-gray-600 mb-4">Input with associated label for better accessibility.</p>
 
-        <x-preview>
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                <x-input type="email" placeholder="you@example.com" />
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.input.input-with-label" />
 
     </div>
 
@@ -44,14 +33,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Input Types</h3>
         <p class="text-gray-600 mb-4">Different input types for various data entry scenarios.</p>
 
-        <x-preview>
-            <x-input type="text" placeholder="Text input" />
-            <x-input type="email" placeholder="Email input" />
-            <x-input type="password" placeholder="Password input" />
-            <x-input type="number" placeholder="Number input" />
-            <x-input type="date" />
-            <x-input type="url" placeholder="URL input" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.input.input-types" />
 
     </div>
 
@@ -60,11 +42,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">States</h3>
         <p class="text-gray-600 mb-4">Different input states for various scenarios.</p>
 
-        <x-preview>
-            <x-input placeholder="Normal input" />
-            <x-input placeholder="Disabled input" :disabled="true" />
-            <x-input placeholder="Read-only input" readonly value="Read-only value" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.input.input-states" />
 
     </div>
 
