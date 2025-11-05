@@ -5,7 +5,7 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Colors</h3>
         <p class="text-gray-600 mb-4">Buttons come in different colors to indicate different actions or states.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="flex flex-wrap gap-3">
                 <x-button color="primary">Primary</x-button>
@@ -16,22 +16,14 @@
                 <x-button color="info">Info</x-button>
             </div>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-button color="primary"&gt;Primary&lt;/x-button&gt;
-&lt;x-button color="secondary"&gt;Secondary&lt;/x-button&gt;
-&lt;x-button color="success"&gt;Success&lt;/x-button&gt;
-&lt;x-button color="danger"&gt;Danger&lt;/x-button&gt;
-&lt;x-button color="warning"&gt;Warning&lt;/x-button&gt;
-&lt;x-button color="info"&gt;Info&lt;/x-button&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Sizes --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Sizes</h3>
         <p class="text-gray-600 mb-4">Buttons are available in multiple sizes to fit different contexts.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="flex flex-wrap items-center gap-3">
                 <x-button size="xs">Extra Small</x-button>
@@ -41,21 +33,14 @@
                 <x-button size="xl">Extra Large</x-button>
             </div>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-button size="xs"&gt;Extra Small&lt;/x-button&gt;
-&lt;x-button size="sm"&gt;Small&lt;/x-button&gt;
-&lt;x-button size="md"&gt;Medium&lt;/x-button&gt;
-&lt;x-button size="lg"&gt;Large&lt;/x-button&gt;
-&lt;x-button size="xl"&gt;Extra Large&lt;/x-button&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Variants --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Variants</h3>
         <p class="text-gray-600 mb-4">Different visual styles for different use cases.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="flex flex-wrap gap-3">
                 <x-button variant="solid">Solid</x-button>
@@ -65,21 +50,14 @@
                 <x-button variant="subtle">Subtle</x-button>
             </div>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-button variant="solid"&gt;Solid&lt;/x-button&gt;
-&lt;x-button variant="outline"&gt;Outline&lt;/x-button&gt;
-&lt;x-button variant="ghost"&gt;Ghost&lt;/x-button&gt;
-&lt;x-button variant="link"&gt;Link&lt;/x-button&gt;
-&lt;x-button variant="subtle"&gt;Subtle&lt;/x-button&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- States --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">States</h3>
         <p class="text-gray-600 mb-4">Buttons can be disabled or in a loading state.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="flex flex-wrap gap-3">
                 <x-button>Normal</x-button>
@@ -87,19 +65,14 @@
                 <x-button loading="true">Loading</x-button>
             </div>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-button&gt;Normal&lt;/x-button&gt;
-&lt;x-button :disabled="true"&gt;Disabled&lt;/x-button&gt;
-&lt;x-button loading="true"&gt;Loading&lt;/x-button&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- With Icons --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">With Icons</h3>
         <p class="text-gray-600 mb-4">Buttons can include icons for better visual communication.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="flex flex-wrap gap-3">
                 <x-button>
@@ -122,27 +95,18 @@
                 </x-button>
             </div>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-button&gt;
-    &lt;svg class="w-4 h-4 mr-2" ...&gt;...&lt;/svg&gt;
-    Add Item
-&lt;/x-button&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Full Width --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Full Width</h3>
         <p class="text-gray-600 mb-4">Buttons can span the full width of their container.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <x-button class="w-full">Full Width Button</x-button>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-button class="w-full"&gt;Full Width Button&lt;/x-button&gt;</code></pre>
-        </div>
+
     </div>
 </div>
 

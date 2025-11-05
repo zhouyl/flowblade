@@ -12,13 +12,7 @@
                 <x-text>Accept terms and conditions</x-text>
             </label>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;label class="flex items-center gap-2"&gt;
-    &lt;x-checkbox /&gt;
-    &lt;span&gt;Accept terms and conditions&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Checkbox States --}}
@@ -44,13 +38,7 @@
                 <x-text>Checked & Disabled</x-text>
             </label>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-checkbox /&gt;
-&lt;x-checkbox checked /&gt;
-&lt;x-checkbox :disabled="true" /&gt;
-&lt;x-checkbox checked :disabled="true" /&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Checkbox Group --}}
@@ -81,18 +69,7 @@
                 </div>
             </fieldset>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;fieldset&gt;
-    &lt;legend&gt;Select your interests:&lt;/legend&gt;
-    &lt;div class="space-y-2"&gt;
-        &lt;label class="flex items-center gap-2"&gt;
-            &lt;x-checkbox /&gt;
-            &lt;span&gt;Option&lt;/span&gt;
-        &lt;/label&gt;
-    &lt;/div&gt;
-&lt;/fieldset&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Checkbox with Description --}}
@@ -116,16 +93,7 @@
                 </div>
             </label>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;label class="flex gap-3"&gt;
-    &lt;x-checkbox class="mt-1" /&gt;
-    &lt;div&gt;
-        &lt;p class="font-medium"&gt;Option&lt;/p&gt;
-        &lt;p class="text-sm text-gray-600"&gt;Description&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/label&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Checkbox Sizes --}}
@@ -147,12 +115,7 @@
                 <x-text>Large</x-text>
             </label>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-checkbox size="sm" /&gt;
-&lt;x-checkbox size="md" /&gt;
-&lt;x-checkbox size="lg" /&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Checkbox Colors --}}
@@ -174,12 +137,7 @@
                 <x-text>Danger</x-text>
             </label>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-checkbox checked color="primary" /&gt;
-&lt;x-checkbox checked color="success" /&gt;
-&lt;x-checkbox checked color="danger" /&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Checkbox in Form --}}
@@ -209,15 +167,7 @@
                 <x-button type="submit">Submit</x-button>
             </form>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;form&gt;
-    &lt;label class="flex items-center gap-2"&gt;
-        &lt;x-checkbox name="permissions" value="read" /&gt;
-        &lt;span&gt;Read&lt;/span&gt;
-    &lt;/label&gt;
-&lt;/form&gt;</code></pre>
-        </div>
+
     </div>
 </div>
 

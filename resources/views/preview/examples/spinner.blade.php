@@ -5,79 +5,59 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Spinner</h3>
         <p class="text-gray-600 mb-4">Simple loading spinner.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex justify-center">
             <x-spinner />
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-spinner /&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Spinner Sizes --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner Sizes</h3>
         <p class="text-gray-600 mb-4">Spinners in different sizes.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex justify-center items-center gap-8">
             <x-spinner size="sm" />
             <x-spinner size="md" />
             <x-spinner size="lg" />
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-spinner size="sm" /&gt;
-&lt;x-spinner size="md" /&gt;
-&lt;x-spinner size="lg" /&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Spinner Colors --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner Colors</h3>
         <p class="text-gray-600 mb-4">Spinners in different colors.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex justify-center items-center gap-8">
             <x-spinner color="primary" />
             <x-spinner color="success" />
             <x-spinner color="warning" />
             <x-spinner color="danger" />
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-spinner color="primary" /&gt;
-&lt;x-spinner color="success" /&gt;
-&lt;x-spinner color="warning" /&gt;
-&lt;x-spinner color="danger" /&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Spinner with Text --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner with Text</h3>
         <p class="text-gray-600 mb-4">Spinner with loading text.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex justify-center">
             <div class="flex flex-col items-center gap-3">
                 <x-spinner />
                 <p class="text-gray-600">Loading...</p>
             </div>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;div class="flex flex-col items-center gap-3"&gt;
-    &lt;x-spinner /&gt;
-    &lt;p class="text-gray-600"&gt;Loading...&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Spinner in Button --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner in Button</h3>
         <p class="text-gray-600 mb-4">Spinner inside a button for loading state.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex justify-center gap-3">
             <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center gap-2">
                 <x-spinner size="sm" color="white" />
@@ -87,20 +67,14 @@
                 Submit
             </button>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;button class="flex items-center gap-2"&gt;
-    &lt;x-spinner size="sm" color="white" /&gt;
-    Processing...
-&lt;/button&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Spinner Overlay --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner Overlay</h3>
         <p class="text-gray-600 mb-4">Spinner as loading overlay.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="relative h-40 bg-gray-50 rounded flex items-center justify-center">
                 <div class="absolute inset-0 bg-black bg-opacity-10 rounded flex items-center justify-center">
@@ -111,21 +85,14 @@
                 </div>
             </div>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;div class="relative h-40"&gt;
-    &lt;div class="absolute inset-0 bg-black bg-opacity-10 flex items-center justify-center"&gt;
-        &lt;x-spinner /&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Multiple Spinners --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Multiple Spinners</h3>
         <p class="text-gray-600 mb-4">Multiple spinners for different loading states.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="grid grid-cols-3 gap-6">
                 <div class="flex flex-col items-center gap-2">
@@ -142,16 +109,7 @@
                 </div>
             </div>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;div class="grid grid-cols-3 gap-6"&gt;
-    &lt;div class="flex flex-col items-center gap-2"&gt;
-        &lt;x-spinner size="md" color="primary" /&gt;
-        &lt;p&gt;Fetching data&lt;/p&gt;
-    &lt;/div&gt;
-    ...
-&lt;/div&gt;</code></pre>
-        </div>
+
     </div>
 </div>
 

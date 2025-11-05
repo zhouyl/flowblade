@@ -5,7 +5,7 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert Types</h3>
         <p class="text-gray-600 mb-4">Different alert types for various messages.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
             <x-alert type="info">
                 <strong>Info:</strong> This is an informational alert message.
@@ -20,51 +20,28 @@
                 <strong>Error:</strong> An error occurred while processing your request.
             </x-alert>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-alert type="info"&gt;
-    &lt;strong&gt;Info:&lt;/strong&gt; This is an informational alert.
-&lt;/x-alert&gt;
 
-&lt;x-alert type="success"&gt;
-    &lt;strong&gt;Success:&lt;/strong&gt; Action completed successfully.
-&lt;/x-alert&gt;
-
-&lt;x-alert type="warning"&gt;
-    &lt;strong&gt;Warning:&lt;/strong&gt; Please review this information.
-&lt;/x-alert&gt;
-
-&lt;x-alert type="error"&gt;
-    &lt;strong&gt;Error:&lt;/strong&gt; An error occurred.
-&lt;/x-alert&gt;</code></pre>
-        </div>
     </div>
 
     {{-- Alert with Title --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Title</h3>
         <p class="text-gray-600 mb-4">Alert with a title and description.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <x-alert type="info">
                 <div class="font-semibold mb-1">Important Notice</div>
                 <div class="text-sm">This is a detailed alert message with a title and additional information.</div>
             </x-alert>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-alert type="info"&gt;
-    &lt;div class="font-semibold mb-1"&gt;Important Notice&lt;/div&gt;
-    &lt;div class="text-sm"&gt;Detailed message here&lt;/div&gt;
-&lt;/x-alert&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Alert with Icon --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Icon</h3>
         <p class="text-gray-600 mb-4">Alert with icon for better visual communication.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <x-alert type="success">
                 <div class="flex items-start">
@@ -77,24 +54,14 @@
                 </div>
             </x-alert>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-alert type="success"&gt;
-    &lt;div class="flex items-start"&gt;
-        &lt;svg class="w-5 h-5 mr-3"&gt;...&lt;/svg&gt;
-        &lt;div&gt;
-            &lt;strong&gt;Success!&lt;/strong&gt; Your changes saved.
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/x-alert&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Alert with Close Button --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Close Button</h3>
         <p class="text-gray-600 mb-4">Dismissible alert with close button.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <x-alert type="warning">
                 <div class="flex items-start justify-between">
@@ -109,24 +76,14 @@
                 </div>
             </x-alert>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-alert type="warning"&gt;
-    &lt;div class="flex items-start justify-between"&gt;
-        &lt;div&gt;Warning message&lt;/div&gt;
-        &lt;button&gt;
-            &lt;svg&gt;...&lt;/svg&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/x-alert&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Alert with List --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with List</h3>
         <p class="text-gray-600 mb-4">Alert containing a list of items.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <x-alert type="error">
                 <div class="font-semibold mb-2">Please fix the following errors:</div>
@@ -137,23 +94,14 @@
                 </ul>
             </x-alert>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-alert type="error"&gt;
-    &lt;div class="font-semibold mb-2"&gt;Please fix the following errors:&lt;/div&gt;
-    &lt;ul class="list-disc list-inside space-y-1"&gt;
-        &lt;li&gt;Error 1&lt;/li&gt;
-        &lt;li&gt;Error 2&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/x-alert&gt;</code></pre>
-        </div>
+
     </div>
 
     {{-- Alert with Action --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Action</h3>
         <p class="text-gray-600 mb-4">Alert with action button.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <x-alert type="info">
                 <div class="flex items-center justify-between">
@@ -164,15 +112,7 @@
                 </div>
             </x-alert>
         </div>
-        
-        <div class="preview-code bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <pre class="font-mono text-sm"><code>&lt;x-alert type="info"&gt;
-    &lt;div class="flex items-center justify-between"&gt;
-        &lt;div&gt;Message&lt;/div&gt;
-        &lt;button&gt;Action&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/x-alert&gt;</code></pre>
-        </div>
+
     </div>
 </div>
 

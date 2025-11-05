@@ -767,19 +767,31 @@
 **任务**:
 - [x] 15.1.1 分析当前预览系统的不足
 - [x] 15.1.2 设计组件预览示例的展示方式
-- [x] 15.1.3 为 Button 组件创建完整的预览示例
-- [x] 15.1.4 为 Input 组件创建完整的预览示例
-- [x] 15.1.5 为 Card 组件创建完整的预览示例
-- [x] 15.1.6 为 Modal 组件创建完整的预览示例
-- [x] 15.1.7 为 Alert 组件创建完整的预览示例
-- [x] 15.1.8 为更多组件创建预览示例（Badge, Spinner, Tag, Checkbox, Radio, Switch, Textarea, Heading, Text）
-- [x] 15.1.9 为更多组件创建预览示例（Avatar, Link, Code, Divider, Progress, Tabs, Accordion, Pagination）
+- [x] 15.1.3-15.1.9 为 22 个组件创建完整的预览示例
+- [x] 15.1.11 修复预览示例中的原生标签使用
+- [x] 15.1.12 修复 preview-code 与 demo 代码不一致的问题
 - [ ] 15.1.10 添加交互式示例（可切换属性）
-- [ ] 15.1.11 修复预览示例中的原生标签使用
 
 **预期完成**: 3-4 个会话
 
-**本会话完成内容** (第八次会话):
+**本会话完成内容** (第九次会话):
+- 添加新任务 15.1.12 到中优先级
+  - 问题：preview-code 与 demo 代码不一致
+  - 解决方案：创建通用 JavaScript 代码自动同步
+- 实现 preview-code 自动同步功能
+  - 创建 preview-code-sync.js 脚本
+  - 自动从 preview-demo 提取 HTML 代码
+  - 自动格式化代码并显示在 preview-code 中
+  - 在 FlowbladeServiceProvider 中配置资源发布
+  - 在预览布局中引入脚本
+- 进一步改进：自动生成 preview-code 元素
+  - 改进 JavaScript 脚本，自动检测 .preview-demo 元素
+  - 如果不存在 .preview-code，自动生成
+  - 删除所有预览示例中的手动 preview-code 块
+  - 简化 Blade 模板，只需要 preview-demo 即可
+- 清理 TODO.md，删除详细的会话完成内容，保持简洁
+
+**前一次会话完成内容** (第八次会话):
 - 修复上个会话中的错误
   - 发现使用 <x-flex as="label"> 是错误的做法
   - 将 checkbox.blade.php 中的 <x-flex as="label"> 改回原生 <label> 标签
@@ -796,143 +808,6 @@
   - tabs.blade.php：保留原生 <button> 标签（用于制作 tab 按钮）
   - accordion.blade.php：保留原生 <button> 标签（用于制作 accordion 按钮）
   - pagination.blade.php：保留原生 <button> 标签（用于制作分页按钮）
-
-**前七次会话完成内容** (第七次会话):
-- 设计并实现了 Label 组件
-  - 创建 Label Component 类 (src/Components/Forms/Label.php)
-  - 创建 Label Blade 视图 (resources/views/components/forms/label.blade.php)
-  - 创建 Label 组件文档 (docs/components/forms/label.md)
-  - 创建 Label 组件预览示例 (resources/views/preview/examples/label.blade.php)
-  - 在 FlowbladeServiceProvider 中注册 Label 组件
-  - 在 PreviewController 中添加 Label 组件信息
-- 替换预览示例中的原生 label 标签为 x-flex as="label"
-  - checkbox.blade.php - 已替换所有 label 标签
-  - radio.blade.php - 已替换所有 label 标签
-  - switch.blade.php - 已替换所有 label 标签
-
-**前六次会话完成内容** (第六次会话):
-- 为 Tabs 组件创建了完整的预览示例
-  - 基础标签页
-  - 标签页变体（underline, pill）
-  - 带图标的标签页
-  - 禁用状态的标签页
-  - 带徽章的标签页
-- 为 Accordion 组件创建了完整的预览示例
-  - 基础手风琴
-  - Flush 样式手风琴
-  - 带图标的手风琴
-  - 不同颜色的手风琴
-- 为 Pagination 组件创建了完整的预览示例
-  - 基础分页
-  - 带图标的分页
-  - 分页尺寸（sm, md, lg）
-  - 禁用状态的分页
-  - 带信息的分页
-  - 居中分页
-- 添加了修复任务到中优先级
-  - 15.1.11 修复预览示例中的原生标签使用
-
-**前五次会话完成内容**:
-- 第一次：分析系统、设计方式、Button 示例、更新 show.blade.php
-- 第二次：Input、Card、Alert、Modal 示例
-- 第三次：Badge、Spinner、Tag、Checkbox 示例
-- 第四次：Radio、Switch、Textarea、Heading、Text 示例
-- 第五次：Avatar、Link、Code、Divider、Progress 示例
-
-**前一次会话完成内容** (第五次会话):
-- 为 Avatar 组件创建了完整的预览示例
-  - 基础头像
-  - 尺寸变体（xs, sm, md, lg, xl）
-  - 颜色变体（primary, secondary, success, danger, warning, info）
-  - 带图片的头像
-  - 带状态指示器的头像
-  - 头像组
-  - 在上下文中使用的头像
-- 为 Link 组件创建了完整的预览示例
-  - 基础链接
-  - 颜色变体（primary, secondary, success, danger, warning, info）
-  - 尺寸变体（sm, md, lg）
-  - 样式变体（default, underline, hover）
-  - 带图标的链接
-  - 链接状态（正常、禁用、活跃）
-  - 在内容中使用的链接
-- 为 Code 组件创建了完整的预览示例
-  - 基础代码
-  - 带语言指定的代码（PHP, JavaScript, SQL）
-  - 尺寸变体（sm, md, lg）
-  - 颜色变体（default, success, warning, danger）
-  - 带复制按钮的代码
-  - 在文档中使用的代码
-  - 内联代码与块代码
-- 为 Divider 组件创建了完整的预览示例
-  - 基础分隔符
-  - 带文字的分隔符
-  - 分隔符样式（solid, dashed, dotted）
-  - 垂直分隔符
-  - 分隔符颜色
-  - 在布局中使用的分隔符
-- 为 Progress 组件创建了完整的预览示例
-  - 基础进度条
-  - 不同进度值（25%, 50%, 75%, 100%）
-  - 颜色变体（primary, success, warning, danger, info）
-  - 尺寸变体（sm, md, lg）
-  - 带标签的进度条
-  - 条纹进度条
-  - 动画进度条
-  - 在上下文中使用的进度条
-
-**前四次会话完成内容**:
-- 第一次：分析系统、设计方式、Button 示例、更新 show.blade.php
-- 第二次：Input、Card、Alert、Modal 示例
-- 第三次：Badge、Spinner、Tag、Checkbox 示例
-- 第四次：Radio、Switch、Textarea、Heading、Text 示例
-
-**前一次会话完成内容** (第四次会话):
-- 为 Radio 组件创建了完整的预览示例
-  - 基础单选框
-  - 单选框组
-  - 状态示例（未选中、已选中、禁用）
-  - 带描述的单选框
-  - 尺寸变体（sm, md, lg）
-  - 颜色变体（primary, success, danger）
-  - 表单中的单选框
-- 为 Switch 组件创建了完整的预览示例
-  - 基础开关
-  - 状态示例（关闭、打开、禁用）
-  - 尺寸变体（sm, md, lg）
-  - 颜色变体（primary, success, danger, warning）
-  - 带描述的开关
-  - 设置面板中的开关
-  - 表单中的开关
-- 为 Textarea 组件创建了完整的预览示例
-  - 基础文本区域
-  - 尺寸变体（sm, md, lg）
-  - 带标签的文本区域
-  - 状态示例（正常、禁用、只读）
-  - 带字符计数的文本区域
-  - 验证反馈
-  - 表单中的文本区域
-- 为 Heading 组件创建了完整的预览示例
-  - 标题级别（H1-H6）
-  - 尺寸变体（xs, sm, md, lg, xl）
-  - 颜色变体（primary, success, danger, warning, info）
-  - 字体权重（light, normal, semibold, bold）
-  - 带副标题的标题
-  - 文本对齐
-  - 在页面布局中的使用
-- 为 Text 组件创建了完整的预览示例
-  - 文本尺寸（xs, sm, md, lg, xl）
-  - 文本颜色（primary, secondary, success, danger, warning, info）
-  - 字体权重（light, normal, medium, semibold, bold）
-  - 文本对齐（left, center, right, justify）
-  - 文本截断（truncate, line-clamp）
-  - 文本变体（default, muted, subtle, highlight）
-  - 在内容布局中的使用
-
-**前三次会话完成内容**:
-- 第一次：分析系统、设计方式、Button 示例、更新 show.blade.php
-- 第二次：Input、Card、Alert、Modal 示例
-- 第三次：Badge、Spinner、Tag、Checkbox 示例
 
 **功能需求**:
 - 每个组件应该有多个预览示例，展示不同的变体和用法
@@ -987,16 +862,13 @@
 4. 14.7 重新设计项目主 README.md ✅
 
 **中优先级** (1-2 个会话):
-1. 14.11 完成同类组件文档合并 ✅
-2. 14.5 重构 components/README.md ✅
-3. 14.13 组件命名优化 ✅
-4. 14.3 CSS 样式统一检查 (进行中)
-5. 14.16 Config 文件优化 (新增)
-6. 15.1.11 修复预览示例中的原生标签使用 (进行中) - 将预览示例中的原生 HTML 标签替换为 Flowblade 组件
-   - [x] checkbox.blade.php - 已修复所有 span 标签为 x-text，button 为 x-button
-   - [x] radio.blade.php - 已修复所有 span 标签为 x-text，button 为 x-button
-   - [x] switch.blade.php - 已修复所有 span 标签为 x-text，button 为 x-button
-   - [ ] 其他预览示例文件待修复
+1. 14.3 CSS 样式统一检查 (进行中)
+2. 14.16 Config 文件优化
+3. 15.1.11 修复预览示例中的原生标签使用 ✅
+4. 15.1.12 修复 preview-code 与 demo 代码不一致的问题 ✅
+   - 解决方案：创建通用 JavaScript 脚本自动同步代码
+   - 自动从 preview-demo 提取并格式化 HTML 代码
+   - 无需手动维护 preview-code 部分
 
 **低优先级** (已完成):
 1. 14.15 新增 Dialog 组件 ✅
