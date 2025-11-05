@@ -50,6 +50,7 @@ class Kbd extends Component
         // Size
         if ($this->size) {
             $sizeClass = ComponentHelper::getSizeClasses('kbd', $this->size);
+
             if ($sizeClass) {
                 $classes[] = $sizeClass;
             }

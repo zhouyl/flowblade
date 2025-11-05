@@ -41,6 +41,7 @@ class Mark extends Component
         // Color
         if ($this->color) {
             $colorClasses = ComponentHelper::config("component_colors.mark.{$this->color}");
+
             if ($colorClasses) {
                 $classes[] = $colorClasses;
             }

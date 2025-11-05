@@ -45,6 +45,7 @@ class TreeView extends Component
 
         // Size
         $sizeClass = ComponentHelper::getSizeClasses('tree_view', $this->size);
+
         if ($sizeClass) {
             $classes[] = $sizeClass;
         }

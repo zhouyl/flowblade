@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flowblade\Livewire;
 
-use Livewire\Component;
 use Livewire\Attributes\Computed;
+use Livewire\Component;
 
 /**
  * Livewire Table Component
@@ -35,7 +35,7 @@ class Table extends Component
     /**
      * Current sort column
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $sortBy = null;
 
@@ -107,6 +107,7 @@ class Table extends Component
      *
      * @param array $columns
      * @param array $rows
+     *
      * @return void
      */
     public function mount(array $columns = [], array $rows = []): void
@@ -119,6 +120,7 @@ class Table extends Component
      * Sort by column
      *
      * @param string $column
+     *
      * @return void
      */
     public function sortBy(string $column): void
@@ -137,6 +139,7 @@ class Table extends Component
      * Toggle row selection
      *
      * @param mixed $rowId
+     *
      * @return void
      */
     public function toggleRow(mixed $rowId): void
@@ -144,7 +147,7 @@ class Table extends Component
         if (in_array($rowId, $this->selectedRows)) {
             $this->selectedRows = array_filter(
                 $this->selectedRows,
-                fn($id) => $id !== $rowId
+                fn ($id) => $id !== $rowId
             );
         } else {
             $this->selectedRows[] = $rowId;
@@ -159,7 +162,7 @@ class Table extends Component
     public function selectAll(): void
     {
         $this->selectedRows = array_map(
-            fn($row) => $row['id'] ?? null,
+            fn ($row) => $row['id'] ?? null,
             $this->rows
         );
     }
@@ -178,6 +181,7 @@ class Table extends Component
      * Go to page
      *
      * @param int $page
+     *
      * @return void
      */
     public function goToPage(int $page): void
@@ -203,9 +207,33 @@ class Table extends Component
     }
 
     /**
+     * Get total pages
+     *
+     * @return int
+     */
+    #[Computed]
+    public function totalPages(): int
+    {
+        $total = count($this->filterRows());
+
+        return (int) ceil($total / $this->perPage);
+    }
+
+    /**
+     * Render the component
+     *
+     * @return \Illuminate\View\View
+     */
+    public function render()
+    {
+        return view('flowblade::livewire.table');
+    }
+
+    /**
      * Filter rows based on search query
      *
      * @param array $rows
+     *
      * @return array
      */
     private function filterRows(array $rows = []): array
@@ -220,10 +248,11 @@ class Table extends Component
             $rows ?: $this->rows,
             function ($row) use ($search) {
                 foreach ($row as $value) {
-                    if (str_contains(strtolower((string)$value), $search)) {
+                    if (str_contains(strtolower((string) $value), $search)) {
                         return true;
                     }
                 }
+
                 return false;
             }
         );
@@ -233,6 +262,7 @@ class Table extends Component
      * Sort rows by column
      *
      * @param array $rows
+     *
      * @return array
      */
     private function sortRows(array $rows): array
@@ -252,27 +282,4 @@ class Table extends Component
 
         return $rows;
     }
-
-    /**
-     * Get total pages
-     *
-     * @return int
-     */
-    #[Computed]
-    public function totalPages(): int
-    {
-        $total = count($this->filterRows());
-        return (int)ceil($total / $this->perPage);
-    }
-
-    /**
-     * Render the component
-     *
-     * @return \Illuminate\View\View
-     */
-    public function render()
-    {
-        return view('flowblade::livewire.table');
-    }
 }
-

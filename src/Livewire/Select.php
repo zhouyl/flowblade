@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flowblade\Livewire;
 
-use Livewire\Component;
 use Livewire\Attributes\Computed;
+use Livewire\Component;
 
 /**
  * Livewire Select Component
@@ -77,14 +77,14 @@ class Select extends Component
     /**
      * Label text
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $label = null;
 
     /**
      * Placeholder text
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $placeholder = 'Choose an option';
 
@@ -105,14 +105,14 @@ class Select extends Component
     /**
      * Helper text below the select
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $helperText = null;
 
     /**
      * Error message text
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $errorText = null;
 
@@ -128,6 +128,7 @@ class Select extends Component
      *
      * @param mixed $value
      * @param array $options
+     *
      * @return void
      */
     public function mount(mixed $value = null, array $options = []): void
@@ -171,6 +172,7 @@ class Select extends Component
      * Select option
      *
      * @param mixed $optionValue
+     *
      * @return void
      */
     public function selectOption(mixed $optionValue): void
@@ -183,7 +185,7 @@ class Select extends Component
             if (in_array($optionValue, $this->value)) {
                 $this->value = array_filter(
                     $this->value,
-                    fn($v) => $v !== $optionValue
+                    fn ($v) => $v !== $optionValue
                 );
             } else {
                 $this->value[] = $optionValue;
@@ -220,8 +222,8 @@ class Select extends Component
 
         return array_filter(
             $this->options,
-            fn($option) => str_contains(
-                strtolower((string)($option['label'] ?? $option)),
+            fn ($option) => str_contains(
+                strtolower((string) ($option['label'] ?? $option)),
                 $search
             )
         );
@@ -241,30 +243,14 @@ class Select extends Component
 
         if ($this->multiple && is_array($this->value)) {
             $labels = array_map(
-                fn($v) => $this->getOptionLabel($v),
+                fn ($v) => $this->getOptionLabel($v),
                 $this->value
             );
+
             return implode(', ', array_filter($labels));
         }
 
         return $this->getOptionLabel($this->value);
-    }
-
-    /**
-     * Get option label by value
-     *
-     * @param mixed $value
-     * @return string
-     */
-    private function getOptionLabel(mixed $value): string
-    {
-        foreach ($this->options as $option) {
-            if (($option['value'] ?? $option) === $value) {
-                return $option['label'] ?? (string)$value;
-            }
-        }
-
-        return (string)$value;
     }
 
     /**
@@ -276,5 +262,22 @@ class Select extends Component
     {
         return view('flowblade::livewire.select');
     }
-}
 
+    /**
+     * Get option label by value
+     *
+     * @param mixed $value
+     *
+     * @return string
+     */
+    private function getOptionLabel(mixed $value): string
+    {
+        foreach ($this->options as $option) {
+            if (($option['value'] ?? $option) === $value) {
+                return $option['label'] ?? (string) $value;
+            }
+        }
+
+        return (string) $value;
+    }
+}

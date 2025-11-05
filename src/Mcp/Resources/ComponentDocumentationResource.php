@@ -6,8 +6,6 @@ namespace Flowblade\Mcp\Resources;
  * Component Documentation Resource
  *
  * This resource provides access to Flowblade component documentation.
- *
- * @package Flowblade\Mcp\Resources
  */
 class ComponentDocumentationResource
 {
@@ -61,6 +59,7 @@ class ComponentDocumentationResource
         // Extract component name from URI
         if (preg_match('/flowblade:\/\/components\/(.+)/', $uri, $matches)) {
             $component = $matches[1];
+
             return $this->getComponentDocumentation($component);
         }
 
@@ -245,4 +244,3 @@ DOC,
         return $docs[$component] ?? null;
     }
 }
-

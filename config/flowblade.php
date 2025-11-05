@@ -48,7 +48,7 @@ return [
     | Note: Color configurations are loaded from config/flowblade/colors.php
     |
     */
-    ...(require __DIR__ . '/flowblade/colors.php'),
+    ...(require __DIR__.'/flowblade/colors.php'),
 
     /*
     |--------------------------------------------------------------------------
@@ -248,7 +248,7 @@ return [
     | Note: Size configurations are loaded from config/flowblade/sizes.php
     |
     */
-    ...(require __DIR__ . '/flowblade/sizes.php'),
+    ...(require __DIR__.'/flowblade/sizes.php'),
 
     /*
     |--------------------------------------------------------------------------
@@ -260,7 +260,7 @@ return [
     | Note: Effect configurations are loaded from config/flowblade/effects.php
     |
     */
-    ...(require __DIR__ . '/flowblade/effects.php'),
+    ...(require __DIR__.'/flowblade/effects.php'),
 
     /*
     |--------------------------------------------------------------------------

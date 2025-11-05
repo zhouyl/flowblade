@@ -79,6 +79,7 @@ class Avatar extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('avatar', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }

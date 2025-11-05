@@ -49,6 +49,7 @@ class Timeline extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('timeline', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }

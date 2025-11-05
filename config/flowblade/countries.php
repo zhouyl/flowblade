@@ -242,4 +242,3 @@ return [
         'ZW' => ['name' => 'Zimbabwe', 'code' => '+263', 'flag' => '🇿🇼'],
     ],
 ];
-

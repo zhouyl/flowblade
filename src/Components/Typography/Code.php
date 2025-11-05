@@ -48,6 +48,7 @@ class Code extends Component
         // Size
         if ($this->size) {
             $sizeClass = ComponentHelper::getSizeClasses('code', $this->size);
+
             if ($sizeClass) {
                 $classes[] = $sizeClass;
             }
@@ -58,6 +59,7 @@ class Code extends Component
         // Color - use background color
         if ($this->color) {
             $colorClasses = ComponentHelper::config("component_colors.code.{$this->color}");
+
             if ($colorClasses) {
                 $classes[] = $colorClasses;
             }

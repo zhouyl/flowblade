@@ -46,6 +46,7 @@ class Blockquote extends Component
         // Border color
         if ($this->color) {
             $colorClasses = ComponentHelper::config("component_colors.blockquote.{$this->color}");
+
             if ($colorClasses) {
                 $classes[] = $colorClasses;
             }

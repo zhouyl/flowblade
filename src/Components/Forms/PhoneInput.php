@@ -70,10 +70,11 @@ class PhoneInput extends Component
     public function getCountries(): array
     {
         // Load countries from config file
-        $configPath = __DIR__ . '/../../../config/flowblade/countries.php';
+        $configPath = __DIR__.'/../../../config/flowblade/countries.php';
 
         if (file_exists($configPath)) {
             $config = require $configPath;
+
             return $config['countries'] ?? [];
         }
 

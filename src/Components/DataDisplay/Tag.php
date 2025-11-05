@@ -56,6 +56,7 @@ class Tag extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('tag', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }

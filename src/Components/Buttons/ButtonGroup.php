@@ -70,6 +70,7 @@ class ButtonGroup extends Component
             // Spacing
             if ($this->spacing) {
                 $spacingClass = ComponentHelper::getSizeClasses('button_group_spacing', $this->spacing);
+
                 if ($spacingClass) {
                     $classes[] = $spacingClass;
                 }

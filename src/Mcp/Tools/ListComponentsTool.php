@@ -2,14 +2,10 @@
 
 namespace Flowblade\Mcp\Tools;
 
-use Flowblade\FlowbladeServiceProvider;
-
 /**
  * List Components Tool
  *
  * This tool lists all available Flowblade components with their basic information.
- *
- * @package Flowblade\Mcp\Tools
  */
 class ListComponentsTool
 {
@@ -251,4 +247,3 @@ class ListComponentsTool
         ];
     }
 }
-

@@ -6,8 +6,6 @@ namespace Flowblade\Mcp\Tools;
  * Search Components Tool
  *
  * This tool searches for Flowblade components by name or description.
- *
- * @package Flowblade\Mcp\Tools
  */
 class SearchComponentsTool
 {
@@ -281,4 +279,3 @@ class SearchComponentsTool
         ];
     }
 }
-

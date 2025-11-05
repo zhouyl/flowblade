@@ -58,6 +58,7 @@ class NativeSelect extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('native_select', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }
@@ -78,7 +79,7 @@ class NativeSelect extends Component
                 $classes[] = 'focus:ring-blue-500 focus:bg-white';
             }
         } elseif ($this->variant === 'flushed') {
-            $classes[] = 'border-0 border-b-2 ' . ComponentHelper::getRoundedClass('none') . ' px-0';
+            $classes[] = 'border-0 border-b-2 '.ComponentHelper::getRoundedClass('none').' px-0';
 
             if ($this->invalid) {
                 $classes[] = 'border-red-300 focus:ring-0 focus:border-red-500';

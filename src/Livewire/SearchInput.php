@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Flowblade\Livewire;
 
 use Livewire\Component;
-use Livewire\Attributes\Computed;
 
 /**
  * Livewire SearchInput Component
@@ -84,7 +83,7 @@ class SearchInput extends Component
     /**
      * Placeholder text
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $placeholder = null;
 
@@ -126,6 +125,7 @@ class SearchInput extends Component
         if (strlen($this->query) < $this->minChars) {
             $this->results = [];
             $this->isOpen = false;
+
             return;
         }
 
@@ -140,6 +140,7 @@ class SearchInput extends Component
      * Set results
      *
      * @param array $results
+     *
      * @return void
      */
     public function setResults(array $results): void
@@ -152,11 +153,12 @@ class SearchInput extends Component
      * Select result
      *
      * @param mixed $result
+     *
      * @return void
      */
     public function selectResult(mixed $result): void
     {
-        $this->query = $result['label'] ?? (string)$result;
+        $this->query = $result['label'] ?? (string) $result;
         $this->results = [];
         $this->isOpen = false;
 
@@ -203,6 +205,7 @@ class SearchInput extends Component
      * Get highlighted query
      *
      * @param string $text
+     *
      * @return string
      */
     public function highlightQuery(string $text): string
@@ -211,7 +214,8 @@ class SearchInput extends Component
             return $text;
         }
 
-        $pattern = '/(' . preg_quote($this->query, '/') . ')/i';
+        $pattern = '/('.preg_quote($this->query, '/').')/i';
+
         return preg_replace($pattern, '<mark>$1</mark>', $text);
     }
 
@@ -225,4 +229,3 @@ class SearchInput extends Component
         return view('flowblade::livewire.search-input');
     }
 }
-

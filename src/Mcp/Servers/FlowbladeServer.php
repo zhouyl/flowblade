@@ -2,18 +2,16 @@
 
 namespace Flowblade\Mcp\Servers;
 
+use Flowblade\Mcp\Resources\ComponentDocumentationResource;
 use Flowblade\Mcp\Tools\GetComponentInfoTool;
 use Flowblade\Mcp\Tools\ListComponentsTool;
 use Flowblade\Mcp\Tools\SearchComponentsTool;
-use Flowblade\Mcp\Resources\ComponentDocumentationResource;
 
 /**
  * Flowblade MCP Server
  *
  * This server provides AI clients with access to Flowblade component information,
  * documentation, and utilities through the Model Context Protocol.
- *
- * @package Flowblade\Mcp\Servers
  */
 class FlowbladeServer
 {
@@ -113,4 +111,3 @@ INSTRUCTIONS;
         return $this->resources;
     }
 }
-

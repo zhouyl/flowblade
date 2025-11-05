@@ -89,6 +89,7 @@ class PinInput extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('pin_input', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }

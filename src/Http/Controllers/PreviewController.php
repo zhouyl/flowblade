@@ -2,16 +2,14 @@
 
 namespace Flowblade\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;
-use Illuminate\Http\Request;
 
 /**
  * Preview Controller
  *
  * Handles component preview requests and displays component documentation.
- *
- * @package Flowblade\Http\Controllers
  */
 class PreviewController extends Controller
 {
@@ -341,4 +339,3 @@ class PreviewController extends Controller
         return $results;
     }
 }
-

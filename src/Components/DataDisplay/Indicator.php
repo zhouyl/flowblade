@@ -55,6 +55,7 @@ class Indicator extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('indicator', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }

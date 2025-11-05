@@ -208,7 +208,7 @@ class ComponentHelper
      */
     public static function getButtonVariantClasses(string $color, string $variant): string
     {
-        $baseClasses = 'font-medium ' . self::getFocusClasses('button') . ' transition-colors duration-200';
+        $baseClasses = 'font-medium '.self::getFocusClasses('button').' transition-colors duration-200';
 
         return match ($variant) {
             'solid' => self::mergeClasses(

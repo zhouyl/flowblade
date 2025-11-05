@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flowblade\Livewire;
 
-use Livewire\Component;
-use Livewire\Attributes\Computed;
 use Carbon\Carbon;
+use Livewire\Attributes\Computed;
+use Livewire\Component;
 
 /**
  * Livewire Datepicker Component
@@ -22,7 +22,7 @@ class Datepicker extends Component
     /**
      * Selected date
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $value = null;
 
@@ -50,14 +50,14 @@ class Datepicker extends Component
     /**
      * Minimum date (YYYY-MM-DD)
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $minDate = null;
 
     /**
      * Maximum date (YYYY-MM-DD)
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $maxDate = null;
 
@@ -78,14 +78,14 @@ class Datepicker extends Component
     /**
      * Label text
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $label = null;
 
     /**
      * Placeholder text
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $placeholder = 'Select a date';
 
@@ -113,14 +113,15 @@ class Datepicker extends Component
     /**
      * Error message text
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $errorText = null;
 
     /**
      * Mount the component
      *
-     * @param string|null $value
+     * @param null|string $value
+     *
      * @return void
      */
     public function mount(?string $value = null): void
@@ -163,6 +164,7 @@ class Datepicker extends Component
      * Select date
      *
      * @param string $date
+     *
      * @return void
      */
     public function selectDate(string $date): void
@@ -237,25 +239,6 @@ class Datepicker extends Component
     }
 
     /**
-     * Check if date is disabled
-     *
-     * @param string $date
-     * @return bool
-     */
-    private function isDateDisabled(string $date): bool
-    {
-        if ($this->minDate && $date < $this->minDate) {
-            return true;
-        }
-
-        if ($this->maxDate && $date > $this->maxDate) {
-            return true;
-        }
-
-        return in_array($date, $this->disabledDates);
-    }
-
-    /**
      * Get formatted selected date
      *
      * @return string
@@ -280,5 +263,24 @@ class Datepicker extends Component
     {
         return view('flowblade::livewire.datepicker');
     }
-}
 
+    /**
+     * Check if date is disabled
+     *
+     * @param string $date
+     *
+     * @return bool
+     */
+    private function isDateDisabled(string $date): bool
+    {
+        if ($this->minDate && $date < $this->minDate) {
+            return true;
+        }
+
+        if ($this->maxDate && $date > $this->maxDate) {
+            return true;
+        }
+
+        return in_array($date, $this->disabledDates);
+    }
+}

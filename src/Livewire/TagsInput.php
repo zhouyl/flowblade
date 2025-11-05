@@ -62,7 +62,7 @@ class TagsInput extends Component
     /**
      * Maximum number of tags allowed (null for unlimited)
      *
-     * @var int|null
+     * @var null|int
      */
     public ?int $maxTags = null;
 
@@ -90,7 +90,7 @@ class TagsInput extends Component
     /**
      * Character to auto-split input into tags (e.g., ',', ';')
      *
-     * @var string|null
+     * @var null|string
      */
     public ?string $separator = null;
 
@@ -98,6 +98,7 @@ class TagsInput extends Component
      * Mount the component
      *
      * @param array $tags
+     *
      * @return void
      */
     public function mount(array $tags = []): void
@@ -138,6 +139,7 @@ class TagsInput extends Component
      * Remove tag
      *
      * @param int $index
+     *
      * @return void
      */
     public function removeTag(int $index): void
@@ -167,6 +169,7 @@ class TagsInput extends Component
      * Handle input key down
      *
      * @param string $key
+     *
      * @return void
      */
     public function handleKeyDown(string $key): void
@@ -178,12 +181,15 @@ class TagsInput extends Component
             $this->dispatch('tags-updated', tags: $this->tags);
         } elseif ($this->separator && str_contains($this->input, $this->separator)) {
             $parts = explode($this->separator, $this->input);
+
             foreach ($parts as $part) {
                 $tag = trim($part);
+
                 if (!empty($tag)) {
                     if ($this->maxTags && count($this->tags) >= $this->maxTags) {
                         break;
                     }
+
                     if (!$this->allowDuplicates && in_array($tag, $this->tags)) {
                         continue;
                     }
@@ -198,7 +204,7 @@ class TagsInput extends Component
     /**
      * Get remaining tag slots
      *
-     * @return int|null
+     * @return null|int
      */
     public function getRemainingSlots(): ?int
     {
@@ -229,4 +235,3 @@ class TagsInput extends Component
         return view('flowblade::livewire.tags-input');
     }
 }
-

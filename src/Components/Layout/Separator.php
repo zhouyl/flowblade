@@ -66,6 +66,7 @@ class Separator extends Component
 
         // Color
         $colorClasses = ComponentHelper::config("component_colors.separator.{$this->color}");
+
         if ($colorClasses) {
             $classes[] = $colorClasses;
         }

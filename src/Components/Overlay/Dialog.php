@@ -21,13 +21,13 @@ class Dialog extends Component
     /**
      * Create a new component instance
      *
-     * @param string      $type        Dialog type: 'info', 'warning', 'error', 'success', 'confirm'
-     * @param null|string $title       Dialog title (optional)
-     * @param null|string $message     Dialog message content
-     * @param null|string $size        Dialog width: 'sm', 'md', 'lg', 'xl'
-     * @param bool        $closable    Whether dialog can be closed with ESC key or backdrop click
-     * @param null|string $confirmText Text for confirm button (default: 'OK' or 'Confirm')
-     * @param null|string $cancelText  Text for cancel button (only for confirm type, default: 'Cancel')
+     * @param string      $type          Dialog type: 'info', 'warning', 'error', 'success', 'confirm'
+     * @param null|string $title         Dialog title (optional)
+     * @param null|string $message       Dialog message content
+     * @param null|string $size          Dialog width: 'sm', 'md', 'lg', 'xl'
+     * @param bool        $closable      Whether dialog can be closed with ESC key or backdrop click
+     * @param null|string $confirmText   Text for confirm button (default: 'OK' or 'Confirm')
+     * @param null|string $cancelText    Text for cancel button (only for confirm type, default: 'Cancel')
      * @param mixed       ...$styleProps All style props (p, m, bg, color, w, h, etc.)
      */
     public function __construct(
@@ -134,4 +134,3 @@ class Dialog extends Component
         return view('flowblade::components.overlay.dialog');
     }
 }
-

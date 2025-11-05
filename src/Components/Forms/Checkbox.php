@@ -56,6 +56,7 @@ class Checkbox extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('checkbox', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }

@@ -48,6 +48,7 @@ class Card extends Component
 
         // Size (padding) - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('card', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }

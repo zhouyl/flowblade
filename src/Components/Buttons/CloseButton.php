@@ -59,6 +59,7 @@ class CloseButton extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('close_button', $this->size ?? 'md');
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }

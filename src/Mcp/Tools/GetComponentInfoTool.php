@@ -6,8 +6,6 @@ namespace Flowblade\Mcp\Tools;
  * Get Component Info Tool
  *
  * This tool retrieves detailed information about a specific Flowblade component.
- *
- * @package Flowblade\Mcp\Tools
  */
 class GetComponentInfoTool
 {
@@ -269,4 +267,3 @@ class GetComponentInfoTool
         ];
     }
 }
-

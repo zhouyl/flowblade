@@ -51,6 +51,7 @@ class Table extends Component
 
         // Size
         $sizeClass = ComponentHelper::getSizeClasses('table', $this->size);
+
         if ($sizeClass) {
             $classes[] = $sizeClass;
         }

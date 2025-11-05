@@ -55,6 +55,7 @@ class Radio extends Component
 
         // Size - use configuration
         $sizeClasses = ComponentHelper::getSizeClasses('radio', $this->size);
+
         if ($sizeClasses) {
             $classes[] = $sizeClasses;
         }
