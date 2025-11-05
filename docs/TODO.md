@@ -772,48 +772,58 @@
 - [x] 15.1.5 为 Card 组件创建完整的预览示例
 - [x] 15.1.6 为 Modal 组件创建完整的预览示例
 - [x] 15.1.7 为 Alert 组件创建完整的预览示例
-- [ ] 15.1.8 创建预览示例的通用模板
+- [x] 15.1.8 为更多组件创建预览示例（Badge, Spinner, Tag, Checkbox, Radio, Switch, Textarea, Heading, Text）
 - [ ] 15.1.9 添加交互式示例（可切换属性）
 - [ ] 15.1.10 添加代码高亮显示
 
 **预期完成**: 3-4 个会话
 
-**本会话完成内容** (第三次会话):
-- 为 Badge 组件创建了完整的预览示例
-  - 颜色变体（6 种颜色）
-  - 尺寸变体（sm, md, lg）
-  - 样式变体（solid, outline, subtle）
-  - 带图标的徽章
-  - 可关闭的徽章
-  - 在上下文中使用的徽章
-- 为 Spinner 组件创建了完整的预览示例
-  - 基础加载器
-  - 尺寸变体（sm, md, lg）
-  - 颜色变体（primary, success, warning, danger）
-  - 带文字的加载器
-  - 按钮中的加载器
-  - 加载覆盖层
-  - 多个加载器
-- 为 Tag 组件创建了完整的预览示例
-  - 基础标签
-  - 颜色变体（6 种颜色）
-  - 尺寸变体（sm, md, lg）
-  - 样式变体（solid, outline, subtle）
-  - 带图标的标签
-  - 可移除的标签
-  - 标签云
-- 为 Checkbox 组件创建了完整的预览示例
-  - 基础复选框
+**本会话完成内容** (第四次会话):
+- 为 Radio 组件创建了完整的预览示例
+  - 基础单选框
+  - 单选框组
   - 状态示例（未选中、已选中、禁用）
-  - 复选框组
-  - 带描述的复选框
+  - 带描述的单选框
   - 尺寸变体（sm, md, lg）
   - 颜色变体（primary, success, danger）
-  - 表单中的复选框
+  - 表单中的单选框
+- 为 Switch 组件创建了完整的预览示例
+  - 基础开关
+  - 状态示例（关闭、打开、禁用）
+  - 尺寸变体（sm, md, lg）
+  - 颜色变体（primary, success, danger, warning）
+  - 带描述的开关
+  - 设置面板中的开关
+  - 表单中的开关
+- 为 Textarea 组件创建了完整的预览示例
+  - 基础文本区域
+  - 尺寸变体（sm, md, lg）
+  - 带标签的文本区域
+  - 状态示例（正常、禁用、只读）
+  - 带字符计数的文本区域
+  - 验证反馈
+  - 表单中的文本区域
+- 为 Heading 组件创建了完整的预览示例
+  - 标题级别（H1-H6）
+  - 尺寸变体（xs, sm, md, lg, xl）
+  - 颜色变体（primary, success, danger, warning, info）
+  - 字体权重（light, normal, semibold, bold）
+  - 带副标题的标题
+  - 文本对齐
+  - 在页面布局中的使用
+- 为 Text 组件创建了完整的预览示例
+  - 文本尺寸（xs, sm, md, lg, xl）
+  - 文本颜色（primary, secondary, success, danger, warning, info）
+  - 字体权重（light, normal, medium, semibold, bold）
+  - 文本对齐（left, center, right, justify）
+  - 文本截断（truncate, line-clamp）
+  - 文本变体（default, muted, subtle, highlight）
+  - 在内容布局中的使用
 
-**前两次会话完成内容**:
+**前三次会话完成内容**:
 - 第一次：分析系统、设计方式、Button 示例、更新 show.blade.php
 - 第二次：Input、Card、Alert、Modal 示例
+- 第三次：Badge、Spinner、Tag、Checkbox 示例
 
 **功能需求**:
 - 每个组件应该有多个预览示例，展示不同的变体和用法
