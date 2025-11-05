@@ -29,12 +29,12 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
             <div class="flex items-center gap-4">
                 <div class="flex-1 border-t border-gray-300"></div>
-                <span class="text-gray-600 text-sm">OR</span>
+                <x-text size="sm" color="secondary">OR</x-text>
                 <div class="flex-1 border-t border-gray-300"></div>
             </div>
             <div class="flex items-center gap-4">
                 <div class="flex-1 border-t border-gray-300"></div>
-                <span class="text-gray-600 text-sm">AND</span>
+                <x-text size="sm" color="secondary">AND</x-text>
                 <div class="flex-1 border-t border-gray-300"></div>
             </div>
         </div>

@@ -141,15 +141,15 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="space-y-3">
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <span class="text-gray-700">Feature Request</span>
+                    <x-text>Feature Request</x-text>
                     <x-badge color="info">New</x-badge>
                 </div>
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <span class="text-gray-700">Bug Fix</span>
+                    <x-text>Bug Fix</x-text>
                     <x-badge color="danger">Critical</x-badge>
                 </div>
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <span class="text-gray-700">Documentation</span>
+                    <x-text>Documentation</x-text>
                     <x-badge color="success">Complete</x-badge>
                 </div>
             </div>

@@ -779,7 +779,25 @@
 
 **预期完成**: 3-4 个会话
 
-**本会话完成内容** (第七次会话):
+**本会话完成内容** (第八次会话):
+- 修复上个会话中的错误
+  - 发现使用 <x-flex as="label"> 是错误的做法
+  - 将 checkbox.blade.php 中的 <x-flex as="label"> 改回原生 <label> 标签
+  - 将 radio.blade.php 中的 <x-flex as="label"> 改回原生 <label> 标签
+  - 将 switch.blade.php 中的 <x-flex as="label"> 改回原生 <label> 标签
+  - 原因：对于 checkbox/radio/switch 这样的表单控件，应该使用原生 <label> 标签来包装，这样可以让点击文本也能选中控件，提高可用性
+- 继续修复预览示例中的原生标签使用
+  - card.blade.php：将 <button> 替换为 <x-button>
+  - alert.blade.php：将 <button> 替换为 <x-button>（用于 Learn More 按钮）
+  - badge.blade.php：将 <span> 替换为 <x-text>
+  - divider.blade.php：将 <span> 替换为 <x-text>
+- 分析其他预览示例文件
+  - modal.blade.php：保留原生 <button> 标签（需要 data-modal-* 属性）
+  - tabs.blade.php：保留原生 <button> 标签（用于制作 tab 按钮）
+  - accordion.blade.php：保留原生 <button> 标签（用于制作 accordion 按钮）
+  - pagination.blade.php：保留原生 <button> 标签（用于制作分页按钮）
+
+**前七次会话完成内容** (第七次会话):
 - 设计并实现了 Label 组件
   - 创建 Label Component 类 (src/Components/Forms/Label.php)
   - 创建 Label Blade 视图 (resources/views/components/forms/label.blade.php)

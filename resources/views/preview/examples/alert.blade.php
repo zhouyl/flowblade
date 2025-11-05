@@ -160,9 +160,7 @@
                     <div>
                         <strong>New Feature:</strong> Check out our latest updates!
                     </div>
-                    <button class="ml-4 px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">
-                        Learn More
-                    </button>
+                    <x-button size="sm" class="ml-4">Learn More</x-button>
                 </div>
             </x-alert>
         </div>
