@@ -714,10 +714,10 @@
 **低优先级** (2-3 个会话):
 1. 14.15 新增 Dialog 组件
 2. 14.12 PhoneInput 国家支持扩展
-3. 14.4 Livewire 组件封装
-4. 14.8 引入 laravel/mcp 和 MCP 服务
-5. 14.9 组件预览路由和页面
-6. 14.10 创建 preview 目录和安装命令
+3. 14.4 Livewire 组件封装 ✅
+4. 14.8 引入 laravel/mcp 和 MCP 服务 ✅
+5. 14.9 组件预览路由和页面 ✅
+6. 14.10 创建 preview 目录和安装命令 ✅
 
 **已取消**:
 1. 14.14 合并 absolute-center 与 center 组件 (取消)
