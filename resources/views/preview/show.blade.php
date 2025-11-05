@@ -62,7 +62,7 @@
                 To use this component in your Blade template:
             </p>
             <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
-                <code>&lt;x-{{ $component }} /&gt;</code>
+                <pre class="font-mono text-sm m-0"><code class="language-html">&lt;x-{{ $component }} /&gt;</code></pre>
             </div>
         </div>
 
@@ -121,7 +121,7 @@
                         Basic Example
                     </h3>
                     <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
-                        <code>&lt;x-{{ $component }} /&gt;</code>
+                        <pre class="font-mono text-sm m-0"><code class="language-html">&lt;x-{{ $component }} /&gt;</code></pre>
                     </div>
                 </div>
 
@@ -130,10 +130,10 @@
                         With Attributes
                     </h3>
                     <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
-                        <code>&lt;x-{{ $component }}<br/>
-                        &nbsp;&nbsp;color="primary"<br/>
-                        &nbsp;&nbsp;size="lg"<br/>
-                        /&gt;</code>
+                        <pre class="font-mono text-sm m-0"><code class="language-html">&lt;x-{{ $component }}
+&nbsp;&nbsp;color="primary"
+&nbsp;&nbsp;size="lg"
+/&gt;</code></pre>
                     </div>
                 </div>
 
@@ -142,9 +142,9 @@
                         With Slot Content
                     </h3>
                     <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
-                        <code>&lt;x-{{ $component }}&gt;<br/>
-                        &nbsp;&nbsp;Your content here<br/>
-                        &lt;/x-{{ $component }}&gt;</code>
+                        <pre class="font-mono text-sm m-0"><code class="language-html">&lt;x-{{ $component }}&gt;
+&nbsp;&nbsp;Your content here
+&lt;/x-{{ $component }}&gt;</code></pre>
                     </div>
                 </div>
             </div>

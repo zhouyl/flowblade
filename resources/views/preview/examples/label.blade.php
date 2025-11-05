@@ -6,9 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Label</h3>
         <p class="text-gray-600 mb-4">Simple label for form inputs.</p>
 
-        <x-preview>
-            <x-label for="email">Email Address</x-label>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.label.basic-label" />
 
     </div>
 
@@ -17,12 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Label with Input</h3>
         <p class="text-gray-600 mb-4">Label associated with an input field.</p>
 
-        <x-preview>
-            <div class="space-y-2">
-                <x-label for="username">Username</x-label>
-                <x-input id="username" placeholder="Enter your username" />
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.label.label-with-input" />
 
     </div>
 
@@ -31,17 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Label Sizes</h3>
         <p class="text-gray-600 mb-4">Labels in different sizes.</p>
 
-        <x-preview>
-            <div>
-                <x-label size="sm">Small Label</x-label>
-            </div>
-            <div>
-                <x-label size="md">Medium Label</x-label>
-            </div>
-            <div>
-                <x-label size="lg">Large Label</x-label>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.label.label-sizes" />
 
     </div>
 
@@ -50,12 +33,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Required Indicator</h3>
         <p class="text-gray-600 mb-4">Label with required field indicator.</p>
 
-        <x-preview>
-            <div class="space-y-2">
-                <x-label for="name" required>Full Name</x-label>
-                <x-input id="name" placeholder="Enter your full name" />
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.label.required-indicator" />
 
     </div>
 
@@ -64,12 +42,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Label with Checkbox</h3>
         <p class="text-gray-600 mb-4">Label associated with checkbox input.</p>
 
-        <x-preview>
-            <label class="flex items-center gap-2">
-                <x-checkbox name="agree" />
-                <x-label>I agree to the terms of service</x-label>
-            </label>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.label.label-with-checkbox" />
 
     </div>
 
@@ -78,20 +51,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Label with Radio</h3>
         <p class="text-gray-600 mb-4">Label associated with radio input.</p>
 
-        <x-preview>
-            <label class="flex items-center gap-2">
-                <x-radio name="option" value="1" />
-                <x-label>Option 1</x-label>
-            </label>
-            <label class="flex items-center gap-2">
-                <x-radio name="option" value="2" />
-                <x-label>Option 2</x-label>
-            </label>
-            <label class="flex items-center gap-2">
-                <x-radio name="option" value="3" />
-                <x-label>Option 3</x-label>
-            </label>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.label.label-with-radio" />
 
     </div>
 
@@ -100,23 +60,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Form Example</h3>
         <p class="text-gray-600 mb-4">Complete form with labels.</p>
 
-        <x-preview>
-            <form class="space-y-4">
-                <div>
-                    <x-label for="email" required>Email Address</x-label>
-                    <x-input id="email" type="email" placeholder="you@example.com" />
-                </div>
-                <div>
-                    <x-label for="password" required>Password</x-label>
-                    <x-input id="password" type="password" placeholder="••••••••" />
-                </div>
-                <label class="flex items-center gap-2">
-                    <x-checkbox name="remember" />
-                    <x-label>Remember me</x-label>
-                </label>
-                <x-button type="submit">Sign In</x-button>
-            </form>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.label.form-example" />
 
     </div>
 </div>

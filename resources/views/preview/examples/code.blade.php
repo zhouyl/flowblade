@@ -6,11 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Code</h3>
         <p class="text-gray-600 mb-4">Inline code for displaying code snippets.</p>
 
-        <x-preview>
-            <p class="text-gray-700">
-                Use the <x-code>npm install</x-code> command to install dependencies.
-            </p>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.code.basic-code" />
 
     </div>
 
@@ -19,20 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Code with Language</h3>
         <p class="text-gray-600 mb-4">Code with language specification.</p>
 
-        <x-preview>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">PHP:</p>
-                <x-code language="php">$user = User::find(1);</x-code>
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">JavaScript:</p>
-                <x-code language="javascript">const user = await getUser(1);</x-code>
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">SQL:</p>
-                <x-code language="sql">SELECT * FROM users WHERE id = 1;</x-code>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.code.code-with-language" />
 
     </div>
 

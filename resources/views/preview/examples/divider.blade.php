@@ -6,13 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Divider</h3>
         <p class="text-gray-600 mb-4">Simple horizontal divider.</p>
 
-        <x-preview>
-            <div class="space-y-4">
-                <p class="text-gray-700">Section 1</p>
-                <x-divider />
-                <p class="text-gray-700">Section 2</p>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.divider.basic-divider" />
 
     </div>
 
@@ -21,18 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Divider with Text</h3>
         <p class="text-gray-600 mb-4">Divider with centered text.</p>
 
-        <x-preview>
-            <div class="flex items-center gap-4">
-                <div class="flex-1 border-t border-gray-300"></div>
-                <x-text size="sm" color="secondary">OR</x-text>
-                <div class="flex-1 border-t border-gray-300"></div>
-            </div>
-            <div class="flex items-center gap-4">
-                <div class="flex-1 border-t border-gray-300"></div>
-                <x-text size="sm" color="secondary">AND</x-text>
-                <div class="flex-1 border-t border-gray-300"></div>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.divider.divider-with-text" />
 
     </div>
 

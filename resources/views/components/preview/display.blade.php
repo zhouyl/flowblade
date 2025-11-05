@@ -31,7 +31,7 @@
 
     {{-- Code Display with Copy Button --}}
     <div class="preview-code-wrapper">
-        <div class="flex items-center justify-between bg-gray-800 px-4 py-2 rounded-t-lg">
+        <div class="flex items-center justify-between bg-gray-800 rounded-t-lg">
             <span class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Code</span>
             <button
                 type="button"
