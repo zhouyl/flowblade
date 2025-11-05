@@ -139,7 +139,7 @@
                         With Slot Content
                     </h3>
                     <div class="prism-copy-wrapper bg-gray-900 text-gray-100 rounded-lg overflow-x-auto font-mono text-sm">
-                        <pre><code class="language-html">&lt;x-{{ $component }}&gt; Your content here/&lt;x-{{ $component }}&gt;</code></pre>
+                        <pre><code class="language-html">&lt;x-{{ $component }}&gt;Your content here&lt;/x-{{ $component }}&gt;</code></pre>
                     </div>
                 </div>
             </div>

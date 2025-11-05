@@ -6,42 +6,16 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Pagination</h3>
         <p class="text-gray-600 mb-4">Simple pagination controls.</p>
 
-        <x-preview>
-            <div class="flex items-center justify-center gap-2">
-                <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">Previous</button>
-                <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">1</button>
-                <button class="px-3 py-2 border border-blue-600 bg-blue-600 text-white rounded">2</button>
-                <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">3</button>
-                <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">Next</button>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.pagination.basic-pagination" />
 
     </div>
 
-    {{-- Pagination with Icons --}}
+    {{-- Pagination with Ellipsis --}}
     <div class="preview-section">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Pagination with Icons</h3>
-        <p class="text-gray-600 mb-4">Pagination with arrow icons.</p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Pagination with Ellipsis</h3>
+        <p class="text-gray-600 mb-4">Pagination with ellipsis for many pages.</p>
 
-        <x-preview>
-            <div class="flex items-center justify-center gap-2">
-                <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50 flex items-center gap-1">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                    </svg>
-                    Previous
-                </button>
-                <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">1</button>
-                <button class="px-3 py-2 border border-blue-600 bg-blue-600 text-white rounded">2</button>
-                <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">3</button>
-                <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50 flex items-center gap-1">
-                    Next
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </button>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.pagination.pagination-with-ellipsis" />
 
     </div>
 
@@ -50,32 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Pagination Sizes</h3>
         <p class="text-gray-600 mb-4">Pagination in different sizes.</p>
 
-        <x-preview>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">Small:</p>
-                <div class="flex items-center justify-center gap-1">
-                    <button class="px-2 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50">1</button>
-                    <button class="px-2 py-1 text-sm border border-blue-600 bg-blue-600 text-white rounded">2</button>
-                    <button class="px-2 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50">3</button>
-                </div>
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">Medium:</p>
-                <div class="flex items-center justify-center gap-2">
-                    <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">1</button>
-                    <button class="px-3 py-2 border border-blue-600 bg-blue-600 text-white rounded">2</button>
-                    <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">3</button>
-                </div>
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">Large:</p>
-                <div class="flex items-center justify-center gap-3">
-                    <button class="px-4 py-3 text-lg border border-gray-300 rounded hover:bg-gray-50">1</button>
-                    <button class="px-4 py-3 text-lg border border-blue-600 bg-blue-600 text-white rounded">2</button>
-                    <button class="px-4 py-3 text-lg border border-gray-300 rounded hover:bg-gray-50">3</button>
-                </div>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.pagination.pagination-sizes" />
 
     </div>
 

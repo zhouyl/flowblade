@@ -6,9 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Textarea</h3>
         <p class="text-gray-600 mb-4">Simple textarea input for multi-line text.</p>
 
-        <x-preview>
-            <x-textarea placeholder="Enter your message here..." />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.textarea.basic-textarea" />
 
     </div>
 
@@ -17,11 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Textarea Sizes</h3>
         <p class="text-gray-600 mb-4">Textareas in different sizes.</p>
 
-        <x-preview>
-            <x-textarea size="sm" placeholder="Small textarea" rows="2" />
-            <x-textarea size="md" placeholder="Medium textarea" rows="4" />
-            <x-textarea size="lg" placeholder="Large textarea" rows="6" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.textarea.textarea-sizes" />
 
     </div>
 
@@ -30,12 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Textarea with Label</h3>
         <p class="text-gray-600 mb-4">Textarea with associated label.</p>
 
-        <x-preview>
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <x-textarea placeholder="Type your message..." rows="4" />
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.textarea.textarea-with-label" />
 
     </div>
 
@@ -44,11 +33,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Textarea States</h3>
         <p class="text-gray-600 mb-4">Different textarea states.</p>
 
-        <x-preview>
-            <x-textarea placeholder="Normal textarea" rows="3" />
-            <x-textarea placeholder="Disabled textarea" rows="3" :disabled="true" />
-            <x-textarea placeholder="Read-only textarea" rows="3" readonly value="This is read-only content" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.textarea.textarea-states" />
 
     </div>
 

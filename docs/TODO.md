@@ -36,23 +36,21 @@
 **预期完成**: 3-4 个会话
 
 **本会话完成**:
-- ✅ 将代码预览从 Highlight.js 替换为 Prism.js
-- ✅ 集成 Prism.js 复制代码插件
-- ✅ 为 15 个组件创建 preview 代码文件（checkbox、radio、button、badge、tag、text、heading、label、link、avatar、code、divider、card、input）
-- ✅ 将 15 个组件的预览示例转换为 <x-preview> 方式
-- ✅ 创建 63 个 preview 代码文件
-- ✅ 更新 display.blade.php 使用 Prism.js
+- ✅ 为 22 个组件创建 preview 代码文件
+- ✅ 将 22 个组件的预览示例转换为 <x-preview> 方式
+- ✅ 创建 98 个 preview 代码文件
+- ✅ 完成所有主要组件的 preview 重构（包括 modal）
 
 **已完成**:
 - ✅ Preview 组件基础实现（使用 Blade 视图命名约定）
 - ✅ 创建 Preview 视图文件和错误处理
 - ✅ Prism.js 代码高亮和复制功能
-- ✅ 15 个组件的完整 preview 重构
+- ✅ 22 个组件的完整 preview 重构
 
 **待完成**:
-- 为其他 9 个组件创建 preview 代码文件（modal、pagination、progress、spinner、switch、tabs、accordion、alert）
-- 更新其他预览示例使用新的 <x-preview> 方式
 - 添加交互式示例（可切换属性）
+- 完善组件文档
+- 性能优化
 
 ---
 

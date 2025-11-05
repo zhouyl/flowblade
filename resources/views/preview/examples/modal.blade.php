@@ -6,27 +6,14 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Modal</h3>
         <p class="text-gray-600 mb-4">Simple modal dialog for user interaction.</p>
 
-        <x-preview>
-            <button
-                data-modal-target="basic-modal"
-                data-modal-toggle="basic-modal"
-                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-                Open Modal
-            </button>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.modal.basic-modal" />
 
         <x-modal id="basic-modal">
             <div class="p-6">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">Modal Title</h3>
                 <p class="text-gray-600 mb-6">This is a basic modal dialog. You can add any content here.</p>
                 <div class="flex gap-3">
-                    <button
-                        data-modal-hide="basic-modal"
-                        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                    >
-                        Close
-                    </button>
+                    <x-button data-modal-hide="basic-modal">Close</x-button>
                 </div>
             </div>
         </x-modal>
@@ -38,39 +25,23 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Modal with Form</h3>
         <p class="text-gray-600 mb-4">Modal containing a form for user input.</p>
 
-        <x-preview>
-            <button
-                data-modal-target="form-modal"
-                data-modal-toggle="form-modal"
-                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-                Open Form Modal
-            </button>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.modal.modal-with-form" />
 
         <x-modal id="form-modal">
             <div class="p-6">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">User Information</h3>
                 <form class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                        <input type="text" placeholder="Enter your name" class="w-full px-3 py-2 border border-gray-300 rounded" />
+                        <x-label for="name">Name</x-label>
+                        <x-input id="name" type="text" placeholder="Enter your name" />
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 border border-gray-300 rounded" />
+                        <x-label for="email">Email</x-label>
+                        <x-input id="email" type="email" placeholder="Enter your email" />
                     </div>
                     <div class="flex gap-3 pt-4">
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                            Submit
-                        </button>
-                        <button
-                            type="button"
-                            data-modal-hide="form-modal"
-                            class="px-4 py-2 bg-gray-300 text-gray-900 rounded hover:bg-gray-400"
-                        >
-                            Cancel
-                        </button>
+                        <x-button type="submit">Submit</x-button>
+                        <x-button type="button" variant="outline" data-modal-hide="form-modal">Cancel</x-button>
                     </div>
                 </form>
             </div>
@@ -83,27 +54,19 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Modal Sizes</h3>
         <p class="text-gray-600 mb-4">Modals with different sizes.</p>
 
-        <x-preview>
-            <button
-                data-modal-target="small-modal"
-                data-modal-toggle="small-modal"
-                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-                Small Modal
-            </button>
-            <button
-                data-modal-target="large-modal"
-                data-modal-toggle="large-modal"
-                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-                Large Modal
-            </button>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.modal.modal-sizes" />
 
         <x-modal id="small-modal" size="sm">
             <div class="p-6">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">Small Modal</h3>
                 <p class="text-gray-600">This is a small modal dialog.</p>
+            </div>
+        </x-modal>
+
+        <x-modal id="medium-modal" size="md">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Medium Modal</h3>
+                <p class="text-gray-600">This is a medium modal dialog.</p>
             </div>
         </x-modal>
 

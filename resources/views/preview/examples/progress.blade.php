@@ -6,9 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Progress</h3>
         <p class="text-gray-600 mb-4">Simple progress bar.</p>
 
-        <x-preview>
-            <x-progress value="65" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.progress.basic-progress" />
 
     </div>
 
@@ -17,24 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress Values</h3>
         <p class="text-gray-600 mb-4">Progress bars with different values.</p>
 
-        <x-preview>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">25%</p>
-                <x-progress value="25" />
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">50%</p>
-                <x-progress value="50" />
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">75%</p>
-                <x-progress value="75" />
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">100%</p>
-                <x-progress value="100" />
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.progress.progress-values" />
 
     </div>
 
@@ -43,13 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress Colors</h3>
         <p class="text-gray-600 mb-4">Progress bars in different colors.</p>
 
-        <x-preview>
-            <x-progress value="60" color="primary" />
-            <x-progress value="60" color="success" />
-            <x-progress value="60" color="warning" />
-            <x-progress value="60" color="danger" />
-            <x-progress value="60" color="info" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.progress.progress-colors" />
 
     </div>
 
@@ -58,20 +33,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress Sizes</h3>
         <p class="text-gray-600 mb-4">Progress bars in different sizes.</p>
 
-        <x-preview>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">Small</p>
-                <x-progress value="50" size="sm" />
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">Medium</p>
-                <x-progress value="50" size="md" />
-            </div>
-            <div>
-                <p class="text-sm text-gray-600 mb-2">Large</p>
-                <x-progress value="50" size="lg" />
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.progress.progress-sizes" />
 
     </div>
 
@@ -80,22 +42,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress with Label</h3>
         <p class="text-gray-600 mb-4">Progress bar with percentage label.</p>
 
-        <x-preview>
-            <div>
-                <div class="flex items-center justify-between mb-2">
-                    <p class="text-sm text-gray-600">Download Progress</p>
-                    <p class="text-sm font-medium text-gray-900">45%</p>
-                </div>
-                <x-progress value="45" />
-            </div>
-            <div>
-                <div class="flex items-center justify-between mb-2">
-                    <p class="text-sm text-gray-600">Upload Progress</p>
-                    <p class="text-sm font-medium text-gray-900">78%</p>
-                </div>
-                <x-progress value="78" color="success" />
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.progress.progress-with-label" />
 
     </div>
 

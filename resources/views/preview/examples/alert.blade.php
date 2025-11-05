@@ -6,20 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert Types</h3>
         <p class="text-gray-600 mb-4">Different alert types for various messages.</p>
 
-        <x-preview>
-            <x-alert type="info">
-                <strong>Info:</strong> This is an informational alert message.
-            </x-alert>
-            <x-alert type="success">
-                <strong>Success:</strong> Your action was completed successfully.
-            </x-alert>
-            <x-alert type="warning">
-                <strong>Warning:</strong> Please review this important information.
-            </x-alert>
-            <x-alert type="error">
-                <strong>Error:</strong> An error occurred while processing your request.
-            </x-alert>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.alert.alert-types" />
 
     </div>
 
@@ -28,32 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Title</h3>
         <p class="text-gray-600 mb-4">Alert with a title and description.</p>
 
-        <x-preview>
-            <x-alert type="info">
-                <div class="font-semibold mb-1">Important Notice</div>
-                <div class="text-sm">This is a detailed alert message with a title and additional information.</div>
-            </x-alert>
-        </x-preview>
-
-    </div>
-
-    {{-- Alert with Icon --}}
-    <div class="preview-section">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Icon</h3>
-        <p class="text-gray-600 mb-4">Alert with icon for better visual communication.</p>
-
-        <x-preview>
-            <x-alert type="success">
-                <div class="flex items-start">
-                    <svg class="w-5 h-5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <div>
-                        <strong>Success!</strong> Your changes have been saved.
-                    </div>
-                </div>
-            </x-alert>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.alert.alert-with-title" />
 
     </div>
 
@@ -62,20 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Close Button</h3>
         <p class="text-gray-600 mb-4">Dismissible alert with close button.</p>
 
-        <x-preview>
-            <x-alert type="warning">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <strong>Warning:</strong> This action cannot be undone.
-                    </div>
-                    <button class="text-gray-500 hover:text-gray-700">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-                </div>
-            </x-alert>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.alert.alert-with-close" />
 
     </div>
 

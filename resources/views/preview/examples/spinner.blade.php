@@ -6,9 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Spinner</h3>
         <p class="text-gray-600 mb-4">Simple loading spinner.</p>
 
-        <x-preview>
-            <x-spinner />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.spinner.basic-spinner" />
 
     </div>
 
@@ -17,11 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner Sizes</h3>
         <p class="text-gray-600 mb-4">Spinners in different sizes.</p>
 
-        <x-preview>
-            <x-spinner size="sm" />
-            <x-spinner size="md" />
-            <x-spinner size="lg" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.spinner.spinner-sizes" />
 
     </div>
 
@@ -30,12 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner Colors</h3>
         <p class="text-gray-600 mb-4">Spinners in different colors.</p>
 
-        <x-preview>
-            <x-spinner color="primary" />
-            <x-spinner color="success" />
-            <x-spinner color="warning" />
-            <x-spinner color="danger" />
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.spinner.spinner-colors" />
 
     </div>
 
@@ -44,12 +33,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner with Text</h3>
         <p class="text-gray-600 mb-4">Spinner with loading text.</p>
 
-        <x-preview>
-            <div class="flex flex-col items-center gap-3">
-                <x-spinner />
-                <p class="text-gray-600">Loading...</p>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.spinner.spinner-with-text" />
 
     </div>
 
@@ -58,15 +42,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner in Button</h3>
         <p class="text-gray-600 mb-4">Spinner inside a button for loading state.</p>
 
-        <x-preview>
-            <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center gap-2">
-                <x-spinner size="sm" color="white" />
-                Processing...
-            </button>
-            <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
-                Submit
-            </button>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.spinner.spinner-in-button" />
 
     </div>
 
