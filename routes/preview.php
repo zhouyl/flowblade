@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 use Flowblade\Http\Controllers\PreviewController;
 
 Route::middleware(['web'])->group(function () {
+    // Redirect root to preview
+    Route::get('/', function () {
+        return redirect('/preview');
+    });
+
     // Component preview routes
     Route::get('/preview', [PreviewController::class, 'index'])->name('flowblade.preview.index');
     Route::get('/preview/components', [PreviewController::class, 'components'])->name('flowblade.preview.components');

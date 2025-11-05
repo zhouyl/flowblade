@@ -33,16 +33,14 @@
                 Preview
             </h2>
             <div class="p-6 bg-gray-50 rounded-lg border border-gray-200 min-h-[200px] flex items-center justify-center">
-                @php
-                    $componentName = 'flowblade::' . str_replace('-', '.', $component);
-                @endphp
-                @if (view()->exists($componentName))
-                    <x-dynamic-component :component="$componentName" />
-                @else
-                    <p class="text-gray-600 text-center">
-                        Component preview not available. Please check the component documentation.
+                <div class="text-center">
+                    <p class="text-gray-700 font-medium mb-2">
+                        Interactive Component Preview
                     </p>
-                @endif
+                    <p class="text-gray-600 text-sm">
+                        To see this component in action, please refer to the code examples below and implement it in your Laravel application.
+                    </p>
+                </div>
             </div>
         </div>
 
