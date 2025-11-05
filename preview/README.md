@@ -13,6 +13,8 @@ bash preview/install.sh
 ```
 
 This will:
+- Check if Composer is installed
+- Install Composer dependencies if not already installed
 - Create the necessary directory structure
 - Generate a `.env` file for the preview server
 - Create bootstrap files for the server

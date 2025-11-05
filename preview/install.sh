@@ -15,6 +15,23 @@ if [ ! -f "composer.json" ]; then
     exit 1
 fi
 
+# Check if composer is installed
+if ! command -v composer &> /dev/null; then
+    echo "❌ Error: Composer is not installed. Please install Composer first."
+    echo "   Visit: https://getcomposer.org/download/"
+    exit 1
+fi
+
+# Install composer dependencies if vendor directory doesn't exist
+if [ ! -d "vendor" ]; then
+    echo "📦 Installing Composer dependencies..."
+    composer install --no-dev --optimize-autoloader
+    echo ""
+else
+    echo "✅ Composer dependencies already installed"
+    echo ""
+fi
+
 # Create preview directory structure
 echo "📁 Creating preview directory structure..."
 mkdir -p preview/app
