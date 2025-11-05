@@ -6,7 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert Types</h3>
         <p class="text-gray-600 mb-4">Different alert types for various messages.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <x-alert type="info">
                 <strong>Info:</strong> This is an informational alert message.
             </x-alert>
@@ -19,7 +19,7 @@
             <x-alert type="error">
                 <strong>Error:</strong> An error occurred while processing your request.
             </x-alert>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -28,12 +28,12 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Title</h3>
         <p class="text-gray-600 mb-4">Alert with a title and description.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-alert type="info">
                 <div class="font-semibold mb-1">Important Notice</div>
                 <div class="text-sm">This is a detailed alert message with a title and additional information.</div>
             </x-alert>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -42,7 +42,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Icon</h3>
         <p class="text-gray-600 mb-4">Alert with icon for better visual communication.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-alert type="success">
                 <div class="flex items-start">
                     <svg class="w-5 h-5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </x-alert>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -62,7 +62,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Close Button</h3>
         <p class="text-gray-600 mb-4">Dismissible alert with close button.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-alert type="warning">
                 <div class="flex items-start justify-between">
                     <div>
@@ -75,7 +75,7 @@
                     </button>
                 </div>
             </x-alert>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -84,7 +84,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with List</h3>
         <p class="text-gray-600 mb-4">Alert containing a list of items.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-alert type="error">
                 <div class="font-semibold mb-2">Please fix the following errors:</div>
                 <ul class="list-disc list-inside space-y-1 text-sm">
@@ -93,7 +93,7 @@
                     <li>Terms and conditions must be accepted</li>
                 </ul>
             </x-alert>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -102,7 +102,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Action</h3>
         <p class="text-gray-600 mb-4">Alert with action button.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-alert type="info">
                 <div class="flex items-center justify-between">
                     <div>
@@ -111,7 +111,7 @@
                     <x-button size="sm" class="ml-4">Learn More</x-button>
                 </div>
             </x-alert>
-        </div>
+        </x-preview>
 
     </div>
 </div>

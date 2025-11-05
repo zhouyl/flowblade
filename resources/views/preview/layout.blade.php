@@ -175,9 +175,6 @@
         </main>
     </div>
     
-    {{-- Preview Code Sync Script --}}
-    <script src="{{ asset('vendor/flowblade/preview/js/preview-code-sync.js') }}"></script>
-
     @stack('scripts')
 </body>
 </html>

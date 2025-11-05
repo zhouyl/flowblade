@@ -6,13 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Tag</h3>
         <p class="text-gray-600 mb-4">Simple tag for labeling and categorization.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
-            <div class="flex flex-wrap gap-2">
-                <x-tag>JavaScript</x-tag>
-                <x-tag>Laravel</x-tag>
-                <x-tag>Blade</x-tag>
-            </div>
-        </div>
+        <x-preview file="flowblade::preview.codes.tag.basic-tag" />
 
     </div>
 
@@ -21,16 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tag Colors</h3>
         <p class="text-gray-600 mb-4">Tags in different colors.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
-            <div class="flex flex-wrap gap-2">
-                <x-tag color="primary">Primary</x-tag>
-                <x-tag color="secondary">Secondary</x-tag>
-                <x-tag color="success">Success</x-tag>
-                <x-tag color="danger">Danger</x-tag>
-                <x-tag color="warning">Warning</x-tag>
-                <x-tag color="info">Info</x-tag>
-            </div>
-        </div>
+        <x-preview file="flowblade::preview.codes.tag.tag-colors" />
 
     </div>
 
@@ -39,13 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tag Sizes</h3>
         <p class="text-gray-600 mb-4">Tags in different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
-            <div class="flex flex-wrap items-center gap-2">
-                <x-tag size="sm">Small</x-tag>
-                <x-tag size="md">Medium</x-tag>
-                <x-tag size="lg">Large</x-tag>
-            </div>
-        </div>
+        <x-preview file="flowblade::preview.codes.tag.tag-sizes" />
 
     </div>
 
@@ -54,13 +33,13 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tag Variants</h3>
         <p class="text-gray-600 mb-4">Different tag styles.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="flex flex-wrap gap-2">
                 <x-tag variant="solid">Solid</x-tag>
                 <x-tag variant="outline">Outline</x-tag>
                 <x-tag variant="subtle">Subtle</x-tag>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -69,7 +48,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tag with Icon</h3>
         <p class="text-gray-600 mb-4">Tags with icons.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="flex flex-wrap gap-2">
                 <x-tag color="success">
                     <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -84,7 +63,7 @@
                     Attention
                 </x-tag>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -93,7 +72,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Removable Tag</h3>
         <p class="text-gray-600 mb-4">Tags with close button for removal.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="flex flex-wrap gap-2">
                 <x-tag>
                     Python
@@ -112,7 +91,7 @@
                     </button>
                 </x-tag>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -121,7 +100,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tag Cloud</h3>
         <p class="text-gray-600 mb-4">Multiple tags for categorization.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="flex flex-wrap gap-2">
                 <x-tag size="sm">Web</x-tag>
                 <x-tag size="md">Development</x-tag>
@@ -131,7 +110,7 @@
                 <x-tag size="md">Backend</x-tag>
                 <x-tag size="sm">Database</x-tag>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>

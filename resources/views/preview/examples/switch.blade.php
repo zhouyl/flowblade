@@ -6,12 +6,12 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Switch</h3>
         <p class="text-gray-600 mb-4">Simple toggle switch component.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <label class="flex items-center gap-2">
                 <x-switch />
                 <x-text>Enable notifications</x-text>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -20,7 +20,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Switch States</h3>
         <p class="text-gray-600 mb-4">Different switch states.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <label class="flex items-center gap-2">
                 <x-switch />
                 <x-text>Off</x-text>
@@ -37,7 +37,7 @@
                 <x-switch checked :disabled="true" />
                 <x-text>Disabled (On)</x-text>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -46,7 +46,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Switch Sizes</h3>
         <p class="text-gray-600 mb-4">Switches in different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex items-center gap-6">
+        <x-preview>
             <label class="flex items-center gap-2">
                 <x-switch size="sm" checked />
                 <x-text>Small</x-text>
@@ -59,7 +59,7 @@
                 <x-switch size="lg" checked />
                 <x-text>Large</x-text>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -68,7 +68,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Switch Colors</h3>
         <p class="text-gray-600 mb-4">Switches in different colors.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <label class="flex items-center gap-2">
                 <x-switch checked color="primary" />
                 <x-text>Primary</x-text>
@@ -85,7 +85,7 @@
                 <x-switch checked color="warning" />
                 <x-text>Warning</x-text>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -94,7 +94,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Switch with Description</h3>
         <p class="text-gray-600 mb-4">Switches with additional description text.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <label class="flex gap-3">
                 <x-switch class="mt-1" />
                 <div>
@@ -116,7 +116,7 @@
                     <x-text size="sm" color="secondary">Receive SMS messages for important updates</x-text>
                 </div>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -125,7 +125,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Switch in Settings</h3>
         <p class="text-gray-600 mb-4">Switches in a settings panel layout.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-4">
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
                     <x-text>Dark Mode</x-text>
@@ -144,7 +144,7 @@
                     <x-switch checked />
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -153,7 +153,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Switch in Form</h3>
         <p class="text-gray-600 mb-4">Switches within a form context.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <form class="space-y-4">
                 <div>
                     <label class="flex items-center gap-2">
@@ -169,7 +169,7 @@
                 </div>
                 <x-button type="submit">Submit</x-button>
             </form>
-        </div>
+        </x-preview>
 
     </div>
 </div>

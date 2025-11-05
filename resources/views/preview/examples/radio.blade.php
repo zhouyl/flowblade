@@ -6,12 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Radio</h3>
         <p class="text-gray-600 mb-4">Simple radio button input.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
-            <label class="flex items-center gap-2">
-                <x-radio name="option" value="1" />
-                <x-text>Option 1</x-text>
-            </label>
-        </div>
+        <x-preview file="flowblade::preview.codes.radio.simple-radio" />
 
     </div>
 
@@ -20,25 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Radio Group</h3>
         <p class="text-gray-600 mb-4">Multiple radio buttons for selection.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
-            <fieldset>
-                <legend class="text-sm font-medium text-gray-900 mb-3">Choose your preference:</legend>
-                <div class="space-y-2">
-                    <label class="flex items-center gap-2">
-                        <x-radio name="preference" value="option1" />
-                        <x-text>Option 1</x-text>
-                    </label>
-                    <label class="flex items-center gap-2">
-                        <x-radio name="preference" value="option2" />
-                        <x-text>Option 2</x-text>
-                    </label>
-                    <label class="flex items-center gap-2">
-                        <x-radio name="preference" value="option3" />
-                        <x-text>Option 3</x-text>
-                    </label>
-                </div>
-            </fieldset>
-        </div>
+        <x-preview file="flowblade::preview.codes.radio.radio-group" />
 
     </div>
 
@@ -47,7 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Radio States</h3>
         <p class="text-gray-600 mb-4">Different radio button states.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <label class="flex items-center gap-2">
                 <x-radio name="state" value="unchecked" />
                 <x-text>Unchecked</x-text>
@@ -64,7 +41,7 @@
                 <x-radio name="state" value="checked-disabled" checked :disabled="true" />
                 <x-text>Checked & Disabled</x-text>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -73,7 +50,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Radio with Description</h3>
         <p class="text-gray-600 mb-4">Radio buttons with additional description text.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <label class="flex gap-3">
                 <x-radio name="plan" value="basic" class="mt-1" />
                 <div>
@@ -95,7 +72,7 @@
                     <x-text size="sm" color="secondary">For large organizations</x-text>
                 </div>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -104,7 +81,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Radio Sizes</h3>
         <p class="text-gray-600 mb-4">Radio buttons in different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex items-center gap-6">
+        <x-preview>
             <label class="flex items-center gap-2">
                 <x-radio name="size" value="sm" size="sm" />
                 <x-text>Small</x-text>
@@ -117,7 +94,7 @@
                 <x-radio name="size" value="lg" size="lg" />
                 <x-text>Large</x-text>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -126,7 +103,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Radio Colors</h3>
         <p class="text-gray-600 mb-4">Radio buttons in different colors.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <label class="flex items-center gap-2">
                 <x-radio name="color" value="primary" checked color="primary" />
                 <x-text>Primary</x-text>
@@ -139,7 +116,7 @@
                 <x-radio name="color" value="danger" checked color="danger" />
                 <x-text>Danger</x-text>
             </label>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -148,7 +125,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Radio in Form</h3>
         <p class="text-gray-600 mb-4">Radio buttons within a form context.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <form class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-900 mb-3">Shipping Method:</label>
@@ -169,7 +146,7 @@
                 </div>
                 <x-button type="submit">Continue</x-button>
             </form>
-        </div>
+        </x-preview>
 
     </div>
 </div>

@@ -6,11 +6,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Code</h3>
         <p class="text-gray-600 mb-4">Inline code for displaying code snippets.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <p class="text-gray-700">
                 Use the <x-code>npm install</x-code> command to install dependencies.
             </p>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -19,7 +19,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Code with Language</h3>
         <p class="text-gray-600 mb-4">Code with language specification.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <div>
                 <p class="text-sm text-gray-600 mb-2">PHP:</p>
                 <x-code language="php">$user = User::find(1);</x-code>
@@ -32,7 +32,7 @@
                 <p class="text-sm text-gray-600 mb-2">SQL:</p>
                 <x-code language="sql">SELECT * FROM users WHERE id = 1;</x-code>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -41,7 +41,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Code Sizes</h3>
         <p class="text-gray-600 mb-4">Code in different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <p class="text-gray-700">
                 Small: <x-code size="sm">npm install</x-code>
             </p>
@@ -51,7 +51,7 @@
             <p class="text-gray-700">
                 Large: <x-code size="lg">npm install --save package-name</x-code>
             </p>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -60,7 +60,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Code Colors</h3>
         <p class="text-gray-600 mb-4">Code with different background colors.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <p class="text-gray-700">
                 Default: <x-code>npm install</x-code>
             </p>
@@ -73,7 +73,7 @@
             <p class="text-gray-700">
                 Danger: <x-code color="danger">npm install</x-code>
             </p>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -82,14 +82,14 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Code with Copy Button</h3>
         <p class="text-gray-600 mb-4">Code with copy to clipboard functionality.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="flex items-center justify-between bg-gray-100 p-3 rounded">
                 <x-code>npm install flowblade</x-code>
                 <button class="px-2 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
                     Copy
                 </button>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -98,7 +98,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Code in Documentation</h3>
         <p class="text-gray-600 mb-4">Code used in documentation context.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-3">
                 <p class="text-gray-700">
                     To install the package, run:
@@ -110,7 +110,7 @@
                     Then import it in your project using <x-code>import Flowblade from 'flowblade'</x-code>
                 </p>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -119,7 +119,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Code Inline vs Block</h3>
         <p class="text-gray-600 mb-4">Inline and block code examples.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <div>
                 <p class="text-sm font-medium text-gray-900 mb-2">Inline Code:</p>
                 <p class="text-gray-700">
@@ -134,7 +134,7 @@
 }</code></pre>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>

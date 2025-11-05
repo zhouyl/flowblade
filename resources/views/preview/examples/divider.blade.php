@@ -6,13 +6,13 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Divider</h3>
         <p class="text-gray-600 mb-4">Simple horizontal divider.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-4">
                 <p class="text-gray-700">Section 1</p>
                 <x-divider />
                 <p class="text-gray-700">Section 2</p>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -21,7 +21,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Divider with Text</h3>
         <p class="text-gray-600 mb-4">Divider with centered text.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <div class="flex items-center gap-4">
                 <div class="flex-1 border-t border-gray-300"></div>
                 <x-text size="sm" color="secondary">OR</x-text>
@@ -32,7 +32,7 @@
                 <x-text size="sm" color="secondary">AND</x-text>
                 <div class="flex-1 border-t border-gray-300"></div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -41,7 +41,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Divider Styles</h3>
         <p class="text-gray-600 mb-4">Different divider styles.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <div>
                 <p class="text-sm text-gray-600 mb-2">Solid:</p>
                 <div class="border-t border-gray-300"></div>
@@ -54,7 +54,7 @@
                 <p class="text-sm text-gray-600 mb-2">Dotted:</p>
                 <div class="border-t border-dotted border-gray-300"></div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -63,7 +63,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Vertical Divider</h3>
         <p class="text-gray-600 mb-4">Vertical divider for side-by-side content.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="flex gap-6">
                 <div class="flex-1">
                     <p class="text-gray-700">Left Section</p>
@@ -73,7 +73,7 @@
                     <p class="text-gray-700">Right Section</p>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -82,12 +82,12 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Divider Colors</h3>
         <p class="text-gray-600 mb-4">Dividers in different colors.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <div class="border-t border-gray-300"></div>
             <div class="border-t border-blue-300"></div>
             <div class="border-t border-green-300"></div>
             <div class="border-t border-red-300"></div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -96,7 +96,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Divider in Context</h3>
         <p class="text-gray-600 mb-4">Dividers used in typical layouts.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-4">
                 <div>
                     <h3 class="font-semibold text-gray-900">Section 1</h3>
@@ -113,7 +113,7 @@
                     <p class="text-gray-600 text-sm mt-1">Content for section 3</p>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>

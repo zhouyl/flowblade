@@ -6,7 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Modal</h3>
         <p class="text-gray-600 mb-4">Simple modal dialog for user interaction.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <button
                 data-modal-target="basic-modal"
                 data-modal-toggle="basic-modal"
@@ -14,7 +14,7 @@
             >
                 Open Modal
             </button>
-        </div>
+        </x-preview>
 
         <x-modal id="basic-modal">
             <div class="p-6">
@@ -38,7 +38,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Modal with Form</h3>
         <p class="text-gray-600 mb-4">Modal containing a form for user input.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <button
                 data-modal-target="form-modal"
                 data-modal-toggle="form-modal"
@@ -46,7 +46,7 @@
             >
                 Open Form Modal
             </button>
-        </div>
+        </x-preview>
 
         <x-modal id="form-modal">
             <div class="p-6">
@@ -83,7 +83,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Modal Sizes</h3>
         <p class="text-gray-600 mb-4">Modals with different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <button
                 data-modal-target="small-modal"
                 data-modal-toggle="small-modal"
@@ -98,7 +98,7 @@
             >
                 Large Modal
             </button>
-        </div>
+        </x-preview>
 
         <x-modal id="small-modal" size="sm">
             <div class="p-6">
@@ -121,7 +121,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Confirmation Modal</h3>
         <p class="text-gray-600 mb-4">Modal for confirming user actions.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <button
                 data-modal-target="confirm-modal"
                 data-modal-toggle="confirm-modal"
@@ -129,7 +129,7 @@
             >
                 Delete Item
             </button>
-        </div>
+        </x-preview>
 
         <x-modal id="confirm-modal">
             <div class="p-6 text-center">

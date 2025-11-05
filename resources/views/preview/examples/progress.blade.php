@@ -6,9 +6,9 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Progress</h3>
         <p class="text-gray-600 mb-4">Simple progress bar.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-progress value="65" />
-        </div>
+        </x-preview>
 
     </div>
 
@@ -17,7 +17,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress Values</h3>
         <p class="text-gray-600 mb-4">Progress bars with different values.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <div>
                 <p class="text-sm text-gray-600 mb-2">25%</p>
                 <x-progress value="25" />
@@ -34,7 +34,7 @@
                 <p class="text-sm text-gray-600 mb-2">100%</p>
                 <x-progress value="100" />
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -43,13 +43,13 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress Colors</h3>
         <p class="text-gray-600 mb-4">Progress bars in different colors.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <x-progress value="60" color="primary" />
             <x-progress value="60" color="success" />
             <x-progress value="60" color="warning" />
             <x-progress value="60" color="danger" />
             <x-progress value="60" color="info" />
-        </div>
+        </x-preview>
 
     </div>
 
@@ -58,7 +58,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress Sizes</h3>
         <p class="text-gray-600 mb-4">Progress bars in different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <div>
                 <p class="text-sm text-gray-600 mb-2">Small</p>
                 <x-progress value="50" size="sm" />
@@ -71,7 +71,7 @@
                 <p class="text-sm text-gray-600 mb-2">Large</p>
                 <x-progress value="50" size="lg" />
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -80,7 +80,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress with Label</h3>
         <p class="text-gray-600 mb-4">Progress bar with percentage label.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <div>
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-sm text-gray-600">Download Progress</p>
@@ -95,7 +95,7 @@
                 </div>
                 <x-progress value="78" color="success" />
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -104,11 +104,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Striped Progress</h3>
         <p class="text-gray-600 mb-4">Progress bar with striped pattern.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <x-progress value="50" striped />
             <x-progress value="65" striped color="success" />
             <x-progress value="80" striped color="warning" />
-        </div>
+        </x-preview>
 
     </div>
 
@@ -117,11 +117,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Animated Progress</h3>
         <p class="text-gray-600 mb-4">Progress bar with animation.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <x-progress value="50" striped animated />
             <x-progress value="65" striped animated color="success" />
             <x-progress value="80" striped animated color="warning" />
-        </div>
+        </x-preview>
 
     </div>
 
@@ -130,7 +130,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Progress in Context</h3>
         <p class="text-gray-600 mb-4">Progress bars in typical usage scenarios.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-4">
                 <div>
                     <div class="flex items-center justify-between mb-2">
@@ -154,7 +154,7 @@
                     <x-progress value="0" />
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>

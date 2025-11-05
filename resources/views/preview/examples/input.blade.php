@@ -6,9 +6,9 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Input</h3>
         <p class="text-gray-600 mb-4">Simple text input field for user data entry.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-input placeholder="Enter your name" />
-        </div>
+        </x-preview>
 
     </div>
 
@@ -17,11 +17,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Sizes</h3>
         <p class="text-gray-600 mb-4">Input fields come in different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <x-input size="sm" placeholder="Small input" />
             <x-input size="md" placeholder="Medium input" />
             <x-input size="lg" placeholder="Large input" />
-        </div>
+        </x-preview>
 
     </div>
 
@@ -30,12 +30,12 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">With Label</h3>
         <p class="text-gray-600 mb-4">Input with associated label for better accessibility.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
                 <x-input type="email" placeholder="you@example.com" />
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -44,14 +44,14 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Input Types</h3>
         <p class="text-gray-600 mb-4">Different input types for various data entry scenarios.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <x-input type="text" placeholder="Text input" />
             <x-input type="email" placeholder="Email input" />
             <x-input type="password" placeholder="Password input" />
             <x-input type="number" placeholder="Number input" />
             <x-input type="date" />
             <x-input type="url" placeholder="URL input" />
-        </div>
+        </x-preview>
 
     </div>
 
@@ -60,11 +60,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">States</h3>
         <p class="text-gray-600 mb-4">Different input states for various scenarios.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <x-input placeholder="Normal input" />
             <x-input placeholder="Disabled input" :disabled="true" />
             <x-input placeholder="Read-only input" readonly value="Read-only value" />
-        </div>
+        </x-preview>
 
     </div>
 
@@ -73,7 +73,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">With Prefix and Suffix</h3>
         <p class="text-gray-600 mb-4">Input with prefix or suffix icons/text.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <div class="relative">
                 <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
                 <x-input placeholder="0.00" class="pl-8" />
@@ -86,7 +86,7 @@
                     </svg>
                 </span>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -95,7 +95,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Validation States</h3>
         <p class="text-gray-600 mb-4">Input with validation feedback.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Valid Input</label>
                 <x-input placeholder="Valid input" class="border-green-500" />
@@ -106,7 +106,7 @@
                 <x-input placeholder="Invalid input" class="border-red-500" />
                 <p class="text-sm text-red-600 mt-1">✗ This field is required</p>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -115,9 +115,9 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Full Width</h3>
         <p class="text-gray-600 mb-4">Input spanning full width of container.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-input placeholder="Full width input" class="w-full" />
-        </div>
+        </x-preview>
 
     </div>
 </div>

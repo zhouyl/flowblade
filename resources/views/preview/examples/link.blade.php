@@ -6,9 +6,9 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Link</h3>
         <p class="text-gray-600 mb-4">Simple hyperlink component.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <x-link href="https://example.com">Visit Example</x-link>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -17,14 +17,14 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Link Colors</h3>
         <p class="text-gray-600 mb-4">Links in different colors.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <div><x-link href="#" color="primary">Primary Link</x-link></div>
             <div><x-link href="#" color="secondary">Secondary Link</x-link></div>
             <div><x-link href="#" color="success">Success Link</x-link></div>
             <div><x-link href="#" color="danger">Danger Link</x-link></div>
             <div><x-link href="#" color="warning">Warning Link</x-link></div>
             <div><x-link href="#" color="info">Info Link</x-link></div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -33,11 +33,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Link Sizes</h3>
         <p class="text-gray-600 mb-4">Links in different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <div><x-link href="#" size="sm">Small Link</x-link></div>
             <div><x-link href="#" size="md">Medium Link</x-link></div>
             <div><x-link href="#" size="lg">Large Link</x-link></div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -46,11 +46,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Link Variants</h3>
         <p class="text-gray-600 mb-4">Different link styles.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <div><x-link href="#" variant="default">Default Link</x-link></div>
             <div><x-link href="#" variant="underline">Underlined Link</x-link></div>
             <div><x-link href="#" variant="hover">Hover Link</x-link></div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -59,7 +59,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Link with Icon</h3>
         <p class="text-gray-600 mb-4">Links with icons.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <div>
                 <x-link href="#" class="flex items-center gap-1">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@
                     Learn More
                 </x-link>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -85,11 +85,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Link States</h3>
         <p class="text-gray-600 mb-4">Different link states.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <div><x-link href="#">Normal Link</x-link></div>
             <div><x-link href="#" class="opacity-50 cursor-not-allowed">Disabled Link</x-link></div>
             <div><x-link href="#" class="font-semibold">Active Link</x-link></div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -98,7 +98,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Link in Context</h3>
         <p class="text-gray-600 mb-4">Links used in typical content.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-3">
                 <p class="text-gray-700">
                     Check out our <x-link href="#" color="primary">documentation</x-link> for more information.
@@ -110,7 +110,7 @@
                     <x-link href="#" class="text-sm">← Back to previous page</x-link>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>

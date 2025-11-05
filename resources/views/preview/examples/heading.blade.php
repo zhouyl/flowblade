@@ -6,14 +6,14 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Heading Levels</h3>
         <p class="text-gray-600 mb-4">Different heading levels from H1 to H6.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <x-heading level="1">Heading Level 1</x-heading>
             <x-heading level="2">Heading Level 2</x-heading>
             <x-heading level="3">Heading Level 3</x-heading>
             <x-heading level="4">Heading Level 4</x-heading>
             <x-heading level="5">Heading Level 5</x-heading>
             <x-heading level="6">Heading Level 6</x-heading>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -22,13 +22,13 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Heading Sizes</h3>
         <p class="text-gray-600 mb-4">Headings with different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
+        <x-preview>
             <x-heading level="2" size="xs">Extra Small Heading</x-heading>
             <x-heading level="2" size="sm">Small Heading</x-heading>
             <x-heading level="2" size="md">Medium Heading</x-heading>
             <x-heading level="2" size="lg">Large Heading</x-heading>
             <x-heading level="2" size="xl">Extra Large Heading</x-heading>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -37,13 +37,13 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Heading Colors</h3>
         <p class="text-gray-600 mb-4">Headings in different colors.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <x-heading level="3" color="primary">Primary Heading</x-heading>
             <x-heading level="3" color="success">Success Heading</x-heading>
             <x-heading level="3" color="danger">Danger Heading</x-heading>
             <x-heading level="3" color="warning">Warning Heading</x-heading>
             <x-heading level="3" color="info">Info Heading</x-heading>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -52,12 +52,12 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Heading Weights</h3>
         <p class="text-gray-600 mb-4">Headings with different font weights.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
+        <x-preview>
             <x-heading level="3" weight="light">Light Weight Heading</x-heading>
             <x-heading level="3" weight="normal">Normal Weight Heading</x-heading>
             <x-heading level="3" weight="semibold">Semibold Weight Heading</x-heading>
             <x-heading level="3" weight="bold">Bold Weight Heading</x-heading>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -66,12 +66,12 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Heading with Subtitle</h3>
         <p class="text-gray-600 mb-4">Heading combined with subtitle text.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div>
                 <x-heading level="1" size="lg">Welcome to Our Site</x-heading>
                 <p class="text-gray-600 mt-2">Discover amazing features and capabilities</p>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -80,11 +80,11 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Heading Alignment</h3>
         <p class="text-gray-600 mb-4">Headings with different text alignment.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <x-heading level="3" class="text-left">Left Aligned Heading</x-heading>
             <x-heading level="3" class="text-center">Center Aligned Heading</x-heading>
             <x-heading level="3" class="text-right">Right Aligned Heading</x-heading>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -93,7 +93,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Heading in Context</h3>
         <p class="text-gray-600 mb-4">Headings used in typical page layouts.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-4">
                 <div>
                     <x-heading level="1" size="lg">Page Title</x-heading>
@@ -109,7 +109,7 @@
                     <p class="text-gray-600 mt-2">More detailed content</p>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>

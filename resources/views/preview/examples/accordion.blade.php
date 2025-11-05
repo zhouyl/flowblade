@@ -6,7 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Accordion</h3>
         <p class="text-gray-600 mb-4">Simple accordion for collapsible content.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="border border-gray-200 rounded">
                 <div class="border-b border-gray-200">
                     <button class="w-full px-4 py-3 text-left font-medium text-gray-900 hover:bg-gray-50 flex items-center justify-between">
@@ -36,7 +36,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -45,7 +45,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Accordion Flush</h3>
         <p class="text-gray-600 mb-4">Accordion without borders.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-2">
                 <div class="border-b border-gray-200 pb-2">
                     <button class="w-full px-0 py-2 text-left font-medium text-gray-900 hover:text-blue-600 flex items-center justify-between">
@@ -64,7 +64,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -73,7 +73,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Accordion with Icons</h3>
         <p class="text-gray-600 mb-4">Accordion items with leading icons.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="border border-gray-200 rounded space-y-0">
                 <div class="border-b border-gray-200">
                     <button class="w-full px-4 py-3 text-left font-medium text-gray-900 hover:bg-gray-50 flex items-center justify-between">
@@ -102,7 +102,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -111,7 +111,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Accordion Colors</h3>
         <p class="text-gray-600 mb-4">Accordion with different color schemes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
+        <x-preview>
             <div class="border border-blue-200 rounded">
                 <button class="w-full px-4 py-3 text-left font-medium text-blue-900 bg-blue-50 hover:bg-blue-100 flex items-center justify-between">
                     <span>Blue Accordion</span>
@@ -128,7 +128,7 @@
                     </svg>
                 </button>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>

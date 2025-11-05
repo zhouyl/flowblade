@@ -6,16 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge Colors</h3>
         <p class="text-gray-600 mb-4">Badges in different colors for various purposes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
-            <div class="flex flex-wrap gap-2">
-                <x-badge color="primary">Primary</x-badge>
-                <x-badge color="secondary">Secondary</x-badge>
-                <x-badge color="success">Success</x-badge>
-                <x-badge color="danger">Danger</x-badge>
-                <x-badge color="warning">Warning</x-badge>
-                <x-badge color="info">Info</x-badge>
-            </div>
-        </div>
+        <x-preview file="flowblade::preview.codes.badge.badge-colors" />
 
     </div>
 
@@ -24,13 +15,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge Sizes</h3>
         <p class="text-gray-600 mb-4">Badges in different sizes.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
-            <div class="flex flex-wrap items-center gap-2">
-                <x-badge size="sm">Small</x-badge>
-                <x-badge size="md">Medium</x-badge>
-                <x-badge size="lg">Large</x-badge>
-            </div>
-        </div>
+        <x-preview file="flowblade::preview.codes.badge.badge-sizes" />
 
     </div>
 
@@ -39,13 +24,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge Variants</h3>
         <p class="text-gray-600 mb-4">Different badge styles.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
-            <div class="flex flex-wrap gap-2">
-                <x-badge variant="solid">Solid</x-badge>
-                <x-badge variant="outline">Outline</x-badge>
-                <x-badge variant="subtle">Subtle</x-badge>
-            </div>
-        </div>
+        <x-preview file="flowblade::preview.codes.badge.badge-variants" />
 
     </div>
 
@@ -54,7 +33,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge with Icon</h3>
         <p class="text-gray-600 mb-4">Badges with icons for better visual communication.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="flex flex-wrap gap-2">
                 <x-badge color="success">
                     <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -69,7 +48,7 @@
                     Pending
                 </x-badge>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -78,7 +57,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge with Close Button</h3>
         <p class="text-gray-600 mb-4">Dismissible badges.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="flex flex-wrap gap-2">
                 <x-badge color="primary">
                     Tag
@@ -97,7 +76,7 @@
                     </button>
                 </x-badge>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -106,7 +85,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge in Context</h3>
         <p class="text-gray-600 mb-4">Badges used with other components.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="space-y-3">
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
                     <x-text>Feature Request</x-text>
@@ -121,7 +100,7 @@
                     <x-badge color="success">Complete</x-badge>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>

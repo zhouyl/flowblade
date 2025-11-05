@@ -6,7 +6,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Tabs</h3>
         <p class="text-gray-600 mb-4">Simple tabbed content interface.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="border-b border-gray-200">
                 <div class="flex gap-8">
                     <button class="px-4 py-2 border-b-2 border-blue-600 text-blue-600 font-medium">Tab 1</button>
@@ -17,7 +17,7 @@
             <div class="p-4">
                 <p class="text-gray-700">Content for Tab 1</p>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -26,7 +26,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tabs Variants</h3>
         <p class="text-gray-600 mb-4">Different tab styles.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-6">
+        <x-preview>
             <div>
                 <p class="text-sm text-gray-600 mb-3">Underline Style:</p>
                 <div class="border-b border-gray-200">
@@ -43,7 +43,7 @@
                     <button class="px-4 py-2 bg-gray-200 text-gray-900 rounded-full hover:bg-gray-300">Inactive</button>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -52,7 +52,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tabs with Icons</h3>
         <p class="text-gray-600 mb-4">Tabs with icon indicators.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="border-b border-gray-200">
                 <div class="flex gap-8">
                     <button class="px-4 py-2 border-b-2 border-blue-600 text-blue-600 font-medium flex items-center gap-2">
@@ -69,7 +69,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -78,7 +78,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tabs with Disabled State</h3>
         <p class="text-gray-600 mb-4">Tabs with disabled options.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="border-b border-gray-200">
                 <div class="flex gap-8">
                     <button class="px-4 py-2 border-b-2 border-blue-600 text-blue-600 font-medium">Active</button>
@@ -86,7 +86,7 @@
                     <button class="px-4 py-2 border-b-2 border-transparent text-gray-400 cursor-not-allowed opacity-50">Disabled</button>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 
@@ -95,7 +95,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Tabs with Badge</h3>
         <p class="text-gray-600 mb-4">Tabs with notification badges.</p>
 
-        <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
+        <x-preview>
             <div class="border-b border-gray-200">
                 <div class="flex gap-8">
                     <button class="px-4 py-2 border-b-2 border-blue-600 text-blue-600 font-medium flex items-center gap-2">
@@ -108,7 +108,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </x-preview>
 
     </div>
 </div>
