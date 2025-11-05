@@ -101,6 +101,7 @@ Form input components with validation support.
 - [NativeSelect](forms/native-select.md) - Native HTML select element
 - [Datepicker](forms/datepicker.md) - Date picker with range and inline variants
 - [Timepicker](forms/timepicker.md) - Time picker component
+- [Label](forms/label.md) - Semantic label component for form inputs
 - [FloatingLabel](forms/floating-label.md) - Floating label inputs, textareas, and selects
 - [Switch](forms/switch_.md) - Toggle switch component
 - [PhoneInput](forms/phone-input.md) - Phone number input with country support
@@ -217,6 +218,7 @@ Disclosure and collapsible components.
 | NativeSelect | `<select>` | None | [native-select.md](forms/native-select.md) |
 | Datepicker | `<input>` | Flowbite JS | [datepicker.md](forms/datepicker.md) |
 | Timepicker | `<input>` | Flowbite JS | [timepicker.md](forms/timepicker.md) |
+| Label | `<label>` | None | [label.md](forms/label.md) |
 | FloatingLabel | `<input>` | None | [floating-label.md](forms/floating-label.md) |
 | Switch | `<input type="checkbox">` | None | [switch_.md](forms/switch_.md) |
 | PhoneInput | `<input>` | None | [phone-input.md](forms/phone-input.md) |

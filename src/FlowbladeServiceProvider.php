@@ -198,6 +198,7 @@ class FlowbladeServiceProvider extends ServiceProvider
             'number-input' => Components\Forms\NumberInput::class,
             'field' => Components\Forms\Field::class,
             'fieldset' => Components\Forms\Fieldset::class,
+            'label' => Components\Forms\Label::class,
             'password-input' => Components\Forms\PasswordInput::class,
             'search-input' => Components\Forms\SearchInput::class,
             'input-group' => Components\Forms\InputGroup::class,

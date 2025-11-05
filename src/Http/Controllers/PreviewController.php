@@ -200,6 +200,7 @@ class PreviewController extends Controller
             'form' => ['name' => 'Form', 'category' => 'form', 'description' => 'Form wrapper component'],
             'input' => ['name' => 'Input', 'category' => 'form', 'description' => 'Text input component'],
             'input-group' => ['name' => 'Input Group', 'category' => 'form', 'description' => 'Group input with addons'],
+            'label' => ['name' => 'Label', 'category' => 'form', 'description' => 'Form label component'],
             'native-select' => ['name' => 'Native Select', 'category' => 'form', 'description' => 'Native HTML select element'],
             'number-input' => ['name' => 'Number Input', 'category' => 'form', 'description' => 'Number input component'],
             'password-input' => ['name' => 'Password Input', 'category' => 'form', 'description' => 'Password input component'],
