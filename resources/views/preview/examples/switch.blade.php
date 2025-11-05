@@ -9,7 +9,7 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <label class="flex items-center gap-2">
                 <x-switch />
-                <span class="text-gray-700">Enable notifications</span>
+                <x-text>Enable notifications</x-text>
             </label>
         </div>
         
@@ -29,19 +29,19 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
             <label class="flex items-center gap-2">
                 <x-switch />
-                <span class="text-gray-700">Off</span>
+                <x-text>Off</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-switch checked />
-                <span class="text-gray-700">On</span>
+                <x-text>On</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-switch :disabled="true" />
-                <span class="text-gray-700">Disabled (Off)</span>
+                <x-text>Disabled (Off)</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-switch checked :disabled="true" />
-                <span class="text-gray-700">Disabled (On)</span>
+                <x-text>Disabled (On)</x-text>
             </label>
         </div>
         
@@ -61,15 +61,15 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex items-center gap-6">
             <label class="flex items-center gap-2">
                 <x-switch size="sm" checked />
-                <span class="text-gray-700">Small</span>
+                <x-text>Small</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-switch size="md" checked />
-                <span class="text-gray-700">Medium</span>
+                <x-text>Medium</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-switch size="lg" checked />
-                <span class="text-gray-700">Large</span>
+                <x-text>Large</x-text>
             </label>
         </div>
         
@@ -88,19 +88,19 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
             <label class="flex items-center gap-2">
                 <x-switch checked color="primary" />
-                <span class="text-gray-700">Primary</span>
+                <x-text>Primary</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-switch checked color="success" />
-                <span class="text-gray-700">Success</span>
+                <x-text>Success</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-switch checked color="danger" />
-                <span class="text-gray-700">Danger</span>
+                <x-text>Danger</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-switch checked color="warning" />
-                <span class="text-gray-700">Warning</span>
+                <x-text>Warning</x-text>
             </label>
         </div>
         
@@ -121,22 +121,22 @@
             <label class="flex gap-3">
                 <x-switch class="mt-1" />
                 <div>
-                    <p class="text-gray-900 font-medium">Email notifications</p>
-                    <p class="text-gray-600 text-sm">Receive email updates about your account</p>
+                    <x-text weight="medium">Email notifications</x-text>
+                    <x-text size="sm" color="secondary">Receive email updates about your account</x-text>
                 </div>
             </label>
             <label class="flex gap-3">
                 <x-switch checked class="mt-1" />
                 <div>
-                    <p class="text-gray-900 font-medium">Push notifications</p>
-                    <p class="text-gray-600 text-sm">Receive push notifications on your device</p>
+                    <x-text weight="medium">Push notifications</x-text>
+                    <x-text size="sm" color="secondary">Receive push notifications on your device</x-text>
                 </div>
             </label>
             <label class="flex gap-3">
                 <x-switch class="mt-1" />
                 <div>
-                    <p class="text-gray-900 font-medium">SMS notifications</p>
-                    <p class="text-gray-600 text-sm">Receive SMS messages for important updates</p>
+                    <x-text weight="medium">SMS notifications</x-text>
+                    <x-text size="sm" color="secondary">Receive SMS messages for important updates</x-text>
                 </div>
             </label>
         </div>
@@ -160,19 +160,19 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <div class="space-y-4">
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <span class="text-gray-700">Dark Mode</span>
+                    <x-text>Dark Mode</x-text>
                     <x-switch />
                 </div>
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <span class="text-gray-700">Two-Factor Authentication</span>
+                    <x-text>Two-Factor Authentication</x-text>
                     <x-switch checked />
                 </div>
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <span class="text-gray-700">Marketing Emails</span>
+                    <x-text>Marketing Emails</x-text>
                     <x-switch />
                 </div>
                 <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <span class="text-gray-700">Public Profile</span>
+                    <x-text>Public Profile</x-text>
                     <x-switch checked />
                 </div>
             </div>
@@ -198,18 +198,16 @@
                 <div>
                     <label class="flex items-center gap-2">
                         <x-switch name="terms" />
-                        <span class="text-gray-700">I agree to the terms and conditions</span>
+                        <x-text>I agree to the terms and conditions</x-text>
                     </label>
                 </div>
                 <div>
                     <label class="flex items-center gap-2">
                         <x-switch name="newsletter" />
-                        <span class="text-gray-700">Subscribe to our newsletter</span>
+                        <x-text>Subscribe to our newsletter</x-text>
                     </label>
                 </div>
-                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                    Submit
-                </button>
+                <x-button type="submit">Submit</x-button>
             </form>
         </div>
         

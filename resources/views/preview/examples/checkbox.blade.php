@@ -5,11 +5,11 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Checkbox</h3>
         <p class="text-gray-600 mb-4">Simple checkbox input.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <label class="flex items-center gap-2">
                 <x-checkbox />
-                <span class="text-gray-700">Accept terms and conditions</span>
+                <x-text>Accept terms and conditions</x-text>
             </label>
         </div>
         
@@ -25,23 +25,23 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Checkbox States</h3>
         <p class="text-gray-600 mb-4">Different checkbox states.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-3">
             <label class="flex items-center gap-2">
                 <x-checkbox />
-                <span class="text-gray-700">Unchecked</span>
+                <x-text>Unchecked</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-checkbox checked />
-                <span class="text-gray-700">Checked</span>
+                <x-text>Checked</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-checkbox :disabled="true" />
-                <span class="text-gray-700">Disabled</span>
+                <x-text>Disabled</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-checkbox checked :disabled="true" />
-                <span class="text-gray-700">Checked & Disabled</span>
+                <x-text>Checked & Disabled</x-text>
             </label>
         </div>
         
@@ -57,26 +57,26 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Checkbox Group</h3>
         <p class="text-gray-600 mb-4">Multiple checkboxes for selection.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <fieldset>
                 <legend class="text-sm font-medium text-gray-900 mb-3">Select your interests:</legend>
                 <div class="space-y-2">
                     <label class="flex items-center gap-2">
                         <x-checkbox />
-                        <span class="text-gray-700">Web Development</span>
+                        <x-text>Web Development</x-text>
                     </label>
                     <label class="flex items-center gap-2">
                         <x-checkbox />
-                        <span class="text-gray-700">Mobile Development</span>
+                        <x-text>Mobile Development</x-text>
                     </label>
                     <label class="flex items-center gap-2">
                         <x-checkbox />
-                        <span class="text-gray-700">Data Science</span>
+                        <x-text>Data Science</x-text>
                     </label>
                     <label class="flex items-center gap-2">
                         <x-checkbox />
-                        <span class="text-gray-700">DevOps</span>
+                        <x-text>DevOps</x-text>
                     </label>
                 </div>
             </fieldset>
@@ -99,20 +99,20 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Checkbox with Description</h3>
         <p class="text-gray-600 mb-4">Checkbox with additional description text.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-4">
             <label class="flex gap-3">
                 <x-checkbox class="mt-1" />
                 <div>
-                    <p class="text-gray-900 font-medium">Email notifications</p>
-                    <p class="text-gray-600 text-sm">Receive email updates about your account activity</p>
+                    <x-text weight="medium">Email notifications</x-text>
+                    <x-text size="sm" color="secondary">Receive email updates about your account activity</x-text>
                 </div>
             </label>
             <label class="flex gap-3">
                 <x-checkbox class="mt-1" />
                 <div>
-                    <p class="text-gray-900 font-medium">Marketing emails</p>
-                    <p class="text-gray-600 text-sm">Receive promotional offers and product updates</p>
+                    <x-text weight="medium">Marketing emails</x-text>
+                    <x-text size="sm" color="secondary">Receive promotional offers and product updates</x-text>
                 </div>
             </label>
         </div>
@@ -132,19 +132,19 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Checkbox Sizes</h3>
         <p class="text-gray-600 mb-4">Checkboxes in different sizes.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex items-center gap-6">
             <label class="flex items-center gap-2">
                 <x-checkbox size="sm" />
-                <span class="text-gray-700">Small</span>
+                <x-text>Small</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-checkbox size="md" />
-                <span class="text-gray-700">Medium</span>
+                <x-text>Medium</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-checkbox size="lg" />
-                <span class="text-gray-700">Large</span>
+                <x-text>Large</x-text>
             </label>
         </div>
         
@@ -159,19 +159,19 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Checkbox Colors</h3>
         <p class="text-gray-600 mb-4">Checkboxes in different colors.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
             <label class="flex items-center gap-2">
                 <x-checkbox checked color="primary" />
-                <span class="text-gray-700">Primary</span>
+                <x-text>Primary</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-checkbox checked color="success" />
-                <span class="text-gray-700">Success</span>
+                <x-text>Success</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-checkbox checked color="danger" />
-                <span class="text-gray-700">Danger</span>
+                <x-text>Danger</x-text>
             </label>
         </div>
         
@@ -186,7 +186,7 @@
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Checkbox in Form</h3>
         <p class="text-gray-600 mb-4">Checkboxes within a form context.</p>
-        
+
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <form class="space-y-4">
                 <div>
@@ -194,21 +194,19 @@
                     <div class="space-y-2">
                         <label class="flex items-center gap-2">
                             <x-checkbox name="permissions" value="read" />
-                            <span class="text-gray-700">Read</span>
+                            <x-text>Read</x-text>
                         </label>
                         <label class="flex items-center gap-2">
                             <x-checkbox name="permissions" value="write" />
-                            <span class="text-gray-700">Write</span>
+                            <x-text>Write</x-text>
                         </label>
                         <label class="flex items-center gap-2">
                             <x-checkbox name="permissions" value="delete" />
-                            <span class="text-gray-700">Delete</span>
+                            <x-text>Delete</x-text>
                         </label>
                     </div>
                 </div>
-                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                    Submit
-                </button>
+                <x-button type="submit">Submit</x-button>
             </form>
         </div>
         

@@ -9,7 +9,7 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4">
             <label class="flex items-center gap-2">
                 <x-radio name="option" value="1" />
-                <span class="text-gray-700">Option 1</span>
+                <x-text>Option 1</x-text>
             </label>
         </div>
         
@@ -32,15 +32,15 @@
                 <div class="space-y-2">
                     <label class="flex items-center gap-2">
                         <x-radio name="preference" value="option1" />
-                        <span class="text-gray-700">Option 1</span>
+                        <x-text>Option 1</x-text>
                     </label>
                     <label class="flex items-center gap-2">
                         <x-radio name="preference" value="option2" />
-                        <span class="text-gray-700">Option 2</span>
+                        <x-text>Option 2</x-text>
                     </label>
                     <label class="flex items-center gap-2">
                         <x-radio name="preference" value="option3" />
-                        <span class="text-gray-700">Option 3</span>
+                        <x-text>Option 3</x-text>
                     </label>
                 </div>
             </fieldset>
@@ -67,19 +67,19 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
             <label class="flex items-center gap-2">
                 <x-radio name="state" value="unchecked" />
-                <span class="text-gray-700">Unchecked</span>
+                <x-text>Unchecked</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-radio name="state" value="checked" checked />
-                <span class="text-gray-700">Checked</span>
+                <x-text>Checked</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-radio name="state" value="disabled" :disabled="true" />
-                <span class="text-gray-700">Disabled</span>
+                <x-text>Disabled</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-radio name="state" value="checked-disabled" checked :disabled="true" />
-                <span class="text-gray-700">Checked & Disabled</span>
+                <x-text>Checked & Disabled</x-text>
             </label>
         </div>
         
@@ -100,22 +100,22 @@
             <label class="flex gap-3">
                 <x-radio name="plan" value="basic" class="mt-1" />
                 <div>
-                    <p class="text-gray-900 font-medium">Basic Plan</p>
-                    <p class="text-gray-600 text-sm">Perfect for getting started</p>
+                    <x-text weight="medium">Basic Plan</x-text>
+                    <x-text size="sm" color="secondary">Perfect for getting started</x-text>
                 </div>
             </label>
             <label class="flex gap-3">
                 <x-radio name="plan" value="pro" class="mt-1" />
                 <div>
-                    <p class="text-gray-900 font-medium">Pro Plan</p>
-                    <p class="text-gray-600 text-sm">For growing businesses</p>
+                    <x-text weight="medium">Pro Plan</x-text>
+                    <x-text size="sm" color="secondary">For growing businesses</x-text>
                 </div>
             </label>
             <label class="flex gap-3">
                 <x-radio name="plan" value="enterprise" class="mt-1" />
                 <div>
-                    <p class="text-gray-900 font-medium">Enterprise Plan</p>
-                    <p class="text-gray-600 text-sm">For large organizations</p>
+                    <x-text weight="medium">Enterprise Plan</x-text>
+                    <x-text size="sm" color="secondary">For large organizations</x-text>
                 </div>
             </label>
         </div>
@@ -139,15 +139,15 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 flex items-center gap-6">
             <label class="flex items-center gap-2">
                 <x-radio name="size" value="sm" size="sm" />
-                <span class="text-gray-700">Small</span>
+                <x-text>Small</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-radio name="size" value="md" size="md" />
-                <span class="text-gray-700">Medium</span>
+                <x-text>Medium</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-radio name="size" value="lg" size="lg" />
-                <span class="text-gray-700">Large</span>
+                <x-text>Large</x-text>
             </label>
         </div>
         
@@ -166,15 +166,15 @@
         <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 mb-4 space-y-2">
             <label class="flex items-center gap-2">
                 <x-radio name="color" value="primary" checked color="primary" />
-                <span class="text-gray-700">Primary</span>
+                <x-text>Primary</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-radio name="color" value="success" checked color="success" />
-                <span class="text-gray-700">Success</span>
+                <x-text>Success</x-text>
             </label>
             <label class="flex items-center gap-2">
                 <x-radio name="color" value="danger" checked color="danger" />
-                <span class="text-gray-700">Danger</span>
+                <x-text>Danger</x-text>
             </label>
         </div>
         
@@ -197,21 +197,19 @@
                     <div class="space-y-2">
                         <label class="flex items-center gap-2">
                             <x-radio name="shipping" value="standard" />
-                            <span class="text-gray-700">Standard (5-7 days)</span>
+                            <x-text>Standard (5-7 days)</x-text>
                         </label>
                         <label class="flex items-center gap-2">
                             <x-radio name="shipping" value="express" />
-                            <span class="text-gray-700">Express (2-3 days)</span>
+                            <x-text>Express (2-3 days)</x-text>
                         </label>
                         <label class="flex items-center gap-2">
                             <x-radio name="shipping" value="overnight" />
-                            <span class="text-gray-700">Overnight</span>
+                            <x-text>Overnight</x-text>
                         </label>
                     </div>
                 </div>
-                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                    Continue
-                </button>
+                <x-button type="submit">Continue</x-button>
             </form>
         </div>
         

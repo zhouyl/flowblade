@@ -961,7 +961,11 @@
 3. 14.13 组件命名优化 ✅
 4. 14.3 CSS 样式统一检查 (进行中)
 5. 14.16 Config 文件优化 (新增)
-6. 15.1.11 修复预览示例中的原生标签使用 (新增) - 将预览示例中的原生 HTML 标签替换为 Flowblade 组件
+6. 15.1.11 修复预览示例中的原生标签使用 (进行中) - 将预览示例中的原生 HTML 标签替换为 Flowblade 组件
+   - [x] checkbox.blade.php - 已修复所有 span 标签为 x-text，button 为 x-button
+   - [x] radio.blade.php - 已修复所有 span 标签为 x-text，button 为 x-button
+   - [x] switch.blade.php - 已修复所有 span 标签为 x-text，button 为 x-button
+   - [ ] 其他预览示例文件待修复
 
 **低优先级** (已完成):
 1. 14.15 新增 Dialog 组件 ✅
