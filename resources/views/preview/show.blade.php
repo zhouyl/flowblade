@@ -30,18 +30,27 @@
         {{-- Component Preview Section --}}
         <div class="component-card mb-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">
-                Preview
+                Interactive Examples
             </h2>
-            <div class="p-6 bg-gray-50 rounded-lg border border-gray-200 min-h-[200px] flex items-center justify-center">
-                <div class="text-center">
-                    <p class="text-gray-700 font-medium mb-2">
-                        Interactive Component Preview
-                    </p>
-                    <p class="text-gray-600 text-sm">
-                        To see this component in action, please refer to the code examples below and implement it in your Laravel application.
-                    </p>
+
+            @php
+                $examplePath = 'flowblade::preview.examples.' . $component;
+            @endphp
+
+            @if (view()->exists($examplePath))
+                @include($examplePath)
+            @else
+                <div class="p-6 bg-gray-50 rounded-lg border border-gray-200 min-h-[200px] flex items-center justify-center">
+                    <div class="text-center">
+                        <p class="text-gray-700 font-medium mb-2">
+                            Interactive Component Preview
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            Detailed examples for this component are coming soon. Please refer to the code examples below.
+                        </p>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
 
         {{-- Usage Section --}}
