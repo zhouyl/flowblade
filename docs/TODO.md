@@ -507,19 +507,20 @@
 **完成内容**:
 - 创建了 preview/ 目录
 - 添加了 preview/ 到 .gitignore
-- 创建了 preview/install.sh
-  - 自动创建目录结构
-  - 生成 .env 文件
-  - 创建 artisan 和 server.php 引导文件
-- 创建了 preview/start.sh
+- 创建了 preview/install.sh (本会话改进)
+  - 使用 composer create-project 创建 Laravel 项目
+  - 配置 Laravel 项目使用 Flowblade 作为本地依赖
+  - 自动注册 Flowblade service provider
+  - 设置预览路由
+  - 检查已存在的安装
+- 创建了 preview/start.sh (本会话改进)
   - 支持自定义端口和主机
-  - 自动检查依赖
-  - 启动 Laravel 开发服务器
-- 创建了 preview/README.md
-  - 快速开始指南
-  - 目录结构说明
-  - 功能介绍
-  - 故障排除指南
+  - 自动检查预览项目是否安装
+  - 从 preview 目录启动服务器
+- 更新了 preview/README.md (本会话改进)
+  - 更新安装说明
+  - 说明新的安装流程
+  - 更新启动说明
 
 ---
 

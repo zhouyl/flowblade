@@ -1,12 +1,12 @@
 # Flowblade Component Preview Server
 
-This directory contains scripts and configuration for running a local Laravel preview server to view and test Flowblade components.
+This directory contains scripts for setting up a local Laravel preview server to view and test Flowblade components.
 
 ## Quick Start
 
 ### Installation
 
-Run the installation script to set up the preview server:
+Run the installation script from the project root to set up the preview server:
 
 ```bash
 bash preview/install.sh
@@ -14,23 +14,27 @@ bash preview/install.sh
 
 This will:
 - Check if Composer is installed
-- Install Composer dependencies if not already installed
-- Create the necessary directory structure
-- Generate a `.env` file for the preview server
-- Create bootstrap files for the server
+- Install Flowblade package dependencies
+- Create a new Laravel project in the `preview` directory
+- Configure the Laravel project to use Flowblade package as a local dependency
+- Register Flowblade service provider
+- Set up preview routes
+
+**Note**: The installation process may take a few minutes as it downloads Laravel and all dependencies.
 
 ### Starting the Server
 
-To start the preview server:
+After installation, start the preview server:
+
+```bash
+cd preview
+php artisan serve
+```
+
+Or use the start script:
 
 ```bash
 bash preview/start.sh
-```
-
-Or with custom host and port:
-
-```bash
-bash preview/start.sh 8080 0.0.0.0
 ```
 
 Then open your browser to: **http://localhost:8000/preview**

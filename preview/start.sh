@@ -16,15 +16,9 @@ if [ ! -f "composer.json" ]; then
 fi
 
 # Check if preview directory exists
-if [ ! -d "preview" ]; then
-    echo "⚠️  Preview directory not found. Running installation..."
+if [ ! -d "preview/vendor" ]; then
+    echo "⚠️  Preview project not found. Running installation..."
     bash preview/install.sh
-fi
-
-# Check if vendor directory exists
-if [ ! -d "vendor" ]; then
-    echo "📦 Installing dependencies..."
-    composer install
 fi
 
 # Get the port from command line argument or use default
@@ -37,6 +31,7 @@ echo ""
 echo "Press Ctrl+C to stop the server"
 echo ""
 
-# Start the Laravel development server
+# Change to preview directory and start the Laravel development server
+cd preview
 php artisan serve --host=$HOST --port=$PORT
 

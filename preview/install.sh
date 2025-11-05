@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Flowblade Component Preview Server Installation Script
-# This script sets up a local Laravel preview server for Flowblade components
+# This script creates a Laravel preview project for Flowblade components
 
 set -e
 
@@ -22,109 +22,100 @@ if ! command -v composer &> /dev/null; then
     exit 1
 fi
 
-# Install composer dependencies if vendor directory doesn't exist
-if [ ! -d "vendor" ]; then
-    echo "📦 Installing Composer dependencies..."
-    composer install --no-dev --optimize-autoloader
+# Check if preview directory already exists
+if [ -d "preview/vendor" ]; then
+    echo "⚠️  Preview project already exists. Skipping installation."
+    echo "   To reinstall, delete the preview directory and run this script again."
     echo ""
-else
-    echo "✅ Composer dependencies already installed"
+    echo "📖 To start the preview server:"
+    echo "   cd preview && php artisan serve"
+    echo "   Then open: http://localhost:8000/preview"
+    exit 0
+fi
+
+# Install Flowblade package dependencies first
+if [ ! -d "vendor" ]; then
+    echo "📦 Installing Flowblade package dependencies..."
+    composer install --no-dev --optimize-autoloader
     echo ""
 fi
 
-# Create preview directory structure
-echo "📁 Creating preview directory structure..."
-mkdir -p preview/app
-mkdir -p preview/bootstrap
-mkdir -p preview/config
-mkdir -p preview/database
-mkdir -p preview/public
-mkdir -p preview/resources/views
-mkdir -p preview/routes
-mkdir -p preview/storage/logs
-mkdir -p preview/storage/framework/cache
-mkdir -p preview/storage/framework/sessions
-mkdir -p preview/storage/framework/views
+# Create Laravel preview project
+echo "📦 Creating Laravel preview project..."
+composer create-project laravel/laravel preview --prefer-dist --no-interaction
 
-# Create .env file for preview server
-echo "⚙️  Creating .env file for preview server..."
-cat > preview/.env << 'EOF'
-APP_NAME="Flowblade Preview"
-APP_ENV=local
-APP_KEY=base64:$(php -r 'echo base64_encode(random_bytes(32));')
-APP_DEBUG=true
-APP_URL=http://localhost:8000
+echo ""
+echo "⚙️  Configuring preview project..."
 
-LOG_CHANNEL=stack
-LOG_LEVEL=debug
+# Add Flowblade package as a local repository
+cd preview
 
-DB_CONNECTION=sqlite
-DB_DATABASE=:memory:
+# Update composer.json to include Flowblade package
+echo "📝 Adding Flowblade package to composer.json..."
+php -r '
+$composer = json_decode(file_get_contents("composer.json"), true);
+$composer["repositories"] = [
+    [
+        "type" => "path",
+        "url" => "../",
+        "options" => [
+            "symlink" => true
+        ]
+    ]
+];
+$composer["require"]["flowblade/flowblade"] = "@dev";
+file_put_contents("composer.json", json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+'
 
-CACHE_DRIVER=file
-SESSION_DRIVER=file
-QUEUE_DRIVER=sync
+# Install Flowblade package
+echo "📦 Installing Flowblade package..."
+composer require flowblade/flowblade:@dev --no-interaction
 
-MAIL_DRIVER=log
-EOF
+# Update .env file
+echo "⚙️  Updating .env configuration..."
+sed -i.bak 's/APP_NAME=Laravel/APP_NAME="Flowblade Preview"/' .env
+rm -f .env.bak
 
-# Create a simple artisan file for preview server
-echo "📝 Creating artisan bootstrap file..."
-cat > preview/artisan << 'EOF'
-#!/usr/bin/env php
+# Register Flowblade service provider in config/app.php
+echo "📝 Registering Flowblade service provider..."
+php -r '
+$config = file_get_contents("config/app.php");
+$search = "App\Providers\RouteServiceProvider::class,";
+$replace = "App\Providers\RouteServiceProvider::class,\n        Flowblade\FlowbladeServiceProvider::class,";
+$config = str_replace($search, $replace, $config);
+file_put_contents("config/app.php", $config);
+'
+
+# Create a route file that includes Flowblade preview routes
+echo "📝 Setting up preview routes..."
+cat > routes/preview.php << 'EOF'
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-
-$app = require_once __DIR__ . '/../bootstrap/app.php';
-
-$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
-
-exit($kernel->handle(
-    $input = new Symfony\Component\Console\Input\ArgvInput,
-    new Symfony\Component\Console\Output\ConsoleOutput
-));
+// Include Flowblade preview routes
+$previewRoutesPath = base_path('../routes/preview.php');
+if (file_exists($previewRoutesPath)) {
+    require $previewRoutesPath;
+}
 EOF
 
-chmod +x preview/artisan
+# Update RouteServiceProvider to load preview routes
+php -r '
+$provider = file_get_contents("app/Providers/RouteServiceProvider.php");
+$search = "Route::middleware('\''web'\'')";
+$replace = "// Load Flowblade preview routes\n        if (file_exists(base_path('\''routes/preview.php'\''))) {\n            require base_path('\''routes/preview.php'\'');\n        }\n\n        Route::middleware('\''web'\'')";
+$provider = str_replace($search, $replace, $provider);
+file_put_contents("app/Providers/RouteServiceProvider.php", $provider);
+'
 
-# Create a simple server bootstrap
-echo "🔧 Creating server bootstrap file..."
-cat > preview/server.php << 'EOF'
-<?php
-
-// Flowblade Component Preview Server Bootstrap
-
-$basePath = __DIR__ . '/..';
-
-// Load the Flowblade package
-require $basePath . '/vendor/autoload.php';
-
-// Create a simple Laravel app instance
-$app = require $basePath . '/bootstrap/app.php';
-
-// Register the Flowblade service provider
-$app->register(Flowblade\FlowbladeServiceProvider::class);
-
-// Boot the application
-$app->boot();
-
-// Handle the request
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
-
-$response->send();
-$kernel->terminate($request, $response);
-EOF
+cd ..
 
 echo ""
 echo "✅ Installation complete!"
 echo ""
 echo "📖 Next steps:"
-echo "1. Run: php preview/artisan serve"
-echo "2. Open: http://localhost:8000/preview"
+echo "1. cd preview"
+echo "2. php artisan serve"
+echo "3. Open: http://localhost:8000/preview"
 echo ""
-echo "For more information, see: docs/preview/README.md"
+echo "For more information, see: preview/README.md"
 
