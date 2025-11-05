@@ -12,3 +12,17 @@ Thumbs.db
 *.swo
 *~
 
+# Preview directory (local Laravel preview server)
+# Keep scripts but ignore generated files
+/preview/.env
+/preview/artisan
+/preview/server.php
+/preview/app/
+/preview/bootstrap/
+/preview/config/
+/preview/database/
+/preview/public/
+/preview/resources/
+/preview/routes/
+/preview/storage/
+
