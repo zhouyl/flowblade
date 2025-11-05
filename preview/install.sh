@@ -25,7 +25,7 @@ fi
 # Check if preview directory already exists
 if [ -d "preview/vendor" ]; then
     echo "⚠️  Preview project already exists. Skipping installation."
-    echo "   To reinstall, delete the preview directory and run this script again."
+    echo "   To reinstall, delete the preview directory contents (except scripts) and run this script again."
     echo ""
     echo "📖 To start the preview server:"
     echo "   cd preview && php artisan serve"
@@ -40,9 +40,27 @@ if [ ! -d "vendor" ]; then
     echo ""
 fi
 
+# Backup preview scripts if they exist
+if [ -d "preview" ]; then
+    echo "📁 Backing up preview scripts..."
+    mkdir -p .preview-backup
+    cp preview/*.sh .preview-backup/ 2>/dev/null || true
+    cp preview/*.md .preview-backup/ 2>/dev/null || true
+    rm -rf preview
+fi
+
 # Create Laravel preview project
 echo "📦 Creating Laravel preview project..."
 composer create-project laravel/laravel preview --prefer-dist --no-interaction
+
+# Restore preview scripts
+if [ -d ".preview-backup" ]; then
+    echo "📁 Restoring preview scripts..."
+    cp .preview-backup/*.sh preview/ 2>/dev/null || true
+    cp .preview-backup/*.md preview/ 2>/dev/null || true
+    chmod +x preview/*.sh
+    rm -rf .preview-backup
+fi
 
 echo ""
 echo "⚙️  Configuring preview project..."
@@ -63,48 +81,48 @@ $composer["repositories"] = [
         ]
     ]
 ];
-$composer["require"]["flowblade/flowblade"] = "@dev";
 file_put_contents("composer.json", json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 '
 
 # Install Flowblade package
 echo "📦 Installing Flowblade package..."
-composer require flowblade/flowblade:@dev --no-interaction
+composer require mellivora/flowblade:@dev --no-interaction
 
 # Update .env file
 echo "⚙️  Updating .env configuration..."
 sed -i.bak 's/APP_NAME=Laravel/APP_NAME="Flowblade Preview"/' .env
 rm -f .env.bak
 
-# Register Flowblade service provider in config/app.php
+# Register Flowblade service provider in bootstrap/app.php
 echo "📝 Registering Flowblade service provider..."
 php -r '
-$config = file_get_contents("config/app.php");
-$search = "App\Providers\RouteServiceProvider::class,";
-$replace = "App\Providers\RouteServiceProvider::class,\n        Flowblade\FlowbladeServiceProvider::class,";
-$config = str_replace($search, $replace, $config);
-file_put_contents("config/app.php", $config);
+$bootstrap = file_get_contents("bootstrap/app.php");
+// Add service provider after Application::configure
+$search = "->withProviders([";
+if (strpos($bootstrap, $search) !== false) {
+    // Laravel 11+ style
+    $replace = "->withProviders([\n        \Flowblade\FlowbladeServiceProvider::class,";
+    $bootstrap = str_replace($search, $replace, $bootstrap);
+} else {
+    // Fallback: add before ->create()
+    $search = "->create();";
+    $replace = "->withProviders([\n        \Flowblade\FlowbladeServiceProvider::class,\n    ])\n    ->create();";
+    $bootstrap = str_replace($search, $replace, $bootstrap);
+}
+file_put_contents("bootstrap/app.php", $bootstrap);
 '
 
-# Create a route file that includes Flowblade preview routes
+# Update bootstrap/app.php to load Flowblade preview routes
 echo "📝 Setting up preview routes..."
-cat > routes/preview.php << 'EOF'
-<?php
-
-// Include Flowblade preview routes
-$previewRoutesPath = base_path('../routes/preview.php');
-if (file_exists($previewRoutesPath)) {
-    require $previewRoutesPath;
-}
-EOF
-
-# Update RouteServiceProvider to load preview routes
 php -r '
-$provider = file_get_contents("app/Providers/RouteServiceProvider.php");
-$search = "Route::middleware('\''web'\'')";
-$replace = "// Load Flowblade preview routes\n        if (file_exists(base_path('\''routes/preview.php'\''))) {\n            require base_path('\''routes/preview.php'\'');\n        }\n\n        Route::middleware('\''web'\'')";
-$provider = str_replace($search, $replace, $provider);
-file_put_contents("app/Providers/RouteServiceProvider.php", $provider);
+$bootstrap = file_get_contents("bootstrap/app.php");
+// Add routes configuration
+$search = "->withRouting(";
+if (strpos($bootstrap, $search) !== false) {
+    $replace = "->withRouting(\n        then: function () {\n            // Load Flowblade preview routes\n            \$previewRoutesPath = base_path(\"../routes/preview.php\");\n            if (file_exists(\$previewRoutesPath)) {\n                require \$previewRoutesPath;\n            }\n        },";
+    $bootstrap = str_replace($search, $replace, $bootstrap);
+    file_put_contents("bootstrap/app.php", $bootstrap);
+}
 '
 
 cd ..

@@ -507,20 +507,32 @@
 **完成内容**:
 - 创建了 preview/ 目录
 - 添加了 preview/ 到 .gitignore
-- 创建了 preview/install.sh (本会话改进)
-  - 使用 composer create-project 创建 Laravel 项目
-  - 配置 Laravel 项目使用 Flowblade 作为本地依赖
-  - 自动注册 Flowblade service provider
-  - 设置预览路由
+- 创建了 preview/install.sh (本会话改进和测试)
+  - 使用 composer create-project 创建 Laravel 11 项目
+  - 配置 Laravel 项目使用 Flowblade 作为本地依赖（symlink）
+  - 自动注册 Flowblade service provider 到 bootstrap/app.php
+  - 在 bootstrap/app.php 中配置预览路由加载
+  - 备份和恢复脚本文件
   - 检查已存在的安装
-- 创建了 preview/start.sh (本会话改进)
+  - 已测试并验证安装成功
+- 创建了 preview/start.sh
   - 支持自定义端口和主机
   - 自动检查预览项目是否安装
   - 从 preview 目录启动服务器
-- 更新了 preview/README.md (本会话改进)
+- 更新了 preview/README.md
   - 更新安装说明
   - 说明新的安装流程
   - 更新启动说明
+
+**测试结果**:
+- ✅ 安装脚本成功创建 Laravel 11 项目
+- ✅ Flowblade 包成功安装为本地依赖
+- ✅ Service provider 成功注册
+- ✅ 预览路由成功加载（5 个路由）
+- ✅ 预览服务器成功启动
+- ✅ 预览页面成功访问（http://localhost:8888/preview）
+- ✅ 返回 200 OK 状态码
+- ✅ HTML 内容正确渲染
 
 ---
 
