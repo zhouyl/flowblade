@@ -504,33 +504,37 @@
 
 **完成时间**: 本会话
 
-**完成内容**:
-- 创建了 preview/ 目录
-- 添加了 preview/ 到 .gitignore
-- 创建了 preview/install.sh (本会话改进和测试)
+**完成内容** (本会话重构):
+- 创建了 scripts/ 目录
+- 创建了 scripts/preview-install.sh
+  - 检查 PHP 版本（要求 8.3+）
   - 使用 composer create-project 创建 Laravel 11 项目
   - 配置 Laravel 项目使用 Flowblade 作为本地依赖（symlink）
   - 自动注册 Flowblade service provider 到 bootstrap/app.php
   - 在 bootstrap/app.php 中配置预览路由加载
-  - 备份和恢复脚本文件
   - 检查已存在的安装
   - 已测试并验证安装成功
-- 创建了 preview/start.sh
+- 创建了 scripts/preview-start.sh
   - 支持自定义端口和主机
   - 自动检查预览项目是否安装
   - 从 preview 目录启动服务器
-- 更新了 preview/README.md
-  - 更新安装说明
-  - 说明新的安装流程
-  - 更新启动说明
+- 创建了 docs/preview.md
+  - 完整的预览系统文档
+  - 安装和使用说明
+  - 功能介绍
+  - 故障排除指南
+- 更新了 .gitignore
+  - 忽略整个 preview/ 目录
+- 删除了旧的 preview/ 中的脚本和文档
 
 **测试结果**:
+- ✅ PHP 版本检查正常（8.4.10）
 - ✅ 安装脚本成功创建 Laravel 11 项目
-- ✅ Flowblade 包成功安装为本地依赖
+- ✅ Flowblade 包成功安装为本地依赖（symlink）
 - ✅ Service provider 成功注册
 - ✅ 预览路由成功加载（5 个路由）
 - ✅ 预览服务器成功启动
-- ✅ 预览页面成功访问（http://localhost:8888/preview）
+- ✅ 预览页面成功访问（http://127.0.0.1:8889/preview）
 - ✅ 返回 200 OK 状态码
 - ✅ HTML 内容正确渲染
 

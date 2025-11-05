@@ -13,9 +13,5 @@ Thumbs.db
 *~
 
 # Preview directory (local Laravel preview project)
-# Ignore the entire Laravel project except for scripts
-/preview/*
-!/preview/install.sh
-!/preview/start.sh
-!/preview/README.md
+/preview/
 

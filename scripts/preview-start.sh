@@ -18,7 +18,7 @@ fi
 # Check if preview directory exists
 if [ ! -d "preview/vendor" ]; then
     echo "⚠️  Preview project not found. Running installation..."
-    bash preview/install.sh
+    bash scripts/preview-install.sh
 fi
 
 # Get the port from command line argument or use default
