@@ -51,16 +51,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Spinner Overlay</h3>
         <p class="text-gray-600 mb-4">Spinner as loading overlay.</p>
 
-        <x-preview>
-            <div class="relative h-40 bg-gray-50 rounded flex items-center justify-center">
-                <div class="absolute inset-0 bg-black bg-opacity-10 rounded flex items-center justify-center">
-                    <div class="flex flex-col items-center gap-2">
-                        <x-spinner />
-                        <p class="text-sm text-gray-700">Loading content...</p>
-                    </div>
-                </div>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.spinner.spinner-overlay" />
 
     </div>
 
@@ -69,22 +60,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Multiple Spinners</h3>
         <p class="text-gray-600 mb-4">Multiple spinners for different loading states.</p>
 
-        <x-preview>
-            <div class="grid grid-cols-3 gap-6">
-                <div class="flex flex-col items-center gap-2">
-                    <x-spinner size="md" color="primary" />
-                    <p class="text-xs text-gray-600">Fetching data</p>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <x-spinner size="md" color="success" />
-                    <p class="text-xs text-gray-600">Processing</p>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <x-spinner size="md" color="warning" />
-                    <p class="text-xs text-gray-600">Uploading</p>
-                </div>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.spinner.spinner-multiple" />
 
     </div>
 </div>

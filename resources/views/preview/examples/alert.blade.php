@@ -33,16 +33,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with List</h3>
         <p class="text-gray-600 mb-4">Alert containing a list of items.</p>
 
-        <x-preview>
-            <x-alert type="error">
-                <div class="font-semibold mb-2">Please fix the following errors:</div>
-                <ul class="list-disc list-inside space-y-1 text-sm">
-                    <li>Email address is invalid</li>
-                    <li>Password must be at least 8 characters</li>
-                    <li>Terms and conditions must be accepted</li>
-                </ul>
-            </x-alert>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.alert.alert-with-list" />
 
     </div>
 
@@ -51,16 +42,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Alert with Action</h3>
         <p class="text-gray-600 mb-4">Alert with action button.</p>
 
-        <x-preview>
-            <x-alert type="info">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <strong>New Feature:</strong> Check out our latest updates!
-                    </div>
-                    <x-button size="sm" class="ml-4">Learn More</x-button>
-                </div>
-            </x-alert>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.alert.alert-with-action" />
 
     </div>
 </div>

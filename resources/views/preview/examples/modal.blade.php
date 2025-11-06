@@ -84,15 +84,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Confirmation Modal</h3>
         <p class="text-gray-600 mb-4">Modal for confirming user actions.</p>
 
-        <x-preview>
-            <button
-                data-modal-target="confirm-modal"
-                data-modal-toggle="confirm-modal"
-                class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-            >
-                Delete Item
-            </button>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.modal.modal-confirmation" />
 
         <x-modal id="confirm-modal">
             <div class="p-6 text-center">
@@ -104,15 +96,8 @@
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Delete Item?</h3>
                 <p class="text-gray-600 mb-6">Are you sure you want to delete this item? This action cannot be undone.</p>
                 <div class="flex gap-3 justify-center">
-                    <button class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
-                        Delete
-                    </button>
-                    <button
-                        data-modal-hide="confirm-modal"
-                        class="px-4 py-2 bg-gray-300 text-gray-900 rounded hover:bg-gray-400"
-                    >
-                        Cancel
-                    </button>
+                    <x-button color="danger">Delete</x-button>
+                    <x-button variant="outline" data-modal-hide="confirm-modal">Cancel</x-button>
                 </div>
             </div>
         </x-modal>
