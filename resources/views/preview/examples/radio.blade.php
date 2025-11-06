@@ -50,29 +50,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Radio with Description</h3>
         <p class="text-gray-600 mb-4">Radio buttons with additional description text.</p>
 
-        <x-preview>
-            <label class="flex gap-3">
-                <x-radio name="plan" value="basic" class="mt-1" />
-                <div>
-                    <x-text weight="medium">Basic Plan</x-text>
-                    <x-text size="sm" color="secondary">Perfect for getting started</x-text>
-                </div>
-            </label>
-            <label class="flex gap-3">
-                <x-radio name="plan" value="pro" class="mt-1" />
-                <div>
-                    <x-text weight="medium">Pro Plan</x-text>
-                    <x-text size="sm" color="secondary">For growing businesses</x-text>
-                </div>
-            </label>
-            <label class="flex gap-3">
-                <x-radio name="plan" value="enterprise" class="mt-1" />
-                <div>
-                    <x-text weight="medium">Enterprise Plan</x-text>
-                    <x-text size="sm" color="secondary">For large organizations</x-text>
-                </div>
-            </label>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.radio.radio-with-description" />
 
     </div>
 

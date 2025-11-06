@@ -55,6 +55,15 @@
 
     </div>
 
+    {{-- Checkbox Indeterminate --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Checkbox Indeterminate</h3>
+        <p class="text-gray-600 mb-4">Checkbox with indeterminate state for partial selection.</p>
+
+        <x-preview file="flowblade::preview.codes.checkbox.checkbox-indeterminate" />
+
+    </div>
+
     {{-- Checkbox in Form --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Checkbox in Form</h3>

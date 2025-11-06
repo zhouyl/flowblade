@@ -37,10 +37,10 @@
 
 **本会话完成**:
 - ✅ 完成所有 23 个组件的 preview 代码文件转换
-- ✅ 创建 134 个 preview 代码文件
+- ✅ 创建 139 个 preview 代码文件
 - ✅ 将所有预览示例转换为 <x-preview> 方式
 - ✅ 优先使用 Flowblade 组件替代原生 HTML
-- ✅ 为 button、badge、tag、card、text、code、label 组件添加更多变体示例
+- ✅ 为 button、badge、tag、card、text、code、label、input、checkbox、radio 组件添加更多变体示例
 
 **已完成**:
 - ✅ Preview 组件基础实现（使用 Blade 视图命名约定）
@@ -51,7 +51,7 @@
 - ✅ 15.1.5 添加更多变体示例
 
 **待完成**:
-- 15.2 增强预览系统内容
+- 15.2 增强预览系统内容（继续为其他组件添加示例）
 - 添加交互式示例（可切换属性）
 - 性能优化
 
