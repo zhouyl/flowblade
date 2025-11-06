@@ -33,7 +33,16 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Required Indicator</h3>
         <p class="text-gray-600 mb-4">Label with required field indicator.</p>
 
-        <x-preview file="flowblade::preview.codes.label.required-indicator" />
+        <x-preview file="flowblade::preview.codes.label.label-required" />
+
+    </div>
+
+    {{-- Label with Hint --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Label with Hint</h3>
+        <p class="text-gray-600 mb-4">Label with additional hint text.</p>
+
+        <x-preview file="flowblade::preview.codes.label.label-with-hint" />
 
     </div>
 

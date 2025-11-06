@@ -46,22 +46,30 @@
 
     </div>
 
-    {{-- Colored Cards --}}
+    {{-- Card with Header --}}
     <div class="preview-section">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Colored Cards</h3>
-        <p class="text-gray-600 mb-4">Cards with different background colors.</p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Card with Header</h3>
+        <p class="text-gray-600 mb-4">Card with a header section.</p>
 
-        <x-preview>
-            <x-card class="bg-blue-50 border-blue-200">
-                <p class="text-blue-900">Blue card for informational content</p>
-            </x-card>
-            <x-card class="bg-green-50 border-green-200">
-                <p class="text-green-900">Green card for success messages</p>
-            </x-card>
-            <x-card class="bg-red-50 border-red-200">
-                <p class="text-red-900">Red card for error or warning content</p>
-            </x-card>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.card.card-with-header" />
+
+    </div>
+
+    {{-- Card with Footer --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Card with Footer</h3>
+        <p class="text-gray-600 mb-4">Card with footer and action buttons.</p>
+
+        <x-preview file="flowblade::preview.codes.card.card-with-footer" />
+
+    </div>
+
+    {{-- Card Hover --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Card Hover</h3>
+        <p class="text-gray-600 mb-4">Cards with interactive hover effects.</p>
+
+        <x-preview file="flowblade::preview.codes.card.card-hover" />
 
     </div>
 </div>

@@ -97,27 +97,21 @@
 
     </div>
 
-    {{-- Code Inline vs Block --}}
+    {{-- Code Inline --}}
     <div class="preview-section">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Code Inline vs Block</h3>
-        <p class="text-gray-600 mb-4">Inline and block code examples.</p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Code Inline</h3>
+        <p class="text-gray-600 mb-4">Inline code within text.</p>
 
-        <x-preview>
-            <div>
-                <p class="text-sm font-medium text-gray-900 mb-2">Inline Code:</p>
-                <p class="text-gray-700">
-                    Use <x-code>const x = 10;</x-code> to declare a variable.
-                </p>
-            </div>
-            <div>
-                <p class="text-sm font-medium text-gray-900 mb-2">Block Code:</p>
-                <div class="bg-gray-900 text-gray-100 p-3 rounded overflow-x-auto">
-                    <pre class="font-mono text-sm"><code>function add(a, b) {
-    return a + b;
-}</code></pre>
-                </div>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.code.code-inline" />
+
+    </div>
+
+    {{-- Code Block --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Code Block</h3>
+        <p class="text-gray-600 mb-4">Code block with syntax highlighting.</p>
+
+        <x-preview file="flowblade::preview.codes.code.code-block" />
 
     </div>
 </div>

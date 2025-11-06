@@ -33,12 +33,7 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Text Alignment</h3>
         <p class="text-gray-600 mb-4">Text with different alignment.</p>
 
-        <x-preview>
-            <x-text align="left">Left Aligned Text</x-text>
-            <x-text align="center">Center Aligned Text</x-text>
-            <x-text align="right">Right Aligned Text</x-text>
-            <x-text align="justify">Justified Text - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</x-text>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.text.text-alignment" />
 
     </div>
 
@@ -47,11 +42,16 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Text Truncation</h3>
         <p class="text-gray-600 mb-4">Text with truncation options.</p>
 
-        <x-preview>
-            <x-text class="truncate">This is a very long text that will be truncated with an ellipsis when it exceeds the container width</x-text>
-            <x-text class="line-clamp-2">This is a very long text that will be truncated to two lines with an ellipsis when it exceeds the container width. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</x-text>
-            <x-text class="line-clamp-3">This is a very long text that will be truncated to three lines with an ellipsis when it exceeds the container width. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</x-text>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.text.text-truncate" />
+
+    </div>
+
+    {{-- Text Transform --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Text Transform</h3>
+        <p class="text-gray-600 mb-4">Text with different text transformations.</p>
+
+        <x-preview file="flowblade::preview.codes.text.text-transform" />
 
     </div>
 
