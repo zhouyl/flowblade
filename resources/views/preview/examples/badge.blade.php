@@ -33,22 +33,16 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge with Icon</h3>
         <p class="text-gray-600 mb-4">Badges with icons for better visual communication.</p>
 
-        <x-preview>
-            <div class="flex flex-wrap gap-2">
-                <x-badge color="success">
-                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    Active
-                </x-badge>
-                <x-badge color="warning">
-                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
-                    </svg>
-                    Pending
-                </x-badge>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.badge.badge-with-icon" />
+
+    </div>
+
+    {{-- Badge Pill --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge Pill</h3>
+        <p class="text-gray-600 mb-4">Fully rounded pill-shaped badges.</p>
+
+        <x-preview file="flowblade::preview.codes.badge.badge-pill" />
 
     </div>
 
@@ -80,27 +74,12 @@
 
     </div>
 
-    {{-- Badge in Context --}}
+    {{-- Badge in List --}}
     <div class="preview-section">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge in Context</h3>
-        <p class="text-gray-600 mb-4">Badges used with other components.</p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Badge in List</h3>
+        <p class="text-gray-600 mb-4">Badges used with other components in a list.</p>
 
-        <x-preview>
-            <div class="space-y-3">
-                <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <x-text>Feature Request</x-text>
-                    <x-badge color="info">New</x-badge>
-                </div>
-                <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <x-text>Bug Fix</x-text>
-                    <x-badge color="danger">Critical</x-badge>
-                </div>
-                <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <x-text>Documentation</x-text>
-                    <x-badge color="success">Complete</x-badge>
-                </div>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.badge.badge-in-list" />
 
     </div>
 </div>
