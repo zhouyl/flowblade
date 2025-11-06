@@ -46,17 +46,16 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Vertical Divider</h3>
         <p class="text-gray-600 mb-4">Vertical divider for side-by-side content.</p>
 
-        <x-preview>
-            <div class="flex gap-6">
-                <div class="flex-1">
-                    <p class="text-gray-700">Left Section</p>
-                </div>
-                <div class="border-l border-gray-300"></div>
-                <div class="flex-1">
-                    <p class="text-gray-700">Right Section</p>
-                </div>
-            </div>
-        </x-preview>
+        <x-preview file="flowblade::preview.codes.divider.divider-vertical" />
+
+    </div>
+
+    {{-- Dashed Divider --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Dashed Divider</h3>
+        <p class="text-gray-600 mb-4">Divider with dashed style.</p>
+
+        <x-preview file="flowblade::preview.codes.divider.divider-dashed" />
 
     </div>
 

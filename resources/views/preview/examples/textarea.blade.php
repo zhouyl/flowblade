@@ -55,6 +55,24 @@
 
     </div>
 
+    {{-- Textarea Auto Resize --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Textarea Auto Resize</h3>
+        <p class="text-gray-600 mb-4">Textarea that auto-resizes as content grows.</p>
+
+        <x-preview file="flowblade::preview.codes.textarea.textarea-auto-resize" />
+
+    </div>
+
+    {{-- Textarea with Helper --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Textarea with Helper</h3>
+        <p class="text-gray-600 mb-4">Textarea with helper text.</p>
+
+        <x-preview file="flowblade::preview.codes.textarea.textarea-with-helper" />
+
+    </div>
+
     {{-- Textarea in Form --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Textarea in Form</h3>

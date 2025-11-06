@@ -10,9 +10,7 @@
 
 @push('styles')
     {{-- Prism.js CSS --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    {{-- Prism.js Copy Code Plugin CSS --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css">
     <style>
         .prism-copy-wrapper {
             position: relative;
@@ -49,23 +47,23 @@
 
 @push('scripts')
     {{-- Prism.js Core --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/prism.js"></script>
     {{-- Prism.js HTML Language Support --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-markup.min.js"></script>
     {{-- Prism.js Toolbar --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/toolbar/prism-toolbar.min.js"></script>
     {{-- Prism.js Copy to Clipboard Plugin --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 @endpush
 
 <div class="space-y-4">
     {{-- Live Demo --}}
-    <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200">
+    <div class="preview-demo p-6 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         @include($file)
     </div>
 
     {{-- Code Display with Prism.js --}}
-    <div class="prism-copy-wrapper bg-gray-900 text-gray-100 rounded-lg overflow-x-auto font-mono text-sm">
+    <div class="prism-copy-wrapper bg-gray-900 text-gray-100 rounded-lg overflow-x-auto font-mono text-sm dark:bg-gray-950">
         <pre class="language-html"><code>{!! $code !!}</code></pre>
     </div>
 </div>

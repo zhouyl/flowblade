@@ -55,6 +55,24 @@
 
     </div>
 
+    {{-- Link Underline --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Link Underline</h3>
+        <p class="text-gray-600 mb-4">Links with different underline styles.</p>
+
+        <x-preview file="flowblade::preview.codes.link.link-underline" />
+
+    </div>
+
+    {{-- Link Disabled --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Link Disabled</h3>
+        <p class="text-gray-600 mb-4">Disabled link state.</p>
+
+        <x-preview file="flowblade::preview.codes.link.link-disabled" />
+
+    </div>
+
     {{-- Link in Context --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Link in Context</h3>

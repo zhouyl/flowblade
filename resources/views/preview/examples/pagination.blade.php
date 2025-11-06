@@ -46,6 +46,24 @@
 
     </div>
 
+    {{-- Pagination with Jump --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Pagination with Jump</h3>
+        <p class="text-gray-600 mb-4">Pagination with jump to page functionality.</p>
+
+        <x-preview file="flowblade::preview.codes.pagination.pagination-with-jump" />
+
+    </div>
+
+    {{-- Pagination Compact --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Pagination Compact</h3>
+        <p class="text-gray-600 mb-4">Compact pagination with arrow symbols.</p>
+
+        <x-preview file="flowblade::preview.codes.pagination.pagination-compact" />
+
+    </div>
+
     {{-- Pagination Centered --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Pagination Centered</h3>

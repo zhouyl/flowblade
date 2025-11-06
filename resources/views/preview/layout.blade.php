@@ -6,19 +6,22 @@
     <title>@yield('title', 'Flowblade Component Preview')</title>
     
     {{-- Tailwind CSS CDN --}}
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    {{-- Flowbite CSS --}}
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
     {{-- Alpine.js CDN --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    {{-- Heroicons CDN --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/outline/index.min.css">
+
+    {{-- Flowbite JavaScript --}}
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     
     <style>
         body {
             font-family: system-ui, -apple-system, sans-serif;
         }
-        
+
         .sidebar {
             position: fixed;
             left: 0;
@@ -30,12 +33,17 @@
             overflow-y: auto;
             z-index: 40;
         }
-        
+
+        .sidebar.dark {
+            background: #111827;
+            border-right-color: #374151;
+        }
+
         .main-content {
             margin-left: 280px;
             min-height: 100vh;
         }
-        
+
         .category-link {
             display: block;
             padding: 0.75rem 1rem;
@@ -44,19 +52,34 @@
             border-left: 3px solid transparent;
             transition: all 0.2s;
         }
-        
+
         .category-link:hover {
             background: #f3f4f6;
             color: #1f2937;
         }
-        
+
         .category-link.active {
             background: #eff6ff;
             border-left-color: #3b82f6;
             color: #1e40af;
             font-weight: 600;
         }
-        
+
+        .sidebar.dark .category-link {
+            color: #9ca3af;
+        }
+
+        .sidebar.dark .category-link:hover {
+            background: #1f2937;
+            color: #f3f4f6;
+        }
+
+        .sidebar.dark .category-link.active {
+            background: #1e3a8a;
+            border-left-color: #60a5fa;
+            color: #93c5fd;
+        }
+
         .component-card {
             background: white;
             border: 1px solid #e5e7eb;
@@ -64,12 +87,23 @@
             padding: 1.5rem;
             transition: all 0.2s;
         }
-        
+
         .component-card:hover {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-color: #d1d5db;
         }
-        
+
+        .component-card.dark {
+            background: #1f2937;
+            border-color: #374151;
+            color: #f3f4f6;
+        }
+
+        .component-card.dark:hover {
+            border-color: #4b5563;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
         .code-block {
             background: #1f2937;
             color: #f3f4f6;
@@ -80,7 +114,7 @@
             overflow-x: auto;
             margin-top: 0.5rem;
         }
-        
+
         .search-input {
             width: 100%;
             padding: 0.5rem 1rem;
@@ -88,13 +122,24 @@
             border-radius: 0.375rem;
             font-size: 0.875rem;
         }
-        
+
         .search-input:focus {
             outline: none;
             border-color: #3b82f6;
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
-        
+
+        .search-input.dark {
+            background: #374151;
+            border-color: #4b5563;
+            color: #f3f4f6;
+        }
+
+        .search-input.dark:focus {
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+        }
+
         @media (max-width: 768px) {
             .sidebar {
                 width: 100%;
@@ -103,7 +148,7 @@
                 border-right: none;
                 border-bottom: 1px solid #e5e7eb;
             }
-            
+
             .main-content {
                 margin-left: 0;
             }

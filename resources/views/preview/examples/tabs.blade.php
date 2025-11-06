@@ -27,5 +27,23 @@
         <x-preview file="flowblade::preview.codes.tabs.tabs-disabled" />
 
     </div>
+
+    {{-- Tabs Vertical --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Tabs Vertical</h3>
+        <p class="text-gray-600 mb-4">Vertical tab layout.</p>
+
+        <x-preview file="flowblade::preview.codes.tabs.tabs-vertical" />
+
+    </div>
+
+    {{-- Tabs with Icon --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Tabs with Icon</h3>
+        <p class="text-gray-600 mb-4">Tabs with icons for better visual communication.</p>
+
+        <x-preview file="flowblade::preview.codes.tabs.tabs-with-icon" />
+
+    </div>
 </div>
 

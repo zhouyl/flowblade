@@ -37,6 +37,15 @@
 
     </div>
 
+    {{-- Switch with Label --}}
+    <div class="preview-section">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Switch with Label</h3>
+        <p class="text-gray-600 mb-4">Switches with descriptive labels.</p>
+
+        <x-preview file="flowblade::preview.codes.switch.switch-with-label" />
+
+    </div>
+
     {{-- Switch in Form --}}
     <div class="preview-section">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Switch in Form</h3>
